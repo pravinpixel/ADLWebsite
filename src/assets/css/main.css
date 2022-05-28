@@ -497,7 +497,7 @@ transition: all 1s ease;
 }
 
 section {
-	padding: 100px 0px;
+	padding: 70px 0px;
 	position: relative;
 }
 
@@ -768,10 +768,12 @@ a.link-white:hover:after {
 
 .topbooked-cases{margin:0px -10px;}
 
-.case{padding:25px 5px 25px 25px;border:1px solid #d4d4d4;border-radius:5px;margin:0px 10px;}
+.case{padding:25px 5px 25px 25px;border:1px solid #d4d4d4;border-radius:5px;margin:0px;}
 .case h3{font-size:14px;font-weight:500;line-height:20px;color:#6e6e6e;margin-bottom:10px;}
 .case h4{font-size:14px;font-weight:300;line-height:20px;color:#6e6e6e;min-height:72px;}
 .case h5{font-size:18px;font-weight:700;line-height:20px;color:#6e6e6e;}
+
+.slick-slide{padding: 0px 11px;}
 
 .slick-prev:before,
 .slick-next:before {
@@ -915,7 +917,7 @@ padding-top: 11px;}
 
 .ble-fnt span{font-weight:300;font-size:12px;}
 
-.pack-deils{margin:0px 10px;}
+.pack-deils{margin:0px;}
 
 .popular-lists{margin:0px -10px;}
 
@@ -982,7 +984,7 @@ padding-top: 11px;}
 
 .condition-lsts{margin:0px -10px;}
 
-.tes-cond{background-color:#fff;border-radius:5px;padding:15px 10px 10px 10px;position:relative;margin:0px 10px;}
+.tes-cond{background-color:#fff;border-radius:5px;padding:15px 10px 10px 10px;position:relative;margin:0px;}
 .tes-cond a{position:absolute;content:"";right:10px;bottom:10px;height:24px;width:24px;text-align:cenet;color:#fff;border-radius:50%;background-color:#f58193;font-weight: 500;
 font-size: 19px;
 line-height: 24px;}
@@ -1077,7 +1079,7 @@ span.clr-pnk{font-weight:300;}
 
 .lat-hapns{margin:0px -10px;}
 
-.haapns{background-color:#63b5f7;padding:35px 10px 35px 30px;margin:0px 10px;min-height:346px;overflow:hidden;border-radius:5px;}
+.haapns{background-color:#63b5f7;padding:35px 10px 35px 30px;margin:0px;min-height:346px;overflow:hidden;border-radius:5px;}
 
 .haapns h3{font-weight:300;padding:2px 10px;border:1px solid #fff;border-radius:5px;color:#fff;font-size:14px;display:inline-block;line-height:25px;margin-bottom:15px;}
 
@@ -1156,6 +1158,7 @@ ul.footer-socials li i {
 
 ul.footer-socials li:nth-child(1) i {left: 13px;top: 22px;}
 ul.footer-socials li:nth-child(3) i {left: 12px;}
+ul.footer-socials li:nth-child(5) i {left: 11px;}
 
 .footer-column input{width:90%;height:45px;border-radius:5px;padding:15px;border:0px;}
 .footer-column button{position:absolute;right:42px;bottom:11px;background-color:transparent;border:0px;}
