@@ -56,7 +56,7 @@ export default function AboutUs() {
                 </h2>
               </div>
               <br/> 
-              <Sliders class="testimonial-topics lat-hapns" {...settings}> 
+              <Sliders {...settings} className="testimonial-topics"> 
                 <div class="testims">
                   I am for the First Time using Home service from Neuberg Lab. The Service rendered by the technician was very nice. He was very courteous and punctual
                   <span>Mr. Ramakrishnan Sridher</span>
