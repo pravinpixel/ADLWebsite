@@ -1,4 +1,6 @@
 import React from 'react'
+import call from '../../../assets/images/call.png'
+import mail from '../../../assets/images/mail.png'
 
 export default function ReachUs() {
   return (
@@ -10,13 +12,13 @@ export default function ReachUs() {
                         <ul>
                             <li>
                                 <a href="">
-                                    <img src="images/call.png" alt="" className="img-fluid"/>
+                                    <img src={call} alt="" className="img-fluid"/>
                                     <h4>1800 425 1974 <span>Free Sample Collections</span></h4>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="images/mail.png" alt="" className="img-fluid"/>
+                                    <img  src={mail} alt="" className="img-fluid"/>
                                     <h4>enquiry@anandlab.com <span>Need support? Drop us an email</span></h4>
                                 </a>
                             </li>
