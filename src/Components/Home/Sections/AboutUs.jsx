@@ -44,34 +44,42 @@ export default function AboutUs() {
     ]
   }
   return (
-    <section class="testimonials">
-      <div class="container-fluid pr-0">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="testi-section">
-              <div class="common-heading">
-                <h2><span>What our customers Are </span> saying About us </h2>
+    <section className="testimonials">
+      <div className="container-fluid pr-0">
+        <div className="row align-items-center">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div className="testi-section">
+              <div className="common-heading">
+                <h2>
+                  <span>What our customers Are </span>
+                  saying About us 
+                </h2>
               </div>
-              <br/> 
-              <Sliders class="testimonial-topics" {...settings}> 
-                <div class="testims">
+              <br/>
+              <Sliders className="testimonial-topics" {...settings}> 
+                <div className="testims">
                   I am for the First Time using Home service from Neuberg Lab. The Service rendered by the technician was very nice. He was very courteous and punctual
                   <span>Mr. Ramakrishnan Sridher</span>
                 </div>
-                <div class="testims">
+                <div className="testims">
                   I am for the First Time using Home service from Neuberg Lab. The Service rendered by the technician was very nice. He was very courteous and punctual
                   <span>Mr. Ramakrishnan Sridher</span>
                 </div>
               </Sliders>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="testivideo-section">
-              <img src={videoBg} alt="" class="img-fluid"/>
-              <div class="plying-btn text-center">
-                <a href=""><img src={playButton}alt="" class="img-fluid"/></a>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div className="testivideo-section">
+              <img src={videoBg} alt="" className="img-fluid"/>
+              <div className="plying-btn text-center">
+                <a href=""><img src={playButton}alt="" className="img-fluid"/></a>
               </div>
             </div>
+            {/* <ReactFancyBox
+              showCloseBtn={false}
+              thumbnail="https://loremflickr.com/320/240"
+              image="https://www.w3schools.com/howto/img_forest.jpg"
+            /> */}
           </div>
         </div>
       </div>

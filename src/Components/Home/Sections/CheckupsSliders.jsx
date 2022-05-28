@@ -49,69 +49,69 @@ export default function CheckupsSliders() {
         ]
     };
   return (
-    <section class="helth-chkup">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="common-heading">
+    <section className="helth-chkup">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div className="common-heading">
                         <h2><span>Choose Your </span> Health Checkups / Screenings For </h2>
                     </div>
                     <br/>
                     <Sliders className="body-parts text-center"  {...settings}>
-                        <div class="parts-seq">
-                            <img src={icon1} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon1} alt="" className="img-fluid"/>
                             <span>Brain</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon2} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon2} alt="" className="img-fluid"/>
                             <span>Liver</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon3} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon3} alt="" className="img-fluid"/>
                             <span>Stomach</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon4} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon4} alt="" className="img-fluid"/>
                             <span>Lungs</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon5} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon5} alt="" className="img-fluid"/>
                             <span>Heart</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon6} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon6} alt="" className="img-fluid"/>
                             <span>Kidney</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon7} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon7} alt="" className="img-fluid"/>
                             <span>Thyroid</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon1} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon1} alt="" className="img-fluid"/>
                             <span>Brain</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon1} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon1} alt="" className="img-fluid"/>
                             <span>Liver</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon2} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon2} alt="" className="img-fluid"/>
                             <span>Stomach</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon3} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon3} alt="" className="img-fluid"/>
                             <span>Lungs</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon4} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon4} alt="" className="img-fluid"/>
                             <span>Heart</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon5} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon5} alt="" className="img-fluid"/>
                             <span>Kidney</span>
                         </div>
-                        <div class="parts-seq">
-                            <img src={icon6} alt="" class="img-fluid"/>
+                        <div className="parts-seq">
+                            <img src={icon6} alt="" className="img-fluid"/>
                             <span>Thyroid</span>
                         </div>
                     </Sliders>
