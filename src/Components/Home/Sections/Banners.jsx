@@ -1,7 +1,7 @@
 import React from 'react'
 
 import bannerImage from '../../../assets/images/banner-image1.jpg'
-import bannerImage2 from '../../../assets/images/banner-image1.jpg'
+import bannerImage2 from '../../../assets/images/banner-image2.jpg'
 import bannerLiner from '../../../assets/images/banner-liner.jpg'
 
 export default function Banners() {
@@ -15,27 +15,26 @@ export default function Banners() {
             </ul>
             {/* <!-- The slideshow --> */}
             <div className="carousel-inner">
-                {/* <img src={bannerImage} alt="" /> */}
-                <div className="carousel-item active" style={{"background" : `url(${bannerImage})` }}> 
+                <div className="carousel-item" style={{"background" : `url(${bannerImage})` }}> 
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">				
                                 <div className="carousel-caption">
-                                <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
-                                <p><a href="about-us">Book Now</a></p>
-                            </div>
+                                    <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
+                                    <p><a href="about-us">Book Now</a></p>
+                                </div>
                             </div> 
                         </div>
                     </div>
                 </div> 
-                <div className="carousel-item" style={{ "backgroundImage": `url(${bannerImage2})` }}> 
+                <div className="carousel-item active" style={{ "backgroundImage": `url(${bannerImage2})` }}> 
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">				
                                 <div className="carousel-caption">
-                                <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
-                                <p><a href="about-us">Book Now</a></p>
-                            </div>
+                                    <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
+                                    <p><a href="about-us">Book Now</a></p>
+                                </div>
                             </div> 
                         </div>
                     </div>
