@@ -1,7 +1,15 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import Sliders from 'react-slick'
+import { setTopBookedTest } from '../../../Redux/Actions/TestAction';
+import { API_URL } from '../../../Redux/Constant/ApiRoute';
 
 export default function BookedTestSliders() {
+    const dispatch = useDispatch()
+   
+    const topBookedTestList    =   useSelector((state) =>  state.TopBookedTests.tests) 
+    
     var settings = {
         slidesToScroll : 1,
         infinite       : true,
@@ -41,91 +49,41 @@ export default function BookedTestSliders() {
             },
         ]
     };
-  return (
-    <section className="diagnostics text-left">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div className="common-heading">
-                        <h2><span>Top Booked </span> Diagnostic Tests </h2>
+    useEffect(() => {
+      return () => {
+        axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
+            dispatch(setTopBookedTest(response.data.data));
+        })
+      }
+    }, []);
+
+    return (
+        <section className="diagnostics text-left">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div className="common-heading">
+                            <h2><span>Top Booked </span> Diagnostic Tests </h2>
+                        </div>
+                        {
+                            topBookedTestList !== undefined ?  
+                                <Sliders {...settings} className="topbooked-cases">
+                                    {
+                                        topBookedTestList.map((test) => (
+                                            <div className="case">
+                                                <h3>{`${test.TestName.substring(0, 20)}...`}</h3>
+                                                <h4>{`${test.BasicInstruction.substring(0, 25)}...`}</h4>
+                                                <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
+                                                <p><a href="about-us">ADD</a></p>
+                                            </div>
+                                        ))
+                                    } 
+                                </Sliders>
+                            : "not"
+                        } 
                     </div>
-                    <Sliders {...settings} className="topbooked-cases">
-                        <div className="case">
-                            <h3>Cholesterol Total, Serum</h3>
-                            <h4>This test is to measure Cholesterol in Blood Serum. </h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Complete Blood <br/> Count</h3>
-                            <h4>This test is to measure total blood count.</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Covid19 Antibody IgG Test</h3>
-                            <h4>Basic screening test to check the presence ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Lipid Profile <br/> Test</h3>
-                            <h4>This test is used to measure the amount of cholesterol ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Dengue NS1 <br/> Antigen</h3>
-                            <h4>This test is used to detect dengue in early days ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Fasting Glucose <br/> Test</h3>
-                            <h4>This test is to measure Cholesterol in Blood Serum.</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Cholesterol Total, Serum</h3>
-                            <h4>This test is to measure Cholesterol in Blood Serum. </h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Complete Blood <br/> Count</h3>
-                            <h4>This test is to measure total blood count.</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Covid19 Antibody IgG Test</h3>
-                            <h4>Basic screening test to check the presence ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Lipid Profile <br/> Test</h3>
-                            <h4>This test is used to measure the amount of cholesterol ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Dengue NS1 <br/> Antigen</h3>
-                            <h4>This test is used to detect dengue in early days ...</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                        <div className="case">
-                            <h3>Fasting Glucose <br/> Test</h3>
-                            <h4>This test is to measure Cholesterol in Blood Serum.</h4>
-                            <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
-                            <p><a href="about-us">ADD</a></p>
-                        </div>
-                    </Sliders>
                 </div>
             </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }

@@ -5,4 +5,4 @@ export const BannerSlideReducer = (state = [], {type, payload}) => {
         case ActionTypes.SET_BANNERS : return {...state, banners : payload};
         default : return state;
     }
-}
+} 

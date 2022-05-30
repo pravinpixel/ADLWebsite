@@ -5,4 +5,4 @@ export const  setBanners = (banners) => {
         type    : ActionTypes.SET_BANNERS,
         payload : banners
     }
-}
+} 
