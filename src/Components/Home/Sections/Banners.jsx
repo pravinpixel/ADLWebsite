@@ -1,13 +1,10 @@
 import axios from 'axios'
 import React, { useEffect }  from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import PlaceholderLoading from 'react-placeholder-loading'
 import bannerImage from '../../../assets/images/banner-image1.jpg'
 import bannerImage2 from '../../../assets/images/banner-image2.jpg'
-import bannerLiner from '../../../assets/images/banner-liner.jpg'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
 import { ApiTypes } from '../../../Redux/Constant/ApiRoute'
-import ContentLoader from 'react-content-loader'
 
 const Banners = () => { 
     const dispatch      =   useDispatch();
