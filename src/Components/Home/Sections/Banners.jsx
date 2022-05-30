@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 import {assets} from '../../../../src/Helpers'
+import { setBanners } from '../../../Redux/Actions/BannerAction'
+import { ApiTypes } from '../../../Redux/Constant/ApiRoute'
 
 const Banners = () => { 
     const dispatch      =   useDispatch();
