@@ -1,6 +1,6 @@
-const APP_API_ROUTE = "http://localhost:8080/ADL/WebApp/ADL/public/api"
+const URL = "http://192.168.0.59:8080/ADL/WebApp/ADL"
 
-export const ApiTypes = {
-    BANNERS : `${APP_API_ROUTE}/banners`,
-    ASSETS  : "",
+export const API_URL = {
+    BANNERS : `${URL}/public/api/banners`,
+    ASSETS  : `${URL}/storage/app/`,
 }

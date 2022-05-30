@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import bannerImage from '../../../assets/images/banner-image1.jpg'
 import bannerImage2 from '../../../assets/images/banner-image2.jpg'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
-import { ApiTypes } from '../../../Redux/Constant/ApiRoute'
+import { API_URL } from '../../../Redux/Constant/ApiRoute'
+import {assets} from '../../../../src/Helpers'
 
 const Banners = () => { 
     const dispatch      =   useDispatch();
@@ -12,11 +13,12 @@ const Banners = () => {
 
     useEffect(() => {
         return () => {
-            axios.get(ApiTypes.BANNERS).then((response) => {
+            axios.get(API_URL.BANNERS).then((response) => {
                 dispatch(setBanners(response.data))
             });
         }
     }, []);
+ 
 
     return ( 
         <div className="banner-conceptual">
@@ -58,14 +60,13 @@ const Banners = () => {
                         : 
                         <>
                             {
-                                bannerList.banners.data.map(( banner, index ) =>  (
-                                    console.log(banner),
-                                    <div class={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(http://localhost:8080/ADL/WebApp/ADL/storage/app/${banner.DesktopImage})` }}> 
+                                bannerList.banners.data.map(( banner, index ) =>  ( 
+                                    <div class={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
                                         <div className="container">
                                             <div className="row">
                                                 <div className="col-sm-12 col-md-12 col-lg-12">				
                                                     <div className="carousel-caption">
-                                                        <h1>{banner.Title}</h1>
+                                                        <h1>{banner.Title}</h1> 
                                                     </div>
                                                 </div> 
                                             </div>
