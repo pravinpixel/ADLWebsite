@@ -68,51 +68,42 @@ const Banners = () => {
                                 ))
                             }
                         </>
-                    }
-                </div>
-            </div>
-            <div className='banner-form'>
-                <form onsubmit="return valid_chk()" name="form3" method="post" action="#" id="form">
-                    <div class="frm-fields row clearfix">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="form-data">
-                                <input class="input100" type="text" name="name" id="name" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Your Full Name"></span>
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="tel" name="phone" onkeypress="validate(event)" maxlength="10" id="phone" placeholder=""/>
-                            <span class="focus-input100" data-placeholder="Your Mobile Number"></span>
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="text" name="email" id="email" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Email Address"></span>	
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="text" name="location" id="location" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Location"></span>
-                            </div>
+                    } 
+                </div> 
+                <div className='banner-form'>
+                    <form onsubmit="return valid_chk3()" name="form3" method="post" action="" id="form3">
+                                <div class="frm-fields row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h4 className='cont-frmhed'>Book Home Collection</h4>
                                     <div class="form-data">
-                                <select class="input100 has-val">
-                                    <option selected>- Select Test -</option>
-                                    <option>Blood Test</option>
-                                    <option>Urine Test</option>
-                                    <option>Stool Test</option>
-                                    <option>Sputum Test</option>
-                                    <option>Pus Test</option>
-                                </select>
-                                <span class="focus-input100" data-placeholder="Select Test"></span>
-                            </div>
-                                    <div class="form-data date-time">
-                                <input class="input100" type="text" name="" id="dateTime" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Choose Date and Time"></span>	
-                            </div>
-                            <div class="form-data sbm text-right">
-                                <input type="submit" name="submit" value="Submit"/>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Name"/> 
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="tel" name="phone" onkeypress="validate(event)" maxlength="10" id="phone" placeholder="Mobile"/> 
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
+                                    </div>
+                                    <div class="form-data">
+                                    <input type="file" id="myfile" name="myfile"/>
+                                    </div>
+                                    <div class="form-data">
+                                    <div class="fileupload">
+        <input type="file" />
+        Any content here, perhaps button text
+        </div>
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="text" name="message" id="message" placeholder="Comments"/> 
+                                    </div>
+                                    <div class="form-data sbm">
+                                        <input type="submit" name="submit" value="SUBMIT"/>
+                                    </div>
+                                </div>
+                                </div>
+                    </form>
+                </div> 
+            </div> 
         </div>   
     )
 }

@@ -374,6 +374,7 @@ a:hover {
 	letter-spacing: -1px;
 	padding-left: 0px;
 	margin-bottom: 0px;
+	width:40%;
 }
 
 #home-banner-carousel .carousel-caption p {
@@ -1162,9 +1163,163 @@ ul.footer-socials li:nth-child(5) i {left: 11px;}
 .footer-column input{width:90%;height:45px;border-radius:5px;padding:15px;border:0px;}
 .footer-column button{position:absolute;right:42px;bottom:11px;background-color:transparent;border:0px;}
 
-footer h5.cips{margin:15px 0px 0px 0px;}
+footer h5.cips{margin:15px 0px 0px 0px;} 
 
+h4.cont-frmhed{font-weight:600;font-size:16px;line-height:28px;margin: 0px;text-transform: uppercase;color:#606060;}
 
+.banner-conceptual{position: relative;}
+
+.banner-form {
+	position: absolute;
+	width: 340px;
+	background-color: rgba(255,2255,255,0.9);
+	top: 21%;
+	right: 17%;
+	content: "";
+	z-index: 1;
+	padding: 40px 25px;
+	border-radius: 5px;
+  }
+
+.req-form {
+	margin-top: 30px;
+	background-color: #fff;
+	padding: 55px 60px
+}
+
+.form-data {
+	position: relative; 
+}
+
+.form-data.sbm {
+	border-bottom: 0;
+	display: block;
+	text-align: center;
+}
+
+.form-data label {
+	position: absolute;
+	font-size: 15px;
+	color: #7c7c7c;
+	letter-spacing: .15px
+}
+
+.input100 {
+	display: block;
+	width: 100%;
+	background: 0 0;
+	padding: 0 5px
+}
+
+.form-data input {
+	border: none;
+	border-radius: 0;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	width: 100%;
+	height:55px;
+	border-bottom: 1px solid #d4d5d5;
+}
+
+.form-data textarea {
+	border: 0!important;
+	border-bottom: 1px solid #cecece;
+	border-radius: 0;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	width: 100%
+}
+
+.form-data input[type="submit"] {
+	margin-top: 23px;
+	color: #fff;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	background-color: #a895bc;
+	padding: 9px 10px;
+	border-radius: 8px;
+	width: 82%;
+	height: auto;
+  }
+
+.form-data input[type=submit]:hover {
+background: #5b2584;
+transition: all .5s ease-in-out
+}
+
+.focus-input100 {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none
+}
+
+.focus-input100::before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	-webkit-transition: all .4s;
+	-o-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+	background: #63b5f7; 
+}
+
+.focus-input100::after {
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	color: #999;
+	line-height: 1.2;
+	content: attr(data-placeholder);
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	padding-left: 5px;
+	-webkit-transition: all .4s;
+	-o-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s
+}
+ 
+
+.input100:focus+.focus-input100::before {
+	width: 100%
+} 
+.has-val.input100+.focus-input100::before {
+	width: 100%
+}
+
+.fileupload {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0) url("../images/dble-code.png") no-repeat scroll 0 0;
+}
+
+.fileupload input {
+    position: absolute;
+    top: 0;
+    right: 0; /* not left, because only the right part of the input seems to
+                 be clickable in some browser I can't remember */
+    cursor: pointer;
+    opacity: 0.0;
+    filter: alpha(opacity=0); /* and all the other old opacity stuff you
+                                 want to support */
+    font-size: 300px; /* wtf, but apparently the most reliable way to make
+                         a large part of the input clickable in most browsers */
+    height: 200px;
+}
 
 
 
