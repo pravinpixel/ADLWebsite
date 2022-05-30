@@ -31,7 +31,7 @@ const Banners = () => {
                 {/* <!-- The slideshow --> */}
                 <div className="carousel-inner">
                     {
-                        bannerList.length === 0 
+                        bannerList.length === 0
                         ? 
                             <div className="carousel-item active bg-dark"> 
                                 <div className="container">
@@ -47,7 +47,7 @@ const Banners = () => {
                                         </div> 
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         : 
                         <>
                             {
@@ -59,16 +59,16 @@ const Banners = () => {
                                                     <div className="carousel-caption">
                                                         <h1>{banner.Title}</h1> 
                                                     </div>
-                                                </div> 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 ))
-                            } 
+                            }
                         </>
-                    } 
-                </div> 
-            </div> 
+                    }
+                </div>
+            </div>
             <div className='banner-form'>
                 <form onsubmit="return valid_chk()" name="form3" method="post" action="#" id="form">
                     <div class="frm-fields row clearfix">

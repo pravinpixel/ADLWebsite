@@ -2,19 +2,15 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Sliders from 'react-slick'
-import { setTopBookedTest } from '../../../Redux/Actions/TestAction';
+import { setTestCartList, setTopBookedTest } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 
 export default function BookedTestSliders() {
-    const dispatch = useDispatch()
-   
-    const topBookedTestList    =   useSelector((state) =>  state.TopBookedTests.tests) 
-    
     var settings = {
         slidesToScroll : 1,
         infinite       : true,
         slidesToShow   : 6,
-        focusOnSelect  : true, 
+        focusOnSelect  : false, 
         autoplay       : true,
         dots           : false,
         arrows         : true,
@@ -49,13 +45,25 @@ export default function BookedTestSliders() {
             },
         ]
     };
+    const dispatch = useDispatch()
+    const topBookedTestList     =   useSelector((state) =>  state.TopBookedTests.tests)
     useEffect(() => {
       return () => {
         axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
             dispatch(setTopBookedTest(response.data.data));
+            dispatch(setTestCartList(response.data.data));
         })
       }
     }, []);
+
+    const addTestToCart  = (test) => {
+        if(localStorage.getItem('CartTestList') == undefined) {
+            localStorage.setItem('CartTestList', JSON.stringify([]));
+        }
+        let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+        localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
+        console.log(currentCart)
+    }
 
     return (
         <section className="diagnostics text-left">
@@ -69,17 +77,19 @@ export default function BookedTestSliders() {
                             topBookedTestList !== undefined ?  
                                 <Sliders {...settings} className="topbooked-cases">
                                     {
-                                        topBookedTestList.map((test) => (
-                                            <div className="case">
-                                                <h3>{`${test.TestName.substring(0, 20)}...`}</h3>
-                                                <h4>{`${test.BasicInstruction.substring(0, 25)}...`}</h4>
+                                        topBookedTestList.map((test,index) => (
+                                            <div className="case" key={index}>
+                                                <h3 className='text-capitalize'>{`${test.TestName.substring(0, 28)}...`}</h3>
+                                                <h4 className='text-capitalize'>{`${test.BasicInstruction.substring(0, 38)}...`}</h4>
                                                 <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
-                                                <p><a href="about-us">ADD</a></p>
+                                                <p>
+                                                    <a onClick={() => addTestToCart(test)}>ADD</a>
+                                                </p>
                                             </div>
                                         ))
-                                    } 
+                                    }
                                 </Sliders>
-                            : "not"
+                            : null
                         } 
                     </div>
                 </div>

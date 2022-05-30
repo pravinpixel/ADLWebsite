@@ -6,3 +6,10 @@ export const  setTopBookedTest = (tests) => {
         payload : tests
     }
 }
+
+export const  setTestCartList = (cartTest) => {
+    return {
+        type    : ActionTypes.SET_TEST_CART_LIST,
+        payload : cartTest
+    }
+}

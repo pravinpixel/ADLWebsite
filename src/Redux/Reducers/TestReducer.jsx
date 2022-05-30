@@ -6,3 +6,11 @@ export const TestBookedReducer = (state = [], {type, payload}) => {
         default : return state;
     }
 }
+
+export const TestCartReducer = (state = [], {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.SET_TEST_CART_LIST : return {...state, cartTest : payload};
+        default : return state;
+    }
+}
+
