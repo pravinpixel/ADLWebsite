@@ -15,25 +15,25 @@ export default function Banners() {
             </ul>
             {/* <!-- The slideshow --> */}
             <div className="carousel-inner">
-                <div className="carousel-item" style={{"background" : `url(${bannerImage})` }}> 
+                <div className="carousel-item active" style={{"background" : `url(${bannerImage})` }}> 
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">				
                                 <div className="carousel-caption">
-                                    <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
-                                    <p><a href="about-us">Book Now</a></p>
+                                    <h1>ENSURING “CARE” IN<br></br> HEALTHCARE Step Up<br></br> for Good Health.</h1>
+                                    {/* <p><a href="about-us">Book Now</a></p> */}
                                 </div>
                             </div> 
                         </div>
                     </div>
                 </div> 
-                <div className="carousel-item active" style={{ "backgroundImage": `url(${bannerImage2})` }}> 
+                <div className="carousel-item" style={{ "background": `url(${bannerImage2})` }}> 
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">				
                                 <div className="carousel-caption">
-                                    <p><img src={ bannerLiner } alt="" className="img-fluid" /></p>
-                                    <p><a href="about-us">Book Now</a></p>
+                                    <h1>ENSURING “CARE” IN<br></br> HEALTHCARE Step Up<br></br> for Good Health.</h1>
+                                    {/* <p><a href="about-us">Book Now</a></p> */}
                                 </div>
                             </div> 
                         </div>
@@ -41,6 +41,9 @@ export default function Banners() {
                 </div>  
             </div> 
         </div> 
+        <div className='banner-form'>
+
+        </div>
     </div>
   )
 }
