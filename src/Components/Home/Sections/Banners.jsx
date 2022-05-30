@@ -18,54 +18,69 @@ const Banners = () => {
         }
     }, []);
 
-    return (
-        <>  
-            {
-                bannerList.length === 0 
-                ? 
-                    <div>loading</div>
-                : 
-                <div className="banner-conceptual">
-                    <div id="home-banner-carousel" className="carousel slide carousel-fade" data-ride="carousel">
-                        {/* <!-- Indicators --> */}
-                        <ul className="carousel-indicators">
-                            <li data-target="#home-banner-carousel" data-slide-to="0" className="active"></li>
-                            <li data-target="#home-banner-carousel" data-slide-to="1"></li> 
+    return ( 
+        <div className="banner-conceptual">
+            <div id="home-banner-carousel" className="carousel slide carousel-fade" data-ride="carousel">
+                {/* <!-- Indicators --> */}
+                
+                {
+                    bannerList.length !== 0 ? 
+                        <ul className="carousel-indicators"> 
+                            {
+                                bannerList.banners.data.map(( banner, index ) =>  (
+                                    <li data-target="#home-banner-carousel" data-slide-to={index} className={index === 0 ? "active" : ''}></li>
+                                ))
+                            }
                         </ul>
-                        {/* <!-- The slideshow --> */}
-                        <div className="carousel-inner">
-                            <div className="carousel-item active" style={{"background" : `url(${bannerImage})` }}> 
+                    : null
+                }
+                
+                {/* <!-- The slideshow --> */}
+                <div className="carousel-inner">
+                    {
+                        bannerList.length === 0 
+                        ? 
+                            <div className="carousel-item active bg-dark"> 
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-sm-12 col-md-12 col-lg-12">				
                                             <div className="carousel-caption">
-                                                <h1>ENSURING “CARE” IN<br></br> HEALTHCARE Step Up<br></br> for Good Health.</h1>
-                                                {/* <p><a href="about-us">Book Now</a></p> */}
+                                                <h1>
+                                                    <span className='bg-secondary text-secondary'>ENSURING “CARE” IN</span><br/>
+                                                    <span className='bg-secondary text-secondary'>HEALTHCARE Step Up .</span><br/>
+                                                    <span className='bg-secondary text-secondary'>for Good Health.</span>
+                                                </h1>
                                             </div>
                                         </div> 
                                     </div>
                                 </div>
                             </div> 
-                            <div className="carousel-item" style={{ "background": `url(${bannerImage2})` }}> 
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-sm-12 col-md-12 col-lg-12">				
-                                            <div className="carousel-caption">
-                                                <h1>ENSURING “CARE” IN<br></br> HEALTHCARE Step Up<br></br> for Good Health.</h1>
-                                                {/* <p><a href="about-us">Book Now</a></p> */}
+                        : 
+                        <>
+                            {
+                                bannerList.banners.data.map(( banner, index ) =>  (
+                                    console.log(banner),
+                                    <div class={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(http://localhost:8080/ADL/WebApp/ADL/storage/app/${banner.DesktopImage})` }}> 
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-sm-12 col-md-12 col-lg-12">				
+                                                    <div className="carousel-caption">
+                                                        <h1>{banner.Title}</h1>
+                                                    </div>
+                                                </div> 
                                             </div>
-                                        </div> 
-                                    </div>
-                                </div>  
-                            </div> 
-                        </div> 
-                    </div> 
-                    <div className='banner-form'>
+                                        </div>
+                                    </div> 
+                                ))
+                            } 
+                        </>
+                    } 
+                </div> 
+            </div> 
+            <div className='banner-form'>
 
-                    </div>
-                </div>
-            } 
-        </>
+            </div>
+        </div>   
     )
 }
 export default Banners
