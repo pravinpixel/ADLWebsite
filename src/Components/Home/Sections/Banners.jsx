@@ -82,15 +82,13 @@ const Banners = () => {
                                     </div>
                                     <div class="form-data">
                                         <input class="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
+                                    </div> 
+                                    <div class="form-data upload-btn-wrapper">
+                                    <button class="btn">Upload a file</button>
+                                    <input type="file" name="myfile" />
                                     </div>
                                     <div class="form-data">
-                                    <input type="file" id="myfile" name="myfile"/>
-                                    </div>
-                                    <div class="form-data">
-                                    <div class="fileupload">
-        <input type="file" />
-        Any content here, perhaps button text
-        </div>
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Test Name"/> 
                                     </div>
                                     <div class="form-data">
                                         <input class="input100" type="text" name="message" id="message" placeholder="Comments"/> 

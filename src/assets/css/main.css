@@ -1173,7 +1173,7 @@ h4.cont-frmhed{font-weight:600;font-size:16px;line-height:28px;margin: 0px;text-
 	position: absolute;
 	width: 340px;
 	background-color: rgba(255,2255,255,0.9);
-	top: 21%;
+	top: 20%;
 	right: 17%;
 	content: "";
 	z-index: 1;
@@ -1223,7 +1223,7 @@ h4.cont-frmhed{font-weight:600;font-size:16px;line-height:28px;margin: 0px;text-
 
 .form-data textarea {
 	border: 0!important;
-	border-bottom: 1px solid #cecece;
+	border-bottom: 1px solid #d4d5d5;
 	border-radius: 0;
 	font-family: Roboto, sans-serif;
 	font-size: 14px;
@@ -1299,29 +1299,31 @@ transition: all .5s ease-in-out
 	width: 100%
 }
 
-.fileupload {
-    width: 100px;
-    height: 50px;
-    position: relative;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0) url("../images/dble-code.png") no-repeat scroll 0 0;
-}
-
-.fileupload input {
-    position: absolute;
-    top: 0;
-    right: 0; /* not left, because only the right part of the input seems to
-                 be clickable in some browser I can't remember */
-    cursor: pointer;
-    opacity: 0.0;
-    filter: alpha(opacity=0); /* and all the other old opacity stuff you
-                                 want to support */
-    font-size: 300px; /* wtf, but apparently the most reliable way to make
-                         a large part of the input clickable in most browsers */
-    height: 200px;
-}
-
-
+.upload-btn-wrapper {
+	position: relative;
+	overflow: hidden;
+	display: -block;
+  }
+  
+  .btn {
+	border-bottom: 1px solid #d4d5d5;  
+	padding: 8px 5px; 
+	font-size: 20px; 	
+	width:100%;	
+	height: 55px;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: #7c7c7c;
+	text-align: left;	
+	cursor: pointer;
+  }
+  
+  .upload-btn-wrapper input[type=file] { 
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+  }
 
 
 
