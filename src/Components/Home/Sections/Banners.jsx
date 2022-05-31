@@ -71,25 +71,27 @@ const Banners = () => {
                 </div>
             </div>
             <div className='banner-form'>
-                <form onsubmit="return valid_chk()" name="form3" method="post" action="#" id="form">
-                    <div class="frm-fields row clearfix">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="form-data">
-                                <input class="input100" type="text" name="name" id="name" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Your Full Name"></span>
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="tel" name="phone" onkeypress="validate(event)" maxlength="10" id="phone" placeholder=""/>
-                            <span class="focus-input100" data-placeholder="Your Mobile Number"></span>
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="text" name="email" id="email" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Email Address"></span>	
-                            </div>
-                            <div class="form-data">
-                                <input class="input100" type="text" name="location" id="location" placeholder=""/>
-                                <span class="focus-input100" data-placeholder="Location"></span>
-                            </div>
+                <form onsubmit="return valid_chk3()" name="form3" method="post" action="" id="form3">
+                                <div class="frm-fields row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h4 className='cont-frmhed'>Book Home Collection</h4>
+                                    <div class="form-data">
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Name"/> 
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="tel" name="phone" onkeypress="validate(event)" maxlength="10" id="phone" placeholder="Mobile"/> 
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
+                                    </div> 
+                                    <div class="form-data upload-btn-wrapper">
+                                    <button class="btn">Upload a file</button>
+                                    <input type="file" name="myfile" />
+                                    </div>
+                                    <div class="form-data">
+                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Test Name"/> 
+                                    </div>
+>>>>>>> 4e42f8b5f70b9ea0e020015c992c24b3a96e6b73
                                     <div class="form-data">
                                 <select class="input100 has-val">
                                     <option selected>- Select Test -</option>
