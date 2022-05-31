@@ -8,7 +8,7 @@ export default function CartCount() {
     return (
         <a href='#' className='position-relative'>
             <img src={cart} alt="" className="img-fluid"/>
-            <b class="badge badge-danger cart-count">
+            <b className="badge badge-danger cart-count">
                 {   
                     cartItemCount !== undefined 
                     ? 

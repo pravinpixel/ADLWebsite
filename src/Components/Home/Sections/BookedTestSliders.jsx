@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Sliders from 'react-slick'
 import {  toast } from 'react-toastify';
 import { setTestCartList, setTopBookedTest } from '../../../Redux/Actions/TestAction';
@@ -57,22 +58,14 @@ export default function BookedTestSliders() {
     }, []);
 
    
-    const addTestToCart  = (test) => {
-        toast.success('Test Added Successfully!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+    const addTestToCart  = (test) => { 
         if(localStorage.getItem('CartTestList') == undefined) {
             localStorage.setItem('CartTestList', JSON.stringify([]));
         }
         let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
         localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
         dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
+        toast.success('Test Added Successfully!');
     }
    
     return (
@@ -88,19 +81,21 @@ export default function BookedTestSliders() {
                                 <Sliders {...settings} className="topbooked-cases">
                                     {
                                         topBookedTestList.map((test,index) => (
-                                            <div className="case" key={index}>
-                                                <h3 className='text-capitalize'>{`${test.TestName.substring(0, 28)}...`}</h3>
-                                                <h4 className='text-capitalize'>{`${test.BasicInstruction.substring(0, 38)}...`}</h4>
-                                                <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
+                                            <div className="case p-3" key={index}>
+                                                <Link to={`test/${test.id}`} className="link">
+                                                    <h3 className='text-capitalize'>{`${test.TestName.substring(0, 28)}...`}</h3>
+                                                    <h4 className='text-capitalize'>{`${test.BasicInstruction.substring(0, 38)}...`}</h4>
+                                                    <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
+                                                </Link>
                                                 <p>
-                                                    <a className='text-white' onClick={() => addTestToCart(test)}>ADD</a>
+                                                    <button className='btn btn-sm btn-primary' onClick={() => addTestToCart(test)}>ADD</button>
                                                 </p>
                                             </div>
                                         ))
                                     }
                                 </Sliders>
                             : null
-                        } 
+                        }
                     </div>
                 </div>
             </div>
