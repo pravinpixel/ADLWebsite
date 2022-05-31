@@ -88,7 +88,7 @@ export default function BookedTestSliders() {
                                                     <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
                                                 </Link>
                                                 <p>
-                                                    <button className='btn btn-sm btn-primary' onClick={() => addTestToCart(test)}>ADD</button>
+                                                    <a className='text-white' onClick={() => addTestToCart(test)}>ADD</a>
                                                 </p>
                                             </div>
                                         ))

@@ -8,16 +8,16 @@ export default function CartCount() {
     return (
         <a href='#' className='position-relative'>
             <img src={cart} alt="" className="img-fluid"/>
-            <b className="badge badge-danger cart-count">
+            <b className="badge badge-dark cart-count">
                 {   
                     cartItemCount !== undefined 
                     ? 
                         cartItemCount.length 
                     : 
-                    localStorage.getItem('CartTestList') !== null 
-                    ? 
+                        localStorage.getItem('CartTestList') !== null 
+                    ?
                         JSON.parse(localStorage.getItem('CartTestList')).length 
-                    : 0
+                    :   0
                 }
             </b>
             <span>Cart</span>

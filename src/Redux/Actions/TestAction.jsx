@@ -13,3 +13,10 @@ export const  setTestCartList = (cartTest) => {
         payload : cartTest
     }
 }
+
+export const  setTestDetails = (testDetails) => {
+    return {
+        type    : ActionTypes.SET_TEST_DETAILS,
+        payload : testDetails
+    }
+}

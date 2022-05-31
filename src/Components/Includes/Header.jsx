@@ -4,6 +4,7 @@ import location from './../../assets/images/location.png';
 import sky from './../../assets/images/sky.png';
 import user from './../../assets/images/user.png';
 import CartCount from './CartCount';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -12,7 +13,9 @@ export default function Header() {
         <div className="row">
           <div className="col">
             <nav className="navbar navbar-default navbar-trans navbar-expand-lg">
-              <a className="navbar-brand text-brand" href="./"><img src={logo} alt="" className="img-fluid"/></a>
+              <Link to="/" className="navbar-brand text-brand">
+                <img src={logo} alt="" className="img-fluid"/>
+              </Link>
               <div className="navbar-collapse collapse justify-content-end" id="navbarDefault">
                 <div className="row align-items-center">
                   <div className="col">
