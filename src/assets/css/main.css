@@ -866,6 +866,7 @@ span.strke{color:#a2a2a2;font-size:14px;margin-left:5px;}
 	overflow: hidden;
 	transition: all 0.3s ease;
 	font-weight: 400;
+	cursor: pointer;
 }
 
 .case p a:before {
@@ -1866,4 +1867,19 @@ transition: all .5s ease-in-out
 	body {
 		padding-top: 71px;
 	}
+}
+.cart-count {
+	height: 17px;
+    width: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 10px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
 }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Sliders from 'react-slick'
+import {  toast } from 'react-toastify';
 import { setTestCartList, setTopBookedTest } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 
@@ -50,21 +51,30 @@ export default function BookedTestSliders() {
     useEffect(() => {
       return () => {
         axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
-            dispatch(setTopBookedTest(response.data.data));
-            dispatch(setTestCartList(response.data.data));
+            dispatch(setTopBookedTest(response.data.data)); 
         })
       }
     }, []);
 
+   
     const addTestToCart  = (test) => {
+        toast.success('Test Added Successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
         if(localStorage.getItem('CartTestList') == undefined) {
             localStorage.setItem('CartTestList', JSON.stringify([]));
         }
         let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
         localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
-        console.log(currentCart)
+        dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
     }
-
+   
     return (
         <section className="diagnostics text-left">
             <div className="container">
@@ -83,7 +93,7 @@ export default function BookedTestSliders() {
                                                 <h4 className='text-capitalize'>{`${test.BasicInstruction.substring(0, 38)}...`}</h4>
                                                 <h5>&#8377; {test.TestPrice} <span className="strke"><s>&#8377;{test.TestPrice + 250}</s></span></h5>
                                                 <p>
-                                                    <a onClick={() => addTestToCart(test)}>ADD</a>
+                                                    <a className='text-white' onClick={() => addTestToCart(test)}>ADD</a>
                                                 </p>
                                             </div>
                                         ))

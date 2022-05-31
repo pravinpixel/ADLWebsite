@@ -3,7 +3,7 @@ import logo from './../../assets/images/logo.png';
 import location from './../../assets/images/location.png';
 import sky from './../../assets/images/sky.png';
 import user from './../../assets/images/user.png';
-import cart from './../../assets/images/cart.png';
+import CartCount from './CartCount';
 
 export default function Header() {
   return (
@@ -43,10 +43,7 @@ export default function Header() {
                         </a>
                       </li>
                       <li>
-                        <a href="">
-                          <img src={cart} alt="" className="img-fluid"/>
-                          <span>Cart</span>
-                        </a>
+                        <CartCount/> 
                       </li>
                     </ul>
                   </div>
