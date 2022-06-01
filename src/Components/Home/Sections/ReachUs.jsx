@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import call from '../../../assets/images/call.png'
 import mail from '../../../assets/images/mail.png'
 
@@ -11,16 +12,16 @@ export default function ReachUs() {
                     <div className="call-us">
                         <ul>
                             <li>
-                                <a href="">
-                                    <img src={call} alt="" className="img-fluid"/>
+                                <Link to="/">
+                                    <img src={call} alt="call" className="img-fluid"/>
                                     <h4>1800 425 1974 <span>Free Sample Collections</span></h4>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="">
-                                    <img  src={mail} alt="" className="img-fluid"/>
+                                <Link to="/">
+                                    <img src={mail} alt="mail" className="img-fluid"/>
                                     <h4>enquiry@anandlab.com <span>Need support? Drop us an email</span></h4>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -29,19 +30,19 @@ export default function ReachUs() {
                     <div className="share-us">
                         <ul className="footer-socials">
                             <li>
-                                <a href="" target="_blank"> <i className="fa fa-facebook" aria-hidden="true"></i> </a>
+                                <Link to="/" target="_blank"> <i className="fa fa-facebook" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <a href="" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i> </a>
+                                <Link to="/" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <a href="" target="_blank"> <i className="fa fa-instagram" aria-hidden="true"></i> </a>
+                                <Link to="/" target="_blank"> <i className="fa fa-instagram" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <a href="" target="_blank"> <i className="fa fa-linkedin" aria-hidden="true"></i> </a>
+                                <Link to="/" target="_blank"> <i className="fa fa-linkedin" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <a href="" target="_blank"> <i className="fa fa-youtube-play" aria-hidden="true"></i> </a>
+                                <Link to="/" target="_blank"> <i className="fa fa-youtube-play" aria-hidden="true"></i> </Link>
                             </li>
                         </ul>
                     </div>

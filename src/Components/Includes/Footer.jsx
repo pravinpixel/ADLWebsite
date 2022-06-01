@@ -2,6 +2,7 @@ import React from 'react'
 import send from './../../assets/images/send.png'
 import playstore from './../../assets/images/playstore.png'
 import ReachUs  from '../Home/Sections/ReachUs'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -15,73 +16,73 @@ export default function Footer() {
               <div className="footer-column">
                 <ul>
                   <li>
-                    <a className="active" href="./">Home Collection</a>
+                    <Link to="/" className="active">Home Collection</Link>
                   </li>
                   <li>
-                    <a className="" href=" ">COVID Antibody</a>
+                    <Link to="/">COVID Antibody</Link>
                   </li>
                   <li>
-                    <a className="" href=" ">COVID 19 RTPCR Test</a>
+                    <Link to="/">COVID 19 RTPCR Test</Link>
                   </li>
                   <li>
-                    <a className="" href=" ">Explore Packages</a>
+                    <Link to="/">Explore Packages</Link>
                   </li>
                   <li>
-                    <a className="" href=" ">Care Packages</a>
+                    <Link to="/">Care Packages</Link>
                   </li>
                   <li>
-                    <a className="" href=" ">Give Feedback</a>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a className="" href="./">About ADL</a>
-                  </li>
-                  <li>
-                    <a className="" href="./">Book Packages</a>
-                  </li>
-                  <li>
-                    <a className="" href="./">Book Tests</a>
-                  </li>
-                  <li>
-                    <a className="" href="./">Find a Lab</a>
-                  </li>
-                  <li>
-                    <a className="" href="./">Blog</a>
+                    <Link to="/">Give Feedback</Link>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a className="" href="./">Events</a>
+                    <Link to="/">About ADL</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Technical Capabilities</a>
+                    <Link to="/">Book Packages</Link>
                   </li>
                   <li>
-                    <a className="" href="./">News Clipping</a>
+                    <Link to="/">Book Tests</Link>
                   </li>
                   <li>
-                    <a className="" href="./">In The Media</a>
+                    <Link to="/">Find a Lab</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Careers</a>
+                    <Link to="/">Blog</Link>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a className="" href="./">Services</a>
+                    <Link to="/">Events</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Team</a>
+                    <Link to="/">Technical Capabilities</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Brands</a>
+                    <Link to="/">News Clipping</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Network</a>
+                    <Link to="/">In The Media</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Contact Us</a>
+                    <Link to="/">Careers</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/">Services</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Team</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Brands</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Network</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Contact Us</Link>
                   </li>
                 </ul>
               </div>
@@ -91,19 +92,19 @@ export default function Footer() {
               <div className="footer-column">
                 <ul>
                   <li>
-                    <a className="" href="./">Cancellation Policy</a>
+                    <Link to="/">Cancellation Policy</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Privacy Policy</a>
+                    <Link to="/">Privacy Policy</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Terms & Conditions</a>
+                    <Link to="/">Terms & Conditions</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Disclaimers</a>
+                    <Link to="/">Disclaimers</Link>
                   </li>
                   <li>
-                    <a className="" href="./">Feedback</a>
+                    <Link to="/">Feedback</Link>
                   </li>
                 </ul>
               </div>
@@ -116,7 +117,7 @@ export default function Footer() {
                 <button type="submit"><img src={send} alt="" className="img-fluid"/></button>
               </div>
               <h5 className="cips">Download App</h5>
-              <a href=""><img src={playstore} alt="" className="img-fluid"/></a>
+              <Link to="/"><img src={playstore} alt="" className="img-fluid"/></Link>
             </div>
           </div>
           <div className="row no-gutters">
@@ -127,7 +128,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-12">
               <div className="text-white footer-bottom-text text-center">
-                &copy;  2022 Anandlab. All Rights Reserved. With <a href="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></a>
+                &copy;  2022 Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
               </div>
             </div>
           </div>

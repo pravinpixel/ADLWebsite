@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Sliders from 'react-slick'
 import  conditionIcon from '../../../assets/images/condition-icon-1.png'
 
@@ -55,52 +56,52 @@ export default function ConditionsSliders() {
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
               <div className="tes-cond">
                 <img src={conditionIcon} alt="" className="img-fluid"/>
                 <h4>Allergy</h4>
-                <a href=""> + </a>
+                <Link to="/"> + </Link>
               </div>
             </Sliders>
           </div>

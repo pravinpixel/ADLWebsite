@@ -20,3 +20,10 @@ export const  setTestDetails = (testDetails) => {
         payload : testDetails
     }
 }
+
+export const  removeTestDetails = (testDetails) => {
+    return {
+        type    : ActionTypes.REMOVE_TEST_DETAILS,
+        payload : testDetails
+    }
+}

@@ -17,6 +17,9 @@ export const TestCartReducer = (state = [], {type, payload}) => {
 export const TestDetailReducer = (state = [], {type, payload}) => { 
     switch (type) {
         case ActionTypes.SET_TEST_DETAILS : return {...state, TestDetails : payload};
+        case ActionTypes.REMOVE_TEST_DETAILS : return {};
         default : return state;
     }
 }
+
+ 

@@ -28,22 +28,22 @@ export default function Header() {
                   <div className="col">
                     <ul className="icns-lst text-center">
                       <li>
-                        <a href="#">
+                        <Link to="/">
                           <img src={location} alt="" className="img-fluid"/>
                           <span>Bangalore</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="">
+                        <Link to="/">
                           <img src={sky} alt="" className="img-fluid"/>
                           <span>Report</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="">
+                        <Link to="/">
                           <img src={user} alt="" className="img-fluid"/>
                           <span>Login</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <CartCount/> 
@@ -55,48 +55,48 @@ export default function Header() {
                   <div className="col">
                     <ul className="navbar-nav">
                       <li className="nav-item">
-                        <a className="nav-link active" href="./">Home</a>
+                        <Link to="/" className="nav-link active">Home</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="./">For Patients</a>
+                        <Link to="/" className="nav-link">For Patients</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="./">For Doctors</a>
+                        <Link to="/" className="nav-link">For Doctors</Link>
                       </li>
                       <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Checkup</a>
+                        <Link to="/" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
                         <ul className="dropdown-menu">
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 1</a>
+                            <Link to="/" className="dropdown-item">Checkup - 1</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 2</a>
+                            <Link to="/" className="dropdown-item">Checkup - 2</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 3</a>
+                            <Link to="/" className="dropdown-item">Checkup - 3</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 4</a>
+                            <Link to="/" className="dropdown-item">Checkup - 4</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 5</a>
+                            <Link to="/" className="dropdown-item">Checkup - 5</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 6</a>
+                            <Link to="/" className="dropdown-item">Checkup - 6</Link>
                           </li>
                           <li>
-                            <a className="dropdown-item" href=" ">Checkup - 7</a>
+                            <Link to="/" className="dropdown-item">Checkup - 7</Link>
                           </li>
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="">Find a lab</a>
+                        <Link to="/" className="nav-link">Find a lab</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="">About ADL</a>
+                        <Link to="/" className="nav-link">About ADL</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="">Reach Us</a>
+                        <Link to="/" className="nav-link">Reach Us</Link>
                       </li>
                     </ul>
                   </div>

@@ -70,30 +70,30 @@ const Banners = () => {
                     } 
                 </div> 
                 <div className='banner-form'>
-                    <form onsubmit="return valid_chk3()" name="form3" method="post" action="" id="form3">
-                                <div class="frm-fields row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <form   name="form3" method="post" action="" id="form3">
+                                <div className="frm-fields row clearfix">
+                                <div className="col-lg-12 col-md-12 col-sm-12">
                                     <h4 className='cont-frmhed'>Book Home Collection</h4>
-                                    <div class="form-data">
-                                        <input class="input100" type="text" name="name" id="name" placeholder="Name"/> 
+                                    <div className="form-data">
+                                        <input className="input100" type="text" name="name" id="name" placeholder="Name"/> 
                                     </div>
-                                    <div class="form-data">
-                                        <input class="input100" type="tel" name="phone" onkeypress="validate(event)" maxlength="10" id="phone" placeholder="Mobile"/> 
+                                    <div className="form-data">
+                                        <input className="input100" type="tel" name="phone" id="phone" placeholder="Mobile"/> 
                                     </div>
-                                    <div class="form-data">
-                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
+                                    <div className="form-data">
+                                        <input className="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
                                     </div> 
-                                    <div class="form-data upload-btn-wrapper">
-                                    <button class="btn">Upload a file----</button>
+                                    <div className="form-data upload-btn-wrapper">
+                                    <button className="btn">Upload a file----</button>
                                     <input type="file" name="myfile" />
                                     </div>
-                                    <div class="form-data">
-                                        <input class="input100" type="text" name="name" id="name" placeholder="Select Test Name"/> 
+                                    <div className="form-data">
+                                        <input className="input100" type="text" name="name" id="name" placeholder="Select Test Name"/> 
                                     </div>
-                                    <div class="form-data">
-                                        <input class="input100" type="text" name="message" id="message" placeholder="Comments"/> 
+                                    <div className="form-data">
+                                        <input className="input100" type="text" name="message" id="message" placeholder="Comments"/> 
                                     </div>
-                                    <div class="form-data sbm">
+                                    <div className="form-data sbm">
                                         <input type="submit" name="submit" value="SUBMIT"/>
                                     </div>
                                 </div>
