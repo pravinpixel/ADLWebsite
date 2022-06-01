@@ -30,7 +30,7 @@ export default function Header() {
                       <li>
                         <a href="#">
                           <img src={location} alt="" className="img-fluid"/>
-                          <span>Banglore</span>
+                          <span>Bangalore</span>
                         </a>
                       </li>
                       <li>

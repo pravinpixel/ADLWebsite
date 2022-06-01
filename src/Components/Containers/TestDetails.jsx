@@ -6,8 +6,8 @@ import { setTestDetails } from '../../Redux/Actions/TestAction';
 import { API_URL } from '../../Redux/Constant/ApiRoute';
 
 export default function TestDetails() {
-  const {TestId}  = useParams();
-  const dispatch  = useDispatch();
+  const {TestId}    = useParams();
+  const dispatch    = useDispatch();
   const testDetails = useSelector((state) => state.TestDetails.TestDetails)
  
   const getTestDetails = async () => {
@@ -27,7 +27,7 @@ export default function TestDetails() {
         {
           testDetails !== undefined ? 
             <div className='text-center'>
-                <br />
+              <br />
               <br />
               <br />
               <br />
