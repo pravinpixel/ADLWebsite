@@ -19,6 +19,12 @@ export default function BookedTestSliders() {
         autoplaySpeed  : 4000,
         responsive: [
             {
+                breakpoint: 1300,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 4,

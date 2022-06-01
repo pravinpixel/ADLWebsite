@@ -14,15 +14,15 @@ export default function LatestBlogs() {
     autoplaySpeed: 2000,
     responsive: [
           {
-              breakpoint: 1024,
+              breakpoint: 1030,
               settings: {
-                  slidesToShow: 2,
+                  slidesToShow: 1,
               }
           },
           {
               breakpoint: 900,
               settings: {
-                  slidesToShow: 2,
+                  slidesToShow: 1,
                   centerMode: true,
               }
           },
