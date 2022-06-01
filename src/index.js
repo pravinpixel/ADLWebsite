@@ -17,7 +17,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './Redux/Store' 
 
-
 const root = ReactDOM.createRoot(document.getElementById('ADL_ROOT'));
 root.render(
   <React.StrictMode>
