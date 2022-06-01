@@ -5,5 +5,5 @@ export const API_URL = {
     BANNERS             : `${URL}/public/api/banners`,
     TOP_BOOKED_TEST     : `${URL}/public/api/topBookedTest`,
     TEST_DETAILS        : `${URL}/api/test/`,
-    BANNER_FROM        : `${URL}/api/bannerContactForm/`,
+    BANNER_FROM        : `${URL}/api/bannerContactForm`,
 }

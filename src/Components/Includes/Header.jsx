@@ -6,7 +6,7 @@ import user from './../../assets/images/user.png';
 import CartCount from './CartCount';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header() { 
   return (
     <header id="header" className="main-header site-navbar">
       <div className="container">
