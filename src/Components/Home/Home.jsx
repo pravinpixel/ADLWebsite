@@ -4,7 +4,6 @@ import BookedTestSliders from './Sections/BookedTestSliders'
 import CheckupsSliders from './Sections/CheckupsSliders'
 import PackagesSliders from './Sections/PackagesSliders'
 import ConditionsSliders from './Sections/ConditionsSliders'
-
 import HowItsWorks from './Sections/HowItsWorks'
 import AboutUs from './Sections/AboutUs'
 import FindLocation from './Sections/FindLocation'
