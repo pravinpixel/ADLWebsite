@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 import {assets} from '../../../../src/Helpers'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
-import { ApiTypes } from '../../../Redux/Constant/ApiRoute'
+import BannerForm from './BannerForm'
 
 const Banners = () => { 
     const dispatch      =   useDispatch();
@@ -29,7 +29,7 @@ const Banners = () => {
                         }
                     </ul>
                 }
-                {/* <!-- The slideshow --> */}
+                 
                 <div className="carousel-inner">
                     {
                         bannerList.length === 0
@@ -69,37 +69,11 @@ const Banners = () => {
                         </>
                     } 
                 </div> 
-                <div className='banner-form'>
-                    <form   name="form3" method="post" action="" id="form3">
-                                <div className="frm-fields row clearfix">
-                                <div className="col-lg-12 col-md-12 col-sm-12">
-                                    <h4 className='cont-frmhed'>Book Home Collection</h4>
-                                    <div className="form-data">
-                                        <input className="input100" type="text" name="name" id="name" placeholder="Name"/> 
-                                    </div>
-                                    <div className="form-data">
-                                        <input className="input100" type="tel" name="phone" id="phone" placeholder="Mobile"/> 
-                                    </div>
-                                    <div className="form-data">
-                                        <input className="input100" type="text" name="name" id="name" placeholder="Select Your Location"/> 
-                                    </div> 
-                                    <div className="form-data upload-btn-wrapper">
-                                    <button className="btn">Upload a file----</button>
-                                    <input type="file" name="myfile" />
-                                    </div>
-                                    <div className="form-data">
-                                        <input className="input100" type="text" name="name" id="name" placeholder="Select Test Name"/> 
-                                    </div>
-                                    <div className="form-data">
-                                        <input className="input100" type="text" name="message" id="message" placeholder="Comments"/> 
-                                    </div>
-                                    <div className="form-data sbm">
-                                        <input type="submit" name="submit" value="SUBMIT"/>
-                                    </div>
-                                </div>
-                                </div>
-                    </form>
-                </div> 
+
+                {/* ========= Banner Form ========= */}
+                    <BannerForm />
+                {/* ========= End : Banner Form ========= */}
+
             </div> 
         </div>   
     )
