@@ -1164,7 +1164,7 @@ ul.footer-socials li:nth-child(1) i {left: 13px;top: 22px;}
 ul.footer-socials li:nth-child(3) i {left: 12px;}
 ul.footer-socials li:nth-child(5) i {left: 11px;}
 
-.footer-column input{width:90%;height:45px;border-radius:5px;padding:15px;border:0px;}
+.footer-column input{width:90%;height:45px;border-radius:5px;padding:15px 60px 15px 15px;border:0px;}
 .footer-column button{position:absolute;right:42px;bottom:11px;background-color:transparent;border:0px;}
 
 footer h5.cips{margin:15px 0px 0px 0px;} 
@@ -1351,6 +1351,57 @@ transition: all .5s ease-in-out
   .form-control:focus{background-color: transparent;}
 
   section.media-structure{padding:70px 0px 130px;}
+
+  .search-container{margin-top:110px;background: rgba(0, 0, 0, 0) url("../images/inner-abnner-1.jpg") no-repeat scroll 0 0;background-size: cover;} 
+
+  .testBySec{ margin-bottom:15px;}
+  .testTxt{ display: block; font-size: 15px; font-weight: 600; color: #fff; white-space: nowrap; margin:12px 0;}
+  .badgeList{ width: 100%; margin-left:15px;}
+  .badgeList li{ display: inline-block; vertical-align: top; margin: 0 5px 10px;}
+  .darkBdrBut{ cursor: pointer; display: block; padding:8px 25px; border: 2px solid #fff; font-size: 16px; line-height:23px; color: #fff; font-weight:600; border-radius: 21px; min-height: 41px;}
+  .darkBdrBut:hover, .darkBdrBut.active{ background:#8b88bc; border: 2px solid transparent; color: #ffffff; text-decoration: none;}
+  li.active .darkBdrBut{ background:#8b88bc; border: 2px solid transparent; color: #ffffff; text-decoration: none;}
+  
+  /*-------Custom Check Box---------*/
+  .cutsomCheckBox {
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-left: 20px;
+  }
+  .cutsomCheckBox input { padding: 0; height: initial; width: initial; margin-bottom: 0; display: none; cursor: pointer;}
+  .cutsomCheckBox label { position: relative; cursor: pointer; font-size: 15px; line-height:22px; font-weight:600; color: #fff; margin: 0;}
+  .cutsomCheckBox label:before { content:''; -webkit-appearance: none; background-color: transparent; border:2px solid #fff;
+	  width:17px; height:17px; display: inline-block; position: relative; vertical-align: middle; cursor: pointer; margin-right:10px; top:-1px}
+  .cutsomCheckBox input:checked + label:after {content: ''; display: block; width: 17px; height: 17px; position: absolute; top:3px; left:1px;  }
+  .cutsomCheckBox.circle label:before{border-radius: 50%;}
+  .cutsomCheckBox.circle input:checked + label:after{
+	  content: ""; background: #fff; border-radius: 50%;
+	  width: 9px; height: 9px; top: 7px; left: 4px;
+  }
+  /*-------/Custom Check Box---------*/ 
+
+  .serchnig h1{color:#fff;margin:0px;padding: 0px;font-weight: 600;font-size: 30px;letter-spacing:1px;}
+  .serchnig input{border: 5px solid #95c5f9;border-radius: 15px;height: 66px;width:62%;padding:20px 65px 20px 20px;margin: 5px 0px 35px;background:#fff url("../images/serch.png") no-repeat scroll 97% center;}
+
+  .test-lst ul{margin: 0px;padding:0px;}
+  .test-lst li{margin: 0px;padding:0px;display: inline-block;font-weight: 600;font-size: 20px;color:#c1c1c1;letter-spacing: 1px;text-transform: uppercase;margin-right: 20px;}
+  .test-lst a{font-weight: 600;font-size: 20px;color:#c1c1c1;text-transform: uppercase;position: relative;}
+  .test-lst a:before{position: absolute;content: "";left:0;bottom:0;width:0%;height: 1px;background-color: #8b88bc;transition: all .5s ease;}
+  .test-lst a:hover{color:#8b88bc;}
+  .test-lst li.active a{color:#8b88bc;}
+  .test-lst li.active a:before{width:100%;}
+  .test-lst li:hover a:before{width:100%;transition: all .5s ease;}
+
+  .serch-filter .form-control{display: inline-block;width:45%;margin-left: 10px;cursor: pointer;}
+
+  .cmn-box-str{margin:15px 0px;}
+
+  .cmn-box-str ul{padding: 0px;margin: 0px;}
+  .cmn-box-str ul li{padding: 0px;margin: 0px;display: inline-block; position: relative;padding-left: 25px;font-size: 14px;}
+  .cmn-box-str ul li img{position: absolute;left:0;top:0;}
+
+  .cmn-box-str .case h3{font-size: 17px;}
+
 
 
 

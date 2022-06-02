@@ -4,6 +4,7 @@ import { Form } from 'react-component-form'
 import {API_URL} from '../../../Redux/Constant/ApiRoute'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import upload from '../../../assets/images/upload.png'
 
 export default function BannerForm() {
      
@@ -42,7 +43,7 @@ export default function BannerForm() {
                             <input className="input100" type="text" name='location' placeholder="Select Your Location" required/> 
                         </div> 
                         <div className="form-data upload-btn-wrapper">
-                            <button className="btn">Upload a file----</button>
+                            <button className="btn">Upload a file <img src={upload}/> </button>
                             <input type="file" name="reportFile"  required/>
                         </div>
                         <div className="form-data">

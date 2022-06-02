@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router'
 import { removeTestDetails, setTestDetails } from '../../Redux/Actions/TestAction';
 import { API_URL } from '../../Redux/Constant/ApiRoute';
+import TestCart from './TestCardComponent';
 
 export default function TestDetails() {
   const {TestId}    = useParams();
@@ -35,6 +36,7 @@ export default function TestDetails() {
               <br />
               <br />
               <br />
+              <TestCart />
               <br />
               <h1>{testDetails.TestName}</h1>
               <h3>{testDetails.TestPrice}</h3>

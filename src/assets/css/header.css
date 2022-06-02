@@ -451,7 +451,9 @@ ul.top-links li {
 }
 
 
-.top-links input{width:400px;border:1px solid #d4d4d4;height:40px;padding:15px;border-radius:5px;background:#fff url("../images/search.png") no-repeat scroll 97% center;margin-top:12px;}
+.top-links input{width:400px;border:1px solid #d4d4d4;height:40px;padding:15px 35px 15px 15px;border-radius:5px;background:#fff url("../images/search.png") no-repeat scroll 97% center;margin-top:12px;}
+
+
 
 .icns-lst span{display:block;}
  
