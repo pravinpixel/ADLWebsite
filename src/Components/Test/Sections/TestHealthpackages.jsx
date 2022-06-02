@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TestCard from '../../Containers/TestCardComponent'
+import TestCard from "../../Containers/TestCardComponent";
 
 export default function TestHealthpackages() {
   return (
@@ -24,27 +24,45 @@ export default function TestHealthpackages() {
               <div className="serch-filter text-right">
                 Sort By{" "}
                 <select class="form-control " id="seek" name="seek">
-                  <option value="Orthopaedic Care">Price:Low-High</option>
-                  <option value="Orthopaedic Care">Price:High-Low</option>
+                  <option value="Orthopaedic Care">Price : Low-High</option>
+                  <option value="Orthopaedic Care">Price : High-Low</option>
                 </select>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
         <div className="row">
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
-        <div className="col-lg-3"><TestCard/></div>  
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+          <div className="col-lg-3">
+            <TestCard />
+          </div>
+        </div> 
+        
+          <div className="load-mrebtn text-center">
+            <Link to="/">Load More</Link>
+          </div> 
+
       </div>
-      </div>
-      
-     
     </section>
-    
   );
 }
