@@ -1,16 +1,17 @@
 import React from 'react'
 import TestBanner from './Sections/TestBanner'
 import TypeofTesst from './Sections/TestHealthpackages'
-import PopulaeTests from './Sections/PopularTests'
+import PopularTests from './Sections/PopularTests'
+import PopularPackages from './Sections/PopularPackages'
+
 export default function test() {
   return (
     <div>
-         
         <TestBanner />
         <TypeofTesst />
-        <PopulaeTests />
-         
-        </div>
+        <PopularTests />
+        <PopularPackages />
+    </div>
   )
 }
 

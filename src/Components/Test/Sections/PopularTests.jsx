@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react' 
 import Sliders from 'react-slick'
-import TestCard from '../../Containers/TestCardComponent';
-
+import TestCard from '../../Containers/TestCardComponent'
 
 export default function PopularTests() {
     var settings = {
@@ -50,12 +49,12 @@ export default function PopularTests() {
         ]
     };
     return (
-        <section className="diagnostics text-left">
+        <section className="diagnostics most-poptst text-left">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div className="common-heading">
-                            <h2><span>Top Booked </span> Diagnostic Tests </h2>
+                            <h2><span>MOST Popular </span>Tests </h2>
                         </div>
                         <Sliders {...settings} className="topbooked-cases">
                             <TestCard />

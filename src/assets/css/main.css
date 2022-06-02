@@ -867,6 +867,7 @@ span.strke{color:#a2a2a2;font-size:15px;margin-left:5px;font-weight: 500;}
 	transition: all 0.3s ease;
 	font-weight: 400;
 	cursor: pointer;
+	z-index: 0;
 }
 .btn-primary {
 	background: #64226F !important;
@@ -1486,6 +1487,16 @@ transition: all .5s ease-in-out
   span.flag-option p{ 
 	font-size: 13px;
   }
+
+  section.most-poptst {background-color: #f9f9f9;}
+  section.most-poptst .case{background-color: #fff;}
+
+  .comon-testdetail-banner{margin-top:110px;background: rgba(0, 0, 0, 0) url("../images/inner-abnner-1.jpg") no-repeat scroll 0 0;background-size: cover;}
+
+  .bnr-txt ul{padding: 0px;margin:0px;}
+  .bnr-txt li{padding: 0px;margin:0px;display: inline-block;color:#fff;margin-right:6px;font-size: 12px;}
+  .bnr-txt li a{color:#fff;font-size:14px;}
+
 
 
 
