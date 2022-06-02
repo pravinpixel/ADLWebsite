@@ -7,7 +7,6 @@ import {
   setTestDetails,
 } from "../../Redux/Actions/TestAction";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
-import TestCart from "./TestCardComponent";
 import { Link } from "react-router-dom";
 
 export default function TestDetails() {
