@@ -14,9 +14,9 @@ import testicon3 from "../../assets/images/testing-icon-3.png";
 import testicon4 from "../../assets/images/testing-icon-4.png";
 
 export default function TestDetails() {
-  const { TestId }    = useParams();
-  const dispatch      = useDispatch();
-  const testDetails   = useSelector((state) => state.TestDetails.TestDetails);
+  const { TestId }  = useParams();
+  const dispatch    = useDispatch();
+  const testDetails = useSelector((state) => state.TestDetails.TestDetails);
 
   const getTestDetails = async () => {
     const response = await axios.get(API_URL.TEST_DETAILS + TestId).catch((err) => console.log(err));
