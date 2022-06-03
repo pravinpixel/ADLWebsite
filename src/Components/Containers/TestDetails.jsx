@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import {
   removeTestDetails,
+  setTestCartList,
   setTestDetails,
 } from "../../Redux/Actions/TestAction";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
@@ -12,6 +13,8 @@ import testicon1 from "../../assets/images/testing-icon-1.png";
 import testicon2 from "../../assets/images/testing-icon-2.png";
 import testicon3 from "../../assets/images/testing-icon-3.png";
 import testicon4 from "../../assets/images/testing-icon-4.png";
+import {addTestToCart, Loading} from '../../Helpers'
+import { toast } from "react-toastify";
 
 export default function TestDetails() {
   const { TestId }  = useParams();
@@ -30,14 +33,25 @@ export default function TestDetails() {
     };
   }, []);
 
+  const addTestToCart  = (testDetails) => { 
+    if(localStorage.getItem('CartTestList') == undefined) {
+      localStorage.setItem('CartTestList', JSON.stringify([]));
+    }
+    let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+    localStorage.setItem('CartTestList', JSON.stringify([...currentCart,testDetails]));
+    dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
+    toast.success('Test Added Successfully!');
+  }
+
   return (
-    <>
+    <> 
       {testDetails !== undefined ? (
         <>
           <section className="comon-testdetail-banner">
             <div className="container">
               <div className="row">
                 <div className="col">
+                
                   <div className="bnr-txt text-left">
                     <ul>
                       <li>
@@ -102,7 +116,7 @@ export default function TestDetails() {
                   </div>
                   <div className="case">
                     <p>
-                      <Link to="/">ADD</Link>
+                      <a className='text-white' onClick={() => addTestToCart(testDetails)}>ADD</a>
                       <Link className="bg-trsnper" to="/">
                         Know More
                       </Link>
@@ -114,7 +128,9 @@ export default function TestDetails() {
             </div>
           </section>
         </>
-      ) : null}
+      ) :
+        <Loading/>
+      }
     </>
   );
 }
