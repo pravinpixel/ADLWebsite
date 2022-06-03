@@ -127,7 +127,37 @@ export default function TestDetails() {
                     </p>
                   </div>
                 </div>
-                <div className="col-lg-5"></div>
+                <div className="col-lg-5">
+                  <div className="availab-lity">
+                    <h4>Available Sub Tests </h4>
+                    <ul>
+                      <li>Protein C (Chromogenic)</li>
+                      <li>Protein S (Immunoturbidimetry)</li>
+                      <li>Anti Thrombin Iii (Chromogenic)</li>
+                      <li>Lupus Anticoagulant (Clot Detection)</li>
+                      <li>Homocysteine</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody)(Igg)</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody) (Igm) (Elisa)</li>
+                      <li>Activated Protein C Resistance (Clot Detection)</li>
+                      <li>Protein C (Chromogenic)</li>
+                      <li>Protein S (Immunoturbidimetry)</li>
+                      <li>Anti Thrombin Iii (Chromogenic)</li>
+                      <li>Lupus Anticoagulant (Clot Detection)</li>
+                      <li>Homocysteine</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody)(Igg)</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody) (Igm) (Elisa)</li>
+                      <li>Activated Protein C Resistance (Clot Detection)</li>
+                      <li>Protein C (Chromogenic)</li>
+                      <li>Protein S (Immunoturbidimetry)</li>
+                      <li>Anti Thrombin Iii (Chromogenic)</li>
+                      <li>Lupus Anticoagulant (Clot Detection)</li>
+                      <li>Homocysteine</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody)(Igg)</li>
+                      <li>Anti Cardiolipin Antibody (Anti Phospholipid Antibody) (Igm) (Elisa)</li>
+                      <li>Activated Protein C Resistance (Clot Detection)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div className="special-instruction">
                 <h3>Special Instructions</h3>
