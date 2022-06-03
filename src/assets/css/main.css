@@ -1491,12 +1491,25 @@ transition: all .5s ease-in-out
   section.most-poptst {background-color: #f9f9f9;}
   section.most-poptst .case{background-color: #fff;}
 
-  .comon-testdetail-banner{margin-top:110px;background: rgba(0, 0, 0, 0) url("../images/inner-abnner-1.jpg") no-repeat scroll 0 0;background-size: cover;}
+  .comon-testdetail-banner{margin-top:110px;background: rgba(0, 0, 0, 0) url("../images/inner-abnner-1.jpg") no-repeat scroll center center;background-size: cover;padding:90px 0px 100px;}
 
-  .bnr-txt ul{padding: 0px;margin:0px;}
+  .bnr-txt ul{padding: 0px;margin:0px;margin-bottom: 10px;}
   .bnr-txt li{padding: 0px;margin:0px;display: inline-block;color:#fff;margin-right:6px;font-size: 12px;}
   .bnr-txt li a{color:#fff;font-size:14px;}
+  .bnr-txt h1{font-weight:600;color: #FFF;font-size: 36px;letter-spacing: 1px;}
+  .bnr-txt h1 span{font-weight:600;color: #FFF;font-size: 28px;display: block;line-height: 38px;}
 
+  .commentestng-heads h2{font-size:22px;line-height: 24px;font-size: 22px;color:#6e6e6e;}
+  .commentestng-heads h2 span{font-size:15px;line-height: 24px;color:#aa97bd;display: block;margin-bottom: 15px;font-weight: 500;letter-spacing: 1px;}
+
+  .testng-details ul{padding: 0px;margin: 0px;}
+  .testng-details li{padding: 0px;margin: 0px;display: inline-block;position: relative;padding-left: 40px;width:100%;margin-bottom: 30px;}
+  .testng-details li span{display: block;color:#b3b4b4;font-size: 14px;}
+  .testng-details li img{position: absolute;content: "";left:0;top:0;}
+
+  li.colap-seing span{display: inline-block;line-height: 20px;margin: 0px;}
+  li.colap-seing span.flag-option{color:#fff;margin-left:15px;}
+  span.flag-option p{margin: 0px;}
 
 
 
