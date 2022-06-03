@@ -2352,6 +2352,28 @@ span.flag-option p {
 	margin-top: 15px;
 }
 
+  .special-instruction{margin-top:40px;}
+  .special-instruction h3{font-size: 20px;line-height: 24px;color:#6e6e6e;font-weight: 500;margin-bottom: 30px;}
+
+  .detilos-expl{padding: 35px 20px;}
+  .detilos-expl ul{margin: 0px;padding: 0px;}
+  .detilos-expl ul li{margin: 0px;padding: 0px;display: inline-block;width:100%;font-size: 16px;line-height: 30px;}
+
+  .special-instruction .nav-tabs .nav-link:hover, .special-instruction .nav-tabs .nav-link:focus {
+	border-color: transparent !important;
+	margin-bottom: 0px;
+  }
+
+  .special-instruction .nav-tabs .nav-link{text-transform: uppercase;font-weight: 500;font-size: 16px;color: #c0c0c0;}
+
+  .special-instruction .nav-tabs .nav-link.active{color: #aa97bd;}
+  .special-instruction .nav-tabs .nav-link:hover{color: #aa97bd;}
+
+  .special-instruction .nav-tabs .nav-link.active, .special-instruction .nav-tabs .nav-item.show .nav-link{
+	border-color: transparent !important;
+	margin-bottom: 0px;
+  }
+
 
 
 
