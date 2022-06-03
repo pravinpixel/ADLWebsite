@@ -7,6 +7,7 @@ import { Route , Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import TestDetails from './Components/Containers/TestDetails'
 import 'react-toastify/dist/ReactToastify.css';
+import CartList from './Components/Containers/CartList';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/for-patient' element={<Test/>} />
+        <Route path='/my-cart' element={<CartList/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route>404 Not Found !</Route>
       </Routes>

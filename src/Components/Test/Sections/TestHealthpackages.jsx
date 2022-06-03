@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TestCard from "../../Containers/TestCardComponent";
 
-export default function TestHealthpackages() {
+export default function TestHealthPackages() {
   return (
     <section className="">
       <div className="container">
