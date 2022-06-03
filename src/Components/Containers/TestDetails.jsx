@@ -100,6 +100,14 @@ export default function TestDetails() {
                       </li>
                     </ul>
                   </div>
+                  <div className="case">
+                    <p>
+                      <Link to="/">ADD</Link>
+                      <Link className="bg-trsnper" to="/">
+                        Know More
+                      </Link>
+                    </p>
+                  </div>
                 </div>
                 <div className="col-lg-5"></div>
               </div>

@@ -1511,6 +1511,8 @@ transition: all .5s ease-in-out
   li.colap-seing span.flag-option{color:#fff;margin-left:15px;}
   span.flag-option p{margin: 0px;}
 
+  .testing-details .case{padding: 0px;border: 0px;margin-top: 15px;}
+
 
 
 
