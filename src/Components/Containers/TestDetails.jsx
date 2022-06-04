@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
+import Sliders from 'react-slick'
 import {
   removeTestDetails,
   setTestCartList,
@@ -15,6 +16,7 @@ import testicon3 from "../../assets/images/testing-icon-3.png";
 import testicon4 from "../../assets/images/testing-icon-4.png";
 import {addTestToCart, Loading} from '../../Helpers'
 import { toast } from "react-toastify";
+import TestCard from "./TestCardComponent";
 
 export default function TestDetails() {
   const { TestId } = useParams();
@@ -44,6 +46,52 @@ export default function TestDetails() {
     dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
     toast.success('Test Added Successfully!');
   }
+
+  var settings = {
+    slidesToScroll : 1,
+    infinite       : true,
+    slidesToShow   : 4,
+    focusOnSelect  : false, 
+    autoplay       : true,
+    dots           : false,
+    arrows         : true,
+    autoplaySpeed  : 4000,
+    responsive: [
+        {
+            breakpoint: 1300,
+            settings: {
+                slidesToShow: 4,
+            }
+        },
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+            }
+        },
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 3,
+                centerMode: true,
+            }
+        },
+        {
+            breakpoint: 680,
+            settings: {
+                slidesToShow: 2,
+                centerMode: true,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                centerMode: true,
+            }
+        },
+    ]
+  };
 
   return (
     <> 
@@ -202,6 +250,35 @@ export default function TestDetails() {
               </div>
             </div>
           </section>
+          <section className="diagnostics most-poptst text-left">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div className="common-heading">
+                            <h2><span>Other related </span>Tests </h2>
+                        </div>
+                        <Sliders {...settings} className="topbooked-cases">
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                            <TestCard />
+                        </Sliders>
+                    </div>
+                </div>
+            </div>
+        </section>
         </>
       ) :
         <Loading/>

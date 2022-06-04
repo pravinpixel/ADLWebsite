@@ -2352,6 +2352,12 @@ span.flag-option p {
 	margin-top: 15px;
 }
 
+.total-carting .case {
+	padding: 0px;
+	border: 0px;
+	margin-top: 40px;
+}
+
   .special-instruction{margin-top:40px;}
   .special-instruction h3{font-size: 20px;line-height: 24px;color:#6e6e6e;font-weight: 500;margin-bottom: 30px;}
 
@@ -2385,26 +2391,12 @@ span.flag-option p {
 		overflow-y: scroll;}
 	.availab-lity li{display: inline-block;margin-bottom: 5px;font-size: 15px;line-height: 24px;width:100%;}
   
-	.availab-lity ul::-webkit-scrollbar {
-	 
-	  }
-	  
-	  /* Demonstrate a "mostly customized" scrollbar
-	   * (won't be visible otherwise if width/height is specified) */
-	   .availab-lity ul::-webkit-scrollbar {
-		width: 5px;
-		height: 8px;
-		background-color: #aaa; /* or add it to the track */
-	  }
-	  
-	  /* Add a thumb */
-	  .availab-lity ul::-webkit-scrollbar-thumb {
-		background: #000;
-	  }
-	  :root{
-		scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
-		scrollbar-width: 10px !important;
-	  }
+	 .cart-ing table thead th{border-top: 0px;font-size: 16px;font-weight: 500;color:#545454;}
+	 .cart-ing table th{font-size: 14px;font-weight: 400;color:#6e6e6e;}
+	 .cart-ing table td{font-size: 14px;font-weight: 400;color:#6e6e6e;}
+	 .cart-ing table td.clr-chng a{color:#aa97bd;font-size: 17px;}
+
+	 .total-carting .common-heading h2 span{display: inline-block;}
 
 
 
