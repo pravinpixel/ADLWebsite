@@ -1018,6 +1018,7 @@ span.strke {
 	font-weight: 400;
 	cursor: pointer;
 	z-index: 0;
+	text-transform: uppercase;
 }
 
 .btn-primary {
@@ -1166,6 +1167,7 @@ span.strke {
 	overflow: hidden;
 	transition: all 0.3s ease;
 	font-weight: 400;
+	text-transform: uppercase;
 }
 
 .pack-deils p a:before {
@@ -1206,6 +1208,7 @@ span.strke {
 	margin-left: 8px;
 	border: 1px solid #aa97bd;
 	color: #aa97bd;
+	text-transform: uppercase;
 }
 
 .case a.bg-trsnper:hover {
@@ -2396,9 +2399,12 @@ span.flag-option p {
 	 .cart-ing table td{font-size: 14px;font-weight: 400;color:#6e6e6e;}
 	 .cart-ing table td.clr-chng a{color:#aa97bd;font-size: 17px;}
 
+	 .ca-rtloc table th{border-top: 0px;font-size: 14px;font-weight: 400;color:#6e6e6e;}
+	 .ca-rtloc table td{font-size: 14px;font-weight: 400;color:#6e6e6e;}
+
 	 .total-carting .common-heading h2 span{display: inline-block;}
 
-
+	.ca-rtloc .case{margin-top: 20px;}
 
 
 

@@ -186,6 +186,30 @@ export default function CartList() {
                     </p>
                   </div>
             </div>
+            <div className="col-lg-4">
+                <div className="availab-lity ca-rtloc table-responsive">
+                <h4>Payment</h4>
+                <table className="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                     <th className="text-left">Subtotal</th>
+                     <th className="text-right">&#8377;6,435</th>
+                  </tr>
+                  <tr>
+                      <td className="text-left">Discount (-)</td>
+                      <td className="text-right">- &#8377;4,555</td>
+                  </tr>
+                  <tr>
+                       <td className="text-left"><b>Total</b></td>
+                       <td className="text-right"><b>&#8377;1780</b></td>
+                   </tr>
+                </table>
+                <div className="case text-right">
+                    <p>
+                    <Link to="/">Checkout</Link> 
+                    </p>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
       </section>
