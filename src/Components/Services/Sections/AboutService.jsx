@@ -4,6 +4,8 @@ import manualtheraphyicon2 from "../../../assets/images/manual-theraphy-icon-2.p
 import manualtheraphyicon3 from "../../../assets/images/manual-theraphy-icon-3.png"
 import manualtheraphyicon4 from "../../../assets/images/manual-theraphy-icon-4.png"
 import manualtheraphy from "../../../assets/images/manual-theraphy.jpg"
+import clkimg from "../../../assets/images/clock.png"
+import padimg from "../../../assets/images/pad.png"
 
 export default function AboutService() {
   return (
@@ -12,7 +14,8 @@ export default function AboutService() {
             <div className="row">
                 <div className="col-lg-8">
             <div className="special-instruction">
-                <h3>Special Instructions</h3>
+                <h3>About Manual Therapy</h3>
+                <p>Set of hands-on specialised techniques used both for the assessment <br></br>and treatment of clinical conditions</p>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item" role="presentation">
                     <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
@@ -102,6 +105,23 @@ export default function AboutService() {
                 <div className="col-lg-4 mt-4">
                 <img src={manualtheraphy} alt="call" className="img-fluid" />
                 </div>
+            </div>
+            <div className="row">
+              <div className="note-duration">
+                    <div className="col-lg-8">
+                      <div className="flyer-box">
+                      <img src={padimg} alt="call" className="img-fluid" /> 
+                      <h4>Note</h4>
+                      <p>For complete recovery the entire course of treatment is very essential.
+                         Electrotherapy and exercise therapy are used in adjunct with Manual therapy.</p>
+                      </div>
+                      <div className="flyer-box">
+                      <img src={clkimg} alt="call" className="img-fluid" /> 
+                      <h4>Duration</h4>
+                      <p>20 minutes/ session (minimum 3 sessions)</p>
+                      </div>
+                    </div>
+              </div>
             </div>
         </div>
     </section>
