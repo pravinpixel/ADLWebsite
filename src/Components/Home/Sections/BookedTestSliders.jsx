@@ -6,6 +6,7 @@ import Sliders from 'react-slick'
 import {  toast } from 'react-toastify';
 import { setTestCartList, setTopBookedTest } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
+import {AddToCartList} from '../../../Helpers' ;
 
 export default function BookedTestSliders() {
     var settings = {
@@ -63,15 +64,9 @@ export default function BookedTestSliders() {
       }
     }, []);
 
-   
-    const addTestToCart  = (test) => { 
-        if(localStorage.getItem('CartTestList') == undefined) {
-            localStorage.setItem('CartTestList', JSON.stringify([]));
-        }
-        let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-        localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
+    const addTestToCart  = (test) => {
+        AddToCartList(test)
         dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
-        toast.success('Test Added Successfully!');
     }
    
     return (

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import Sliders from "react-slick";
@@ -61,6 +61,7 @@ export default function CartList() {
     
   
   useEffect(() => {
+    window.scroll(0,300)
     return () => {
       setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
       var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
@@ -149,7 +150,7 @@ export default function CartList() {
                             </td>
                             <td className="text-center clr-chng">
                               <Link to="">
-                                <RiDeleteBinLine onClick={() => removeCartItem(index) } />
+                                <RiDeleteBinLine className="text-danger" onClick={() => removeCartItem(index) } />
                               </Link>
                             </td>
                           </tr>
@@ -182,14 +183,14 @@ export default function CartList() {
                   </tr>
                   <tr>
                     <td className="text-left">Discount (-)</td>
-                    <td className="text-right">- &#8377;1,500</td>
+                    <td className="text-right">- &#8377; 0</td>
                   </tr>
                   <tr>
                     <td className="text-left">
                       <b>Total</b>
                     </td>
                     <td className="text-right">
-                      <b>&#8377;{testTotal - 1500}</b>
+                      <b>&#8377;{testTotal}</b>
                     </td>
                   </tr>
                   </tbody>

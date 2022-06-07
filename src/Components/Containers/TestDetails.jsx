@@ -8,15 +8,14 @@ import {
   setTestCartList,
   setTestDetails,
 } from "../../Redux/Actions/TestAction";
-import { API_URL } from "../../Redux/Constant/ApiRoute";
-import { Link } from "react-router-dom";
-import testicon1 from "../../assets/images/testing-icon-1.png";
-import testicon2 from "../../assets/images/testing-icon-2.png";
-import testicon3 from "../../assets/images/testing-icon-3.png";
-import testicon4 from "../../assets/images/testing-icon-4.png";
-import { addTestToCart, Loading } from "../../Helpers";
-import { toast } from "react-toastify";
+import { API_URL } from "../../Redux/Constant/ApiRoute"; 
+import { AddToCartList, Loading } from "../../Helpers";
 import TestCard from "./TestCardComponent";
+import { Link } from "react-router-dom";
+import testIcon1 from "../../assets/images/testing-icon-1.png";
+import testIcon2 from "../../assets/images/testing-icon-2.png";
+import testIcon3 from "../../assets/images/testing-icon-3.png";
+import testIcon4 from "../../assets/images/testing-icon-4.png";
 
 export default function TestDetails() {
   const { TestId } = useParams();
@@ -38,16 +37,8 @@ export default function TestDetails() {
   }, []);
 
   const addTestToCart = (testDetails) => {
-    if (localStorage.getItem("CartTestList") == undefined) {
-      localStorage.setItem("CartTestList", JSON.stringify([]));
-    }
-    let currentCart = JSON.parse(localStorage.getItem("CartTestList"));
-    localStorage.setItem(
-      "CartTestList",
-      JSON.stringify([...currentCart, testDetails])
-    );
-    dispatch(setTestCartList(JSON.parse(localStorage.getItem("CartTestList"))));
-    toast.success("Test Added Successfully!");
+    AddToCartList(testDetails)
+    dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
   };
 
   var settings = {
@@ -139,17 +130,17 @@ export default function TestDetails() {
                   <div className="testng-details">
                     <ul>
                       <li>
-                        <img src={testicon1} alt="call" className="img-fluid" />
+                        <img src={testIcon1} alt="call" className="img-fluid" />
                         <span>Basic Instruction </span>
                         {testDetails.test.BasicInstruction}
                       </li>
                       <li>
-                        <img src={testicon2} alt="call" className="img-fluid" />
+                        <img src={testIcon2} alt="call" className="img-fluid" />
                         <span>Test Shedule</span>
                         {testDetails.test.TestSchedule}
                       </li>
                       <li className="colap-seing">
-                        <img src={testicon3} alt="call" className="img-fluid" />
+                        <img src={testIcon3} alt="call" className="img-fluid" />
                         <h5>
                           &#8377;{testDetails.test.TestPrice}
                           <span className="strke ml-2">
@@ -161,7 +152,7 @@ export default function TestDetails() {
                         </h5>
                       </li>
                       <li>
-                        <img src={testicon4} alt="call" className="img-fluid" />
+                        <img src={testIcon4} alt="call" className="img-fluid" />
                         This test is{" "}
                         {testDetails.test.HomeCollection === "N" ? "Not" : null}{" "}
                         eligible for Home Collection.
