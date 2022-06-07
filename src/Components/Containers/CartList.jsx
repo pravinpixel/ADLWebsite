@@ -4,6 +4,9 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import Sliders from "react-slick";
 import TestCard from "./TestCardComponent";
 import PackageCard from "./PackageCardComponent";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setTestCartList } from "../../Redux/Actions/TestAction";
 
 export default function CartList() {
   var settings = {
@@ -53,12 +56,38 @@ export default function CartList() {
   };
 
   const [CartTable , setCartTable] = useState([]);
-   
+  const [testTotal , setTestTotal] = useState(0)
+  const dispatch = useDispatch();
+    
+  
   useEffect(() => {
     return () => {
-      setCartTable(JSON.parse(localStorage.getItem('CartTestList')))
+      setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
+      var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
+      const CalculateTotalTestPrice = testListFromCart.reduce(
+        (previousValue, currentValue) => previousValue += currentValue.TestPrice,0
+      )
+      localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
+      setTestTotal(CalculateTotalTestPrice)
     }
   }, [])
+
+  
+  const removeCartItem = (index) => {
+    CartTable.splice(index, 1);
+    localStorage.setItem('CartTestList', JSON.stringify([...CartTable]));
+    setCartTable([...CartTable]);
+    dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
+ 
+ 
+    const CalculateTotalTestPrice = CartTable.reduce(
+      (previousValue, currentValue) => previousValue += currentValue.TestPrice,0
+    )
+    localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
+    setTestTotal(CalculateTotalTestPrice)
+
+    toast.success('Item Removed Successfully!');
+  }
 
   return (
     <>
@@ -94,41 +123,44 @@ export default function CartList() {
             </div>
             <div className="col-lg-8">
               <div className="cart-ing table-responsive">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th>Package/Test</th>
-                      <th className="text-right">Type</th>
-                      <th className="text-right">Unit Price( )</th>
-                      <th className="text-center">Discount</th>
-                      <th className="text-right">Net Price</th>
-                      <th className="text-center">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {
-                      CartTable != undefined  || CartTable != null ?
-                      CartTable.map((item, index) => (
-                        <tr key={index}>
-                          <th scope="row">{item.TestName}</th>
-                          <td className="text-right">Test</td>
-                          <td className="text-right">&#8377;{item.TestPrice}</td>
-                          <td className="text-center">-</td>
-                          <td className="text-right">&#8377;{item.TestPrice}</td>
-                          <td className="text-center clr-chng">
-                            <Link to="">
-                              <RiDeleteBinLine onClick={() => {
-                                CartTable.splice(index, 1);
-                                setCartTable([...CartTable]);
-                              }} />
-                            </Link>
-                          </td>
-                        </tr>
-                      ))
-                      : null
-                    } 
-                  </tbody>
-                </table>
+                {
+                  CartTable.length != 0 ?
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Package/Test</th>
+                        <th className="text-right">Type</th>
+                        <th className="text-right">Unit Price( )</th>
+                        <th className="text-center">Discount</th>
+                        <th className="text-right">Net Price</th>
+                        <th className="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {
+                        CartTable.map((item, index) => (
+                          <tr key={index}>
+                            <th scope="row">{item.TestName}</th>
+                            <td className="text-right">Test</td>
+                            <td className="text-right">&#8377;{item.TestPrice}</td>
+                            <td className="text-center">-</td>
+                            <td className="text-right">
+                              &#8377; {item.TestPrice} 
+                            </td>
+                            <td className="text-center clr-chng">
+                              <Link to="">
+                                <RiDeleteBinLine onClick={() => removeCartItem(index) } />
+                              </Link>
+                            </td>
+                          </tr>
+                        ))
+                        }
+                    </tbody>
+                  </table>
+                  :  <span>
+                      Cart is Empty
+                    </span>
+                }
               </div>
               <div className="case">
                 <p>
@@ -146,18 +178,18 @@ export default function CartList() {
                   <tbody>
                   <tr>
                     <th className="text-left">Subtotal</th>
-                    <th className="text-right">&#8377;6,435</th>
+                    <th className="text-right">&#8377;{testTotal}</th>
                   </tr>
                   <tr>
                     <td className="text-left">Discount (-)</td>
-                    <td className="text-right">- &#8377;4,555</td>
+                    <td className="text-right">- &#8377;1,500</td>
                   </tr>
                   <tr>
                     <td className="text-left">
                       <b>Total</b>
                     </td>
                     <td className="text-right">
-                      <b>&#8377;1780</b>
+                      <b>&#8377;{testTotal - 1500}</b>
                     </td>
                   </tr>
                   </tbody>
