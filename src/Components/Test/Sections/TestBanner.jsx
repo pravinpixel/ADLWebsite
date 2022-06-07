@@ -13,7 +13,7 @@ export default function TestBanner() {
                 placeholder="Search for Health Packages / Tests / Labs"
               />
               <div className="testBySec d-flex justify-content-center align-items-center">
-                <lable className="testTxt">Filter By</lable>
+                <label className="testTxt">Filter By</label>
                 <div className="badgeSec">
                   <ul className="badgeList">
                     <li className="active">
@@ -36,7 +36,7 @@ export default function TestBanner() {
                     name="category_filter"
                     value="Allergy"
                   />
-                  <label for="cond_0">
+                  <label>
                     <span className="lableTxt">Allergy</span>
                   </label>
                 </div>
@@ -47,7 +47,7 @@ export default function TestBanner() {
                     name="category_filter"
                     value="Genetic Disorders"
                   />
-                  <label for="cond_1">
+                  <label>
                     <span className="lableTxt">Genetic Disorders</span>
                   </label>
                 </div>

@@ -21,6 +21,13 @@ export const  setTestDetails = (testDetails) => {
     }
 }
 
+export const  setAllTestDetails = (test) => {
+    return {
+        type    : ActionTypes.SET_ALL_TEST_DETAILS,
+        payload : test
+    }
+}
+
 export const  removeTestDetails = (testDetails) => {
     return {
         type    : ActionTypes.REMOVE_TEST_DETAILS,
