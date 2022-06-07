@@ -65,11 +65,15 @@ export default function CartList() {
     return () => {
       setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
       var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
-      const CalculateTotalTestPrice = testListFromCart.reduce(
-        (previousValue, currentValue) => previousValue += currentValue.TestPrice,0
-      )
-      localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
-      setTestTotal(CalculateTotalTestPrice)
+      if(testListFromCart != null) {
+        const CalculateTotalTestPrice = testListFromCart.reduce(
+          (previousValue, currentValue) => previousValue += currentValue.TestPrice, 0
+        )
+        localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
+        setTestTotal(CalculateTotalTestPrice)
+      } else {
+        window.location.href = "/";
+      }
     }
   }, [])
 
@@ -125,42 +129,44 @@ export default function CartList() {
             <div className="col-lg-8">
               <div className="cart-ing table-responsive">
                 {
-                  CartTable.length != 0 ?
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th>Package/Test</th>
-                        <th className="text-right">Type</th>
-                        <th className="text-right">Unit Price( )</th>
-                        <th className="text-center">Discount</th>
-                        <th className="text-right">Net Price</th>
-                        <th className="text-center">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {
-                        CartTable.map((item, index) => (
-                          <tr key={index}>
-                            <th scope="row">{item.TestName}</th>
-                            <td className="text-right">Test</td>
-                            <td className="text-right">&#8377;{item.TestPrice}</td>
-                            <td className="text-center">-</td>
-                            <td className="text-right">
-                              &#8377; {item.TestPrice} 
-                            </td>
-                            <td className="text-center clr-chng">
-                              <Link to="">
-                                <RiDeleteBinLine className="text-danger" onClick={() => removeCartItem(index) } />
-                              </Link>
-                            </td>
+                  CartTable.length !== null  ? 
+                    CartTable.length != 0 ?
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Package/Test</th>
+                            <th className="text-right">Type</th>
+                            <th className="text-right">Unit Price( )</th>
+                            <th className="text-center">Discount</th>
+                            <th className="text-right">Net Price</th>
+                            <th className="text-center">Action</th>
                           </tr>
-                        ))
-                        }
-                    </tbody>
-                  </table>
-                  :  <span>
-                      Cart is Empty
-                    </span>
+                        </thead>
+                        <tbody>
+                          {
+                            CartTable.map((item, index) => (
+                              <tr key={index}>
+                                <th scope="row">{item.TestName}</th>
+                                <td className="text-right">Test</td>
+                                <td className="text-right">&#8377;{item.TestPrice}</td>
+                                <td className="text-center">-</td>
+                                <td className="text-right">
+                                  &#8377; {item.TestPrice} 
+                                </td>
+                                <td className="text-center clr-chng">
+                                  <Link to="">
+                                    <RiDeleteBinLine className="text-danger" onClick={() => removeCartItem(index) } />
+                                  </Link>
+                                </td>
+                              </tr>
+                            ))
+                            }
+                        </tbody>
+                      </table>
+                    :  <span>
+                        Cart is Empty
+                      </span>
+                  : null
                 }
               </div>
               <div className="case">
