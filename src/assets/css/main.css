@@ -868,13 +868,14 @@ a.link-white:hover:after {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #6e6e6e;
+	color: #5c2d91;
 	line-height: 32px;
 }
 
 .common-heading h2 span {
 	font-weight: 300;
 	display: block;
+	color: #6e6e6e;
 }
 
 .topbooked-cases {
@@ -2262,7 +2263,7 @@ section.most-poptst .case {
 	margin-top: 110px;
 	background: rgba(0, 0, 0, 0) url("../images/inner-abnner-1.jpg") no-repeat scroll center center;
 	background-size: cover;
-	padding: 90px 0px 100px;
+	padding: 50px 0px 50px;
 }
 
 .bnr-txt ul {
@@ -2438,13 +2439,69 @@ span.flag-option p {
 
 	.flyer-box h4{font-weight: 500;color:#404040;font-size: 20px;}
 	
-	.pat-con{}
+	.billing-form .common-heading h2 span{display: inline-block;}
+	.billing-form .common-heading h2 strong{display: inline-block;font-size: 15px;margin-left: 15px;position: relative;top:-4px;font-weight: 400;text-transform: none;color: #6e6e6e;}
+	.billing-form .common-heading h2 strong a{font-weight: 500;text-decoration: underline;color: #5c2d91}
+
+	.form-billing .form-data label {
+		position: relative;
+		font-size: 15px;
+		color: #7c7c7c; margin-bottom: 4px;
+	}
+
+	.form-billing{padding-bottom: 20px;}
+
+	.form-billing .form-data input{border: 1px solid #e3e3e3;height: 45px;border-radius: 5px;margin-bottom: 25px;background-color: #fff;padding-left: 18px;color: #7b7a7a;font-weight: 500;}
+
+	.main-billfrm{background-color: #f4f4f4;}
+	.form-billing h4.cont-frmhed{font-size:20px;text-transform:none;margin-bottom:15px;}
+
+	.coupon-form{border-top: 1px solid #dcdcdc;padding-top: 30px;}
 
 
+	.coupon-form h4.cont-frmhed{font-size:20px;text-transform:none;margin-bottom:15px;}
+	.coupon-form input{border: 1px solid #e3e3e3;height: 45px;border-radius: 5px;margin-bottom: 25px;background-color: #fff;padding-left: 18px;color: #7b7a7a;font-weight: 500;position: relative;padding: 5px 125px 5px 18px;}
 
+	.coupon-form svg {
+		position: absolute;
+		top: 11px;
+		right: 110px;
+		font-size: 24px;
+		color: #a0a0a0;
+	  }
 
+	  
 
+	.coupon-form button {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		 height: 45px;
+		 border-radius: 5px;
+		 padding: 0px 20px;
+		 background-color: #f7931e;
+		 color:#fff;border: 0px;
+		 text-transform: uppercase;
+	  }
 
+	.coupon-form .form-data label {
+		position: relative;
+		font-size: 15px;
+		color: #7c7c7c; margin-bottom: 4px;
+	}
+
+	.main-billfrm .availab-lity{background-color: #fff;}
+
+	.cart-listbox {
+		padding: 12px 7px 10px;
+		border: 1px solid #e3e3e3;
+		border-radius: 5px;
+		margin-bottom: 20px;
+		max-height: 101px;
+		overflow-y: scroll;
+	  }
+	
+	.ca-rtloc .cart-listbox table td, .ca-rtloc .cart-listbox table th{border: 0px;padding: 3px;}
 
 
 
