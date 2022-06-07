@@ -2406,6 +2406,17 @@ span.flag-option p {
 
 	.ca-rtloc .case{margin-top: 20px;}
 
+	.inner-banner{position: relative;padding: 0px;margin-top: 110px;}
+	.inner-caption{position: absolute;top:50%;width:100%;}
+
+	.indication-details h4{font-weight:500;font-size: 20px;color:#6e6e6e;}
+	.indication-details ul{margin:0px;padding:0px;padding-left:55px;margin-bottom: 0px}
+	.indication-details ul img{position: absolute;left:0;top:0;}
+	.indication-details ul li{position: relative;padding-left: 20px;margin-bottom: 8px;}
+	.indication-details ul li:before{position:absolute;content: "";left:0;top:11px;width:9px;height:9px;background-color:#957dad;border-radius: 100%;}
+
+	.indication-details{position: relative;}
+
 
 
 

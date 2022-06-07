@@ -187,7 +187,7 @@ export default function CartList() {
                   </div>
             </div>
             <div className="col-lg-4">
-                <div className="availab-lity ca-rtloc table-responsive">
+                <div className="availab-lity ca-rtloc">
                 <h4>Payment</h4>
                 <table className="table" width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>

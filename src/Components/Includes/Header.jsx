@@ -53,15 +53,15 @@ export default function Header() {
                 </div>
                 <div className="row">
                   <div className="col">
-                    <ul className="navbar-nav">
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link active">Home</Link>
-                      </li>
+                    <ul className="navbar-nav"> 
                       <li className="nav-item">
                         <Link to="/for-patient" className="nav-link">For Patients</Link>
                       </li>
                       <li className="nav-item">
                         <Link to="/" className="nav-link">For Doctors</Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/services" className="nav-link">Services</Link>
                       </li>
                       <li className="nav-item dropdown">
                         <Link to="/" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
