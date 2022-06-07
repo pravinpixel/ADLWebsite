@@ -2407,7 +2407,11 @@ span.flag-option p {
 	.ca-rtloc .case{margin-top: 20px;}
 
 	.inner-banner{position: relative;padding: 0px;margin-top: 110px;}
-	.inner-caption{position: absolute;top:50%;width:100%;}
+	.inner-caption {
+		position: absolute;
+		top: calc(50% - 73px);
+		width: 100%;
+	  }
 
 	.indication-details h4{font-weight:500;font-size: 20px;color:#6e6e6e;}
 	.indication-details ul{margin:0px;padding:0px;padding-left:55px;margin-bottom: 0px}
@@ -2422,6 +2426,8 @@ span.flag-option p {
 	.flyer-box img{position: absolute;content: "";left:27px;top:36px;}
 
 	.flyer-box h4{font-weight: 500;color:#404040;font-size: 20px;}
+	
+	.pat-con{}
 
 
 

@@ -9,6 +9,7 @@ import TestDetails from './Components/Containers/TestDetails'
 import 'react-toastify/dist/ReactToastify.css';
 import CartList from './Components/Containers/CartList';
 import Services from './Components/Services/Services';
+import Solutions from './Components/Solutions/solutions';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/services' element={<Services/>} />
+        <Route path='/Solutions' element={<Solutions/>} />
         <Route path='/my-cart' element={<CartList/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route>404 Not Found !</Route>
