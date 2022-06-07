@@ -5,26 +5,29 @@ import { Link } from "react-router-dom";
 import { setAllTestDetails } from "../../../Redux/Actions/TestAction";
 import { API_URL } from "../../../Redux/Constant/ApiRoute";
 import TestCard from "../../Containers/TestCardComponent";
+import loaderGif from '../../../assets/images/loader-2.gif'
 
 export default function TestHealthPackages() {
   const dispatch      = useDispatch();
   const testListing   = useSelector((state) => state.TestList.testList);
   const [tackTest, setTackTest] = useState(4);
+  const [loader, setLoader] = useState(true);
 
   const getAllTest = () => { 
-    axios
-      .post(API_URL.TEST_LISTS, {
-        tack: tackTest,
-      })
-      .then((response) => {
-        dispatch(setAllTestDetails(response.data.data));
-      });
+    setLoader(true)
+    axios.post(API_URL.TEST_LISTS, {
+      tack: tackTest,
+    }).then((response) => {
+      dispatch(setAllTestDetails(response.data.data));
+      setLoader(false)
+    });
   };
   useEffect(() => {
     return () => {
       getAllTest();
     };
   }, []);
+  console.log(loader)
   return (
     <section className="">
       <div className="container">
@@ -69,6 +72,11 @@ export default function TestHealthPackages() {
           }}>
             Load More
           </a>
+          {
+            loader === true ? 
+              <h1><img src={loaderGif} alt="loader" /></h1>
+            : null
+          }
         </div>
       </div>
     </section>

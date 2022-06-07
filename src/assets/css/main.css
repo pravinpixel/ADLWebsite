@@ -96,7 +96,9 @@
 	backface-visibility: hidden;
 	transform-origin: 0 0; 
 }
-
+a {
+	cursor: pointer !important;
+}
 .preloader div {
 	box-sizing: content-box;
 }
@@ -133,7 +135,7 @@ body::-webkit-scrollbar-thumb {
 	background-color: #fff;
 	outline: 1px solid slategrey;
 }
-
+ 
 h1,
 h2,
 h3,
@@ -1254,7 +1256,7 @@ span.strke {
 }
 
 .load-mrebtn a:hover {
-	color: #fff;
+	color: #fff !important;
 }
 
 .load-mrebtn a:before {
