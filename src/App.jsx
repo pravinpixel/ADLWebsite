@@ -25,7 +25,7 @@ export default function App() {
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/>
-      <ToastContainer position="top-right"  autoClose={1000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
+      <ToastContainer position="top-right"  autoClose={1500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
     </Fragment>
   )
 }

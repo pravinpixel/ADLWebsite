@@ -73,6 +73,17 @@
 	background-color: white;
 }
  
+.Toastify__toast-body {
+	font-weight:  bold !important;
+	color: black !important;
+}
+.Toastify__close-button > svg {
+	fill: black !important;
+	opacity: 1 !important;
+}
+.Toastify__toast-icon {
+	width: 30px !important;
+}
 
 .preloader_wrapper img {
 	width: 250px;
