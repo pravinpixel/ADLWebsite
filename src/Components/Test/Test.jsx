@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
-import TestBanner from './Sections/TestBanner'
-// import TestHealthPackages from './Sections/TestHealthPackages'
+import TestBanner from './Sections/TestBanner' 
 import PopularTests from './Sections/PopularTests'
 import PopularPackages from './Sections/PopularPackages'
-import TestHealthPackages from './Sections/TestHealthPackages';
- 
+import TestHealthPackages from './Sections/TestHealthPackages'
 
 export default function test() {
   useEffect(() => {
