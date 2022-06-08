@@ -2505,7 +2505,48 @@ span.flag-option p {
 	
 	.ca-rtloc .cart-listbox table td, .ca-rtloc .cart-listbox table th{border: 0px;padding: 3px;}
 
+	.cmnmenu-topmargin{margin-top: 110px;}
 
+	.dhoni-bgm{background: rgba(0, 0, 0, 0) url("../images/dhoni-bg.jpg") no-repeat scroll center center;background-size:cover;min-height: 490px;padding: 40px 35px;}
+	.cir-frm{background-color: #fff;padding: 45px 35px;}
+	.main-bxi{border-radius: 10px;}
+
+	.cir-frm .common-heading h2 {margin-bottom:10px;}
+	.cir-frm .common-heading h2 span{display: inline-block;}
+	.cir-frm .form-data input{border: 1px solid #e3e3e3;border-radius: 5px;margin:15px 0px;height: 45px;padding: 16px;}
+
+	.cir-frm ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color:#adadad;font-size: 16px;font-weight: 400;
+		opacity: 1; /* Firefox */
+	  }
+	  
+	.cir-frm :-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color:#adadad;font-size: 16px;font-weight: 400;
+	  }
+	  
+	.cir-frm ::-ms-input-placeholder { /* Microsoft Edge */
+		color:#adadad;font-size: 16px;font-weight: 400;
+	  }
+
+	.cir-frm .form-data input[type="submit"]{width:100%;background-color: #f7931e;font-weight: 400;padding: 0px;font-size: 15px;}
+
+	.cir-frm .form-data input[type="submit"]:hover{background-color: #5b2584;}
+
+	.mid-poart{position: relative;}
+	.mid-poart:before{position: absolute;content: "";left:0;top:13px;width:100%;height:1px;background-color: #e7e7e7;z-index: 0;}
+	.mid-poart h5{display: inline-block;background-color: #e7e7e7;border-radius: 50%;height: 25px;width:25px;font-size: 13px;line-height: 25px;z-index: 1;
+		position: relative;}
+
+	.login-btn a{border: 2px solid #5b2584;display:block;border-radius: 5px;margin-top: 10px;padding: 7px 0px;font-size: 14px;color: #5b2584;}
+	.login-btn a:hover{background-color:#5b2584;color: #fff;}
+	.row.fully-bxn{border-radius:20px;background-color: #fff;overflow: hidden;-webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.22);
+		-moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.22);
+		box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.22);}
+	.user-regster{margin-top: 15px;}
+	.user-regster a{text-decoration: underline;color: #5b2584;}
+
+	.dhoni-bgm .common-heading h2 {color:#fff;width:70%;}
+	.dhoni-bgm .common-heading h2 span{color:#fff;display: inline;}
 
 
 

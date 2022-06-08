@@ -11,6 +11,7 @@ import CartList from './Components/Containers/CartList';
 import Services from './Components/Services/Services';
 import Solutions from './Components/Solutions/solutions';
 import GuestCheckOut from './Components/Containers/GuestCheckOut';
+import Login from './Components/Containers/Login';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path='/my-cart' element={<CartList/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route path='/guest-checkout' exact element={<GuestCheckOut/>} />
+        <Route path='/login' exact element={<Login/>} />
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/>
