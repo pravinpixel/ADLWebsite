@@ -2500,7 +2500,7 @@ span.flag-option p {
 		border-radius: 5px;
 		margin-bottom: 20px;
 		max-height: 101px;
-		overflow-y: scroll;
+		overflow-y: auto;
 	  }
 	
 	.ca-rtloc .cart-listbox table td, .ca-rtloc .cart-listbox table th{border: 0px;padding: 3px;}
