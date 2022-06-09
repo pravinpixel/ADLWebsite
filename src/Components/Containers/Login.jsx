@@ -33,6 +33,11 @@ export default function Login() {
                             <input type="submit" name="submit" value="LOGIN" required/>
                         </div>
                         </div>
+                        <div className="col-lg-12 text-center">
+                          <div className="user-regster">
+                           New User <Link to=''> Register Here!</Link>
+                          </div>
+                        </div>
                         <div className="col-lg-12 text-center p-0">
                         <div className="mid-poart">
                           <h5>or</h5>
@@ -40,12 +45,7 @@ export default function Login() {
                         </div>
                         <div className="col-lg-12 text-center p-0">
                           <div className="login-btn">
-                            <Link to=''>Login with OTP</Link>
-                          </div>
-                        </div>
-                        <div className="col-lg-12 text-center">
-                          <div className="user-regster">
-                           New User <Link to=''> Register Here!</Link>
+                            <Link to=''>Guest User</Link>
                           </div>
                         </div>
                     </div>
