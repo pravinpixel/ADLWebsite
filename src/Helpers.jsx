@@ -18,18 +18,29 @@ export function Loading() {
    );
 }
 
+export function CheckCartBucket(TestId) {
+   let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+   if(currentCart !== null) {
+      function isExists(CurrentTest) {
+         return CurrentTest.TestId === TestId;
+      }
+      var Result = currentCart.find(isExists)
+   
+      if(Result !== undefined) {
+         return true
+      } else {
+         return false
+      }
+   }
+}
+
 export function AddToCartList(test) {
+   let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+   
    if(localStorage.getItem('CartTestList') == undefined) {
       localStorage.setItem('CartTestList', JSON.stringify([]));
    }
-   let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-    
-   function isExists(CurrentTest) {
-      return CurrentTest.TestId === test.TestId;
-   }
-   const CheckCartBucket = currentCart.find(isExists)
-      
-   if(CheckCartBucket !== undefined) {
+   if(CheckCartBucket(test.TestId) === true) {
       toast.info('Test Already Added!');
       return false
    } else {
@@ -37,4 +48,26 @@ export function AddToCartList(test) {
       toast.success('Test Added Successfully!');
       return true
    }
+}
+
+
+export function RemoveToCartList(test) {
+
+   let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+
+   function isExists(CurrentTest) {
+      return CurrentTest.TestId === test.TestId;
+   }
+   
+   if(currentCart !== null) {
+      var Result = currentCart.find(isExists)
+      var index  = currentCart.indexOf(Result)
+      currentCart.splice(index, 1)
+      localStorage.setItem('CartTestList', JSON.stringify(currentCart));
+      return currentCart
+   }
+    
+   if(currentCart.length === 0) {
+      localStorage.removeItem('CartTestList')
+   } 
 }

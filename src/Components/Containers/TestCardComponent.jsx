@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clock from "./../../assets/images/clk.png";
 import calnder from "./../../assets/images/cal.png"; 
+import { CheckCartBucket } from "../../Helpers";
 
 export default function TestCardComponent(props) {
   
@@ -37,7 +38,14 @@ export default function TestCardComponent(props) {
           <p>
             {
               props.test !== undefined ? 
-                <a className="text-white" onClick={() => props.addTestToCart(props.test)} >ADD</a>
+                CheckCartBucket(props.test.TestId) === true ? 
+                <a className="text-white" onClick={(e) => props.removeTestToCart(props.test)} >
+                  Remove from Cart
+                </a>
+                : 
+                <a className="text-white" onClick={(e) =>  props.addTestToCart(props.test)} >
+                  Add to Cart
+                </a>
               : 
               <Link  to="/">ADD</Link>
             }

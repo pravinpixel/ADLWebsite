@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import TestBanner from './Sections/TestBanner' 
 import PopularTests from './Sections/PopularTests'
 import PopularPackages from './Sections/PopularPackages'
-import TestHealthPackages from './Sections/TestHealthPackages'
+import TestHealthPackages from './Sections/TestHealthpackages'
 import { setAllTestDetails, setTestCartList } from '../../Redux/Actions/TestAction'
-import { AddToCartList } from "../../../src/Helpers";
+import { AddToCartList, RemoveToCartList } from "../../../src/Helpers";
 import { API_URL } from '../../Redux/Constant/ApiRoute'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,20 +21,28 @@ export default function test() {
     setLoader(true)
     axios.post(API_URL.TEST_LISTS, { 
       search : search !== null ? search : null,
-      tack   :tackTests !== undefined ? tackTests : tackTest,
+      tack   : tackTests !== undefined ? tackTests : tackTest,
       sort   : sortBy
     }).then((response) => {
       dispatch(setAllTestDetails(response.data.data));
       setLoader(false)
     });
-  }; 
+  };
+  
   const sortByPrice = (sortingValue) => {
     getAllTest(sortingValue, search);
   }
   const addTestToCart = (testDetails) => {
     AddToCartList(testDetails)
     dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
+    getAllTest();
   };
+  const removeTestToCart = (test) => {
+    var balancedCartItems = RemoveToCartList(test)
+    dispatch(setTestCartList(balancedCartItems));
+    getAllTest();
+  };
+  
   useEffect(() => {
     document.title = "Test Details Page";
     window.scroll(0,0)
@@ -55,6 +63,7 @@ export default function test() {
         sortByPrice={sortByPrice}
         loader={loader} setLoader={setLoader}
         addTestToCart={addTestToCart}
+        removeTestToCart={removeTestToCart}
       />
       <PopularTests />
       <PopularPackages />

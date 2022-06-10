@@ -61,7 +61,7 @@ export default function CartList() {
     
   
   useEffect(() => {
-    window.scroll(0,300)
+    window.scroll(0,0)
     return () => {
       setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
       var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
@@ -76,7 +76,6 @@ export default function CartList() {
       }
     }
   }, [])
-
   
   const removeCartItem = (index) => {
     CartTable.splice(index, 1);

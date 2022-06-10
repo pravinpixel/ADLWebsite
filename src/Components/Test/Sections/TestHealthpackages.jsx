@@ -39,7 +39,7 @@ export default function   TestHealthPackages(props) {
             props.testListing !== undefined
             ? props.testListing.map((test, index) => (
                 <div className="col-lg-3" key={index}>
-                  <TestCard test={test} addTestToCart={props.addTestToCart}/>
+                  <TestCard test={test} addTestToCart={props.addTestToCart} removeTestToCart={props.removeTestToCart}/>
                 </div>
               ))
             : null

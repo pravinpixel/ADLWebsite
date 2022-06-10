@@ -12,7 +12,10 @@ export default function CartCount() {
                 {
                     cartItemCount !== undefined 
                     ? 
-                        <b className="badge badge-dark cart-count">{cartItemCount.length}</b>
+                        
+                        cartItemCount.length !== 0 ?
+                            <b className="badge badge-dark cart-count">{cartItemCount.length}</b>
+                        : null
                     : 
                         localStorage.getItem('CartTestList') !== null 
                     ?
