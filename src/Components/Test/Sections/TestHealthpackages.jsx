@@ -8,10 +8,10 @@ import TestCard from "../../Containers/TestCardComponent";
 import loaderGif from '../../../assets/images/loader-2.gif'
 
 export default function TestHealthPackages() {
-  const dispatch      = useDispatch();
-  const testListing   = useSelector((state) => state.TestList.testList);
-  const [tackTest, setTackTest] = useState(4);
-  const [loader, setLoader] = useState(true);
+  const dispatch                 = useDispatch();
+  const testListing              = useSelector((state) => state.TestList.testList);
+  const [tackTest, setTackTest]  = useState(4);
+  const [loader, setLoader]      = useState(true);
 
   const getAllTest = () => { 
     setLoader(true)
@@ -23,11 +23,9 @@ export default function TestHealthPackages() {
     });
   };
   useEffect(() => {
-    return () => {
       getAllTest();
-    };
   }, []);
-  console.log(loader)
+ 
   return (
     <section className="">
       <div className="container">
@@ -60,7 +58,7 @@ export default function TestHealthPackages() {
           {testListing !== undefined
             ? testListing.map((test, index) => (
                 <div className="col-lg-3" key={index}>
-                  <TestCard />
+                  <TestCard data={test}/>
                 </div>
               ))
             : null}
