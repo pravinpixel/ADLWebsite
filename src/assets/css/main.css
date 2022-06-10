@@ -509,7 +509,7 @@ a:hover {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #aa97bd;
+	background: #ff9a1f;
 }
 
 #home-banner-carousel .carousel-caption p a:after {
@@ -691,7 +691,7 @@ a.link-orange:before {
 	width: 100%;
 	height: 2px;
 	content: "";
-	background: #aa97bd;
+	background: #ff9a1f;
 	transition: all 0.6s ease;
 }
 
@@ -762,7 +762,7 @@ a.link-white:after {
 	width: 0px;
 	height: 2px;
 	content: "";
-	background: #aa97bd;
+	background: #ff9a1f;
 	transition: all 0.6s ease;
 }
 
@@ -797,7 +797,7 @@ a.link-white:hover:after {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #aa97bd;
+	background: #ff9a1f;
 }
 
 .orange-btn:after {
@@ -1047,7 +1047,7 @@ span.strke {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #aa97bd;
+	background: #ff9a1f;
 }
 
 .case p a:after {
@@ -1192,7 +1192,7 @@ span.strke {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #aa97bd;
+	background: #ff9a1f;
 }
 
 .pack-deils p a:after {
@@ -2548,8 +2548,92 @@ span.flag-option p {
 }
 	.user-regster a{text-decoration: underline;color: #5b2584;}
 
+	.common-heading.lite h2 {color:#fff;}
 	.dhoni-bgm .common-heading h2 {color:#fff;width:70%;}
 	.dhoni-bgm .common-heading h2 span{color:#fff;display: inline;}
+	.box-cos{border-radius: 5px;-webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.11);
+		-moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.11);
+		box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.11);padding: 25px 10px;margin: 15px 0px;}
+	.box-cos h4{font-size: 16px;font-weight:600;color:#494949;line-height: 20px;}
+	.box-cos h4 span{font-size: 13px;font-weight: 400;display: block;}
+	.box-cos img{margin-bottom: 20px;}
+	.consumeing{margin: 0px -12px;padding: 15px 0px;}
+
+	.common-heading h2 span.inlne{display: inline;}
+
+	.loyality-program{background-color: #602f98;position: relative;overflow: hidden;}
+	.loyality-program:before{position: absolute;content: "";left:0;bottom:-50px;background: rgba(0, 0, 0, 0) url("../images/handcard.png") no-repeat scroll 0 0;height: 506px;width:728px;}
+
+
+	.loyalty-progrm ul{padding: 0px;margin: 0px;}
+	.loyalty-progrm ul li{padding: 0px;margin: 0px;display: inline-block;color:#fff;line-height: 26px;font-size: 16px;position: relative;padding-left: 36px;margin-bottom: 35px;}
+	.loyalty-progrm ul li:before{position: absolute;content: "";left:0;top:12px;width:23px;background-color: #fff;height: 1px;}
+
+	.contnt-set{width:85%;}
+
+	.step-pairing{font-size:20px;line-height: 30px;color: #602f98;font-weight: 700;margin: 30px 0px;}
+	.step-pairing span{font-weight:300;}
+
+	.cmn-buton p {
+		margin-bottom: 0px;
+	}
+	
+	.cmn-buton p a {
+		color: #fff;
+		padding: 6px 22px;
+		border-radius: 4px;
+		display: inline-block;
+		margin-top: 0px;
+		text-align: center;
+		font-size: 16px;
+		position: relative;
+		overflow: hidden;
+		transition: all 0.3s ease;
+		font-weight: 400;
+		cursor: pointer;
+		z-index: 0;
+		text-transform: uppercase;
+	} 
+	
+	.cmn-buton p a:before {
+		position: absolute;
+		left: 0;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		content: "";
+		z-index: -2;
+		background: #ff9a1f;
+	}
+	
+	.cmn-buton p a:after {
+		position: absolute;
+		right: 0;
+		top: 0px;
+		width: 0px;
+		height: 100%;
+		content: "";
+		z-index: -1;
+		background: #5b2584;
+		transition: all 1s ease;
+	}
+	
+	.cmn-buton p a:hover:after {
+		width: 100%;
+		right: inherit;
+		left: 0px;
+		transition: all 1s ease;
+	}
+	
+	.cmn-buton p a:hover {
+		transition: all 1s ease;
+	}
+
+	
+
+	.blood-colleion{padding: 50px 0px;}
+
+	.blood-colleion .row{padding: 45px 0px;}
 
 
 
