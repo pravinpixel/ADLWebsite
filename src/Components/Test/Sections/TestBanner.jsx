@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TestBanner() {
+export default function TestBanner(props) {
   return (
     <section className="search-container">
       <div className="container">
@@ -11,6 +11,10 @@ export default function TestBanner() {
               <input
                 type="text"
                 placeholder="Search for Health Packages / Tests / Labs"
+                onChange={(e) => { 
+                  props.getAllTest(props.sortBy, e.target.value)
+                  props.setSearch(e.target.value)
+                }}
               />
               <div className="testBySec d-flex justify-content-center align-items-center">
                 <label className="testTxt">Filter By</label>
@@ -34,7 +38,7 @@ export default function TestBanner() {
                     type="radio"
                     id="cond_0"
                     name="category_filter"
-                    value="Allergy"
+                    value="Allergy" 
                   />
                   <label>
                     <span className="lableTxt">Allergy</span>
