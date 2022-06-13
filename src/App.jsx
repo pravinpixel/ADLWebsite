@@ -12,6 +12,7 @@ import Services from './Components/Services/Services';
 import Solutions from './Components/Solutions/solutions';
 import GuestCheckOut from './Components/Containers/GuestCheckOut';
 import Login from './Components/Containers/Login';
+import About from './Components/About/About';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/about-us' element={<About/>} />
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/Solutions' element={<Solutions/>} />

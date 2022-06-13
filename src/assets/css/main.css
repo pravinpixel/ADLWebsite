@@ -217,11 +217,11 @@ h5 {
 }
 
 p {
-	font-family: var(--font-inter);
-	color: var(--color-gray);
+	font-family: 'Poppins', sans-serif;
+	color: #6e6e6e;
 	font-size: 16px;
 	font-weight: 400;
-	line-height: 24px;
+	line-height: 26px;
 }
 
 strong {
@@ -885,6 +885,16 @@ a.link-white:hover:after {
 	font-weight: 300;
 	display: block;
 	color: #6e6e6e;
+}
+
+.common-heading h2 span.yelow { 
+	display: inline;
+	color: #ff9a1f;
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px; 
+	line-height: 32px;
 }
 
 .topbooked-cases {
@@ -3109,6 +3119,10 @@ span.flag-option p {
 	font-weight: 700;
 	padding: 8px 40px;
 }
+
+.legacy-care p{width:78%;}
+.spcl-cnt{position: relative;padding-left: 110px;font-weight: 700;font-size: 19px;color: #5b2584;margin-top: 50px;}
+.spcl-cnt img{position: absolute;content: "";left:0;top:0;}
 
 
 
