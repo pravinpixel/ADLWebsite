@@ -2994,7 +2994,7 @@ span.flag-option p {
 }
 
 .cmn-buton p a {
-	color: #fff;
+	color: #fff !important;
 	padding: 6px 22px;
 	border-radius: 4px;
 	display: inline-block;
@@ -3044,7 +3044,27 @@ span.flag-option p {
 	transition: all 1s ease;
 }
 
+.cmn-buton p a.bg-trsnper.ylw {
+	color: #ff9a1f !important;
+	margin-left: 8px;
+	border: 1px solid #ff9a1f;
+	text-transform: uppercase;
+	background-color: transparent;
+}
 
+.cmn-buton p a.bg-trsnper.ylw:before { 
+	background: transparent;
+}
+
+.cmn-buton p a.bg-trsnper.ylw:after { 
+	background: #5b2584; 
+} 
+
+.cmn-buton p a.bg-trsnper.ylw:hover {
+	transition: all 1s ease;
+	color: #fff !important; 
+	border: 1px solid #5b2584;
+}
 
 .blood-colleion {
 	padding: 50px 0px;
@@ -3121,8 +3141,102 @@ span.flag-option p {
 }
 
 .legacy-care p{width:78%;}
-.spcl-cnt{position: relative;padding-left: 110px;font-weight: 700;font-size: 19px;color: #5b2584;margin-top: 50px;}
+.spcl-cnt{position: relative;padding-left: 100px;font-weight: 700;font-size: 19px;color: #5b2584;margin: 50px 0px;}
 .spcl-cnt img{position: absolute;content: "";left:0;top:0;}
+
+.legacy-mage{position: relative;}
+
+.legacy-face {
+	position: absolute;
+	content: "";
+	left: -90px;
+	bottom: 50px;
+	padding: 15px 25px;
+	background: #5b2584;
+	height: auto;
+	width: 200px;
+  }
+.legacy-face h4{color:#fff;font-weight: 700;font-size: 53px;line-height:60px;}
+.legacy-face h4 span{font-weight: 400;font-size: 53px;}
+.legacy-face h5{color:#fff;font-weight: 500;font-size:20px;line-height: 28px;}
+
+.vison-mison{position:relative;}
+.vison-mison:before{position:absolute;content: "";left:0;top:0;height: 33%;width:100%;background-color: #f0f0f0;}
+
+.mission-layer{backgroud-color:#fff;padding: 45px 35px 115px;-webkit-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);background: rgba(255, 255, 255,1) url("../images/mision-bg.png") no-repeat scroll top right;background-size: cover;}
+.vison-mison h4{font-weight: 500;font-size: 25px;color: #ff9a1f;}	
+.mission-layer ul{padding: 0px;margin: 0px;}	
+.mission-layer ul li{font-size: 18px;display: inline-block;position: relative;padding-left: 35px;width:100%;font-weight: 400;margin:8px 0px;}	
+.mission-layer ul li:before{position:absolute;content: "";height: 1px;width:21px;background-color: #a889b7;left:0;top:14px;}	
+
+.vision-layer{background:#fff;padding: 45px 35px 80px;-webkit-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);position:relative;}
+	.vision-layer:before{position: absolute;content: "";background: rgba(0, 0, 0, 0) url("../images/vison-dc.png") no-repeat scroll 0 0;width:96px;height:73px;right:30px;top:30px;}	
+	.vision-layer h5 {
+		font-size: 30px;
+		font-weight: 400;
+		width: 85%;
+		line-height: 37px;
+		color: #404040;
+	  }
+
+	  .vision-layer h4{margin-bottom:10px;}
+
+	  .values-layer{padding: 45px 35px 65px;-webkit-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+		-moz-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);
+		box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.06);margin-top: 40px;}
+	  
+		.values-layer ul{margin: 0px;padding: 0px;}
+		.values-layer h4{margin-bottom:20px;}
+		.values-layer li{margin: 0px;padding: 0px;display: inline-block;width:13%;color:#404040;font-size: 17px;font-weight: 400;vertical-align: top;width:12%;margin-right:25px;line-height: 22px;}
+		.values-layer li span{display:block;margin-top: 20px;}
+
+		.peop-behnd{padding: 75px 0px 20px;}
+
+		.our-accrediation{background-color: #f9f9f9;}
+
+		.war-awa img{mix-blend-mode: multiply;}
+
+		.certifi-lsts ul{padding: 0px;margin: 0px;margin-top: 80px;}
+		.certifi-lsts ul li{display: inline-block;width:23%;;}
+		.certifi-lsts ul li img{margin-bottom: 15px;border: 1px solid #dadada;border-radius: 5px;-webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);
+			-moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);
+			box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);padding: 15px;background-color: #fff}
+		.certifi-lsts ul li h4{font-weight: 300;color: #3f3f3f;font-size: 18px;line-height: 24px;margin-bottom: 15px;}
+		.certifi-lsts ul li h4 span{font-weight: 700;display: block;}
+
+		.care-healthcare .common-heading h2 span{display: inline;}
+
+		.care-hlthcare ul{margin: 0px;padding: 0px;margin-top:20px;}
+		.care-hlthcare li{display: inline-block;position: relative;border-radius: 4px;overflow: hidden;width:19%;margin: 0px 6px;}
+		.care-hlthcare h4 {
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
+			font-weight: 600;
+			color: #fff;
+			font-size: 17px;
+			width: 55%;
+			text-align: left;
+			line-height: 23px;
+			text-transform: uppercase;
+		  }
+		.care-hlthcare a{position: absolute;right:-80px;bottom:20px;transition: all 0.5s ease;}
+		.care-hlthcare li:hover a{right:10px;transition: all 0.5s ease;}
+
+
+
+
+
+		
+
+
+
+
+
 
 
 
