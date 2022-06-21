@@ -156,7 +156,7 @@ h6 {
 
 h1 {
 	font-size: 50px;
-	color: #aa97bd;
+	color: #5c2d91;
 	font-weight: 700;
 	line-height: 50px;
 	text-transform: none;
@@ -258,7 +258,7 @@ a:hover {
 .back-to-top {
 	position: fixed;
 	display: block;
-	background: #aa97bd;
+	background: #5c2d91;
 	color: #fff;
 	width: 40px;
 	height: 40px;
@@ -357,11 +357,11 @@ a:hover {
 }
 
 .pink-bg {
-	background: #aa97bd;
+	background: #5c2d91;
 }
 
 .text-pink {
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .text-blue {
@@ -384,7 +384,7 @@ a:hover {
 }
 
 .commeon-heading.blk h4 span {
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .commeon-heading.wht h4 {
@@ -471,7 +471,7 @@ a:hover {
 #home-banner-carousel.carousel .carousel-indicators li.active {
 	width: 40px;
 	transition: 0.5s ease;
-	background: #aa97bd;
+	background: #f7931e;
 	border: none;
 }
 
@@ -559,7 +559,7 @@ a:hover {
 
 #home-banner-carousel .carousel-control-next:hover,
 #home-banner-carousel .carousel-control-prev:hover {
-	background: #aa97bd;
+	background: #5c2d91;
 	transition: all 0.3s ease;
 }
 
@@ -601,7 +601,7 @@ a:hover {
 }
 
 #home-banner-carousel .carousel-indicators {
-	bottom: -50px;
+	bottom: -40px;
 	max-width: 1170px;
 	margin: 0 auto;
 }
@@ -681,7 +681,7 @@ section {
 
 a.link-orange {
 	font-family: var(--font-inter);
-	color: #aa97bd;
+	color: #5c2d91;
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 20px;
@@ -755,7 +755,7 @@ a.link-white:before {
 
 a.link-white:hover {
 	transition: all 0.6s ease;
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 a.link-white:hover:before {
@@ -842,7 +842,7 @@ a.link-white:hover:after {
 }
 
 .submit-btn {
-	background: #aa97bd;
+	background: #5c2d91;
 	color: #fff;
 	letter-spacing: 0.1em;
 	font-family: var(--font-inter);
@@ -888,6 +888,8 @@ a.link-white:hover:after {
 	color: #6e6e6e;
 }
 
+.common-heading.white h2 span {color:#fff;}
+
 .common-heading h2 span.yelow { 
 	display: inline;
 	color: #ff9a1f;
@@ -911,11 +913,12 @@ a.link-white:hover:after {
 
 .case h3 {
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 20px;
-	color: #6e6e6e;
+	color: #404040;
 	margin-bottom: 10px;
-}
+	letter-spacing: 0.8px;
+  }
 
 .case h4 {
 	font-size: 14px;
@@ -979,7 +982,7 @@ a.link-white:hover:after {
 
 .slick-prev:hover,
 .slick-next:hover {
-	background: #aa97bd;
+	background: #5c2d91;
 	transition: all 0.3s ease;
 }
 
@@ -990,8 +993,8 @@ a.link-white:hover:after {
 
 .topbooked-cases .slick-arrow.slick-prev:hover,
 .topbooked-cases .slick-arrow.slick-next:hover {
-	border-color: #aa97bd !important;
-	background: #aa97bd !important;
+	border-color: #5c2d91 !important;
+	background: #5c2d91 !important;
 }
 
 .topbooked-cases .slick-arrow.slick-prev::before,
@@ -1011,8 +1014,8 @@ a.link-white:hover:after {
 
 .popular-lists .slick-arrow.slick-prev:hover,
 .popular-lists .slick-arrow.slick-next:hover {
-	border-color: #aa97bd !important;
-	background: #aa97bd !important;
+	border-color: #5c2d91 !important;
+	background: #5c2d91 !important;
 }
 
 .popular-lists .slick-arrow.slick-prev::before,
@@ -1180,7 +1183,7 @@ span.strke {
 }
 
 .pack-deils h4 a {
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .pack-deils p {
@@ -1238,8 +1241,8 @@ span.strke {
 
 .case a.bg-trsnper {
 	margin-left: 8px;
-	border: 1px solid #aa97bd;
-	color: #aa97bd;
+	border: 1px solid #5c2d91;
+	color: #5c2d91;
 	text-transform: uppercase;
 }
 
@@ -1312,7 +1315,7 @@ span.strke {
 }
 
 .condition-packages {
-	background-color: #63b5f7;
+	background-color: #4d4d4d;
 }
 
 .common-heading.white h2 {
@@ -1341,7 +1344,7 @@ span.strke {
 	text-align: cenet;
 	color: #fff;
 	border-radius: 50%;
-	background-color: #63b5f7;
+	background-color: #f7931e;
 	font-weight: 500;
 	font-size: 19px;
 	line-height: 24px;
@@ -1355,7 +1358,7 @@ span.strke {
 .tes-cond h4 {
 	text-align: left;
 	font-weight: 500;
-	color: #6e6e6e;
+	color: #404040;
 	font-size: 16px;
 }
 
@@ -1379,7 +1382,7 @@ span.strke {
 	font-size: 200px;
 	line-height: 145px;
 	width: 100%;
-	color: #aa97bd;
+	color: #f7931e;
 	opacity: 0.10;
 }
 
@@ -1449,7 +1452,7 @@ section.testimonials {
 }
 
 .testimonial-topics .slick-dots li.slick-active button::before {
-	color: #81c3f7;
+	color: #f7931e;
 	opacity: 1;
 }
 
@@ -1460,12 +1463,12 @@ section.testimonials {
 .testimonial-topics .slick-dots li button:hover::before,
 .testimonial-topics .slick-dots li button:focus::before {
 	opacity: 1;
-	color: #81c3f7;
+	color: #f7931e;
 }
 
 section.maping {
-	background-color: #ebf2f7;
-	padding: 30px 0px;
+	background-color: #f0f0f0;
+	padding: 70px 0px;
 }
 
 .maping .common-heading h2 {
@@ -1489,7 +1492,7 @@ section.maping {
 	padding: 9px 18px;
 	margin-top: 0;
 	margin-right: 16px;
-	background: #63b5f7;
+	background: #f7931e;
 	font-size: 14px;
 	border: none;
 	cursor: pointer;
@@ -1501,7 +1504,7 @@ section.maping {
 }
 
 .location-details button:hover {
-	background: #293a94;
+	background: #5c2d91;
 	transition: all 1s ease;
 }
 
@@ -1541,7 +1544,7 @@ section.maping {
 .nutshell-count ul li:nth-child(4) h4,
 .nutshell-count ul li:nth-child(5) h4,
 .nutshell-count ul li:nth-child(6) h4 {
-	background-color: #aa97bd;
+	background-color: #5c2d91;
 }
 
 .nutshell-count ul li h5 {
@@ -1700,7 +1703,7 @@ section.accrediation {
 
 .acrdes-solution p span {
 	display: block;
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .reach-uslinks {
@@ -1914,7 +1917,7 @@ h4.cont-frmhed {
 	font-family: 'Rubik', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
-	background-color: #a895bc;
+	background-color: #5c2d91;
 	padding: 9px 10px;
 	border-radius: 8px;
 	width: 82%;
@@ -1922,7 +1925,7 @@ h4.cont-frmhed {
 }
 
 .form-data input[type=submit]:hover {
-	background: #5b2584;
+	background: #f7931e;
 	transition: all .5s ease-in-out
 }
 
@@ -2331,7 +2334,7 @@ section.most-poptst .case {
 .commentestng-heads h2 span {
 	font-size: 15px;
 	line-height: 24px;
-	color: #aa97bd;
+	color: #5c2d91;
 	display: block;
 	margin-bottom: 15px;
 	font-weight: 500;
@@ -2449,7 +2452,7 @@ span.flag-option p {
 }
 
 .special-instruction .nav-tabs .nav-link.active {
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .special-instruction .nav-tabs .nav-link.active:before {
@@ -2457,7 +2460,7 @@ span.flag-option p {
 }
 
 .special-instruction .nav-tabs .nav-link:hover {
-	color: #aa97bd;
+	color: #5c2d91;
 }
 
 .special-instruction .nav-tabs .nav-link:hover:before {
@@ -2521,7 +2524,7 @@ span.flag-option p {
 }
 
 .cart-ing table td.clr-chng a {
-	color: #aa97bd;
+	color: #5c2d91;
 	font-size: 17px;
 }
 
