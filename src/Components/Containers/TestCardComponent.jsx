@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clock from "./../../assets/images/clk.png";
 import calnder from "./../../assets/images/cal.png"; 
-import { CheckCartBucket } from "../../Helpers";
+import CartBtn from '../Containers/CartBtn'
 
 export default function TestCardComponent(props) {
-  
   return (
     <div className="">
       <div className="cmn-box-str">
@@ -37,20 +36,13 @@ export default function TestCardComponent(props) {
           </h5>
           <p>
             {
-              props.test !== undefined ? 
-                CheckCartBucket(props.test.TestId) === true ? 
-                <a className="text-white" onClick={(e) => props.removeTestToCart(props.test)} >
-                  Remove from Cart
-                </a>
-                : 
-                <a className="text-white" onClick={(e) =>  props.addTestToCart(props.test)} >
-                  Add to Cart
-                </a>
-              : 
-              <Link  to="/">ADD</Link>
+              props.getAllTestData !== undefined ?
+                <CartBtn getData={props.getAllTestData} testData={props.test}/>
+              :
+              null
             }
             <Link className="bg-trsnper" to={props.test !== undefined ? `/test/${props.test.id}` : '/'}>
-              Know More
+              <small>Know More</small>
             </Link>
           </p>
         </div>

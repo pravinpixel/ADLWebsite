@@ -55,15 +55,14 @@ export default function test() {
         sortBy={sortBy}
         setSearch={setSearch}
       />
+      
       <TestHealthPackages 
         testListing={testListing}
-        getAllTest={getAllTest}
+        getTestData={getAllTest}
         search={search} setSearch={setSearch}
         tackTest={tackTest} setTackTest={setTackTest}
         sortByPrice={sortByPrice}
-        loader={loader} setLoader={setLoader}
-        addTestToCart={addTestToCart}
-        removeTestToCart={removeTestToCart}
+        loader={loader} setLoader={setLoader} 
       />
       <PopularTests />
       <PopularPackages />

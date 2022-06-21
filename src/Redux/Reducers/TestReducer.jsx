@@ -1,4 +1,8 @@
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { setTestCartList } from "../Actions/TestAction";
 import { ActionTypes } from "../Constant/ActionTypes";
+ 
 
 export const TestBookedReducer = (state = [], {type, payload}) => { 
     switch (type) {
@@ -29,4 +33,41 @@ export const TestDetailReducer = (state = [], {type, payload}) => {
     }
 }
 
- 
+export const addToCardReducer = (state = [] ,{type, payload}) => {
+    switch (type) {
+        case ActionTypes.ADD_TO_CART: 
+            let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+            if(localStorage.getItem('CartTestList') == undefined) {
+               localStorage.setItem('CartTestList', JSON.stringify([]));
+            }
+            localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
+            toast.success('Test Added Successfully!');
+            setTestCartList(JSON.parse(localStorage.getItem('CartTestList')))
+            return true
+            break; 
+        default: return state;
+    }
+}
+
+export const removeFromCardReducer = (state = [] ,{type, payload}) => {
+    switch (type) {
+        case ActionTypes.REMOVE_FROM_CART: 
+            let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+            function isExists(CurrentTest) {
+                return CurrentTest.TestId === payload.TestId;
+            }
+            if(currentCart !== null) {
+                var Result = currentCart.find(isExists)
+                var index  = currentCart.indexOf(Result)
+                currentCart.splice(index, 1)
+                localStorage.setItem('CartTestList', JSON.stringify(currentCart));
+                return currentCart
+            } 
+            if(currentCart.length === 0) {
+                localStorage.removeItem('CartTestList')
+            }
+            return true
+            break; 
+        default: return state;
+    }
+}

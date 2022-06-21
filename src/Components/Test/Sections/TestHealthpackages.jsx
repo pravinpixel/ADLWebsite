@@ -39,7 +39,7 @@ export default function   TestHealthPackages(props) {
             props.testListing !== undefined
             ? props.testListing.map((test, index) => (
                 <div className="col-lg-3" key={index}>
-                  <TestCard test={test} addTestToCart={props.addTestToCart} removeTestToCart={props.removeTestToCart}/>
+                  <TestCard test={test} getAllTestData={props.getTestData} />
                 </div>
               ))
             : null
@@ -47,7 +47,7 @@ export default function   TestHealthPackages(props) {
         </div>
         <div className="load-mrebtn text-center">
           <a onClick={() => {
-            props.getAllTest(props.sortBy, props.search, props.tackTest + 4);
+            props.getTestData(props.sortBy, props.search, props.tackTest + 4);
             props.setTackTest(props.tackTest + 4)
           }}>
             Load More

@@ -7,6 +7,7 @@ import PackageCard from "./PackageCardComponent";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
+import emptyCart from '../.././assets/images/cart_empty.png'
 
 export default function CartList() {
   var settings = {
@@ -163,7 +164,7 @@ export default function CartList() {
                         </tbody>
                       </table>
                     :  <span>
-                        Cart is Empty
+                        <img src={emptyCart} alt="Cart is Empty" />
                       </span>
                   : null
                 }
@@ -216,7 +217,7 @@ export default function CartList() {
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="common-heading">
                 <h2>
-                  <span>Other related </span>Tests{" "}
+                  <span>Other related </span>Tests
                 </h2>
               </div>
               <Sliders {...settings} className="topbooked-cases">
@@ -247,7 +248,7 @@ export default function CartList() {
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="common-heading">
                 <h2>
-                  <span>Other </span> Health Packages{" "}
+                  <span>Other </span> Health Packages
                 </h2>
               </div>
               <br />

@@ -25,7 +25,6 @@ export function CheckCartBucket(TestId) {
          return CurrentTest.TestId === TestId;
       }
       var Result = currentCart.find(isExists)
-   
       if(Result !== undefined) {
          return true
       } else {
@@ -36,18 +35,12 @@ export function CheckCartBucket(TestId) {
 
 export function AddToCartList(test) {
    let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-   
    if(localStorage.getItem('CartTestList') == undefined) {
       localStorage.setItem('CartTestList', JSON.stringify([]));
    }
-   if(CheckCartBucket(test.TestId) === true) {
-      toast.info('Test Already Added!');
-      return false
-   } else {
-      localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
-      toast.success('Test Added Successfully!');
-      return true
-   }
+   localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
+   toast.success('Test Added Successfully!');
+   return true
 }
 
 
@@ -69,5 +62,5 @@ export function RemoveToCartList(test) {
     
    if(currentCart.length === 0) {
       localStorage.removeItem('CartTestList')
-   } 
+   }
 }

@@ -16,6 +16,7 @@ import testIcon1 from "../../assets/images/testing-icon-1.png";
 import testIcon2 from "../../assets/images/testing-icon-2.png";
 import testIcon3 from "../../assets/images/testing-icon-3.png";
 import testIcon4 from "../../assets/images/testing-icon-4.png";
+import CartBtn from "./CartBtn";
 
 export default function TestDetails() {
   const { TestId } = useParams();
@@ -153,20 +154,15 @@ export default function TestDetails() {
                       </li>
                       <li>
                         <img src={testIcon4} alt="call" className="img-fluid" />
-                        This test is{" "}
-                        {testDetails.test.HomeCollection === "N" ? "Not" : null}{" "}
+                        This test is
+                        {testDetails.test.HomeCollection === "N" ? "Not" : null}
                         eligible for Home Collection.
                       </li>
                     </ul>
                   </div>
                   <div className="case">
                     <p>
-                      <a
-                        className="text-white"
-                        onClick={() => addTestToCart(testDetails.test)}
-                      >
-                        ADD
-                      </a>
+                      <CartBtn getData={getTestDetails} testData={testDetails.test} />
                       <Link className="bg-trsnper" to="/">
                         Book Home Collection
                       </Link>
@@ -286,7 +282,7 @@ export default function TestDetails() {
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div className="common-heading">
                     <h2>
-                      <span>Other related </span>Tests{" "}
+                      <span>Other related </span>Tests
                     </h2>
                   </div>
                   <Sliders {...settings} className="topbooked-cases">

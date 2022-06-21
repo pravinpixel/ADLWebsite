@@ -28,9 +28,22 @@ export const  setAllTestDetails = (test) => {
     }
 }
 
-export const  removeTestDetails = (testDetails) => {
+export const  removeTestDetails = (test) => {
     return {
         type    : ActionTypes.REMOVE_TEST_DETAILS,
-        payload : testDetails
+        payload : test
+    }
+}
+
+export const addToCart = (addTest) => {
+    return {
+        type    : ActionTypes.ADD_TO_CART,
+        payload : addTest
+    }
+}
+export const removeFromCart = (removeTest) => {
+    return {
+        type    : ActionTypes.REMOVE_FROM_CART,
+        payload : removeTest
     }
 }
