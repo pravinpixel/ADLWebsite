@@ -19,23 +19,23 @@ export default function LegacyNutshell() {
             <div className="nutshell-count">
               <ul>
                 <li>
-                  <h4 className="home-counter-text"> <span className="counter">200</span> <span className="clr-pnk">+</span> </h4>
-                  <h5>Years of combined experience</h5>
+                  <h4 className="home-counter-text"> <span className="counter">40</span> <span className="clr-pnk">+</span> </h4>
+                  <h5>Years of Diagnostic Excellence</h5>
                 </li>
                 <li>
-                  <h4 className="home-counter-text"> <span className="counter">1000</span> <span className="clr-pnk">+</span> </h4>
+                  <h4 className="home-counter-text"> <span className="counter">125</span> <span className="clr-pnk">+</span> </h4>
                   <h5>Touch points across India</h5>
                 </li>
                 <li>
-                  <h4 className="home-counter-text"> <span className="counter">2000</span> <span className="clr-pnk">+</span> </h4>
-                  <h5>Employees across globe</h5>
+                  <h4 className="home-counter-text"> <span className="counter">800</span> <span className="clr-pnk">+</span> </h4>
+                  <h5>Employees </h5>
                 </li>
                 <li>
                   <h4 className="home-counter-text"> <span className="counter">6000</span> <span className="clr-pnk">+</span> </h4>
                   <h5>Varieties of Diagnostic Investigations</h5>
                 </li>
                 <li>
-                  <h4 className="home-counter-text"> <span className="counter">5</span>M <span className="clr-pnk">+</span> </h4>
+                  <h4 className="home-counter-text"> <span className="counter">1.2</span>M <span className="clr-pnk">+</span> </h4>
                   <h5>Blood Sample collections per year</h5>
                 </li>
                 <li>

@@ -1533,7 +1533,7 @@ section.maping {
 }
 
 .nutshell-count ul li h4 {
-	background-color: #63b5f7;
+	background-color: #f7931e;
 	color: #fff;
 	padding: 40px 0px 0px 20px;
 	text-align: left;
@@ -1541,8 +1541,8 @@ section.maping {
 	line-height: 28px;
 }
 
+.nutshell-count ul li:nth-child(2) h4,
 .nutshell-count ul li:nth-child(4) h4,
-.nutshell-count ul li:nth-child(5) h4,
 .nutshell-count ul li:nth-child(6) h4 {
 	background-color: #5c2d91;
 }
@@ -1569,7 +1569,7 @@ span.clr-pnk {
 }
 
 .haapns {
-	background-color: #63b5f7;
+	background-color: #ebebeb;
 	padding: 35px 10px 35px 30px;
 	margin: 0px;
 	min-height: 346px;
@@ -1579,14 +1579,14 @@ span.clr-pnk {
 
 .haapns h3 {
 	font-weight: 300;
-	padding: 2px 10px;
-	border: 1px solid #fff;
+	padding: 2px 10px; 
 	border-radius: 5px;
 	color: #fff;
 	font-size: 14px;
 	display: inline-block;
 	line-height: 25px;
 	margin-bottom: 15px;
+	background-color:#5c2d91;
 }
 
 .haapns h4 {
@@ -1594,12 +1594,12 @@ span.clr-pnk {
 	font-size: 20px;
 	line-height: 25px;
 	text-transform: uppercase;
-	color: #fff;
+	color: #404040;
 	margin-bottom: 16px;
 }
 
 .haapns p {
-	color: #fff;
+	color: #404040;
 	margin: 0px;
 	font-size: 14px;
 	line-height: 22px;
@@ -1611,7 +1611,7 @@ span.clr-pnk {
 }
 
 .lat-hapns .slick-dots li.slick-active button::before {
-	color: #81c3f7;
+	color: #f7931e;
 	opacity: 1;
 }
 
@@ -1660,7 +1660,7 @@ span.clr-pnk {
 	right: 35px;
 	bottom: 30px;
 	color: #fff;
-	background-color: #957dad;
+	background-color: #f7931e;
 	padding: 8px 18px;
 	text-transform: uppercase;
 	border-radius: 5px;
@@ -1669,7 +1669,7 @@ span.clr-pnk {
 
 .know-hub a:hover {
 	transition: all 0.3s ease;
-	background-color: #63b5f7;
+	background-color: #5c2d91;
 }
 
 section.accrediation {
@@ -1703,7 +1703,7 @@ section.accrediation {
 
 .acrdes-solution p span {
 	display: block;
-	color: #5c2d91;
+	color: #f7931e;
 }
 
 .reach-uslinks {
@@ -1782,6 +1782,8 @@ ul.footer-socials li a {
 	position: relative;
 }
 
+ul.footer-socials li a:hover{background:#5c2d91;}
+
 ul.footer-socials li i {
 	font-size: 21px;
 	color: #fff;
@@ -1814,7 +1816,7 @@ ul.footer-socials li:nth-child(5) i {
 
 .footer-column button {
 	position: absolute;
-	right: 42px;
+	right: 75px;
 	bottom: 11px;
 	background-color: transparent;
 	border: 0px;

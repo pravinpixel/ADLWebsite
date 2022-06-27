@@ -11,86 +11,172 @@ export default function Footer() {
       <footer>
         <div className="container">
           <div className="row no-gutters">
-            <div className="col-sm-12 col-md-6 col-lg-7">
-              <h5>Quick Links</h5>
-              <div className="footer-column">
+            <div className="col-sm-12 col-md-12 col-lg-12 p-0">
+              
+              <div className="footer-column row">
+              <div className="col-lg-2">
                 <ul>
+                <h5>Quick Links</h5> 
                   <li>
-                    <Link to="/" className="active">Home Collection</Link>
+                    <Link to="/">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/">COVID Antibody</Link>
+                    <Link to="/">People Behind</Link>
                   </li>
                   <li>
-                    <Link to="/">COVID 19 RTPCR Test</Link>
+                    <Link to="/">History</Link>
                   </li>
                   <li>
-                    <Link to="/">Explore Packages</Link>
+                    <Link to="/">Commitment</Link>
                   </li>
                   <li>
-                    <Link to="/">Care Packages</Link>
+                    <Link to="/">Accreditation</Link>
                   </li>
                   <li>
-                    <Link to="/">Give Feedback</Link>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <Link to="/">About ADL</Link>
+                    <Link to="/">Book a Blood Test</Link>
                   </li>
                   <li>
-                    <Link to="/">Book Packages</Link>
+                    <Link to="/">Download Reports</Link>
                   </li>
                   <li>
-                    <Link to="/">Book Tests</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Find a Lab</Link>
+                    <Link to="/">Health Packages</Link>
                   </li>
                   <li>
                     <Link to="/">Blog</Link>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <Link to="/">Events</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Technical Capabilities</Link>
-                  </li>
-                  <li>
-                    <Link to="/">News Clipping</Link>
-                  </li>
-                  <li>
-                    <Link to="/">In The Media</Link>
                   </li>
                   <li>
                     <Link to="/">Careers</Link>
                   </li>
                 </ul>
+                </div>
+                <div className="col-lg-2">
                 <ul>
+                <h5>Patients</h5>
                   <li>
-                    <Link to="/">Services</Link>
+                    <Link to="/">Health Packages</Link>
                   </li>
                   <li>
-                    <Link to="/">Team</Link>
+                    <Link to="/">Explore all Tests</Link>
                   </li>
                   <li>
-                    <Link to="/">Brands</Link>
+                    <Link to="/">Preparing for Health Checkup</Link>
                   </li>
                   <li>
-                    <Link to="/">Network</Link>
+                    <Link to="/">Report Download</Link>
                   </li>
                   <li>
-                    <Link to="/">Contact Us</Link>
+                    <Link to="/">Book an Appointment </Link>
+                  </li>
+                  <li>
+                    <Link to="/">Loyalty Program</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Drive through Blood Collection</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Feedback</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Special Offers</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Health Tips</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Diabetes Assessment Tool</Link>
+                  </li>
+                  <li>
+                    <Link to="/">FAQ’s</Link>
                   </li>
                 </ul>
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-2">
-              <h5>Terms and Policies</h5>
-              <div className="footer-column">
+                </div>
+                <div className="col-lg-2">
                 <ul>
+                <h5>Doctors</h5>
+                  <li>
+                    <Link to="/">Directory of Service</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Departments</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Hospital or Lab Management</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Clinician Lab Management</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Franchise Opportunities</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Research</Link>
+                  </li>
+                </ul>
+                </div>
+                <div className="col-lg-2">
+                <ul>
+                <h5>Health Checkup</h5>
+                  <li>
+                    <Link to="/">Reach Our Lab</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Book Home Collection</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Full Body Health Packages</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Clinical & Imaging Services</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Drive through Blood Collection</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Book COVID Test</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Diabetes DOST</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Thyroid DOST</Link>
+                  </li>
+                  <li>
+                    <Link to="/">V-Card, A Patient Beneficial Program</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Physiotherapy</Link>
+                  </li>
+                </ul>
+                </div>
+                <div className="col-lg-2">
+                <ul>
+                <h5>Reach Us</h5>
+                  <li>
+                    <Link to="/">Head Office & Other Locations</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Health Checkup for Employees</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Neuberg Anand Franchise</Link>
+                  </li>
+                  <li>
+                    <Link to="/">COVID Testing for Employees</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Hospital & Lab Partnership</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Job Oppourtunities</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Upgrade your Skills</Link>
+                  </li>
+                </ul>
+                </div>
+                <div className="col-lg-2">
+                <ul>
+                <h5>Terms and Policies</h5>
                   <li>
                     <Link to="/">Cancellation Policy</Link>
                   </li>
@@ -107,17 +193,18 @@ export default function Footer() {
                     <Link to="/">Feedback</Link>
                   </li>
                 </ul>
+                <h5 className="cips">Download App</h5>
+              <Link to="/"><img src={playstore} alt="" className="img-fluid"/></Link>
+                </div>
               </div>
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-3">
-              <h5>Subscribe to our newsletter</h5>
+            </div> 
+            <div className="col-sm-12 col-md-6 col-lg-6">
               <div className="footer-column subs-cribe">
+              <h5>Subscribe to our newsletter</h5>
                 <p>Signup for our newsletter to get the latest news, updates in your inbox. </p>
                 <input type="text" placeholder="Enter Your E-mail Id" name="search" />
                 <button type="submit"><img src={send} alt="" className="img-fluid"/></button>
-              </div>
-              <h5 className="cips">Download App</h5>
-              <Link to="/"><img src={playstore} alt="" className="img-fluid"/></Link>
+              </div> 
             </div>
           </div>
           <div className="row no-gutters">

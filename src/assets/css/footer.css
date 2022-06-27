@@ -7,11 +7,21 @@ footer {
 } 
 footer h5{
 	color:#fff;
-	font-size: 14px;
-	font-weight: 500;
-	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 10px;
 	margin-top: 50px;
 }
+
+
+footer .subs-cribe h5{
+	color:#fff;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 0px;
+	margin-top: 20px;
+}
+
 footer p{
 	font-size: 13px;
 	font-weight: 400;
@@ -27,7 +37,7 @@ footer a, footer .footer-bottom-text a strong{
 	color: #fff;
 }
 footer a:hover, footer .footer-bottom-text a:hover strong, footer ul li a.active{
-	color: #f690a0;
+	color: #f59637;
 }
 footer .footer-map-link a{
 	font-weight: 700;
@@ -37,7 +47,7 @@ footer .footer-column{
 	display: flex;	
 }
 footer .footer-column.subs-cribe{
-	display: inline-block;	position:relative;
+	display:block;	position:relative;
 }
 footer .footer-column.subs-cribe p{
 	color:#fff;
@@ -53,38 +63,45 @@ footer .footer-column ul{
 footer ul li{
 	list-style: none;
 }
+
 footer ul li a{
 	display: inline-block;
-	padding: 7px;
+	padding: 7px 7px 7px 0px;
 	font-size: 14px;
 	position: relative;
 }
+
 footer ul li a:hover, footer ul li a.active{
-	padding: 7px 7px 7px 15px;
+	padding: 7px 7px 7px 8px;
 }
+
 footer ul li a:before{
 	position: absolute;
 	content:"";
 	width: 2px;
 	height: 0px;
 	left: 0;
-	background: #f690a0;
+	background: #f59637;
 	top: 10%;
 	opacity: 0;
 	transition: all .6s ease;
 }
+
 footer ul li a:hover:before, footer ul li a.active:before{
 	height: 80%;
 	opacity: 1;
 	transition: all .6s ease;
 }
+
 footer .footer-bottom-text{
 	padding: 20px 0px;
 	font-size: 13px;
 }
+
 footer ul.footer-socials{
 	margin-top: 30px;
 }
+
 footer ul.footer-socials li {
 	display: inline-block;
 	font-size: 14px;
@@ -107,14 +124,17 @@ footer ul.footer-socials li a {
 	padding:0px;
 	transition: all .35s ease;
 }
+
 footer ul.footer-socials li a:before{
 	display: none;
 }
+
 footer ul.footer-socials li a:hover{
 	background: #fff;
 	color: var(--color-dark-blue);
 	transition: all .35s ease;
 }
+
 footer .divider{
 	background: rgba(255,255,255,0.2);
 	width: 100%;
@@ -169,9 +189,11 @@ a.whatsappp{
 	border-right: none;
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li{
 	list-style: none;
 }
+
 .mobile-socials ul li a{
 	width: 30px;
 	height: 30px;
@@ -182,22 +204,27 @@ a.whatsappp{
 	color: var(--color-blue);
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li a:hover{
 	color: #fff;
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li a.facebook:hover{
 	background: #4267B2;
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li a.twitter:hover{
 	background: #00ACEE;
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li a.youtube:hover{
 	background: #FF0000;
 	transition: all .35s ease;
 }
+
 .mobile-socials ul li a.linkedin:hover{
 	background: #0077b5;
 	transition: all .35s ease;
@@ -215,10 +242,12 @@ a.whatsappp{
 	background: var(--color-orange);
 	transition: all .35s ease;
 }
+
 .scroll .mobile-footer{
 	bottom: 0px;
 	transition: all .35s ease;
 }
+
 .mobile-footer a{
 	padding: 10px 0px;
 	width: 20%;
