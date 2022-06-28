@@ -1,8 +1,13 @@
 import React from 'react'
 import logo from './../../assets/images/logo.png';
+import logoberg from './../../assets/images/logoberg.png';
 import location from './../../assets/images/location.png';
 import sky from './../../assets/images/sky.png';
 import user from './../../assets/images/user.png';
+import men1 from './../../assets/images/men-1.png';
+import men2 from './../../assets/images/men-2.png';
+import men3 from './../../assets/images/men-3.png';
+import men4 from './../../assets/images/men-4.png';
 import CartCount from './CartCount';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +21,7 @@ export default function Header() {
               <Link to="/" className="navbar-brand text-brand">
                 <img src={logo} alt="" className="img-fluid"/>
               </Link>
-              <div className="navbar-collapse collapse justify-content-end" id="navbarDefault">
+              <div className="navbar-collapse collapse justify-content-center" id="navbarDefault">
                 <div className="row align-items-center">
                   <div className="col">
                     <ul className="top-links text-center">
@@ -51,50 +56,107 @@ export default function Header() {
                     </ul>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col">
+                <div className="">
+                  <div className="">
                     <ul className="navbar-nav"> 
                       <li className="nav-item">
-                        <Link to="/for-patient" className="nav-link">For Patients</Link>
+                        <Link to="/for-patient" className="nav-link">About us</Link>
                       </li>
                       <li className="nav-item">
-                        <Link to="/" className="nav-link">For Doctors</Link>
+                        <Link to="/" className="nav-link">Patients</Link>
                       </li>
                       <li className="nav-item">
-                        <Link to="/services" className="nav-link">Services</Link>
-                      </li>
+                        <Link to="/" className="nav-link">Doctors</Link>
+                      </li> 
                       <li className="nav-item dropdown">
                         <Link to="/" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
-                        <ul className="dropdown-menu">
+                          <div className="dropdown-bg">
+                            
+                        <ul className="dropdown-menu topr-clmn row">
+
+                          <li className="col frst-clmn">
+                            <ul>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 1</Link>
+                            <Link to="/" className="dropdown-item">Health Packages</Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item">Explore All Tests</Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item">Preparing for Health Checkup</Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item">Report Download</Link>
+                          </li>
+
+                          <li>
+                          <Link to="/" className="dropdown-item">Book an appointment</Link>
+                          </li>
+
+                          <li>
+                          <Link to="/" className="dropdown-item">Loyalty Program</Link>
+                          </li>
+
+                          </ul>
+                          </li> 
+
+                          <li className="col secnd-clmn">
+                            <ul>
+                          <li>
+                            <Link to="/" className="dropdown-item">Drive through Blood Collection</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 2</Link>
+                            <Link to="/" className="dropdown-item">Feedback</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 3</Link>
+                            <Link to="/" className="dropdown-item">Special offers</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 4</Link>
+                            <Link to="/" className="dropdown-item">Health tips</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 5</Link>
+                            <Link to="/" className="dropdown-item">Diabetes Assessment tool</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 6</Link>
+                            <Link to="/" className="dropdown-item">Frequently asked questions</Link>
+                          </li>
+                          </ul>
+                          </li>
+
+                          <li className="col thrd-clmn">
+                            <ul>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                              <img src={men1} alt="" className="img-fluid"/> 
+                              Download Reports
+                            </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Checkup - 7</Link>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men2} alt="" className="img-fluid"/>
+                            Book an Appointment
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men3} alt="" className="img-fluid"/>
+                            Diabetes Assesment Tool
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men4} alt="" className="img-fluid"/>
+                            18004251974 (TOLL-FREE)
+                            </Link>
+                          </li>
+                          </ul>
                           </li>
                         </ul>
-                      </li>
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link">Find a lab</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link">About ADL</Link>
-                      </li>
+                        </div>
+                      </li> 
                       <li className="nav-item">
                         <Link to="/" className="nav-link">Reach Us</Link>
                       </li>
@@ -102,6 +164,9 @@ export default function Header() {
                   </div>
                 </div>
               </div>
+              <Link to="/" className="navbar-brand text-brand">
+                <img src={logoberg} alt="" className="img-fluid"/>
+              </Link>
               <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>

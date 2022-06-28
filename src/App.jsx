@@ -12,7 +12,9 @@ import Services from './Components/Services/Services';
 import Solutions from './Components/Solutions/solutions';
 import GuestCheckOut from './Components/Containers/GuestCheckOut';
 import Login from './Components/Containers/Login';
-import About from './Components/About/About';
+import About from './Components/About/About'; 
+import Commitment from './Components/Commitment/Commitment';
+import Contact from './Components/Contact/Contact';
 
 export default function App() {
   return (
@@ -21,13 +23,15 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about-us' element={<About/>} />
+        <Route path='/commitment' element={<Commitment/>} />
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/Solutions' element={<Solutions/>} />
         <Route path='/my-cart' element={<CartList/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route path='/guest-checkout' exact element={<GuestCheckOut/>} />
-        <Route path='/login' exact element={<Login/>} />
+        <Route path='/login' exact element={<Login/>} /> 
+        <Route path='/reach-us' exact element={<Contact/>} /> 
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/>
