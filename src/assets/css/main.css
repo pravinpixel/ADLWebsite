@@ -2242,6 +2242,7 @@ li.active .darkBdrBut {
 .cmn-box-str ul {
 	padding: 0px 0px 25px;
 	margin: 0px;
+	min-height: 105px;
 }
 
 .cmn-box-str ul li {
@@ -2264,6 +2265,7 @@ li.active .darkBdrBut {
 	font-size: 17px;
 	line-height: 24px;
 	margin-bottom: 15px;
+	min-height: 50px;
 }
 
 span.flag-option {
@@ -3382,8 +3384,36 @@ span.flag-option p {
     color: rgba(55,55,55,0.1);
     text-transform: uppercase;
 }
-		
 
+.flag-option p{color: #fff;}
+
+.prdts-img{border-radius: 6px;overflow: hidden;}
+
+.people-function .modal{top:100px;}
+.people-function .modal-dialog{max-width:950px;}
+.people-function .modal-open .modal{overflow-x: scroll;}
+
+.mdl-img img{float:left;margin-right: 25px;}
+
+.box-fixer{padding: 20px;position: relative;margin:50px 0px;border: 2px solid #f2f2f2;transition: all 0.3s ease;border-radius:5px;}
+.box-fixer a{position: relative;display: block;}
+.box-fixer a:before{background-color: #00000095;content: "+";position: absolute;left:50%;top:50%;width:calc(0% + 0px);height:calc(0% + 0px);display: flex;align-items: center;justify-content: center;z-index: 15;color:#fff;font-size: 40px;transition: all 0.3s ease;  opacity: 0;}
+.box-fixer h4{font-weight: 600;font-size: 20px;line-height: 24px;margin-top: 25px;}
+.box-fixer h4 span{font-weight: 500;font-size: 16px;color:#6e6e6e;display: block;}
+
+.box-fixer:hover{box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.14);transition: all 0.3s ease;}
+
+.box-fixer:hover a:before{width:calc(100% + 40px);height:calc(100% + 40px);transition: all 0.3s ease;left:-20px;top:-20px;  opacity: 1;border-radius: 5px;}
+
+.modal-header h5 span {
+	font-size: 16px;
+	font-weight: 400;
+	display: inline-block;
+	margin-left: 5px;
+  }
+
+
+ 
 
 
 

@@ -10,7 +10,7 @@ export default function TestCardComponent(props) {
       <div className="cmn-box-str">
         <div className="case">
           <h3>
-            { props.test !== undefined ? props.test.TestName.substring(0,80) : 'Allergen, Individual-Drug, Diclofenac' }  
+            { props.test !== undefined ? props.test.TestName.substring(0,40) : 'Allergen, Individual-Drug, Diclofenac' }  
           </h3>
           <ul>
             <li>

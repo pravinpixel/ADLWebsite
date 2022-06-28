@@ -15,6 +15,7 @@ import Login from './Components/Containers/Login';
 import About from './Components/About/About'; 
 import Commitment from './Components/Commitment/Commitment';
 import Contact from './Components/Contact/Contact';
+import Peoplebhind from './Components/Peoplebehind/Peoplebehind';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about-us' element={<About/>} />
+        <Route path='/people-behind' element={<Peoplebhind/>} />
         <Route path='/commitment' element={<Commitment/>} />
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/services' element={<Services/>} />
