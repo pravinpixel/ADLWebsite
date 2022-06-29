@@ -16,6 +16,7 @@ import About from './Components/About/About';
 import Commitment from './Components/Commitment/Commitment';
 import Contact from './Components/Contact/Contact';
 import Peoplebhind from './Components/Peoplebehind/Peoplebehind';
+import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/Solutions' element={<Solutions/>} />
+        <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup/>} />
         <Route path='/my-cart' element={<CartList/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route path='/guest-checkout' exact element={<GuestCheckOut/>} />
