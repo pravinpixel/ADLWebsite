@@ -12,7 +12,7 @@ export default function Login() {
                 <div className="row fully-bxn no-gutters">
                 <div className="col-lg-6">
                   <div className="dhoni-bgm">
-                  <div class="common-heading"><h2> Welcome <span> to Neuberg Anand </span> </h2></div>
+                  <div className="common-heading"><h2> Welcome <span> to Neuberg Anand </span> </h2></div>
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -20,7 +20,7 @@ export default function Login() {
                   <Form>
                     <div className="frm-fields row clearfix">
                     <div className="col-lg-12 col-md-12 col-sm-12">
-                    <div class="common-heading"><h2> Login <span> Here! </span> </h2></div>
+                    <div className="common-heading"><h2> Login <span> Here! </span> </h2></div>
                         <div className="row">
                         <div className="form-data col-lg-12"> 
                             <input className="input100" type="text" name='name' placeholder="Username" required/> 

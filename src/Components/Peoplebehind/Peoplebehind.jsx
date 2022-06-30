@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
 import people1 from "../../assets/images/people-1.jpg"; 
@@ -12,6 +12,10 @@ import people8 from "../../assets/images/people-8.jpg";
 
 
 export default function Peoplebhind() {
+    useEffect(() => {
+        document.title = "People Behind";
+        window.scroll(0,0)
+      }, []);
   return ( 
 
 <div>
@@ -23,9 +27,11 @@ export default function Peoplebhind() {
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
+                      <li><Link to='/'> Home </Link></li>
                       <li> / </li> 
-                      <li><Link to='/'></Link> People Behind </li>
+                      <li><Link to='/about-us'> About Us </Link></li>
+                      <li> / </li>
+                      <li> People Behind </li>
                     </ul>
                     <h1>
                     Haematology services extending<br></br> beyond the blood smear
@@ -41,7 +47,7 @@ export default function Peoplebhind() {
     <div className="row">
         <div className="col-lg-12 p-0">
         <div className="col-lg-12">
-            <div class="common-heading"><h2> <span className='inlne'>The Core</span> Management </h2></div>
+            <div className="common-heading"><h2> <span className='inlne'>The Core</span> Management </h2></div>
                  <p>Over 40 years ago, when doctors relied on stethoscope and pulse as their primary investigation tools, one man set up a diagnostic laboratory believing that the future of investigative medicine will rely upon laboratory tests as a primary diagnostic tool. Today, this laboratory has grown to incorporate the latest in diagnostic medicine, supporting clinicians across the region with reliable reports for accurate diagnosis and treatment of illnesses.</p>
         </div> 
         
@@ -57,7 +63,7 @@ export default function Peoplebhind() {
 </div>
 </div>
 
-<div className="modal fade cstm" id="ram" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade cstm" id="ram" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">
@@ -90,7 +96,7 @@ export default function Peoplebhind() {
 </div>
 </div>
 
-<div className="modal fade cstm" id="suj" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade cstm" id="suj" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">
@@ -123,7 +129,7 @@ export default function Peoplebhind() {
 </div>
 </div>
 
-<div className="modal fade cstm" id="jay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade cstm" id="jay" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">
@@ -158,7 +164,7 @@ export default function Peoplebhind() {
 </div>
 </div>
 
-<div className="modal fade cstm" id="she" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade cstm" id="she" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">

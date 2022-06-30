@@ -58,24 +58,37 @@ export default function Header() {
                 </div>
                 <div className="">
                   <div className="">
-                    <ul className="navbar-nav"> 
-                      <li className="nav-item">
-                        <Link to="/for-patient" className="nav-link">About us</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link">Patients</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link">Doctors</Link>
-                      </li> 
+
+                    <ul className="navbar-nav">  
+                      <li className="nav-item dropdown sngle-frce">
+                        <Link className="nav-link dropdown-toggle" to="/about-us"   >About Us</Link>
+                        <ul className="dropdown-menu">
+                           <li>
+                              <Link className="dropdown-item" to="/people-behind"> People behind </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/history">History</Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/commitment">Commitment</Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/accreditation">Accreditation</Link>
+                           </li> 
+                        </ul>
+                     </li>
                       <li className="nav-item dropdown">
-                        <Link to="/" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
+                        <Link to="/" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Patients</Link>
                           <div className="dropdown-bg">
                             
                         <ul className="dropdown-menu topr-clmn row">
 
                           <li className="col frst-clmn">
                             <ul>
+                          <li>
+                            <Link to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
+                          </li>
+
                           <li>
                             <Link to="/" className="dropdown-item">Health Packages</Link>
                           </li>
@@ -86,15 +99,7 @@ export default function Header() {
 
                           <li>
                             <Link to="/" className="dropdown-item">Preparing for Health Checkup</Link>
-                          </li>
-
-                          <li>
-                            <Link to="/" className="dropdown-item">Report Download</Link>
-                          </li>
-
-                          <li>
-                          <Link to="/" className="dropdown-item">Book an appointment</Link>
-                          </li>
+                          </li> 
 
                           <li>
                           <Link to="/" className="dropdown-item">Loyalty Program</Link>
@@ -116,10 +121,7 @@ export default function Header() {
                           </li>
                           <li>
                             <Link to="/" className="dropdown-item">Health tips</Link>
-                          </li>
-                          <li>
-                            <Link to="/" className="dropdown-item">Diabetes Assessment tool</Link>
-                          </li>
+                          </li> 
                           <li>
                             <Link to="/" className="dropdown-item">Frequently asked questions</Link>
                           </li>
@@ -157,9 +159,138 @@ export default function Header() {
                         </ul>
                         </div>
                       </li> 
-                      <li className="nav-item">
-                        <Link to="/" className="nav-link">Reach Us</Link>
-                      </li>
+                      <li className="nav-item dropdown sngle-frce">
+                        <Link className="nav-link dropdown-toggle" to="/"  aria-haspopup="true" aria-expanded="false">Doctors</Link>
+                        <ul className="dropdown-menu">
+                           <li>
+                              <Link className="dropdown-item" to="/"> Directory of service (DOS) </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Department </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Hospital or Lab Management </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Clinician Lab Management </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Franchise Opportunities </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Research </Link>
+                           </li>   
+                        </ul>
+                     </li> 
+                      <li className="nav-item dropdown">
+                        <Link to="/" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
+                          <div className="dropdown-bg">
+                            
+                        <ul className="dropdown-menu topr-clmn row">
+
+                          <li className="col frst-clmn">
+                            <ul>
+                          <li>
+                            <Link to="/" className="dropdown-item"> Reach our lab </Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item"> Book home collection </Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item"> Full body health packages </Link>
+                          </li>
+
+                          <li>
+                            <Link to="/" className="dropdown-item"> Clinical & Imaging services </Link>
+                          </li>
+
+                          <li>
+                          <Link to="/" className="dropdown-item"> Drive through blood collection </Link>
+                          </li> 
+
+                          </ul>
+                          </li> 
+
+                          <li className="col secnd-clmn">
+                            <ul>
+                          <li>
+                            <Link to="/" className="dropdown-item"> Book COVID test </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item"> Diabetes DOST </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item"> Thyroid DOST </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item"> V-Card, A patient beneficial program </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item"> Physiotherapy </Link>
+                          </li> 
+
+                          </ul>
+                          </li>
+
+                          <li className="col thrd-clmn">
+                            <ul>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                              <img src={men1} alt="" className="img-fluid"/> 
+                              Download Reports
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men2} alt="" className="img-fluid"/>
+                            Book an Appointment
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men3} alt="" className="img-fluid"/>
+                            Diabetes Assesment Tool
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/" className="dropdown-item">
+                            <img src={men4} alt="" className="img-fluid"/>
+                            18004251974 (TOLL-FREE)
+                            </Link>
+                          </li>
+                          </ul>
+                          </li>
+                        </ul>
+                        </div>
+                      </li> 
+                      <li className="nav-item dropdown sngle-frce">
+                        <Link className="nav-link dropdown-toggle" to="/reach-us">Reach Us</Link>
+                        <ul className="dropdown-menu">
+                           <li>
+                              <Link className="dropdown-item" to="/"> Head office & other locations </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Health Checkup for employees </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Neuberg Anand Franchise </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> COVID testing for employees </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Hospital & Lab Partnership </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Job oppourtunities </Link>
+                           </li>
+                           <li>
+                              <Link className="dropdown-item" to="/"> Upgrade your skills </Link>
+                           </li>    
+                        </ul>
+                     </li>
                     </ul>
                   </div>
                 </div>

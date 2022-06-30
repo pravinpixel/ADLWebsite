@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
 import testuimonialimg from "../../assets/images/testim.jpg";
@@ -11,11 +11,6 @@ import valueicon5 from "../../assets/images/value-icon-5.png";
 import valueicon6 from "../../assets/images/value-icon-6.png";
 import valueicon7 from "../../assets/images/value-icon-7.png";
 import abtusimg from "../../assets/images/people-behind.png";
-import awardinnimg from "../../assets/images/award-inner.png";
-import certimg1 from "../../assets/images/cer-1.jpg";
-import certimg2 from "../../assets/images/cer-2.jpg";
-import certimg3 from "../../assets/images/cer-3.jpg";
-import certimg4 from "../../assets/images/cer-3.jpg";
 import careng1 from "../../assets/images/care-1.jpg";
 import careng2 from "../../assets/images/care-2.jpg";
 import careng3 from "../../assets/images/care-3.jpg";
@@ -24,6 +19,10 @@ import careng5 from "../../assets/images/care-5.jpg";
 import knwmre from "../../assets/images/know-more.png";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us";
+    window.scroll(0,0)
+  }, []);
   return (
     <div>
             <section className='inner-banner'>
@@ -33,9 +32,9 @@ export default function About() {
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
+                      <li><Link to='/'> Home </Link></li>
                       <li> / </li> 
-                      <li><Link to='/'></Link> About Us </li>
+                      <li> About Us </li>
                     </ul>
                     <h1>
                     Delivering Reliable, Fast and Affordable <br></br>Diagnostic services since 1974   
@@ -52,7 +51,7 @@ export default function About() {
 
           <div className="col-lg-7">
               <div className="legacy-care">
-              <div class="common-heading"><h2> <span>Our Legacy </span>
+              <div className="common-heading"><h2> <span>Our Legacy </span>
               ENSURING <span className='yelow'>“CARE”</span> IN HEALTHCARE</h2></div>
               <p>May 8, 1974 – the day Anand Diagnostic Laboratory made a humble beginning on Infantry Road, Shivajinagar Bangalore. This was the day Dr. A V Ramaprasad moved from the role of teacher to lead what has grown into a pioneer in technology driven diagnostics in the region. Core principles of honesty and integrity through transparency that were ingrained and percolated down the ladder of the organisation from the time of its inception found roots and are visible 43 years hence. The visionary in Dr. Ramaprasad drove him relentlessly to advocate few basic rules for all to follow a) “The patient comes first. </p>
               <div className="spcl-cnt">
@@ -86,7 +85,7 @@ export default function About() {
       <div className="container">
         <div className="row">
         <div className="col-lg-12">
-            <div class="common-heading"><h2> <span>Dicta sunt explicabo.</span>
+            <div className="common-heading"><h2> <span>Dicta sunt explicabo.</span>
             Dicta sunt explicabo. Nemo enim ipsam</h2></div>
         </div>
         <div className="col-lg-8">
@@ -145,7 +144,7 @@ export default function About() {
         <div className="peop-behnd row align-items-center">
         <div className="col-lg-7">
               <div className="legacy-care">
-              <div class="common-heading"><h2> <span>People Behind </span>
+              <div className="common-heading"><h2> <span>People Behind </span>
               Over 40 years ago,</h2></div>
               <p>when doctors relied on stethoscope and pulse as their primary investigation tools, one man set up a diagnostic laboratory, believing that the future of investigative medicine will rely upon laboratory tests as a primary diagnostic tool. Today, this laboratory has grown to incorporate the latest in diagnostic medicine, supporting clinicians across the region with reliable reports for accurate diagnosis and treatment of illnesses.</p> <br></br>
               <div className='cmn-buton'>
@@ -167,78 +166,13 @@ export default function About() {
       </div>
     </section>
 
-    <section className='our-accrediation'>
-      <div className="container">
-        <div className="row align-items-center">
-           <div className="col-lg-12">
-           <div class="common-heading"><h2> <span>Our</span>
-           Accreditation</h2></div>
-           </div>
-           <div className="col-lg-10">
-           <p>ADL was first accredited in 2001, and we were the first diagnostic laboratory in South India to gain NABL accreditation.</p>
-
-           <p>According to NABL, ‘Laboratory Accreditation provides formal recognition of competent laboratories, thus providing a ready means for customers to find reliable testing and calibration services in order to meet their demands’.</p>
-
-           <p>We were ready for accreditation much before the formal accreditation agencies showed up. We always believed in following best practices, error free processes and strict compliance to quality standards. The NABL accreditation was simply a validation of everything we were already doing.</p>
-
-           <p>Best practices are not a one-time affair for purpose of getting some certification. For us, it is an ongoing obsession.</p>
-           </div>
-           <div className="col-lg-2">
-            <div className="war-awa text-right">
-            <img src={awardinnimg} alt="call" className="img-fluid" />
-            </div>
-           </div>
-           <div className="col-lg-12">
-            <div className="certifi-lsts text-center">
-              <ul>
-                <li>
-                <img src={certimg1} alt="call" className="img-fluid" />
-                <h4> ADL NABL <span>Certificate</span></h4>
-                <div className="cmn-buton">
-                <p>
-                <Link to=''>View Certificate</Link>
-                </p>
-                </div>
-                </li>
-                <li>
-                <img src={certimg2} alt="call" className="img-fluid" />
-                <h4> ADL Scope of <span> Accreditation </span></h4>
-                <div className="cmn-buton">
-                <p>
-                <Link to=''>View Certificate</Link>
-                </p>
-                </div>
-                </li>
-                <li>
-                <img src={certimg3} alt="call" className="img-fluid" />
-                <h4> NARL <span>Certificate</span></h4>
-                <div className="cmn-buton">
-                <p>
-                <Link to=''>View Certificate</Link>
-                </p>
-                </div>
-                </li>
-                <li>
-                <img src={certimg4} alt="call" className="img-fluid" />
-                <h4> Scope <span> NARL </span></h4>
-                <div className="cmn-buton">
-                <p>
-                <Link to=''>View Certificate</Link>
-                </p>
-                </div>
-                </li>
-              </ul>
-            </div>
-           </div>
-        </div>
-      </div>
-    </section>
+   
 
     <section className='care-healthcare text-center'>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-          <div class="common-heading"><h2> <span> We are the Parivar of </span><br></br> Anand Diagnostic Laboratory,<span> and<br></br> we ensurethere is “</span><span class="yelow">CARE</span><span>" IN</span> HEALTHCARE</h2></div>
+          <div className="common-heading"><h2> <span> We are the Parivar of </span><br></br> Anand Diagnostic Laboratory,<span> and<br></br> we ensurethere is “</span><span className="yelow">CARE</span><span>" IN</span> HEALTHCARE</h2></div>
           </div>
 
           <div className="col-lg-12">

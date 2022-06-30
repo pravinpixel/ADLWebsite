@@ -256,6 +256,8 @@ header .quote-btn:hover:after{
 	position: unset;
 } 
 
+.navbar-default.navbar-trans .nav-item.sngle-frce{position: relative;}
+
 .navbar-default .dropdown .dropdown-menu {
 	transform: translate3d(0px, 40px, 0px);
 	opacity: 0;
@@ -315,6 +317,9 @@ a.dropdown-item {
 		position: absolute;
 		box-shadow: 0 2px rgba(17, 16, 15, 0.1), 0 2px 10px rgba(20, 19, 18, 0.1);
 	}
+
+	.navbar-default .dropdown.sngle-frce .dropdown-menu {display: block !important;padding:10px 52px 10px 15px !important;}
+
 }
 
 .navbar-default .dropdown .dropdown-menu .dropdown-item {
@@ -371,6 +376,11 @@ li.thrd-clmn a:before{display: none !important;}
 
 .dropdown-menu {
 	top: 108px;
+}
+
+
+.sngle-frce .dropdown-menu {
+	top: 50px;
 }
 
 .navbar-reduce .dropdown-menu {

@@ -11,7 +11,7 @@ export function assets(params) {
 export function Loading() {
    return (
       <div className="preloader_wrapper_bg">
-         <div class="preloader_wrapper">
+         <div className="preloader_wrapper">
             <img src={logo} alt="" className="img-fluid"/>
          </div>
       </div>

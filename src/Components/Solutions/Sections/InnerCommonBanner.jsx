@@ -12,7 +12,7 @@ export default function
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
+                      <li><Link to='/'> Home </Link></li>
                       <li> / </li>
                       <li><Link to='/'></Link> Solutions </li>
                       <li> / </li>

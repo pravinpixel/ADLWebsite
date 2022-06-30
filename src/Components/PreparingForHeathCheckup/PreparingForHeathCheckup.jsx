@@ -9,6 +9,7 @@ import commi5 from "../../assets/images/comite-5.jpg";
 
 
 export default function PreparingForHeathCheckup() {
+  
   return ( 
 
 <div>
@@ -19,7 +20,7 @@ export default function PreparingForHeathCheckup() {
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
+                      <li><Link to='/'> Home </Link></li>
                       <li> / </li> 
                       <li><Link to='/'></Link> Preparing for Heath Checkup </li>
                     </ul>

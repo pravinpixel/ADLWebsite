@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
 
 
 export default function Contact() {
+    useEffect(() => {
+        document.title = "Reach Us";
+        window.scroll(0,0)
+      }, []);
   return (
     <div>
 <section className='inner-banner'>
@@ -13,7 +17,7 @@ export default function Contact() {
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
+                      <li><Link to='/'> Home </Link></li>
                       <li> / </li> 
                       <li><Link to='/'></Link> Contact Us </li>
                     </ul>
@@ -65,16 +69,16 @@ export default function Contact() {
                             <div className="mb-5 animated fadeInUp"><hr/></div>
                         </div>
                         <div className="col-sm-12 col-md-6 col-lg-8">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.398949025306!2d77.606148!3d12.981461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33ceeda312ca9a2c!2sAnand%20Diagnostic%20Laboratory%20(A%20Neuberg%20Associate)!5e0!3m2!1sen!2sin!4v1656335670159!5m2!1sen!2sin" class="contact-map" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.398949025306!2d77.606148!3d12.981461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33ceeda312ca9a2c!2sAnand%20Diagnostic%20Laboratory%20(A%20Neuberg%20Associate)!5e0!3m2!1sen!2sin!4v1656335670159!5m2!1sen!2sin" className="contact-map" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                         <div className="col-sm-12 col-md-6 col-lg-4">
                             <div className="green-bg animated fadeInRight">
                                 <h4 className="mb-3 text-white">Get in Touch</h4>
 								<form name="contactform" method="post" action="#" id="contactform" > 
-                                <div className="formdata"><input type="text" placeholder="Enter Your Name " name="name" id="name" class="form-control jsrequired " /></div>
-                                <div className="formdata"> <input type="email" placeholder="Enter Your Email ID" name="email" id="email"  class="form-control jsrequired " /></div>
-                                <div className="formdata"><input type="tel" placeholder="Enter Your Mobile Number" name="mobile" id="mobile" class="form-control jsrequired " /></div>
-                                <div className="formdata"><input type="text" placeholder="Enter Your Location" name="name" id="name" class="form-control jsrequired " /></div> 
+                                <div className="formdata"><input type="text" placeholder="Enter Your Name " name="name" id="name" className="form-control jsrequired " /></div>
+                                <div className="formdata"> <input type="email" placeholder="Enter Your Email ID" name="email" id="email"  className="form-control jsrequired " /></div>
+                                <div className="formdata"><input type="tel" placeholder="Enter Your Mobile Number" name="mobile" id="mobile" className="form-control jsrequired " /></div>
+                                <div className="formdata"><input type="text" placeholder="Enter Your Location" name="name" id="name" className="form-control jsrequired " /></div> 
                                 <div className="formdata"><textarea className="form-control" placeholder="Message" name="msg" id="msg"></textarea></div>
                                 <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
                             </form>

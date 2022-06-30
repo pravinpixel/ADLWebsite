@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
 import commi1 from "../../assets/images/comite-1.jpg"; 
@@ -9,6 +9,10 @@ import commi5 from "../../assets/images/comite-5.jpg";
 
 
 export default function Commitment() {
+   useEffect(() => {
+      document.title = "Commitment";
+      window.scroll(0,0)
+    }, []);
   return ( 
 
 <div>
@@ -19,9 +23,11 @@ export default function Commitment() {
             <div className="row">
                 <div className="caption-details bnr-txt">
                     <ul>
-                      <li><Link to='/'></Link> Home </li>
-                      <li> / </li> 
-                      <li><Link to='/'></Link> Commitment </li>
+                      <li><Link to='/'> Home </Link></li>
+                      <li> / </li>  
+                      <li><Link to='/about-us'> About Us </Link></li>
+                      <li> / </li>
+                      <li> Commitment </li>
                     </ul>
                     <h1>
                     Haematology services extending<br></br> beyond the blood smear
@@ -32,9 +38,13 @@ export default function Commitment() {
         </div>
 </section>  
 
-<section className="section range-of-products section-top-btm">
+<section className="section section-top-btm">
 <div className="container">
    <div className="row align-items-center flex-column-reverse flex-md-row">
+   <div className="col-lg-12">
+            <div className="common-heading"><h2> <span className='inlne'>Our</span> Commitment </h2></div>
+            <p>We are the Parivar of Anand Diagnostic Laboratory, and we ensure there is “Care” in healthcare.</p><br></br>
+        </div>
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="rnge-prds text-left">
             <div className="common-title drk animated fadeInUp mb-3">
@@ -51,8 +61,8 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
+   <div className="row">
+      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
 </section> 
@@ -76,8 +86,8 @@ export default function Commitment() {
          </div>
       </div>         
    </div>
-   <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
+   <div className="row">
+      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
 </section>  
@@ -101,8 +111,8 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
+   <div className="row">
+      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
 </section> 
@@ -126,8 +136,8 @@ export default function Commitment() {
          </div>
       </div>         
    </div>
-   <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
+   <div className="row">
+      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
 </section>  
@@ -151,8 +161,8 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
+   <div className="row">
+      <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
 </section> 
