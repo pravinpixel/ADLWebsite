@@ -5,7 +5,6 @@ import { addToCart, removeFromCart, setTestCartList } from '../../Redux/Actions/
 
 export default function CartBtn(props) {
     const dispatch = useDispatch()
-    console.log(props)
     return (
             CheckCartBucket(props.testData.TestId) === false 
             ?
