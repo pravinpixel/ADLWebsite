@@ -41,7 +41,7 @@ export function AddToCartList(test) {
    }
    if(localStorage.getItem('CartTestList') != undefined || localStorage.getItem('CartTestList') != null) {
        let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-       localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
+       localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
    }
     
    toast.success('Test Added Successfully!');
