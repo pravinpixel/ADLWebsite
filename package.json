@@ -1,6 +1,7 @@
 {
   "name": "adl_website",
   "version": "0.1.0",
+  "homepage": "http://adl.pixel-studios.net/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -45,7 +46,7 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
+      "last 1 chrome version",  
       "last 1 firefox version",
       "last 1 safari version"
     ]
@@ -61,6 +62,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pravinpixel/ADLWebsite/issues"
-  },
-  "homepage": "https://github.com/pravinpixel/ADLWebsite#readme"
+  } 
 }

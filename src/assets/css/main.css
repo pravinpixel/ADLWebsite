@@ -418,11 +418,11 @@ a:hover {
 }
 
 #home-banner-carousel .carousel-inner .carousel-item {
-	background-repeat: no-repeat;
-	background-position: right 0 bottom;
-	background-size: contain;
-	padding: 150px 0px 450px;
-	transition: all 1s ease;
+	background-repeat: no-repeat !important;
+	background-position: right 0 bottom !important;
+	background-size: cover !important;
+	padding: 150px 0px 450px !important;
+	transition: all 1s ease !important;
 	margin-top: 105px;
 }
 
