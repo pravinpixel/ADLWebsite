@@ -36,11 +36,13 @@ export const TestDetailReducer = (state = [], {type, payload}) => {
 export const addToCardReducer = (state = [] ,{type, payload}) => {
     switch (type) {
         case ActionTypes.ADD_TO_CART: 
-            let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-            if(localStorage.getItem('CartTestList') == undefined) {
+            if(localStorage.getItem('CartTestList') == undefined || localStorage.getItem('CartTestList') == null) {
                localStorage.setItem('CartTestList', JSON.stringify([]));
             }
-            localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
+            if(localStorage.getItem('CartTestList') != undefined || localStorage.getItem('CartTestList') != null) {
+                let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+                localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
+            }
             toast.success('Test Added Successfully!');
             setTestCartList(JSON.parse(localStorage.getItem('CartTestList')))
             return true

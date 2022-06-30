@@ -36,11 +36,14 @@ export function CheckCartBucket(TestId) {
 }
 
 export function AddToCartList(test) {
-   let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
-   if(localStorage.getItem('CartTestList') == undefined) {
+   if(localStorage.getItem('CartTestList') == undefined || localStorage.getItem('CartTestList') == null) {
       localStorage.setItem('CartTestList', JSON.stringify([]));
    }
-   localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
+   if(localStorage.getItem('CartTestList') != undefined || localStorage.getItem('CartTestList') != null) {
+       let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
+       localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
+   }
+    
    toast.success('Test Added Successfully!');
    return true
 }
