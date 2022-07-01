@@ -10,11 +10,11 @@ const Banners = () => {
     const dispatch      =   useDispatch();
     const bannerList    =   useSelector((state) =>  state.HomePageBanners)
     useEffect(() => {
-        return () => {
+        // return () => {
             axios.get(API_URL.BANNERS).then((response) => {
                 dispatch(setBanners(response.data))
             });
-        }
+        // }
     }, []);
     return ( 
         <div className="banner-conceptual">

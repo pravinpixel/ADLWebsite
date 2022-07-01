@@ -64,9 +64,9 @@ export default function BookedTestSliders() {
   };
 
   useEffect(() => {
-    return () => {
+    // return () => {
       getBookedTestSliders();
-    };
+    // };
   }, []);
 
   return (

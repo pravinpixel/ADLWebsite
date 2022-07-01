@@ -63,7 +63,7 @@ export default function CartList() {
   
   useEffect(() => {
     window.scroll(0,0)
-    return () => {
+    // return () => {
       setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
       var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
       if(testListFromCart != null) {
@@ -75,7 +75,7 @@ export default function CartList() {
       } else {
         window.location.href = "/";
       }
-    }
+    // }
   }, [])
   
   const removeCartItem = (index) => {

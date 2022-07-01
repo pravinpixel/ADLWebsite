@@ -1,7 +1,7 @@
 {
   "name": "adl_website",
   "version": "0.1.0",
-  "homepage": "http://adl.pixel-studios.net/",
+  "homepage": "http://adl.pixel-studios.net",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -17,7 +17,7 @@
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.2.2",
     "react-scripts": "^2.1.3",
     "react-slick": "^0.29.0",
     "react-toastify": "^9.0.2",
@@ -46,7 +46,7 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",  
+      "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
@@ -62,5 +62,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pravinpixel/ADLWebsite/issues"
-  } 
+  }
 }
