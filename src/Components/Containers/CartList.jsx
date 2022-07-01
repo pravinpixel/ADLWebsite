@@ -91,7 +91,7 @@ export default function CartList() {
     localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
     setTestTotal(CalculateTotalTestPrice)
 
-    toast.success('Item Removed Successfully!');
+    toast.error('Item has Removed!');
   }
 
   return (

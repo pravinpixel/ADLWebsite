@@ -31,10 +31,10 @@ export default function TestDetails() {
   };
 
   useEffect(() => {
-    return () => {
+    // return () => {
       if (TestId && TestId !== "") getTestDetails();
-      dispatch(removeTestDetails());
-    };
+        dispatch(removeTestDetails());
+      // };
   }, []);
 
   const addTestToCart = (testDetails) => {
