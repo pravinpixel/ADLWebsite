@@ -3,11 +3,6 @@ import TestBanner from './Sections/TestBanner'
 import PopularTests from './Sections/PopularTests'
 import PopularPackages from './Sections/PopularPackages'
 import TestHealthPackages from './Sections/TestHealthpackages'
-import { setAllTestDetails, setTestCartList } from '../../Redux/Actions/TestAction'
-import { AddToCartList, RemoveToCartList } from "../../../src/Helpers";
-import { API_URL } from '../../Redux/Constant/ApiRoute'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
 export default function test() {
 
   const dispatch                 = useDispatch();

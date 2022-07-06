@@ -206,7 +206,7 @@ export default function Solutions() {
              <div className="row align-items-center">
                  <div className="col-lg-6">
                    <div className="anddn-lab">
-                   <div className="common-heading lite"><h2> “Anand @Home Home Collection” </h2></div>
+                   <div class="common-heading lite"><h2> “Anand @Home Home Collection” </h2></div>
                    <p>At ADL, we understand that many of our patrons may find it difficult to travel to their nearest collection centre for their diagnostic tests. To assist such individuals, ADL has launched the home collection facility on appointment. </p>
                    <p>Our team of home collection personnel are highly trained phlebotomists equipped to deliver the best service. <br></br>
                    For more information on, and to book a home collection call 080-25318550</p>
@@ -214,44 +214,44 @@ export default function Solutions() {
                  </div>
                  <div className="col-lg-6">
                      <div className="anddn-labfrm">
-                     <div className="row">
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Name *" required="" />
+                     <div class="row">
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Name *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Email *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Email *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Mobile *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Mobile *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="date" name="name" placeholder="DOB *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="date" name="name" placeholder="DOB *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Gender *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Gender *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Specify The Test For Home Collection" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Specify The Test For Home Collection" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Upload Prescription *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Upload Prescription *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Preferred Date1 *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Preferred Date1 *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Preferred Date 2" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Preferred Date 2" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Preferred Time *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Preferred Time *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Address *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Address *" required="" />
    </div> 
-   <div className="form-data col-lg-6">
-       <input className="input100" type="text" name="name" placeholder="Pincode *" required="" />
+   <div class="form-data col-lg-6">
+       <input class="input100" type="text" name="name" placeholder="Pincode *" required="" />
    </div>  
-   <div className="form-data text-center col-lg-12">
+   <div class="form-data text-center col-lg-12">
        <input type="submit" name="submit" required="" value="SUBMIT" />
    </div> 
 </div>
@@ -265,7 +265,7 @@ export default function Solutions() {
         <div className="container">
             <div className="row">
             <div className="col-lg-12">
-            <div className="common-heading"><h2> Getting your Report </h2></div>
+            <div class="common-heading"><h2> Getting your Report </h2></div>
             <p>Collecting of test reports has never been easier. Once ready, all reports are stored in PDF form on our servers. Patrons can log in to our website and download the reports right on to their computers or mobile devices immediately after our doctors release a report. Certain types of reports like histopathology and radiology reports are accompanied by physical material like slides, paraffin blocks, X-Ray films and so on. These items may be collected from the nearest collection centre upon prior intimation.</p>
             <div className="cmn-buton">
                 <p>
