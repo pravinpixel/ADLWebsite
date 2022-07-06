@@ -31,21 +31,11 @@ const Banners = () => {
                     </ul>
                 }
                  
-                <div className="carousel-inner">
+                <div className="carousel-inner" style={bannerList.length == 0 ? {"background" : "linear-gradient(#503390,#7e2e91)"} : null}>
                     {
-                        bannerList.length === 0
+                        bannerList.length == 0
                         ? 
-                            <div className="carousel-item active" style={{"background" : "linear-gradient(#503390,#7e2e91)"}}> 
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-sm-12 col-md-12 col-lg-12">				
-                                            <div className="carousel-caption">
-                                                
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
+                            <div className="carousel-item active"></div> 
                         : 
                         <>
                             {
