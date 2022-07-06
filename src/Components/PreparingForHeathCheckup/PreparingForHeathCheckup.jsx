@@ -1,12 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
-import commi1 from "../../assets/images/comite-1.jpg"; 
-import commi2 from "../../assets/images/comite-2.jpg"; 
-import commi3 from "../../assets/images/comite-3.jpg"; 
-import commi4 from "../../assets/images/comite-4.jpg"; 
-import commi5 from "../../assets/images/comite-5.jpg"; 
-
+import bannerimage from "../../assets/images/inner-banner-2.jpg";  
 
 export default function PreparingForHeathCheckup() {
   
@@ -33,7 +27,7 @@ export default function PreparingForHeathCheckup() {
         </div>
 </section>  
 
- 
+
 
 </div>
 

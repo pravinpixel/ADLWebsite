@@ -19,6 +19,7 @@ import Peoplebhind from './Components/Peoplebehind/Peoplebehind'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup' 
 import History from './Components/History/History'
 import Accreditation from './Components/Accreditation/Accreditation'
+import HealthPackages from './Components/HealthPackages/HealthPackages'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
         <Route path='/accreditation' element={<Accreditation/>} />
         <Route path='/patients-consumers' element={<Solutions/>} />
         <Route path='/for-patient' element={<Test/>} />
+        <Route path='/health-packages' element={<HealthPackages/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup/>} />
         <Route path='/my-cart' element={<CartList/>} />

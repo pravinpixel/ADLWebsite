@@ -5,6 +5,7 @@ import { API_URL } from '../../../Redux/Constant/ApiRoute'
 import {assets} from '../../../../src/Helpers'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
 import BannerForm from './BannerForm'
+import dummyBanner from '../../../assets/images/banner-image3.jpg'
 
 const Banners = () => { 
     const dispatch      =   useDispatch();
@@ -34,16 +35,12 @@ const Banners = () => {
                     {
                         bannerList.length === 0
                         ? 
-                            <div className="carousel-item active bg-dark"> 
+                            <div className="carousel-item active" style={{"background" : "linear-gradient(#503390,#7e2e91)"}}> 
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-sm-12 col-md-12 col-lg-12">				
                                             <div className="carousel-caption">
-                                                <h1>
-                                                    <span className='bg-secondary text-secondary'>ENSURING “CARE” IN</span><br/>
-                                                    <span className='bg-secondary text-secondary'>HEALTHCARE Step Up .</span><br/>
-                                                    <span className='bg-secondary text-secondary'>for Good Health.</span>
-                                                </h1>
+                                                
                                             </div>
                                         </div> 
                                     </div>

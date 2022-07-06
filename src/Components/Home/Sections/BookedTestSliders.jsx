@@ -85,7 +85,7 @@ export default function BookedTestSliders() {
                   <div className="case p-3" key={index}>
                     <Link to={`test/${test.id}`} className="link">
                       <h3 className="text-capitalize">
-                        {`${test.TestName.substring(0, 28)}...`}
+                        {`${test.TestName}`}
                       </h3>
                       <h4 className="text-capitalize">
                         {`${test.BasicInstruction.substring(0, 38)}...`}
