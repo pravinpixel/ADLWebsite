@@ -90,7 +90,7 @@ export default function Header() {
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item">Health Packages</Link>
+                            <Link to="/health-packages" className="dropdown-item">Health Packages</Link>
                           </li>
 
                           <li>

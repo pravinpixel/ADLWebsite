@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
-import manualtheraphyicon1 from "../../assets/images/manual-theraphy-icon-1.png"
-import manualtheraphyicon2 from "../../assets/images/manual-theraphy-icon-2.png"
-import manualtheraphyicon3 from "../../assets/images/manual-theraphy-icon-3.png"
-import manualtheraphyicon4 from "../../assets/images/manual-theraphy-icon-4.png"
-import manualtheraphy from "../../assets/images/manual-theraphy.jpg" 
+import icon1 from "../../assets/images/icon1.png" 
+import icon2 from "../../assets/images/icon2.png" 
+import icon3 from "../../assets/images/icon3.png" 
+import icon4 from "../../assets/images/icon4.png" 
+import icon5 from "../../assets/images/icon5.png" 
+import icon6 from "../../assets/images/icon6.png" 
+import icon7 from "../../assets/images/icon7.png" 
+import icon8 from "../../assets/images/icon8.png" 
+import icon9 from "../../assets/images/icon9.png" 
 
 
 export default function HealthPackages() {
@@ -39,6 +43,7 @@ export default function HealthPackages() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
+                <div className="common-heading"><h2> <span className="inlne">Our</span> Health Packages </h2></div>
             <div className="special-instruction">
                
                 <p>When your health and lifestyle start moving on top of your priority list, Neuberg Anand Diagnostics emerges as one of the most trusted names in the fields of pathology, advanced diagnostic services, global quality standards and state-of-the-art facilities. With over 48 years of experience, Neuberg Anand Diagnostics is one of leading diagnostic chains. Neuberg Anand Diagnostics brings a generation of advanced yet a ordable healthcare packages designed to suit your needs, with comprehensive and customised AI-based SMART reports to empower your access to quality treatment. ANYTIME. ANYWHERE.</p>
@@ -93,9 +98,205 @@ export default function HealthPackages() {
               </div>
 
                 </div> 
+                
             </div> 
         </div>
-    </section>  
+    </section> 
+
+    <section className='packages-lists'>
+      <div className="container">
+        <div className="row">
+        <div className="col-sm-12">
+               <div className="test-content hidden-sm hidden-xs"> 
+                  <div id="table-scroll" className="table-scroll">
+                     <div className="table-wrap">
+                        <table className="main-table">
+                           <thead>
+                              <tr>
+                                 <th scope="col" className="heading2 text-left"> 
+                                 <span>Health Checkup</span>
+                                 </th>
+                                 <th scope="col" className="heading2">
+                                    <span>Basic</span>
+                                 </th>
+                                 <th scope="col" className="heading2">
+                                    <span>Pro</span>
+                                 </th>
+                                 <th scope="col" className="heading2">
+                                    <span>General</span>
+                                 </th>
+                                 <th scope="col" className="heading2">
+                                    <span>Advanced</span>
+                                 </th> 
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon1} alt="call" className="img-fluid" /> Liver Function Test<span>SGOT, SGPT, GGTP, Bilirubin, ProteinTotal with AG ratio, Alkaline Phosphatase.</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon2} alt="call" className="img-fluid" /> Thyroid Profile Test <span>TSH, FT4</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon3} alt="call" className="img-fluid" /> Lipid Profile Test<span>Total Cholesterol, Triglycerides, HDL, Direct LDL, Calculated LDL cholesterol to HDL-cholesterol Ratio</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon4} alt="call" className="img-fluid" /> Kidney Function Test<span>Serum - Urea, Creatinine, Uric Acid,  Electrolytes,BUN</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon5} alt="call" className="img-fluid" /> CBC<span>(Complete Blood Count)</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon6} alt="call" className="img-fluid" /> CRP<span>(Creactive Protein)</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon7} alt="call" className="img-fluid" /> Diabetic Screening<span>Fasting Blood Sugar, HbA1c</span></th>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon8} alt="call" className="img-fluid" /> Vitamin profile<span>Vitamin D, Calcium</span></th>
+                                 <td> <div className="dot ntvable"></div></td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+							  <tr>
+                      <th className="fixed-side"><img src={icon9} alt="call" className="img-fluid" /> Activ Vitamin B12<span>&nbsp;</span></th>
+                      <td> <div className="dot ntvable"></div></td>
+                      <td> <div className="dot ntvable"></div></td> 
+                      <td>
+                                    <div className="dot"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td>  
+                    </tr>
+                              <tr>
+                                 <th className="fixed-side"><img src={icon8} alt="call" className="img-fluid" /> Iron profile<span>Serum Iron, UIBC, Ferritin; TIBC & Transferrin saturation by calculation</span></th>
+                                 <td> <div className="dot ntvable"></div></td>
+                                 <td> <div className="dot ntvable"></div></td>
+                                 <td>
+                                 <div className="dot ntvable"></div>
+                                 </td>
+                                 <td>
+                                    <div className="dot"></div>
+                                 </td> 
+                              </tr>
+ 
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <th className="fixed-side gray-bg">Offer Price</th>
+                                 <td className="purple-bg1">₹ 999</td>
+                                 <td className="purple-bg1">₹ 1350</td>
+                                 <td className="purple-bg1">₹ 1599</td>
+                                 <td className="purple-bg1">₹ 1899</td> 
+                              </tr>
+                              <tr>
+                                 <th className="fixed-side gray-bg">Actual Price</th>
+                                 <td className="purple-bg2">₹ 3500</td>
+                                 <td className="purple-bg2">₹ 4500</td>
+                                 <td className="purple-bg2">₹ 5500</td>
+                                 <td className="purple-bg2">₹ 6500</td> 
+                              </tr>
+                           </tfoot>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+      </div>
+    </section> 
 
 </div>
 

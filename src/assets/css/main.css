@@ -3566,6 +3566,198 @@ ul.timeline li:nth-child(odd){
 }
 h1.text-red{font-size: 24px;letter-spacing: 1px;font-weight: 600;}
 
+.table-scroll{
+    position:relative;
+    max-width:100%;
+    margin:auto;
+    overflow:hidden
+}
+.table-wrap{
+    width:100%;
+    overflow:auto;
+    margin-left:1px
+}
+.table-scroll table{
+    width:100%;
+    min-width:1000px;
+    margin:auto;
+    border-collapse:separate;
+    border-spacing:0;
+    z-index:99
+}
+.table-scroll td,.table-scroll th{
+    padding:0;
+    border:1px solid #ccc;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    height:100px;
+    vertical-align:middle;
+    background:#fff;
+    text-align:center
+}
+.table-scroll tfoot td,.table-scroll tfoot th{
+    height:50px
+}
+.table-scroll tfoot th.gray-bg{
+    background:#929190;
+    color:#fff;
+    font-size:26px;
+    border-color:rgba(255,255,255,.5);
+    text-transform:uppercase;
+    text-align:right;
+    padding-right:10px;
+    font-weight:600
+}
+.table-scroll tfoot td.purple-bg1{
+    background:#5d2482;
+    color:#ff8f0b;
+    font-size:26px;
+    border-color:rgba(255,255,255,.5);
+    font-weight:900
+}
+.table-scroll tfoot td.purple-bg2{
+    background:#5d2482;
+    color:#fff;
+    font-size:26px;
+    border-color:rgba(255,255,255,.5);
+    font-style:italic;
+    text-decoration:line-through
+}
+.table-scroll tr td:first-child{
+    border-left:none
+}
+.table-scroll tfoot,.table-scroll thead{
+    background:#f9f9f9
+}
+.clone{
+    position:absolute;
+    top:0;
+    left:0;
+    pointer-events:none
+}
+.clone td,.clone th{
+    visibility:hidden;
+    text-align:left
+}
+.clone td,.clone th{
+    border-color:transparent
+}
+.clone tbody th{
+    visibility:visible
+}
+.clone .fixed-side{
+    border:1px solid transparent;
+    border-top:none;
+    border-right:none;
+    background:#fff;
+    visibility:visible
+}
+.clone .fixed-side span{
+    font-size:11px;
+    color:#333;
+    width:200px;
+    white-space:break-spaces;
+    display:block
+}
+.clone tfoot,.clone thead{
+    background:0 0
+}
+.dot{
+    width:60px;
+    height:60px; 
+    position:relative;
+    z-index:30;
+    margin:0 auto
+}
+.dot:before{
+    position:absolute;
+    content:"";
+    width:50px;
+    height:50px;
+    background: rgba(0, 0, 0, 0) url("../images/tick.png") no-repeat scroll 0 0;
+    border-radius:50%;
+    z-index:10; 
+    left:3px;
+    top:3px
+}
+.dot.ntvable:before{background: rgba(0, 0, 0, 0) url("../images/tick-lit.png") no-repeat scroll 0 0;}
+.table-scroll table .heading1{
+    font-size:56px;
+    color:#5d2482;
+    width:300px;
+    padding-left:0;
+    font-weight:900;
+    text-transform:uppercase
+}
+.table-scroll table .heading1 span{
+    font-size:50px;
+    color:#fff;
+    background:#ff8f0b;
+    padding:3px 10px;
+    font-weight:300;
+    display:inline
+}
+.table-scroll th{
+    color:#303030;
+    text-align:left;
+    font-size:20px;
+    font-weight:600;
+    padding-left:80px;
+    position:relative
+}
+.table-scroll th span{
+    font-size:11px;
+    color:#222;
+    display:block;
+    font-weight:500
+}
+.table-scroll th img{
+    position:absolute;
+    left:0;
+    width:60px;
+    height:60px;
+    background:#ff8f0b;
+    border-radius:50%;
+    padding:10px;
+    top:20px
+}
+.table-scroll th.purple-icon img{
+    background:#5d2482
+}
+.table-scroll th.purple-icon span{
+    position:absolute;
+    left:0;
+    width:60px;
+    line-height:37px;
+    height:60px;
+    text-align:center;
+    font-weight:900;
+    color:#fff;
+    font-size:40px;
+    background:#5d2482;
+    border-radius:50%;
+    padding-top:10px;
+    top:20px
+}
+.table-scroll th.heading2{
+    text-align:center;
+    padding-left:0;
+    color:#5d2482;
+    font-size:28px;
+    text-transform:uppercase;
+    font-weight:600
+}
+.table-scroll th.heading2 span{
+    display:block;
+    text-transform:uppercase;
+    color:#ff8f0b;
+    font-size:28px;
+    font-weight:500
+}
+
+.packages-lists{background-color: #f8f8f8;}	
+
 
 
 
