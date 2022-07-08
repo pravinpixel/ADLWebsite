@@ -20,6 +20,7 @@ import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/Prep
 import History from './Components/History/History'
 import Accreditation from './Components/Accreditation/Accreditation'
 import HealthPackages from './Components/HealthPackages/HealthPackages'
+import Packages from './Components/Packages/Packages'
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path='/patients-consumers' element={<Solutions/>} />
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/health-packages' element={<HealthPackages/>} />
+        <Route path='/packages' element={<Packages/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup/>} />
         <Route path='/my-cart' element={<CartList/>} />

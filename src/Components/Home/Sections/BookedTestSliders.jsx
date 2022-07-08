@@ -12,7 +12,7 @@ export default function BookedTestSliders() {
   var settings = {
     slidesToScroll: 1,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 5,
     focusOnSelect: false,
     autoplay: true,
     dots: false,
