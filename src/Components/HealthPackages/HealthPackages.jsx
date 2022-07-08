@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
 import icon1 from "../../assets/images/icon1.png";
@@ -12,6 +12,10 @@ import icon8 from "../../assets/images/icon8.png";
 import icon9 from "../../assets/images/icon9.png";
 
 export default function HealthPackages() {
+  useEffect(() => {
+    document.title = "Health Packages";
+    window.scroll(0,0)
+  }, []);  
   return (
     <div>
       <section className="inner-banner">

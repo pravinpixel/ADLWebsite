@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
 import prdt_img from "../../assets/images/popular-img-1.jpg";
 
 export default function Packages() {
+  useEffect(() => {
+    document.title = "Our Packages";
+    window.scroll(0,0)
+  }, []);
   return (
     <div>
       <section className="inner-banner">
