@@ -19,41 +19,24 @@ export default function Packages() {
                   <li> / </li>
                   <li> Patients </li>
                   <li> / </li>
-                  <li> Health Packages </li>
+                  <li> Packages </li>
                 </ul>
                 <h1>
-                  Can be started over night, But It <br></br>takes years to
-                  build an Institution.
+                Making Good Health <br></br>Your NEU Way of Life
                 </h1>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="packages-listvariants">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 mb-4">
-            <div class="common-heading"><h2> <span>MAKING </span> GOOD HEALTH YOUR <span class="yelow">NEU WAY </span> OF LIFE</h2></div>
-              <div className="special-instruction">
-                <p>
-                When your health and lifestyle start moving on top of your priority list, Neuberg Diagnostics emerges as one of the most trusted names in the fields of pathology, advanced diagnostic services, global quality standards and state-of-the-art facilities.</p> 
-                
-                <p>With over 250 years of combined expertise, Neuberg Diagnostics is one of India’s top diagnostic chains and fastest-growing start-ups.</p> 
-                
-                <p>Neuberg Diagnostics brings a generation of advanced yet affordable healthcare packages designed to suit your needs in the new normal, followed by comprehensive and customised AI-based SMART reports to empower your access to quality treatment.
-                </p> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section> 
 
     <section className="filtering-lsts">
         <div className="container">
             
           <div class="row">
+          <div className="col-lg-12">
+          <div class="common-heading"><h2> <span>MAKING </span> <span class="yelow">gOOD hEALTH </span> a Priority!</h2></div>
+          </div>
             <div className="col-lg-12">
                 <div className="totl-pkglst"> 
 <div className="row"> 
@@ -117,6 +100,48 @@ export default function Packages() {
         <p><a href="about-us">Book Now</a></p>
     </div>
     </div>
+
+<div className="col-lg-4">
+<div class="pack-deils">
+    <div class="pck-img">
+    <img src={prdt_img} alt="call" className="img-fluid" /> 
+    <div class="ble-fnt">60 <span>Tests</span></div>
+    </div>
+    <h3>NEU Express</h3>
+    <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
+    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h6>79 % off T&amp;C*</h6>
+    <p><a href="about-us">Book Now</a></p>
+</div>
+</div>
+
+<div className="col-lg-4">
+<div class="pack-deils">
+    <div class="pck-img">
+    <img src={prdt_img} alt="call" className="img-fluid" /> 
+    <div class="ble-fnt">60 <span>Tests</span></div>
+    </div>
+    <h3>NEU Express</h3>
+    <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
+    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h6>79 % off T&amp;C*</h6>
+    <p><a href="about-us">Book Now</a></p>
+</div>
+</div>
+
+<div className="col-lg-4">
+<div class="pack-deils">
+    <div class="pck-img">
+    <img src={prdt_img} alt="call" className="img-fluid" /> 
+    <div class="ble-fnt">60 <span>Tests</span></div>
+    </div>
+    <h3>NEU Express</h3>
+    <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
+    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h6>79 % off T&amp;C*</h6>
+    <p><a href="about-us">Book Now</a></p>
+</div>
+</div>
 
     </div>
 
