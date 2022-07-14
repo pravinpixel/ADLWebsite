@@ -25,7 +25,7 @@ const Banners = () => {
                     <ul className="carousel-indicators"> 
                         {
                             bannerList.banners.data.map(( banner, index ) =>  (
-                                <li key={index} data-target="#home-banner-carousel" data-slide-to={index} className={index === 0 ? "active" : ''}></li>
+                                <li key={index} data-target="#home-banner-carousel" data-slide-to={index} className={index == 0 ? "active" : null}></li>
                             ))
                         }
                     </ul>
@@ -40,7 +40,7 @@ const Banners = () => {
                         <>
                             {
                                 bannerList.banners.data.map(( banner, index ) =>  ( 
-                                    <div key={index} className={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
+                                    <div key={index} className={index == 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
                                         <div className="container">
                                             <div className="row">
                                                 <div className="col-sm-12 col-md-12 col-lg-12">				
