@@ -8,7 +8,7 @@ export default function CartBtn(props) {
     return (
             CheckCartBucket(props.testData.TestId) === false 
             ?
-                <span  className="text-white"
+                <button className="text-white"
                     onClick={() => {
                         dispatch(addToCart(props.testData));
                         dispatch(
@@ -20,9 +20,9 @@ export default function CartBtn(props) {
                     }}
                 >
                     <i className="fa fa-cart-plus mr-1"></i>ADD
-                </span>
+                </button>
             :
-            <span  className="remove-btn"
+            <button  className="remove-btn"
                 onClick={() => {
                     dispatch(removeFromCart(props.testData));
                     dispatch(
@@ -34,6 +34,6 @@ export default function CartBtn(props) {
                 }}
             >
                 <small><i className="fa fa-shopping-cart mr-2"></i>Remove</small>
-            </span>
+            </button>
     )
 }
