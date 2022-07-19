@@ -1,7 +1,7 @@
 import { API_URL } from "./Redux/Constant/ApiRoute";
 import React from "react";
 import logo from './assets/images/logo.png';
-// import { toast } from "react-toastify";
+import  toast  from "react-hot-toast";
 
 export function assets(params) {
   // params  =>  Image | File Url
@@ -36,15 +36,15 @@ export function CheckCartBucket(TestId) {
 }
 
 export function AddToCartList(test) {
-   if(localStorage.getItem('CartTestList') == undefined || localStorage.getItem('CartTestList') == null) {
+   if(localStorage.getItem('CartTestList') === undefined || localStorage.getItem('CartTestList') == null) {
       localStorage.setItem('CartTestList', JSON.stringify([]));
    }
-   if(localStorage.getItem('CartTestList') != undefined || localStorage.getItem('CartTestList') != null) {
+   if(localStorage.getItem('CartTestList') !== undefined || localStorage.getItem('CartTestList') != null) {
        let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
        localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
    }
     
-   // toast.success('   Test Added Successfully!');
+   toast.success('Test Added Successfully!');
    return true
 }
 
@@ -62,10 +62,12 @@ export function RemoveToCartList(test) {
       var index  = currentCart.indexOf(Result)
       currentCart.splice(index, 1)
       localStorage.setItem('CartTestList', JSON.stringify(currentCart));
+      
       return currentCart
    }
     
    if(currentCart.length === 0) {
+   
       localStorage.removeItem('CartTestList')
    }
 }

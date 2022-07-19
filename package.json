@@ -15,6 +15,7 @@
     "react-component-form": "^3.0.1",
     "react-dom": "^18.1.0",
     "react-fancybox": "^1.0.2",
+    "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
@@ -31,7 +32,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
