@@ -14,30 +14,43 @@ export default function AboutService() {
             <div className="row">
                 <div className="col-lg-8">
             <div className="special-instruction">
-                <h3>About Manual Therapy</h3>
-                <p>Set of hands-on specialised techniques used both for the assessment <br></br>and treatment of clinical conditions</p>
+                <h3>About Electrotherapy</h3>
+                <p>Therapy involves few modalites/equipment used for pain and symptomatic relief in a particular condition.</p>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item" role="presentation">
                     <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                    Types of techniques 
+                    Types of Modalities
                     </a>
                   </li>
                   <li className="nav-item" role="presentation">
                     <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
                     Indications
                     </a>
-                  </li> 
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <a className="nav-link" id="contra-tab" data-toggle="tab" href="#contra" role="tab" aria-controls="contra" aria-selected="false">
+                    Contraindications
+                    </a>
+                  </li>  
                 </ul>
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div className="detilos-expl">
+                  <div className="detilos-expl indication-details">
                     <ul>
                       <li>
-                      a) Samples are stable for 1 week refrigerated at 2-8 0 C.   
+                      Interferential Therapy (IFT)  
                       </li>
                       <li>
-                      b) Frozen sample is stable for several months. _Interfering substances:<br/>
-                      ACE activity is inhibited by EDTA, Heavy metal ions, Captopril. ACE activity should mainly be used to monitor activity of disease and not for primary diagnosis. However, high levels are found in about 85% cases with active pulmonary sarcoidosis.    
+                      Ultrasound Therapy (UST)    
+                      </li>
+                      <li>
+                      Laser  
+                      </li>
+                      <li>
+                      Transcutaneous Electrical Nerve Stimulation (TENS) 
+                      </li>
+                      <li>
+                      Muscle Stimulator
                       </li>
                     </ul>
                   </div>
@@ -47,17 +60,15 @@ export default function AboutService() {
                     <div className="col-lg-6 pl-0">
                       <div className="indication-details">
                         <ul>
-                        <h4>Mobilisation</h4>
+                        <h4>IFT</h4>
                         <img src={manualtheraphyicon1} alt="call" className="img-fluid" />
-                            <li>Any Joint pain</li>
-                            <li>Back/Neck pain</li>
-                            <li>Osteoarthitis</li>
-                            <li>Rheumatoid Arthritis</li>
-                            <li>Sciatica</li>
-                            <li>Frozen shoulder</li>
-                            <li>Tennis Elbow</li>
-                            <li>Calcaneal Spur</li>
-                            <li>Plantar fascitis</li>
+                            <li>Arthritis</li>
+                            <li>tendinitis</li>
+                            <li>tendonitis</li>
+                            <li>ligament injuries</li>
+                            <li>back pain</li>
+                            <li>neck pain</li>
+                            <li>sciatica Etc...</li>
                         </ul>
                         </div> 
                     </div>
@@ -112,8 +123,7 @@ export default function AboutService() {
                       <div className="flyer-box">
                       <img src={padimg} alt="call" className="img-fluid" /> 
                       <h4>Note</h4>
-                      <p>For complete recovery the entire course of treatment is very essential.
-                         Electrotherapy and exercise therapy are used in adjunct with Manual therapy.</p>
+                      <p>Above mentioned modalities are mostly used as an adjunct to other physiotherapy treatment methods like exercise therapy and manual therapy to hasten the recovery process.</p>
                       </div>
                       <div className="flyer-box">
                       <img src={clkimg} alt="call" className="img-fluid" /> 

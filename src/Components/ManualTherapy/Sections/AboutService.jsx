@@ -30,14 +30,19 @@ export default function AboutService() {
                 </ul>
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div className="detilos-expl">
+                  <div className="detilos-expl indication-details">
                     <ul>
                       <li>
-                      a) Samples are stable for 1 week refrigerated at 2-8 0 C.   
+                      Mobilisation  
                       </li>
                       <li>
-                      b) Frozen sample is stable for several months. _Interfering substances:<br/>
-                      ACE activity is inhibited by EDTA, Heavy metal ions, Captopril. ACE activity should mainly be used to monitor activity of disease and not for primary diagnosis. However, high levels are found in about 85% cases with active pulmonary sarcoidosis.    
+                      Manipulation    
+                      </li>
+                      <li>
+                      Neural Mobilisation    
+                      </li>
+                      <li>
+                      Trigger point release   
                       </li>
                     </ul>
                   </div>

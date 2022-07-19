@@ -10,16 +10,18 @@ export default function
         <div className="inner-caption">
         <div className="container">
             <div className="row">
-                <div className="caption-details bnr-txt">
-                    <ul>
+            <div className="caption-details bnr-txt">
+                <ul>
                       <li><Link to='/'> Home </Link></li>
+                      <li> / </li> 
+                      <li> Health Checkup </li>
                       <li> / </li>
-                      <li><Link to='/'></Link> Services </li>
+                      <li> Physiotherapy </li>
                       <li> / </li>
-                      <li><Link to='/'></Link> Manual Therapy </li>
+                      <li> Electrotherapy </li>
                     </ul>
                     <h1>
-                      Manual Therapy   
+                    Can be started over night, But It<br></br> takes years to build an Institution.   
                     </h1>
                 </div>
             </div>
