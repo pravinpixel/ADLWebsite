@@ -4,7 +4,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import Sliders from "react-slick";
 import TestCard from "./TestCardComponent";
 import PackageCard from "./PackageCardComponent";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from '../.././assets/images/cart_empty.png'
@@ -91,7 +91,7 @@ export default function CartList() {
     localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
     setTestTotal(CalculateTotalTestPrice)
 
-    toast.error('Item has Removed!');
+    // toast.error('Item has Removed!');
   }
 
   return (

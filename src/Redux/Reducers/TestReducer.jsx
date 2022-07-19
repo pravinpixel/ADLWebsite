@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { setTestCartList } from "../Actions/TestAction";
 import { ActionTypes } from "../Constant/ActionTypes";
  
@@ -42,7 +42,7 @@ export const addToCardReducer = (state = [] ,{type, payload}) => {
                 let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
                 localStorage.setItem('CartTestList', JSON.stringify([...currentCart,payload]));
             }
-            toast.success('Test Added Successfully!');
+            // toast.success('Test Added Successfully!');
             setTestCartList(JSON.parse(localStorage.getItem('CartTestList')))
             return true
             break; 

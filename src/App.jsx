@@ -4,9 +4,9 @@ import Footer from './Components/Includes/Footer'
 import Home from "./Components/Home/Home"
 import Test from './Components/Test/Test'
 import { Route , Routes } from 'react-router-dom' 
-import { ToastContainer } from 'react-toastify'
 import TestDetails from './Components/Containers/TestDetails'
-import 'react-toastify/dist/ReactToastify.css'
+// import {toast} from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import CartList from './Components/Containers/CartList'
 import Services from './Components/Services/Services'
 import Solutions from './Components/Solutions/solutions'
@@ -21,6 +21,7 @@ import History from './Components/History/History'
 import Accreditation from './Components/Accreditation/Accreditation'
 import HealthPackages from './Components/HealthPackages/HealthPackages'
 import Packages from './Components/Packages/Packages'
+// toast.configure()
 
 export default function App() {
   return (
@@ -47,7 +48,7 @@ export default function App() {
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/>
-      <ToastContainer  position="top-right"  autoClose={1500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
+      {/* <ToastContainer  position="top-right"  autoClose={1500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/> */}
     </Fragment>
   )
 }

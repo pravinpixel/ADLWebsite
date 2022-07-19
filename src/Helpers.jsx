@@ -1,7 +1,7 @@
 import { API_URL } from "./Redux/Constant/ApiRoute";
 import React from "react";
 import logo from './assets/images/logo.png';
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 export function assets(params) {
   // params  =>  Image | File Url
@@ -44,7 +44,7 @@ export function AddToCartList(test) {
        localStorage.setItem('CartTestList', JSON.stringify([...currentCart,test]));
    }
     
-   toast.success('Test Added Successfully!');
+   // toast.success('   Test Added Successfully!');
    return true
 }
 

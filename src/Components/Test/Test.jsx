@@ -8,7 +8,7 @@ import { setAllTestDetails, setTestCartList } from '../../Redux/Actions/TestActi
 import axios from 'axios'
 import { API_URL } from '../../Redux/Constant/ApiRoute'
 import { AddToCartList, RemoveToCartList } from '../../Helpers'
-export default function test() {
+export default function Test() {
 
   const dispatch                 = useDispatch();
   const testListing              = useSelector((state) => state.TestList.testList);
