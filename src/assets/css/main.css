@@ -1040,7 +1040,9 @@ span.strke {
 	margin-bottom: 0px;
 }
 
-.case p a {
+.case p a ,
+.case p button 
+{
 	color: #fff;
 	padding: 6px 22px;
 	border-radius: 4px;
@@ -1057,11 +1059,16 @@ span.strke {
 	text-transform: uppercase;
 }
 
+.case p button 
+{border: 0px;}
+
 .btn-primary {
 	background: #64226F !important;
 }
 
-.case p a:before {
+.case p a:before ,
+.case p button:before 
+{
 	position: absolute;
 	left: 0;
 	top: 0px;
@@ -1072,7 +1079,9 @@ span.strke {
 	background: #ff9a1f;
 }
 
-.case p a:after {
+.case p a:after ,
+.case p button:after 
+{
 	position: absolute;
 	right: 0;
 	top: 0px;
@@ -1084,14 +1093,17 @@ span.strke {
 	transition: all 1s ease;
 }
 
-.case p a:hover:after {
+.case p a:hover:after ,
+	.case p button:hover:after {
 	width: 100%;
 	right: inherit;
 	left: 0px;
 	transition: all 1s ease;
 }
 
-.case p a:hover {
+.case p a:hover,
+.case p button:hover
+{
 	transition: all 1s ease;
 }
 
