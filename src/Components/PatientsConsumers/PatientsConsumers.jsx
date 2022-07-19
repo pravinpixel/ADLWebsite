@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 export default function Solutions() {
     useEffect(() => {
-        document.title = "Solutions Page";
+        document.title = "Patients Consumers";
         window.scroll(0,0)
       }, []);
       var consumeing = {

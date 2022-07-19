@@ -3,6 +3,7 @@ import logo from './../../assets/images/logo.png';
 import logoberg from './../../assets/images/logoberg.png';
 import location from './../../assets/images/location.png';
 import sky from './../../assets/images/sky.png';
+import toll from './../../assets/images/toll.png';
 import user from './../../assets/images/user.png';
 import men1 from './../../assets/images/men-1.png';
 import men2 from './../../assets/images/men-2.png';
@@ -40,18 +41,24 @@ export default function Header() {
                       </li>
                       <li>
                         <Link to="/">
-                          <img src={sky} alt="" className="img-fluid"/>
-                          <span>Report</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">
                           <img src={user} alt="" className="img-fluid"/>
                           <span>Login</span>
                         </Link>
                       </li>
                       <li>
                         <CartCount/> 
+                      </li>
+                      <li>
+                        <Link to="/">
+                          <img src={sky} alt="" className="img-fluid"/>
+                          <span>Report</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/">
+                          <img src={toll} alt="" className="img-fluid"/>
+                          <span>Toll-free</span>
+                        </Link>
                       </li>
                     </ul>
                   </div>
