@@ -3,9 +3,12 @@ import Header from './Components/Includes/Header'
 import Footer from './Components/Includes/Footer'
 import Test from './Components/Test/Test'
 import { Route , Routes } from 'react-router-dom' 
+
 import TestDetails from './Components/Containers/TestDetails' 
 import CartList from './Components/Containers/CartList'
 import AlertBox from './AlertBox' 
+import GuestCheckOut from './Components/Containers/GuestCheckOut'
+import Login from './Components/Containers/Login'
 // -------------------------------------------------------//
 import Home from './Components/Home/Home'
 import About from './Components/About/About'
