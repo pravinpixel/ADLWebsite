@@ -68,7 +68,7 @@ export default function Header() {
 
                     <ul className="navbar-nav">  
                       <li className="nav-item dropdown sngle-frce">
-                        <Link className="nav-link dropdown-toggle" to="/about-us"   >About Us</Link>
+                        <Link className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
                         <ul className="dropdown-menu">
                            <li>
                               <Link className="dropdown-item" to="/people-behind"> People behind </Link>
@@ -85,7 +85,7 @@ export default function Header() {
                         </ul>
                      </li>
                       <li className="nav-item dropdown">
-                        <Link to="/" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Patients</Link>
+                        <a href="javascript:void(0)" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Patients</a>
                           <div className="dropdown-bg">
                             
                         <ul className="dropdown-menu topr-clmn row">
@@ -194,7 +194,7 @@ export default function Header() {
                         </ul>
                      </li> 
                       <li className="nav-item dropdown">
-                        <Link to="/" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Health Checkup</Link>
+                        <a href="javascript:void(0)" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Health Checkup</a>
                           <div className="dropdown-bg">
                             
                         <ul className="dropdown-menu topr-clmn row">
@@ -239,7 +239,7 @@ export default function Header() {
                             <Link to="/" className="dropdown-item"> V-Card, A patient beneficial program </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item"> Physiotherapy </Link>
+                            <Link to="/physiotherapy" className="dropdown-item"> Physiotherapy </Link>
                           </li> 
 
                           </ul>

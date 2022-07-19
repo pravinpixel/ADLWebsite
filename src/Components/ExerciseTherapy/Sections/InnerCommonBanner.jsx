@@ -10,7 +10,7 @@ export default function
         <div className="inner-caption">
         <div className="container">
             <div className="row">
-                <div className="caption-details bnr-txt">
+            <div className="caption-details bnr-txt">
                 <ul>
                       <li><Link to='/'> Home </Link></li>
                       <li> / </li> 
@@ -18,7 +18,7 @@ export default function
                       <li> / </li>
                       <li> Physiotherapy </li>
                       <li> / </li>
-                      <li> Manual Therapy  </li>
+                      <li> Exercise Therapy  </li>
                     </ul>
                     <h1>
                     Can be started over night, But It<br></br> takes years to build an Institution.   

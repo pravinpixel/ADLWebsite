@@ -2607,7 +2607,7 @@ span.flag-option p {
 
 .indication-details ul li {
 	position: relative;
-	padding-left: 20px;
+	padding-left: 30px;
 	margin-bottom: 8px;
 }
 
@@ -2615,11 +2615,10 @@ span.flag-option p {
 	position: absolute;
 	content: "";
 	left: 0;
-	top: 11px;
-	width: 9px;
-	height: 9px;
-	background-color: #957dad;
-	border-radius: 100%;
+	top: 5px;
+	width: 20px;
+	height: 19px;
+	background: rgba(0, 0, 0, 0) url("../images/ball.png") no-repeat scroll 0 0; 
 }
 
 .indication-details {
@@ -3803,7 +3802,17 @@ h1.text-red{font-size: 24px;letter-spacing: 1px;font-weight: 600;}
 	.Products-factory-lsts ul li a:hover{background-color: #5c2d91;color:#fff;}
 	.Products-factory-functions .pack-deils{margin: 20px 0px;}
 
+	.phsiyo-therphy .know-hub {
+		position: absolute;
+		content: "";
+		bottom: 35px;
+		left: 27px;
+	  }
+	  .phsiyo-therphy .know-hub p{width:100%;}
+	  .phsiyo-therphy .know-hub h4{line-height: 45px;}
+	  .phsiyo-therphy .know-hub a{position: relative;right:0;bottom:0;display:inline-block;}
 
+	  .detilos-expl.indication-details ul{padding-left: 0px;}
 
 
 

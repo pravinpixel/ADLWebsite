@@ -21,6 +21,8 @@ import HealthPackages from './Components/HealthPackages/HealthPackages'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup'
 import Physiotherapy from './Components/Physiotherapy/Physiotherapy'
 import ManualTherapy from './Components/ManualTherapy/ManualTherapy'
+import ExerciseTherapy from './Components/ExerciseTherapy/ExerciseTherapy'
+import Electrotherapy from './Components/Electrotherapy/Electrotherapy'
 import Contact from './Components/Contact/Contact'
 
 export default function App() {
@@ -45,6 +47,8 @@ export default function App() {
         <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup/>} />
         <Route path='/physiotherapy' element={<Physiotherapy/>} />
         <Route path='/manual-therapy' element={<ManualTherapy/>} />
+        <Route path='/exercise-therapy' element={<ExerciseTherapy/>} />
+        <Route path='/electrotherapy' element={<Electrotherapy/>} />
         <Route path='/reach-us' exact element={<Contact/>} /> 
         <Route>404 Not Found !</Route>
       </Routes>
