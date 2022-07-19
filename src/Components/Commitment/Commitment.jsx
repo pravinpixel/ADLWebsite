@@ -41,9 +41,9 @@ export default function Commitment() {
 <section className="section section-top-btm">
 <div className="container">
    <div className="row align-items-center flex-column-reverse flex-md-row">
-   <div className="col-lg-12">
+   <div className="col-lg-12 text-center">
             <div className="common-heading"><h2> <span className='inlne'>Our</span> Commitment </h2></div>
-            <p>We are the Parivar of Anand Diagnostic Laboratory, and we ensure there is “Care” in healthcare.</p><br></br>
+            <p><i>We are the Parivar of Anand Diagnostic Laboratory, and we ensure there is “Care” in healthcare.</i></p><br></br>
         </div>
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="rnge-prds text-left">
