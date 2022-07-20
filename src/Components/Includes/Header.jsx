@@ -109,7 +109,7 @@ export default function Header() {
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item">Preparing for Health Checkup</Link>
+                            <Link to="/preparing-for-health-checkup" className="dropdown-item">Preparing for Health Checkup</Link>
                           </li> 
 
                           <li>
@@ -122,10 +122,10 @@ export default function Header() {
                           <li className="col secnd-clmn">
                             <ul>
                           <li>
-                            <Link to="/" className="dropdown-item">Drive through Blood Collection</Link>
+                            <Link to="/drive-through-blood-collection" className="dropdown-item">Drive through Blood Collection</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Feedback</Link>
+                            <Link to="/feedback" className="dropdown-item">Feedback</Link>
                           </li>
                           <li>
                             <Link to="/" className="dropdown-item">Special offers</Link>

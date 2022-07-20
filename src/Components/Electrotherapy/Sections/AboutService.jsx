@@ -68,21 +68,21 @@ export default function AboutService() {
                             <li>ligament injuries</li>
                             <li>back pain</li>
                             <li>neck pain</li>
-                            <li>sciatica Etc...</li>
+                            <li>sciatica, ...</li>
                         </ul>
                         </div> 
                     </div>
                     <div className="col-lg-6 pl-0">
                       <div className="indication-details">
                         <ul>
-                        <h4>Neural Mobilisation</h4>
+                        <h4>UST</h4>
                         <img src={manualtheraphyicon2} alt="call" className="img-fluid" />
-                            <li>Sciatica</li>
-                            <li>Carpal Tunnel Syndrome</li>
-                            <li>Intervertebral Disc Prolapse</li>
-                            <li>Radiculopathy</li>
-                            <li>Dequervain’s tenosynovitis</li>
-                            <li>Tennis elbow</li>
+                            <li>tendinitis</li>
+                            <li>bursitis</li>
+                            <li>arthritis</li>
+                            <li>ligament injuries</li>
+                            <li>plantar fasciitis</li>
+                            <li>dequervain’s tenosynovitis, …</li>
                         </ul>
                         </div> 
                     </div> 
@@ -91,23 +91,55 @@ export default function AboutService() {
                     <div className="col-lg-6 pl-0"> 
                        <div className="indication-details">
                         <ul>
-                        <h4>Manipulation</h4>
+                        <h4>Laser</h4>
                         <img src={manualtheraphyicon3} alt="call" className="img-fluid" />
-                            <li>Mechanical Joint pain and stiffness</li>
+                            <li>Tendinitis</li>
+                            <li>Calcaneal spur</li>
+                            <li>Plantar fasciitis</li>
+                            <li>Dequervain’s tenosynovitis</li>
+                            <li>Tennis elbow</li>
                         </ul>
                       </div> 
                     </div>
                     <div className="col-lg-6 pl-0"> 
                        <div className="indication-details">
                         <ul>
-                        <h4>Trigger Point Release</h4>
+                        <h4>TENS </h4>
                         <img src={manualtheraphyicon4} alt="call" className="img-fluid" />
-                            <li>Muscle Spasm</li>
-                            <li>Joint Stiffness</li>
+                            <li>Sciatica</li>
+                            <li>back/neck pain radiating to legs/hands</li>
                         </ul>
                       </div> 
                     </div> 
                     </div>
+                      <div className="row detilos-expl pt-0 pb-0">
+                    <div className="col-lg-6 pl-0"> 
+                       <div className="indication-details ">
+                        <ul>
+                        <h4>Muscle Stimulator</h4>
+                        <img src={manualtheraphyicon3} alt="call" className="img-fluid" />
+                            <li>Bell’s Palsy</li>
+                            <li>other nerve palsy</li>
+                            <li>muscle wasting/weakness</li>
+                        </ul>
+                      </div> 
+                    </div> 
+                    </div>
+                  </div>
+                  <div className="tab-pane fade" id="contra" role="tabpanel" aria-labelledby="contra-tab">
+                  <div className="detilos-expl indication-details">
+                    <ul>
+                      <li>Cardiac diseases/pacemaker</li>
+                      <li>Fever</li>
+                      <li>Region of metal implant in the body</li>
+                      <li>Tumour</li>
+                      <li>Disturbed skin sensation</li>
+                      <li>Open wounds</li>
+                      <li>Infection</li>
+                      <li>Vascular conditions</li>
+                      <li>Irradiation</li>
+                    </ul>
+                  </div>
                   </div> 
                 </div>
               </div>
@@ -128,7 +160,11 @@ export default function AboutService() {
                       <div className="flyer-box">
                       <img src={clkimg} alt="call" className="img-fluid" /> 
                       <h4>Duration</h4>
-                      <p>20 minutes/ session (minimum 3 sessions)</p>
+                      <p><b>Interferential Therapy (IFT)</b> : 10-15 mins</p>
+                      <p><b>Ultrasound Therapy (UST)</b> : 08-10 mins</p>
+                      <p><b>Laser</b> : 2 mins</p>
+                      <p><b>Transcutaneous Electrical Nerve Stimulation (TENS)</b> : 10-15 mins</p>
+                      <p><b>Muscle Stimulator</b> : 20-30 mins</p>
                       </div>
                     </div>
               </div>
