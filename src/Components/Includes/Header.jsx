@@ -180,10 +180,10 @@ export default function Header() {
                               <Link className="dropdown-item" to="/"> Department </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Hospital or Lab Management </Link>
+                              <Link className="dropdown-item" to="/hospital-or-lab-management"> Hospital or Lab Management </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Clinician Lab Management </Link>
+                              <Link className="dropdown-item" to="/clinical-lab-management"> Clinician Lab Management </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Franchise Opportunities </Link>

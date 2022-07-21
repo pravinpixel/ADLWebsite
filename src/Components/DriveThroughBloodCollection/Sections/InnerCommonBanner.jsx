@@ -14,9 +14,9 @@ export default function
                     <ul>
                       <li><Link to='/'> Home </Link></li>
                       <li> / </li>
-                      <li><Link to='/'></Link> Solutions </li>
+                      <li> Patients </li>
                       <li> / </li>
-                      <li><Link to='/'></Link> Patients & Consumers </li>
+                      <li> Drive Through Blood Collection </li>
                     </ul>
                     <h1>
                     Anand Diagnostics Laboratory is one of the<br></br> largest diagnostics company in India   

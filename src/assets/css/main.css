@@ -4269,6 +4269,21 @@ h1.text-red {
 	padding: 30px;
   }
 
+  .text-yellow{color: #ff9a1f;}
+
+  .the-chamber{padding-left: 125px;position: relative;padding-right: 50px;}
+  .the-chamber img{position: absolute;left:0;top:0;}
+
+  .the-chamber h4{font-size: 20px;font-weight: 600;}
+
+  .difentate{display: block;font-size: 20px;font-weight: 300;line-height: 25px;color:#6E6E6E;}
+
+  .our-presence{background-color:#F0F0F0;}
+
+  .lst-lction ul{padding: 0px;margin: 0px;width:20%;float: left;}
+  .lst-lction ul li{padding: 0px;margin: 0px;display: inline-block;width:100%;}
+
+
   
 
 

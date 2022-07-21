@@ -23,6 +23,8 @@ import HealthPackages from './Components/HealthPackages/HealthPackages'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup'
 import DriveThroughBloodCollection from './Components/DriveThroughBloodCollection/DriveThroughBloodCollection'
 import Feedback from './Components/Feedback/Feedback'
+import HospitalLabManagement from './Components/HospitalLabManagement/HospitalLabManagement'
+import ClinicalLabManagement from './Components/ClinicalLabManagement/ClinicalLabManagement'
 import Physiotherapy from './Components/Physiotherapy/Physiotherapy'
 import ManualTherapy from './Components/ManualTherapy/ManualTherapy'
 import ExerciseTherapy from './Components/ExerciseTherapy/ExerciseTherapy'
@@ -51,6 +53,8 @@ export default function App() {
         <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup/>} />
         <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection/>} />
         <Route path='/feedback' element={<Feedback/>} />
+        <Route path='/hospital-or-lab-management' element={<HospitalLabManagement/>} />
+        <Route path='/clinical-lab-management' element={<ClinicalLabManagement/>} />
         <Route path='/physiotherapy' element={<Physiotherapy/>} />
         <Route path='/manual-therapy' element={<ManualTherapy/>} />
         <Route path='/exercise-therapy' element={<ExerciseTherapy/>} />
