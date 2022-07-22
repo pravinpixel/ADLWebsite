@@ -74,12 +74,7 @@ export default function AboutUs() {
               <div className="plying-btn text-center">
                 <a href=""><img src={playButton}alt="" className="img-fluid"/></a>
               </div>
-            </div>
-            {/* <ReactFancyBox
-              showCloseBtn={false}
-              thumbnail="https://loremflickr.com/320/240"
-              image="https://www.w3schools.com/howto/img_forest.jpg"
-            /> */}
+            </div> 
           </div>
         </div>
       </div>

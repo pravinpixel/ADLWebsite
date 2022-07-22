@@ -174,7 +174,7 @@ export default function Header() {
                         <Link className="nav-link dropdown-toggle" to="/"  aria-haspopup="true" aria-expanded="false">Doctors</Link>
                         <ul className="dropdown-menu">
                            <li>
-                              <Link className="dropdown-item" to="/"> Directory of service (DOS) </Link>
+                              <a className="dropdown-item" href="https://reports.anandlab.com/dos/" target="_blank"> Directory of service (DOS) </a>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Department </Link>
@@ -186,7 +186,7 @@ export default function Header() {
                               <Link className="dropdown-item" to="/clinical-lab-management"> Clinician Lab Management </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Franchise Opportunities </Link>
+                              <Link className="dropdown-item" to="/franchising-opportunities"> Franchise Opportunities </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Research </Link>
