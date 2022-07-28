@@ -189,7 +189,7 @@ export default function Header() {
                               <Link className="dropdown-item" to="/franchising-opportunities"> Franchise Opportunities </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Research </Link>
+                              <Link className="dropdown-item" to="/research"> Research </Link>
                            </li>   
                         </ul>
                      </li> 

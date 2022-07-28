@@ -4298,6 +4298,13 @@ h1.text-red {
 
   h6.map-ngin{color:#6E6E6E;font-size: 19px;font-weight: 600;}
 
+  .distngt-strctre{background-color:#602f98;color:#fff;padding: 40px;}
+  .distngt-strctre h4{color:#fff;font-size: 24px;margin-bottom: 10px;}
+  .distngt-strctre p{color:#fff;}
+
+  .vdeo-img{border-radius: 10px;overflow: hidden;}
+  .vdeo-img img{width:100%;}
+
 
   
 

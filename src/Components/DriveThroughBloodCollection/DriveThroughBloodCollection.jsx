@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react'
 import Sliders from 'react-slick'
-import InnerCommonBanner from './Sections/InnerCommonBanner'; 
-import paticon1 from '../../assets/images/pat-icon-1.png'
-import paticon2 from '../../assets/images/pat-icon-2.png'
-import paticon3 from '../../assets/images/pat-icon-3.png'
-import paticon4 from '../../assets/images/pat-icon-4.png'
-import paticon5 from '../../assets/images/pat-icon-5.png'
-import paticon6 from '../../assets/images/pat-icon-6.png' 
-import consumerimg1 from '../../assets/images/consumerimg1.jpg' 
-import consumerimg2 from '../../assets/images/consumerimg2.jpg' 
-import consumerimg3 from '../../assets/images/consumerimg3.jpg' 
+import InnerCommonBanner from './Sections/InnerCommonBanner'  
+import consumerimg1 from '../../assets/images/consumerimg1.jpg'  
+import vedeoimg1 from '../../assets/images/vedeo-img-1.jpg'  
+import vedeoimg2 from '../../assets/images/vedeo-img-2.jpg'  
+import vedeoimg3 from '../../assets/images/vedeo-img-3.jpg'  
 import { Link } from 'react-router-dom';
 
 export default function DriveThroughBloodCollection() {
@@ -50,7 +45,49 @@ export default function DriveThroughBloodCollection() {
             </div> 
      </section>
 
- 
+    <section className='getng-reprt pt-0'>
+    <div className="container">
+      <div className='distngt-strctre'>
+      <div className="row align-items-center"> 
+            <div className='col-lg-9'>
+              <h4>Getting your Report</h4>
+              <p>Collecting of test reports has never been easier. - Once ready, Users can log in to our website and download the reports right on to their computers or mobile devices immediately after our doctors release a report.</p>
+            </div>
+            <div className='col-lg-3 text-right'>
+            <div class="cmn-buton"><p><a href="/">Download Report</a></p></div>
+            </div> 
+      </div>
+      </div>
+      </div>   
+    </section>
+
+    <section className='vedeo-galery pt-0'>
+    <div className="container-fluid">
+    <div className="row align-items-center"> 
+
+      <div className='col-lg-12 text-center'>
+      <div className="common-heading"><h2> Gallery </h2></div>
+      </div>
+
+      <div className='col-lg-4'>
+        <div className='vdeo-img'>
+        <Link to='/'> <img src={vedeoimg1} alt="call" className="img-fluid" /> </Link>
+        </div>
+      </div> 
+      <div className='col-lg-4'>
+        <div className='vdeo-img'>
+        <Link to='/'> <img src={vedeoimg2} alt="call" className="img-fluid" /> </Link>
+        </div>
+      </div> 
+      <div className='col-lg-4'>
+        <div className='vdeo-img'>
+        <Link to='/'> <img src={vedeoimg3} alt="call" className="img-fluid" /> </Link>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+
 
     </div>
   )
