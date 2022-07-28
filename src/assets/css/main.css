@@ -4305,6 +4305,73 @@ h1.text-red {
   .vdeo-img{border-radius: 10px;overflow: hidden;}
   .vdeo-img img{width:100%;}
 
+  .accordion-button{display: flex;
+	width: 100%;
+	background: none;
+	outline: none;
+	font-size: 18px;
+	border: 2px;
+	border-bottom: 1px solid #dfdfdf;
+	padding: 20px 25px;
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.11);
+	border-radius: 5px;font-size: 18px;
+	line-height: 30px;
+	color: #353535;
+	font-weight: 700;
+	margin:0px;
+	cursor: pointer;position: relative;} 
+
+	.accordion-item {
+		margin: 25px 0px;
+	  }
+
+	h2.accordion-header{font-size: 18px;
+		line-height: 30px;
+		color: #602f98;
+		font-weight: 700;
+		margin:0px;}
+ 
+	.accordion-button::before {
+	content: '';
+	width: 14px;
+	height: 2px;
+	background: #333;
+	position: absolute;
+	top: calc(50% - 1px);
+	right: 1rem;
+	display: block;
+	transition: all .3s
+}
+
+.accordion-body{padding: 30px 25px;border: 1px solid #dfdfdf;border-top: 0px;}
+
+.accordion-button::after {
+	content: '';
+	width: 2px;
+	height: 14px;
+	background: #333;
+	position: absolute;
+	top: calc(50% - 7px);
+	right: calc(1rem + 6px);
+	display: block;
+	transition: all .3s
+}
+
+.accordion-button[aria-expanded=true]{
+	background: #602f98;
+color:#fff;}
+
+.accordion-button[aria-expanded=true]::after {
+	transform: rotate(135deg) translateX(-1px);
+	background: #fff
+}
+
+.accordion-button[aria-expanded=true]::before {
+	background-color: #000;
+	transform: rotate(135deg) translateX(-1px);
+	background: #fff
+}
+
 
   
 

@@ -134,7 +134,7 @@ export default function Header() {
                             <Link to="/" className="dropdown-item">Health tips</Link>
                           </li> 
                           <li>
-                            <Link to="/" className="dropdown-item">Frequently asked questions</Link>
+                            <Link to="/faq" className="dropdown-item">Frequently asked questions</Link>
                           </li>
                           </ul>
                           </li>
@@ -154,10 +154,10 @@ export default function Header() {
                             </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
-                            </Link>
+                            </a>
                           </li>
                           <li>
                             <Link to="/" className="dropdown-item">
