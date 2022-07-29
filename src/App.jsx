@@ -24,6 +24,8 @@ import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/Prep
 import DriveThroughBloodCollection from './Components/DriveThroughBloodCollection/DriveThroughBloodCollection'
 import Feedback from './Components/Feedback/Feedback'
 import Faq from './Components/Faq/Faq'
+import BookanAppointment from './Components/BookanAppointment/BookanAppointment'
+import Department from './Components/Department/Department'
 import HospitalLabManagement from './Components/HospitalLabManagement/HospitalLabManagement'
 import ClinicalLabManagement from './Components/ClinicalLabManagement/ClinicalLabManagement'
 import FranchisingOpportunities from './Components/FranchisingOpportunities/FranchisingOpportunities'
@@ -58,6 +60,8 @@ export default function App() {
         <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection/>} />
         <Route path='/feedback' element={<Feedback/>} />
         <Route path='/faq' element={<Faq/>} />
+        <Route path='/book-an-appointment' element={<BookanAppointment/>} />
+        <Route path='/department' element={<Department/>} />
         <Route path='/hospital-or-lab-management' element={<HospitalLabManagement/>} />
         <Route path='/clinical-lab-management' element={<ClinicalLabManagement/>} />
         <Route path='/franchising-opportunities' element={<FranchisingOpportunities/>} />

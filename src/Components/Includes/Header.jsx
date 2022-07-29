@@ -131,7 +131,7 @@ export default function Header() {
                             <Link to="/" className="dropdown-item">Special offers</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Health tips</Link>
+                            <a href="https://www.anandlab.com/blog/" target="_blank" className="dropdown-item">Health tips</a>
                           </li> 
                           <li>
                             <Link to="/faq" className="dropdown-item">Frequently asked questions</Link>
@@ -148,7 +148,7 @@ export default function Header() {
                             </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <Link to="/book-an-appointment" className="dropdown-item">
                             <img src={men2} alt="" className="img-fluid"/>
                             Book an Appointment
                             </Link>
@@ -177,7 +177,7 @@ export default function Header() {
                               <a className="dropdown-item" href="https://reports.anandlab.com/dos/" target="_blank"> Directory of service (DOS) </a>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Department </Link>
+                              <Link className="dropdown-item" to="/department"> Department </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/hospital-or-lab-management"> Hospital or Lab Management </Link>
@@ -202,11 +202,11 @@ export default function Header() {
                           <li className="col frst-clmn">
                             <ul>
                           <li>
-                            <Link to="/" className="dropdown-item"> Reach our lab </Link>
+                            <Link to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link>
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item"> Book home collection </Link>
+                            <Link to="/book-an-appointment" className="dropdown-item"> Book home collection </Link>
                           </li>
 
                           <li>
@@ -218,7 +218,7 @@ export default function Header() {
                           </li>
 
                           <li>
-                          <Link to="/" className="dropdown-item"> Drive through blood collection </Link>
+                          <Link to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
                           </li> 
 
                           </ul>
@@ -227,7 +227,7 @@ export default function Header() {
                           <li className="col secnd-clmn">
                             <ul>
                           <li>
-                            <Link to="/" className="dropdown-item"> Book COVID test </Link>
+                            <a href="http://reports.anandlab.com/feverclinicapp/initfeverclinic.aspx" target="_blank" className="dropdown-item"> Book COVID test </a>
                           </li>
                           <li>
                             <Link to="/" className="dropdown-item"> Diabetes DOST </Link>
@@ -236,7 +236,7 @@ export default function Header() {
                             <Link to="/" className="dropdown-item"> Thyroid DOST </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item"> V-Card, A patient beneficial program </Link>
+                            <Link to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
                           </li>
                           <li>
                             <Link to="/physiotherapy" className="dropdown-item"> Physiotherapy </Link>
@@ -254,16 +254,16 @@ export default function Header() {
                             </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <Link to="/book-an-appointment" className="dropdown-item">
                             <img src={men2} alt="" className="img-fluid"/>
                             Book an Appointment
                             </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                          <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
-                            </Link>
+                          </a>
                           </li>
                           <li>
                             <Link to="/" className="dropdown-item">

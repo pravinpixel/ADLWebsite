@@ -2595,7 +2595,7 @@ span.flag-option p {
 .inner-banner {
 	position: relative;
 	padding: 0px;
-	margin-top: 110px;
+	margin-top: 85px;
 }
 
 .inner-caption {
@@ -4345,33 +4345,35 @@ h1.text-red {
 
 .accordion-body{padding: 30px 25px;border: 1px solid #dfdfdf;border-top: 0px;}
 
-.accordion-button::after {
-	content: '';
-	width: 2px;
-	height: 14px;
-	background: #333;
-	position: absolute;
-	top: calc(50% - 7px);
-	right: calc(1rem + 6px);
-	display: block;
-	transition: all .3s
-}
+.accordion-button::after {content: '';width: 2px;height: 14px;background: #333;position: absolute;top: calc(50% - 7px);right: calc(1rem + 6px);display: block;transition: all .3s}
 
-.accordion-button[aria-expanded=true]{
-	background: #602f98;
-color:#fff;}
+.accordion-button[aria-expanded=true]{background: #602f98;color:#fff;}
 
-.accordion-button[aria-expanded=true]::after {
-	transform: rotate(135deg) translateX(-1px);
-	background: #fff
-}
+.accordion-button[aria-expanded=true]::after {transform: rotate(135deg) translateX(-1px);background: #fff}
 
-.accordion-button[aria-expanded=true]::before {
-	background-color: #000;
-	transform: rotate(135deg) translateX(-1px);
-	background: #fff
-}
+.accordion-button[aria-expanded=true]::before {background-color: #000;transform: rotate(135deg) translateX(-1px);
+background: #fff}
 
+.depar-tment .cmn-buton p{display: inline-block;margin-left: 15px;margin-bottom: 0px;}
+
+ .presnt-pakges p{width:70%;margin: 0 auto;}
+	
+.vedou-heading span{font-size: 24px;font-weight: 500;color: #602f98;margin-bottom: 20px;display: block;}
+.vedou-heading h5{font-size: 18px;font-weight: 500;color: #6E6E6E;margin-top: 20px;display: block;}
+
+.book-aptmentfrm{background-color: #6D6D6D;position: relative;}
+.book-aptmentfrm:before{position:absolute;content:"";background: rgba(0, 0, 0, 0) url("../images/app-doni.png") no-repeat scroll 0 0;width:566px;height:439px;left:100px;bottom:0;}
+
+.poitment-form{background-color: #F1F1F1;padding: 32px;}
+.poitment-form .banner-form{background-color: #F1F1F1;position: relative;left:0;top:0;padding: 0px;width:auto;}
+
+.poitment-form h4{font-size: 22px;font-weight:600;margin-bottom: 30px;}
+
+.poitment-form .form-data input{width:46%;float: left;margin-right:20px;}
+.poitment-form .form-data.sbm input{width:25%;float: none;margin-right:0px;}
+
+.poitment-form .upload-btn-wrapper{width:46%;overflow: unset;float: left;background: transparent;margin-right:20px;}
+.poitment-form .upload-btn-wrapper .btn{background: transparent;}
 
   
 
