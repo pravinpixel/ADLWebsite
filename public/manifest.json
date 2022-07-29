@@ -21,6 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "homePage" : "http://adl.pixel-studios.net"
+  "background_color": "#ffffff"
 }
