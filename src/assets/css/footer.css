@@ -173,7 +173,7 @@ a.whatsappp{
 	align-items: center;
 	justify-content: center;
 	color: #fff;
-	background: var(--color-orange);
+	background: #ff9a1f;
 	border-radius: 5px 0px 0px 5px;
 	cursor: pointer;
 }
@@ -201,7 +201,7 @@ a.whatsappp{
 	align-items: center;
 	justify-content: center;
 	background: #fff;
-	color: var(--color-blue);
+	color: #602f98;
 	transition: all .35s ease;
 }
 
@@ -234,12 +234,12 @@ a.whatsappp{
 	position: fixed;
 	left: 0;
 	width: 100%;
-	bottom: -50px;
+	bottom: -100px;
 	z-index: 999;
 	display: none;
 	align-items: center;
 	justify-content: space-between;
-	background: var(--color-orange);
+	background: #ff9a1f;
 	transition: all .35s ease;
 }
 
@@ -249,32 +249,45 @@ a.whatsappp{
 }
 
 .mobile-footer a{
-	padding: 10px 0px;
+	padding: 15px 0px 3px;
 	width: 20%;
 	border-right:1px solid rgba(255,255,255,0.3);
 	text-align: center;
 	transition: all .35s ease;
-	background: var(--color-orange);
+	background: #ff9a1f;
+	color:#000;
+	font-weight: 600;
 }
-.mobile-footer a img{
-	height: 25px;
-}
+.mobile-footer a img {
+	height: 35px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0px;
+	margin-bottom: 5px;transition: all .35s ease;
+  }
+
+  .mobile-footer a:hover img{
+  filter: invert(100%);
+  transition: all .35s ease;
+  }
+
 .mobile-footer a:last-child{
 	border-right: none;
 }
 .mobile-footer a:hover{
 	transition: all .35s ease;
-	background: var(--color-blue);
+	background: #602f98;
+	color:#fff;
 }
 
 .tooltip-inner {
     color: #fff;
-    background: var(--color-blue);
+    background: #602f98;
     border-radius: 5px;
 	opacity: 1;
 }
 .bs-tooltip-auto[x-placement^=top] .arrow::before, .bs-tooltip-top .arrow::before {
-    border-top-color: var(--color-blue);
+    border-top-color: #602f98;
 }
 
 @media (max-width:1200px) {	

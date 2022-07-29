@@ -3,7 +3,11 @@ import send from './../../assets/images/send.png'
 import playstore from './../../assets/images/playstore.png'
 import ReachUs  from '../Home/Sections/ReachUs'
 import { Link } from 'react-router-dom'
-
+import location from './../../assets/images/mob-ic-1.png';
+import sky from './../../assets/images/mob-ic-4.png';
+import cart from './../../assets/images/mob-ic-3.png';
+import toll from './../../assets/images/mob-ic-5.png';
+import user from './../../assets/images/mob-ic-2.png'; 
 export default function Footer() {
   return (
     <>
@@ -221,6 +225,29 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+
+      <div className="mobile-footer">
+	    <a href="" data-toggle="tooltip" title="Current Location">
+      <img src={location} alt="" className="img-fluid"/>
+      Location
+      </a>
+	    <a href="" data-toggle="tooltip" title="Login to view your Profile">
+      <img src={user} alt="" className="img-fluid"/>
+      Login
+      </a>
+	    <a href="" data-toggle="tooltip" title="Cart Details">
+      <img src={cart} alt="" className="img-fluid"/>
+      Cart
+      </a>
+	    <a href="" data-toggle="tooltip" title="Download Your Reports">
+      <img src={sky} alt="" className="img-fluid"/>
+      Download Reports
+      </a>
+	    <a href="" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid"/>
+      Toll-Free
+      </a>
+      </div>
+
     </>
   )
 }

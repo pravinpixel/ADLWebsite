@@ -280,16 +280,16 @@ export default function Header() {
                         <Link className="nav-link dropdown-toggle" to="/reach-us">Reach Us</Link>
                         <ul className="dropdown-menu">
                            <li>
-                              <Link className="dropdown-item" to="/"> Head office & other locations </Link>
+                              <Link className="dropdown-item" to="/head-office"> Head office & other locations </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Health Checkup for employees </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Neuberg Anand Franchise </Link>
+                              <Link className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> COVID testing for employees </Link>
+                              <Link className="dropdown-item" to="/covidtesting-employees"> COVID testing for employees </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Hospital & Lab Partnership </Link>

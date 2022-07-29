@@ -35,6 +35,9 @@ import ManualTherapy from './Components/ManualTherapy/ManualTherapy'
 import ExerciseTherapy from './Components/ExerciseTherapy/ExerciseTherapy'
 import Electrotherapy from './Components/Electrotherapy/Electrotherapy'
 import Contact from './Components/Contact/Contact'
+import HeadOffice from './Components/HeadOffice/HeadOffice'
+import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
+import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
 
 export default function App() {
   return (
@@ -71,6 +74,9 @@ export default function App() {
         <Route path='/exercise-therapy' element={<ExerciseTherapy/>} />
         <Route path='/electrotherapy' element={<Electrotherapy/>} />
         <Route path='/reach-us' exact element={<Contact/>} /> 
+        <Route path='/head-office' exact element={<HeadOffice/>} /> 
+        <Route path='/anandlab-franchise' exact element={<AnandLabFranchise/>} /> 
+        <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/> 
