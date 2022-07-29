@@ -239,7 +239,7 @@ export default function Footer() {
       <img src={cart} alt="" className="img-fluid"/>
       Cart
       </a>
-	    <a href="" data-toggle="tooltip" title="Download Your Reports">
+	    <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"data-toggle="tooltip" title="Download Your Reports">
       <img src={sky} alt="" className="img-fluid"/>
       Download Reports
       </a>

@@ -49,10 +49,10 @@ export default function Header() {
                         <CartCount/> 
                       </li>
                       <li>
-                        <Link to="/">
+                        <a href="http://reports.anandlab.com/v3/index1.html" target="_blank">
                           <img src={sky} alt="" className="img-fluid"/>
                           <span>Report</span>
-                        </Link>
+                        </a>
                       </li>
                       <li>
                         <Link to="/">
@@ -142,10 +142,10 @@ export default function Header() {
                           <li className="col thrd-clmn">
                             <ul>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
-                            </Link>
+                            </a>
                           </li>
                           <li>
                             <Link to="/book-an-appointment" className="dropdown-item">
@@ -248,10 +248,10 @@ export default function Header() {
                           <li className="col thrd-clmn">
                             <ul>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                          <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
-                            </Link>
+                            </a>
                           </li>
                           <li>
                             <Link to="/book-an-appointment" className="dropdown-item">
