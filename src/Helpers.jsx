@@ -19,13 +19,14 @@ export function Loading() {
 }
 
 export function CheckCartBucket(TestId) {
+   
    let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
    if(currentCart !== null) {
       function isExists(CurrentTest) {
          return CurrentTest.TestId === TestId;
       }
       var Result = currentCart.find(isExists)
-      if(Result !== undefined) {
+      if(Result !== undefined) { 
          return true
       } else {
          return false
@@ -50,7 +51,8 @@ export function AddToCartList(test) {
 
 
 export function RemoveToCartList(test) {
-
+   toast.error('Test Removed Successfully!');
+  
    let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
 
    function isExists(CurrentTest) {
@@ -61,13 +63,11 @@ export function RemoveToCartList(test) {
       var Result = currentCart.find(isExists)
       var index  = currentCart.indexOf(Result)
       currentCart.splice(index, 1)
-      localStorage.setItem('CartTestList', JSON.stringify(currentCart));
-      
+      localStorage.setItem('CartTestList', JSON.stringify(currentCart)); 
       return currentCart
    }
     
-   if(currentCart.length === 0) {
-   
+   if(currentCart.length === 0) {  
       localStorage.removeItem('CartTestList')
    }
 }
