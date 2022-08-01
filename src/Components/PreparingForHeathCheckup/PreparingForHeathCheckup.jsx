@@ -25,7 +25,7 @@ export default function PreparingForHeathCheckup() {
                       <li> / </li> 
                       <li> Patients </li>
                       <li> / </li> 
-                      <li> Preparing for Heath Checkup </li>
+                      <li> Preparing for Health Checkup </li>
                     </ul>
                     <h1>
                     Haematology services extending<br></br> beyond the blood smear

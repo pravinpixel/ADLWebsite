@@ -1807,7 +1807,7 @@ ul.footer-socials li i {
 }
 
 ul.footer-socials li:nth-child(1) i {
-	left: 13px;
+	left: 14px;
 	top: 22px;
 }
 
@@ -1908,6 +1908,8 @@ h4.cont-frmhed {
 	border-bottom: 0;
 	display: block;
 	text-align: center;
+	float: left;
+width: 100%;
 }
 
 .form-data label {
@@ -4667,7 +4669,13 @@ background: #fff}
 }
 
 @media (max-width:1400px) {
+	#home-banner-carousel .carousel-inner .carousel-item.active {
+		background-position: -440px bottom !important;
+	  }
 
+	  
+	.testing-sector::before {left: -56.5%;}
+	.loyality-program::before {left: -190px;}
 	.banner-form {
 		right: 3%;
 	}
@@ -4693,6 +4701,7 @@ background: #fff}
 }
 
 @media (max-width:1300px) {
+	.inner-banner{margin-top: 10px;}
 	.call-us h4 span {
 		font-size: 15px;
 		line-height: 28px;
