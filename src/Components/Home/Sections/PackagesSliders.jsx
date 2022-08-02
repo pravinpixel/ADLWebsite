@@ -15,7 +15,7 @@ export default function PackagesSliders() {
     autoplaySpeed: 3000,
     responsive: [
           {
-              breakpoint: 1024,
+              breakpoint: 1100,
               settings: {
                   slidesToShow: 3,
               }

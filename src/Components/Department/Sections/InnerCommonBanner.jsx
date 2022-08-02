@@ -14,9 +14,9 @@ export default function
                     <ul>
                       <li><Link to='/'> Home </Link></li>
                       <li> / </li>
-                      <li> Patients </li>
+                      <li> Doctors </li>
                       <li> / </li>
-                      <li> Drive Through Blood Collection </li>
+                      <li> Department </li>
                     </ul>
                     <h1>
                     A compilation of valuable information not only <br/>helps in increasing the knowledge base of our customers   
