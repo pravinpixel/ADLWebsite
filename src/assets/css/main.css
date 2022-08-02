@@ -4778,6 +4778,26 @@ background: #fff}
 }
 
 @media (max-width:1100px) {
+	.mission-layer { 
+		background: #f9fcfc; 
+	  }
+	  .values-layer li { 
+		width: 22%;
+		margin-right: 25px; 
+		margin-bottom: 30px;
+	  } 
+	  .certifi-lsts ul li {
+		margin-bottom: 30px;
+		width: 35%;
+	  }
+	  .loyality-program::before {
+		left: -320px;
+	  }
+	  .care-hlthcare li{width:32%;}
+	.values-layer {
+	  padding: 45px 35px 35px;}
+	.vision-layer h5 {
+		font-size: 20px;}
 	.topr-clmn li ul{margin-top: 20px;}
 	.navbar-default .dropdown .dropdown-menu .dropdown-item{font-size: 16px;}
 	li.secnd-clmn::before {display: none;}

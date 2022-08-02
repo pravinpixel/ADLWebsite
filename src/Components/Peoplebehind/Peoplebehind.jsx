@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import bannerimage from "../../assets/images/inner-banner-2.jpg"; 
+import bannerimage from "../../assets/images/inner-banner-3.jpg"; 
 import people1 from "../../assets/images/people-1.jpg"; 
 import people2 from "../../assets/images/people-2.jpg"; 
 import people3 from "../../assets/images/people-3.jpg"; 

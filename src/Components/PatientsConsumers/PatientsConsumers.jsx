@@ -28,7 +28,7 @@ export default function Solutions() {
         autoplaySpeed: 2000,
         responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: 1100,
                     settings: {
                         slidesToShow: 4,
                     }
