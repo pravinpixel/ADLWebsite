@@ -9,6 +9,9 @@
 		transform: rotate(360deg)
 	}
 }
+.fancybox-overlay-fixed {
+	z-index: 99999 !important;
+}
 
 .preloader>div>div {
 	transform-origin: 100px 100px;

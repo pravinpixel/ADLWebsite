@@ -25,6 +25,7 @@
     "react-slick": "^0.29.0",
     "react-toastify": "*",
     "react-tsparticles": "^2.0.6",
+    "react-videojs-fancybox": "^0.0.7",
     "redux": "^4.2.0",
     "sweetalert2": "^11.4.17",
     "sweetalert2-react-content": "^5.0.0",

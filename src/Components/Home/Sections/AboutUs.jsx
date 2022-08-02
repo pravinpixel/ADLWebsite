@@ -2,6 +2,7 @@ import React from 'react'
 import Sliders from 'react-slick'
 import videoBg from '../../../assets/images/video-bg.jpg'
 import playButton from '../../../assets/images/play-icon.png'
+import FancyVideo from 'react-videojs-fancybox';
 
 export default function AboutUs() {
   var settings = {
@@ -70,10 +71,14 @@ export default function AboutUs() {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div className="testivideo-section">
-              <img src={videoBg} alt="" className="img-fluid"/>
-              <div className="plying-btn text-center">
-                <a href=""><img src={playButton}alt="" className="img-fluid"/></a>
-              </div>
+              <FancyVideo
+                id="video"
+                source="https://www.w3schools.com/tags/movie.mp4"
+                poster={videoBg}
+              />
+              {/* <div className="plying-btn text-center">
+                 <img src={playButton}alt="" className="img-fluid"/>
+              </div> */}
             </div> 
           </div>
         </div>
