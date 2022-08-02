@@ -73,11 +73,11 @@ export default function Accreditation() {
               <div className="certifi-lsts text-center">
                 <ul  className="pswp-gallery" id="my-gallery">
                   <li>
-                    <img src={certimg1} alt="call" className="img-fluid" />
+                    <img src="http://localhost:3000/static/media/cer-1.7ea3a29e4e6ffd91392c.jpg" alt="call" className="img-fluid" />
                     <h4> ADL NABL <span>Certificate</span></h4>
                     <div className="cmn-buton">
                       <p>
-                        <a href={certimg1}
+                        <a href="http://localhost:3000/static/media/cer-1.7ea3a29e4e6ffd91392c.jpg"
                           data-pswp-width="1875"
                           data-pswp-height="2500"
                           target="_blank"
