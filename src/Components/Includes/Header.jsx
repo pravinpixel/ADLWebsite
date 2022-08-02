@@ -306,7 +306,7 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <Link to="/" className="navbar-brand text-brand">
+              <Link to="/" className="navbar-brand text-brand rit-sde">
                 <img src={logoberg} alt="" className="img-fluid"/>
               </Link>
               <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">

@@ -4776,6 +4776,10 @@ background: #fff}
 		font-size: 16px;
 	}
 }
+.fancybox-inner ,
+.fancybox-skin {
+	height: 50vh !important;
+}
 
 @media (max-width:1100px) {
 	.mission-layer { 
@@ -4833,7 +4837,12 @@ background: #fff}
 
 }
 
-@media (max-width:960px) {
+@media (max-width:1000px) {
+	.navbar.navbar-default.navbar-trans.navbar-expand-lg{display: block;}
+	.navbar-brand.text-brand.rit-sde{margin-left: 20px;
+		position: absolute;
+		top: 11px;
+		left: 190px;}
 	ul.counters-list {
 		flex-wrap: wrap;
 		justify-content: space-around;
