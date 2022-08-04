@@ -586,7 +586,7 @@ ul.mobile-top-links li a{
 	}
 }
 
-@media (max-width:991px) {
+@media (max-width:1000px) {
 	
 	ul.mobile-top-links{
 		display: inline-block;
@@ -603,7 +603,7 @@ ul.mobile-top-links li a{
 		align-items: flex-start;
 	}
 	.navbar-toggler{
-		top: 25px;
+		top: 8px;
 	}
 	.navbar-expand-lg .navbar-collapse{
 		background: #fff;

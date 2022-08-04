@@ -4838,6 +4838,25 @@ background: #fff}
 }
 
 @media (max-width:1000px) {
+	.sample-collection .common-heading {
+		margin-bottom: 10px;
+	  }
+	  .works-cunt span{position: relative;}
+	  .works-cunt{margin-bottom: 50px;}
+	  .works-cunt p {
+		font-size: 22px;
+		line-height: 34px;
+		width: 50%;
+		margin: 0 auto;
+	  }
+	.container {
+		max-width: 90%;
+	  }
+	#home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption{top:5%;left:0;}
+	.banner-form{top:6%;}
+	body, body.home {
+		padding-top: 75px;
+	  }
 	.navbar.navbar-default.navbar-trans.navbar-expand-lg{display: block;}
 	.navbar-brand.text-brand.rit-sde{margin-left: 20px;
 		position: absolute;
