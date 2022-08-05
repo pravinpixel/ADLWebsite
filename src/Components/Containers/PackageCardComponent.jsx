@@ -15,13 +15,10 @@ export default function PackageCardComponent() {
                 </h4>
                 <h5>&#8377;180 <span className="strke"><s>&#8377;280</s></span></h5>
                 <h6>79 % off T&C*</h6>
-<<<<<<< Updated upstream
                 <p> <Link to="/about-us"> Book Now</Link></p>
-=======
                 <p>
                   <Link to="/about-us">Book Now</Link>
                 </p>
->>>>>>> Stashed changes
               </div>
   )
 }
