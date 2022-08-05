@@ -23,7 +23,7 @@ export default function Header() {
                 <img src={logo} alt="" className="img-fluid"/>
               </Link>
               <div className="navbar-collapse collapse justify-content-center" id="navbarDefault">
-                <div className="row align-items-center">
+                <div className="row align-items-center no-disp-tabscrn">
                   <div className="col">
                     <ul className="top-links text-center">
                       <li>
@@ -314,6 +314,25 @@ export default function Header() {
                 <span></span>
                 <span></span>
               </button>
+              <a href="" className='srch-btn' data-toggle="modal" data-target="#ram"><i class="fa fa-search" aria-hidden="true"></i></a>
+
+              <div className="modal fade cstm tpm-set" id="ram" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog" role="document">
+              <div className="modal-content">
+              <div className="modal-header"> 
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div className="modal-body"> 
+              <div className="mdl-cnt">
+              <input type="text" placeholder="Search for Health Packages / Tests / Labs" />
+              </div>
+              </div> 
+              </div>
+              </div>
+              </div> 
+ 
             </nav>
           </div>
         </div>

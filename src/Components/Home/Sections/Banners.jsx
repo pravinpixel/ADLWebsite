@@ -8,8 +8,8 @@ import BannerForm from './BannerForm'
 import dummyBanner from '../../../assets/images/banner-image3.jpg'
 
 const Banners = () => { 
-    const dispatch      =   useDispatch();
-    const bannerList    =   useSelector((state) =>  state.HomePageBanners)
+    const dispatch = useDispatch();
+    const bannerList = useSelector((state) =>  state.HomePageBanners)
     useEffect(() => {
         // return () => {
             axios.get(API_URL.BANNERS).then((response) => {

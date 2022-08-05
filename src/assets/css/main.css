@@ -4380,7 +4380,31 @@ background: #fff}
 .poitment-form .upload-btn-wrapper{width:46%;overflow: unset;float: left;background: transparent;margin-right:20px;}
 .poitment-form .upload-btn-wrapper .btn{background: transparent;}
 
-.mobile-footer{display: none;} 
+.mobile-footer{display: none;}  
+
+a.srch-btn{
+	display: block !important;
+	position: absolute;
+	content: "";
+	right:60px;
+	top: 18px;}
+	a.srch-btn i{font-size: 20px;color:#553191;}
+.mdl-cnt input{width:100%;}
+
+.tpm-set .modal-dialog {
+	max-width:95%;
+	margin:100px auto;
+  }
+
+  .tpm-set .modal-header {
+	  padding: 10px 20px 0px 15px;
+	}
+	
+	.tpm-set .modal-body {
+		padding: 10px 20px 20px 15px;
+	  }
+
+
 
 
 
@@ -4838,6 +4862,48 @@ background: #fff}
 }
 
 @media (max-width:1000px) {
+	a.srch-btn{display: block !important;}
+	#home-banner-carousel .carousel-inner .carousel-item{padding: 150px 0px 350px !important;}
+	#home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
+		top: -100px;}
+	.legacy-details{width:100%;}
+	footer .footer-column ul {
+		min-width: 250px !important;
+	  }
+	  #home-banner-carousel .carousel-inner .carousel-item.active {
+		background-position: -840px 66PX !important;background-color:#553191 !important;
+	  }
+
+	  #home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
+		top: -100px;
+		left: 0;
+	  }
+	  #home-banner-carousel .carousel-inner .carousel-item .carousel-caption h1 {
+		font-size: 32px;width:100%;
+	  }
+
+	.row.align-items-center.no-disp-tabscrn{display: none;}
+	footer .col-lg-2 {
+		flex: 0 0 30.667%;
+		max-width: 31.667%;
+	  }
+	#navbarDefault.collapse, #navbarDefault.collapsing {
+		background: #fff;
+		padding: 10px;
+		position: fixed;
+		right: -400px;
+		width: 300px;
+		top: 74px;
+		height: 100%;
+		max-width: 300px;
+		min-height: 100%;
+		border-left: 2px solid #000;
+		transition: all 0.3s ease;
+	  }
+	  #navbarDefault.collapse.show {
+		right: 0px;
+		transition: all 0.3s ease;
+	  }
 	.sample-collection .common-heading {
 		margin-bottom: 10px;
 	  }
@@ -4852,8 +4918,8 @@ background: #fff}
 	.container {
 		max-width: 90%;
 	  }
-	#home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption{top:5%;left:0;}
-	.banner-form{top:6%;}
+	#home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption{top:-100px;left:0;}
+	.banner-form{top:12%;}
 	body, body.home {
 		padding-top: 75px;
 	  }

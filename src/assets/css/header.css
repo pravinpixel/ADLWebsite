@@ -251,8 +251,7 @@ header .quote-btn:hover:after{
 	color: var(--color-black);
 }
 .navbar-expand-lg .navbar-nav{
-	align-items: center;
-	position: unset;
+	align-items: center; 
 } 
 
 .navbar-default.navbar-trans .nav-item.sngle-frce{position: relative;}
@@ -593,8 +592,7 @@ ul.mobile-top-links li a{
 		top: 30px;
 	}
 	.navbar-nav {
-		height: 300px;
-		overflow-y: scroll;
+		height: 100%; 
 	}
 	.navbar-default.navbar-trans .nav-item, .navbar-default.navbar-reduce .nav-item{
 		margin-left: 0px;
