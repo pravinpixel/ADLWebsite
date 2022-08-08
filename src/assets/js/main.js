@@ -347,6 +347,7 @@ $("input[name='accordion']").click(function () {
     scrollTop: $("#" + $(this).attr("id")).offset().top +400
   }, 1000)
 })
+
   
 $(document).ready(function() {
     $('.carousel').carousel({

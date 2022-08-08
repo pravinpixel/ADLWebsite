@@ -308,7 +308,7 @@ a.dropdown-item {
 	transition: all 500ms ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1001px) {
 	.navbar-default .dropdown .dropdown-menu {
 		display: flex !important;
     	height: inherit !important;

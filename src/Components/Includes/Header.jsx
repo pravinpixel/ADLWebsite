@@ -69,6 +69,7 @@ export default function Header() {
                     <ul className="navbar-nav">  
                       <li className="nav-item dropdown sngle-frce">
                         <Link className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
+                        <span className='mobile-toggle'><i className='fa fa-plus'></i></span>
                         <ul className="dropdown-menu">
                            <li>
                               <Link className="dropdown-item" to="/people-behind"> People behind </Link>
