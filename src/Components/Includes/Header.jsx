@@ -284,7 +284,7 @@ export default function Header() {
                               <Link className="dropdown-item" to="/head-office"> Head office & other locations </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Health Checkup for employees </Link>
+                              <Link className="dropdown-item" to="/healthcheckup-for-employees"> Health Checkup for employees </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
@@ -293,7 +293,7 @@ export default function Header() {
                               <Link className="dropdown-item" to="/covidtesting-employees"> COVID testing for employees </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Hospital & Lab Partnership </Link>
+                              <Link className="dropdown-item" to="/hospital-or-lab-management"> Hospital & Lab Partnership </Link>
                            </li>
                            <li>
                               <Link className="dropdown-item" to="/"> Job oppourtunities </Link>
