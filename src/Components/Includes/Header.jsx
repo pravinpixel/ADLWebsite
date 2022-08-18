@@ -13,6 +13,21 @@ import CartCount from './CartCount';
 import { Link } from 'react-router-dom';
 
 export default function Header() { 
+
+  
+function mobileToggle(e) {
+  e.preventDefault();
+  let root = e.target.parentElement.parentElement;
+  let child = e.target;
+  if(child.classList.contains('fa-plus') ) {
+    child.classList.remove('fa-plus');
+    child.classList.add('fa-minus') ;
+  } else {
+    child.classList.add('fa-plus');
+    child.classList.remove('fa-minus') ;
+  }
+  root.classList.contains('active') ? root.classList.remove('active') : root.classList.add('active');
+}
   return (
     <header id="header" className="main-header site-navbar">
       <div className="container">
@@ -69,7 +84,7 @@ export default function Header() {
                     <ul className="navbar-nav">  
                       <li className="nav-item dropdown sngle-frce">
                         <Link className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
-                        <span className='mobile-toggle'><i className='fa fa-plus'></i></span>
+                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                         <ul className="dropdown-menu">
                            <li>
                               <Link className="dropdown-item" to="/people-behind"> People behind </Link>
@@ -85,8 +100,9 @@ export default function Header() {
                            </li> 
                         </ul>
                      </li>
-                      <li className="nav-item dropdown">
-                        <a href="javascript:void(0)" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Patients</a>
+                      <li className="nav-item dropdown sngle-frce">
+                        <Link className="nav-link dropdown-toggle" to="#" >Patients</Link>
+                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                           <div className="dropdown-bg">
                             
                         <ul className="dropdown-menu topr-clmn row">

@@ -4751,7 +4751,7 @@ a.srch-btn{
 }
 
 @media (max-width:1300px) {
-	.inner-banner{margin-top: 10px;}
+	.inner-banner{margin-top: 0px;}
 	.call-us h4 span {
 		font-size: 15px;
 		line-height: 28px;
@@ -4888,7 +4888,7 @@ a.srch-btn{
 	.navbar-default.navbar-trans .nav-link{
 		display: inline-block;
 	}
-	.navbar-default .dropdown .dropdown-menu, .navbar-default .dropdown:hover .dropdown-menu{
+	.navbar-default .dropdown .dropdown-menu, .navbar-default .dropdown:hover .dropdown-menu {
 		position: relative;
 		display: block;
 		transform: none;
@@ -4896,17 +4896,19 @@ a.srch-btn{
 		visibility: hidden;
 		opacity: 0;
 		padding: 0px !important;
-	}
-	.navbar-default .nav-item.dropdown.active .dropdown-menu{
+		left: 0;
+		top: 0; 
+		transition: height 0.3s;
+	  }
+	  .navbar-default .nav-item.dropdown.active .dropdown-menu {
 		position: relative;
 		opacity: 1;
-		visibility: visible;
-		display: block;
+		visibility: visible; 
 		top: 0;
-		padding: 10px !important;
-		height: auto;
-		left: inherit;
-	}
+		padding: 0px !important;
+		height: 150px;
+		left: inherit; 
+	  }
 	.navbar-default.navbar-trans .nav-item{
 		width: 100%;
 	}
@@ -4953,12 +4955,14 @@ a.srch-btn{
 		padding: 10px;
 		position: fixed;
 		right: -400px;
-		width: 300px;
-		top: 74px;
+		width: 35		0px;
+		top: 70px;
 		height: 100%;
-		max-width: 300px;
+		max-width: 350px;
 		min-height: 100%;
-		border-left: 2px solid #000;
+		-webkit-box-shadow: -8px 0px 5px -4px rgba(0,0,0,0.16);
+		-moz-box-shadow: -8px 0px 5px -4px rgba(0,0,0,0.16);
+		box-shadow: -8px 0px 5px -4px rgba(0,0,0,0.16);
 		transition: all 0.3s ease;
 	  }
 	  #navbarDefault.collapse.show {
