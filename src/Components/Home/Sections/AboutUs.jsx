@@ -25,21 +25,18 @@ export default function AboutUs() {
               breakpoint: 900,
               settings: {
                   slidesToShow: 1,
-                  centerMode: true,
               }
           },
           {
             breakpoint: 680,
             settings: {
                 slidesToShow: 1,
-                centerMode: true,
             }
         },
           {
               breakpoint: 480,
               settings: {
                   slidesToShow: 1,
-                  centerMode: true,
               }
           },
     ]

@@ -44,22 +44,19 @@ $('.topbooked-cases').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 3,
-                centerMode: true,
+                slidesToShow: 3, 
             }
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 2,
-              centerMode: true,
+              slidesToShow: 2, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
   ]
@@ -85,22 +82,19 @@ $('.popular-lists').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 2,
-                centerMode: true,
+                slidesToShow: 2, 
             }
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 2,
-              centerMode: true,
+              slidesToShow: 2, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
   ]
@@ -126,22 +120,19 @@ $('.testimonial-topics').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 1,
-              centerMode: true,
+              slidesToShow: 1, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
   ]
@@ -166,22 +157,19 @@ $('.body-parts').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 4,
-                centerMode: true,
+                slidesToShow: 4, 
             }
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 3,
-              centerMode: true,
+              slidesToShow: 3, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 2,
-                centerMode: true,
+                slidesToShow: 2, 
             }
         },
   ]
@@ -206,22 +194,19 @@ $('.condition-lsts').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 3,
-                centerMode: true,
+                slidesToShow: 3, 
             }
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 2,
-              centerMode: true,
+              slidesToShow: 2, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
   ]
@@ -246,22 +231,18 @@ $('.lat-hapns').slick({
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 2,
-                centerMode: true,
-            }
+                slidesToShow: 2, 
         },
         {
           breakpoint: 680,
           settings: {
-              slidesToShow: 1,
-              centerMode: true,
+              slidesToShow: 1, 
           }
       },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
-                centerMode: true,
+                slidesToShow: 1, 
             }
         },
   ]

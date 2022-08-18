@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import logo from './../../assets/images/logo.png';
 import logoberg from './../../assets/images/logoberg.png';
 import location from './../../assets/images/location.png';
@@ -14,8 +14,10 @@ import { Link } from 'react-router-dom';
 
 export default function Header() { 
 
-  
+const navElement = useRef();
+
 function mobileToggle(e) {
+
   e.preventDefault();
   let root = e.target.parentElement.parentElement;
   let child = e.target;
@@ -26,7 +28,13 @@ function mobileToggle(e) {
     child.classList.add('fa-plus');
     child.classList.remove('fa-minus') ;
   }
-  root.classList.contains('active') ? root.classList.remove('active') : root.classList.add('active');
+  if(root.classList.contains('active')) {
+    root.classList.remove('active');
+    navElement.current.classList.remove('down-menu-open')
+  } else {
+    root.classList.add('active');
+    navElement.current.classList.add('down-menu-open');
+  }
 }
   return (
     <header id="header" className="main-header site-navbar">
@@ -37,7 +45,7 @@ function mobileToggle(e) {
               <Link to="/" className="navbar-brand text-brand">
                 <img src={logo} alt="" className="img-fluid"/>
               </Link>
-              <div className="navbar-collapse collapse justify-content-center" id="navbarDefault">
+              <div className="navbar-collapse collapse justify-content-center" id="navbarDefault"  ref={navElement}>
                 <div className="row align-items-center no-disp-tabscrn">
                   <div className="col">
                     <ul className="top-links text-center">
@@ -85,7 +93,7 @@ function mobileToggle(e) {
                       <li className="nav-item dropdown sngle-frce">
                         <Link className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu frresplyr-abt">
                            <li>
                               <Link className="dropdown-item" to="/people-behind"> People behind </Link>
                            </li>
@@ -100,12 +108,12 @@ function mobileToggle(e) {
                            </li> 
                         </ul>
                      </li>
-                      <li className="nav-item dropdown sngle-frce">
+                      <li className="nav-item dropdown">
                         <Link className="nav-link dropdown-toggle" to="#" >Patients</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                           <div className="dropdown-bg">
                             
-                        <ul className="dropdown-menu topr-clmn row">
+                        <ul className="dropdown-menu frresplyr-pat topr-clmn row">
 
                           <li className="col frst-clmn">
                             <ul>
@@ -188,8 +196,9 @@ function mobileToggle(e) {
                         </div>
                       </li> 
                       <li className="nav-item dropdown sngle-frce">
-                        <Link className="nav-link dropdown-toggle" to="/"  aria-haspopup="true" aria-expanded="false">Doctors</Link>
-                        <ul className="dropdown-menu">
+                        <Link className="nav-link dropdown-toggle" to="#">Doctors</Link>
+                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
+                        <ul className="dropdown-menu frresplyr-doc">
                            <li>
                               <a className="dropdown-item" href="https://reports.anandlab.com/dos/" target="_blank"> Directory of service (DOS) </a>
                            </li>
@@ -211,10 +220,11 @@ function mobileToggle(e) {
                         </ul>
                      </li> 
                       <li className="nav-item dropdown">
-                        <a href="javascript:void(0)" className="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Health Checkup</a>
+                        <Link className="nav-link dropdown-toggle" to="#">Health Checkup</Link>
+                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                           <div className="dropdown-bg">
                             
-                        <ul className="dropdown-menu topr-clmn row">
+                        <ul className="dropdown-menu frresplyr-hea topr-clmn row">
 
                           <li className="col frst-clmn">
                             <ul>
@@ -295,7 +305,8 @@ function mobileToggle(e) {
                       </li> 
                       <li className="nav-item dropdown sngle-frce">
                         <Link className="nav-link dropdown-toggle" to="/reach-us">Reach Us</Link>
-                        <ul className="dropdown-menu">
+                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
+                        <ul className="dropdown-menu frresplyr-con">
                            <li>
                               <Link className="dropdown-item" to="/head-office"> Head office & other locations </Link>
                            </li>

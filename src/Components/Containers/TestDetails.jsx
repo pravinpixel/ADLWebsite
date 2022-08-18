@@ -67,22 +67,19 @@ export default function TestDetails() {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 3,
-          centerMode: true,
+          slidesToShow: 3, 
         },
       },
       {
         breakpoint: 680,
         settings: {
-          slidesToShow: 2,
-          centerMode: true,
+          slidesToShow: 2, 
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          centerMode: true,
+          slidesToShow: 1, 
         },
       },
     ],

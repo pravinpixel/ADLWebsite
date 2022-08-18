@@ -32,8 +32,11 @@ import FranchisingOpportunities from './Components/FranchisingOpportunities/Fran
 import Research from './Components/Research/Research'
 import Physiotherapy from './Components/Physiotherapy/Physiotherapy'
 import ManualTherapy from './Components/ManualTherapy/ManualTherapy'
+<<<<<<< Updated upstream
 import ExerciseTherapy from './Components/ExerciseTherapy/ExerciseTherapy'
 import Electrotherapy from './Components/Electrotherapy/Electrotherapy'
+=======
+>>>>>>> Stashed changes
 import Contact from './Components/Contact/Contact'
 import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
@@ -72,8 +75,11 @@ export default function App() {
         <Route path='/research' element={<Research/>} />
         <Route path='/physiotherapy' element={<Physiotherapy/>} />
         <Route path='/manual-therapy' element={<ManualTherapy/>} />
+<<<<<<< Updated upstream
         <Route path='/exercise-therapy' element={<ExerciseTherapy/>} />
         <Route path='/electrotherapy' element={<Electrotherapy/>} />
+=======
+>>>>>>> Stashed changes
         <Route path='/reach-us' exact element={<Contact/>} /> 
         <Route path='/head-office' exact element={<HeadOffice/>} /> 
         <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} /> 
