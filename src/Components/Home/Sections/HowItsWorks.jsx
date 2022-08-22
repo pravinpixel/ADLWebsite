@@ -24,7 +24,7 @@ export default function HowItsWorks() {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="works-cunt">
+            <div className="works-cunt blw-sml">
               <span>3</span>
               <p>We will email you the reports. You can<br/> also access your reports within your<br/> account on the Neuberg website</p>
             </div>

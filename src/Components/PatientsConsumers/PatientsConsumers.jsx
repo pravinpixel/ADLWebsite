@@ -37,21 +37,21 @@ export default function Solutions() {
                     breakpoint: 900,
                     settings: {
                         slidesToShow: 3,
-                        centerMode: true,
+                         
                     }
                 },
                 {
                 breakpoint: 680,
                 settings: {
                     slidesToShow: 2,
-                    centerMode: true,
+                     
                 }
             },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 2,
-                        centerMode: true,
+                         
                     }
                 },
         ]

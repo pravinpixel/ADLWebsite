@@ -24,21 +24,21 @@ export default function PackagesSliders() {
               breakpoint: 900,
               settings: {
                   slidesToShow: 2,
-                  centerMode: true,
+                   
               }
           },
           {
             breakpoint: 680,
             settings: {
                 slidesToShow: 2,
-                centerMode: true,
+                 
             }
         },
           {
               breakpoint: 480,
               settings: {
                   slidesToShow: 1,
-                  centerMode: true,
+                   
               }
           },
     ]

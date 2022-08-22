@@ -29,21 +29,21 @@ export default function CheckupsSliders() {
                     breakpoint: 900,
                     settings: {
                         slidesToShow: 4,
-                        centerMode: true,
+                         
                     }
                 },
                 {
                 breakpoint: 680,
                 settings: {
                     slidesToShow: 3,
-                    centerMode: true,
+                     
                 }
             },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 2,
-                        centerMode: true,
+                         
                     }
                 },
         ]

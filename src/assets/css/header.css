@@ -648,10 +648,7 @@ ul.mobile-top-links li a{
 	}
 	.navbar-brand {
 		margin-top: 0px;
-	}
-	.navbar .navbar-toggler {
-		top: 18px;
-	}
+	} 
 	.header-top{
 		display: none;
 	}
