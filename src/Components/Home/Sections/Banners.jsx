@@ -57,11 +57,12 @@ const Banners = () => {
                     } 
                 </div> 
 
-                {/* ========= Banner Form ========= */}
-                    <BannerForm />
-                {/* ========= End : Banner Form ========= */}
 
             </div> 
+            
+                {/* ========= Banner Form ========= */}
+                <BannerForm />
+                {/* ========= End : Banner Form ========= */}
         </div>   
     )
 }

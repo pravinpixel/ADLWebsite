@@ -478,10 +478,7 @@ ul.top-links li, ul.social-links li {
 	font-weight: 400;
 	color:  var(--color-black);
 	transition: all .3s ease;
-}
-ul.top-links li img{
- 
-}
+} 
 
 ul.top-links li {
 	color:  var(--color-black);
@@ -640,6 +637,9 @@ ul.mobile-top-links li a{
 }
 
 @media (max-width:767px) {	
+	.nutshell-count ul li {width: 30%;}
+	.call-us h4{font-size: 18px;}
+	.nutshell-count ul li h5{padding:10px 20px 25px 20px;}
 	header{
 		top: 0px;
 	}
