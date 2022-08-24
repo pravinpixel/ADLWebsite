@@ -661,10 +661,7 @@ ul.mobile-top-links li a{
 	.navbar-default .navbar-brand img{
 		width: 100px;
 		margin-top: 10px;
-	}
-	.fixed-top .navbar-default .navbar-brand img{
-		margin-top: 0px;
-	}
+	} 
 	.navbar .navbar-toggler{
 		right: -10px;
 	}
@@ -679,11 +676,6 @@ ul.mobile-top-links li a{
 	}
 	.navbar .navbar-toggler{
 		top: 16px;
-	}
-	.fixed-top .navbar .navbar-toggler{
-		top: 10px;
-	}
-	.fixed-top ul.mobile-top-links{
-		top: 15px;
-	}
+	} 
+	
 }
