@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-  // "homepage": "http://adl.pixel-studios.net/",
+  // "homepage": "http://adl.pixel-studios.net/",  
 
 
 ### `npm start`
