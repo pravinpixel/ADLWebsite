@@ -35,9 +35,9 @@ export default function ConditionsSliders() {
             }
         },
           {
-              breakpoint: 480,
+              breakpoint: 360,
               settings: {
-                  slidesToShow: 1,
+                  slidesToShow: 2,
                    
               }
           },

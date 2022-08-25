@@ -5181,10 +5181,14 @@ a.srch-btn{
 }
 
 @media (max-width:767px) {
+	footer .col-lg-2 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	  }
 	.slick-prev::before, .slick-next::before {
 		font-size: 20px;
 	  }
-	.slick-prev, .slick-next{top:auto;bottom:-56px;}
+	.slick-prev, .slick-next{top:auto;bottom:-75px;}
 	.slick-prev {
 		left:44%;
 	  }
@@ -5195,7 +5199,7 @@ a.srch-btn{
 	.works-cunt.blw-sml{margin-bottom:0px;}
 	.location-details button {right: 0;}
 	.knoledge-hub img{width:100%;}
-	.lat-hapns {margin: 0px -10px 50px;}
+	.lat-hapns {margin: 0px -10px 80px;}
 	section.media-structure {padding: 50px 0px 70px;}
 	.reach-uslinks{padding: 50px 0px 41px;}
 	section.maping {background-color: #f0f0f0;padding: 50px 0px;}
@@ -5280,14 +5284,19 @@ a.srch-btn{
 }
 
 @media (max-width:600px) {
-	
+	section.diagnostics, section.popular-packages {
+		padding: 50px 0px 110px;
+	  }
+	header {
+		padding: 12px 0px;
+	  }
 	#home-banner-carousel .carousel-indicators {
 		bottom: 19px;}
 	#navbarDefault.collapse, #navbarDefault.collapsing {top:59px;}
 	.navbar-toggler {top: 0;}
 	a.srch-btn{top:10px;}
-	.navbar-default .navbar-brand img {min-width: 140px;}
-	.navbar-brand.text-brand.rit-sde { top: 5px;left: 140px;}
+	.navbar-default .navbar-brand img {min-width: 130px;}
+	.navbar-brand.text-brand.rit-sde { top: 5px;left: 125px;}
 	.acrdes-solution p img{top:0;}
 	.nutshell-count ul li {width: 45%;}
 	.mobile-footer a{font-size: 0px;}
