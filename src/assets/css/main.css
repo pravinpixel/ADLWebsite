@@ -3175,6 +3175,7 @@ span.flag-option p {
 	border: 0px;
 	border-radius: 5px;
 	width: 35%;
+	cursor: pointer;
 }
 
 .report-partion p {
@@ -3864,7 +3865,11 @@ ul.timeline li:nth-child(odd) {
 	}
 
 	ul.timeline li.timeline-left:before {
-		display: none;
+		right:auto;left:10px;
+	}
+
+	ul.timeline li.timeline-left::after {
+		right:auto;left:16px;
 	}
 
 	ul.timeline li.has-dot:after {
@@ -4739,15 +4744,15 @@ a.srch-btn{
 
 	.slick-prev:before,
 	.slick-next:before {
-		font-size: 12px;
+		font-size: 22px;
 	}
 
 	.slick-prev {
-		left: -10px;
+		left: -28px;
 	}
 
 	.slick-next {
-		right: -10px;
+		right: -28px;
 	}
 }
 
@@ -4830,11 +4835,17 @@ a.srch-btn{
 }
 
 @media (max-width:1100px) {
+	#home-banner-carousel .carousel-caption h1{width:100%;font-size: 30px !important;line-height: 30px !important;letter-spacing: 0px;}
+	#home-banner-carousel .carousel-inner .carousel-item.active {
+		background-position: 69% bottom !important;
+	  }
+		#home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
+			top: -110%;}
 	.mission-layer { 
 		background: #f9fcfc; 
 	  }
 	  .values-layer li { 
-		width: 22%;
+		width: 21%;
 		margin-right: 25px; 
 		margin-bottom: 30px;
 	  } 
@@ -4845,7 +4856,13 @@ a.srch-btn{
 	  .loyality-program::before {
 		left: -320px;
 	  }
-	  .care-hlthcare li{width:32%;}
+	  .legacy-face { 
+		left: 0;
+		bottom: 0; 
+	  }
+	  .legacy-mage{margin-top: 50px;}
+
+	  .care-hlthcare li{width:32%;margin-bottom: 8px;}
 	.values-layer {
 	  padding: 45px 35px 35px;}
 	.vision-layer h5 {
@@ -4887,6 +4904,23 @@ a.srch-btn{
 
 @media (max-width:1000px) {
 	
+	.report-partion p{width:100%;}
+	.loyality-program::before {display: none;}
+	.war-awa.text-right{text-align: center !important;}
+	.box-fixer img{width:100%;}
+	section.care-healthcare{padding: 0px 0px 50px;}
+	.mission-layer br{display: none;}
+	.spcl-cnt br{display: none;}
+	.inner-caption { 
+		top: calc(50% - 59px); 
+		left: 15px;
+	  }
+	.legacy-care p {
+		width: 100%;
+	  }
+	  .vison-mison .legacy-mage{text-align: center;margin-top: 0px;;}
+	.care-hlthcare li {
+		width: 31%;}
 .acrdes-solution::before {
     left: -40px;}
 	.accrediation .col-md-10 { 
@@ -5103,70 +5137,16 @@ a.srch-btn{
 		line-height: 36px;
 	}
 
-	ul.timeline {
-		padding: 0px;
-		display: block;
-	}
 
-	ul.timeline li {
-		width: 100%;
-		padding: 20px 20px 20px 100px;
-	}
-
-	ul.timeline li:before {
-		width: 1px;
-		height: 100%;
-		left: 34px;
-		top: 0;
-		right: inherit;
-		border-top: none;
-		border-left: 1px dotted #5b2584;
-	}
-
-	ul.timeline li:first-child:before,
-	ul.timeline li:last-child:before {
-		width: 1px;
-		border-top: none;
-		border-left: 1px dotted #5b2584;
-	}
-
-	ul.timeline li:last-child:before {
-		right: inherit;
-		height: 50%;
-	}
-
-	ul.timeline li:first-child:before {
-		top: 50%;
-		height: 50%;
-	}
-
-	ul.timeline li p,
-	ul.timeline li.top p {
-		position: relative;
-		bottom: inherit;
-		top: inherit;
-		text-align: left;
-	}
-
-	ul.timeline li span {
-		left: 0px;
-		top: calc(50% - 35px);
-	}
-
-	ul.timeline li p:before,
-	ul.timeline li.top p:before {
-		left: -16px;
-		top: calc(50% - 8px);
-		transform: rotate(90deg);
-	}
 
 	.home-visit-form {
 		top: -30px;
 	}
+	.mission-layer{padding:45px 35px 50px;}
 }
 
 @media (max-width:850px) {
-
+section.range-of-products{padding: 30px 0px 30px;}
 	.location-details button {
 		right: -90px;
 	  }
@@ -5181,6 +5161,43 @@ a.srch-btn{
 }
 
 @media (max-width:767px) {
+	.Products-factory-functions {
+		padding: 30px;
+	  }
+	  .Products-factory-functions .col-lg-4 {
+		  width:50%
+		}
+	.totl-pkglst .col-3{flex: 0 0 100%;
+		max-width: 100%;} 
+		
+	.totl-pkglst .col-9{flex: 0 0 100%;
+		max-width: 100%;} 
+		  .Products-factory-lsts ul li{width:auto;float: left;}
+	.blood-colleion .row {
+		padding:0px;
+	  }
+	.imge-set img{margin: 30px 0px;}
+	.pat-con .slick-prev, .pat-con .slick-next{bottom:-45px}
+	.certifi-lsts ul li{width:48%;}
+.prdts-img img{margin-bottom: 30px;}
+.resp-nne br{display: none;}
+	.vision-layer { 
+		padding: 45px 35px 50px;}
+	.spcl-cnt {font-size:18px;}
+	.values-layer li {
+		width: 28%;}
+	.bnr-txt h1 {
+		font-size: 20px;
+		line-height: 31px;
+	  }
+	.care-hlthcare li {
+		width: 47%;
+	  }
+	  
+	.care-hlthcare li img{
+		width: 100%;
+	  }
+	.legacy-mage img{width:100%;}
 	footer .col-lg-2 {
 		flex: 0 0 100%;
 		max-width: 100%;
@@ -5284,6 +5301,11 @@ a.srch-btn{
 }
 
 @media (max-width:600px) {
+	.care-hlthcare h4{width:58%;}
+	.values-layer li {
+		width: 43%;
+	  }
+	  .common-heading h2 br{display: none;}
 	section.diagnostics, section.popular-packages {
 		padding: 50px 0px 110px;
 	  }
@@ -5364,7 +5386,38 @@ a.srch-btn{
 	}
 }
 
-@media (max-width:400px) {
+@media (max-width:575px) {
+	.inner-banner img{object-fit: cover;height: 190px;}
+	
+		
+	.Products-factory-functions .col-lg-4 {
+		width:100%
+	  }
+
+}
+
+@media (max-width:500px) {
+
+	.certifi-lsts ul li{width:100%;}
+	.bnr-txt h1 {
+		font-size: 16px;
+		line-height: 28px;
+	  }
+	.care-hlthcare li {
+		width: 100%;
+	  }
+
+	  .values-layer li {
+		width: 42%;
+	  }
+	  .care-hlthcare li{margin: 0px;}
+
+}
+
+	@media (max-width:400px) {
+		.values-layer li {
+			width: 41%;
+		  }
 	.navbar-default .navbar-brand img {
 		min-width: 113px;
 	  }

@@ -40,11 +40,13 @@ export default function Commitment() {
 
 <section className="section section-top-btm">
 <div className="container">
-   <div className="row align-items-center flex-column-reverse flex-md-row">
-   <div className="col-lg-12 text-center">
+
+<div className="col-lg-12 text-center">
             <div className="common-heading"><h2> <span className='inlne'>Our</span> Commitment </h2></div>
             <p><i>We are the Parivar of Anand Diagnostic Laboratory, and we ensure there is “Care” in healthcare.</i></p><br></br>
         </div>
+   <div className="row align-items-center flex-column-reverse flex-md-row">
+
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="rnge-prds text-left">
             <div className="common-title drk animated fadeInUp mb-3">
@@ -61,7 +63,7 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div className="row">
+   <div className="row resp-nne">
       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
@@ -69,7 +71,7 @@ export default function Commitment() {
 
 <section className="range-of-products section-top-btm pt-0">
 <div className="container">
-   <div className="row align-items-center flex-column-reverse flex-md-row">
+   <div className="row align-items-center flex-md-row">
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="prdts-img animated fadeInRight">
          <img src={commi2} alt="call" className="img-fluid" />
@@ -86,7 +88,7 @@ export default function Commitment() {
          </div>
       </div>         
    </div>
-   <div className="row">
+   <div className="row resp-nne">
       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
@@ -111,7 +113,7 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div className="row">
+   <div className="row resp-nne">
       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
@@ -119,7 +121,7 @@ export default function Commitment() {
 
 <section className="range-of-products section-top-btm pt-0">
 <div className="container">
-   <div className="row align-items-center flex-column-reverse flex-md-row">
+   <div className="row align-items-center flex-md-row">
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="prdts-img animated fadeInRight">
          <img src={commi4} alt="call" className="img-fluid" />
@@ -136,7 +138,7 @@ export default function Commitment() {
          </div>
       </div>         
    </div>
-   <div className="row">
+   <div className="row resp-nne">
       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
@@ -161,7 +163,7 @@ export default function Commitment() {
          </div>
       </div>            
    </div>
-   <div className="row">
+   <div className="row resp-nne">
       <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeInUp"><br></br><br></br><hr/></div>
    </div>
 </div>
