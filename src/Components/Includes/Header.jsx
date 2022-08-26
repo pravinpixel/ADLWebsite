@@ -15,15 +15,38 @@ import { Link } from 'react-router-dom';
 export default function Header() { 
 
 const navElement = useRef();
+const toggleIcon = useRef();
+
+function handleLink(e)
+{
+  navElement.current.classList.remove('show');
+  toggleIcon.current.classList.add('collapsed');
+  let navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach((navItem) => {
+    if(navItem.classList.contains('active') ) {
+      navItem.classList.remove('active');
+    }
+  });
+  let plusItems = document.querySelectorAll('.fa-minus');
+  console.log(plusItems)
+  plusItems.forEach((plusItem) => {
+    if(plusItem.classList.contains('fa-minus') ) {
+      plusItem.classList.remove('fa-minus');
+      plusItem.classList.add('fa-plus');
+    }
+  });
+ 
+}
 
 function mobileToggle(e) {
 
   e.preventDefault();
+
   let root = e.target.parentElement.parentElement;
   let child = e.target;
   if(child.classList.contains('fa-plus') ) {
     child.classList.remove('fa-plus');
-    child.classList.add('fa-minus') ;
+    child.classList.add('fa-minus');
   } else {
     child.classList.add('fa-plus');
     child.classList.remove('fa-minus') ;
@@ -90,26 +113,26 @@ function mobileToggle(e) {
                   <div className="">
 
                     <ul className="navbar-nav">  
-                      <li className="nav-item dropdown sngle-frce">
-                        <Link className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
-                        <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
+                      <li className="nav-item dropdown sngle-frce about-inn">
+                        <Link onClick={handleLink} rootName="about-inn"  className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
+                        <span className='mobile-toggle' onClick={mobileToggle}><i  className='fa fa-plus about-inn'></i></span>
                         <ul className="dropdown-menu frresplyr-abt">
                            <li>
-                              <Link className="dropdown-item" to="/people-behind"> People behind </Link>
+                              <Link onClick={handleLink} className="dropdown-item" to="/people-behind"> People behind </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/history">History</Link>
+                              <Link onClick={handleLink} className="dropdown-item" to="/history">History</Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/commitment">Commitment</Link>
+                              <Link  onClick={handleLink} className="dropdown-item" to="/commitment">Commitment</Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/accreditation">Accreditation</Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/accreditation">Accreditation</Link>
                            </li> 
                         </ul>
                      </li>
                       <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="#" >Patients</Link>
+                        <Link  onClick={handleLink}  className="nav-link dropdown-toggle" to="#" >Patients</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                           <div className="dropdown-bg">
                             
@@ -118,27 +141,27 @@ function mobileToggle(e) {
                           <li className="col frst-clmn">
                             <ul>
                           <li>
-                            <Link to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
+                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
                           </li>
 
                           <li>
-                            <Link to="/packages" className="dropdown-item">Packages</Link>
+                            <Link  onClick={handleLink}  to="/packages" className="dropdown-item">Packages</Link>
                           </li>
 
                           <li>
-                            <Link to="/health-packages" className="dropdown-item">Health Packages</Link>
+                            <Link  onClick={handleLink}  to="/health-packages" className="dropdown-item">Health Packages</Link>
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item">Explore All Tests</Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item">Explore All Tests</Link>
                           </li>
 
                           <li>
-                            <Link to="/preparing-for-health-checkup" className="dropdown-item">Preparing for Health Checkup</Link>
+                            <Link  onClick={handleLink}  to="/preparing-for-health-checkup" className="dropdown-item">Preparing for Health Checkup</Link>
                           </li> 
 
                           <li>
-                          <Link to="/" className="dropdown-item">Loyalty Program</Link>
+                          <Link  onClick={handleLink}  to="/" className="dropdown-item">Loyalty Program</Link>
                           </li>
 
                           </ul>
@@ -147,19 +170,19 @@ function mobileToggle(e) {
                           <li className="col secnd-clmn">
                             <ul>
                           <li>
-                            <Link to="/drive-through-blood-collection" className="dropdown-item">Drive through Blood Collection</Link>
+                            <Link  onClick={handleLink}  to="/drive-through-blood-collection" className="dropdown-item">Drive through Blood Collection</Link>
                           </li>
                           <li>
-                            <Link to="/feedback" className="dropdown-item">Feedback</Link>
+                            <Link  onClick={handleLink}  to="/feedback" className="dropdown-item">Feedback</Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">Special offers</Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item">Special offers</Link>
                           </li>
                           <li>
                             <a href="https://www.anandlab.com/blog/" target="_blank" className="dropdown-item">Health tips</a>
                           </li> 
                           <li>
-                            <Link to="/faq" className="dropdown-item">Frequently asked questions</Link>
+                            <Link  onClick={handleLink}  to="/faq" className="dropdown-item">Frequently asked questions</Link>
                           </li>
                           </ul>
                           </li>
@@ -173,7 +196,7 @@ function mobileToggle(e) {
                             </a>
                           </li>
                           <li>
-                            <Link to="/book-an-appointment" className="dropdown-item">
+                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item">
                             <img src={men2} alt="" className="img-fluid"/>
                             Book an Appointment
                             </Link>
@@ -185,7 +208,7 @@ function mobileToggle(e) {
                             </a>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item">
                             <img src={men4} alt="" className="img-fluid"/>
                             18004251974 (TOLL-FREE)
                             </Link>
@@ -196,31 +219,31 @@ function mobileToggle(e) {
                         </div>
                       </li> 
                       <li className="nav-item dropdown sngle-frce">
-                        <Link className="nav-link dropdown-toggle" to="#">Doctors</Link>
+                        <Link  onClick={handleLink}  className="nav-link dropdown-toggle" to="#">Doctors</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                         <ul className="dropdown-menu frresplyr-doc">
                            <li>
                               <a className="dropdown-item" href="https://reports.anandlab.com/dos/" target="_blank"> Directory of service (DOS) </a>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/department"> Department </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/department"> Department </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/hospital-or-lab-management"> Hospital or Lab Management </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/hospital-or-lab-management"> Hospital or Lab Management </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/clinical-lab-management"> Clinician Lab Management </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/clinical-lab-management"> Clinician Lab Management </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/franchising-opportunities"> Franchise Opportunities </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/franchising-opportunities"> Franchise Opportunities </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/research"> Research </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/research"> Research </Link>
                            </li>   
                         </ul>
                      </li> 
                       <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="#">Health Checkup</Link>
+                        <Link  onClick={handleLink}  className="nav-link dropdown-toggle" to="#">Health Checkup</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                           <div className="dropdown-bg">
                             
@@ -229,23 +252,23 @@ function mobileToggle(e) {
                           <li className="col frst-clmn">
                             <ul>
                           <li>
-                            <Link to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link>
+                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link>
                           </li>
 
                           <li>
-                            <Link to="/book-an-appointment" className="dropdown-item"> Book home collection </Link>
+                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Book home collection </Link>
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item"> Full body health packages </Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Full body health packages </Link>
                           </li>
 
                           <li>
-                            <Link to="/" className="dropdown-item"> Clinical & Imaging services </Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Clinical & Imaging services </Link>
                           </li>
 
                           <li>
-                          <Link to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
+                          <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
                           </li> 
 
                           </ul>
@@ -257,16 +280,16 @@ function mobileToggle(e) {
                             <a href="http://reports.anandlab.com/feverclinicapp/initfeverclinic.aspx" target="_blank" className="dropdown-item"> Book COVID test </a>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item"> Diabetes DOST </Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Diabetes DOST </Link>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item"> Thyroid DOST </Link>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Thyroid DOST </Link>
                           </li>
                           <li>
-                            <Link to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
+                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
                           </li>
                           <li>
-                            <Link to="/physiotherapy" className="dropdown-item"> Physiotherapy </Link>
+                            <Link  onClick={handleLink}  to="/physiotherapy" className="dropdown-item"> Physiotherapy </Link>
                           </li> 
 
                           </ul>
@@ -281,7 +304,7 @@ function mobileToggle(e) {
                             </a>
                           </li>
                           <li>
-                            <Link to="/book-an-appointment" className="dropdown-item">
+                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item">
                             <img src={men2} alt="" className="img-fluid"/>
                             Book an Appointment
                             </Link>
@@ -293,7 +316,7 @@ function mobileToggle(e) {
                           </a>
                           </li>
                           <li>
-                            <Link to="/" className="dropdown-item">
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item">
                             <img src={men4} alt="" className="img-fluid"/>
                             18004251974 (TOLL-FREE)
                             </Link>
@@ -304,29 +327,29 @@ function mobileToggle(e) {
                         </div>
                       </li> 
                       <li className="nav-item dropdown sngle-frce">
-                        <Link className="nav-link dropdown-toggle" to="/reach-us">Reach Us</Link>
+                        <Link  onClick={handleLink}  className="nav-link dropdown-toggle" to="/reach-us">Reach Us</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                         <ul className="dropdown-menu frresplyr-con">
                            <li>
-                              <Link className="dropdown-item" to="/head-office"> Head office & other locations </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/head-office"> Head office & other locations </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/healthcheckup-for-employees"> Health Checkup for employees </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/healthcheckup-for-employees"> Health Checkup for employees </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/covidtesting-employees"> COVID testing for employees </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/covidtesting-employees"> COVID testing for employees </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/hospital-or-lab-management"> Hospital & Lab Partnership </Link>
+                              <Link   onClick={handleLink}  className="dropdown-item" to="/hospital-or-lab-management"> Hospital & Lab Partnership </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Job oppourtunities </Link>
+                              <Link   onClick={handleLink}  className="dropdown-item" to="/"> Job oppourtunities </Link>
                            </li>
                            <li>
-                              <Link className="dropdown-item" to="/"> Upgrade your skills </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/"> Upgrade your skills </Link>
                            </li>    
                         </ul>
                      </li>
@@ -334,10 +357,10 @@ function mobileToggle(e) {
                   </div>
                 </div>
               </div>
-              <Link to="/" className="navbar-brand text-brand rit-sde">
+              <Link   onClick={handleLink}  to="/" className="navbar-brand text-brand rit-sde">
                 <img src={logoberg} alt="" className="img-fluid"/>
               </Link>
-              <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <button ref={toggleIcon} className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>

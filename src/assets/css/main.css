@@ -4835,6 +4835,12 @@ a.srch-btn{
 }
 
 @media (max-width:1100px) {
+	.our-presence .col-lg-8 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	  }
+	.abt-secton.forumn-frm.pb-0{padding-bottom: 50px !important;}
+	.our-presence{margin-top: 0px;}
 	#home-banner-carousel .carousel-caption h1{width:100%;font-size: 30px !important;line-height: 30px !important;letter-spacing: 0px;}
 	#home-banner-carousel .carousel-inner .carousel-item.active {
 		background-position: 69% bottom !important;
@@ -4903,7 +4909,16 @@ a.srch-btn{
 }
 
 @media (max-width:1000px) {
-	
+	.cont-acts .col-md-4{flex: 0 0 100%;
+		max-width: 100%;}
+	.lst-lction ul{width: 28%;margin-bottom: 30px;}
+	.distngt-strctre .col-lg-4.text-right{text-align: left !important;margin-top: 10px;margin-left: -10px;}
+	.poitment-form .form-data.sbm input {
+		width: 50%;}
+	.vdeo-img{margin-bottom:20px;}
+	.abt-secton.forumn-frm .col-md-4, .abt-secton.forumn-frm .col-md-6{ flex: 0 0 100%;max-width: 100%;}
+	.abt-secton.forumn-frm .cmn-buton{margin-bottom:30px;}
+	.testing-sector::before {display: none;}
 	.report-partion p{width:100%;}
 	.loyality-program::before {display: none;}
 	.war-awa.text-right{text-align: center !important;}
@@ -4911,22 +4926,12 @@ a.srch-btn{
 	section.care-healthcare{padding: 0px 0px 50px;}
 	.mission-layer br{display: none;}
 	.spcl-cnt br{display: none;}
-	.inner-caption { 
-		top: calc(50% - 59px); 
-		left: 15px;
-	  }
-	.legacy-care p {
-		width: 100%;
-	  }
-	  .vison-mison .legacy-mage{text-align: center;margin-top: 0px;;}
-	.care-hlthcare li {
-		width: 31%;}
-.acrdes-solution::before {
-    left: -40px;}
-	.accrediation .col-md-10 { 
-		flex: 0 0 100%;
-		max-width: 100%;
-	  }
+	.inner-caption { top: calc(50% - 59px); left: 15px;}
+	.legacy-care p {width: 100%;}
+	.vison-mison .legacy-mage{text-align: center;margin-top: 0px;;}
+	.care-hlthcare li {width: 31%;}
+	.acrdes-solution::before {left: -40px;}
+	.accrediation .col-md-10 { flex: 0 0 100%;max-width: 100%;}
 	.know-hub a {
 		position: relative;
 		right: 0;
@@ -5161,6 +5166,12 @@ section.range-of-products{padding: 30px 0px 30px;}
 }
 
 @media (max-width:767px) {
+	.presnt-pakges p {
+		width: 95%;}
+	.distngt-strctre{padding: 25px;}
+	.accordion-button{padding: 20px 45px 20px 20px;font-weight: 600;}
+	.distngt-strctre .col-lg-3.text-right{text-align: left !important;margin-top: 20px;}
+	.bnr-txt h1 br{display: none;}
 	.Products-factory-functions {
 		padding: 30px;
 	  }
@@ -5301,6 +5312,15 @@ section.range-of-products{padding: 30px 0px 30px;}
 }
 
 @media (max-width:600px) {
+	.nav-tabs .nav-item { 
+		margin-right: 25px;
+	  }
+	.book-aptmentfrm::before {display:none;}
+	.poitment-form .form-data input {
+		width: 100%;}
+		.poitment-form .upload-btn-wrapper {
+			width: 100%}
+	.accordion-button{text-align: left;}
 	.care-hlthcare h4{width:58%;}
 	.values-layer li {
 		width: 43%;
@@ -5386,18 +5406,20 @@ section.range-of-products{padding: 30px 0px 30px;}
 	}
 }
 
-@media (max-width:575px) {
+@media (max-width:580px) {
 	.inner-banner img{object-fit: cover;height: 190px;}
 	
 		
 	.Products-factory-functions .col-lg-4 {
 		width:100%
 	  }
+	  
+	.lst-lction ul {
+		width: 42%;}
 
 }
 
 @media (max-width:500px) {
-
 	.certifi-lsts ul li{width:100%;}
 	.bnr-txt h1 {
 		font-size: 16px;

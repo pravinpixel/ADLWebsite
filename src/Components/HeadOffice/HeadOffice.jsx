@@ -51,7 +51,7 @@ export default function HeadOffice() {
                                 <div className="formdata"><input type="text" placeholder="Company Name" name="name" id="name" className="form-control jsrequired " /></div>
                                 <div className="formdata"><input type="text" placeholder="Designation" name="name" id="name" className="form-control jsrequired " /></div>  
                                 <div className="formdata"><textarea className="form-control" placeholder="Message" name="msg" id="msg"></textarea></div>
-                                <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
+                                <div className="formdata"> <input type="button" name="submit" value="Submit" onClick="submit_contact();" /></div>
                             </form>
                             </div>
                         </div>

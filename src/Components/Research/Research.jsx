@@ -53,7 +53,7 @@ export default function Research() {
                                 <div className="formdata"><input type="tel" placeholder="Enter Your Mobile Number" name="mobile" id="mobile" className="form-control jsrequired " /></div>
                                 <div className="formdata"> <input type="email" placeholder="Enter Your Email ID" name="email" id="email"  className="form-control jsrequired " /></div>
                                 <div className="formdata"><textarea className="form-control" placeholder="Message" name="msg" id="msg"></textarea></div>
-                                <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
+                                <div className="formdata"> <input type="button" name="submit" value="Submit" onClick="submit_contact();" /></div>
                             </form>
                             </div>
                         </div>

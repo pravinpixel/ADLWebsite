@@ -55,7 +55,7 @@ export default function AnandLabFranchise() {
                     <div className="formdata"><input type="text" placeholder="Select association with LPL" name="name" id="name" className="form-control jsrequired " /></div>
                     <div className="formdata"><input type="tel" placeholder="Enter Your Mobile Number" name="mobile" id="mobile" className="form-control jsrequired " /></div>
                     <div className="formdata"> <input type="email" placeholder="Enter Your Email ID" name="email" id="email"  className="form-control jsrequired " /></div> 
-                    <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
+                    <div className="formdata"> <input type="button" name="submit" value="Submit" onClick="submit_contact();" /></div>
                 </form>
             </div>
           </div>

@@ -232,6 +232,7 @@ $('.lat-hapns').slick({
             breakpoint: 900,
             settings: {
                 slidesToShow: 2, 
+            }
         },
         {
           breakpoint: 680,

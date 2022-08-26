@@ -157,7 +157,7 @@ export default function HealthCheckupforEmployees() {
               <form name="contactform" method="post" action="#" id="contactform" > 
                     <div className="formdata"><input type="text" placeholder="Company Name" name="name" id="name" className="form-control jsrequired " /></div>   
                     <div className="formdata"><textarea className="form-control" placeholder="Address" name="msg" id="msg"></textarea></div>
-                    <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
+                    <div className="formdata"> <input type="button" name="submit" value="Submit" onClick="submit_contact();" /></div>
                 </form>              
             </div>
           </div>

@@ -56,7 +56,7 @@ export default function CovidtestingforEmployees() {
                     <div className="formdata"><input type="text" placeholder="Number of Employees" name="name" id="name" className="form-control jsrequired " /></div>
                     <div className="formdata"><input type="text" placeholder=" How can we help you?" name="name" id="name" className="form-control jsrequired " /></div>   
                     <div className="formdata"><textarea className="form-control" placeholder="Comments" name="msg" id="msg"></textarea></div>
-                    <div className="formdata"> <input type="button" name="submit" value="Submit" onclick="submit_contact();" /></div>
+                    <div className="formdata"> <input type="button" name="submit" value="Submit" onClick="submit_contact();" /></div>
                 </form>
             </div>
           </div>
