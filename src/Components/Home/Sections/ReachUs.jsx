@@ -14,7 +14,7 @@ export default function ReachUs() {
                             <li>
                                 <Link to="/">
                                     <img src={call} alt="call" className="img-fluid"/>
-                                    <h4>1800 425 1974 <span>Free Sample Collections</span></h4>
+                                    <h4>1800 425 1974 <span>Sample Collections</span></h4>
                                 </Link>
                             </li>
                             <li>

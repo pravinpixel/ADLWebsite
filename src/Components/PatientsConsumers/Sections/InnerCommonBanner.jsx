@@ -19,7 +19,7 @@ export default function
                       <li><Link to='/'></Link> Patients & Consumers </li>
                     </ul>
                     <h1>
-                    Anand Diagnostics Laboratory is one of the<br></br> largest diagnostics company in India   
+                    Delivering Reliable, Fast and Affordable<br></br> Diagnostic services since 1974   
                     </h1>
                 </div>
             </div>

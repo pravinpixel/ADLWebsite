@@ -85,8 +85,7 @@ export default function About() {
       <div className="container">
         <div className="row">
         <div className="col-lg-12">
-            <div className="common-heading"><h2> <span>Dicta sunt explicabo.</span>
-            Dicta sunt explicabo. Nemo enim ipsam</h2></div>
+            <div className="common-heading"> </div>
         </div>
         <div className="col-lg-8">
             <div className="mission-layer">

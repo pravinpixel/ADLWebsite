@@ -24,7 +24,7 @@ export default function History() {
                       <li> History </li>
                     </ul>
                     <h1>
-                    Haematology services extending<br></br> beyond the blood smear
+                    Delivering Reliable, Fast and Affordable<br></br> Diagnostic services since 1974
                     </h1>
                 </div>
             </div>
@@ -121,9 +121,21 @@ export default function History() {
 						<ul className="list-style1">
 						    <li>Integrated system for chemistry and Immunoassay, Pneumatic.</li>
 						</ul> <br></br>
-						<h6> 2010</h6>
+						<h6> 2015</h6>
 						<ul className="list-style1">
-						    <li>Started outstation laboratory at Mangalore</li>
+						    <li>Relocated to bowring tower, a 60,00 Sq Ft facility in shivajinagar,bangalore</li>
+						</ul> <br></br>
+						<h6> 2017</h6>
+						<ul className="list-style1">
+						    <li>Anand Diagnostic Laboratory joined hands with Neuberg diagnostics to become Neuberg Anand Reference Laboratory</li>
+						</ul> <br></br>
+						<h6> 2020</h6>
+						<ul className="list-style1">
+						    <li>1st lab in karnataka to get ICMR approval for COVID RT PCR testing </li>
+						</ul> <br></br>
+						<h6> 2022</h6>
+						<ul className="list-style1">
+						    <li>Started Franchise centres across karnataka</li>
 						</ul>
 					</li>
  

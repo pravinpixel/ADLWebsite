@@ -31,11 +31,10 @@ export default function HealthPackages() {
                   <li> / </li>
                   <li> Patients </li>
                   <li> / </li>
-                  <li> Health Packages </li>
+                  <li> Anand Health Packages </li>
                 </ul>
                 <h1>
-                  Can be started over night, But It <br></br>takes years to
-                  build an Institution.
+                Add booking form in this page Or <br></br>adding the package into the cart
                 </h1>
               </div>
             </div>

@@ -207,9 +207,9 @@ export default function Solutions() {
                  <div className="col-lg-6">
                    <div className="anddn-lab">
                    <div class="common-heading lite"><h2> “Anand @Home Home Collection” </h2></div>
-                   <p>At ADL, we understand that many of our patrons may find it difficult to travel to their nearest collection centre for their diagnostic tests. To assist such individuals, ADL has launched the home collection facility on appointment. </p>
-                   <p>Our team of home collection personnel are highly trained phlebotomists equipped to deliver the best service. <br></br>
-                   For more information on, and to book a home collection call 080-25318550</p>
+                   <p>At ADL, we understand that many of our patrons may find it difficult to travel to their nearest collection centre for their diagnostic tests. To assist such individuals, ADL has launched the 60 minutes home collection facility on appointment.</p>
+                   <p>Our team of home collection personnel are highly trained phlebotomists equipped to deliver the best service.<br></br>
+                   For more information on, and to book a home collection call 18004251974</p>
                     </div> 
                  </div>
                  <div className="col-lg-6">

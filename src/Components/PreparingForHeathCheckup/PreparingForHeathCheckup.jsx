@@ -28,7 +28,7 @@ export default function PreparingForHeathCheckup() {
                       <li> Preparing for Health Checkup </li>
                     </ul>
                     <h1>
-                    Haematology services extending<br></br> beyond the blood smear
+                    Prepare yourself for <br></br>a correct lab result
                     </h1>
                 </div>
             </div>
@@ -42,8 +42,7 @@ export default function PreparingForHeathCheckup() {
 
 <div className="col-lg-7">
 <div className="rnge-prds text-left">
-<div class="common-heading">
-<h2> <span>Preparing</span> for Test</h2>
+<div class="common-heading"> 
 </div>
 <div className="common-title drk animated fadeInUp mb-3">
 <h4>Test Preparation</h4>

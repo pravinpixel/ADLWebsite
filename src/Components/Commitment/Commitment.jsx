@@ -80,7 +80,7 @@ export default function Commitment() {
       <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
          <div className="rnge-prds text-left">
             <div className="common-title drk animated fadeInUp mb-3">
-               <h4>“Care” “Care” for our Partners</h4>
+               <h4>“Care” for our Partners</h4>
             </div>
             <div className="common-para1 drk">
                <p className="animated fadeInUp">We are responsible for enabling our partners to provide the same quality of care to their patrons by offering them the same level of quality and reliability in services given to our patrons. We care about maintaining robust logistics and communication channels to ensure timely delivery of services. We assure that due respect is given to every biological material that comes to our facility for testing, and ensure that client information remains confidential.</p>

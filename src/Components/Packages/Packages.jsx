@@ -23,10 +23,10 @@ export default function Packages() {
                   <li> / </li>
                   <li> Patients </li>
                   <li> / </li>
-                  <li> Packages </li>
+                  <li> Family Packages </li>
                 </ul>
                 <h1>
-                Making Good Health <br></br>Your NEU Way of Life
+                Health packages for<br></br> you and your family
                 </h1>
               </div>
             </div>
