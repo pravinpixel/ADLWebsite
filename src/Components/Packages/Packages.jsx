@@ -23,7 +23,7 @@ export default function Packages() {
                   <li> / </li>
                   <li> Patients </li>
                   <li> / </li>
-                  <li> Family Packages </li>
+                  <li> Packages </li>
                 </ul>
                 <h1>
                 Health packages for<br></br> you and your family

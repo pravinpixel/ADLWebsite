@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import Sliders from 'react-slick'
+import videoBg from '../../assets/images/consumerimg1.jpg'
+import FancyVideo from 'react-videojs-fancybox';
 import InnerCommonBanner from './Sections/InnerCommonBanner'; 
 import paticon1 from '../../assets/images/pat-icon-1.png'
 import paticon2 from '../../assets/images/pat-icon-2.png'
@@ -123,6 +125,24 @@ export default function Solutions() {
              </div> 
      </section> 
 
+     
+     <div className="row align-items-center">
+                    <div className="col-lg-7">
+                    <div className="contnt-set">
+                    <div className="common-heading"><h2> “Giving your Sample” </h2></div>
+                    <p>Giving a sample for testing is the primary experience for any individual who enters a laboratory. Usually this experience involves a drastic change to one’s schedule, an out of the way trip to the Laboratory, and a considerable time waiting for one’s turn. What if this experience was made simpler?</p>
+                    <div className='step-pairing'>
+                    Anand Diagnostic Laboratory <span>has multiple solutions to make the diagnostic experience more relaxed for our patients and consumers. </span>
+                    </div> 
+                    </div>
+                    </div>
+                    <div className="col-lg-5">
+                    <div className="imge-set">
+                    <img src={consumerimg3} alt="" className="img-fluid"/>
+                    </div>
+                </div>
+                </div>
+
      <section className='loyality-program'>
         <div className="container">
         <div className="row">
@@ -165,7 +185,7 @@ export default function Solutions() {
                     </div>
                     <div className="col-lg-5">
                     <div className="imge-set">
-                    <img src={consumerimg1} alt="" className="img-fluid"/>
+                    <iframe width="100%" height="520" src="https://www.youtube.com/embed/shaQf7d_EZQ" title=" " frameborder="0" allow=" " allowfullscreen></iframe> 
                     </div>
                 </div>
                 </div>
@@ -182,22 +202,6 @@ export default function Solutions() {
                     </div>
                     </div>
                 </div>
-            <div className="row align-items-center">
-                    <div className="col-lg-7">
-                    <div className="contnt-set">
-                    <div className="common-heading"><h2> “Giving your Sample” </h2></div>
-                    <p>Giving a sample for testing is the primary experience for any individual who enters a laboratory. Usually this experience involves a drastic change to one’s schedule, an out of the way trip to the Laboratory, and a considerable time waiting for one’s turn. What if this experience was made simpler?</p>
-                    <div className='step-pairing'>
-                    Anand Diagnostic Laboratory <span>has multiple solutions to make the diagnostic experience more relaxed for our patients and consumers. </span>
-                    </div> 
-                    </div>
-                    </div>
-                    <div className="col-lg-5">
-                    <div className="imge-set">
-                    <img src={consumerimg3} alt="" className="img-fluid"/>
-                    </div>
-                </div>
-                </div>
             </div> 
      </section>
 
@@ -208,8 +212,8 @@ export default function Solutions() {
                    <div className="anddn-lab">
                    <div class="common-heading lite"><h2> “Anand @Home Home Collection” </h2></div>
                    <p>At ADL, we understand that many of our patrons may find it difficult to travel to their nearest collection centre for their diagnostic tests. To assist such individuals, ADL has launched the 60 minutes home collection facility on appointment.</p>
-                   <p>Our team of home collection personnel are highly trained phlebotomists equipped to deliver the best service.<br></br>
-                   For more information on, and to book a home collection call 18004251974</p>
+                   <p>Our team of home collection personnel are highly trained phlebotomists equipped to deliver the best service.</p>
+                   <p>For more information on, and to book a home collection call 18004251974</p>
                     </div> 
                  </div>
                  <div className="col-lg-6">
