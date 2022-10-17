@@ -180,27 +180,27 @@ export default function About() {
               <li>
               <img src={careng1} alt="call" className="img-fluid" />
               <h4>“Care” for our Patrons</h4>
-              <Link to=''><img src={knwmre} alt="call" className="img-fluid" /></Link>
+              <Link to='/commitment'><img src={knwmre} alt="call" className="img-fluid" /></Link>
               </li>
               <li>
               <img src={careng2} alt="call" className="img-fluid" />
-              <h4>“Care” for our Patrons</h4>
-              <Link to=''><img src={knwmre} alt="call" className="img-fluid" /></Link>
+              <h4>“Care” for our Partners</h4>
+              <Link to='/commitment'><img src={knwmre} alt="call" className="img-fluid" /></Link>
               </li>
               <li>
               <img src={careng3} alt="call" className="img-fluid" />
-              <h4>“Care” for our Patrons</h4>
-              <Link to=''><img src={knwmre} alt="call" className="img-fluid" /></Link>
+              <h4>“Care” for our Family</h4>
+              <Link to='/commitment'><img src={knwmre} alt="call" className="img-fluid" /></Link>
               </li>
               <li>
               <img src={careng4} alt="call" className="img-fluid" />
-              <h4>“Care” for our Patrons</h4>
-              <Link to=''><img src={knwmre} alt="call" className="img-fluid" /></Link>
+              <h4>“Care” for our Associates</h4>
+              <Link to='/commitment'><img src={knwmre} alt="call" className="img-fluid" /></Link>
               </li>
               <li>
               <img src={careng5} alt="call" className="img-fluid" />
-              <h4>“Care” for our Patrons</h4>
-              <Link to=''><img src={knwmre} alt="call" className="img-fluid" /></Link>
+              <h4>“Care” for our Legacy</h4>
+              <Link to='/commitment'><img src={knwmre} alt="call" className="img-fluid" /></Link>
               </li>
               </ul>
             </div>

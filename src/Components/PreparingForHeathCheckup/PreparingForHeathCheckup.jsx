@@ -86,18 +86,14 @@ export default function PreparingForHeathCheckup() {
 <div className="col-lg-7">
 <div className="rnge-prds text-left"> 
 <div className="common-title drk animated fadeInUp mb-3">
-<h4> What To Expect During Your Lab Visit</h4>
+<h4> What to expect during your lab visit? </h4>
 </div>
 <div className="common-para1 drk detilos-expl indication-details p-0">
-  <b>Our staff will make the specimen collection process as safe, quick, and comfortable as possible while safeguarding your dignity and privacy.</b><br></br><br></br>
-<p className="animated fadeInUp">Labs are generally the busiest from opening until 10:00 AM. Unless you are required to fast, it’s best to schedule an appointment during off-peak hours.</p>
-<h5>When visiting a lab, you should bring:</h5>
-<ul>
-<li>The test request form from a health care professional requesting the laboratory testing</li>
-<li>A photo ID (for example, Aadhar Card, Voter ID Card, driver’s license or Passport)</li>
-</ul> <br></br> 
-<p>Children must be supervised at all times while at our labs. Please plan ahead.</p> 
-<i><b>Note</b>: You may not bring children inside the collection area during a drug screen procedure.</i> <br></br>  <br></br> 
+  <b>Our staff will make the specimen collection process as safe, quick, and comfortable as possible while safeguarding your dignity and privacy.</b><br></br><br></br> 
+<h5>Scheduling appointments:</h5>
+<p>Kindly call 18004251974 in advance to fix an appointment. The entire checkup may take about 3 to 4 hours. The approximate time for the completion of the health check-up will vary depending on the packages this chosen by the individual. Hence, kindly plan your day accordingly. If you have diabetes (High blood sugars) / High blood pressure / heart disease or have suffered any illness or fever in the recent past, please inform the customer care executives in advance.</p>
+<p><b>Corporates</b>: All corporate clients are requested to bring the original referral letter from their office. For identification kindly bring a valid photo ID card.</p>
+<br></br>  <br></br> 
 <div className='cmn-buton'>
 <p>
 <a href="">Reach Us</a> 
@@ -113,7 +109,7 @@ export default function PreparingForHeathCheckup() {
 
 <section className='prepareing-checkup'>
 <div className="container">
-<div className="row align-items-center">
+<div className="row align-items-top">
 
 
 <div className="col-lg-5">
@@ -130,17 +126,77 @@ export default function PreparingForHeathCheckup() {
 <div className="col-lg-7">
 <div className="rnge-prds pl-3 text-left"> 
 <div className="common-title drk animated fadeInUp mb-3">
-<h4>Patients Test Information</h4>
+<h4>General Instructions</h4>
 </div>
-<div className="common-para1 drk detilos-expl indication-details p-0">
-<p className="animated fadeInUp">Sometimes special preparation is required to improve the accuracy of a test. This may involve:</p>
+<div className="common-para1 drk detilos-expl indication-details p-0"> 
 <ul>
-<li>Fasting (not eating any or certain foods) for several hours or even overnight</li>
-<li>Drinking more or less water than usual</li>
-<li>Avoiding certain medications or vitamin and herbal supplements prior to testing. It is important to talk to your doctor about the medications you are currently taking (including supplements and other over-the-counter medications) before making changes prior to having laboratory tests performed.</li>
+<li>	24 hours prior no physical exercise</li>
+<li>	12 hours prior NO Food or Alcohol consumption</li>
+<li>	1 hour prior no smoking</li>
+<li>	10-15 minutes prior lab test, you should be seated and relaxed</li>
+<li>	Inform about Insulin syringes drug / medication and nutritional supplements</li>
+<li>	Medications
+<ul class="corilcle">
+<li>If you are on medication, kindly carry your medicines along with you.</li>
+<li>If you are diabetic or hypertensive please take the scheduled medication on the day of the checkup after giving the blood and urine sample</li>
 </ul>
-<p className="animated fadeInUp">Sometimes special preparation is required to improve the accuracy of a test. This may involve:If you are delivering a specimen to the lab, there might be special instructions for transporting the specimen. Your physician should provide you with written instructions for preparing for your test. Follow those instructions exactly as they are written. If you are not certain if special preparation is required, or if you have questions about the instructions you were given, contact your physician’s office.</p>
-<p className="animated fadeInUp">If you did not follow the test preparation instructions you received from your physician, let the staff at the specimen collection lab know about this before your specimen is collected.</p>
+</li>
+<li>Instructions for women
+<ul class="corilcle">
+<li>Please inform the customer care executive if you are pregnant or if you think you might be pregnant, as exposure to radiation (Xray, mammogram, DXA) is not advisable during pregnancy.</li>
+<li>Kindly do not undergo health checks during the monthly menstrual period. It is advised to have your wellness check about one week after the last day of menstruation.</li>
+</ul>
+</li>
+<li>Dress code
+<ul class="corilcle">
+<li>Kindly wear comfortable casual clothes (preferably half seeve attire for men and women) and easily removable and comfortable footwear as you will have to change clothes frequently while undergoing various tests.</li>
+<li>Kindly avoid wearing jewelry and metallic ornaments.</li>
+</ul>
+</li>
+<li>Previous medical records
+<ul class="corilcle">
+<li>Please bring your previous medical records (1-3 year records) on the day of consultation</li>
+</ul>
+</li>
+<li>Special Instructions  for Tread Mill Test
+<ul class="corilcle">
+<li>Male individuals undergoing the tread mill test are requested to shave their chest prior to the test</li>
+<li>ECG has to be brought with the patient at the time of tread mill test</li>
+<li>It is advisable to have light breakfast one hour prior to the tread mill test</li>
+<li>If you are diagnosed / suspected to have a heart disease or you are more than 60 years of age, it is advised that you be accompanied by a responsible adult attender for TMT</li>
+</ul>
+</li>
+<li>Eye: In case, you are wearing contact lenses/spectacles, please carry them for your detailed eye examination/tests</li>
+<li>Audiometry: If you are using hearing aids, please carry them along on the day of examination</li>
+<li>Ultrasound Scan
+<ul class="corilcle">
+<li>Please avoid high fat meal or snack and fried foods 4 to 6 hours prior to the scan</li>
+<li>If you are diagnosed with gall bladder problems it is advisable to undergo the scan in fasting status</li>
+<li>In case, you are diagnosed with renal or ovarian cysts or prostate enlargement in the past then please carry your old reports for serial monitoring and size charting on the day of the scan and consultation</li>
+</ul>
+</li> 
+<li>Dental: Please rinse your mouth with water prior to the examination</li>
+<li>Dexa Scan
+<ul class="corilcle">
+<li>AVOID calcium supplements &  Vitamin D - for 24hrs before the test</li>
+<li>In case a patient has undergone Oral, Rectal / IV contrast scans - then DXA ( BMD test) can only be performed after one week (7days) after any one of these studies. </li>
+<li>Tests WILL NOT be done on pregnant women.</li>
+<li>Normal diet on the day of the test</li>
+<li>Data from different machines cannot be compared or applied in determining if a significant change in BMD has occurred. The same machine must be used for follow up DXA scans to facilitate clinically useful comparisons.</li>
+<li>Carry their old scan reports for the study</li>
+<li>It is advisable to consult a doctor before undergoing the scan. </li>
+<li>A valid prescription / Filled TRF from the referral doctor is a prerequisite for the study.</li>
+<li>We currently don't have the facility for pediatric & whole body DXA studies. </li>
+<li>Please note that DXA scan generally  is indicated / done in ( PFA the ISCD official positions/ guidelines on DXA scans )
+<ul class="linecode">
+<li>Women more than 65yrs of age, Men > 70yrs old.</li>
+<li>Perimenopausal women ( > 50yrs) with high risk factors : Low body wt, Prior fractures, disease condition associated with bone loss ( Eg: Cancers, Arthritis)</li>
+<li>The Dexa Scan test is NOT indicated in young healthy adults</li>
+</ul>
+</li> 
+</ul> 
+</li>
+</ul> 
 </div>
 </div>
 </div>
