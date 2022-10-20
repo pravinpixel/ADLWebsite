@@ -5513,3 +5513,12 @@ ul.linecode li  {
 	font-size: 14px; 
 	line-height: 25px;
   }
+
+  .inner-banner.with-liners{margin-top: 110px;background-color:#283d98;padding: 20px 0px 20px 20px;}
+  .inner-banner.with-liners .inner-caption {
+	position: relative;
+	top:0;
+	width: 100%;
+  }
+
+  .common-heading.cmg-img{position: relative;}

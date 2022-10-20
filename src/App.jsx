@@ -39,6 +39,7 @@ import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
 import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
+import MyAccount from './Components/MyAccount/MyAccount'
 
 export default function App() {
   return (
@@ -79,6 +80,7 @@ export default function App() {
         <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} /> 
         <Route path='/anandlab-franchise' exact element={<AnandLabFranchise/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
+        <Route path='/my-account' exact element={<MyAccount/>} /> 
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/> 
