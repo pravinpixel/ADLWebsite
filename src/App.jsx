@@ -39,7 +39,13 @@ import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
 import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
-import MyAccount from './Components/MyAccount/MyAccount'
+import AccountInformation from './Components/MyProfile/Pages/AccountInformation'
+import UpdateProfile from './Components/MyProfile/Pages/UpdateProfile'
+import Orders from './Components/MyProfile/Pages/Orders'
+import ReturnOrders from './Components/MyProfile/Pages/ReturnOrders'
+import ChangePassword from './Components/MyProfile/Pages/ChangePassword'
+import Address from './Components/MyProfile/Pages/Address'
+import MyProfile from './Components/MyProfile/MyProfile'
 
 export default function App() {
   return (
@@ -80,7 +86,15 @@ export default function App() {
         <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} /> 
         <Route path='/anandlab-franchise' exact element={<AnandLabFranchise/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
-        <Route path='/my-account' exact element={<MyAccount/>} /> 
+        
+        <Route path="/my-account" element={<MyProfile />}>
+          <Route index element={<AccountInformation/>} /> 
+          <Route path='update-profile' exact element={<UpdateProfile/>} /> 
+          <Route path='orders' exact element={<Orders/>} /> 
+          <Route path='return-orders' exact element={<ReturnOrders/>} /> 
+          <Route path='change-password' exact element={<ChangePassword/>} /> 
+          <Route path='address' exact element={<Address/>} /> 
+        </Route>
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/> 

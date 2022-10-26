@@ -5521,4 +5521,73 @@ ul.linecode li  {
 	width: 100%;
   }
 
-  .common-heading.cmg-img{position: relative;}
+  .logout-set{position: relative;top:20px;}
+  .logout-set a{font-size: 20px;font-weight:600;} 
+  .logout-set a:hover{color:#ee3638;}
+
+  .common-heading.cmg-img h2{margin-bottom: 15px;}
+  .common-heading.cmg-img{position: relative;padding-left:75px;}
+  .alphabet-argmnt {
+	position: absolute;
+	left: 0;
+	top:0;
+	height:60px;
+	width: 60px;
+	border-radius: 100%;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	font-weight: 600;
+	color: #fff;
+  }
+
+  .acnt-deetils ul{padding: 0px;margin: 0px;}
+  .acnt-deetils ul li{width:100%;padding: 0px;margin: 0px;display: inline-block;position: relative;padding-left: 90px;margin: 5px 0px;font-weight: 600;color:#602f98;}
+  .acnt-deetils ul li span{position: absolute;left:0;font-weight: 400;color:#6e6e6e;}
+  .acnt-deetils ul li span i{margin-right: 5px;}
+
+  .accnt-heads h4{font-size:24px;font-weight: 600;margin-bottom:10px;}
+
+  .accnt-heads{position: relative;}
+  .accnt-heads .rit-endup {
+	position: absolute;
+	right: 0;
+	top: 2px;
+  }
+
+  .accnt-heads .rit-endup a{background-color: #ff9a1f;
+	font-size: 16px;
+	font-weight: 600;color:#fff;border-radius: 5px;padding: 6px 20px;}
+	.accnt-heads .rit-endup a:hover{background-color: #5c2d91;}
+
+  .Products-factory-lsts.netser li{position: relative;}
+  .Products-factory-lsts.netser li i{position: absolute;  left: 15px;top: 18px;font-size: 20px;}
+  .Products-factory-lsts.netser  ul li a{padding: 15px 15px 15px 40px;background-color: #f9f6f6;}
+  .Products-factory-lsts.netser ul li a:hover {background-color: #5c2d91;}
+  .Products-factory-lsts.netser ul li.active a {background-color: #5c2d91;}
+
+  .update-profile input{background-color: #fff;
+	height: 47px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	padding: 10px;}
+	.update-profile input[type="button"] {
+		background-color: #ff9a1f;
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 1px;
+		border: 0px;
+		border-radius: 5px;
+		width: 25%;
+		color:#fff;
+		cursor: pointer;transition: all .5s ease;
+	  }
+	  .update-profile input[type="button"]:hover{background-color: #602f98;transition: all .5s ease;}
+
+	ul.action-felds{padding:0px;margin: 0px;}
+	ul.action-felds li{padding:0px;margin: 0px;display: inline-block;width:auto;margin:0px 5px;}
+	ul.action-felds li i{font-size: 22px;}
+	ul.action-felds li i.fa.fa-pencil-square{color:#119c0a}
+	ul.action-felds li i.fa.fa-minus-square{color:#ff1616}
