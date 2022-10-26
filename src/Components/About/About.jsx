@@ -171,7 +171,7 @@ export default function About() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-          <div className="common-heading"><h2> <span> We are the Parivar of </span><br></br> Anand Diagnostic Laboratory,<span> and<br></br> we ensurethere is “</span><span className="yelow">CARE</span><span>" IN</span> HEALTHCARE</h2></div>
+          <div className="common-heading"><h2> <span> We are the Parivar of </span><br></br> Anand Diagnostic Laboratory,<span> and<br></br> we ensure there is “</span><span className="yelow">CARE</span><span>" IN</span> HEALTHCARE</h2></div>
           </div>
 
           <div className="col-lg-12">

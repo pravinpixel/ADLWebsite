@@ -246,7 +246,7 @@ export default function Solutions() {
             </div> 
      </section>
 
-     <section className='loyality-program'>
+     {/* <section className='loyality-program'>
         <div className="container">
         <div className="row">
             
@@ -266,7 +266,7 @@ export default function Solutions() {
             </div>
         </div>    
         </div> 
-     </section>
+     </section>  */}
 
     
 
