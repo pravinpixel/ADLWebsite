@@ -57,12 +57,12 @@ export default function Feedback() {
               ADL <span className='yelow'>Forum</span> </h2></div>
               <p>Do you have a question regarding a test your doctor prescribed? Curious about what transpires in the time between when your sample was collected and report was issued? Do you have something to share about your experience with us but do not know whom to approach? ‘Ask ADL’ is a highly recommended portal where you can feel free to ask any question that has been on top of your mind and you will be receiving a reply from our experts on the same. Further, this is a platform for us to hear from our valuable customers. Please feel free to share your ideas and feedback.<br></br>
               <b>We are listening!</b></p>
-              <div className="spcl-cnt"> 
+              {/* <div className="spcl-cnt"> 
               <div className="common-title drk animated fadeInUp mb-1">
                <h4>Wellness Packages</h4>
             </div>
             Monitoring health at regular intervals avoids the ignorance of early signs of possible ailments. ADL provides with economical and effectual wellness packages that aid you in staying healthy.
-              </div>
+              </div> */}
               <div className='cmn-buton'>
               <p>
               <a href="">Call Back</a>

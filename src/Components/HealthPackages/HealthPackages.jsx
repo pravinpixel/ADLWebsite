@@ -10,6 +10,8 @@ import icon6 from "../../assets/images/icon6.png";
 import icon7 from "../../assets/images/icon7.png";
 import icon8 from "../../assets/images/icon8.png";
 import icon9 from "../../assets/images/icon9.png";
+import { Form } from 'react-component-form';
+import upload from '../../assets/images/upload.png'
 
 export default function HealthPackages() {
   useEffect(() => {
@@ -464,6 +466,54 @@ export default function HealthPackages() {
           </div>
         </div>
       </section>
+
+      <section className='book-aptmentfrm'>
+      <div className="container">
+      <div className="row align-items-center"> 
+      <div className='col-lg-5'>
+
+     
+      </div> 
+      <div className='col-lg-7'>
+      <div className="poitment-form">
+      <h4>Book your package now</h4>  
+      <div className='banner-form'>
+            <Form>
+                <div className="frm-fields row clearfix">
+                    <div className="col-lg-12 col-md-12 col-sm-12"> 
+                        <div className="form-data">
+                            <input className="input100" type="text" name='name' placeholder="Name" required/> 
+                        </div>
+                        <div className="form-data">
+                            <input className="input100" type="number" pattern="/^\d{10}$/" name='mobile' placeholder="Mobile" required/> 
+                        </div>
+                        <div className="form-data">
+                            <input className="input100" type="text" name='location' placeholder="Select Your Location" required/> 
+                        </div> 
+                        <div className="form-data">
+                            <input className="input100" type="text" name='location' placeholder="Select Your Package" required/> 
+                        </div> 
+                        <div className="form-data upload-btn-wrapper">
+                            <button className="btn">Upload Prescription<img src={upload}/> </button>
+                            <input type="file" name="reportFile"  required/>
+                        </div> 
+                        <div className="form-data">
+                            <input className="input100" type="text" name='location' placeholder="Choose your test type" required/> 
+                        </div> 
+                        <div className="form-data sbm text-center">
+                            <input type="submit" name="submit" value="SUBMIT" required/>
+                        </div>
+                    </div>
+                </div>
+            </Form>
+        </div>
+      </div>  
+      </div>
+      </div>
+      </div>
+      </section>
+
+
     </div>
   );
 }

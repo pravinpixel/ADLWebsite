@@ -160,9 +160,9 @@ function mobileToggle(e) {
                             <Link  onClick={handleLink}  to="/preparing-for-health-checkup" className="dropdown-item">Preparing for Health Checkup</Link>
                           </li> 
 
-                          <li>
+                          {/* <li>
                           <Link  onClick={handleLink}  to="/" className="dropdown-item">Loyalty Program</Link>
-                          </li>
+                          </li> */}
 
                           </ul>
                           </li> 
@@ -175,9 +175,9 @@ function mobileToggle(e) {
                           <li>
                             <Link  onClick={handleLink}  to="/feedback" className="dropdown-item">Feedback</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item">Special offers</Link>
-                          </li>
+                          </li> */}
                           <li>
                             <a href="https://www.anandlab.com/blog/" target="_blank" className="dropdown-item">Health tips</a>
                           </li> 
@@ -201,12 +201,12 @@ function mobileToggle(e) {
                             Book an Appointment
                             </Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
                             </a>
-                          </li>
+                          </li> */}
                           <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item">
                             <img src={men4} alt="" className="img-fluid"/>
@@ -259,24 +259,20 @@ function mobileToggle(e) {
                             <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Book home collection </Link>
                           </li>
 
+
                           <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item"> Full body health packages </Link>
                           </li>
-
-                          <li>
-                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Clinical & Imaging services </Link>
-                          </li>
-
-                          <li>
+                          {/* <li>
                           <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
-                          </li> 
+                          </li>  */}
 
                           </ul>
                           </li> 
 
                           <li className="col secnd-clmn">
                             <ul>
-                          <li>
+                          {/* <li>
                             <a href="http://reports.anandlab.com/feverclinicapp/initfeverclinic.aspx" target="_blank" className="dropdown-item"> Book COVID test </a>
                           </li>
                           <li>
@@ -287,6 +283,10 @@ function mobileToggle(e) {
                           </li>
                           <li>
                             <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
+                          </li> */}
+
+                          <li>
+                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Clinical & Imaging services </Link>
                           </li>
                           <li>
                             <Link  onClick={handleLink}  to="/physiotherapy" className="dropdown-item"> Physiotherapy </Link>
@@ -297,7 +297,7 @@ function mobileToggle(e) {
 
                           <li className="col thrd-clmn">
                             <ul>
-                          <li>
+                          {/* <li>
                           <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
@@ -314,7 +314,7 @@ function mobileToggle(e) {
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
                           </a>
-                          </li>
+                          </li> */}
                           <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item">
                             <img src={men4} alt="" className="img-fluid"/>
@@ -336,7 +336,7 @@ function mobileToggle(e) {
                            <li>
                               <Link  onClick={handleLink}  className="dropdown-item" to="/healthcheckup-for-employees"> Health Checkup for employees </Link>
                            </li>
-                           <li>
+                           {/* <li>
                               <Link  onClick={handleLink}  className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
                            </li>
                            <li>
@@ -344,13 +344,14 @@ function mobileToggle(e) {
                            </li>
                            <li>
                               <Link   onClick={handleLink}  className="dropdown-item" to="/hospital-or-lab-management"> Hospital & Lab Partnership </Link>
-                           </li>
+                           </li> */}
                            <li>
                               <Link   onClick={handleLink}  className="dropdown-item" to="/"> Job oppourtunities </Link>
                            </li>
                            <li>
-                              <Link  onClick={handleLink}  className="dropdown-item" to="/"> Upgrade your skills </Link>
-                           </li>    
+                           <a href="http://www.naalm.com/academics/" target="_blank" className="dropdown-item"> Upgrade your skills </a>
+                           </li>  
+                             
                         </ul>
                      </li>
                     </ul>
