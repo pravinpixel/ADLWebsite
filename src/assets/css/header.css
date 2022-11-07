@@ -366,6 +366,19 @@ li.thrd-clmn a:before{display: none !important;}
 
 } 
 
+
+.dropdown .dropdown-menu li.thrd-clmn li.dwd a{background-color: #1a98d5;color:#000 !important;display: inline-block !important;padding:12px 65px 14px 55px !important;width:auto;border-radius: 5px;}
+.dropdown .dropdown-menu li.thrd-clmn li.dwd a:hover{background-color: #1a98d5 !important;color:#000 !important;}
+.dropdown .dropdown-menu li.thrd-clmn li.dwd a img {left: 15px !important;top: 10px !important;}
+
+.navbar-default .dropdown .dropdown-menu .thrd-clmn .dropdown-item img{
+	position: absolute;
+	content: "";
+	left:0;
+	top:0;
+
+} 
+
 .navbar-default .dropdown .dropdown-menu .dropdown-item:before {
 	position: absolute;
 	left: 0;

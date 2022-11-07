@@ -9,6 +9,7 @@ import men1 from './../../assets/images/men-1.png';
 import men2 from './../../assets/images/men-2.png';
 import men3 from './../../assets/images/men-3.png';
 import men4 from './../../assets/images/men-4.png';
+import dwd from './../../assets/images/dwd.png';
 import CartCount from './CartCount';
 import { Link } from 'react-router-dom';
 
@@ -140,17 +141,15 @@ function mobileToggle(e) {
 
                           <li className="col frst-clmn">
                             <ul>
-                          <li>
-                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
-                          </li>
 
+                            
                           <li>
                             <Link  onClick={handleLink}  to="/packages" className="dropdown-item">Packages</Link>
                           </li>
 
-                          <li>
+                          {/* <li>
                             <Link  onClick={handleLink}  to="/health-packages" className="dropdown-item">Health Packages</Link>
-                          </li>
+                          </li> */}
 
                           <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item">Explore All Tests</Link>
@@ -159,6 +158,9 @@ function mobileToggle(e) {
                           <li>
                             <Link  onClick={handleLink}  to="/preparing-for-health-checkup" className="dropdown-item">Preparing for Health Checkup</Link>
                           </li> 
+                          <li>
+                            <Link  onClick={handleLink}  to="/drive-through-blood-collection" className="dropdown-item">Drive through Blood Collection</Link>
+                          </li>
 
                           {/* <li>
                           <Link  onClick={handleLink}  to="/" className="dropdown-item">Loyalty Program</Link>
@@ -169,8 +171,9 @@ function mobileToggle(e) {
 
                           <li className="col secnd-clmn">
                             <ul>
+                              
                           <li>
-                            <Link  onClick={handleLink}  to="/drive-through-blood-collection" className="dropdown-item">Drive through Blood Collection</Link>
+                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
                           </li>
                           <li>
                             <Link  onClick={handleLink}  to="/feedback" className="dropdown-item">Feedback</Link>
@@ -189,24 +192,30 @@ function mobileToggle(e) {
 
                           <li className="col thrd-clmn">
                             <ul>
-                          <li>
+                          {/* <li>
                             <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
                             </a>
-                          </li>
-                          <li>
+                          </li> */}
+                          {/* <li>
                             <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item">
                             <img src={men2} alt="" className="img-fluid"/>
                             Book an Appointment
                             </Link>
-                          </li>
+                          </li> */}
                           {/* <li>
                             <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
                             </a>
                           </li> */}
+                          <li className='dwd'>
+                          <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
+                            <img src={dwd} alt="" className="img-fluid"/>
+                            Download Reports
+                            </a>
+                          </li>
                           <li>
                             <Link  onClick={handleLink}  to="/" className="dropdown-item">
                             <img src={men4} alt="" className="img-fluid"/>
@@ -251,9 +260,9 @@ function mobileToggle(e) {
 
                           <li className="col frst-clmn">
                             <ul>
-                          <li>
-                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link>
-                          </li>
+                          {/* <li>
+                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link> 
+                          </li> */}
 
                           <li>
                             <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Book home collection </Link>
@@ -331,7 +340,7 @@ function mobileToggle(e) {
                         <span className='mobile-toggle' onClick={mobileToggle}><i className='fa fa-plus'></i></span>
                         <ul className="dropdown-menu frresplyr-con">
                            <li>
-                              <Link  onClick={handleLink}  className="dropdown-item" to="/head-office"> Head office & other locations </Link>
+                              <Link  onClick={handleLink}  className="dropdown-item" to="/"> Reach our lab </Link>
                            </li>
                            <li>
                               <Link  onClick={handleLink}  className="dropdown-item" to="/healthcheckup-for-employees"> Health Checkup for employees </Link>
