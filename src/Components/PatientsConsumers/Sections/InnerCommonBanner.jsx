@@ -16,7 +16,7 @@ export default function
                       <li> / </li>
                       <li><Link to='/'></Link> Solutions </li>
                       <li> / </li>
-                      <li><Link to='/'></Link> Patients & Consumers </li>
+                      <li><Link to='/'></Link> Patient Care </li>
                     </ul>
                     <h1>
                     Delivering Reliable, Fast and Affordable<br></br> Diagnostic services since 1974   

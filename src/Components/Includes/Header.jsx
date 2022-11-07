@@ -173,7 +173,7 @@ function mobileToggle(e) {
                             <ul>
                               
                           <li>
-                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item">Patients Consumers</Link>
+                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item">Patient Care</Link>
                           </li>
                           <li>
                             <Link  onClick={handleLink}  to="/feedback" className="dropdown-item">Feedback</Link>

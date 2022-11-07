@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 export default function Solutions() {
     useEffect(() => {
-        document.title = "Patients Consumers";
+        document.title = "Patient Care";
         window.scroll(0,0)
       }, []);
       var consumeing = {
@@ -67,7 +67,7 @@ export default function Solutions() {
              <div className="row">
                 <div className="col-lg-12">
                  
-                <div className="common-heading"><h2> <span className='inlne'>Patients &</span> Consumers </h2></div>
+                <div className="common-heading"><h2> <span className='inlne'>Patient </span> Care </h2></div>
                 <p>Patient Care has always been the primary goal for all of us at Anand Diagnostic Laboratory. Apart from being of assistance during illness, we also strive to provide robust preventive healthcare services in the form of wellness packages to ensure that our patrons can identify complications early and address them before they become an issue.</p>
                 <Sliders  {...consumeing} className='consumeing'>
                     <div className="box-cos">
