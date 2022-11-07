@@ -241,7 +241,7 @@ export default function Footer() {
       </a>
 	    <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"data-toggle="tooltip" title="Download Your Reports">
       <img src={sky} alt="" className="img-fluid"/>
-      Download Reports
+      Reports
       </a>
 	    <a href="" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid"/>
       Toll-Free
