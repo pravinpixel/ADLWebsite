@@ -2,7 +2,7 @@ import React from "react";
 import popImg from "../../assets/images/popular-img-1.jpg";
 import { Link } from "react-router-dom";
 
-export default function PackageCardComponent() {
+export default function PackageCardComponent(props) { 
   return (
     <div className="pack-deils">
       <div className="pck-img">
@@ -11,21 +11,16 @@ export default function PackageCardComponent() {
           60 <span>Tests</span>
         </div>
       </div>
-      <h3>NEU Express</h3>
-      <h4>
-        Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total
-        cholesterol to HDL-cholesterol Ratio...
-        <Link to="/">+ More</Link>
-      </h4>
+      <h3>{props.data !== undefined ?  props.data.TestName : ""}</h3>
       <h5>
-        &#8377;180{" "}
+        &#8377;{props.data !== undefined ?  props.data.TestPrice : ""}
         <span className="strke">
-          <s>&#8377;280</s>
+          <s>&#8377;{props.data !== undefined ? parseInt(props.data.TestPrice) + 850 : ""}</s>
         </span>
       </h5>
       <h6>79 % off T&C*</h6>
       <p>
-        <Link to="/about-us">Book Now</Link>
+        <Link  to={props.data !== undefined ? `/test/${props.data.id}` : '/'}>Book Now</Link>
       </p>
     </div>
   );

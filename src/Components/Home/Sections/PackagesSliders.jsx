@@ -1,12 +1,13 @@
 
 import axios from 'axios';
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import Sliders from 'react-slick'
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import PackageCard from '../../Containers/PackageCardComponent';
 
 export default function PackagesSliders() {
+  const [Packages , SetPackages] = useState(null);
   var settings = {
     slidesToScroll: 1,
     infinite:true,
@@ -52,7 +53,7 @@ export default function PackagesSliders() {
       tack  : 10,
       sort  : 'hight'
     }).then((response) => {
-      console.log(response.data)
+      SetPackages(response.data.data)
     });
   }; 
   useEffect(() => {
@@ -68,16 +69,15 @@ export default function PackagesSliders() {
             </div>
             <br/>
             <Sliders {...settings} className="popular-lists">
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
-              <PackageCard/>
+              {
+                Packages != null ?
+                  Packages.map((item,index) => (
+                    <div key={index}>
+                      <PackageCard data={item}/>
+                    </div>
+                  ))
+                : ""
+              } 
             </Sliders>
           </div>
         </div>
