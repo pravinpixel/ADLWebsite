@@ -44,7 +44,7 @@ export default function MyProfile() {
             <div className="col-lg-4">
               <div className="logout-set text-right">
                 <Link to="/">
-                  <i class="fa fa-power-off"></i> Log Out
+                  <i className="fa fa-power-off"></i> Log Out
                 </Link>
               </div>
             </div>

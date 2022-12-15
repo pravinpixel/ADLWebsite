@@ -375,7 +375,7 @@ function mobileToggle(e) {
                 <span></span>
                 <span></span>
               </button>
-              <a href="" className='srch-btn' data-toggle="modal" data-target="#srch"><i class="fa fa-search" aria-hidden="true"></i></a>
+              <a href="" className='srch-btn' data-toggle="modal" data-target="#srch"><i className="fa fa-search" aria-hidden="true"></i></a>
 
               <div className="modal fade cstm tpm-set" id="srch" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog" role="document">

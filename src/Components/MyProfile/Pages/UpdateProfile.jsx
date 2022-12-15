@@ -10,42 +10,42 @@ export default function UpdateProfile() {
               <ul>
                 <li> 
                     <Link to="/my-account">
-                        <i class="fa fa-user"></i>
+                        <i className="fa fa-user"></i>
                         Account information 
                     </Link>
                 </li>
                 <li className="active"> 
                     <Link to="/my-account/update-profile"> 
-                        <i class="fa fa-pencil-square"></i> 
+                        <i className="fa fa-pencil-square"></i> 
                         Update Profile
                     </Link>
                 </li>
                 <li>
                   <Link to="/my-account/orders">
-                    <i class="fa fa-shopping-cart"></i>
+                    <i className="fa fa-shopping-cart"></i>
                     Orders
                   </Link>
                 </li>
                 <li>
                   <Link to="/my-account/return-orders">
-                    <i class="fa fa-reply-all"></i>
+                    <i className="fa fa-reply-all"></i>
                     Return Orders
                   </Link>
                 </li>
                 <li>
                   <Link to="/my-account/address">
-                    <i class="fa fa-map-marker"></i>
+                    <i className="fa fa-map-marker"></i>
                     Address
                   </Link>
                 </li>
                 <li>
                   <Link to="/my-account/change-password">
-                    <i class="fa fa-lock"></i> Change Password
+                    <i className="fa fa-lock"></i> Change Password
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
-                    <i class="fa fa-power-off"></i>
+                    <i className="fa fa-power-off"></i>
                     Log Out
                   </Link>
                 </li>

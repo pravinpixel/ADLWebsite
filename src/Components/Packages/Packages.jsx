@@ -37,14 +37,14 @@ export default function Packages() {
     <section className="filtering-lsts">
         <div className="container">
             
-          <div class="row">
+          <div className="row">
           <div className="col-lg-12">
-          <div class="common-heading"><h2> <span>MAKING </span> <span class="yelow">gOOD hEALTH </span> a Priority!</h2></div>
+          <div className="common-heading"><h2> <span>MAKING </span> <span className="yelow">gOOD hEALTH </span> a Priority!</h2></div>
           </div>
             <div className="col-lg-12">
                 <div className="totl-pkglst"> 
 <div className="row"> 
-  <div class="col-3"> 
+  <div className="col-3"> 
   <div className="Products-factory-lsts">
     <ul>
     <h4>Filter</h4> 
@@ -60,88 +60,88 @@ export default function Packages() {
     </ul>
   </div>
   </div>
-  <div class="col-9"> 
+  <div className="col-9"> 
   <div className="Products-factory-functions">
 <div className="row">
     <div className="col-lg-4">
-    <div class="pack-deils">
-        <div class="pck-img">
+    <div className="pack-deils">
+        <div className="pck-img">
         <img src={prdt_img} alt="call" className="img-fluid" /> 
-        <div class="ble-fnt">60 <span>Tests</span></div>
+        <div className="ble-fnt">60 <span>Tests</span></div>
         </div>
         <h3>NEU Express</h3>
         <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-        <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+        <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
         <h6>79 % off T&amp;C*</h6>
         <p><a href="about-us">Book Now</a></p>
     </div>
     </div>
 
     <div className="col-lg-4">
-    <div class="pack-deils">
-        <div class="pck-img">
+    <div className="pack-deils">
+        <div className="pck-img">
         <img src={prdt_img} alt="call" className="img-fluid" /> 
-        <div class="ble-fnt">60 <span>Tests</span></div>
+        <div className="ble-fnt">60 <span>Tests</span></div>
         </div>
         <h3>NEU Express</h3>
         <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-        <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+        <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
         <h6>79 % off T&amp;C*</h6>
         <p><a href="about-us">Book Now</a></p>
     </div>
     </div>
 
     <div className="col-lg-4">
-    <div class="pack-deils">
-        <div class="pck-img">
+    <div className="pack-deils">
+        <div className="pck-img">
         <img src={prdt_img} alt="call" className="img-fluid" /> 
-        <div class="ble-fnt">60 <span>Tests</span></div>
+        <div className="ble-fnt">60 <span>Tests</span></div>
         </div>
         <h3>NEU Express</h3>
         <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-        <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+        <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
         <h6>79 % off T&amp;C*</h6>
         <p><a href="about-us">Book Now</a></p>
     </div>
     </div>
 
 <div className="col-lg-4">
-<div class="pack-deils">
-    <div class="pck-img">
+<div className="pack-deils">
+    <div className="pck-img">
     <img src={prdt_img} alt="call" className="img-fluid" /> 
-    <div class="ble-fnt">60 <span>Tests</span></div>
+    <div className="ble-fnt">60 <span>Tests</span></div>
     </div>
     <h3>NEU Express</h3>
     <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
     <h6>79 % off T&amp;C*</h6>
     <p><a href="about-us">Book Now</a></p>
 </div>
 </div>
 
 <div className="col-lg-4">
-<div class="pack-deils">
-    <div class="pck-img">
+<div className="pack-deils">
+    <div className="pck-img">
     <img src={prdt_img} alt="call" className="img-fluid" /> 
-    <div class="ble-fnt">60 <span>Tests</span></div>
+    <div className="ble-fnt">60 <span>Tests</span></div>
     </div>
     <h3>NEU Express</h3>
     <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
     <h6>79 % off T&amp;C*</h6>
     <p><a href="about-us">Book Now</a></p>
 </div>
 </div>
 
 <div className="col-lg-4">
-<div class="pack-deils">
-    <div class="pck-img">
+<div className="pack-deils">
+    <div className="pck-img">
     <img src={prdt_img} alt="call" className="img-fluid" /> 
-    <div class="ble-fnt">60 <span>Tests</span></div>
+    <div className="ble-fnt">60 <span>Tests</span></div>
     </div>
     <h3>NEU Express</h3>
     <h4>Cholesterol, Triglycerides, HDL, Direct LDL, Calculated Total cholesterol to HDL-cholesterol Ratio...<a href="/">+ More</a></h4>
-    <h5>₹180 <span class="strke"><s>₹280</s></span></h5>
+    <h5>₹180 <span className="strke"><s>₹280</s></span></h5>
     <h6>79 % off T&amp;C*</h6>
     <p><a href="about-us">Book Now</a></p>
 </div>

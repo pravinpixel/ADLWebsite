@@ -36,7 +36,7 @@ export default function Department() {
               <p>Monitoring health at regular intervals avoids the ignorance of early signs of possible ailments. ADL provides with economical and effectual wellness packages that aid you in staying healthy.</p>
             </div>
             <div className='col-lg-4 text-right'>
-            <div class="cmn-buton"><p><a href="/">Call Back</a></p><p><a href="/">Enquire</a></p></div>
+            <div className="cmn-buton"><p><a href="/">Call Back</a></p><p><a href="/">Enquire</a></p></div>
             </div> 
       </div>
       </div>

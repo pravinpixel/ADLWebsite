@@ -42,7 +42,7 @@ export default function PreparingForHeathCheckup() {
 
 <div className="col-lg-7">
 <div className="rnge-prds text-left">
-<div class="common-heading"> 
+<div className="common-heading"> 
 </div>
 <div className="common-title drk animated fadeInUp mb-3">
 <h4>Test Preparation</h4>
@@ -136,30 +136,30 @@ export default function PreparingForHeathCheckup() {
 <li>	10-15 minutes prior lab test, you should be seated and relaxed</li>
 <li>	Inform about Insulin syringes drug / medication and nutritional supplements</li>
 <li>	Medications
-<ul class="corilcle">
+<ul className="corilcle">
 <li>If you are on medication, kindly carry your medicines along with you.</li>
 <li>If you are diabetic or hypertensive please take the scheduled medication on the day of the checkup after giving the blood and urine sample</li>
 </ul>
 </li>
 <li>Instructions for women
-<ul class="corilcle">
+<ul className="corilcle">
 <li>Please inform the customer care executive if you are pregnant or if you think you might be pregnant, as exposure to radiation (Xray, mammogram, DXA) is not advisable during pregnancy.</li>
 <li>Kindly do not undergo health checks during the monthly menstrual period. It is advised to have your wellness check about one week after the last day of menstruation.</li>
 </ul>
 </li>
 <li>Dress code
-<ul class="corilcle">
+<ul className="corilcle">
 <li>Kindly wear comfortable casual clothes (preferably half seeve attire for men and women) and easily removable and comfortable footwear as you will have to change clothes frequently while undergoing various tests.</li>
 <li>Kindly avoid wearing jewelry and metallic ornaments.</li>
 </ul>
 </li>
 <li>Previous medical records
-<ul class="corilcle">
+<ul className="corilcle">
 <li>Please bring your previous medical records (1-3 year records) on the day of consultation</li>
 </ul>
 </li>
 <li>Special Instructions  for Tread Mill Test
-<ul class="corilcle">
+<ul className="corilcle">
 <li>Male individuals undergoing the tread mill test are requested to shave their chest prior to the test</li>
 <li>ECG has to be brought with the patient at the time of tread mill test</li>
 <li>It is advisable to have light breakfast one hour prior to the tread mill test</li>
@@ -169,7 +169,7 @@ export default function PreparingForHeathCheckup() {
 <li>Eye: In case, you are wearing contact lenses/spectacles, please carry them for your detailed eye examination/tests</li>
 <li>Audiometry: If you are using hearing aids, please carry them along on the day of examination</li>
 <li>Ultrasound Scan
-<ul class="corilcle">
+<ul className="corilcle">
 <li>Please avoid high fat meal or snack and fried foods 4 to 6 hours prior to the scan</li>
 <li>If you are diagnosed with gall bladder problems it is advisable to undergo the scan in fasting status</li>
 <li>In case, you are diagnosed with renal or ovarian cysts or prostate enlargement in the past then please carry your old reports for serial monitoring and size charting on the day of the scan and consultation</li>
@@ -177,7 +177,7 @@ export default function PreparingForHeathCheckup() {
 </li> 
 <li>Dental: Please rinse your mouth with water prior to the examination</li>
 <li>Dexa Scan
-<ul class="corilcle">
+<ul className="corilcle">
 <li>AVOID calcium supplements &  Vitamin D - for 24hrs before the test</li>
 <li>In case a patient has undergone Oral, Rectal / IV contrast scans - then DXA ( BMD test) can only be performed after one week (7days) after any one of these studies. </li>
 <li>Tests WILL NOT be done on pregnant women.</li>
@@ -188,7 +188,7 @@ export default function PreparingForHeathCheckup() {
 <li>A valid prescription / Filled TRF from the referral doctor is a prerequisite for the study.</li>
 <li>We currently don't have the facility for pediatric & whole body DXA studies. </li>
 <li>Please note that DXA scan generally  is indicated / done in ( PFA the ISCD official positions/ guidelines on DXA scans )
-<ul class="linecode">
+<ul className="linecode">
 <li>Women more than 65yrs of age, Men > 70yrs old.</li>
 <li>Perimenopausal women ( > 50yrs) with high risk factors : Low body wt, Prior fractures, disease condition associated with bone loss ( Eg: Cancers, Arthritis)</li>
 <li>The Dexa Scan test is NOT indicated in young healthy adults</li>

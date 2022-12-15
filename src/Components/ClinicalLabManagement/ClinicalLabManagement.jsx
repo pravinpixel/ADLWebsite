@@ -68,48 +68,48 @@ export default function ClinicalLabManagement() {
         <div className="row">
             <div className="col-lg-12">
               
-              <div class="common-title drk animated fadeInUp mb-3"><h4>Our Presence</h4></div>
+              <div className="common-title drk animated fadeInUp mb-3"><h4>Our Presence</h4></div>
                
               <div className="row col-lg-8 mb-5">
               <div className="lst-lction">
               <h5 className='text-yellow'>Bangalore</h5>
               <ul>
               <h6 className='map-ngin'>North</h6>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>HBR Layout</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Peenya</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>R. T. Nagar</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Sanjayanagar</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Yelahanka</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>HBR Layout</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Peenya</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>R. T. Nagar</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Sanjayanagar</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Yelahanka</Link></li>  
               </ul>
               <ul>
               <h6 className='map-ngin'>East</h6>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>BTM Layout</Link></li>  
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>HSR Layout</Link></li>  
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hoodi</Link></li>  
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kasturi Nagar</Link></li>  
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Koramangala</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>BTM Layout</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>HSR Layout</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hoodi</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kasturi Nagar</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Koramangala</Link></li>  
               </ul>
               <ul>
               <h6 className='map-ngin'>West</h6>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kengeri</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Nagarbhavi</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Rajajinagar</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>RR Nagar</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vijayanagar</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kengeri</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Nagarbhavi</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Rajajinagar</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>RR Nagar</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vijayanagar</Link></li>  
               </ul>
               <ul>
               <h6 className='map-ngin'>South</h6>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Banashankari</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Bannergatta Road</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Jayanagar</Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>J. P. Nagar</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Banashankari</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Bannergatta Road</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Jayanagar</Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>J. P. Nagar</Link></li>  
               </ul>
               <ul>
               <h6 className='map-ngin'>Central</h6>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Shivaji Nagar</Link></li>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hanumanth Nagar</Link></li>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Indiranagar</Link></li>
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vyalikaval</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Shivaji Nagar</Link></li>
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hanumanth Nagar</Link></li>
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Indiranagar</Link></li>
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vyalikaval</Link></li>  
               </ul>
               </div>
               </div>  
@@ -117,11 +117,11 @@ export default function ClinicalLabManagement() {
               <div className="lst-lction fl-wdth text-left">
               <h5 className='text-yellow'>Rest in karnataka</h5>
               <ul> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hubli </Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kanakpura Road </Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Mysuru </Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Shivamogga </Link></li> 
-              <li> <i class="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vidyaranyapura</Link></li>  
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Hubli </Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Kanakpura Road </Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Mysuru </Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Shivamogga </Link></li> 
+              <li> <i className="fa fa-map-marker" aria-hidden="true"></i> <Link to='/'>Vidyaranyapura</Link></li>  
               </ul> 
               </div>
               </div>               

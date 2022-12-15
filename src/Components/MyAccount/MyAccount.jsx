@@ -28,7 +28,7 @@ export default function Packages() {
         <div className="logout-set text-right">
           <Link to="/">
             {" "}
-            <i class="fa fa-power-off" aria-hidden="true"></i> Log Out{" "}
+            <i className="fa fa-power-off" aria-hidden="true"></i> Log Out{" "}
           </Link>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function Packages() {
                   <li>
                     <Link to="/my-account">
                       {" "}
-                      <i class="fa fa-user" aria-hidden="true"></i> Account
+                      <i className="fa fa-user" aria-hidden="true"></i> Account
                       information{" "}
                     </Link>
                   </li>
@@ -50,7 +50,7 @@ export default function Packages() {
                     <Link to="/">
                       {" "}
                       <i
-                        class="fa fa-pencil-square"
+                        className="fa fa-pencil-square"
                         aria-hidden="true"
                       ></i>{" "}
                       Update Profile{" "}
@@ -60,7 +60,7 @@ export default function Packages() {
                     <Link to="/">
                       {" "}
                       <i
-                        class="fa fa-shopping-cart"
+                        className="fa fa-shopping-cart"
                         aria-hidden="true"
                       ></i>{" "}
                       Orders{" "}
@@ -69,28 +69,28 @@ export default function Packages() {
                   <li>
                     <Link to="/">
                       {" "}
-                      <i class="fa fa-reply-all" aria-hidden="true"></i>{" "}
+                      <i className="fa fa-reply-all" aria-hidden="true"></i>{" "}
                       Return Orders{" "}
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
                       {" "}
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>{" "}
                       Address{" "}
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
                       {" "}
-                      <i class="fa fa-lock" aria-hidden="true"></i> Change
+                      <i className="fa fa-lock" aria-hidden="true"></i> Change
                       Password{" "}
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
                       {" "}
-                      <i class="fa fa-power-off" aria-hidden="true"></i> Log
+                      <i className="fa fa-power-off" aria-hidden="true"></i> Log
                       Out{" "}
                     </Link>
                   </li>
@@ -108,14 +108,14 @@ export default function Packages() {
                       <ul>
                         <li>
                           <span>
-                            <i class="fa fa-user-o" aria-hidden="true"></i>{" "}
+                            <i className="fa fa-user-o" aria-hidden="true"></i>{" "}
                             Name :
                           </span>{" "}
                           John
                         </li>
                         <li>
                           <span>
-                            <i class="fa fa-calendar" aria-hidden="true"></i>{" "}
+                            <i className="fa fa-calendar" aria-hidden="true"></i>{" "}
                             DOB :
                           </span>{" "}
                           18/09/1990
@@ -123,7 +123,7 @@ export default function Packages() {
                         <li>
                           <span>
                             <i
-                              class="fa fa-envelope-o"
+                              className="fa fa-envelope-o"
                               aria-hidden="true"
                             ></i>{" "}
                             E-mail :
@@ -132,7 +132,7 @@ export default function Packages() {
                         </li>
                         <li>
                           <span>
-                            <i class="fa fa-phone" aria-hidden="true"></i>{" "}
+                            <i className="fa fa-phone" aria-hidden="true"></i>{" "}
                             Phone :
                           </span>{" "}
                           1234567890
