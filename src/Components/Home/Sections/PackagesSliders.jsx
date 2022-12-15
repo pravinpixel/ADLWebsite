@@ -1,6 +1,9 @@
 
+import axios from 'axios';
 import React from 'react'
+import { useEffect } from 'react';
 import Sliders from 'react-slick'
+import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import PackageCard from '../../Containers/PackageCardComponent';
 
 export default function PackagesSliders() {
@@ -43,6 +46,18 @@ export default function PackagesSliders() {
           },
     ]
   };
+  const getPackageSliders = () => {
+    axios.post(API_URL.TEST_LISTS + "/packages", { 
+      search: null,
+      tack  : 10,
+      sort  : 'hight'
+    }).then((response) => {
+      console.log(response.data)
+    });
+  }; 
+  useEffect(() => {
+    getPackageSliders();
+  }, []);
   return (
     <section className="popular-packages">
       <div className="container">
