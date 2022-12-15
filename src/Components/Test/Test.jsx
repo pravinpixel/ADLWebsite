@@ -4,10 +4,9 @@ import PopularTests from './Sections/PopularTests'
 import PopularPackages from './Sections/PopularPackages'
 import TestHealthPackages from './Sections/TestHealthpackages'
 import { useDispatch, useSelector } from 'react-redux'
-import { setAllTestDetails, setTestCartList } from '../../Redux/Actions/TestAction'
+import { setAllTestDetails } from '../../Redux/Actions/TestAction'
 import axios from 'axios'
 import { API_URL } from '../../Redux/Constant/ApiRoute'
-import { AddToCartList, RemoveToCartList } from '../../Helpers'
 export default function Test() {
 
   const dispatch                 = useDispatch();
@@ -32,17 +31,6 @@ export default function Test() {
   const sortByPrice = (sortingValue) => {
     getAllTest(sortingValue, search);
   }
-  const addTestToCart = (testDetails) => {
-    AddToCartList(testDetails)
-    dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
-    getAllTest();
-  };
-  const removeTestToCart = (test) => {
-    var balancedCartItems = RemoveToCartList(test)
-    dispatch(setTestCartList(balancedCartItems));
-    getAllTest();
-  };
-  
   useEffect(() => {
     document.title = "Test Details Page";
     window.scroll(0,0)
