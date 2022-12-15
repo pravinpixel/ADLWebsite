@@ -60,20 +60,17 @@ export default function CartList() {
   
   useEffect(() => {
     window.scroll(0,0)
-    // return () => {
       setCartTable(JSON.parse(localStorage.getItem('CartTestList')));
       var testListFromCart = JSON.parse(localStorage.getItem('CartTestList'))
       if(testListFromCart != null) {
-        const CalculateTotalTestPrice = testListFromCart.reduce(
-          (previousValue, currentValue) => previousValue += currentValue.TestPrice, 0
-        )
+        console.log(testListFromCart)
+        const CalculateTotalTestPrice = testListFromCart.reduce((previousValue, currentValue) => parseInt(previousValue) + parseInt(currentValue.TestPrice), 0)
         localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
         setTestTotal(CalculateTotalTestPrice)
       } else {
         window.location.href = "/";
       }
-    // }
-  }, [])
+   }, [])
   
   const removeCartItem = (index) => {
     CartTable.splice(index, 1);
@@ -83,7 +80,7 @@ export default function CartList() {
  
  
     const CalculateTotalTestPrice = CartTable.reduce(
-      (previousValue, currentValue) => previousValue += currentValue.TestPrice,0
+      (previousValue, currentValue) => parseInt(previousValue) + parseInt(currentValue.TestPrice),0
     )
     localStorage.setItem('cartItemTotal',  CalculateTotalTestPrice);
     setTestTotal(CalculateTotalTestPrice)
@@ -168,8 +165,8 @@ export default function CartList() {
               </div>
               <div className="case">
                 <p>
-                  <Link to="/">Add More Test</Link>
-                  <Link className="bg-trsnper" to="/">
+                  <Link to="/for-patient">Add More Test</Link>
+                  <Link className="bg-trsnper" to="/for-patient">
                     Add More Package
                   </Link>
                 </p>
