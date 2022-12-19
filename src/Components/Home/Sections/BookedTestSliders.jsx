@@ -8,7 +8,7 @@ import { setTopBookedTest } from "../../../Redux/Actions/TestAction";
 import { API_URL } from "../../../Redux/Constant/ApiRoute";
 import CartBtn from "../../Containers/CartBtn";
 
-export default function BookedTestSliders() {
+export default function BookedTestSliders({title , subTitle}) {
   var settings = {
     slidesToScroll: 1,
     infinite: true,
@@ -73,7 +73,7 @@ export default function BookedTestSliders() {
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="common-heading">
               <h2>
-                <span>Top Booked </span> Diagnostic Tests
+                <span>{title} </span> {subTitle}
               </h2>
             </div>
             {topBookedTestList !== undefined ? (

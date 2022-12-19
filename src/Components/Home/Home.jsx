@@ -19,9 +19,9 @@ export default function Home() {
   return (
     <>
       <Banners/>
-      <BookedTestSliders />
+      <BookedTestSliders title="TOP BOOKED" subTitle="DIAGNOSTIC TESTS"/>
       <CheckupsSliders />
-      <PackagesSliders />
+      <PackagesSliders  title="CHOOSE YOUR" subTitle="HEALTH CHECKUPS / SCREENINGS FOR"/>
       <ConditionsSliders />
       <HowItsWorks />
       <AboutUs />

@@ -130,7 +130,7 @@ export default function CartList() {
                           <tr>
                             <th>Package/Test</th>
                             <th className="text-right">Type</th>
-                            <th className="text-right">Unit Price( )</th>
+                            <th className="text-right">Unit Price(₹)</th>
                             <th className="text-center">Discount</th>
                             <th className="text-right">Net Price</th>
                             <th className="text-center">Action</th>

@@ -17,8 +17,11 @@ import testIcon2 from "../../assets/images/testing-icon-2.png";
 import testIcon3 from "../../assets/images/testing-icon-3.png";
 import testIcon4 from "../../assets/images/testing-icon-4.png";
 import CartBtn from "./CartBtn";
+import BookedTestSliders from "../Home/Sections/BookedTestSliders";
+import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function TestDetails() {
+  window.scroll(0,0)
   const { TestId } = useParams();
   const dispatch = useDispatch();
   const testDetails = useSelector((state) => state.TestDetails.TestDetails);
@@ -34,7 +37,7 @@ export default function TestDetails() {
     // return () => {
       if (TestId && TestId !== "") getTestDetails();
         dispatch(removeTestDetails());
-      // };
+      // };  
   }, []);
 
   const addTestToCart = (testDetails) => {
@@ -89,6 +92,7 @@ export default function TestDetails() {
     <>
       {testDetails !== undefined ? (
         <>
+        {console.log(testDetails)}
           <section className="comon-testdetail-banner">
             <div className="container">
               <div className="row">
@@ -127,11 +131,14 @@ export default function TestDetails() {
                   </div>
                   <div className="testng-details">
                     <ul>
-                      <li>
-                        <img src={testIcon1} alt="call" className="img-fluid" />
-                        <span>Basic Instruction </span>
-                        {testDetails.test.BasicInstruction}
-                      </li>
+                      {
+                       testDetails.test.BasicInstruction !== ' ' ?
+                        <li>
+                          <img src={testIcon1} alt="call" className="img-fluid" />
+                          <span>Basic Instruction </span>
+                          {testDetails.test.BasicInstruction}
+                        </li> : ""
+                      }
                       <li>
                         <img src={testIcon2} alt="call" className="img-fluid" />
                         <span>Test Shedule</span>
@@ -142,7 +149,7 @@ export default function TestDetails() {
                         <h5>
                           &#8377;{testDetails.test.TestPrice}
                           <span className="strke ml-2">
-                            <s>&#8377;{testDetails.test.TestPrice + 280}</s>
+                            <s>&#8377;{parseInt(testDetails.test.TestPrice) + 280}</s>
                           </span>
                           <span className="flag-option">
                             <p>10 % off</p>
@@ -174,7 +181,7 @@ export default function TestDetails() {
                         <ul>
                           {
                             testDetails.sub_test.map((subTest)=> (
-                              <li>{subTest.SubTestName} (Chromogenic)</li>
+                              <li>{subTest.SubTestName}</li>
                             ))
                           }
                         </ul>
@@ -187,45 +194,57 @@ export default function TestDetails() {
               <div className="special-instruction">
                 <h3>Special Instructions</h3>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link active"
-                      id="home-tab"
-                      data-toggle="tab"
-                      href="#home"
-                      role="tab"
-                      aria-controls="home"
-                      aria-selected="true"
-                    >
-                      For Patient
-                    </a>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link"
-                      id="profile-tab"
-                      data-toggle="tab"
-                      href="#profile"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      For Corporates
-                    </a>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link"
-                      id="contact-tab"
-                      data-toggle="tab"
-                      href="#contact"
-                      role="tab"
-                      aria-controls="contact"
-                      aria-selected="false"
-                    >
-                      For Doctors
-                    </a>
-                  </li>
+                  {
+                    testDetails.test.SpecialInstructionsForPatient !== "" ?
+                      <li className="nav-item" role="presentation">
+                        <a
+                          className="nav-link active"
+                          id="home-tab"
+                          data-toggle="tab"
+                          href="#home"
+                          role="tab"
+                          aria-controls="home"
+                          aria-selected="true"
+                        >
+                          For Patient
+                        </a>
+                      </li>
+                    : ""
+                  }
+                  {
+                    testDetails.test.SpecialInstructionsForCorporates !== "" ?   
+                      <li className="nav-item" role="presentation">
+                        <a
+                          className="nav-link"
+                          id="profile-tab"
+                          data-toggle="tab"
+                          href="#profile"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                        >
+                          For Corporates
+                        </a>
+                      </li>
+                    : ""
+                  }
+                  {
+                    testDetails.test.SpecialInstructionsForDoctors !== "" ?
+                    <li className="nav-item" role="presentation">
+                      <a
+                        className="nav-link"
+                        id="contact-tab"
+                        data-toggle="tab"
+                        href="#contact"
+                        role="tab"
+                        aria-controls="contact"
+                        aria-selected="false"
+                      >
+                        For Doctors
+                      </a>
+                    </li>
+                    : ""
+                  }   
                 </ul>
                 <div className="tab-content" id="myTabContent">
                   <div
@@ -235,22 +254,7 @@ export default function TestDetails() {
                     aria-labelledby="home-tab"
                   >
                     <div className="detilos-expl">
-                      <ul>
-                        <li>
-                          a) Samples are stable for 1 week refrigerated at 2-8 0
-                          C.
-                        </li>
-                        <li>
-                          b) Frozen sample is stable for several months.
-                          _Interfering substances:
-                          <br />
-                          ACE activity is inhibited by EDTA, Heavy metal ions,
-                          Captopril. ACE activity should mainly be used to
-                          monitor activity of disease and not for primary
-                          diagnosis. However, high levels are found in about 85%
-                          cases with active pulmonary sarcoidosis.
-                        </li>
-                      </ul>
+                      <p>{testDetails.test.SpecialInstructionsForPatient}</p>
                     </div>
                   </div>
                   <div
@@ -259,7 +263,7 @@ export default function TestDetails() {
                     role="tabpanel"
                     aria-labelledby="profile-tab"
                   >
-                    ..2.
+                    <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
                   </div>
                   <div
                     className="tab-pane fade"
@@ -267,43 +271,13 @@ export default function TestDetails() {
                     role="tabpanel"
                     aria-labelledby="contact-tab"
                   >
-                    ...3
+                      <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="diagnostics most-poptst text-left">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div className="common-heading">
-                    <h2>
-                      <span>Other related </span>Tests
-                    </h2>
-                  </div>
-                  <Sliders {...settings} className="topbooked-cases">
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                  </Sliders>
-                </div>
-              </div>
-            </div>
-          </section>
+          <BookedTestSliders title="Other related" subTitle="Tests" />
         </>
       ) : (
         <Loading />
