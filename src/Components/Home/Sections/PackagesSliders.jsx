@@ -6,7 +6,7 @@ import Sliders from 'react-slick'
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import PackageCard from '../../Containers/PackageCardComponent';
 
-export default function PackagesSliders() {
+export default function PackagesSliders({title,subTitle}) {
   const [Packages , SetPackages] = useState(null);
   var settings = {
     slidesToScroll: 1,
@@ -65,7 +65,7 @@ export default function PackagesSliders() {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="common-heading">
-              <h2><span>Choose Your </span> Health Checkups / Screenings For </h2>
+              <h2><span>{title}</span>{subTitle}</h2>
             </div>
             <br/>
             <Sliders {...settings} className="popular-lists">
