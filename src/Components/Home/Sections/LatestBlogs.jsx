@@ -1,8 +1,20 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import blogBg from '../../../assets/images/blog-bg.jpg'
 import Sliders from 'react-slick'
+import axios from 'axios'
+import { API_URL } from "../../../Redux/Constant/ApiRoute";
 
 export default function LatestBlogs() {
+  const [news, setNews] = useState(null)
+  const getNewsAndEvents = () => {
+    axios.post(API_URL.NEWS_AND_EVENTS).then((response) => {
+      setNews(response.data.data)
+    })
+  }
+  useEffect(() => {
+    getNewsAndEvents() 
+  }, [])
+  
   var settings = {
     slidesToScroll: 1,
     infinite:true,
@@ -50,28 +62,21 @@ export default function LatestBlogs() {
             <div className="common-heading">
               <h2><span>Latest</span> Happenings</h2>
             </div>
-            <Sliders {...settings} className="lat-hapns">
-              <div className="haapns">
-                <h3>09 August 2020</h3>
-                <h4>Genetics For The Obstetricians </h4>
-                <p>Those who know ultrasound, unlock with keys; those who know biochemistry, decipher clues and those who master genetics for obstetricians, solve puzzles in a jiffy!z</p>
-              </div>
-              <div className="haapns">
-                <h3>09 August 2020</h3>
-                <h4>Early Detection, Diagnosis and Management of Blood Cancer/Disorders </h4>
-                <p>Dr. Joseph John MBBS, MD, DM, Head of Clinical Haematology unit at CMC, Ludhiana</p>
-              </div>
-              <div className="haapns">
-                <h3>09 August 2020</h3>
-                <h4>Genetics For The Obstetricians </h4>
-                <p>Those who know ultrasound, unlock with keys; those who know biochemistry, decipher clues and those who master genetics for obstetricians, solve puzzles in a jiffy!z</p>
-              </div>
-              <div className="haapns">
-                <h3>09 August 2020</h3>
-                <h4>Early Detection, Diagnosis and Management of Blood Cancer/Disorders </h4>
-                <p>Dr. Joseph John MBBS, MD, DM, Head of Clinical Haematology unit at CMC, Ludhiana</p>
-              </div>
-            </Sliders>
+              {
+                news !== null ?
+                  <Sliders {...settings} className="lat-hapns"> 
+                    {
+                      news.map(item => (
+                        <div className="haapns">
+                          <h3>{item.created_at}</h3>
+                          <h4>{item.title}</h4>
+                          <p> {item.description} </p>
+                        </div> 
+                      )) 
+                    }
+                  </Sliders>
+                : ""
+              }
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div className="common-heading">

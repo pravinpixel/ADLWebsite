@@ -115,7 +115,7 @@ function mobileToggle(e) {
 
                     <ul className="navbar-nav">  
                       <li className="nav-item dropdown sngle-frce about-inn">
-                        <Link onClick={handleLink} rootName="about-inn"  className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
+                        <Link onClick={handleLink}  className="nav-link dropdown-toggle" to="/about-us">About Us</Link>
                         <span className='mobile-toggle' onClick={mobileToggle}><i  className='fa fa-plus about-inn'></i></span>
                         <ul className="dropdown-menu frresplyr-abt">
                            <li>
