@@ -8,6 +8,7 @@ import CartList from './Components/Containers/CartList'
 import AlertBox from './AlertBox' 
 import GuestCheckOut from './Components/Containers/GuestCheckOut'
 import Login from './Components/Containers/Login'
+import Register from './Components/Containers/Register'
 
 // -------------------------------------------------------//
 
@@ -55,6 +56,7 @@ export default function App() {
       <Routes>
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/login' exact element={<Login/>} /> 
+        <Route path='/register' exact element={<Register/>} /> 
         <Route path='/guest-checkout' exact element={<GuestCheckOut/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route path='/my-cart' element={<CartList/>} />
