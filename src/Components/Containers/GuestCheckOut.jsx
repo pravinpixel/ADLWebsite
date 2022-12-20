@@ -34,14 +34,6 @@ export default function GuestCheckOut() {
             <div className="row">
               <div className="col-lg-8">
                 <div className="billing-form">
-                  <div className="common-heading">
-                    <h2>
-                      Guest <span> Checkout </span>
-                      <strong>
-                        (or) <Link to="">Login Here!</Link>{" "}
-                      </strong>
-                    </h2>
-                  </div>
                   <div className="form-billing">
                     <Form>
                       <div className="frm-fields row clearfix">
