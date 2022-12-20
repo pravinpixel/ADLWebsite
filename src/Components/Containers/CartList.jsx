@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from "../.././assets/images/cart_empty.png";
+import BookedTestSliders from "../Home/Sections/BookedTestSliders";
+import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function CartList() {
   var settings = {
@@ -125,7 +127,7 @@ export default function CartList() {
                   </h2>
                 </div>
               </div>
-              <div className="col-lg-8">
+              <div className="col-lg-12">
                 <div className="cart-ing table-responsive">
                   <table className="table">
                     <thead>
@@ -133,7 +135,6 @@ export default function CartList() {
                         <th>Package/Test</th>
                         <th className="text-right">Type</th>
                         <th className="text-right">Unit Price(₹)</th>
-                        <th className="text-center">Discount</th>
                         <th className="text-right">Net Price</th>
                         <th className="text-center">Action</th>
                       </tr>
@@ -143,12 +144,11 @@ export default function CartList() {
                         <tr key={index}>
                           <th scope="row">{item.TestName}</th>
                           <td className="text-right">
-                            {item.IsPackage === 'Yes' ? 'Package' : 'Test'}
+                            {item.IsPackage === "Yes" ? "Package" : "Test"}
                           </td>
                           <td className="text-right">
                             &#8377;{item.TestPrice}
                           </td>
-                          <td className="text-center">-</td>
                           <td className="text-right">
                             &#8377; {item.TestPrice}
                           </td>
@@ -162,6 +162,17 @@ export default function CartList() {
                           </td>
                         </tr>
                       ))}
+                      <tr>
+                        <td className="text-right" colSpan={3}><b style={{ fontSize:'16px' }}>Total</b></td>
+                        <td className="text-right"><b style={{ fontSize:'16px' }}>₹ {testTotal}</b></td>
+                        <td>
+                          <div className="case m-0 text-center">
+                            <p>
+                              <Link to="/checkout">Checkout</Link>
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -174,18 +185,14 @@ export default function CartList() {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4">
+              {/* <div className="col-lg-4">
                 <div className="availab-lity ca-rtloc">
-                  <h4>Payment</h4>
+                  <h4>Total Amount</h4>
                   <table className="table">
                     <tbody>
                       <tr>
                         <th className="text-left">Subtotal</th>
                         <th className="text-right">&#8377;{testTotal}</th>
-                      </tr>
-                      <tr>
-                        <td className="text-left">Discount (-)</td>
-                        <td className="text-right">- &#8377; 0</td>
                       </tr>
                       <tr>
                         <td className="text-left">
@@ -203,14 +210,14 @@ export default function CartList() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
       ) : (
-        <div style={{ backgroundColor:'#f9f9f9' }} className="text-center">
+        <div style={{ backgroundColor: "#f9f9f9" }} className="text-center">
           <div className="case rounded-0">
-            <img src={emptyCart} alt="Cart is Empty" className="my-5"/> 
+            <img src={emptyCart} alt="Cart is Empty" className="my-5" />
             <p>
               <Link to="/for-patient">Add Test</Link>
               <Link className="bg-trsnper" to="/for-patient">
@@ -221,64 +228,6 @@ export default function CartList() {
           <hr className="w-75 mx-auto my-0" />
         </div>
       )}
-
-      <section className="diagnostics most-poptst text-left">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="common-heading">
-                <h2>
-                  <span>Other related </span>Tests
-                </h2>
-              </div>
-              <Sliders {...settings} className="topbooked-cases">
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-                <TestCard />
-              </Sliders>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="popular-packages">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="common-heading">
-                <h2>
-                  <span>Other </span> Health Packages
-                </h2>
-              </div>
-              <br />
-              <Sliders {...settings} className="popular-lists">
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-                <PackageCard />
-              </Sliders>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
