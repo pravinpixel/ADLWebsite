@@ -518,7 +518,7 @@ a:hover {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #ff9a1f;
+	background: #f5922f;
 }
 
 #home-banner-carousel .carousel-caption p a:after {
@@ -700,7 +700,7 @@ a.link-orange:before {
 	width: 100%;
 	height: 2px;
 	content: "";
-	background: #ff9a1f;
+	background: #f5922f;
 	transition: all 0.6s ease;
 }
 
@@ -771,7 +771,7 @@ a.link-white:after {
 	width: 0px;
 	height: 2px;
 	content: "";
-	background: #ff9a1f;
+	background: #f5922f;
 	transition: all 0.6s ease;
 }
 
@@ -806,7 +806,7 @@ a.link-white:hover:after {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #ff9a1f;
+	background: #f5922f;
 }
 
 .orange-btn:after {
@@ -895,7 +895,7 @@ a.link-white:hover:after {
 
 .common-heading h2 span.yelow {
 	display: inline;
-	color: #ff9a1f;
+	color: #f5922f;
 	font-size: 25px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -1069,7 +1069,9 @@ span.strke {
 .btn-primary {
 	background: #64226F !important;
 }
-
+.case p button.remove-btn:before {
+	background: #ec333f;
+}
 .case p a:before,
 .case p button:before {
 	position: absolute;
@@ -1079,7 +1081,7 @@ span.strke {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #ff9a1f;
+	background: #f5922f;
 }
 
 .case p a:after,
@@ -1227,7 +1229,7 @@ span.strke {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #ff9a1f;
+	background: #f5922f;
 }
 
 .pack-deils p a:after {
@@ -3070,7 +3072,7 @@ span.flag-option p {
 	height: 100%;
 	content: "";
 	z-index: -2;
-	background: #ff9a1f;
+	background: #f5922f;
 }
 
 .cmn-buton p a:after {
@@ -3097,9 +3099,9 @@ span.flag-option p {
 }
 
 .cmn-buton p a.bg-trsnper.ylw {
-	color: #ff9a1f !important;
+	color: #f5922f !important;
 	margin-left: 8px;
-	border: 1px solid #ff9a1f;
+	border: 1px solid #f5922f;
 	text-transform: uppercase;
 	background-color: transparent;
 }
@@ -3169,7 +3171,7 @@ span.flag-option p {
 }
 
 .anddn-labfrm input[type="submit"] {
-	background-color: #ff9a1f;
+	background-color: #f5922f;
 	font-size: 16px;
 	letter-spacing: 1px;
 	border: 0px;
@@ -3274,7 +3276,7 @@ span.flag-option p {
 .vison-mison h4 {
 	font-weight: 500;
 	font-size: 25px;
-	color: #ff9a1f;
+	color: #f5922f;
 }
 
 .mission-layer ul {
@@ -4216,7 +4218,7 @@ h1.text-red {
 }
 
 .Products-factory-lsts ul li a span.difclr {
-	color: #ff9a1f;
+	color: #f5922f;
 }
 
 .Products-factory-lsts ul li.active a {
@@ -4280,7 +4282,7 @@ h1.text-red {
 	padding: 30px;
   }
 
-  .text-yellow{color: #ff9a1f;}
+  .text-yellow{color: #f5922f;}
 
   .the-chamber{padding-left: 125px;position: relative;padding-right: 50px;}
   .the-chamber img{position: absolute;left:0;top:0;}
@@ -5557,7 +5559,7 @@ ul.linecode li  {
 	top: 2px;
   }
 
-  .accnt-heads .rit-endup a{background-color: #ff9a1f;
+  .accnt-heads .rit-endup a{background-color: #f5922f;
 	font-size: 16px;
 	font-weight: 600;color:#fff;border-radius: 5px;padding: 6px 20px;}
 	.accnt-heads .rit-endup a:hover{background-color: #5c2d91;}
@@ -5574,7 +5576,7 @@ ul.linecode li  {
 	border-radius: 5px;
 	padding: 10px;}
 	.update-profile input[type="button"] {
-		background-color: #ff9a1f;
+		background-color: #f5922f;
 		font-size: 16px;
 		font-weight: 600;
 		letter-spacing: 1px;

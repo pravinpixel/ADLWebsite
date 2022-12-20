@@ -33,7 +33,7 @@ export default function CartBtn(props) {
                     props.getData()
                 }}
             >
-                <small><i className="fa fa-shopping-cart mr-2"></i>Remove</small>
+                <small><i className="fa fa-times mr-2"></i>Remove</small>
             </button>
     )
 }
