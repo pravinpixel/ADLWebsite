@@ -9,4 +9,5 @@ export const API_URL = {
     TEST_LISTS     : `${URL}/api/test-list`,
     BANNER_FROM    : `${URL}/api/bannerContactForm`,
     NEWS_AND_EVENTS: `${URL}/api/newsAndEvents`,
+    REGISTER: `${URL}/api/register`,
 }
