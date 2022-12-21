@@ -227,11 +227,11 @@ export default function Footer() {
       </footer>
 
       <div className="mobile-footer">
-	    <a href="" data-toggle="tooltip" title="Current Location">
+	    <a href="" data-toggle="tooltip" title="Current Location" >
       <img src={location} alt="" className="img-fluid"/>
       Location
       </a>
-	    <a href="" data-toggle="tooltip" title="Login to view your Profile">
+	    <a href="/login" data-toggle="tooltip" title="Login to view your Profile">
       <img src={user} alt="" className="img-fluid"/>
       Login
       </a>

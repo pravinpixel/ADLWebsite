@@ -99,8 +99,15 @@ export default function BookedTestSliders({title , subTitle}) {
                     </p>
                   </div>
                 ))}
+                
+              
               </Sliders>
             ) : null}
+          </div>
+          <div className="col-lg-12"> 
+          <div className="vew-aal mt-5 text-center"> 
+          <a href="/for-patient"> View All</a> 
+          </div>
           </div>
         </div>
       </div>

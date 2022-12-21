@@ -1253,6 +1253,55 @@ span.strke {
     transition: all 1s ease;
 }
 
+.vew-aal a {
+    color: #fff;
+    padding: 6px 22px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.vew-aal a:before {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -2;
+    background: #f5922f;
+}
+
+.vew-aal a:after {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 0px;
+    height: 100%;
+    content: "";
+    z-index: -1;
+    background: #5b2584;
+    transition: all 1s ease;
+}
+
+.vew-aal a:hover:after {
+    width: 100%;
+    right: inherit;
+    left: 0px;
+    transition: all 1s ease;
+}
+
+.vew-aal a:hover {
+    transition: all 1s ease;
+}
+
 .case a.bg-trsnper {
     margin-left: 8px;
     border: 1px solid #5c2d91;
@@ -2804,7 +2853,7 @@ span.flag-option p {
 .dhoni-bgm {
     background: rgba(0, 0, 0, 0) url("../images/dhoni-bg.jpg") no-repeat scroll center center;
     background-size: cover;
-    min-height: 510px;
+    min-height: 535px;
     padding: 40px 35px;
 }
 
@@ -2920,8 +2969,13 @@ span.flag-option p {
 }
 
 .user-regster {
-    margin-top: -10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.user-regster.log-un {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .user-regster a {
@@ -6506,4 +6560,117 @@ ul.action-felds li i.fa.fa-pencil-square {
 
 ul.action-felds li i.fa.fa-minus-square {
     color: #ff1616
+}
+
+.otp-pops.modal {
+    z-index: 9999;
+}
+
+.otp-pops.modal .modal-body {
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.otp-pops.modal .modal-header {
+    padding: 0px;
+    border: 0px;
+}
+
+.otp-pops.modal .modal-content {
+    border: 0px;
+    border-radius: 25px;
+}
+
+.otp-pops.modal .modal-dialog {
+    max-width: 850px;
+}
+
+.otp-pops.location-pops.modal .modal-dialog {
+    max-width: 450px;
+}
+
+.otp-pops.modal .btn-close {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background: transparent;
+    border: none;
+    top: 10px;
+    z-index: 999;
+    cursor: pointer;
+    right: 5px;
+}
+
+.otp-pops.modal .btn-close:before {
+    position: absolute;
+    content: "\f057";
+    font: normal normal normal 33px/1 FontAwesome;
+    left: 0;
+    top: 0;
+    color: #5c2e91;
+}
+
+
+/* custom radio */
+
+.customRadio input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.customRadio input[type="radio"]+label {
+    position: relative;
+    padding: 3px 0 0 25px;
+    cursor: pointer;
+}
+
+.customRadio input[type="radio"]+label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #212363;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 20px;
+}
+
+.customRadio input[type="radio"]+label:after {
+    content: '';
+    background: #212363;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    top: 11px;
+    left: 24px;
+    opacity: 0;
+    transform: scale(2);
+    transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.customRadio input[type="radio"]:checked+label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* custom radio */
+
+.otp-pops.location-pops.modal .row.fully-bxn {
+    padding: 30px;
+}
+
+.otp-pops.location-pops.modal .row.fully-bxn h4 {
+    color: #9f9ba2;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin-bottom: 0px;
+    line-height: 38px;
+}
+
+.addres-que label span {
+    margin: 0px 15px;
 }

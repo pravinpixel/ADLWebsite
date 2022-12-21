@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef,useState } from 'react'
 import logo from './../../assets/images/logo.png';
 import logoberg from './../../assets/images/logoberg.png';
 import location from './../../assets/images/location.png';
@@ -12,11 +12,19 @@ import men4 from './../../assets/images/men-4.png';
 import dwd from './../../assets/images/dwd.png';
 import CartCount from './CartCount';
 import { Link } from 'react-router-dom';
+import { Form } from "react-component-form";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 export default function Header() { 
 
 const navElement = useRef();
 const toggleIcon = useRef();
+
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
 function handleLink(e)
 {
@@ -61,6 +69,7 @@ function mobileToggle(e) {
   }
 }
   return (
+    <>
     <header id="header" className="main-header site-navbar">
       <div className="container">
         <div className="row">
@@ -81,13 +90,13 @@ function mobileToggle(e) {
                   <div className="col">
                     <ul className="icns-lst text-center">
                       <li>
-                        <Link to="/">
+                        <Link to="/"  onClick={handleShow}>
                           <img src={location} alt="" className="img-fluid"/>
                           <span>Bangalore</span>
                         </Link>
                       </li>
                       <li>
-                        <Link to="/">
+                        <Link to="/login">
                           <img src={user} alt="" className="img-fluid"/>
                           <span>Login</span>
                         </Link>
@@ -399,5 +408,41 @@ function mobileToggle(e) {
         </div>
       </div>
     </header>
+
+    <Modal show={show} onHide={handleClose} className='otp-pops location-pops' centered>
+        <Modal.Header closeButton>  
+        </Modal.Header>
+        <Modal.Body>
+        <div className="row fully-bxn no-gutters">
+        <div className="col-lg-12 seceter-frm text-center">
+        <h4>Please Select your Location</h4>
+        <Form>
+        <div className="addres-que customRadio">
+        <input type="radio" name="textEditor" id="addrs1" />
+        <label for="addrs1">
+        <span>Chennai</span>
+        </label>
+        <input type="radio" name="textEditor" id="addrs2" />
+        <label for="addrs2">
+        <span>Karnataka</span>
+        </label>
+        <input type="radio" name="textEditor" id="addrs3" />
+        <label for="addrs3">
+        <span>Pune</span>
+        </label>
+        </div>  
+
+        <div className="col-lg-12 text-center p-0">
+        <div className="login-btn">
+        <Link to='' onClick={handleClose}>Save Changes</Link>
+        </div>
+        </div>
+        </Form>        
+        </div>
+        </div> 
+        </Modal.Body> 
+      </Modal>
+ </>
+
   )
 }
