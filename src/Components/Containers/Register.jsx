@@ -38,7 +38,10 @@ export default function Login() {
         email   : email,
         password: password,
       }).then((response) => {
-        PutUser(response.data.data)
+        PutUser({
+          email : response.data.data.email,
+          id : response.data.data.id
+        })
         if(AuthUser()) {
           navigate("/checkout");
         }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import Sliders from "react-slick";
 import TestCard from "./TestCardComponent";
@@ -12,6 +12,7 @@ import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function CartList() {
+  let navigate = useNavigate();
   var settings = {
     slidesToScroll: 1,
     infinite: true,
@@ -64,7 +65,6 @@ export default function CartList() {
     setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
-      console.log(testListFromCart);
       const CalculateTotalTestPrice = testListFromCart.reduce(
         (previousValue, currentValue) =>
           parseInt(previousValue) + parseInt(currentValue.TestPrice),
@@ -73,7 +73,7 @@ export default function CartList() {
       localStorage.setItem("cartItemTotal", CalculateTotalTestPrice);
       setTestTotal(CalculateTotalTestPrice);
     } else {
-      window.location.href = "/";
+      navigate('/')
     }
   }, []);
 

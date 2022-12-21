@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
-import { Link } from "react-router-dom";
-import logo from './../../assets/images/logo.png';
+import { Link, useNavigate } from "react-router-dom";
 import AuthProvider from "../../Helpers/AuthProvider";
 import useRazorpay from "react-razorpay";
-import AuthUser from "../../Helpers/AuthUser";
+import AuthUser, { PutUser, RemoveUser } from "../../Helpers/AuthUser";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { toast } from "react-hot-toast";
 import { Validate } from "../../Helpers";
 
-
-
 export default function GuestCheckOut() {
   const [cartTable,setCartTable]      = useState([]); 
   const Razorpay = useRazorpay();
+  let navigate = useNavigate();
   const [BillingAddress,setBillingAddress] = useState({
     first_name  : null,
     last_name   : null,
@@ -30,55 +28,71 @@ export default function GuestCheckOut() {
 
   const FormHandler = (e) => {
     setBillingAddress({...BillingAddress,[e.target.name] : e.target.value})
+    // console.log(BillingAddress)
   }
 
   useEffect(() => {
-    setCartTable(JSON.parse(localStorage.getItem("CartTestList"))); 
+    setCartTable(JSON.parse(localStorage.getItem("CartTestList")));  
+    var AuthUserData = AuthUser();
+    if(AuthUserData.first_name ?? false) {
+      setBillingAddress(AuthUserData)
+    }
   }, [])
 
-  const handlePayment = async () => {
+  const handlePayment = async () => { 
     if(Validate(BillingAddress)) {
-      axios.post(API_URL.UPDATE_BILLING_DETAILS,BillingAddress).then((response) => {
-        console.log(response.data)
+      axios.post(API_URL.UPDATE_BILLING_DETAILS,{
+        ...BillingAddress, amount : totalPrice
+      }).then((response) => {
+        if(response.data.status) {
+          CheckOutPayment(response.data.data)
+          PutUser(BillingAddress)
+        }
       })
-    }
-    // // const order = await createOrder(params); //  Create order on your backend
-    // const options = {
-    //   key: "rzp_test_S5bQihn0KDELkq",
-    //   name: "Pay Online",
-    //   image: logo,
-    //   order_id: "order_KuTg5MetfmtiHm",
-    //   handler: function (response) { 
-    //     alert(response.razorpay_payment_id);
-    //     alert(response.razorpay_order_id);
-    //     alert(response.razorpay_signature);
-    //   },
-    //   prefill: {
-    //     name: AuthUser().name,
-    //     email: AuthUser().email,
-    //     contact: "9999999999",
-    //   },
-    //   theme: {
-    //     color: "#5d2c8f",
-    //   },
-    // };
-  
-    // const rzp1 = new Razorpay(options);
-  
-    // rzp1.on("payment.failed", function (response) {
-    //   console.log(response)
-    //   alert(response.error.code);
-    //   alert(response.error.description);
-    //   alert(response.error.source);
-    //   alert(response.error.step);
-    //   alert(response.error.reason);
-    //   alert(response.error.metadata.order_id);
-    //   alert(response.error.metadata.payment_id);
-    // });
-  
-    // rzp1.open();
+    } 
   };
-  
+ 
+
+  const CheckOutPayment = (data) => {
+      const options = {
+        key: data.key,
+        name: data.title,
+        image: data.image,
+        order_id: data.order_id,
+        handler: function (response) { 
+          toast.success('Payment Successs !');
+          localStorage.removeItem('CartTestList')
+          navigate("/");
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+        },
+        prefill: {
+          name: data.name,
+          email: data.email,
+          contact: parseInt(data.contact),
+        },
+        theme: {
+          color: "#5d2c8f",
+        },
+      };
+    
+      const rzp1 = new Razorpay(options);
+    
+      rzp1.on("payment.failed", function (response) {
+        toast.error('Payment Failed !');
+        console.log(response.error)
+        // alert(response.error.code);
+        // alert(response.error.description);
+        // alert(response.error.source);
+        // alert(response.error.step);
+        // alert(response.error.reason);
+        // alert(response.error.metadata.order_id);
+        // alert(response.error.metadata.payment_id);
+      });
+    
+      rzp1.open();
+  }
   return (
     <AuthProvider>
       <div>
@@ -119,6 +133,7 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
+                                value={BillingAddress.first_name}
                                 name="first_name"
                                 placeholder="Enter Your First Name"
                                 onChange={(e) => FormHandler(e)}
@@ -131,6 +146,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="last_name"
+                                value={BillingAddress.last_name}
                                 placeholder="Enter Your Last Name"
                                 required
                                 onChange={(e) => FormHandler(e)}
@@ -142,6 +158,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="email"
+                                value={BillingAddress.email}
                                 placeholder="Enter Your E-mail ID"
                                 required
                                 onChange={(e) => FormHandler(e)}
@@ -154,6 +171,7 @@ export default function GuestCheckOut() {
                                 type="number"
                                 pattern="/^\d{10}$/"
                                 name="phone_number"
+                                value={BillingAddress.phone_number}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Enter your Contact Number"
                                 required
@@ -165,6 +183,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="address"
+                                value={BillingAddress.address}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Street No, Street Name"
                                 required
@@ -177,6 +196,7 @@ export default function GuestCheckOut() {
                                 type="text"
                                 name="city_town"
                                 onChange={(e) => FormHandler(e)}
+                                value={BillingAddress.city_town}
                                 placeholder="City/Town"
                                 required
                               />
@@ -187,6 +207,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="state"
+                                value={BillingAddress.state}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Select Your State"
                                 required
@@ -198,6 +219,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="pin_code"
+                                value={BillingAddress.pin_code}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Enter Your PIN Code"
                                 required

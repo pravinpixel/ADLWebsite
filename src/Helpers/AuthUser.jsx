@@ -8,5 +8,7 @@ const AuthUser = () => {
 export const PutUser = (data) => {
     return localStorage.setItem('user',JSON.stringify(data))
 }
-
+export const RemoveUser = (data) => {
+    return localStorage.removeItem('user')
+}
 export default AuthUser;
