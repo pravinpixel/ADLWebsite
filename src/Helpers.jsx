@@ -71,3 +71,17 @@ export function RemoveToCartList(test) {
       localStorage.removeItem('CartTestList')
    }
 }
+
+export const  Validate = (data) => {
+   var error = 0
+   Object.entries(data).map((item) => {
+      if(data[item[0]] === null || data[item[0]] === undefined || data[item[0]] === '') {
+         error ++
+         toast.error(`${item[0].replace('_', ' ')} is Required!`);
+      }
+   }); 
+   if(error === 0) {
+      return true
+   } 
+   return false
+}

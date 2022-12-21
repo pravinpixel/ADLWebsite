@@ -1,10 +1,84 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
 import { Link } from "react-router-dom";
-import { CgCloseO } from "react-icons/cg";
+import logo from './../../assets/images/logo.png';
 import AuthProvider from "../../Helpers/AuthProvider";
+import useRazorpay from "react-razorpay";
+import AuthUser from "../../Helpers/AuthUser";
+import axios from "axios";
+import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { toast } from "react-hot-toast";
+import { Validate } from "../../Helpers";
+
+
 
 export default function GuestCheckOut() {
+  const [cartTable,setCartTable]      = useState([]); 
+  const Razorpay = useRazorpay();
+  const [BillingAddress,setBillingAddress] = useState({
+    first_name  : null,
+    last_name   : null,
+    phone_number: null,
+    address    : null,
+    city_town   : null,
+    email      : null,
+    state      : null,
+    pin_code    : null,
+    id : AuthUser().id
+  });
+  var totalPrice = 0;
+
+  const FormHandler = (e) => {
+    setBillingAddress({...BillingAddress,[e.target.name] : e.target.value})
+  }
+
+  useEffect(() => {
+    setCartTable(JSON.parse(localStorage.getItem("CartTestList"))); 
+  }, [])
+
+  const handlePayment = async () => {
+    if(Validate(BillingAddress)) {
+      axios.post(API_URL.UPDATE_BILLING_DETAILS,BillingAddress).then((response) => {
+        console.log(response.data)
+      })
+    }
+    // // const order = await createOrder(params); //  Create order on your backend
+    // const options = {
+    //   key: "rzp_test_S5bQihn0KDELkq",
+    //   name: "Pay Online",
+    //   image: logo,
+    //   order_id: "order_KuTg5MetfmtiHm",
+    //   handler: function (response) { 
+    //     alert(response.razorpay_payment_id);
+    //     alert(response.razorpay_order_id);
+    //     alert(response.razorpay_signature);
+    //   },
+    //   prefill: {
+    //     name: AuthUser().name,
+    //     email: AuthUser().email,
+    //     contact: "9999999999",
+    //   },
+    //   theme: {
+    //     color: "#5d2c8f",
+    //   },
+    // };
+  
+    // const rzp1 = new Razorpay(options);
+  
+    // rzp1.on("payment.failed", function (response) {
+    //   console.log(response)
+    //   alert(response.error.code);
+    //   alert(response.error.description);
+    //   alert(response.error.source);
+    //   alert(response.error.step);
+    //   alert(response.error.reason);
+    //   alert(response.error.metadata.order_id);
+    //   alert(response.error.metadata.payment_id);
+    // });
+  
+    // rzp1.open();
+  };
+  
   return (
     <AuthProvider>
       <div>
@@ -45,8 +119,9 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
+                                name="first_name"
                                 placeholder="Enter Your First Name"
+                                onChange={(e) => FormHandler(e)}
                                 required
                               />
                             </div>
@@ -55,9 +130,10 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
+                                name="last_name"
                                 placeholder="Enter Your Last Name"
                                 required
+                                onChange={(e) => FormHandler(e)}
                               />
                             </div>
                             <div className="form-data col-lg-6">
@@ -65,9 +141,10 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
+                                name="email"
                                 placeholder="Enter Your E-mail ID"
                                 required
+                                onChange={(e) => FormHandler(e)}
                               />
                             </div>
                             <div className="form-data col-lg-6">
@@ -76,7 +153,8 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="number"
                                 pattern="/^\d{10}$/"
-                                name="mobile"
+                                name="phone_number"
+                                onChange={(e) => FormHandler(e)}
                                 placeholder="Enter your Contact Number"
                                 required
                               />
@@ -86,7 +164,8 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
+                                name="address"
+                                onChange={(e) => FormHandler(e)}
                                 placeholder="Street No, Street Name"
                                 required
                               />
@@ -96,7 +175,8 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
+                                name="city_town"
+                                onChange={(e) => FormHandler(e)}
                                 placeholder="City/Town"
                                 required
                               />
@@ -106,7 +186,8 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="location"
+                                name="state"
+                                onChange={(e) => FormHandler(e)}
                                 placeholder="Select Your State"
                                 required
                               />
@@ -116,7 +197,8 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="location"
+                                name="pin_code"
+                                onChange={(e) => FormHandler(e)}
                                 placeholder="Enter Your PIN Code"
                                 required
                               />
@@ -126,7 +208,7 @@ export default function GuestCheckOut() {
                       </div>
                     </Form>
                   </div>
-                  <div className="coupon-form">
+                  {/* <div className="coupon-form">
                     <Form>
                       <div className="frm-fields row clearfix">
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -149,7 +231,7 @@ export default function GuestCheckOut() {
                         </div>
                       </div>
                     </Form>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-lg-4">
@@ -159,48 +241,16 @@ export default function GuestCheckOut() {
                     <div className="cat-itenslst">
                       <table className="table">
                         <tbody>
-                          <tr>
-                            <th className="text-left">
-                              Cholesterol Total, Serum
-                            </th>
-                            <th className="text-right">&#8377;180</th>
-                          </tr>
-                          <tr>
-                            <td className="text-left">Complete Blood Count</td>
-                            <td className="text-right"> &#8377; 275 </td>
-                          </tr>
-                          <tr>
-                            <td className="text-left">NEU Express</td>
-                            <td className="text-right"> &#8377; 5,980 </td>
-                          </tr>
-                          <tr>
-                            <th className="text-left">
-                              Cholesterol Total, Serum
-                            </th>
-                            <th className="text-right"> &#8377;180 </th>
-                          </tr>
-                          <tr>
-                            <td className="text-left">Complete Blood Count</td>
-                            <td className="text-right"> &#8377; 275 </td>
-                          </tr>
-                          <tr>
-                            <td className="text-left">NEU Express</td>
-                            <td className="text-right"> &#8377; 5,980 </td>
-                          </tr>
-                          <tr>
-                            <th className="text-left">
-                              Cholesterol Total, Serum
-                            </th>
-                            <th className="text-right"> &#8377;180 </th>
-                          </tr>
-                          <tr>
-                            <td className="text-left">Complete Blood Count</td>
-                            <td className="text-right"> &#8377; 275 </td>
-                          </tr>
-                          <tr>
-                            <td className="text-left">NEU Express</td>
-                            <td className="text-right"> &#8377; 5,980 </td>
-                          </tr>
+                          {
+                            cartTable.length ?
+                              cartTable.map((item,i) => 
+                                <tr key={i} amount={totalPrice += parseInt(item.TestPrice)} >
+                                  <th className="text-left">{item.TestName}</th>
+                                  <th className="text-right">&#8377;{item.TestPrice} </th>
+                                </tr>
+                              )
+                            : null
+                          } 
                         </tbody>
                       </table>
                     </div>
@@ -209,29 +259,29 @@ export default function GuestCheckOut() {
                     <tbody>
                       <tr>
                         <th className="text-left">Subtotal</th>
-                        <th className="text-right">&#8377;6345</th>
+                        <th className="text-right">&#8377;{totalPrice}</th>
                       </tr>
-                      <tr>
+                      {/* <tr>
                         <td className="text-left">Discount (-)</td>
                         <td className="text-right">- &#8377; 4655</td>
-                      </tr>
+                      </tr> */}
                       <tr>
                         <td className="text-left">Coupon Discount (-)</td>
-                        <td className="text-right">- &#8377; 200</td>
+                        <td className="text-right">- &#8377; 0</td>
                       </tr>
                       <tr>
                         <td className="text-left">
                           <b>Total</b>
                         </td>
                         <td className="text-right">
-                          <b>&#8377;1580</b>
+                          <b>&#8377;{totalPrice}</b>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                   <div className="case text-right">
                     <p>
-                      <Link to="/">Make Payment</Link>
+                      <a onClick={handlePayment}>Make Payment</a> 
                     </p>
                   </div>
                 </div>

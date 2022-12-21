@@ -66,8 +66,8 @@ export default function LatestBlogs() {
                 news !== null ?
                   <Sliders {...settings} className="lat-hapns"> 
                     {
-                      news.map(item => (
-                        <div className="haapns">
+                      news.map((item,i) => (
+                        <div key={i} className="haapns">
                           <h3>{item.created_at}</h3>
                           <h4>{item.title}</h4>
                           <p> {item.description} </p>

@@ -69,7 +69,6 @@ export const removeFromCardReducer = (state = [] ,{type, payload}) => {
                 localStorage.removeItem('CartTestList')
             }
             return true
-            break; 
         default: return state;
     }
 }
