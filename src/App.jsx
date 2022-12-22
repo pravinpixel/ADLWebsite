@@ -47,6 +47,7 @@ import ReturnOrders from './Components/MyProfile/Pages/ReturnOrders'
 import ChangePassword from './Components/MyProfile/Pages/ChangePassword'
 import Address from './Components/MyProfile/Pages/Address'
 import MyProfile from './Components/MyProfile/MyProfile'
+import FindLab from './Components/FindLab/FindLab'
 
 export default function App() {
   return (
@@ -88,6 +89,8 @@ export default function App() {
         <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} /> 
         <Route path='/anandlab-franchise' exact element={<AnandLabFranchise/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
+        <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
+        <Route path='/find-lab' exact element={<FindLab/>} /> 
         
         <Route path="/my-account" element={<MyProfile />}>
           <Route index element={<AccountInformation/>} /> 
@@ -97,6 +100,7 @@ export default function App() {
           <Route path='change-password' exact element={<ChangePassword/>} /> 
           <Route path='address' exact element={<Address/>} /> 
         </Route>
+
         <Route>404 Not Found !</Route>
       </Routes>
       <Footer/> 

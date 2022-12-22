@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import map from '../../../assets/images/map.png'
 
 export default function FindLocation() {
@@ -18,7 +19,7 @@ export default function FindLocation() {
               </div>
               <p>We are focused on uniting borders across <br/>geographies to make better diagnosis a reality. </p>
               <input type="text" placeholder="Select City" name="search"/>
-              <button type="submit">Find a Location</button>
+              <Link to="/find-lab">Find a Location</Link>
             </div>
           </div>
         </div>

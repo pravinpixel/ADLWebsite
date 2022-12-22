@@ -22,31 +22,31 @@ export default function Footer() {
                 <ul>
                 <h5>Quick Links</h5> 
                   <li>
-                    <Link to="/">About Us</Link>
+                    <Link to="/about-us">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/">People Behind</Link>
+                    <Link to="/people-behind">People Behind</Link>
                   </li>
                   <li>
-                    <Link to="/">History</Link>
+                    <Link to="/history">History</Link>
                   </li>
                   <li>
-                    <Link to="/">Commitment</Link>
+                    <Link to="/commitment">Commitment</Link>
                   </li>
                   <li>
                     <Link to="/">Accreditation</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/">Book a Blood Test</Link>
+                  </li> */}
+                  <li>
+                    <a href="http://reports.anandlab.com/v3/index1.html" target="_blank">Download Reports</a>
                   </li>
                   <li>
-                    <Link to="/">Download Reports</Link>
+                    <Link to="">Health Packages</Link>
                   </li>
                   <li>
-                    <Link to="/">Health Packages</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Blog</Link>
+                  <a href="https://www.anandlab.com/blog/" target="_blank">Blog</a>
                   </li>
                   <li>
                     <Link to="/">Careers</Link>
@@ -57,40 +57,37 @@ export default function Footer() {
                 <ul>
                 <h5>Patients</h5>
                   <li>
-                    <Link to="/">Health Packages</Link>
+                    <Link to="/packages">Packages</Link>
                   </li>
                   <li>
-                    <Link to="/">Explore all Tests</Link>
+                    <Link to="">Explore all Tests</Link>
                   </li>
                   <li>
-                    <Link to="/">Preparing for Health Checkup</Link>
+                    <Link to="/preparing-for-health-checkup">Preparing for Health Checkup</Link>
                   </li>
                   <li>
-                    <Link to="/">Report Download</Link>
+                  <a href="http://reports.anandlab.com/v3/index1.html" target="_blank">Report Download</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/">Book an Appointment </Link>
+                  </li> */}
+                  <li>
+                    <Link to="/patients-consumers">Patient Care</Link>
                   </li>
                   <li>
-                    <Link to="/">Loyalty Program</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Drive through Blood Collection</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Feedback</Link>
-                  </li>
-                  <li>
+                    <Link to="/feedback">Feedback</Link>
+                  </li> 
+                  {/* <li>
                     <Link to="/">Special Offers</Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/">Health Tips</Link>
+                    <a href="https://www.anandlab.com/blog/" target="_blank">Health Tips</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/">Diabetes Assessment Tool</Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/">FAQ’s</Link>
+                    <Link to="/faq">FAQ’s</Link>
                   </li>
                 </ul>
                 </div>
@@ -98,41 +95,41 @@ export default function Footer() {
                 <ul>
                 <h5>Doctors</h5>
                   <li>
-                    <Link to="/">Directory of Service</Link>
+                    <a href="https://reports.anandlab.com/dos/" target="_blank">Directory of Service</a>
                   </li>
                   <li>
-                    <Link to="/">Departments</Link>
+                    <Link to="/department">Department</Link>
                   </li>
                   <li>
-                    <Link to="/">Hospital or Lab Management</Link>
+                    <Link to="/hospital-or-lab-management">Hospital or Lab Management</Link>
                   </li>
                   <li>
-                    <Link to="/">Clinician Lab Management</Link>
+                    <Link to="/clinical-lab-management">Clinician Lab Management</Link>
                   </li>
                   <li>
-                    <Link to="/">Franchise Opportunities</Link>
+                    <Link to="/franchising-opportunities">Franchise Opportunities</Link>
                   </li>
                   <li>
-                    <Link to="/">Research</Link>
+                    <Link to="/research">Research</Link>
                   </li>
                 </ul>
                 </div>
                 <div className="col-lg-2">
                 <ul>
                 <h5>Health Checkup</h5>
-                  <li>
+                  {/* <li>
                     <Link to="/">Reach Our Lab</Link>
+                  </li> */}
+                  <li>
+                    <Link to="/book-an-appointment">Book Home Collection</Link>
                   </li>
                   <li>
-                    <Link to="/">Book Home Collection</Link>
+                    <Link to="">Full Body Health Packages</Link>
                   </li>
                   <li>
-                    <Link to="/">Full Body Health Packages</Link>
+                    <Link to="">Clinical & Imaging Services</Link>
                   </li>
-                  <li>
-                    <Link to="/">Clinical & Imaging Services</Link>
-                  </li>
-                  <li>
+                  {/* <li>
                     <Link to="/">Drive through Blood Collection</Link>
                   </li>
                   <li>
@@ -146,9 +143,9 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link to="/">V-Card, A Patient Beneficial Program</Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/">Physiotherapy</Link>
+                    <Link to="/physiotherapy">Physiotherapy</Link>
                   </li>
                 </ul>
                 </div>
@@ -156,10 +153,13 @@ export default function Footer() {
                 <ul>
                 <h5>Reach Us</h5>
                   <li>
-                    <Link to="/">Head Office & Other Locations</Link>
+                    <Link to="/reach-us">Contact Us</Link>
                   </li>
                   <li>
-                    <Link to="/">Health Checkup for Employees</Link>
+                    <Link to="">Reach our Lab</Link>
+                  </li>
+                  {/* <li>
+                    <Link to="/healthcheckup-for-employees">Health Checkup for Employees</Link>
                   </li>
                   <li>
                     <Link to="/">Neuberg Anand Franchise</Link>
@@ -169,12 +169,12 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link to="/">Hospital & Lab Partnership</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/">Job Oppourtunities</Link>
                   </li>
                   <li>
-                    <Link to="/">Upgrade your Skills</Link>
+                    <a href="http://www.naalm.com/academics/" target="_blank">Upgrade your Skills</a>
                   </li>
                 </ul>
                 </div>
@@ -182,19 +182,19 @@ export default function Footer() {
                 <ul>
                 <h5>Terms and Policies</h5>
                   <li>
-                    <Link to="/">Cancellation Policy</Link>
+                    <Link to="">Cancellation Policy</Link>
                   </li>
                   <li>
-                    <Link to="/">Privacy Policy</Link>
+                    <Link to="">Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link to="/">Terms & Conditions</Link>
+                    <Link to="">Terms & Conditions</Link>
                   </li>
                   <li>
-                    <Link to="/">Disclaimers</Link>
+                    <Link to="">Disclaimers</Link>
                   </li>
                   <li>
-                    <Link to="/">Feedback</Link>
+                    <Link to="">Feedback</Link>
                   </li>
                 </ul>
                 <h5 className="cips">Download App</h5>
