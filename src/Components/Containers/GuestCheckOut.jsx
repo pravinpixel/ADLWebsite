@@ -3,96 +3,106 @@ import { Form } from "react-component-form";
 import { Link, useNavigate } from "react-router-dom";
 import AuthProvider from "../../Helpers/AuthProvider";
 import useRazorpay from "react-razorpay";
-import AuthUser, { PutUser, RemoveUser } from "../../Helpers/AuthUser";
+import AuthUser, { PutUser } from "../../Helpers/AuthUser";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { toast } from "react-hot-toast";
 import { Validate } from "../../Helpers";
 
 export default function GuestCheckOut() {
-  const [cartTable,setCartTable]      = useState([]); 
+  const [cartTable, setCartTable] = useState([]);
+  const [DateTime,setDateTime] = useState(false);
+  const [datetimeData,setDatetimeData] = useState(null);
+  
+  
   const Razorpay = useRazorpay();
   let navigate = useNavigate();
-  const [BillingAddress,setBillingAddress] = useState({
-    first_name  : null,
-    last_name   : null,
+  const [BillingAddress, setBillingAddress] = useState({
+    first_name: null,
+    last_name: null,
     phone_number: null,
-    address    : null,
-    city_town   : null,
-    email      : null,
-    state      : null,
-    pin_code    : null,
-    id : AuthUser().id
+    address: null,
+    city_town: null,
+    email: null,
+    state: null,
+    pin_code: null,
+    id: AuthUser().id, 
   });
   var totalPrice = 0;
 
   const FormHandler = (e) => {
-    setBillingAddress({...BillingAddress,[e.target.name] : e.target.value})
+    setBillingAddress({ ...BillingAddress, [e.target.name]: e.target.value });
     // console.log(BillingAddress)
-  }
+  };
 
   useEffect(() => {
-    setCartTable(JSON.parse(localStorage.getItem("CartTestList")));  
+    setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     var AuthUserData = AuthUser();
-    if(AuthUserData.first_name ?? false) {
-      setBillingAddress(AuthUserData)
+    if (AuthUserData.first_name ?? false) {
+      setBillingAddress(AuthUserData);
     }
-  }, [])
+  }, []);
 
-  const handlePayment = async () => { 
-    if(Validate(BillingAddress)) {
-      axios.post(API_URL.UPDATE_BILLING_DETAILS,{
-        ...BillingAddress, amount : totalPrice
-      }).then((response) => {
-        if(response.data.status) {
-          CheckOutPayment(response.data.data)
-          PutUser(BillingAddress)
-        }
-      })
-    } 
+  const handlePayment = async () => {
+    if (Validate(BillingAddress)) {
+      axios.post(API_URL.UPDATE_BILLING_DETAILS, {
+          ...BillingAddress,
+          amount: totalPrice,
+          datetime:datetimeData
+        }).then((response) => {
+          if (response.data.status) {
+            CheckOutPayment(response.data.data);
+            PutUser(BillingAddress);
+          }
+        });
+    }
   };
- 
+
+  const saveTheOrder = (data,type) => {
+    axios.post(API_URL.SAVE_THE_ORDER,{ 
+      razorpay_response : {
+        status :type,
+        data : data
+      },
+      user:AuthUser(),
+      products:cartTable,
+      appoinment:DateTime,
+      datetime:datetimeData,
+    }).then((response)=>{
+      console.log("Success")
+    })
+  };
 
   const CheckOutPayment = (data) => {
-      const options = {
-        key: data.key,
-        name: data.title,
-        image: data.image,
-        order_id: data.order_id,
-        handler: function (response) { 
-          toast.success('Payment Successs !');
-          localStorage.removeItem('CartTestList')
-          navigate("/");
-          // alert(response.razorpay_payment_id);
-          // alert(response.razorpay_order_id);
-          // alert(response.razorpay_signature);
-        },
-        prefill: {
-          name: data.name,
-          email: data.email,
-          contact: parseInt(data.contact),
-        },
-        theme: {
-          color: "#5d2c8f",
-        },
-      };
-    
-      const rzp1 = new Razorpay(options);
-    
-      rzp1.on("payment.failed", function (response) {
-        toast.error('Payment Failed !');
-        console.log(response.error)
-        // alert(response.error.code);
-        // alert(response.error.description);
-        // alert(response.error.source);
-        // alert(response.error.step);
-        // alert(response.error.reason);
-        // alert(response.error.metadata.order_id);
-        // alert(response.error.metadata.payment_id);
-      });
-    
-      rzp1.open();
-  }
+    const options = {
+      key: data.key,
+      name: data.title,
+      image: data.image,
+      order_id: data.order_id,
+      handler: function (response) {
+        saveTheOrder(response,"PAID");
+        toast.success("Payment Successs !");
+        localStorage.removeItem("CartTestList");
+        navigate("/");
+      },
+      prefill: {
+        name: data.name,
+        email: data.email,
+        contact: parseInt(data.contact),
+      },
+      theme: {
+        color: "#5d2c8f",
+      },
+    };
+
+    const rzp1 = new Razorpay(options);
+
+    rzp1.on("payment.failed", function (response) {
+      saveTheOrder(response,'FAILED');
+      toast.error("Payment Failed !");
+    });
+    rzp1.open();
+  };
   return (
     <AuthProvider>
       <div>
@@ -225,7 +235,22 @@ export default function GuestCheckOut() {
                                 required
                               />
                             </div>
-                          </div>
+                            <div className="col-lg-6">
+                              <label>Appoinment</label>
+                              <label htmlFor="book_a_appoinment" className="form-control pt-2" style={{ height:'45px' }}>
+                                <input type="checkbox" onChange={() => setDateTime(DateTime === true ? false : true )} id="book_a_appoinment" className="mr-2"/> 
+                                <b>Book a Appoinment</b>
+                              </label>
+                            </div>
+                            {
+                              DateTime === true ? 
+                                <div className="form-data col-lg-6">
+                                  <label>Date & Time</label>
+                                  <input type="datetime-local" name="datetime" onChange={(e) => setDatetimeData(e.target.value)} className="form-control" /> 
+                                </div>  
+                              : null
+                            }
+                          </div> 
                         </div>
                       </div>
                     </Form>
@@ -263,16 +288,21 @@ export default function GuestCheckOut() {
                     <div className="cat-itenslst">
                       <table className="table">
                         <tbody>
-                          {
-                            cartTable.length ?
-                              cartTable.map((item,i) => 
-                                <tr key={i} amount={totalPrice += parseInt(item.TestPrice)} >
+                          {cartTable.length
+                            ? cartTable.map((item, i) => (
+                                <tr
+                                  key={i}
+                                  amount={
+                                    (totalPrice += parseInt(item.TestPrice))
+                                  }
+                                >
                                   <th className="text-left">{item.TestName}</th>
-                                  <th className="text-right">&#8377;{item.TestPrice} </th>
+                                  <th className="text-right">
+                                    &#8377;{item.TestPrice}{" "}
+                                  </th>
                                 </tr>
-                              )
-                            : null
-                          } 
+                              ))
+                            : null}
                         </tbody>
                       </table>
                     </div>
@@ -303,7 +333,7 @@ export default function GuestCheckOut() {
                   </table>
                   <div className="case text-right">
                     <p>
-                      <a onClick={handlePayment}>Make Payment</a> 
+                      <a onClick={handlePayment}>Make Payment</a>
                     </p>
                   </div>
                 </div>

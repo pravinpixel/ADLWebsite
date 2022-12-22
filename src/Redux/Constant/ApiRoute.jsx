@@ -11,4 +11,5 @@ export const API_URL = {
     NEWS_AND_EVENTS       : `${URL}/api/newsAndEvents`,
     REGISTER              : `${URL}/api/register`,
     UPDATE_BILLING_DETAILS: `${URL}/api/update-billing-details`,
+    SAVE_THE_ORDER: `${URL}/api/save-payment-order`,
 }
