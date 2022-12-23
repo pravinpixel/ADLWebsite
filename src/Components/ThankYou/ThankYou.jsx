@@ -1,9 +1,13 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function ThankYou() {
+  const Navigate = useNavigate()
   useEffect(() => {
     window.scroll(0,0) 
+    setTimeout(() => {
+      Navigate('/')
+    }, 5000);
   }, [])
   return (
     <div style={{ minHeight:"100vh",display:'flex',justifyContent:'center',alignItems:'center',textAlign:'center',position:'relative' }}>
