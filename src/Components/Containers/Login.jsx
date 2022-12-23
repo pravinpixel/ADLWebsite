@@ -1,14 +1,31 @@
 import { useState } from "react";
 import { Form } from "react-component-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import axios from "axios";
+import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { PutUser } from "../../Helpers/AuthUser";
+import { toast } from "react-hot-toast";
 export default function Login() {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const navigate = useNavigate();
+  const LoginAccount = () => { 
+    axios.post(API_URL.LOGIN,{
+      email : email,
+      password : password,
+    }).then((response) =>{
+      PutUser({
+        email : response.data.data.email,
+        id : response.data.data.id
+      })
+      toast.success('Loggin Success')
+      navigate("/");
+    });
+  }
   return (
     <div>
       <section className="main-billfrm cmnmenu-topmargin">
@@ -40,9 +57,9 @@ export default function Login() {
                               <input
                                 className="input100"
                                 type="text"
-                                name="name"
-                                placeholder="Username"
-                                onChange={(e) => setUserName(e.target.value)}
+                                name="email"
+                                placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)}
                                 required
                               />
                             </div>
@@ -58,6 +75,7 @@ export default function Login() {
                             </div>
                             <div className="form-data sbm col-lg-12">
                               <input
+                                onClick={LoginAccount}
                                 type="submit"
                                 name="submit"
                                 value="LOGIN"

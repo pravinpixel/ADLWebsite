@@ -43,7 +43,7 @@ export default function Login() {
           id : response.data.data.id
         })
         if(AuthUser()) {
-          navigate("/checkout");
+          navigate("/");
         }
       })
     }

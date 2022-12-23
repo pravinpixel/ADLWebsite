@@ -10,6 +10,7 @@ export const API_URL = {
     BANNER_FROM           : `${URL}/api/bannerContactForm`,
     NEWS_AND_EVENTS       : `${URL}/api/newsAndEvents`,
     REGISTER              : `${URL}/api/register`,
+    LOGIN              : `${URL}/api/login`,
     UPDATE_BILLING_DETAILS: `${URL}/api/update-billing-details`,
     SAVE_THE_ORDER: `${URL}/api/save-payment-order`,
 }

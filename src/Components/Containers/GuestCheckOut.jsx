@@ -69,7 +69,13 @@ export default function GuestCheckOut() {
       appoinment:DateTime,
       datetime:datetimeData,
     }).then((response)=>{
-      console.log("Success")
+      if(response.data.status) {
+        toast.success(response.data.message);
+        navigate('/')
+        localStorage.removeItem("CartTestList");
+      } else {
+        toast.error(response.data.message);
+      }
     })
   };
 
@@ -80,10 +86,7 @@ export default function GuestCheckOut() {
       image: data.image,
       order_id: data.order_id,
       handler: function (response) {
-        saveTheOrder(response,"PAID");
-        toast.success("Payment Successs !");
-        localStorage.removeItem("CartTestList");
-        navigate("/");
+        saveTheOrder(response,"PAID"); 
       },
       prefill: {
         name: data.name,
@@ -98,8 +101,7 @@ export default function GuestCheckOut() {
     const rzp1 = new Razorpay(options);
 
     rzp1.on("payment.failed", function (response) {
-      saveTheOrder(response,'FAILED');
-      toast.error("Payment Failed !");
+      saveTheOrder(response,'FAILED'); 
     });
     rzp1.open();
   };
