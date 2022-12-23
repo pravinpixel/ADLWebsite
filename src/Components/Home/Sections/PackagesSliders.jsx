@@ -73,7 +73,7 @@ export default function PackagesSliders({title,subTitle}) {
                 Packages != null ?
                   Packages.map((item,index) => (
                     <div key={index}>
-                      <PackageCard data={item}/>
+                      <PackageCard data={item} packages={getPackageSliders}/>
                     </div>
                   ))
                 : ""

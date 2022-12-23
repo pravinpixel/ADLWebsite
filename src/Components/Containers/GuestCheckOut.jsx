@@ -13,7 +13,9 @@ export default function GuestCheckOut() {
   const [cartTable, setCartTable] = useState([]);
   const [DateTime,setDateTime] = useState(false);
   const [datetimeData,setDatetimeData] = useState(null);
-  
+  useEffect(() => {
+    window.scroll(0,0) 
+  }, [])
   
   const Razorpay = useRazorpay();
   let navigate = useNavigate();
