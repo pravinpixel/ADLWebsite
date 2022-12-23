@@ -92,7 +92,6 @@ export default function TestDetails() {
     <>
       {testDetails !== undefined ? (
         <>
-        {console.log(testDetails)}
           <section className="comon-testdetail-banner">
             <div className="container">
               <div className="row">
@@ -165,7 +164,7 @@ export default function TestDetails() {
                     </ul>
                   </div>
                   <div className="case">
-                    <p>
+                    <p className="d-flex">
                       <CartBtn getData={getTestDetails} testData={testDetails.test} />
                       <Link className="bg-trsnper" to="/">
                         Book Home Collection

@@ -321,10 +321,10 @@ export default function GuestCheckOut() {
                         <td className="text-left">Discount (-)</td>
                         <td className="text-right">- &#8377; 4655</td>
                       </tr> */}
-                      <tr>
-                        <td className="text-left">Coupon Discount (-)</td>
-                        <td className="text-right">- &#8377; 0</td>
-                      </tr>
+                        {/* <tr>
+                          <td className="text-left">Coupon Discount (-)</td>
+                          <td className="text-right">- &#8377; 0</td>
+                        </tr> */}
                       <tr>
                         <td className="text-left">
                           <b>Total</b>
@@ -337,7 +337,7 @@ export default function GuestCheckOut() {
                   </table>
                   <div className="case text-right">
                     <p>
-                      <a onClick={handlePayment}>Make Payment</a>
+                      <a onClick={handlePayment} style={{ color:'white' }}>Make Payment</a>
                     </p>
                   </div>
                 </div>
