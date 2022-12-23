@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
@@ -26,6 +26,10 @@ export default function Login() {
       navigate("/");
     });
   }
+  useEffect(() => {
+    window.scroll(0,0) 
+  }, [])
+  
   return (
     <div>
       <section className="main-billfrm cmnmenu-topmargin">

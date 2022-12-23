@@ -48,6 +48,7 @@ import ChangePassword from './Components/MyProfile/Pages/ChangePassword'
 import Address from './Components/MyProfile/Pages/Address'
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
+import ThankYou from './Components/ThankYou/ThankYou'
 
 export default function App() {
   return (
@@ -61,6 +62,7 @@ export default function App() {
         <Route path='/checkout' exact element={<GuestCheckOut/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
         <Route path='/my-cart' element={<CartList/>} />
+        <Route path='/thank-you' element={<ThankYou/>} />
         <Route path='/' element={<Home/>} />
         <Route path='/about-us' element={<About/>} />
         <Route path='/people-behind' element={<Peoplebhind/>} />

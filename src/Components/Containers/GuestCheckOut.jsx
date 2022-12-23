@@ -71,7 +71,7 @@ export default function GuestCheckOut() {
     }).then((response)=>{
       if(response.data.status) {
         toast.success(response.data.message);
-        navigate('/')
+        navigate('/thank-you')
         localStorage.removeItem("CartTestList");
       } else {
         toast.error(response.data.message);

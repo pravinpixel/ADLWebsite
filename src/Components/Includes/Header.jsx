@@ -25,7 +25,6 @@ const [show, setShow] = useState(false);
 
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
-
 function handleLink(e)
 {
   navElement.current.classList.remove('show');
