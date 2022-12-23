@@ -50,7 +50,7 @@ export default function Department() {
     <div className='col-lg-12 text-center mb-5 pb-5'>
     <div className="vedou-heading"> 
     <span>Anand Lab’s Drive-through Blood Collection Service – The First in the World</span>
-    <Link to='/'> <img src={vedeoimg1} alt="call" className="img-fluid" /> </Link>
+    <iframe width="100%" height="520" src="https://www.youtube.com/embed/shaQf7d_EZQ" title=" " frameborder="0" allow=" " allowfullscreen></iframe> 
     <h5>The Drive-Through Blood Collection Service is<br/> operational from Monday to Saturday, from 7:00AM to 11:00AM.</h5>
     </div>
     </div>  
@@ -60,13 +60,13 @@ export default function Department() {
     </div> 
 
     <div className='col-lg-6'>
-    <div className='vdeo-img'>
-    <Link to='/'> <img src={vedeoimg2} alt="call" className="img-fluid" /> </Link>
+    <div className='vdeo-img'> 
+    <iframe width="100%" height="350" src="https://www.youtube.com/embed/jk7tTvXpoaA" title=" " frameborder="0" allow=" " allowfullscreen></iframe>
     </div>
     </div> 
     <div className='col-lg-6'>
-    <div className='vdeo-img'>
-    <Link to='/'> <img src={vedeoimg3} alt="call" className="img-fluid" /> </Link>
+    <div className='vdeo-img'> 
+    <iframe width="100%" height="350" src="https://www.youtube.com/embed/AhlZCS1oK-Y" title=" " frameborder="0" allow=" " allowfullscreen></iframe>
     </div>
     </div>
     </div>

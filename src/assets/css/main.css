@@ -4825,7 +4825,7 @@ h6.map-ngin {
 }
 
 .vdeo-img {
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
 }
 
@@ -5321,6 +5321,16 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.order-success-video {
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    z-index: 9999;
+    display: none;
+    mix-blend-mode: color-dodge;
 }
 
 @media (min-width: 1400px) {
