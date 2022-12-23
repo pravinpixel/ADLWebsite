@@ -47,3 +47,10 @@ export const removeFromCart = (removeTest) => {
         payload : removeTest
     }
 }
+
+export const setAuthUser = (data) => {
+    return {
+        type    : ActionTypes.AUTH_USER,
+        payload : data
+    }
+}

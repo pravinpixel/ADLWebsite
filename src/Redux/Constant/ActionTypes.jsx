@@ -6,5 +6,6 @@ export const ActionTypes =  {
     SET_ALL_TEST_DETAILS    :   "SET_ALL_TEST_DETAILS", 
     REMOVE_TEST_DETAILS     :   "REMOVE_TEST_DETAILS",
     ADD_TO_CART             :   "ADD_TO_CART",
-    REMOVE_FROM_CART        :   "REMOVE_FROM_CART"
+    REMOVE_FROM_CART        :   "REMOVE_FROM_CART",
+    AUTH_USER        :   "AUTH_USER",
 }

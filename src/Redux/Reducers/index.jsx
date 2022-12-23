@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { BannerSlideReducer } from "./BannerReducer";
 import { TestBookedReducer, addToCardReducer, TestCartReducer, TestDetailReducer, TestListReducer, removeFromCardReducer } from './TestReducer'
+import { AuthReducer } from "./AuthReducer";
 
 const reducers = combineReducers({
     HomePageBanners      : BannerSlideReducer,
@@ -9,7 +10,8 @@ const reducers = combineReducers({
     TestDetails          : TestDetailReducer,
     TestList             : TestListReducer,
     addToCardList        :  addToCardReducer,
-    removeFromCardList   :  removeFromCardReducer
+    removeFromCardList   :  removeFromCardReducer,
+    authUser : AuthReducer
 })
 
 export default reducers

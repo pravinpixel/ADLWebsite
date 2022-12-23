@@ -6,7 +6,10 @@ import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { PutUser } from "../../Helpers/AuthUser";
 import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setAuthUser } from "../../Redux/Actions/TestAction";
 export default function Login() {
+  const dispatch = useDispatch()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
@@ -22,6 +25,7 @@ export default function Login() {
         email : response.data.data.email,
         id : response.data.data.id
       })
+      dispatch(setAuthUser(response.data.data))
       toast.success('Loggin Success')
       navigate("/");
     });
