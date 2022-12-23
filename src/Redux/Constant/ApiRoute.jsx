@@ -13,4 +13,5 @@ export const API_URL = {
     LOGIN              : `${URL}/api/login`,
     UPDATE_BILLING_DETAILS: `${URL}/api/update-billing-details`,
     SAVE_THE_ORDER: `${URL}/api/save-payment-order`,
+    GET_CUSTOMER_INFO: `${URL}/api/customer/`,
 }

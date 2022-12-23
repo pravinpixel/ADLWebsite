@@ -98,13 +98,13 @@ export default function Header() {
                         </li>
                         <li> 
                           {
-                            authUser.length ? 
+                            authUser.length === 0? 
                               <Link to="/login">
                                 <img src={user} alt="" className="img-fluid" />
                                 <span>Login</span>
                               </Link>
                             :
-                              <Link to="/my-account">
+                              <Link to="/my-account/information">
                                 <img src={user} alt="" className="img-fluid" />
                                 <span>My Account</span>
                               </Link>

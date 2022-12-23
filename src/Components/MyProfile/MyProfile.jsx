@@ -12,7 +12,7 @@ export default function MyProfile() {
                 <h1>My Profile</h1>
                 <ul>
                   <li>
-                    <Link to="/"> Home </Link>
+                    <Link to="/my-account/"> Home </Link>
                   </li>
                   <li> / </li>
                   <li> My Profile </li>
@@ -43,14 +43,60 @@ export default function MyProfile() {
 
             <div className="col-lg-4">
               <div className="logout-set text-right">
-                <Link to="/">
+                <Link to="/my-account/">
                   <i className="fa fa-power-off"></i> Log Out
                 </Link>
               </div>
             </div>
-
-            <div className="col-lg-12">
-              <div className="totl-pkglst">
+            <div className="row">
+              <div className="col-3">
+                <div className="Products-factory-lsts netser shadow-sm border">
+                  <ul>
+                    <li>
+                      <Link to="/my-account/information">
+                        <i className="fa fa-user"></i>
+                        Account information
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/update-profile">
+                        <i className="fa fa-pencil-square"></i>
+                        Update Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/orders">
+                        <i className="fa fa-shopping-cart"></i>
+                        Orders
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/return-orders">
+                        <i className="fa fa-reply-all"></i>
+                        Return Orders
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/address">
+                        <i className="fa fa-map-marker"></i>
+                        Address
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/change-password">
+                        <i className="fa fa-lock"></i> Change Password
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/my-account/">
+                        <i className="fa fa-power-off"></i>
+                        Log Out
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-9">
                 <Outlet />
               </div>
             </div>

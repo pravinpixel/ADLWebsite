@@ -95,12 +95,12 @@ export default function App() {
         <Route path='/find-lab' exact element={<FindLab/>} /> 
         
         <Route path="/my-account" element={<MyProfile />}>
-          <Route index element={<AccountInformation/>} /> 
-          <Route path='update-profile' exact element={<UpdateProfile/>} /> 
-          <Route path='orders' exact element={<Orders/>} /> 
-          <Route path='return-orders' exact element={<ReturnOrders/>} /> 
-          <Route path='change-password' exact element={<ChangePassword/>} /> 
-          <Route path='address' exact element={<Address/>} /> 
+          <Route path="information" index element={<AccountInformation/>} /> 
+          <Route path='update-profile' element={<UpdateProfile/>} /> 
+          <Route path='orders' element={<Orders/>} /> 
+          <Route path='return-orders' element={<ReturnOrders/>} /> 
+          <Route path='change-password' element={<ChangePassword/>} /> 
+          <Route path='address' element={<Address/>} /> 
         </Route>
 
         <Route>404 Not Found !</Route>
