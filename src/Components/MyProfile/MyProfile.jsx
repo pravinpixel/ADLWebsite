@@ -1,9 +1,15 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Tab from "react-bootstrap/Tab"; 
+import { Link } from "react-router-dom";
+import AccountInformation from './Pages/AccountInformation'
 
-export default function MyProfile() {
+export default function MyProfile() { 
+ 
   return (
-    <div>
+    <>
       <section className="inner-banner with-liners">
         <div className="inner-caption">
           <div className="container">
@@ -15,94 +21,58 @@ export default function MyProfile() {
                     <Link to="/my-account/"> Home </Link>
                   </li>
                   <li> / </li>
-                  <li> My Profile </li>
-                  <li> / </li>
-                  <li> Account Information </li>
+                  <li> My Profile </li> 
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="filtering-lsts">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="common-heading cmg-img">
-                <span
-                  className="alphabet-argmnt"
-                  style={{ background: "#5c2d91", color: "#fff" }}
-                >
-                  J
-                </span>
-                <h2>
-                  <span> Hello! </span> <span className="yelow"> John </span>
-                </h2>
-              </div>
-            </div>
-
-            <div className="col-lg-4">
-              <div className="logout-set text-right">
-                <Link to="/my-account/">
-                  <i className="fa fa-power-off"></i> Log Out
-                </Link>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-3">
-                <div className="Products-factory-lsts netser shadow-sm border">
-                  <ul>
-                    <li>
-                      <Link to="/my-account/information">
-                        <i className="fa fa-user"></i>
-                        Account information
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/update-profile">
-                        <i className="fa fa-pencil-square"></i>
-                        Update Profile
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/orders">
-                        <i className="fa fa-shopping-cart"></i>
-                        Orders
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/return-orders">
-                        <i className="fa fa-reply-all"></i>
-                        Return Orders
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/address">
-                        <i className="fa fa-map-marker"></i>
-                        Address
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/change-password">
-                        <i className="fa fa-lock"></i> Change Password
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/my-account/">
-                        <i className="fa fa-power-off"></i>
-                        Log Out
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-9">
-                <Outlet />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      <Container className="py-5">
+        {/* <div className="common-heading cmg-img">
+          <span
+            className="alphabet-argmnt"
+            style={{ background: "#5c2d91", color: "#fff" }}
+          >
+            J
+          </span>
+          <h2>
+            <span> Hello! </span> <span className="yelow"> John </span>
+          </h2>
+        </div> */}
+        <Tab.Container id="myProfileTabs" defaultActiveKey="first">
+          <Row>
+            <Col sm={3} className='card border p-0 shadow'>
+              <Nav variant="pills" className="flex-column">
+                <Nav.Item>
+                  <Nav.Link eventKey="first">Account Information</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="MyOrders">My Orders</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="MyAddrees">My Addrees</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="ChangeMyPassword">
+                    Change my Password
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col sm={9}>
+              <Tab.Content>
+                <Tab.Pane eventKey="first">
+                  <AccountInformation/>
+                </Tab.Pane>
+                <Tab.Pane eventKey="MyOrders">2 </Tab.Pane>
+                <Tab.Pane eventKey="MyAddrees">3 </Tab.Pane>
+                <Tab.Pane eventKey="ChangeMyPassword">4 </Tab.Pane>
+              </Tab.Content>
+            </Col>
+          </Row>
+        </Tab.Container>
+      </Container>
+    </>
   );
 }

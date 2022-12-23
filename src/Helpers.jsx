@@ -84,4 +84,4 @@ export const  Validate = (data) => {
       return true
    } 
    return false
-}
+} 

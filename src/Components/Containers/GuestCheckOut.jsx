@@ -54,7 +54,7 @@ export default function GuestCheckOut() {
         }).then((response) => {
           if (response.data.status) {
             CheckOutPayment(response.data.data);
-            PutUser(BillingAddress);
+            localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
           }
         });
     }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Route , Routes } from 'react-router-dom' 
 import Header from './Components/Includes/Header'
 import Footer from './Components/Includes/Footer'
@@ -49,8 +49,18 @@ import Address from './Components/MyProfile/Pages/Address'
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
+import { useDispatch } from 'react-redux'
+import { setAuthUser } from './Redux/Actions/TestAction'
 
 export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    var user = localStorage.getItem('user')
+    if(user !== null) {
+      dispatch(setAuthUser(JSON.parse(localStorage.getItem('user'))));
+    }
+  }, [])
+  
   return (
     <Fragment> 
       
@@ -94,14 +104,14 @@ export default function App() {
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
         <Route path='/find-lab' exact element={<FindLab/>} /> 
         
-        <Route path="/my-account" element={<MyProfile />}>
-          <Route path="information" index element={<AccountInformation/>} /> 
+        <Route path="/my-account" element={<MyProfile />} />
+          {/* <Route path="information" index element={<AccountInformation/>} /> 
           <Route path='update-profile' element={<UpdateProfile/>} /> 
           <Route path='orders' element={<Orders/>} /> 
           <Route path='return-orders' element={<ReturnOrders/>} /> 
           <Route path='change-password' element={<ChangePassword/>} /> 
           <Route path='address' element={<Address/>} /> 
-        </Route>
+        </Route> */}
 
         <Route>404 Not Found !</Route>
       </Routes>

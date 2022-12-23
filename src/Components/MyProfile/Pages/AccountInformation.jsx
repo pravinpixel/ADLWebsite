@@ -1,59 +1,48 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { API_URL } from "../../../Redux/Constant/ApiRoute";
+import Table from 'react-bootstrap/Table';
+
 export default function AccountInformation() {
-  const customer = useSelector((state) => state.authUser.user)
-
-  const getCustomerInfo = () => { 
-    axios.get(API_URL.GET_CUSTOMER_INFO + customer.id).then((response) =>{
-      console.log(response)
-    })
-  }
-
-  useEffect(() => {
-    getCustomerInfo()
-    document.title = "Account Information";
-    window.scroll(0, 0);
-  }, []);
+  const customer = JSON.parse(localStorage.getItem('user'));
+  const customer_billing = JSON.parse(localStorage.getItem('billing_data'));
   return (
-    <div className="Products-factory-functions">
-      <div className="row">
-        <div className="col-12">
-          <div className="accnt-heads">
-            <h4>Basic Information</h4>
-          </div>
-          <div className="acnt-deetils">
-            <ul>
-              <li>
-                <span>
-                  <i className="fa fa-user-o" aria-hidden="true"></i> Name :
-                </span>{" "}
-                John
-              </li>
-              <li>
-                <span>
-                  <i className="fa fa-calendar" aria-hidden="true"></i> DOB :
-                </span>{" "}
-                18/09/1990
-              </li>
-              <li>
-                <span>
-                  <i className="fa fa-envelope-o" aria-hidden="true"></i>{" "}
-                  E-mail :
-                </span>{" "}
-                john@gmail.com
-              </li>
-              <li>
-                <span>
-                  <i className="fa fa-phone" aria-hidden="true"></i> Phone :
-                </span>{" "}
-                1234567890
-              </li>
-            </ul>
-          </div>
+    <div>
+      <div className="card shadow border">
+        <div className="card-body p-0">
+          <Table size="sm" borderless>
+            <tr>
+              <th width="150px">First Name</th>
+              <td>{customer_billing.first_name}</td>
+            </tr>
+            <tr>
+              <th>Last Name</th>
+              <td>{customer_billing.last_name}</td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>{customer.email}</td>
+            </tr>
+            <tr>
+              <th>Phone Number</th>
+              <td>{customer_billing.phone_number}</td>
+            </tr>
+            <tr>
+              <th>Address</th>
+              <td>{customer_billing.address}</td>
+            </tr>
+            <tr>
+              <th>City / Town</th>
+              <td>{customer_billing.city_town}</td>
+            </tr>
+            <tr>
+              <th>State</th>
+              <td>{customer_billing.state}</td>
+            </tr>
+            <tr>
+              <th>Pin Code</th>
+              <td>{customer_billing.pin_code}</td>
+            </tr>
+          </Table>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }

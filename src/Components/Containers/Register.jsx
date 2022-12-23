@@ -14,7 +14,6 @@ export default function Login() {
   const [confirmPassword, setConfirmPassword] = useState(null);
   let navigate = useNavigate();
 
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "name") {
