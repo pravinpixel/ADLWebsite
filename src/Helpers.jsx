@@ -4,8 +4,11 @@ import logo from './assets/images/logo.png';
 import  toast  from "react-hot-toast";
 
 export function assets(params) {
-  // params  =>  Image | File Url
-  return API_URL.ASSETS + params;
+  // params  =>  Image | File Url 
+   if(params.includes("http")) {
+      return params;
+   }
+   return API_URL.ASSETS + params;
 }
 
 export function Loading() {
