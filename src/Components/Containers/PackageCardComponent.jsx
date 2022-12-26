@@ -5,9 +5,9 @@ import CartBtn from "../Containers/CartBtn";
 
 export default function PackageCardComponent(props) {
   return (
-    <div className="pack-deils">
+    <div className="pack-deils p-3">
       <div className="pck-img">
-        <img
+        {/* <img
           src={
             props.data !== undefined
               ? props.data.TestImages !== null
@@ -17,19 +17,14 @@ export default function PackageCardComponent(props) {
           }
           alt=""
           className="img-fluid"
-        />
+        /> */}
         {props.data !== undefined ? (
           props.data.sub_test_list.length !== 0 ? (
-            <div className="ble-fnt">
-              {" "}
+            <div className="ble-fnt"> 
               {props.data.sub_test_list.length} <span>Tests</span>
             </div>
-          ) : (
-            ""
-          )
-        ) : (
-          ""
-        )}
+          ) : null
+        ) : null}
       </div>
       <h3>
         {props.data !== undefined
