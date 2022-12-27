@@ -16,4 +16,8 @@ export const API_URL = {
     GET_CUSTOMER_INFO: `${URL}/api/customer/`,
     PACKAGES_LIST: `${URL}/api/packages`,
     PATIENTS_CONSUMERS: `${URL}/api/patients-consumers`, 
+    FEEDBACKS: `${URL}/api/feedback`, 
+    FAQ: `${URL}/api/faq`, 
+    HOSPITAL_LAB_MANAGEMENT: `${URL}/api/hospital-lab-management`, 
+    
 }

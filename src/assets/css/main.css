@@ -3652,6 +3652,7 @@ iframe.contact-map {
     transition: all 0.3s ease;
 }
 
+.green-bg .formdata input[type="submit"] ,
 .green-bg .formdata input[type="button"] {
     background-color: #f7931e;
     border: 0 none;
@@ -3667,6 +3668,7 @@ iframe.contact-map {
     transition: all 500ms ease-in-out 0s;
 }
 
+.green-bg .formdata input[type="submit"]:hover ,
 .green-bg .formdata input[type="button"]:hover {
     background-color: #ee3639;
     color: #fff;

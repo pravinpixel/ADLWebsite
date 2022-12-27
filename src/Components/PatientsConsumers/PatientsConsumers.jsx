@@ -12,47 +12,62 @@ import consumerimg3 from "../../assets/images/consumerimg3.jpg";
 import { Link } from "react-router-dom";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import Moment from 'moment';
+import Moment from "moment";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 
 export default function Solutions() {
   const {
     register,
-    unregister,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+    reset,
+  } = useForm({
+    defaultValues: {
+      name: "",
+    },
+  });
 
-  const onSubmit = (data) => { 
+  const onSubmit = (data) => {
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
-    formdata.append("date", Moment(data.date).format('DD-MM-YYYY'));
+    formdata.append("date", Moment(data.date).format("DD-MM-YYYY"));
     formdata.append("gender", data.gender);
     formdata.append("test_for_home_collection", data.test_for_home_collection);
-    formdata.append("upload_prescription", data.upload_prescription[0], data.upload_prescription[0].name);
-    formdata.append("preferred_date_1", Moment(data.preferred_date_1).format('DD-MM-YYYY'));
-    formdata.append("preferred_date_2", Moment(data.preferred_date_2).format('DD-MM-YYYY'));
+    formdata.append(
+      "upload_prescription",
+      data.upload_prescription[0],
+      data.upload_prescription[0].name
+    );
+    formdata.append(
+      "preferred_date_1",
+      Moment(data.preferred_date_1).format("DD-MM-YYYY")
+    );
+    formdata.append(
+      "preferred_date_2",
+      Moment(data.preferred_date_2).format("DD-MM-YYYY")
+    );
     formdata.append("preferred_time", data.preferred_time);
     formdata.append("address", data.address);
     formdata.append("pincode", data.pincode);
 
     var requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
+      method: "POST",
+      body: formdata,
+      redirect: "follow",
     };
 
-    fetch(API_URL.PATIENTS_CONSUMERS, requestOptions).then(response => response.json())
-    .then(result => {
-        if(result.Errors === false) {
-            toast.success(result.Message);
-            window.location.reload()
+    fetch(API_URL.PATIENTS_CONSUMERS, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.Errors === false) {
+          toast.success(result.Message);
+          reset();
         }
-    })
-    .catch(error => console.log('error', error));
+      })
+      .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
@@ -281,158 +296,264 @@ export default function Solutions() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-6">  
+            <div className="col-lg-6">
               <div className="anddn-labfrm">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="row">
+                  <div className="row">
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Name</small>
-                        <ErrorMessage errors={errors} name="name" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="text"
-                            name="name"
-                            {...register("name", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Name</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="name"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="text"
+                        name="name"
+                        {...register("name", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Email</small>
-                        <ErrorMessage errors={errors} name="email" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="email"
-                            name="email"
-                            {...register("email", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Email</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="email"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="email"
+                        name="email"
+                        {...register("email", {
+                          required: "This is required.",
+                          pattern:{
+                            value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                            message:'Invalid email address!'
+                          }
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Mobile</small>
-                        <ErrorMessage errors={errors} name="mobile" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="number"
-                            name="mobile"
-                            {...register("mobile", {
-                                required: "This is required."
-                            })}
-                        />  
+                      <small className="text-light">Mobile</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="mobile"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="number"
+                        name="mobile"
+                        {...register("mobile", {
+                          required: "This is required.",
+                          pattern:{
+                            value:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                            message:'Not a valid Phone Number'
+                          } 
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Date of Birth</small>
-                        <ErrorMessage errors={errors} name="dob" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="date"
-                            name="date"
-                            {...register("dob", {
-                                required: "This is required.",
-                            })}
-                        />   
+                      <small className="text-light">Date of Birth</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="dob"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="date"
+                        name="date"
+                        {...register("dob", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Gender</small>
-                        <ErrorMessage errors={errors} name="gender" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="text"
-                            name="gender"
-                            {...register("gender", {
-                                required: "This is required.",
-                            })}
-                        />
+                      <small className="text-light">Gender</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="gender"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="text"
+                        name="gender"
+                        {...register("gender", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Test For Home Collection</small>
-                        <ErrorMessage errors={errors} name="test_for_home_collection" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="text"
-                            name="test_for_home_collection"
-                            {...register("test_for_home_collection", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">
+                        Test For Home Collection
+                      </small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="test_for_home_collection"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="text"
+                        name="test_for_home_collection"
+                        {...register("test_for_home_collection", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Upload Prescription</small>
-                        <ErrorMessage errors={errors} name="upload_prescription" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="file"
-                            name="upload_prescription"
-                            {...register("upload_prescription", {
-                                required: "This is required.",
-                            })}
-                        />
+                      <small className="text-light">Upload Prescription</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="upload_prescription"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="file"
+                        name="upload_prescription"
+                        {...register("upload_prescription", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Preferred Date One</small>
-                        <ErrorMessage errors={errors} name="preferred_date_1" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="date"
-                            name="preferred_date_1"
-                            {...register("preferred_date_1", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Preferred Date One</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="preferred_date_1"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="date"
+                        name="preferred_date_1"
+                        {...register("preferred_date_1", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Preferred Date Two</small>
-                        <ErrorMessage errors={errors} name="preferred_date_2" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="date"
-                            name="preferred_date_2"
-                            {...register("preferred_date_2", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Preferred Date Two</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="preferred_date_2"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="date"
+                        name="preferred_date_2"
+                        {...register("preferred_date_2", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Preferred Time</small>
-                        <ErrorMessage errors={errors} name="preferred_time" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="time"
-                            name="preferred_time"
-                            {...register("preferred_time", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Preferred Time</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="preferred_time"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="time"
+                        name="preferred_time"
+                        {...register("preferred_time", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Address</small>
-                        <ErrorMessage errors={errors} name="address" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="text"
-                            name="address"
-                            {...register("address", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Address</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="address"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="text"
+                        name="address"
+                        {...register("address", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data col-lg-6">
-                        <small className="text-light">Pincode</small>
-                        <ErrorMessage errors={errors} name="pincode" render={({ message }) => <small className="text-danger ml-2">* {message}</small>}/>
-                        <input
-                            className="input100"
-                            type="text"
-                            name="pincode"
-                            {...register("pincode", {
-                                required: "This is required.",
-                            })}
-                        /> 
+                      <small className="text-light">Pincode</small>
+                      <ErrorMessage
+                        errors={errors}
+                        name="pincode"
+                        render={({ message }) => (
+                          <small className="text-danger ml-2">
+                            * {message}
+                          </small>
+                        )}
+                      />
+                      <input
+                        className="input100"
+                        type="text"
+                        name="pincode"
+                        {...register("pincode", {
+                          required: "This is required.",
+                        })}
+                      />
                     </div>
                     <div className="form-data text-center col-lg-12">
-                        <input type="submit" name="submit" value="SUBMIT" />
+                      <input type="submit" name="submit" value="SUBMIT" />
                     </div>
-                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -485,10 +606,7 @@ export default function Solutions() {
                   width="100%"
                   height="520"
                   src="https://www.youtube.com/embed/shaQf7d_EZQ"
-                  title=" "
-                  frameborder="0"
-                  allow=" "
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
