@@ -19,5 +19,6 @@ export const API_URL = {
     FEEDBACKS: `${URL}/api/feedback`, 
     FAQ: `${URL}/api/faq`, 
     HOSPITAL_LAB_MANAGEMENT: `${URL}/api/hospital-lab-management`, 
+    CLINICAL_LAB_MANAGEMENT: `${URL}/api/clinical-lab-management`, 
     
 }
