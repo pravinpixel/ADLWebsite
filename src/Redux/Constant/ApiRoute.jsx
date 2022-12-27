@@ -14,4 +14,5 @@ export const API_URL = {
     UPDATE_BILLING_DETAILS: `${URL}/api/update-billing-details`,
     SAVE_THE_ORDER: `${URL}/api/save-payment-order`,
     GET_CUSTOMER_INFO: `${URL}/api/customer/`,
+    PACKAGES_LIST: `${URL}/api/packages`,
 }

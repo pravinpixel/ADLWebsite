@@ -106,7 +106,7 @@ export default function BookedTestSliders({title , subTitle}) {
           </div>
           <div className="col-lg-12"> 
           <div className="vew-aal mt-5 text-center"> 
-          <a href="/for-patient"> View All</a> 
+          <Link to="/for-patient"> View All</Link> 
           </div>
           </div>
         </div>

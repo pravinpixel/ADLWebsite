@@ -179,7 +179,7 @@ export default function CartList() {
                 <div className="case">
                   <p>
                     <Link to="/for-patient">Add More Test</Link>
-                    <Link className="bg-trsnper" to="/for-patient">
+                    <Link className="bg-trsnper" to="/packages">
                       Add More Package
                     </Link>
                   </p>

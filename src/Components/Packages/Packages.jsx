@@ -1,12 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
-import prdt_img from "../../assets/images/popular-img-1.jpg";
+import axios from "axios";
+import { API_URL } from "../../Redux/Constant/ApiRoute";
+import PackageCardComponent from "../Containers/PackageCardComponent";
+ 
 
 export default function Packages() {
+  const [Packages,setPackages] = useState([])
+  const [ApplicableGender,setApplicableGender] = useState('')
+  const [OrganName,setOrganName] = useState('')
+  const [HealthCondition,setHealthCondition] = useState('')
+  const filterHandler = (type,data) => {
+    if(type === 'Gender') {
+      setApplicableGender(data)
+    }
+    fetchPackages()
+  }
+  const fetchPackages = () => {
+    axios.post(API_URL.PACKAGES_LIST,{
+      ApplicableGender : ApplicableGender,
+      OrganName : OrganName,
+      HealthCondition : HealthCondition,
+    }).then((response) => {
+      setPackages(response.data.data)
+    });
+  };
   useEffect(() => {
     document.title = "Our Packages";
     window.scroll(0, 0);
+    fetchPackages();
   }, []);
   return (
     <div>
@@ -54,22 +77,22 @@ export default function Packages() {
                       <ul>
                         <h4>Gender</h4>
                         <li>
-                          <label className="cstm-chkbx">
+                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','M')}>
                             Male
                             <input type="checkbox" />
                             <span className="checkmark"></span>
                           </label>
                         </li>
                         <li>
-                          <label className="cstm-chkbx">
+                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','F')}>
                             Female
                             <input type="checkbox" />
                             <span className="checkmark"></span>
                           </label>
                         </li>
                         <li>
-                          <label className="cstm-chkbx">
-                            Others
+                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','B')}>
+                            Both & Others
                             <input type="checkbox" />
                             <span className="checkmark"></span>
                           </label>
@@ -162,203 +185,29 @@ export default function Packages() {
                         </li>
                         <li>
                           <label className="cstm-chkbx">
-                             High to low
+                            High to low
                             <input type="radio" name="price_range" />
                             <span className="checkmark"></span>
                           </label>
-                        </li>  
-                      </ul> 
+                        </li>
+                      </ul>
                     </div>
                   </div>
 
                   <div className="col-9">
                     <div className="Products-factory-functions">
                       <div className="row">
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
+                        {Packages.length !== 0 ? 
+                          Packages.map((item, index) =>  {
+                             return <div key={index} className="col-lg-4">
+                                  <PackageCardComponent
+                                    data={item}
+                                    packages={fetchPackages}
+                                  />
                               </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
-                              </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
-                              </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
-                              </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
-                              </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <div className="pack-deils">
-                            <div className="pck-img">
-                              <img
-                                src={prdt_img}
-                                alt="call"
-                                className="img-fluid"
-                              />
-                              <div className="ble-fnt">
-                                60 <span>Tests</span>
-                              </div>
-                            </div>
-                            <h3>NEU Express</h3>
-                            <h4>
-                              Cholesterol, Triglycerides, HDL, Direct LDL,
-                              Calculated Total cholesterol to HDL-cholesterol
-                              Ratio...<a href="/">+ More</a>
-                            </h4>
-                            <h5>
-                              ₹180
-                              <span className="strke">
-                                <s>₹280</s>
-                              </span>
-                            </h5>
-                            <h6>79 % off T&amp;C*</h6>
-                            <p>
-                              <a href="about-us">Book Now</a>
-                            </p>
-                          </div>
-                        </div>
+                          } 
+                          )
+                        : ""} 
                       </div>
                     </div>
                   </div>
@@ -367,7 +216,7 @@ export default function Packages() {
             </div>
           </div>
         </div>
-      </section> 
+      </section>
     </div>
   );
 }
