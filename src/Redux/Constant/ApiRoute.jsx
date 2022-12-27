@@ -15,4 +15,5 @@ export const API_URL = {
     SAVE_THE_ORDER: `${URL}/api/save-payment-order`,
     GET_CUSTOMER_INFO: `${URL}/api/customer/`,
     PACKAGES_LIST: `${URL}/api/packages`,
+    PATIENTS_CONSUMERS: `${URL}/api/patients-consumers`, 
 }

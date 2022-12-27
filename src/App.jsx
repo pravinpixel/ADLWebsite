@@ -40,17 +40,13 @@ import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
 import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
-import AccountInformation from './Components/MyProfile/Pages/AccountInformation'
-import UpdateProfile from './Components/MyProfile/Pages/UpdateProfile'
-import Orders from './Components/MyProfile/Pages/Orders'
-import ReturnOrders from './Components/MyProfile/Pages/ReturnOrders'
-import ChangePassword from './Components/MyProfile/Pages/ChangePassword'
-import Address from './Components/MyProfile/Pages/Address'
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
 import { useDispatch } from 'react-redux'
 import { setAuthUser } from './Redux/Actions/TestAction'
+import "react-datepicker/dist/react-datepicker.css";
+
 
 export default function App() {
   const dispatch = useDispatch();

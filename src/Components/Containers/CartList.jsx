@@ -220,7 +220,7 @@ export default function CartList() {
             <img src={emptyCart} alt="Cart is Empty" className="my-5" />
             <p>
               <Link to="/for-patient">Add Test</Link>
-              <Link className="bg-trsnper" to="/for-patient">
+              <Link className="bg-trsnper" to="/packages">
                 Add Package
               </Link>
             </p>
