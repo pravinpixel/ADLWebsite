@@ -3,12 +3,31 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AccountInformation from "./Pages/AccountInformation";
 import ChangePassword from "./Pages/ChangePassword";
 import Orders from "./Pages/Orders";
 import AuthUser from "../../Helpers/AuthUser";
+import Swal from "sweetalert2";
+import { toast } from "react-hot-toast";
 export default function MyProfile() { 
+  let navigate = useNavigate();
+  const LogoutAccount = () => {
+    Swal.fire({
+      title: "Want to Logout ?",
+      allowOutsideClick: false,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) { 
+        localStorage.clear();
+        toast.success('Logout Success !')
+        window.location.replace('/')
+      }
+    });
+  }
   return (
     <>
       <section className="inner-banner with-liners">
@@ -69,6 +88,10 @@ export default function MyProfile() {
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
+              <div className="text-center">
+                <hr />
+                <button onClick={LogoutAccount} className="btn-danger d-block rounded px-4 mx-auto"><i className="fa fa-power-off"></i> Logout</button>
+              </div>
             </Col>
             <Col sm={9}>
               <Tab.Content>

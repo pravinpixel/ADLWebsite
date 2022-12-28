@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import AuthUser, { PutUser } from "../../Helpers/AuthUser";
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-hot-toast";
 
 
 export default function Login() {
@@ -37,14 +38,20 @@ export default function Login() {
         email   : email,
         password: password,
       }).then((response) => {
-        PutUser({
-          email : response.data.data.email,
-          id : response.data.data.id
-        })
-        if(AuthUser()) {
-          navigate("/");
+        if(response.data.status) {
+          PutUser({
+            email : response.data.data.email,
+            id : response.data.data.id
+          })
+          if(AuthUser()) {
+            navigate("/");
+          }
+        } else {
+          toast.error(response.data.message)
         }
       })
+    } else {
+      toast.error('Passwords did not match !')
     }
   };
 

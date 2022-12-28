@@ -21,14 +21,20 @@ export default function Login() {
       email : email,
       password : password,
     }).then((response) =>{
-      PutUser({
-        email : response.data.data.email,
-        id : response.data.data.id,
-        name : response.data.data.name,
-      })
-      dispatch(setAuthUser(response.data.data))
-      toast.success('Loggin Success')
-      navigate("/");
+      if(response.data.status) {
+        PutUser({
+          email : response.data.data.email,
+          id : response.data.data.id,
+          name : response.data.data.name,
+        })
+        dispatch(setAuthUser(response.data.data))
+        toast.success('Loggin Success')
+        navigate("/");
+      } else {
+        toast.error(response.data.message)
+      }
+    }).catch((errors) => {
+      console.log(errors.response)
     });
   }
   useEffect(() => {
@@ -75,7 +81,7 @@ export default function Login() {
                             <div className="form-data col-lg-12">
                               <input
                                 className="input100"
-                                type="text"
+                                type="password"
                                 name="name"
                                 placeholder="Password"
                                 onChange={(e) => setPassword(e.target.value)}
@@ -97,16 +103,16 @@ export default function Login() {
                               <h5>or</h5>
                             </div>
                           </div>
-                          <div className="col-lg-12 text-center p-0">
+                          {/* <div className="col-lg-12 text-center p-0 mb-3">
                             <div className="login-btn">
                               <Link to="" onClick={handleShow}>
                                 Login with OTP{" "}
                               </Link>
                             </div>
-                          </div>
-                          <div className="col-lg-12 text-center mt-3">
+                          </div> */}
+                          <div className="col-lg-12 text-center">
                             <div className="user-regster">
-                              New User
+                              You Don't have a account ?
                               <Link to="/register"> Register Here!</Link>
                             </div>
                           </div>
