@@ -22,4 +22,5 @@ export const API_URL = {
     CLINICAL_LAB_MANAGEMENT: `${URL}/api/clinical-lab-management`, 
     RESEARCH: `${URL}/api/research`,  
     HEALTHCHECKUP_FOR_EMPLOYEES: `${URL}/api/healthcheckup-for-employees`,   
+    BOOK_AN_APPOINTMENT: `${URL}/api/book-an-appointment`,
 }
