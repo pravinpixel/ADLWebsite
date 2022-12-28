@@ -38,6 +38,9 @@ export default function GuestCheckOut() {
   };
 
   useEffect(() => {
+    setBillingAddress(JSON.parse(localStorage.getItem("billing_data")));
+    console.log(BillingAddress)
+  
     setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     var AuthUserData = AuthUser();
     if (AuthUserData.first_name ?? false) {
@@ -50,7 +53,8 @@ export default function GuestCheckOut() {
       axios.post(API_URL.UPDATE_BILLING_DETAILS, {
           ...BillingAddress,
           amount: totalPrice,
-          datetime:datetimeData
+          datetime:datetimeData,
+          id: AuthUser().id,
         }).then((response) => {
           if (response.data.status) {
             CheckOutPayment(response.data.data);
@@ -70,6 +74,7 @@ export default function GuestCheckOut() {
       products:cartTable,
       appoinment:DateTime,
       datetime:datetimeData,
+      total_price:totalPrice
     }).then((response)=>{
       if(response.data.status) {
         toast.success(response.data.message);

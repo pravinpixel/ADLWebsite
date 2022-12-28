@@ -1,63 +1,73 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Form } from 'react-component-form' 
+import {API_URL} from '../../../Redux/Constant/ApiRoute'
+import { toast } from 'react-hot-toast';
+import AuthUser from "../../../Helpers/AuthUser";
+import axios from 'axios';
 
 export default function ChangePassword() {
+  const ChangeMyPassword = (data,formElement) => {
+    axios.post(API_URL.CHANGE_MY_PASSWORD + AuthUser().id,data).then((response) => { 
+      if(response.data.status) {
+        toast.success(response.data.message)
+        formElement.reset()
+      }
+    }).catch((errors) => {
+      if(errors.response.data.errors.confirm_password) {
+        toast.error(errors.response.data.errors.confirm_password[0])
+      }
+      if(errors.response.data.errors.old_password) {
+        toast.error(errors.response.data.errors.old_password[0])
+      }
+    })
+  }
   return (
-    <div className="col-9">
-      <div className="Products-factory-functions">
-        <div className="row">
-          <div className="col-12">
-            <div className="accnt-heads">
-              <h4>Change Password</h4>
+    <div>
+      <div className="card shadow border">
+        <div className="card-body">
+          <Form onSubmit={ChangeMyPassword}>
+            <div className="row m-0 mb-2">
+              <div className="col-md-3">
+                <b>Old Password</b>
+              </div>
+              <div className="col p-0">
+                <input
+                  type="password"
+                  className="form-control"
+                  name="old_password" 
+                />
+              </div>
             </div>
-            <div className="update-profile">
-              <form
-                name="contactform"
-                method="post"
-                action="#"
-                id="contactform"
-              >
-                <div className="formdata">
-                  <input
-                    type="password"
-                    placeholder="Current Password"
-                    name="name"
-                    id="name"
-                    className="form-control jsrequired "
-                  />
-                </div>
-                <div className="formdata">
-                  {" "}
-                  <input
-                    type="password"
-                    placeholder="New Paaword"
-                    name="email"
-                    id="email"
-                    className="form-control jsrequired "
-                  />
-                </div>
-                <div className="formdata">
-                  {" "}
-                  <input
-                    type="password"
-                    placeholder="Re-type New Password"
-                    name="email"
-                    id="email"
-                    className="form-control jsrequired "
-                  />
-                </div>
-                <div className="formdata">
-                  {" "}
-                  <input
-                    type="button"
-                    name="submit"
-                    value="Update"
-                    onClick="submit_contact();"
-                  />
-                </div>
-              </form>
+            <div className="row m-0 mb-2">
+              <div className="col-md-3">
+                <b>New Password</b>
+              </div>
+              <div className="col p-0">
+                <input
+                  type="password"
+                  className="form-control"
+                  name="new_password" 
+                />
+              </div>
             </div>
-          </div>
+            <div className="row m-0 mb-2">
+              <div className="col-md-3">
+                <b>Confirm Password</b>
+              </div>
+              <div className="col p-0">
+                <input
+                  type="password"
+                  className="form-control"
+                  name="confirm_password" 
+                />
+              </div>
+            </div> 
+            <button
+              type="submit"
+              className="btn-primary rounded px-3 py-2 float-right"
+            >
+              Update
+            </button>
+          </Form>
         </div>
       </div>
     </div>

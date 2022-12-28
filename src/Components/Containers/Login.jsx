@@ -23,7 +23,8 @@ export default function Login() {
     }).then((response) =>{
       PutUser({
         email : response.data.data.email,
-        id : response.data.data.id
+        id : response.data.data.id,
+        name : response.data.data.name,
       })
       dispatch(setAuthUser(response.data.data))
       toast.success('Loggin Success')
