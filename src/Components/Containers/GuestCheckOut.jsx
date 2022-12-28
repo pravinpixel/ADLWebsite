@@ -3,13 +3,15 @@ import { Form } from "react-component-form";
 import { Link, useNavigate } from "react-router-dom";
 import AuthProvider from "../../Helpers/AuthProvider";
 import useRazorpay from "react-razorpay";
-import AuthUser, { PutUser } from "../../Helpers/AuthUser";
+import AuthUser from "../../Helpers/AuthUser";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { toast } from "react-hot-toast";
 import { Validate } from "../../Helpers";
-
+import { useDispatch } from 'react-redux';
+import { setTestCartList } from '../../Redux/Actions/TestAction';
 export default function GuestCheckOut() {
+  const dispatch = useDispatch()
   const [cartTable, setCartTable] = useState([]);
   const [DateTime,setDateTime] = useState(false);
   const [datetimeData,setDatetimeData] = useState(null);
@@ -77,9 +79,10 @@ export default function GuestCheckOut() {
       total_price:totalPrice
     }).then((response)=>{
       if(response.data.status) {
-        toast.success(response.data.message);
-        navigate('/thank-you')
         localStorage.removeItem("CartTestList");
+        toast.success(response.data.message);
+        dispatch(setTestCartList([]));
+        navigate('/thank-you')
       } else {
         toast.error(response.data.message);
       }
@@ -152,7 +155,7 @@ export default function GuestCheckOut() {
                               <input
                                 className="input100"
                                 type="text"
-                                value={BillingAddress.first_name}
+                                value={BillingAddress && BillingAddress.first_name}
                                 name="first_name"
                                 placeholder="Enter Your First Name"
                                 onChange={(e) => FormHandler(e)}
@@ -165,7 +168,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="last_name"
-                                value={BillingAddress.last_name}
+                                value={BillingAddress && BillingAddress.last_name}
                                 placeholder="Enter Your Last Name"
                                 required
                                 onChange={(e) => FormHandler(e)}
@@ -177,7 +180,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="email"
-                                value={BillingAddress.email}
+                                value={BillingAddress && BillingAddress.email}
                                 placeholder="Enter Your E-mail ID"
                                 required
                                 onChange={(e) => FormHandler(e)}
@@ -190,7 +193,7 @@ export default function GuestCheckOut() {
                                 type="number"
                                 pattern="/^\d{10}$/"
                                 name="phone_number"
-                                value={BillingAddress.phone_number}
+                                value={BillingAddress && BillingAddress.phone_number}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Enter your Contact Number"
                                 required
@@ -202,7 +205,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="address"
-                                value={BillingAddress.address}
+                                value={BillingAddress && BillingAddress.address}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Street No, Street Name"
                                 required
@@ -215,7 +218,7 @@ export default function GuestCheckOut() {
                                 type="text"
                                 name="city_town"
                                 onChange={(e) => FormHandler(e)}
-                                value={BillingAddress.city_town}
+                                value={BillingAddress && BillingAddress.city_town}
                                 placeholder="City/Town"
                                 required
                               />
@@ -226,7 +229,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="state"
-                                value={BillingAddress.state}
+                                value={BillingAddress && BillingAddress.state}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Select Your State"
                                 required
@@ -238,7 +241,7 @@ export default function GuestCheckOut() {
                                 className="input100"
                                 type="text"
                                 name="pin_code"
-                                value={BillingAddress.pin_code}
+                                value={BillingAddress && BillingAddress.pin_code}
                                 onChange={(e) => FormHandler(e)}
                                 placeholder="Enter Your PIN Code"
                                 required

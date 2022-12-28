@@ -26,4 +26,5 @@ export const API_URL = {
     UPDATE_MY_PROFILE: `${URL}/api/update-customer/`,    
     GET_MY_ORDERS: `${URL}/api/get-orders/`,    
     CHANGE_MY_PASSWORD: `${URL}/api/change-my-password/`,     
+    CANCEL_MY_ORDER: `${URL}/api/cancel-my-order/`,      
 }

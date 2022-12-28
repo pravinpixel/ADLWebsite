@@ -25,7 +25,7 @@ export default function ChangePassword() {
       <div className="card shadow border">
         <div className="card-body">
           <Form onSubmit={ChangeMyPassword}>
-            <div className="row m-0 mb-2">
+            <div className="row m-0 mb-3">
               <div className="col-md-3">
                 <b>Old Password</b>
               </div>
@@ -34,10 +34,11 @@ export default function ChangePassword() {
                   type="password"
                   className="form-control"
                   name="old_password" 
+                  placeholder='Enter your password'
                 />
               </div>
             </div>
-            <div className="row m-0 mb-2">
+            <div className="row m-0 mb-3">
               <div className="col-md-3">
                 <b>New Password</b>
               </div>
@@ -46,10 +47,11 @@ export default function ChangePassword() {
                   type="password"
                   className="form-control"
                   name="new_password" 
+                  placeholder='Enter your new password'
                 />
               </div>
             </div>
-            <div className="row m-0 mb-2">
+            <div className="row m-0 mb-3">
               <div className="col-md-3">
                 <b>Confirm Password</b>
               </div>
@@ -58,6 +60,7 @@ export default function ChangePassword() {
                   type="password"
                   className="form-control"
                   name="confirm_password" 
+                  placeholder='Re-enter your new password'
                 />
               </div>
             </div> 
