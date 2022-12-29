@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router';
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 
 export default function FindLab() {
   const location = useLocation();
-  const [Lab, setLab] = useState(null);
-  var apiPath;
+  const navigate = useNavigate();
+  
+  const [Lab, setLab] = useState([]); 
 
-  const getLocation = () => {
-    if (location.state !== null) { 
-      apiPath = `${API_URL.GET_LAB_LOCATION}/${location.state.LocationId}`;
-    } else {
-      apiPath = API_URL.GET_LAB_LOCATION;
-    }
-    axios.get(apiPath).then((response) => {
+  const getLocation = () => {  
+    axios.get(`${API_URL.GET_LAB_LOCATION}/${location.state.LocationId}`).then((response) => {
       setLab(response.data);
     });
   };
   useEffect(() => {
-    getLocation();
+    if(location.state === null) {
+      navigate('/') 
+    } else {
+      getLocation();
+    }
     document.title = "FindLab";
     window.scroll(0, 0);
   }, []);
@@ -56,7 +57,7 @@ export default function FindLab() {
               <div className="common-heading">
                 <h2>
                
-                  <span className="inlne">Our</span> {Lab&&Object.entries(Lab)[0][0]} Locations
+                  <span className="inlne">Our</span> {Lab.length !== 0 ? Object.entries(Lab)[0][0] : null} Locations
                 </h2>
               </div>
               <p>
@@ -67,7 +68,7 @@ export default function FindLab() {
                 of our extensive range of services.
               </p>
             </div>  
-            {Lab !== null
+            {Lab.length !== 0
               ? Object.entries(Lab)[0][1].map((item, i) => {
                   return (
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 mt-4" key={i}>
@@ -100,7 +101,7 @@ export default function FindLab() {
                     </div>
                   );
                 })
-              : null}
+              : <h1>Loading</h1>}
           </div>
         </div>
       </section>

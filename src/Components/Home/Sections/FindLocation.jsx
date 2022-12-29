@@ -3,6 +3,7 @@ import map from '../../../assets/images/map.png'
 import axios from 'axios';
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import { useNavigate } from 'react-router';
+import { toast } from "react-hot-toast";
 
 export default function FindLocation() {
   const navigate = useNavigate();
@@ -10,7 +11,11 @@ export default function FindLocation() {
   const [LocationId, setLocationId] = useState(null)
 
   const findALocation = () => {
-    navigate('/find-lab',{ state: { LocationId: LocationId } })
+    if(LocationId) {
+      navigate('/find-lab',{ state: { LocationId: LocationId } })
+    } else {
+      toast.error('You need to choose a city first')
+    }
   }
 
   const getCitiesMaster = () => {
@@ -43,7 +48,7 @@ export default function FindLocation() {
                  <option value="">-- choose your city --</option>
                   {
                     city !== null ? 
-                      Object.entries(city).map((item) => <option value={item[1]}>{item[0]}</option>)
+                      Object.entries(city).map((item,i) => <option key={i} value={item[1]}>{item[0]}</option>)
                     : null
                   }
                 </select>
