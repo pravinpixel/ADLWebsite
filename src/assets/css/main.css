@@ -1802,7 +1802,7 @@ section.accrediation {
     content: "";
     background-color: #585858;
     height: 100%;
-    width: 38%;
+    width: 33%;
     right: 0;
     top: 0;
 }
@@ -5658,6 +5658,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1000px) {
+    .navbar-default .dropdown .dropdown-menu .thrd-clmn .dropdown-item {
+        margin: 10px 15px;
+        font-size: 14px;
+    }
     .cont-acts .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
@@ -5826,13 +5830,13 @@ input[type="range"]::-moz-range-thumb {
         height: 642px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-doc {
-        height: 240px;
+        height: 280px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-hea {
         height: 610px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-con {
-        height: 320px;
+        height: 170px;
     }
     .navbar-default.navbar-trans .nav-item {
         width: 100%;

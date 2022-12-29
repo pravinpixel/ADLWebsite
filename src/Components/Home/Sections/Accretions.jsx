@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import award from '../../../assets/images/award.png'
 export default function Accretions() {
   return (
@@ -16,7 +17,7 @@ export default function Accretions() {
                 <div className="acrdes-solution">
                   <p><img src={award} alt="" className="img-fluid"/> ADL was first accredited in 2001, and we were the first diagnostic laboratory in 
                     South India to gain NABL accreditation.
-                    <span>Read More...</span>
+                    <span><Link to="/accreditation">Read More...</Link></span>
                   </p>
                 </div>
               </div>

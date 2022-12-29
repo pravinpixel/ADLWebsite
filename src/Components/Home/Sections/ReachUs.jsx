@@ -20,7 +20,7 @@ export default function ReachUs() {
                             <li>
                                 <Link to="/">
                                     <img src={mail} alt="mail" className="img-fluid"/>
-                                    <h4>enquiry@anandlab.com <span>Need support? Drop us an email</span></h4>
+                                    <h4>digitalleads@neubergdiagnostics.com <span>Need support? Drop us an email</span></h4>
                                 </Link>
                             </li>
                         </ul>

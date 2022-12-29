@@ -53,7 +53,7 @@ export default function Footer() {
                   </li>
                 </ul>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-3">
                 <ul>
                 <h5>Patients</h5>
                   <li>
@@ -91,7 +91,7 @@ export default function Footer() {
                   </li>
                 </ul>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-3">
                 <ul>
                 <h5>Doctors</h5>
                   <li>
@@ -114,12 +114,12 @@ export default function Footer() {
                   </li>
                 </ul>
                 </div>
-                <div className="col-lg-2">
+                {/* <div className="col-lg-2">
                 <ul>
                 <h5>Health Checkup</h5>
                   {/* <li>
                     <Link to="/">Reach Our Lab</Link>
-                  </li> */}
+                  </li> 
                   <li>
                     <Link to="/book-an-appointment">Book Home Collection</Link>
                   </li>
@@ -129,7 +129,7 @@ export default function Footer() {
                   <li>
                     <Link to="">Clinical & Imaging Services</Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link to="/">Drive through Blood Collection</Link>
                   </li>
                   <li>
@@ -143,12 +143,12 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link to="/">V-Card, A Patient Beneficial Program</Link>
-                  </li> */}
+                  </li>  
                   <li>
                     <Link to="/physiotherapy">Physiotherapy</Link>
                   </li>
                 </ul>
-                </div>
+                </div> */}
                 <div className="col-lg-2">
                 <ul>
                 <h5>Reach Us</h5>

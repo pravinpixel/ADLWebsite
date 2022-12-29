@@ -87,7 +87,7 @@ export default function LatestBlogs() {
               <div className="know-hub">
                 <h4>What is Antibody Testing?</h4>
                 <p>The antibody or serology test is done to ascertain a previous viral infection and the body’s immune response towards it.</p>
-                <p><a href="">Read More</a></p>
+                <p><a href="https://www.anandlab.com/blog/" target="_blank">Read More</a></p>
               </div>
             </div>
           </div>

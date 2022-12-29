@@ -139,10 +139,10 @@ export default function Header() {
                           </a>
                         </li>
                         <li>
-                          <Link to="/">
+                          <a href="tel:18004251974">
                             <img src={toll} alt="" className="img-fluid" />
                             <span>Toll-free</span>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -352,9 +352,9 @@ export default function Header() {
                                     </a>
                                   </li>
                                   <li>
-                                    <Link
+                                    <a
                                       onClick={handleLink}
-                                      to="/"
+                                      href="tel:18004251974"
                                       className="dropdown-item"
                                     >
                                       <img
@@ -363,7 +363,7 @@ export default function Header() {
                                         className="img-fluid"
                                       />
                                       18004251974 (TOLL-FREE)
-                                    </Link>
+                                    </a>
                                   </li>
                                 </ul>
                               </li>
@@ -406,6 +406,16 @@ export default function Header() {
                                 Department{" "}
                               </Link>
                             </li>
+                                  <li>
+                                    <Link
+                                      onClick={handleLink}
+                                      to="/physiotherapy"
+                                      className="dropdown-item"
+                                    >
+                                      {" "}
+                                      Physiotherapy{" "}
+                                    </Link>
+                                  </li>
                             <li>
                               <Link
                                 onClick={handleLink}
@@ -448,7 +458,15 @@ export default function Header() {
                             </li>
                           </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item sngle-frce about-inn">
+                          <Link
+                            onClick={handleLink}
+                            className="nav-link"
+                            to="/packages"
+                          >Health Checkup
+                          </Link> 
+                        </li>
+                        {/* <li className="nav-item dropdown">
                           <Link
                             onClick={handleLink}
                             className="nav-link dropdown-toggle"
@@ -468,7 +486,7 @@ export default function Header() {
                                 <ul>
                                   {/* <li>
                             <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link> 
-                          </li> */}
+                          </li>  
 
                                   <li>
                                     <Link
@@ -493,7 +511,7 @@ export default function Header() {
                                   </li>
                                   {/* <li>
                           <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
-                          </li>  */}
+                          </li>   
                                 </ul>
                               </li>
 
@@ -510,7 +528,7 @@ export default function Header() {
                           </li>
                           <li>
                             <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
-                          </li> */}
+                          </li>  
 
                                   <li>
                                     <Link
@@ -537,7 +555,7 @@ export default function Header() {
 
                               <li className="col thrd-clmn">
                                 <ul>
-                                  {/* <li>
+                                  <li>
                           <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
@@ -554,11 +572,11 @@ export default function Header() {
                             <img src={men3} alt="" className="img-fluid"/>
                             Diabetes Assesment Tool
                           </a>
-                          </li> */}
+                          </li> 
                                   <li>
-                                    <Link
+                                    <a
                                       onClick={handleLink}
-                                      to="/"
+                                      href="tel:18004251974"
                                       className="dropdown-item"
                                     >
                                       <img
@@ -567,13 +585,13 @@ export default function Header() {
                                         className="img-fluid"
                                       />
                                       18004251974 (TOLL-FREE)
-                                    </Link>
+                                    </a>
                                   </li>
                                 </ul>
                               </li>
                             </ul>
                           </div>
-                        </li>
+                        </li> */}
                         <li className="nav-item dropdown sngle-frce">
                           <Link
                             onClick={handleLink}
@@ -741,7 +759,7 @@ export default function Header() {
                 </div>
                 <div className="col-lg-12 text-center p-0">
                   <div className="login-btn">
-                    <button className="btn-primary"> Save Changes </button>
+                    <button className="btn-primary"> Locate </button>
                   </div>
                 </div>
               </Form>
