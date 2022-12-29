@@ -7,19 +7,20 @@ import CartBtn from "../Containers/CartBtn";
 export default function PackageCardComponent(props) {
   const TestLocation = useSelector((state) => state.TestLocation); 
   return (
-    <div className="pack-deils p-3">
+    <div className="pack-deils">
       <div className="pck-img">
-        {/* <img
-          src={
-            props.data !== undefined
-              ? props.data.TestImages !== null
-                ? props.data.TestImages
-                : popImg
-              : popImg
-          }
-          alt=""
+        <img
+          src={popImg}
+          // src={
+          //   props.data !== undefined
+          //     ? props.data.TestImages !== null
+          //       ? props.data.TestImages
+          //       : popImg
+          //     : popImg
+          // }
+          alt="img"
           className="img-fluid"
-        /> */}
+        />
         {props.data !== undefined ? (
           props.data.sub_test_list.length !== 0 ? (
             <div className="ble-fnt"> 
