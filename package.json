@@ -1,7 +1,7 @@
 {
   "name": "adl_website",
   "version": "0.1.0",
-  "homepage": "http://adl.pixel-studios.net",
+  "homepage": "http://beta.anandlabreports.com",
   "private": true,
   "dependencies": {
     "@hookform/error-message": "^2.0.1",

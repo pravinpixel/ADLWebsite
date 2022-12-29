@@ -19,7 +19,7 @@ export default function CartCount() {
                     : 
                         localStorage.getItem('CartTestList') !== null 
                     ?
-                        JSON.parse(localStorage.getItem('CartTestList')).length != 0 ? 
+                        JSON.parse(localStorage.getItem('CartTestList')).length !== 0 ? 
                         <b className="badge badge-dark cart-count">{JSON.parse(localStorage.getItem('CartTestList')).length}</b>
                         : null
                     :   null

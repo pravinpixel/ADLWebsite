@@ -41,7 +41,8 @@ export default function Login() {
         if(response.data.status) {
           PutUser({
             email : response.data.data.email,
-            id : response.data.data.id
+            id : response.data.data.id,
+            name : response.data.data.name
           })
           if(AuthUser()) {
             navigate("/");

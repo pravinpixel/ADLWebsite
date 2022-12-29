@@ -1,8 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 import map from '../../../assets/images/map.png'
+import axios from 'axios';
+import { API_URL } from '../../../Redux/Constant/ApiRoute';
+import { useNavigate } from 'react-router';
 
 export default function FindLocation() {
+  const navigate = useNavigate();
+  const [city, setCity] = useState([])
+  const [LocationId, setLocationId] = useState(null)
+
+  const findALocation = () => {
+    navigate('/find-lab',{ state: { LocationId: LocationId } })
+  }
+
+  const getCitiesMaster = () => {
+    axios.get(API_URL.GET_CITY_MASTER).then((response) => {
+      setCity(response.data) 
+    })
+  }
+
+  useEffect(() => {
+    getCitiesMaster()
+  }, [])
+  
   return (
     <section className="maping">
       <div className="container">
@@ -13,13 +33,22 @@ export default function FindLocation() {
             </div>
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div className="location-details text-center">
+            <div className="location-detailsx text-center">
               <div className="common-heading">
                 <h2><span> The Anandlab</span> Network</h2>
               </div>
               <p>We are focused on uniting borders across <br/>geographies to make better diagnosis a reality. </p>
-              <input type="text" placeholder="Select City" name="search"/>
-              <Link to="/find-lab">Find a Location</Link>
+              <div className="input-group">
+                <select className='form-control' onChange={(e) => setLocationId(e.target.value)}>
+                 <option value="">-- choose your city --</option>
+                  {
+                    city !== null ? 
+                      Object.entries(city).map((item) => <option value={item[1]}>{item[0]}</option>)
+                    : null
+                  }
+                </select>
+                <button onClick={findALocation} className='btn-warning rounded'>Find a Location</button>
+              </div>
             </div>
           </div>
         </div>
