@@ -1,13 +1,13 @@
-import React from "react";
-
+import { useSelector } from 'react-redux'
 export default function TestBanner(props) {
+  const TestLocation = useSelector((state) => state.TestLocation);
   return (
     <section className="search-container">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="serchnig text-center">
-              <h1>Home Collection Booking in Bangalore</h1>
+              <h1 className="mb-3">Home Collection Booking in <span style={{ textTransform:'capitalize' }}>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-',' ') : null}</span></h1>
               <input
                 type="text"
                 placeholder="Search for Health Packages / Tests / Labs"
@@ -16,7 +16,7 @@ export default function TestBanner(props) {
                   props.setSearch(e.target.value)
                 }}
               />
-              <div className="testBySec d-flex justify-content-center align-items-center">
+              {/* <div className="testBySec d-flex justify-content-center align-items-center">
                 <label className="testTxt">Filter By</label>
                 <div className="badgeSec">
                   <ul className="badgeList">
@@ -31,8 +31,8 @@ export default function TestBanner(props) {
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className="chk-bxes text-center">
+              </div> */}
+              {/* <div className="chk-bxes text-center">
                 <div className="cutsomCheckBox circle">
                   <input
                     type="radio"
@@ -55,7 +55,7 @@ export default function TestBanner(props) {
                     <span className="lableTxt">Genetic Disorders</span>
                   </label>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

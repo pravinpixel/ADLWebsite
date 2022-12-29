@@ -106,10 +106,10 @@ export default function Header() {
                     <div className="col">
                       <ul className="icns-lst text-center">
                         <li>
-                          <Link to="/" onClick={handleShow}>
+                          <a onClick={handleShow}>
                             <img src={location} alt="" className="img-fluid" />
-                            <span>{TestLocation !== null ? TestLocation.TestLocation : null}</span>
-                          </Link>
+                            <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-',' ') : null}</span>
+                          </a>
                         </li>
                         <li> 
                           {
