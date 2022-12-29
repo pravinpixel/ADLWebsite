@@ -88,7 +88,7 @@ export default function MyProfile() {
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
-              <div className="text-center">
+              <div className="text-center pb-3">
                 <hr />
                 <button onClick={LogoutAccount} className="btn-danger d-block rounded px-4 mx-auto"><i className="fa fa-power-off"></i> Logout</button>
               </div>
