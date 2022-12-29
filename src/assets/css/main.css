@@ -3678,7 +3678,21 @@ iframe.contact-map {
 .swal2-textarea {
     font-size: 14px !important;
 }
-
+.spinner {
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 .swal2-textarea {
     height: 14.75em;
     color: black;

@@ -10,10 +10,13 @@ import { toast } from "react-hot-toast";
 import { Validate } from "../../Helpers";
 import { useDispatch } from 'react-redux';
 import { setTestCartList } from '../../Redux/Actions/TestAction';
+import LoadingBtn from "./LoadingBtn";
 export default function GuestCheckOut() {
   const dispatch = useDispatch()
   const [cartTable, setCartTable] = useState([]);
   const [DateTime,setDateTime] = useState(false);
+  const [Loading,setLoading] = useState(false);
+  
   const [datetimeData,setDatetimeData] = useState(null);
   useEffect(() => {
     window.scroll(0,0) 
@@ -51,13 +54,18 @@ export default function GuestCheckOut() {
   }, []);
 
   const handlePayment = async () => {
+    if(BillingAddress === null) {
+      toast.error('Please fill out the Billing Address !');
+    }
     if (Validate(BillingAddress)) {
+      setLoading(true)
       axios.post(API_URL.UPDATE_BILLING_DETAILS, {
           ...BillingAddress,
           amount: totalPrice,
           datetime:datetimeData,
           id: AuthUser().id,
         }).then((response) => {
+          setLoading(false)
           if (response.data.status) {
             CheckOutPayment(response.data.data);
             localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
@@ -345,7 +353,8 @@ export default function GuestCheckOut() {
                   </table>
                   <div className="case text-right">
                     <p>
-                      <a onClick={handlePayment} style={{ color:'white' }}>Make Payment</a>
+                      <LoadingBtn loading={Loading} onClick={handlePayment}>Make Payment</LoadingBtn>
+                      {/* <a onClick={handlePayment} style={{ color:'white' }}>Make Payment</a> */}
                     </p>
                   </div>
                 </div>
