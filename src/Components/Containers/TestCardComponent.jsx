@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import clock from "./../../assets/images/clk.png";
 import calnder from "./../../assets/images/cal.png"; 
 import CartBtn from '../Containers/CartBtn' 
+import TestNavBtn from "./TestNavBtn";
 
 export default function TestCardComponent(props) {
 
@@ -41,10 +42,8 @@ export default function TestCardComponent(props) {
                 <CartBtn getData={props.getAllTestData} testData={props.test}/>
               :
               null
-            }
-            <Link className="bg-trsnper" to={props.test !== undefined ? `/test/${props.test.id}` : '/'}>
-              <small>Know More</small>
-            </Link>
+            } 
+            <TestNavBtn data={props.test !== undefined ?  props.test : null }/>  
           </p>
         </div>
       </div>

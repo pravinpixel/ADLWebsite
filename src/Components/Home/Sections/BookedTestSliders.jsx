@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import Sliders from "react-slick";
 // import { toast } from "react-toastify";
 import { setTopBookedTest } from "../../../Redux/Actions/TestAction";
@@ -52,6 +52,7 @@ export default function BookedTestSliders({title , subTitle}) {
     ],
   };
   const dispatch = useDispatch();
+  const navigate = useNavigate() 
   const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
   const TestLocation = useSelector((state) => state.TestLocation); 
   const getBookedTestSliders = () => {
@@ -80,7 +81,7 @@ export default function BookedTestSliders({title , subTitle}) {
               <Sliders {...settings} className="topbooked-cases">
                 {topBookedTestList.map((test, index) => (
                   <div className="case p-3" key={index}>
-                    <Link to={`test/${test.id}`} className="link">
+                    <div className="link" onClick={() => navigate(`test/${test.id}`,{ state : { test_type : 'test' } })}>
                       <h3 className="text-capitalize">
                         {`${test.TestName}`}
                       </h3>
@@ -99,7 +100,7 @@ export default function BookedTestSliders({title , subTitle}) {
                           <s>&#8377;{test.TestPrice + 250}</s>
                         </span>
                       </h5>
-                    </Link>
+                    </div>
                     <p>
                       <CartBtn getData={getBookedTestSliders} testData={test} />
                     </p>

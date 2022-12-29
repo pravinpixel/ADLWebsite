@@ -3,6 +3,7 @@ import popImg from "../../assets/images/popular-img-1.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CartBtn from "../Containers/CartBtn";
+import TestNavBtn from "./TestNavBtn";
 
 export default function PackageCardComponent(props) {
   const TestLocation = useSelector((state) => state.TestLocation); 
@@ -56,13 +57,7 @@ export default function PackageCardComponent(props) {
           {props.packages !== undefined ? (
             <CartBtn getData={props.packages} testData={props.data} />
           ) : null}
-          <Link
-            className="bg-trsnper ml-2"
-            style={{ marginLeft: "10px" }}
-            to={props.data !== undefined ? `/test/${props.data.id}` : "/"}
-          >
-            <small>Know More</small>
-          </Link>
+          <TestNavBtn data={props.data !== undefined ?  props.data : null }/>  
         </p>
       </div>
     </div>

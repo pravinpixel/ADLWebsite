@@ -1,17 +1,15 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import Sliders from "react-slick";
+import { useDispatch, useSelector } from "react-redux"; 
+import { useParams } from "react-router"; 
 import {
   removeTestDetails,
   setTestCartList,
   setTestDetails,
 } from "../../Redux/Actions/TestAction";
 import { API_URL } from "../../Redux/Constant/ApiRoute"; 
-import { AddToCartList, Loading } from "../../Helpers";
-import TestCard from "./TestCardComponent";
-import { Link } from "react-router-dom";
+import { AddToCartList, Loading } from "../../Helpers"; 
+import { Link,useLocation } from "react-router-dom";
 import testIcon1 from "../../assets/images/testing-icon-1.png";
 import testIcon2 from "../../assets/images/testing-icon-2.png";
 import testIcon3 from "../../assets/images/testing-icon-3.png";
@@ -21,23 +19,25 @@ import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function TestDetails() {
-  window.scroll(0,0)
-  const { TestId } = useParams();
+  const location = useLocation();
+
+  const { TestId } = useParams(); 
   const dispatch = useDispatch();
   const testDetails = useSelector((state) => state.TestDetails.TestDetails);
 
   const getTestDetails = async () => {
     const response = await axios
-      .get(API_URL.TEST_DETAILS + TestId)
+      .get(`${API_URL.TEST_DETAILS}/${TestId}/${location.state.test_type}`)
       .catch((err) => console.log(err));
     dispatch(setTestDetails(response.data.data));
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     // return () => {
       if (TestId && TestId !== "") getTestDetails();
         dispatch(removeTestDetails());
       // };  
+    window.scroll(0,0)
   }, []);
 
   const addTestToCart = (testDetails) => {
