@@ -75,6 +75,7 @@ export default function App() {
         <Route path='/register' exact element={<Register/>} />  
         <Route path='/checkout' exact element={<GuestCheckOut/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />
+        <Route path='/package/:TestId' exact element={<TestDetails/>} />
         <Route path='/my-cart' element={<CartList/>} />
         <Route path='/thank-you' element={<ThankYou/>} />
         <Route path='/' element={<Home/>} />

@@ -81,7 +81,7 @@ export default function BookedTestSliders({title , subTitle}) {
               <Sliders {...settings} className="topbooked-cases">
                 {topBookedTestList.map((test, index) => (
                   <div className="case p-3" key={index}>
-                    <div className="link" onClick={() => navigate(`test/${test.id}`,{ state : { test_type : 'test' } })}>
+                    <div className="link" onClick={() => navigate(`test/${test.TestSlug}`,{ state : { test_type : 'test' } })}>
                       <h3 className="text-capitalize">
                         {`${test.TestName}`}
                       </h3>

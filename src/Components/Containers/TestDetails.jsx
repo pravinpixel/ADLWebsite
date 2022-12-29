@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"; 
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router"; 
 import {
   removeTestDetails,
@@ -16,10 +17,10 @@ import testIcon3 from "../../assets/images/testing-icon-3.png";
 import testIcon4 from "../../assets/images/testing-icon-4.png";
 import CartBtn from "./CartBtn";
 import BookedTestSliders from "../Home/Sections/BookedTestSliders";
-import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function TestDetails() {
   const location = useLocation();
+  const navigate = useNavigate() 
 
   const { TestId } = useParams(); 
   const dispatch = useDispatch();
@@ -29,7 +30,11 @@ export default function TestDetails() {
     const response = await axios
       .get(`${API_URL.TEST_DETAILS}/${TestId}/${location.state.test_type}`)
       .catch((err) => console.log(err));
-    dispatch(setTestDetails(response.data.data));
+      if(response.data.status) {
+        dispatch(setTestDetails(response.data.data));
+      } else {
+        navigate('/')
+      }
   };
 
   useEffect(() => { 
