@@ -294,6 +294,7 @@ header .quote-btn:hover:after {
     margin: 0;
     padding: 35px !important;
     border-radius: 5px;
+    display: none;
 }
 
 a.dropdown-item {
