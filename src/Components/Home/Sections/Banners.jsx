@@ -31,17 +31,17 @@ const Banners = () => {
                     </ul>
                 }
                  
-                <div className="carousel-inner" style={bannerList.length == 0 ? {"background" : "linear-gradient(#503390,#7e2e91)"} : null}>
+                <div className="carousel-inner" style={{"background" : "linear-gradient(#503390,#7e2e91)"}}>
                     {
-                        bannerList.length == 0
+                        bannerList.length === 0
                         ? 
                             <div className="carousel-item active"></div> 
                         : 
                         <>
                             {
                                 bannerList.banners.data.map(( banner, index ) =>  ( 
-                                    <div key={index} className={index == 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
-                                        <div className="container">
+                                    <div key={index} className={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
+                                        {/* <div className="container">
                                             <div className="row">
                                                 <div className="col-sm-12 col-md-12 col-lg-12">				
                                                     <div className="carousel-caption">
@@ -49,7 +49,7 @@ const Banners = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 ))
                             }

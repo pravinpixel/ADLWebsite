@@ -1,28 +1,43 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState , useEffect } from "react";
 import logo from "./../../assets/images/logo.png";
 import logoberg from "./../../assets/images/logoberg.png";
 import location from "./../../assets/images/location.png";
 import sky from "./../../assets/images/sky.png";
 import toll from "./../../assets/images/toll.png";
-import user from "./../../assets/images/user.png";
-import men1 from "./../../assets/images/men-1.png";
-import men2 from "./../../assets/images/men-2.png";
-import men3 from "./../../assets/images/men-3.png";
+import user from "./../../assets/images/user.png"; 
 import men4 from "./../../assets/images/men-4.png";
 import dwd from "./../../assets/images/dwd.png";
 import CartCount from "./CartCount";
 import { Link } from "react-router-dom";
 import { Form } from "react-component-form";
 import Modal from "react-bootstrap/Modal";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch } from "react-redux";
+import { setTestLocation } from "../../Redux/Actions/TestAction";
+import { toast } from "react-hot-toast";
 
 export default function Header() {
   const authUser = useSelector((state) => state.authUser); 
+  const TestLocation = useSelector((state) => state.TestLocation); 
+
   const navElement = useRef();
   const toggleIcon = useRef();
   const [show, setShow] = useState(false);
+  const [LabLocation, setLabLocation] = useState(null);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch()
+  const changeLocation = (data) => {  
+    dispatch(setTestLocation(data.location))
+    localStorage.setItem('TestLocation',data.location)
+    handleClose();
+    toast.success('Location to be Changed')
+  }
+  useEffect(() => {
+    if(TestLocation !== null) {
+      setLabLocation(TestLocation.TestLocation) 
+    }
+  }, [])
+  
   function handleLink(e) {
     navElement.current.classList.remove("show");
     toggleIcon.current.classList.add("collapsed");
@@ -93,7 +108,7 @@ export default function Header() {
                         <li>
                           <Link to="/" onClick={handleShow}>
                             <img src={location} alt="" className="img-fluid" />
-                            <span>Bangalore</span>
+                            <span>{TestLocation !== null ? TestLocation.TestLocation : null}</span>
                           </Link>
                         </li>
                         <li> 
@@ -117,6 +132,7 @@ export default function Header() {
                           <a
                             href="https://reports.anandlab.com/v3/index1.html"
                             target="_blank"
+                            rel="noreferrer"
                           >
                             <img src={sky} alt="" className="img-fluid" />
                             <span>Report</span>
@@ -283,6 +299,7 @@ export default function Header() {
                                       href="https://www.anandlab.com/blog/"
                                       target="_blank"
                                       className="dropdown-item"
+                                      rel="noreferrer"
                                     >
                                       Health tips
                                     </a>
@@ -324,6 +341,7 @@ export default function Header() {
                                       href="https://reports.anandlab.com/v3/index1.html"
                                       target="_blank"
                                       className="dropdown-item"
+                                      rel="noreferrer"
                                     >
                                       <img
                                         src={dwd}
@@ -372,6 +390,7 @@ export default function Header() {
                                 className="dropdown-item"
                                 href="https://reports.anandlab.com/dos/"
                                 target="_blank"
+                                rel="noreferrer"
                               >
                                 {" "}
                                 Directory of service (DOS){" "}
@@ -614,6 +633,7 @@ export default function Header() {
                                 href="http://www.naalm.com/academics/"
                                 target="_blank"
                                 className="dropdown-item"
+                                rel="noreferrer"
                               >
                                 {" "}
                                 Upgrade your skills{" "}
@@ -647,10 +667,11 @@ export default function Header() {
                   <span></span>
                 </button>
                 <a
-                  href=""
+                  href="#"
                   className="srch-btn"
                   data-toggle="modal"
                   data-target="#srch"
+                  rel="noreferrer"
                 >
                   <i className="fa fa-search" aria-hidden="true"></i>
                 </a>
@@ -703,27 +724,24 @@ export default function Header() {
           <div className="row fully-bxn no-gutters">
             <div className="col-lg-12 seceter-frm text-center">
               <h4>Please Select your Location</h4>
-              <Form>
-                <div className="addres-que customRadio">
-                  <input type="radio" name="textEditor" id="addrs1" />
+              <Form onSubmit={changeLocation}> 
+                <div className="addres-que customRadio ">
+                  <input type="radio" name="location" id="addrs1" value="bangalore" checked={LabLocation === "bangalore"} onChange={(e) => setLabLocation(e.target.value)} />
                   <label for="addrs1">
-                    <span>Chennai</span>
+                    <span>Bangalore</span>
                   </label>
-                  <input type="radio" name="textEditor" id="addrs2" />
+                  <input type="radio" name="location" id="addrs2" value="mangalore" checked={LabLocation === "mangalore"} onChange={(e) => setLabLocation(e.target.value)}/>
                   <label for="addrs2">
-                    <span>Karnataka</span>
+                    <span>Mangalore</span>
                   </label>
-                  <input type="radio" name="textEditor" id="addrs3" />
+                  <input type="radio" name="location" id="addrs3" value="rest-of-bangalore" checked={LabLocation === "rest-of-bangalore"} onChange={(e) => setLabLocation(e.target.value)}/>
                   <label for="addrs3">
-                    <span>Pune</span>
+                    <span>Rest of Bangalore</span>
                   </label>
                 </div>
-
                 <div className="col-lg-12 text-center p-0">
                   <div className="login-btn">
-                    <Link to="" onClick={handleClose}>
-                      Save Changes
-                    </Link>
+                    <button className="btn-primary"> Save Changes </button>
                   </div>
                 </div>
               </Form>

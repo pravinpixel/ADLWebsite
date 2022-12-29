@@ -43,17 +43,25 @@ import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/He
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
-import { useDispatch } from 'react-redux'
-import { setAuthUser } from './Redux/Actions/TestAction'
+import { useDispatch , useSelector } from 'react-redux'
+import { setAuthUser, setTestLocation } from './Redux/Actions/TestAction'
 import "react-datepicker/dist/react-datepicker.css";
 
 
 export default function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
+  var TestLocation = localStorage.getItem('TestLocation')
+
   useEffect(() => {
     var user = localStorage.getItem('user')
     if(user !== null) {
       dispatch(setAuthUser(JSON.parse(localStorage.getItem('user'))));
+    }
+    if(TestLocation === null) {
+      localStorage.setItem('TestLocation','bangalore')
+      dispatch(setTestLocation('bangalore'));
+    } else {
+      dispatch(setTestLocation(TestLocation));
     }
   }, [])
   

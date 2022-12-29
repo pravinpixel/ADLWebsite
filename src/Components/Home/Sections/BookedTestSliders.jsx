@@ -53,7 +53,7 @@ export default function BookedTestSliders({title , subTitle}) {
   };
   const dispatch = useDispatch();
   const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
-
+  const TestLocation = useSelector((state) => state.TestLocation); 
   const getBookedTestSliders = () => {
     axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
       dispatch(setTopBookedTest(response.data.data));
@@ -88,7 +88,13 @@ export default function BookedTestSliders({title , subTitle}) {
                         {`${test.BasicInstruction.substring(0, 38)}...`}
                       </h4>
                       <h5>
-                        &#8377; {test.TestPrice}
+                        {
+                          test.test_price.length !== 0 ?
+                            test.test_price.map((item,i) => {
+                              return <span key={i}> ₹ { TestLocation !== null ? item.TestLocation ===  TestLocation.TestLocation ? item.TestPrice : null : null}</span>
+                            })
+                          : null
+                        }
                         <span className="strke">
                           <s>&#8377;{test.TestPrice + 250}</s>
                         </span>

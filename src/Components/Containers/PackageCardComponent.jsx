@@ -1,9 +1,11 @@
 import React from "react";
 import popImg from "../../assets/images/popular-img-1.jpg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import CartBtn from "../Containers/CartBtn";
 
 export default function PackageCardComponent(props) {
+  const TestLocation = useSelector((state) => state.TestLocation); 
   return (
     <div className="pack-deils p-3">
       <div className="pck-img">
@@ -32,15 +34,20 @@ export default function PackageCardComponent(props) {
           : ""}
       </h3>
       <h5>
-        &#8377;{props.data !== undefined ? props.data.TestPrice : ""}
-        <span className="strke">
-          <s>
-            &#8377;
-            {props.data !== undefined
-              ? parseInt(props.data.TestPrice) + 850
-              : ""}
-          </s>
-        </span>
+        {
+          props.data !== undefined ?
+            <span >
+              ₹ 
+              {
+                props.data.packages_price.length !== 0 ?
+                  props.data.packages_price.map((item,i) => {
+                    return <span key={i}> { TestLocation !== null ? item.TestLocation ===  TestLocation.TestLocation ? item.TestPrice : null : null}</span>
+                  })
+                : null
+                }
+            </span>
+          : null
+        } 
       </h5>
       <h6>{Math.floor(Math.random() * 100) + 1} % off T&C*</h6>
       <div className="case" style={{ border:"none",padding:"0" }}>

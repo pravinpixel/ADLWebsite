@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import clock from "./../../assets/images/clk.png";
 import calnder from "./../../assets/images/cal.png"; 
-import CartBtn from '../Containers/CartBtn'
+import CartBtn from '../Containers/CartBtn' 
 
 export default function TestCardComponent(props) {
+
   return (
     <div className="">
       <div className="cmn-box-str">

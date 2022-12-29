@@ -54,3 +54,10 @@ export const setAuthUser = (data) => {
         payload : data
     }
 }
+
+export const setTestLocation = (data) => {
+    return {
+        type    : ActionTypes.SET_TEST_LOCATION,
+        payload : data
+    }
+}

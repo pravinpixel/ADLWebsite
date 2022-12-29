@@ -72,3 +72,9 @@ export const removeFromCardReducer = (state = [] ,{type, payload}) => {
         default: return state;
     }
 }
+export const setTestLocation = (state = null, {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.SET_TEST_LOCATION : return {...state, TestLocation : payload};
+        default : return state;
+    }
+}
