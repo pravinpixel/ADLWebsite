@@ -2966,18 +2966,22 @@ span.flag-option p {
     position: relative;
 }
 
-.login-btn a {
+.login-btn button.btn-primary {
     border: 2px solid #5b2584;
-    display: block;
+    display: inline-block;
     border-radius: 5px;
     margin-top: 10px;
-    padding: 7px 0px;
+    padding: 7px 60px;
     font-size: 14px;
     color: #5b2584;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent !important;
 }
 
-.login-btn a:hover {
-    background-color: #5b2584;
+.login-btn button.btn-primary:hover {
+    background-color: #5b2584 !important;
+    transition: all 0.3s ease;
     color: #fff;
 }
 
@@ -5356,6 +5360,20 @@ input[type="range"]::-moz-range-thumb {
     z-index: 9999;
     display: none;
     mix-blend-mode: color-dodge;
+}
+
+.location-detailsx button.btn-warning {
+    padding: 6px 22px;
+    border-radius: 4px;
+    border: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location-detailsx button.btn-warning:hover {
+    background-color: #5c2d91;
+    transition: all 0.3s ease;
+    color: #fff;
 }
 
 @media (min-width: 1400px) {
