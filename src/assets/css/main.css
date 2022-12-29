@@ -1155,6 +1155,7 @@ span.strke {
 .ble-fnt span {
     font-weight: 300;
     font-size: 12px;
+    display: block;
 }
 
 .pack-deils {
@@ -3652,7 +3653,7 @@ iframe.contact-map {
     transition: all 0.3s ease;
 }
 
-.green-bg .formdata input[type="submit"] ,
+.green-bg .formdata input[type="submit"],
 .green-bg .formdata input[type="button"] {
     background-color: #f7931e;
     border: 0 none;
@@ -3667,23 +3668,30 @@ iframe.contact-map {
     font-weight: 500;
     transition: all 500ms ease-in-out 0s;
 }
-.swal2-input, .swal2-file, .swal2-textarea {
+
+.swal2-input,
+.swal2-file,
+.swal2-textarea {
     font-size: 14px !important;
 }
+
 .swal2-textarea {
     height: 14.75em;
     color: black;
     resize: none;
 }
+
 .nav-pills .nav-link.active {
     background-color: #5b2584 !important;
 }
+
 .swal2-input-label {
     font-weight: bold !important;
     color: #5b2584 !important;
     font-size: 21px;
 }
-.green-bg .formdata input[type="submit"]:hover ,
+
+.green-bg .formdata input[type="submit"]:hover,
 .green-bg .formdata input[type="button"]:hover {
     background-color: #ee3639;
     color: #fff;

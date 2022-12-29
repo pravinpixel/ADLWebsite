@@ -115,7 +115,7 @@ export default function Header() {
                         </li>
                         <li>
                           <a
-                            href="http://reports.anandlab.com/v3/index1.html"
+                            href="https://reports.anandlab.com/v3/index1.html"
                             target="_blank"
                           >
                             <img src={sky} alt="" className="img-fluid" />
@@ -302,7 +302,7 @@ export default function Header() {
                               <li className="col thrd-clmn">
                                 <ul>
                                   {/* <li>
-                            <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
+                            <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
                             </a>
@@ -321,7 +321,7 @@ export default function Header() {
                           </li> */}
                                   <li className="dwd">
                                     <a
-                                      href="http://reports.anandlab.com/v3/index1.html"
+                                      href="https://reports.anandlab.com/v3/index1.html"
                                       target="_blank"
                                       className="dropdown-item"
                                     >
@@ -519,7 +519,7 @@ export default function Header() {
                               <li className="col thrd-clmn">
                                 <ul>
                                   {/* <li>
-                          <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
+                          <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
                               <img src={men1} alt="" className="img-fluid"/> 
                               Download Reports
                             </a>

@@ -40,7 +40,7 @@ export default function Footer() {
                     <Link to="/">Book a Blood Test</Link>
                   </li> */}
                   <li>
-                    <a href="http://reports.anandlab.com/v3/index1.html" target="_blank">Download Reports</a>
+                    <a href="https://reports.anandlab.com/v3/index1.html" target="_blank">Download Reports</a>
                   </li>
                   <li>
                     <Link to="">Health Packages</Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                     <Link to="/preparing-for-health-checkup">Preparing for Health Checkup</Link>
                   </li>
                   <li>
-                  <a href="http://reports.anandlab.com/v3/index1.html" target="_blank">Report Download</a>
+                  <a href="https://reports.anandlab.com/v3/index1.html" target="_blank">Report Download</a>
                   </li>
                   {/* <li>
                     <Link to="/">Book an Appointment </Link>
@@ -198,7 +198,7 @@ export default function Footer() {
                   </li>
                 </ul>
                 <h5 className="cips">Download App</h5>
-              <Link to="/"><img src={playstore} alt="" className="img-fluid"/></Link>
+              <a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src={playstore} alt="" className="img-fluid"/></a>
                 </div>
               </div>
             </div> 
@@ -239,7 +239,7 @@ export default function Footer() {
       <img src={cart} alt="" className="img-fluid"/>
       Cart
       </a>
-	    <a href="http://reports.anandlab.com/v3/index1.html" target="_blank"data-toggle="tooltip" title="Download Your Reports">
+	    <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"data-toggle="tooltip" title="Download Your Reports">
       <img src={sky} alt="" className="img-fluid"/>
       Reports
       </a>

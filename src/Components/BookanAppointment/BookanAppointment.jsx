@@ -178,7 +178,7 @@ export default function BookanAppointment() {
                 <div className="cmn-buton">
                   <p>
                     <a
-                      href="http://reports.anandlab.com/v3/index1.html"
+                      href="https://reports.anandlab.com/v3/index1.html"
                       target="_blank"
                       rel="noreferrer"
                     >
