@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import bannerimage from "../../assets/images/inner-banner-2.jpg";
+import bannerimage from "../../assets/images/inner-banner-14.webp";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";

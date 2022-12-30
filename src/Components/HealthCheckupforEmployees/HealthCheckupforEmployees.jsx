@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Sliders from "react-slick";
 import { Link } from "react-router-dom";
-import bannerimage from "../../assets/images/inner-banner-2.jpg";
+import bannerimage from "../../assets/images/inner-banner-17.webp";
 import helthchkp from "../../assets/images/helthchkp.jpg";
 import preicn1 from "../../assets/images/pre-1.png";
 import preicn2 from "../../assets/images/pre-2.png";

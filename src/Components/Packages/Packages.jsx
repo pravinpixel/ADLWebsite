@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import bannerimage from "../../assets/images/inner-banner-2.jpg";
+import bannerimage from "../../assets/images/inner-banner-10.webp";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import PackageCardComponent from "../Containers/PackageCardComponent";

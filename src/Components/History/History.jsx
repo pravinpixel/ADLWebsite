@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import bannerimage from "../../assets/images/inner-banner-4.jpg"; 
+import bannerimage from "../../assets/images/inner-banner-2.webp"; 
 
 export default function History() {
     useEffect(() => {
