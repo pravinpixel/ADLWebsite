@@ -8,19 +8,22 @@ import { PutUser } from "../../Helpers/AuthUser";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setAuthUser } from "../../Redux/Actions/TestAction";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
+
 export default function Login() {
   const dispatch = useDispatch()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const navigate = useNavigate();
   const LoginAccount = () => { 
+    dispatch(setLoading(true))
     axios.post(API_URL.LOGIN,{
       email : email,
       password : password,
     }).then((response) =>{
+      dispatch(setLoading(false))
       if(response.data.status) {
         PutUser({
           email : response.data.data.email,

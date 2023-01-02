@@ -10,8 +10,11 @@ import Orders from "./Pages/Orders";
 import AuthUser from "../../Helpers/AuthUser";
 import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
+import { setAuthUser } from "../../Redux/Actions/TestAction";
+import { useDispatch } from "react-redux";
 export default function MyProfile() { 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const LogoutAccount = () => {
     Swal.fire({
       title: "Want to Logout ?",
@@ -23,8 +26,10 @@ export default function MyProfile() {
     }).then((result) => {
       if (result.isConfirmed) { 
         localStorage.clear();
+        dispatch(setAuthUser([]))
         toast.success('Logout Success !')
-        window.location.replace('/')
+        // window.location.replace('/')
+        navigate('/')
       }
     });
   }

@@ -113,7 +113,7 @@ export default function Header() {
                         </li>
                         <li> 
                           {
-                            authUser.length === 0 && authUser !== null ? 
+                            authUser.user.length === 0 && authUser.user !== null ? 
                               <Link to="/login">
                                 <img src={user} alt="" className="img-fluid" />
                                 <span>Login</span>

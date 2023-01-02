@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-9.webp";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
 import { useDispatch } from "react-redux";
