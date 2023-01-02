@@ -2950,6 +2950,7 @@ span.flag-option p {
 .btn-primary:hover {
     background-color: #5b2584;
 }
+
 .btn-primary {
     width: 100%;
     background-color: #f7931e;
@@ -2961,6 +2962,7 @@ span.flag-option p {
     border-radius: 5px;
     padding: 10px 15px;
 }
+
 .btn-primary:hover {
     background-color: #5b2584;
 }
@@ -5409,7 +5411,7 @@ input[type="range"]::-moz-range-thumb {
     left: 2px;
     top: 3px;
     font-size: 15px;
-    color: #283d98;
+    color: #5b2584;
 }
 
 .locate-box ul li:first-child i {
