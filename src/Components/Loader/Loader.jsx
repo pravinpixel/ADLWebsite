@@ -7,9 +7,7 @@ const Loader = () => {
             <div className='loaderDotContainer'>
                 <div className="loaderDot"></div>
                 <div className="loaderDot"></div>
-                <div className="loaderDot"></div>
-                <div className="loaderDot"></div>
-                <div className="loaderDot"></div>
+                <div className="loaderDot"></div> 
             </div>
         </div>
     )

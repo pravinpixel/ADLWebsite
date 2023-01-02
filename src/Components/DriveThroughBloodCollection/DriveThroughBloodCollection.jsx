@@ -71,17 +71,17 @@ export default function DriveThroughBloodCollection() {
 
       <div className='col-lg-4'>
         <div className='vdeo-img'> 
-        <iframe width="100%" height="380" src="https://www.youtube.com/embed/tseCsNdlNnY" title=" " frameborder="0" allow=" " allowfullscreen></iframe>  
+        <iframe width="100%" height="380" src="https://www.youtube.com/embed/tseCsNdlNnY" title=" " frameborder="0" allow=" " allowFullScreen></iframe>  
         </div>
       </div> 
       <div className='col-lg-4'>
         <div className='vdeo-img'>
-        <iframe width="100%" height="380" src="https://www.youtube.com/embed/u4Wnhg3sZCQ" title=" " frameborder="0" allow=" " allowfullscreen></iframe>
+        <iframe width="100%" height="380" src="https://www.youtube.com/embed/u4Wnhg3sZCQ" title=" " frameborder="0" allow=" " allowFullScreen></iframe>
         </div>
       </div> 
       <div className='col-lg-4'>
         <div className='vdeo-img'>
-        <iframe width="100%" height="380" src="https://www.youtube.com/embed/stgPFTQONjg" title=" " frameborder="0" allow=" " allowfullscreen></iframe>
+        <iframe width="100%" height="380" src="https://www.youtube.com/embed/stgPFTQONjg" title=" " frameborder="0" allow=" " allowFullScreen></iframe>
         </div>
       </div>
     </div>

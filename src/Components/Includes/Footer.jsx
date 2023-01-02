@@ -30,8 +30,7 @@ export default function Footer() {
     fetch(API_URL.NEWS_LETTER, requestOptions)
       .then(response => response.json())
       .then(result => {
-        if(result.Errors === false) {
-          dispatch(setLoading(false))
+        if(result.Errors === false) { 
           NewsletterResponse()
         } else {
           try {
@@ -41,6 +40,7 @@ export default function Footer() {
           }
         }
         setEmail('')
+        dispatch(setLoading(false))
       }).catch(error => console.log('error', error));
     }
   return (
