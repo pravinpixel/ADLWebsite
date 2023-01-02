@@ -15,6 +15,7 @@ import testIcon1 from "../../assets/images/testing-icon-1.png";
 import testIcon2 from "../../assets/images/testing-icon-2.png";
 import testIcon3 from "../../assets/images/testing-icon-3.png";
 import testIcon4 from "../../assets/images/testing-icon-4.png";
+import testIcon5 from "../../assets/images/testing-icon-5.png";
 import CartBtn from "./CartBtn";
 import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import { setLoading } from '../../Redux/Actions/LoaderAction'
@@ -124,7 +125,7 @@ export default function TestDetails() {
                         eligible for Home Collection.
                       </li>
                       <li>
-                        <img src={testIcon2} alt="call" className="img-fluid" />
+                        <img src={testIcon5} alt="call" className="img-fluid" />
                         <span>Home Collection</span>
                         { testDetails.test.HomeCollection === "Y" ? "Included" : "Not Included" }
                       </li>

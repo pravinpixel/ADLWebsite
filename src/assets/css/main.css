@@ -1299,18 +1299,21 @@ span.strke {
     transition: all 1s ease;
 }
 
-.case a.bg-trsnper {
+.case a.bg-trsnper,
+.case button.bg-trsnper {
     margin-left: 8px;
     border: 1px solid #5c2d91;
     color: #5c2d91;
     text-transform: uppercase;
 }
 
-.case a.bg-trsnper:hover {
+.case a.bg-trsnper:hover,
+.case button.bg-trsnper:hover {
     color: #fff;
 }
 
-.case p a.bg-trsnper:before {
+.case p a.bg-trsnper:before,
+.case p button.bg-trsnper:before {
     position: absolute;
     left: 0;
     top: 0px;
@@ -2929,6 +2932,7 @@ span.flag-option p {
     font-weight: 400;
     padding: 0px;
     font-size: 15px;
+    cursor: pointer;
 }
 .btn-primary {
     width: 100%;
@@ -3682,6 +3686,7 @@ iframe.contact-map {
     border-radius: 5px;
     font-weight: 500;
     transition: all 500ms ease-in-out 0s;
+    cursor: pointer;
 }
 
 .swal2-input,
@@ -3689,28 +3694,32 @@ iframe.contact-map {
 .swal2-textarea {
     font-size: 14px !important;
 }
+
 .swal2-container.swal2-center>.swal2-popup {
     border-radius: 25px;
 }
+
 .swal2-styled.swal2-confirm {
     background-color: #5d2c8f;
     border-radius: 25px;
 }
+
 .spinner {
     animation-name: spin;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
+
 .swal2-textarea {
     height: 14.75em;
     color: black;
@@ -6069,6 +6078,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:767px) {
+    .dhoni-bgm {
+        min-height: 425px;
+    }
+    .cmnmenu-topmargin {
+        margin-top: 0px;
+    }
     .presnt-pakges p {
         width: 95%;
     }

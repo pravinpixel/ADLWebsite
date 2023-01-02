@@ -239,7 +239,7 @@ export default function Header() {
                                   <li>
                                     <Link
                                       onClick={handleLink}
-                                      to="/"
+                                      to="/for-patient"
                                       className="dropdown-item"
                                     >
                                       Explore All Tests
