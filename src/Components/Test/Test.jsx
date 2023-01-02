@@ -52,8 +52,8 @@ export default function Test() {
         sortByPrice={sortByPrice}
         loader={loader} setLoader={setLoader} 
       />
-      <PopularTests />
-      <PopularPackages />
+      {/* <PopularTests />
+      <PopularPackages /> */}
     </div>
   )
 }

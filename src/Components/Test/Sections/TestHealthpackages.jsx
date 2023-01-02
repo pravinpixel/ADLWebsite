@@ -13,11 +13,8 @@ export default function   TestHealthPackages(props) {
             <div className="test-lst">
               <ul>
                 <li className="active">
-                  <Link to="/">TEST</Link>
-                </li>
-                <li>
-                  <Link to="/">HEALTH PACKAGES</Link>
-                </li>
+                  <Link to="/">TEST LIST</Link>
+                </li> 
               </ul>
             </div>
           </div>

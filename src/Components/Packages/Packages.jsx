@@ -4,10 +4,12 @@ import bannerimage from "../../assets/images/inner-banner-10.webp";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import PackageCardComponent from "../Containers/PackageCardComponent";
- 
+import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { useDispatch } from "react-redux";
 
 export default function Packages() {
   const [Packages,setPackages] = useState([])
+  const dispatch = useDispatch()
   const [ApplicableGender,setApplicableGender] = useState('')
   const [OrganName,setOrganName] = useState('')
   const [HealthCondition,setHealthCondition] = useState('')
@@ -18,12 +20,14 @@ export default function Packages() {
     fetchPackages()
   }
   const fetchPackages = () => {
+    dispatch(setLoading(true))
     axios.post(API_URL.PACKAGES_LIST,{
       ApplicableGender : ApplicableGender,
       OrganName : OrganName,
       HealthCondition : HealthCondition,
     }).then((response) => {
       setPackages(response.data.data)
+      dispatch(setLoading(false))
     });
   };
   useEffect(() => {
