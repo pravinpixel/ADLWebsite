@@ -1,8 +1,10 @@
 import React from "react";
 import AuthUser from "./AuthUser";
-import Login from "../Components/Containers/Login";
+import { useNavigate } from "react-router";
 
 function AuthProvider( props) {
+    localStorage.setItem('path',props.path)
+    const navigate = useNavigate()
     if(AuthUser()) {
         return (
             <div>
@@ -10,9 +12,7 @@ function AuthProvider( props) {
             </div>
         );
     } else {
-        return (
-            <Login/>
-        );
+        navigate('/login',{to : 'checkout'})
     }
 }
 

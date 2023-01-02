@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
@@ -92,13 +92,7 @@ export default function Login() {
                               />
                             </div>
                             <div className="form-data sbm col-lg-12">
-                              <input
-                                onClick={LoginAccount}
-                                type="submit"
-                                name="submit"
-                                value="LOGIN"
-                                required
-                              />
+                              <button type="button" className="btn-primary" onClick={LoginAccount}>LOGIN</button>  
                             </div>
                           </div>
                           <div className="col-lg-12 text-center p-0">

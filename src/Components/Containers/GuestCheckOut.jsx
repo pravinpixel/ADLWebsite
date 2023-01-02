@@ -127,7 +127,7 @@ export default function GuestCheckOut() {
     rzp1.open();
   };
   return (
-    <AuthProvider>
+    <AuthProvider path="/checkout">
       <div>
         <section className="comon-testdetail-banner">
           <div className="container">
