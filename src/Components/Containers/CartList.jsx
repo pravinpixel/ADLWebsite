@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
-import Sliders from "react-slick";
-import TestCard from "./TestCardComponent";
-import PackageCard from "./PackageCardComponent";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from "../.././assets/images/cart_empty.png";
-import BookedTestSliders from "../Home/Sections/BookedTestSliders";
-import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function CartList() {
   let navigate = useNavigate();
@@ -144,7 +139,7 @@ export default function CartList() {
                         <tr key={index}>
                           <th scope="row">{item.TestName}</th>
                           <td className="text-right">
-                            {item.IsPackage === "Yes" ? "Package" : "Test"}
+                            {item.IsPackage === "Yes" ? <span class="px-2 py-1 badge badge-success"><i class="fa fa-flask" aria-hidden="true"></i> Package </span> : <span class="px-2 py-1 badge badge-primary"><i class="fa fa-flask" aria-hidden="true"></i> Test </span>}
                           </td>
                           <td className="text-right">
                             &#8377;{item.TestPrice}
