@@ -9,4 +9,6 @@ export const ActionTypes =  {
     REMOVE_FROM_CART    : "REMOVE_FROM_CART",
     AUTH_USER           : "AUTH_USER",
     SET_TEST_LOCATION   : "SET_TEST_LOCATION",
+    START_LOADING       : "START_LOADING",
+    STOP_LOADING        : "STOP_LOADING",
 }

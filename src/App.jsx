@@ -20,6 +20,7 @@ import Commitment from './Components/Commitment/Commitment'
 import Accreditation from './Components/Accreditation/Accreditation'
 import PatientsConsumers from './Components/PatientsConsumers/PatientsConsumers'
 import Packages from './Components/Packages/Packages' 
+import Loader from './Components/Loader/Loader' 
 import HealthPackages from './Components/HealthPackages/HealthPackages'
 import PreparingForHeathCheckup from './Components/PreparingForHeathCheckup/PreparingForHeathCheckup'
 import DriveThroughBloodCollection from './Components/DriveThroughBloodCollection/DriveThroughBloodCollection'
@@ -50,8 +51,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function App() {
   const dispatch = useDispatch();  
-  var TestLocation = localStorage.getItem('TestLocation')
-
+  const loader = useSelector((state) => state.Loader);
+  var TestLocation = localStorage.getItem('TestLocation') 
   useEffect(() => {
     var user = localStorage.getItem('user')
     if(user !== null) {
@@ -66,8 +67,8 @@ export default function App() {
   }, [])
   
   return (
-    <Fragment> 
-      
+    <Fragment>
+      { loader == true  ? <Loader/> : null }
       <Header/>
       <Routes>
         <Route path='/for-patient' element={<Test/>} />
