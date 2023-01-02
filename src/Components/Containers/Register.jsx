@@ -6,6 +6,9 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import AuthUser, { PutUser } from "../../Helpers/AuthUser";
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { setAuthUser } from "../../Redux/Actions/TestAction";
 
 
 export default function Login() {
@@ -14,6 +17,7 @@ export default function Login() {
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
   let navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,26 +36,30 @@ export default function Login() {
   };
  
   const handleSubmit = () => {
+    dispatch(setLoading(true))
     if(password === confirmPassword) {
       axios.post(API_URL.REGISTER,{
         name    : name,
         email   : email,
         password: password,
       }).then((response) => {
+        dispatch(setLoading(false))
         if(response.data.status) {
           PutUser({
             email : response.data.data.email,
             id : response.data.data.id,
             name : response.data.data.name
           })
+          dispatch(setAuthUser(response.data.data))
           if(AuthUser()) {
-            navigate("/");
+            navigate("/my-cart");
           }
         } else {
           toast.error(response.data.message)
         }
       })
     } else {
+      dispatch(setLoading(false))
       toast.error('Passwords did not match !')
     }
   };

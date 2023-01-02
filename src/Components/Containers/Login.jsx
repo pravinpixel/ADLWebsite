@@ -29,7 +29,7 @@ export default function Login() {
         })
         dispatch(setAuthUser(response.data.data))
         toast.success('Loggin Success')
-        navigate("/");
+        navigate("/my-cart");
       } else {
         toast.error(response.data.message)
       }

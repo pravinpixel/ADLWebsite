@@ -6,16 +6,20 @@ import {assets} from '../../../../src/Helpers'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
 import BannerForm from './BannerForm'
 import dummyBanner from '../../../assets/images/banner-image3.jpg'
+import { setLoading } from '../../../Redux/Actions/LoaderAction'
 
 const Banners = () => { 
     const dispatch = useDispatch();
     const bannerList = useSelector((state) =>  state.HomePageBanners)
+    const getBanners = () => {
+        dispatch(setLoading(true))
+        axios.get(API_URL.BANNERS).then((response) => {
+            dispatch(setLoading(false))
+            dispatch(setBanners(response.data))
+        });
+    }
     useEffect(() => {
-        // return () => {
-            axios.get(API_URL.BANNERS).then((response) => {
-                dispatch(setBanners(response.data))
-            });
-        // }
+        getBanners()
     }, []);
     return ( 
         <div className="banner-conceptual">
