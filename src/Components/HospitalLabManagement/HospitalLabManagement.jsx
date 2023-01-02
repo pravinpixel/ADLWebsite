@@ -44,7 +44,6 @@ export default function HospitalLabManagement() {
         if(result.Errors === false) {
           dispatch(setLoading(false))
           FormResponse()
-          toast.success(result.Message)
         }
       })
       .catch(error => console.log('error', error));

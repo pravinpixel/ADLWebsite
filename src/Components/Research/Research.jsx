@@ -40,7 +40,6 @@ export default function Research() {
         if(result.Errors === false) {
             dispatch(setLoading(false))
             FormResponse()
-          toast.success(result.Message)
         }
       })
       .catch(error => console.log('error', error));
