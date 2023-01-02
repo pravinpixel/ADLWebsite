@@ -10,6 +10,7 @@ import toll from './../../assets/images/mob-ic-5.png';
 import user from './../../assets/images/mob-ic-2.png';   
 import { API_URL } from '../../Redux/Constant/ApiRoute'
 import { toast } from 'react-hot-toast'
+import { NewsletterResponse } from '../../Helpers/FormResponse'
 
 export default function Footer() {
   const [Email, setEmail] = useState(null);
@@ -25,7 +26,7 @@ export default function Footer() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
-          toast.success(result.Message)
+          NewsletterResponse()
         } else {
           try {
             toast.error(result.Message.email[0])

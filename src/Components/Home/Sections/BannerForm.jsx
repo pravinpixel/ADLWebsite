@@ -2,9 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import { Form } from 'react-component-form'
 import {API_URL} from '../../../Redux/Constant/ApiRoute'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import upload from '../../../assets/images/upload.png'
+import {FormResponse} from '../../../Helpers/FormResponse'
 
 export default function BannerForm() {
      
@@ -14,14 +13,7 @@ export default function BannerForm() {
               "Content-Type": "multipart/form-data",
             },
         }).then((response) => {
-            withReactContent(Swal).fire({
-                title: <h3>Thank you for filling out your information!</h3>,
-                html : <p>We will look over your message and get back to you soon !</p>,
-                confirmButtonText :"Okey",
-                customClass: {
-                    confirmButton: 'rounded-pill',
-                },
-            });
+            FormResponse()
             formElement.reset()
         }).catch((error) => {
             console.log(error.message)

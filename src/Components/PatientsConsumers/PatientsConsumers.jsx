@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import Moment from "moment";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { FormResponse } from "../../Helpers/FormResponse";
 
 export default function Solutions() {
   const {
@@ -63,7 +64,7 @@ export default function Solutions() {
       .then((response) => response.json())
       .then((result) => {
         if (result.Errors === false) {
-          toast.success(result.Message);
+          FormResponse()
           reset();
         }
       })

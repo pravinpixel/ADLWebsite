@@ -20,6 +20,7 @@ export const API_URL = {
     FAQ                        : `${URL}/api/faq`,
     HOSPITAL_LAB_MANAGEMENT    : `${URL}/api/hospital-lab-management`,
     CLINICAL_LAB_MANAGEMENT    : `${URL}/api/clinical-lab-management`,
+    FRANCHISING_OPPORTUNITIES  : `${URL}/api/franchising-opportunities`,
     RESEARCH                   : `${URL}/api/research`,
     HEALTHCHECKUP_FOR_EMPLOYEES: `${URL}/api/healthcheckup-for-employees`,
     BOOK_AN_APPOINTMENT        : `${URL}/api/book-an-appointment`,
@@ -29,5 +30,5 @@ export const API_URL = {
     CANCEL_MY_ORDER            : `${URL}/api/cancel-my-order/`,
     GET_LAB_LOCATION           : `${URL}/api/get-lab-location`,
     GET_CITY_MASTER            : `${URL}/api/get-city-master`,
-    NEWS_LETTER            : `${URL}/api/news-letter`, 
+    NEWS_LETTER                : `${URL}/api/news-letter`,
 }

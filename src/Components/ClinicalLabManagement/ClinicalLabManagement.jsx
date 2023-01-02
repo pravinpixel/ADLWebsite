@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-7.webp"; 
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
+import { FormResponse } from "../../../src/Helpers/FormResponse";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 
 export default function ClinicalLabManagement() {
@@ -34,7 +34,7 @@ export default function ClinicalLabManagement() {
       .then(result => {
         if(result.Errors === false) {
           reset()
-          toast.success(result.Message)
+          FormResponse()
         }
       })
       .catch(error => console.log('error', error));

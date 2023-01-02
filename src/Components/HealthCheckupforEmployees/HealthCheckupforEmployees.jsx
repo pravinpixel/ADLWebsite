@@ -17,6 +17,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { FormResponse } from "../../Helpers/FormResponse";
 
 export default function HealthCheckupforEmployees() {
   const {
@@ -46,7 +47,7 @@ export default function HealthCheckupforEmployees() {
       .then((result) => {
         if (result.Errors === false) {
           reset();
-          toast.success(result.Message);
+          FormResponse()
         }
       })
       .catch((error) => console.log("error", error));

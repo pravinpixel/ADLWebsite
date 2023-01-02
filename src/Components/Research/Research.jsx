@@ -5,6 +5,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { FormResponse } from "../../Helpers/FormResponse";
 
 export default function Research() {
   const {
@@ -32,7 +33,7 @@ export default function Research() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
-          reset()
+          FormResponse()
           toast.success(result.Message)
         }
       })

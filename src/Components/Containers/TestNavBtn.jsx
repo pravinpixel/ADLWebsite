@@ -4,13 +4,13 @@ function TestNavBtn(props) {
     const navigate = useNavigate() 
     const viewDetails = () => {
         if(props.data.IsPackage === 'Yes') {
-            navigate(`package/${props.data.TestSlug}`,{
+            navigate(`/package/${props.data.TestSlug}`,{
                 state : {
                     test_type : 'package'
                 }
             })
         } else {
-            navigate(`test/${props.data.TestSlug}`,{
+            navigate(`/test/${props.data.TestSlug}`,{
                 state : {
                     test_type : 'test'
                 }

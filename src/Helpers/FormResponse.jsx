@@ -1,0 +1,24 @@
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const FormResponse = () => {
+    return withReactContent(Swal).fire({
+        title: <h3>Thanks for your enquiry</h3>,
+        html : <p className="m-0">Our team will get back to you shortly.</p>,
+        confirmButtonText :"Okay",
+        allowOutsideClick:false
+    });
+}
+
+const NewsletterResponse = () => {
+    return withReactContent(Swal).fire({
+        title: <h3>Thanks for Registering with us.</h3>,
+        html : <p className="m-0">you will get notified on our updates... </p>,
+        confirmButtonText :"Okay",
+        allowOutsideClick:false
+    });
+}
+export {
+    FormResponse,
+    NewsletterResponse
+}

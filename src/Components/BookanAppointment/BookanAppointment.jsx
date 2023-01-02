@@ -8,31 +8,25 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
+import { FormResponse } from "../../Helpers/FormResponse";
 
 export default function BookanAppointment() {
   useEffect(() => {
     document.title = "Book an Appointment";
     window.scroll(0, 0);
   }, []);
-  const handleSubmit  = (formData, formElement) => {
+  const handleSubmit = (formData, formElement) => {
     axios.post(API_URL.BOOK_AN_APPOINTMENT, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
     }).then((response) => {
-        withReactContent(Swal).fire({
-            title: <h3>Thank you for filling out your information!</h3>,
-            html : <p>We will look over your message and get back to you soon !</p>,
-            confirmButtonText :"Okey",
-            customClass: {
-                confirmButton: 'rounded-pill',
-            },
-        });
-        formElement.reset()
+      FormResponse()
+      formElement.reset()
     }).catch((error) => {
-        console.log(error.message)
+      console.log(error.message)
     });
-}
+  }
   return (
     <div>
       <InnerCommonBanner />

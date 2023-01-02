@@ -3678,6 +3678,13 @@ iframe.contact-map {
 .swal2-textarea {
     font-size: 14px !important;
 }
+.swal2-container.swal2-center>.swal2-popup {
+    border-radius: 25px;
+}
+.swal2-styled.swal2-confirm {
+    background-color: #5d2c8f;
+    border-radius: 25px;
+}
 .spinner {
     animation-name: spin;
     animation-duration: 500ms;
