@@ -259,7 +259,7 @@ export default function GuestCheckOut() {
                               <label>Appoinment</label>
                               <label htmlFor="book_a_appoinment" className="form-control pt-2" style={{ height:'45px' }}>
                                 <input type="checkbox" onChange={() => setDateTime(DateTime === true ? false : true )} id="book_a_appoinment" className="mr-2"/> 
-                                <b>Book a Appoinment</b>
+                                <b>Book an Appoinment</b>
                               </label>
                             </div>
                             {
