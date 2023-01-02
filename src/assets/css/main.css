@@ -3714,8 +3714,10 @@ iframe.contact-map {
 }
 
 .swal2-styled.swal2-confirm {
-    background-color: #5d2c8f;
-    border-radius: 25px;
+    background-color: #5d2c8f !important;
+}
+.swal2-styled {
+    border-radius: 25px !important;
 }
 
 .spinner {
