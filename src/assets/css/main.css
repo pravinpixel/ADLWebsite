@@ -2948,6 +2948,20 @@ span.flag-option p {
 .btn-primary:hover {
     background-color: #5b2584;
 }
+.btn-primary {
+    width: 100%;
+    background-color: #f7931e;
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+.btn-primary:hover {
+    background-color: #5b2584;
+}
 
 
 .cir-frm .form-data input[type="submit"]:hover  {
