@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import send from './../../assets/images/send.png'
 import playstore from './../../assets/images/playstore.png'
 import ReachUs  from '../Home/Sections/ReachUs'
@@ -7,8 +7,35 @@ import location from './../../assets/images/mob-ic-1.png';
 import sky from './../../assets/images/mob-ic-4.png';
 import cart from './../../assets/images/mob-ic-3.png';
 import toll from './../../assets/images/mob-ic-5.png';
-import user from './../../assets/images/mob-ic-2.png'; 
+import user from './../../assets/images/mob-ic-2.png';   
+import { API_URL } from '../../Redux/Constant/ApiRoute'
+import { toast } from 'react-hot-toast'
+
 export default function Footer() {
+  const [Email, setEmail] = useState(null);
+  const SubscribeNewsLetter = () => { 
+    var formdata = new FormData();
+    formdata.append("email", Email);
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch(API_URL.NEWS_LETTER, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        if(result.Errors === false) {
+          toast.success(result.Message)
+        } else {
+          try {
+            toast.error(result.Message.email[0])
+          } catch (error) {
+            toast.error(result.Message)
+          }
+        }
+        setEmail('')
+      }).catch(error => console.log('error', error));
+    }
   return (
     <>
       <ReachUs />
@@ -206,8 +233,8 @@ export default function Footer() {
               <div className="footer-column subs-cribe">
               <h5>Subscribe to our newsletter</h5>
                 <p>Signup for our newsletter to get the latest news, updates in your inbox. </p>
-                <input type="text" placeholder="Enter Your E-mail Id" name="search" />
-                <button type="submit"><img src={send} alt="" className="img-fluid"/></button>
+                <input type="email" value={Email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Your E-mail Id" name="search" />
+                <button type="submit" onClick={SubscribeNewsLetter}><img src={send} alt="" className="img-fluid"/></button>
               </div> 
             </div>
           </div>

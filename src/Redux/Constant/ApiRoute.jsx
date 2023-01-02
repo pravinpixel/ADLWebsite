@@ -29,4 +29,5 @@ export const API_URL = {
     CANCEL_MY_ORDER            : `${URL}/api/cancel-my-order/`,
     GET_LAB_LOCATION           : `${URL}/api/get-lab-location`,
     GET_CITY_MASTER            : `${URL}/api/get-city-master`,
+    NEWS_LETTER            : `${URL}/api/news-letter`, 
 }
