@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function Research() {
   const {
@@ -14,8 +16,11 @@ export default function Research() {
     handleSubmit,
     reset,
   } = useForm();
+  const dispatch = useDispatch()
 
   const onSubmit = (data) => {
+    dispatch(setLoading(true))
+
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("city", data.city);
@@ -33,7 +38,8 @@ export default function Research() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
-          FormResponse()
+            dispatch(setLoading(false))
+            FormResponse()
           toast.success(result.Message)
         }
       })

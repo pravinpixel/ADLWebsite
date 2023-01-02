@@ -5,6 +5,8 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { FormResponse } from "../../../src/Helpers/FormResponse";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function ClinicalLabManagement() {
   const {
@@ -14,7 +16,10 @@ export default function ClinicalLabManagement() {
     reset,
   } = useForm();
 
+  const dispatch = useDispatch()
+
   const onSubmit = (data) => {
+    dispatch(setLoading(true))
     var formdata = new FormData();
     formdata.append("doctors_name", data.doctors_name);
     formdata.append("specialization", data.specialization);
@@ -33,6 +38,7 @@ export default function ClinicalLabManagement() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
+          dispatch(setLoading(false))
           reset()
           FormResponse()
         }

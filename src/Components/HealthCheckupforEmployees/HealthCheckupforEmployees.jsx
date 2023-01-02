@@ -18,6 +18,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function HealthCheckupforEmployees() {
   const {
@@ -26,7 +28,11 @@ export default function HealthCheckupforEmployees() {
     handleSubmit,
     reset,
   } = useForm();
+  const dispatch = useDispatch()
+
   const onSubmit = (data) => {
+    dispatch(setLoading(true))
+
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
@@ -47,6 +53,7 @@ export default function HealthCheckupforEmployees() {
       .then((result) => {
         if (result.Errors === false) {
           reset();
+          dispatch(setLoading(false))
           FormResponse()
         }
       })

@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { useDispatch } from "react-redux";
 
 export default function Feedback() {
   const {
@@ -15,7 +17,11 @@ export default function Feedback() {
     reset,
   } = useForm();
 
+  const dispatch = useDispatch()
+
   const onSubmit = (data) => {
+    dispatch(setLoading(true))
+
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
@@ -33,6 +39,7 @@ export default function Feedback() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
+          dispatch(setLoading(false))
           reset()
           FormResponse()
         }

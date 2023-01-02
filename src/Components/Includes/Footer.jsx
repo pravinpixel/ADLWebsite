@@ -11,10 +11,15 @@ import user from './../../assets/images/mob-ic-2.png';
 import { API_URL } from '../../Redux/Constant/ApiRoute'
 import { toast } from 'react-hot-toast'
 import { NewsletterResponse } from '../../Helpers/FormResponse'
+import { useDispatch } from 'react-redux'
+import { setLoading } from '../../Redux/Actions/LoaderAction'
 
 export default function Footer() {
   const [Email, setEmail] = useState(null);
+  const dispatch = useDispatch()
+
   const SubscribeNewsLetter = () => { 
+    dispatch(setLoading(true))
     var formdata = new FormData();
     formdata.append("email", Email);
     var requestOptions = {
@@ -26,6 +31,7 @@ export default function Footer() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
+          dispatch(setLoading(false))
           NewsletterResponse()
         } else {
           try {

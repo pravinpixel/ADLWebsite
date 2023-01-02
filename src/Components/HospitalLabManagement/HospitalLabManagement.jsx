@@ -10,6 +10,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { useDispatch } from "react-redux";
 
 export default function HospitalLabManagement() {
   const {
@@ -18,7 +20,9 @@ export default function HospitalLabManagement() {
     handleSubmit,
     reset,
   } = useForm();
+  const dispatch = useDispatch()
   const onSubmit = (data) => {
+    dispatch(setLoading(true)) 
     var formdata = new FormData();
     formdata.append("hospital_name", data.hospital_name); 
     formdata.append("hospital_address", data.hospital_address); 
@@ -38,6 +42,7 @@ export default function HospitalLabManagement() {
       .then(response => response.json())
       .then(result => {
         if(result.Errors === false) {
+          dispatch(setLoading(false))
           FormResponse()
           toast.success(result.Message)
         }

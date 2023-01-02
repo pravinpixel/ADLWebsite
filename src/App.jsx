@@ -68,7 +68,7 @@ export default function App() {
   
   return (
     <Fragment>
-      { loader == true  ? <Loader/> : null }
+      { loader.status === true  ? <Loader/> : null }
       <Header/>
       <Routes>
         <Route path='/for-patient' element={<Test/>} />

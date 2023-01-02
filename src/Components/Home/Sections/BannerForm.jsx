@@ -4,16 +4,20 @@ import { Form } from 'react-component-form'
 import {API_URL} from '../../../Redux/Constant/ApiRoute'
 import upload from '../../../assets/images/upload.png'
 import {FormResponse} from '../../../Helpers/FormResponse'
+import { useDispatch } from 'react-redux'
+import {setLoading} from '../../../Redux/Actions/LoaderAction'
 
 export default function BannerForm() {
-     
+    const dispatch = useDispatch()
     const handleSubmit  = (formData, formElement) => {
+        dispatch(setLoading(true))
         axios.post(API_URL.BANNER_FROM, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
         }).then((response) => {
             FormResponse()
+            dispatch(setLoading(false))
             formElement.reset()
         }).catch((error) => {
             console.log(error.message)

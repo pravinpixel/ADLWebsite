@@ -16,6 +16,8 @@ import Moment from "moment";
 import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function Solutions() {
   const {
@@ -29,7 +31,11 @@ export default function Solutions() {
     },
   });
 
+  const dispatch = useDispatch()
+
   const onSubmit = (data) => {
+    dispatch(setLoading(true))
+
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
@@ -64,6 +70,7 @@ export default function Solutions() {
       .then((response) => response.json())
       .then((result) => {
         if (result.Errors === false) {
+          dispatch(setLoading(false))
           FormResponse()
           reset();
         }
