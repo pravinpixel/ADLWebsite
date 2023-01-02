@@ -11,11 +11,12 @@ import { Validate } from "../../Helpers";
 import { useDispatch } from 'react-redux';
 import { setTestCartList } from '../../Redux/Actions/TestAction';
 import LoadingBtn from "./LoadingBtn";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 export default function GuestCheckOut() {
   const dispatch = useDispatch()
   const [cartTable, setCartTable] = useState([]);
   const [DateTime,setDateTime] = useState(false);
-  const [Loading,setLoading] = useState(false);
+  const [Loading,setLoadingGif] = useState(false);
   
   const [datetimeData,setDatetimeData] = useState(null);
   useEffect(() => {
@@ -57,15 +58,15 @@ export default function GuestCheckOut() {
     if(BillingAddress === null) {
       toast.error('Please fill out the Billing Address !');
     }
-    if (Validate(BillingAddress)) {
-      setLoading(true)
+    if (Validate(BillingAddress)) { 
+      setLoadingGif(true)
       axios.post(API_URL.UPDATE_BILLING_DETAILS, {
           ...BillingAddress,
           amount: totalPrice,
           datetime:datetimeData,
           id: AuthUser().id,
         }).then((response) => {
-          setLoading(false)
+          setLoadingGif(false)
           if (response.data.status) {
             CheckOutPayment(response.data.data);
             localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
@@ -87,6 +88,7 @@ export default function GuestCheckOut() {
       total_price:totalPrice
     }).then((response)=>{
       if(response.data.status) {
+        dispatch(setLoading(false))
         localStorage.removeItem("CartTestList");
         toast.success(response.data.message);
         dispatch(setTestCartList([]));
@@ -98,6 +100,7 @@ export default function GuestCheckOut() {
   };
 
   const CheckOutPayment = (data) => {
+    dispatch(setLoading(true))
     const options = {
       key: data.key,
       name: data.title,

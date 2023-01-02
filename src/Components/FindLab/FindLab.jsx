@@ -4,15 +4,21 @@ import { useNavigate } from 'react-router';
 import bannerimage from "../../assets/images/inner-banner-2.jpg";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function FindLab() {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useNavigate();    
+  const dispatch = useDispatch()
+
   
   const [Lab, setLab] = useState([]); 
 
   const getLocation = () => {  
+    dispatch(setLoading(true))
     axios.get(`${API_URL.GET_LAB_LOCATION}/${location.state.LocationId}`).then((response) => {
+      dispatch(setLoading(false))
       setLab(response.data);
     });
   };
@@ -101,7 +107,7 @@ export default function FindLab() {
                     </div>
                   );
                 })
-              : <h1>Loading</h1>}
+              :  <div style={{ minHeight: "100vh" }}>  </div>}
           </div>
         </div>
       </section>
