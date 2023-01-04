@@ -1397,7 +1397,7 @@ span.strke {
     margin: 0px;
 }
 
-.tes-cond a {
+.tes-cond button {
     position: absolute;
     content: "";
     right: 10px;
@@ -1411,6 +1411,14 @@ span.strke {
     font-weight: 500;
     font-size: 19px;
     line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+.tes-cond button:hover {
+    background-color: #5d2c8f;
 }
 
 .tes-cond img {
