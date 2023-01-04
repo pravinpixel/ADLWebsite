@@ -34,6 +34,7 @@ export default function TestBanner(props) {
               />
               {
                 Organs && <>
+                  <hr className='bg-light'/>
                   <div className="testBySec d-flex justify-content-center align-items-center">
                     <label className="testTxt">Filter By Organs :</label>
                     <div className="badgeSec">
@@ -50,11 +51,11 @@ export default function TestBanner(props) {
                       </ul>
                     </div>
                   </div>
+                  <hr className='bg-light'/>
                 </>
               }
               {
                 Conditions && <>
-                  <hr className='bg-light'/>
                     <div className="testBySec">
                       <h4 className="testTxt">Filter By Conditions </h4>
                       <div className="badgeSec">
@@ -71,8 +72,10 @@ export default function TestBanner(props) {
                         </ul>
                       </div>
                     </div> 
+                  <hr className='bg-light'/>
                 </>
               } 
+              <button className='btn-danger rounded'><i className="fa fa-repeat mr-1"></i> Clear Filters</button>
             </div>
           </div>
         </div>
