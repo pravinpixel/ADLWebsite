@@ -69,6 +69,7 @@ export default function GuestCheckOut() {
           setLoadingGif(false)
           if (response.data.status) {
             CheckOutPayment(response.data.data);
+            dispatch(setLoading(false))
             localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
           }
         });
@@ -87,8 +88,7 @@ export default function GuestCheckOut() {
       datetime:datetimeData,
       total_price:totalPrice
     }).then((response)=>{
-      if(response.data.status) {
-        dispatch(setLoading(false))
+      if(response.data.status) { 
         localStorage.removeItem("CartTestList");
         toast.success(response.data.message);
         dispatch(setTestCartList([]));
@@ -356,7 +356,7 @@ export default function GuestCheckOut() {
                   </table>
                   <div className="case text-right">
                     <p>
-                      <LoadingBtn loading={Loading} onClick={handlePayment}>Make Payment</LoadingBtn>
+                      <LoadingBtn loading={Loading} onClick={handlePayment} />
                       {/* <a onClick={handlePayment} style={{ color:'white' }}>Make Payment</a> */}
                     </p>
                   </div>

@@ -1,5 +1,5 @@
 const Loader = () => {
-    return   <svg
+  return <svg
     className="spinner mr-2"
     width="20"
     height="20"
@@ -13,12 +13,17 @@ const Loader = () => {
   </svg>
 }
 function LoadingBtn(props) {
-    return (
-        <button type="submit" onClick={() => props.onClick()} style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}>
-            { props.loading === true ? <Loader/> : null }
-            {props.children}
-        </button>
-    )
+  
+  return (
+    props.loading === true ?
+      <button type="submit" onClick={() => props.onClick()} style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}>
+        <Loader /> Processing ...
+      </button>
+     : 
+     <button type="submit" onClick={() => props.onClick()} style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}>
+      Make a Payment
+    </button>
+  )
 }
 
 export default LoadingBtn

@@ -1055,7 +1055,7 @@ span.strke {
     font-weight: 400;
     cursor: pointer;
     z-index: 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .case p button {
