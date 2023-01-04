@@ -1,10 +1,29 @@
-import React  from "react";
+import React, { useEffect, useState }  from "react";
 import { Link } from "react-router-dom";
 import TestCard from "../../Containers/TestCardComponent";
 import loaderGif from '../../../assets/images/loader-2.gif'
+import { API_URL } from "../../../Redux/Constant/ApiRoute";
+import { setAllTestDetails } from "../../../Redux/Actions/TestAction";
+import { setTestFilters } from '../../../Redux/Actions/TestAction';
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 export default function   TestHealthPackages(props) {
-    
+  const testListing        = useSelector((state) => state.TestList.testList);
+  const filters            = useSelector((state) => state.filters.filters);
+  const dispatch           = useDispatch()
+  const [Loader,setLoader] = useState(false)
+
+  const fetchLabTests = () => {
+    setLoader(true) 
+    axios.post(API_URL.TEST_LISTS, filters).then((response) => {
+      setLoader(false) 
+      dispatch(setAllTestDetails(response.data.data));
+    });
+  }
+  useEffect(() => {
+    fetchLabTests()
+  },[filters]);
   return (
     <section className="">
       <div className="container">
@@ -22,7 +41,7 @@ export default function   TestHealthPackages(props) {
             <div className="col">
               <div className="serch-filter text-right">
                 Sort By
-                <select value={props.sortBy} className="form-control" onChange={(e) => props.sortByPrice(e.target.value) } >
+                <select value={props.sortBy} className="form-control" onChange={(e) => dispatch(setTestFilters({...filters,TestPrice:e.target.value})) } >
                   <option value=""> -- Choose --</option>
                   <option value="high"> Price : High-Low</option>
                   <option value="low">  Price : Low-High</option>
@@ -33,26 +52,23 @@ export default function   TestHealthPackages(props) {
         </div>
         <div className="row">
           { 
-            props.testListing !== undefined
-            ? props.testListing.map((test, index) => (
+            testListing !== undefined
+            ? testListing.map((test, index) => (
                 <div className="col-lg-3" key={index}>
-                  <TestCard test={test} getAllTestData={props.getTestData} />
+                  <TestCard test={test} />
                 </div>
               ))
             : null
           }
         </div>
-        <div className="load-mrebtn text-center">
-          <a onClick={() => {
-            props.getTestData(props.sortBy, props.search, props.tackTest + 4);
-            props.setTackTest(props.tackTest + 4)
-          }}>
-            Load More
-          </a>
+        <div className="load-mrebtn text-center">  
           {
-            props.loader === true ? 
-              <h1><img src={loaderGif} alt="loader" /></h1>
-            : null
+            Loader === true ?  
+              <a> <img src={loaderGif} width="28px" alt="loader" /> Loading ....</a>
+            :  <a onClick={() => {
+              setLoader(true) 
+              dispatch(setTestFilters({...filters,Tack: filters.Tack + 4}))
+            }}> Load More</a>
           }
         </div>
       </div>

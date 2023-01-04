@@ -61,3 +61,10 @@ export const setTestLocation = (data) => {
         payload : data
     }
 }
+
+export const setTestFilters = (filters) => {
+    return {
+        type    : ActionTypes.TEST_FILTERS,
+        payload : filters
+    }
+}

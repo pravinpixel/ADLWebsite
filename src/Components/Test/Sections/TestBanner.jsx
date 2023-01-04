@@ -1,22 +1,47 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setTestFilters } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 
 export default function TestBanner(props) {
-  const TestLocation = useSelector((state) => state.TestLocation);
-  useEffect(() => {
+  const [Organs, SetOrgans]                     = useState([]);
+  const [Conditions, SetConditions]             = useState([]);
+  const [OrganFilter, SetOrganFilter]           = useState(null);
+  const [ConditionsFilter, SetConditionsFilter] = useState(null);
+  const TestLocation                            = useSelector((state) => state.TestLocation);
+  const filters                                 = useSelector((state) => state.filters);
+  const dispatch                                = useDispatch()
+
+  const fetchOrgans = () => {
     axios.get(API_URL.ORGAN_LIST).then((response) => {
       SetOrgans(response.data)
     })
+  }
+  const fetchConditions = () => {
     axios.get(API_URL.CONDITIONS_LIST).then((response) => {
       SetConditions(response.data)
-    })
-  },[]); 
-  const [Organs, SetOrgans] = useState([]);
-  const [Conditions, SetConditions] = useState([]);
-  const [OrganFilter, SetOrganFilter] = useState(null);
-  const [ConditionsFilter, SetConditionsFilter] = useState(null);
+    }) 
+  }
+  const ClearAllFilters = () => {
+    dispatch(setTestFilters({
+      TestName       : null,
+      TestPrice      : 'high',
+      HealthCondition: null,
+      OrganName      : null,
+      Tack           : 8,
+    }));
+    SetOrganFilter(null)
+    SetConditionsFilter(null)
+  }
+  useEffect(() => {
+    fetchOrgans()
+    fetchConditions()
+  },[]);  
+
+  const filterHandler = (type, value) => { 
+    dispatch(setTestFilters({...filters.filters,[type]:value})) 
+  }
   return (
     <section className="search-container">
       <div className="container">
@@ -27,10 +52,7 @@ export default function TestBanner(props) {
               <input
                 type="text"
                 placeholder="Search for Health Packages / Tests / Labs"
-                onChange={(e) => {
-                  props.getAllTest(props.sortBy, e.target.value)
-                  props.setSearch(e.target.value)
-                }}
+                onChange={(e) => filterHandler('TestName',e.target.value)}
               />
               {
                 Organs && <>
@@ -40,9 +62,12 @@ export default function TestBanner(props) {
                     <div className="badgeSec">
                       <ul className="badgeList"> 
                         {
-                          Organs&&Organs.map(item => (
-                            <li className={OrganFilter == item.name ? 'active' : ''}> 
-                              <a className="darkBdrBut text-white" onClick={() => SetOrganFilter(item.name)}>
+                          Organs&&Organs.map((item,i) => (
+                            <li key={i} className={OrganFilter == item.name ? 'active' : ''}> 
+                              <a className="darkBdrBut text-white" onClick={() => {
+                                  filterHandler("OrganName",item.name)
+                                  SetOrganFilter(item.name)
+                                }}>
                                 {item.name}
                               </a> 
                             </li>
@@ -61,9 +86,12 @@ export default function TestBanner(props) {
                       <div className="badgeSec">
                         <ul className="badgeList"> 
                           {
-                            Conditions.map(item => (
-                              <li className={ConditionsFilter == item.name ? 'active' : ''}> 
-                                <a className="darkBdrBut text-white" onClick={() => SetConditionsFilter(item.name)}>
+                            Conditions.map((item,i) => (
+                              <li key={i} className={ConditionsFilter == item.name ? 'active' : ''}> 
+                                <a className="darkBdrBut text-white" onClick={() => {
+                                  filterHandler("HealthCondition",item.name)
+                                  SetConditionsFilter(item.name)
+                                }}>
                                   {item.name}
                                 </a> 
                               </li>
@@ -75,7 +103,7 @@ export default function TestBanner(props) {
                   <hr className='bg-light'/>
                 </>
               } 
-              <button className='btn-danger rounded'><i className="fa fa-repeat mr-1"></i> Clear Filters</button>
+              <button className='btn-danger rounded' onClick={ClearAllFilters}><i className="fa fa-repeat mr-1"></i> Clear Filters</button>
             </div>
           </div>
         </div>

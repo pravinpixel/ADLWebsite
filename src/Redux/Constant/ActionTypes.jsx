@@ -11,4 +11,5 @@ export const ActionTypes =  {
     SET_TEST_LOCATION   : "SET_TEST_LOCATION",
     START_LOADING       : "START_LOADING",
     STOP_LOADING        : "STOP_LOADING",
+    TEST_FILTERS        : "TEST_FILTERS",
 }

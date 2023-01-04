@@ -47,7 +47,7 @@ export default function CheckupsSliders() {
         axios.get(API_URL.ORGAN_LIST).then((response) => {
             SetOrgans(response.data)
         })
-    });
+    },[]);
     const [Organs, SetOrgans] = useState([]);
     return (
         <section className="helth-chkup">

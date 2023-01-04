@@ -78,3 +78,18 @@ export const setTestLocation = (state = null, {type, payload}) => {
         default : return state;
     }
 }
+const filtersState = {
+    filters : {
+        TestName       : null,
+        TestPrice      : 'high',
+        HealthCondition: null,
+        OrganName      : null,
+        Tack           : 8,
+    }
+}
+export const setTestFilters = (state = filtersState, {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.TEST_FILTERS : return {...state, filters : payload};
+        default : return state;
+    }
+}

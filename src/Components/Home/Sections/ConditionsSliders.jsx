@@ -49,7 +49,7 @@ export default function ConditionsSliders() {
     axios.get(API_URL.CONDITIONS_LIST).then((response) => {
       SetConditions(response.data)
     })
-  });
+  },[]);
   const [Conditions, SetConditions] = useState([]);
   return (
     <section className="condition-packages">
