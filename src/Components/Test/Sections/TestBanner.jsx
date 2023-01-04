@@ -1,61 +1,78 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
+import { API_URL } from '../../../Redux/Constant/ApiRoute'
+
 export default function TestBanner(props) {
   const TestLocation = useSelector((state) => state.TestLocation);
+  useEffect(() => {
+    axios.get(API_URL.ORGAN_LIST).then((response) => {
+      SetOrgans(response.data)
+    })
+    axios.get(API_URL.CONDITIONS_LIST).then((response) => {
+      SetConditions(response.data)
+    })
+  },[]); 
+  const [Organs, SetOrgans] = useState([]);
+  const [Conditions, SetConditions] = useState([]);
+  const [OrganFilter, SetOrganFilter] = useState(null);
+  const [ConditionsFilter, SetConditionsFilter] = useState(null);
   return (
     <section className="search-container">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="serchnig text-center">
-              <h1 className="mb-3">Home Collection Booking in <span style={{ textTransform:'capitalize' }}>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-',' ') : null}</span></h1>
+              <h1 className="mb-3">Home Collection Booking in <span style={{ textTransform: 'capitalize' }}>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span></h1>
               <input
                 type="text"
                 placeholder="Search for Health Packages / Tests / Labs"
-                onChange={(e) => { 
+                onChange={(e) => {
                   props.getAllTest(props.sortBy, e.target.value)
                   props.setSearch(e.target.value)
                 }}
               />
-              {/* <div className="testBySec d-flex justify-content-center align-items-center">
-                <label className="testTxt">Filter By</label>
-                <div className="badgeSec">
-                  <ul className="badgeList">
-                    <li className="active">
-                      <a className="darkBdrBut ">Conditions</a>
-                    </li>
-                    <li>
-                      <a className="darkBdrBut ">Lifestyle Disorders</a>
-                    </li>
-                    <li>
-                      <a className="darkBdrBut ">Specialized</a>
-                    </li>
-                  </ul>
-                </div>
-              </div> */}
-              {/* <div className="chk-bxes text-center">
-                <div className="cutsomCheckBox circle">
-                  <input
-                    type="radio"
-                    id="cond_0"
-                    name="category_filter"
-                    value="Allergy" 
-                  />
-                  <label>
-                    <span className="lableTxt">Allergy</span>
-                  </label>
-                </div>
-                <div className="cutsomCheckBox circle">
-                  <input
-                    type="radio"
-                    id="cond_1"
-                    name="category_filter"
-                    value="Genetic Disorders"
-                  />
-                  <label>
-                    <span className="lableTxt">Genetic Disorders</span>
-                  </label>
-                </div>
-              </div> */}
+              {
+                Organs && <>
+                  <div className="testBySec d-flex justify-content-center align-items-center">
+                    <label className="testTxt">Filter By Organs :</label>
+                    <div className="badgeSec">
+                      <ul className="badgeList"> 
+                        {
+                          Organs&&Organs.map(item => (
+                            <li className={OrganFilter == item.name ? 'active' : ''}> 
+                              <a className="darkBdrBut text-white" onClick={() => SetOrganFilter(item.name)}>
+                                {item.name}
+                              </a> 
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </>
+              }
+              {
+                Conditions && <>
+                  <hr className='bg-light'/>
+                    <div className="testBySec">
+                      <h4 className="testTxt">Filter By Conditions </h4>
+                      <div className="badgeSec">
+                        <ul className="badgeList"> 
+                          {
+                            Conditions.map(item => (
+                              <li className={ConditionsFilter == item.name ? 'active' : ''}> 
+                                <a className="darkBdrBut text-white" onClick={() => SetConditionsFilter(item.name)}>
+                                  {item.name}
+                                </a> 
+                              </li>
+                            ))
+                          }
+                        </ul>
+                      </div>
+                    </div> 
+                </>
+              } 
             </div>
           </div>
         </div>

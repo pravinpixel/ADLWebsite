@@ -1,13 +1,6 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import Sliders from 'react-slick'
-import icon1 from '../../../assets/images/icn-1.png'
-import icon2 from '../../../assets/images/icn-2.png'
-import icon3 from '../../../assets/images/icn-3.png'
-import icon4 from '../../../assets/images/icn-4.png'
-import icon5 from '../../../assets/images/icn-5.png'
-import icon6 from '../../../assets/images/icn-6.png'
-import icon7 from '../../../assets/images/icn-7.png'
+import  { useEffect, useState } from 'react'
+import Sliders from 'react-slick' 
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 
 export default function CheckupsSliders() {
