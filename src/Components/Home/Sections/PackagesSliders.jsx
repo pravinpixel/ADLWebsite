@@ -47,10 +47,9 @@ export default function PackagesSliders({title,subTitle}) {
     ]
   };
   const getPackageSliders = () => {
-    axios.post(API_URL.TEST_LISTS + "/packages", { 
-      search: null,
-      tack  : 10,
-      sort  : 'hight'
+    axios.post(API_URL.PACKAGES_LIST,{ 
+      Tack  : 10,
+      TestPrice  : 'low'
     }).then((response) => {
       SetPackages(response.data.data)
     });
