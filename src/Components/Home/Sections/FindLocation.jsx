@@ -40,7 +40,7 @@ export default function FindLocation() {
           <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div className="location-detailsx text-center">
               <div className="common-heading">
-                <h2><span> The Anandlab</span> Network</h2>
+                <h2><span> The Anand Lab</span> Network</h2>
               </div>
               <p>We are focused on uniting borders across <br/>geographies to make better diagnosis a reality. </p>
               <div className="input-group">

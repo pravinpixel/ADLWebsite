@@ -49,8 +49,8 @@ export default function AboutUs() {
             <div className="testi-section">
               <div className="common-heading">
                 <h2>
-                  <span>What our customers Are </span>
-                  saying About us 
+                  <span>What Our Customers</span>
+                  Say About Us 
                 </h2>
               </div>
               <br/> 

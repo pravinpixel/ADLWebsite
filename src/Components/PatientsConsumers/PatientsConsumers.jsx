@@ -225,7 +225,7 @@ export default function Solutions() {
             <div className="col-lg-7">
               <div className="contnt-set">
                 <div className="common-heading">
-                  <h2> “Giving your Sample” </h2>
+                  <h2> 'Giving your Sample' </h2>
                 </div>
                 <p>
                   Giving a sample for testing is the primary experience for any
@@ -261,7 +261,7 @@ export default function Solutions() {
                 <div className="common-heading">
                   <h2>
                     {" "}
-                    <span>“Multiple Collection Centres </span> across Bangalore”{" "}
+                    <span>'Multiple Collection Centres </span> across Bangalore'{" "}
                   </h2>
                 </div>
                 <p>
@@ -285,7 +285,7 @@ export default function Solutions() {
             <div className="col-lg-6">
               <div className="anddn-lab">
                 <div className="common-heading lite">
-                  <h2> “Anand @Home Home Collection” </h2>
+                  <h2> Anand @ Home Home Sample Collection </h2>
                 </div>
                 <p>
                   At ADL, we understand that many of our patrons may find it

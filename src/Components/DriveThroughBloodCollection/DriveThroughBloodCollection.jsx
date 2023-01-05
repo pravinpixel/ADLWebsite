@@ -23,8 +23,8 @@ export default function DriveThroughBloodCollection() {
             <div className="row align-items-center">
                     <div className="col-lg-7">
                     <div className="contnt-set">
-                    <div className="common-heading"><h2> <span>“Drive-Through </span>Blood Collection service” </h2></div>
-                    <p>The latest service offered by ADL is the revolutionary drive-through blood collection service at Shivajinagar. Inspired by the established drive-through fast food restaurant system across the world, the drive-through blood collection service allows an individual to go through the process of registering for the necessary blood tests and giving the blood sample without having to even get out of their car! This facility, housed in the basement of our new 60,000 Sft premises, has been designed to ensure complete safety and hygiene for our patrons and staff with an efficient ventilation system and a brightly lit, designated phlebotomy section for privacy and cleanliness.</p>
+                    <div className="common-heading"><h2> <span>'Drive-Through </span>Blood Collection service'”' </h2></div>
+                    <p>The latest service offered by ADL is the revolutionary drive-through blood collection service at Shivajinagar. Inspired by the established drive-through fast food restaurant system across the world, the drive-through blood collection service allows an individual to go through the process of registering for the necessary blood tests and giving the blood sample without having to even get out of their car. This facility, housed in the basement of our new 60,000 Sq.ft. premises, has been designed to ensure complete safety and hygiene for our patrons and staff with an efficient ventilation system and a brightly lit, designated phlebotomy section for privacy and cleanliness.</p>
                     <div className='step-pairing'>
                     <span>The Drive-Through Blood Collection Service is operational from </span> 
                      Monday to Saturday, from 7:00AM to 11:00AM.

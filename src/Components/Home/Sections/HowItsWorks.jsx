@@ -14,19 +14,19 @@ export default function HowItsWorks() {
           <div className="col-lg-4">
             <div className="works-cunt">
               <span>1</span>
-              <p>Search for tests and packages and<br/> seamlessly book an appointment<br/> for home sample collection</p>
+              <p>Search for the required  <br />tests/packages and  <br />book an appointment online.</p>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="works-cunt">
               <span>2</span>
-              <p>We will send a certified professional<br/> (Phlebotomist) to your place to assist<br/> you with the sample collection</p>
+              <p>A certified Phlebotomist will reach your place on the chosen date and time to collect the sample.</p>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="works-cunt blw-sml">
               <span>3</span>
-              <p>We will email you the reports. You can<br/> also access your reports within your<br/> account on the Neuberg website</p>
+              <p>The test reports will be  sent through mail or can be generated with your account from the Neugberg website.</p>
             </div>
           </div>
         </div>

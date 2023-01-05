@@ -21,7 +21,7 @@ export default function Home() {
       <Banners/>
       <BookedTestSliders title="TOP BOOKED" subTitle="DIAGNOSTIC TESTS"/>
       <CheckupsSliders />
-      <PackagesSliders  title="CHOOSE YOUR" subTitle="HEALTH CHECKUPS / SCREENINGS FOR"/>
+      <PackagesSliders  title="CHOOSE YOUR" subTitle="HEALTH Package"/>
       <ConditionsSliders />
       <HowItsWorks />
       <AboutUs />

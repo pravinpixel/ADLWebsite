@@ -19,7 +19,7 @@ export default function
                       <li> Department </li>
                     </ul>
                     <h1>
-                    A compilation of valuable information not only <br/>helps in increasing the knowledge base of our customers   
+                    Transformimg Lives with <br />Technology and Advancements  
                     </h1>
                 </div>
             </div>

@@ -37,7 +37,7 @@ export default function History() {
         <div className="row">
         <div className="col-lg-12">
             <div className="common-heading"><h2> <span className='inlne'>Our</span> History </h2></div>
-            <p>Anand Diagnostic Laboratory’s exulting expertise in the field of investigative medicine and diagnostic testing comes with a strong groundwork on the dedicated set-up of the organisation. Our experience and establishments that have been milestones in this domain have been mapped out below.</p><br></br>
+            <p>Anand Diagnostic Laboratory’s exulting expertise in the field of investigative medicine and diagnostic testing comes with a strong groundwork for the dedicated set-up of the organisation. Our experience and establishments that have been milestones in this domain have been mapped out below.</p><br></br>
         </div>
         <div className="col-sm-12 col-md-12 col-lg-12">
 				<h1 className="text-red text-center">Our Journey</h1>
@@ -54,18 +54,18 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 1980</h6>
 						<ul className="list-style1">
-						    <li>First to start Radio Immunoassay for diagnosis in private field in Karnataka</li>
+						    <li>First to start Radio Immunoassay for diagnosis as a private field in Karnataka</li>
 						</ul>
 					</li>
 					
 					<li className="timeline-left">
 						<h6 className="text-red">1981 - 1990</h6>
-                        <h3>new larger premises</h3>
+                        <h3>New & Larger Premises</h3>
 					</li>
 					<li className="timeline-right">
 						<h6>1987</h6>
 						<ul className="list-style1">
-						    <li>Moved to new larger premises</li>
+						    <li>Moved to new & larger premises.</li>
 						    <li>Started Auto analyser for Chemistry and established Radiology and imaging services</li>
 						</ul> <br></br>
 						<h6> 1988</h6>
@@ -89,12 +89,12 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 1998</h6>
 						<ul className="list-style1">
-						    <li>Introduced Bar-coding in Registration for positive identification of patient samples and upgraded Lab Information system (LIS)</li>
+						    <li>Introduced bar-coding in registration for positive identification of patient samples and upgraded Lab Information System (LIS)</li>
 						</ul> <br></br>
 						<h6> 2000</h6>
 						<ul className="list-style1">
 						    <li>First to provide microscopic image capture and print system for biopsy material and e-mail microscopic images.</li>
-						    <li>First to provide report kiosk for “any time report collection” in addition to web facilitation of report view and download, sms of reports etc.</li>
+						    <li>First to provide report kiosk for 'any time report collection' in addition to web facilitation for viewing and downloading reports and receipt of reports through SMS.</li>
 						</ul>
 					</li>
 					
@@ -123,7 +123,7 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 2015</h6>
 						<ul className="list-style1">
-						    <li>Relocated to bowring tower, a 60,00 Sq Ft facility in shivajinagar,bangalore</li>
+						    <li>Relocated to Bowring Tower, a 60,000 Sq. Ft. facility in Shivaji Nagar, Bangalore.</li>
 						</ul> <br></br>
 						<h6> 2017</h6>
 						<ul className="list-style1">
@@ -131,7 +131,7 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 2020</h6>
 						<ul className="list-style1">
-						    <li>1st lab in karnataka to get ICMR approval for COVID RT PCR testing </li>
+						    <li>First lab in Karnataka to get ICMR approval for COVID RT-PCR testing.</li>
 						</ul> <br></br>
 						<h6> 2022</h6>
 						<ul className="list-style1">

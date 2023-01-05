@@ -1437,9 +1437,10 @@ span.strke {
 
 .works-cunt p {
     font-weight: 300;
-    font-size: 16px;
-    margin-bottom: 0px;
-}
+    font-size: 18px;
+    margin: 0px auto;
+    width: 90%;
+  }
 
 .works-cunt {
     position: relative;

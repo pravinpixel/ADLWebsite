@@ -239,7 +239,7 @@ export default function Footer() {
             <div className="col-sm-12 col-md-6 col-lg-6">
               <div className="footer-column subs-cribe">
               <h5>Subscribe to our newsletter</h5>
-                <p>Signup for our newsletter to get the latest news, updates in your inbox. </p>
+                <p>Sign Up for our newsletter to get the latest news and updates in your inbox.</p>
                 <input type="email" value={Email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Your E-mail Id" name="search" />
                 <button type="submit" onClick={SubscribeNewsLetter}><img src={send} alt="" className="img-fluid"/></button>
               </div> 

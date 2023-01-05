@@ -91,9 +91,9 @@ export default function PreparingForHeathCheckup() {
 <div className="common-para1 drk detilos-expl indication-details p-0">
   <b>Our staff will make the specimen collection process as safe, quick, and comfortable as possible while safeguarding your dignity and privacy.</b><br></br><br></br> 
 <h5>Scheduling appointments:</h5>
-<p>Kindly call 18004251974 in advance to fix an appointment. The entire checkup may take about 3 to 4 hours. The approximate time for the completion of the health check-up will vary depending on the packages this chosen by the individual. Hence, kindly plan your day accordingly. If you have diabetes (High blood sugars) / High blood pressure / heart disease or have suffered any illness or fever in the recent past, please inform the customer care executives in advance.</p>
-<p><b>Corporates</b>: All corporate clients are requested to bring the original referral letter from their office. For identification kindly bring a valid photo ID card.</p>
-<br></br>  <br></br> 
+<p>Call 1800 425 1974 in advance to fix an appointment. The entire checkup may take about 3 to 4 hours, depending on the packages chosen. Hence, plan your day accordingly.  If you have diabetes (High blood sugars) / High blood pressure / heart disease or have suffered any illness or fever in the recent past, inform the customer care executives in advance.</p>
+<p><b>Corporates</b>: All corporate clients are requested to bring the original referral letter from their office. For verification, kindly bring a valid photo ID card.</p>
+<br/> <br/>
 <div className='cmn-buton'>
 <p>
 <a href="">Reach Us</a> 
