@@ -12,4 +12,7 @@ export const ActionTypes =  {
     START_LOADING       : "START_LOADING",
     STOP_LOADING        : "STOP_LOADING",
     TEST_FILTERS        : "TEST_FILTERS",
+    PACKAGE_FILTERS     : "PACKAGE_FILTERS",
+    ORGANS_LIST         : "ORGANS_LIST",
+    CONDITIONS_LIST     : "CONDITIONS_LIST",
 }

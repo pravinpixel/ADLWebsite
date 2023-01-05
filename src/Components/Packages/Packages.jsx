@@ -4,37 +4,56 @@ import bannerimage from "../../assets/images/inner-banner-10.webp";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import PackageCardComponent from "../Containers/PackageCardComponent";
-import { setLoading } from "../../Redux/Actions/LoaderAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import GenderFilter from "./GenderFilter";
+import ConditionFilter from "./ConditionFilter";
+import OrganFilter from "./OrganFilter";
+import PriceFilters from "./PriceFilters";
+import { setPackageFilters } from "../../Redux/Actions/TestAction";
 
 export default function Packages() {
-  const [Packages,setPackages] = useState([])
-  const dispatch = useDispatch()
-  const [ApplicableGender,setApplicableGender] = useState('')
-  const [OrganName,setOrganName] = useState('')
-  const [HealthCondition,setHealthCondition] = useState('')
-  const filterHandler = (type,data) => {
-    if(type === 'Gender') {
-      setApplicableGender(data)
-    }
-    fetchPackages()
-  }
-  const fetchPackages = () => {
-    dispatch(setLoading(true))
-    axios.post(API_URL.PACKAGES_LIST,{
-      ApplicableGender : ApplicableGender,
-      OrganName : OrganName,
-      HealthCondition : HealthCondition,
-    }).then((response) => {
-      setPackages(response.data.data)
-      dispatch(setLoading(false))
-    });
-  };
   useEffect(() => {
     document.title = "Our Packages";
     window.scroll(0, 0);
+  }, [])
+
+  const dispatch = useDispatch()
+  const [Packages, setPackages] = useState([])
+  const [EmptyData, setEmptyData] = useState(false)
+  const packageFilters = useSelector((state) => state.packageFilters.filters)
+
+  const fetchPackages = () => {
+    axios.post(API_URL.PACKAGES_LIST, packageFilters).then((response) => {
+      setPackages(response.data.data)
+      if(response.data.count === 0) {
+        setEmptyData(true)
+      } else {
+        setEmptyData(false)
+      }
+    });
+  };
+
+  const clearAllFilters = () => {
+    var checkboxes = document.querySelectorAll('input:checked')
+    for(var i=0;i<checkboxes.length;i++) {
+      if(checkboxes[i].type=='checkbox') {
+        checkboxes[i].checked=false;
+      }
+    }
+    dispatch(setPackageFilters({
+      ApplicableGender: null,
+      TestName: null,
+      TestPrice: 'high',
+      HealthCondition: null,
+      OrganName: null,
+      Tack: 8,
+    }))
+  }
+
+  useEffect(() => {
     fetchPackages();
-  }, []);
+  }, [packageFilters]);
+
   return (
     <div>
       <section className="inner-banner">
@@ -60,7 +79,6 @@ export default function Packages() {
           </div>
         </div>
       </section>
-
       <section className="filtering-packages filtering-lsts">
         <div className="container">
           <div className="row">
@@ -68,7 +86,7 @@ export default function Packages() {
               <div className="common-heading">
                 <h2>
                   <span>MAKING </span>
-                  <span className="yelow">gOOD hEALTH </span> a Priority!
+                  <span className="yelow">GOOD HEALTH </span> a Priority!
                 </h2>
               </div>
             </div>
@@ -77,141 +95,28 @@ export default function Packages() {
                 <div className="row">
                   <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div className="filter-lists Products-factory-lsts">
-                      <h3>Filters</h3>
-                      <ul>
-                        <h4>Gender</h4>
-                        <li>
-                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','M')}>
-                            Male
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','F')}>
-                            Female
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx" onClick={() => filterHandler('Gender','B')}>
-                            Both & Others
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul>
-                        <h4>Conditions</h4>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Condition - 1
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Condition - 2
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Condition - 3
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Condition - 4
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Condition - 5
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul>
-                        <h4>Organs</h4>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Organ - 1
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Organ - 2
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Organ - 3
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Organ - 4
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Organ - 5
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul>
-                        <h4>Price Range</h4>
-                        <li>
-                          <label className="cstm-chkbx">
-                            Low to High
-                            <input type="radio" name="price_range" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                        <li>
-                          <label className="cstm-chkbx">
-                            High to low
-                            <input type="radio" name="price_range" />
-                            <span className="checkmark"></span>
-                          </label>
-                        </li>
-                      </ul>
+                      <h3>
+                        Filters
+                        <button onClick={clearAllFilters} className="btn-sm btn-danger float-right rounded"><i className="fa fa-times"></i> Clear</button>
+                      </h3>
+                      <GenderFilter />
+                      <ConditionFilter />
+                      <OrganFilter />
+                      <PriceFilters />
                     </div>
                   </div>
-
                   <div className="col-9">
+                    {EmptyData === true ? 
+                      <h5 className="py-3">No Result Found !</h5>
+                    : null}
                     <div className="Products-factory-functions">
                       <div className="row">
-                        {Packages.length !== 0 ? 
-                          Packages.map((item, index) =>  {
-                             return <div key={index} className="col-lg-4">
-                                  <PackageCardComponent
-                                    data={item}
-                                    packages={fetchPackages}
-                                  />
-                              </div>
-                          } 
-                          )
-                        : ""} 
+                        {
+                          Packages.length !== 0 
+                          ?
+                            Packages.map((item, index) => <div key={index} className="col-lg-4"><PackageCardComponent data={item} /></div> )
+                          : null
+                        }
                       </div>
                     </div>
                   </div>

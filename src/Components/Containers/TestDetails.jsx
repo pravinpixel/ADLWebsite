@@ -21,13 +21,11 @@ import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import { setLoading } from '../../Redux/Actions/LoaderAction'
 
 export default function TestDetails() {
-  const location = useLocation();
-  const navigate = useNavigate()
-
-  const { TestId } = useParams();
-  const dispatch = useDispatch();
+  const location    = useLocation();
+  const navigate    = useNavigate()
+  const { TestId }  = useParams();
+  const dispatch    = useDispatch();
   const testDetails = useSelector((state) => state.TestDetails.TestDetails);
-
   const getTestDetails = async () => {
     dispatch(setLoading(true))
     const response = await axios.get(`${API_URL.TEST_DETAILS}/${TestId}/${location.state.test_type}`)

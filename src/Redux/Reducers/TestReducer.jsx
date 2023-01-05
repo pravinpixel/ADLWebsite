@@ -80,16 +80,37 @@ export const setTestLocation = (state = null, {type, payload}) => {
 }
 const filtersState = {
     filters : {
-        TestName       : null,
-        TestPrice      : 'high',
-        HealthCondition: null,
-        OrganName      : null,
-        Tack           : 8,
+        ApplicableGender: null,
+        TestName        : null,
+        TestPrice       : 'high',
+        HealthCondition : null,
+        OrganName       : null,
+        Tack            : 8,
     }
 }
 export const setTestFilters = (state = filtersState, {type, payload}) => { 
     switch (type) {
         case ActionTypes.TEST_FILTERS : return {...state, filters : payload};
+        default : return state;
+    }
+}
+
+export const setPackageFilters = (state = filtersState, {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.PACKAGE_FILTERS : return {...state, filters : payload};
+        default : return state;
+    }
+}
+
+export const setOrgans = (state = [], {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.ORGANS_LIST : return {...state, data : payload};
+        default : return state;
+    }
+}
+export const setConditions = (state = [], {type, payload}) => { 
+    switch (type) {
+        case ActionTypes.CONDITIONS_LIST : return {...state, data : payload};
         default : return state;
     }
 }

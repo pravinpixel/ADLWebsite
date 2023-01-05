@@ -3,13 +3,14 @@ import  { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Sliders from 'react-slick' 
-import { setTestFilters } from '../../../Redux/Actions/TestAction'
+import { setOrgans, setTestFilters } from '../../../Redux/Actions/TestAction'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 
 export default function CheckupsSliders() {
     const  Navigate = useNavigate()
     const  dispatch = useDispatch()
     const  filters = useSelector((state) => state.filters.filters)
+    const  Organs = useSelector((state) => state.organs.data) 
     const settings = {
         slidesToScroll: 1,
         infinite: true,
@@ -48,8 +49,8 @@ export default function CheckupsSliders() {
         ]
     };
     const FetchOrgans = () =>{
-        axios.get(API_URL.ORGAN_LIST).then((response) => {
-            SetOrgans(response.data)
+        axios.get(API_URL.ORGAN_LIST).then((response) => { 
+            dispatch(setOrgans(response.data))
         })
     }
     const FilterHandler = (value) => {
@@ -58,8 +59,7 @@ export default function CheckupsSliders() {
     }
     useEffect(() => {
         FetchOrgans()
-    },[]);
-    const [Organs, SetOrgans] = useState([]);
+    },[]); 
     return (
         <section className="helth-chkup">
             <div className="container">
@@ -71,7 +71,7 @@ export default function CheckupsSliders() {
                         <br />
                         <Sliders className="body-parts text-center"  {...settings}>
                             {
-                                Organs !== 0 ?
+                                Organs !== undefined ?
                                     Organs.map((item,i) => (
                                         <div key={i} className="parts-seq" onClick={() => FilterHandler(item.name)}>
                                             <img src={item.image} width="70px" className="img-fluid mb-2" />

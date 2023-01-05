@@ -68,3 +68,25 @@ export const setTestFilters = (filters) => {
         payload : filters
     }
 }
+
+export const setPackageFilters = (filters) => {
+    return {
+        type    : ActionTypes.PACKAGE_FILTERS,
+        payload : filters
+    }
+}
+
+
+export const setOrgans = (data) => {
+    return {
+        type    : ActionTypes.ORGANS_LIST,
+        payload : data
+    }
+} 
+
+export const setConditions = (data) => {
+    return {
+        type    : ActionTypes.CONDITIONS_LIST,
+        payload : data
+    }
+} 

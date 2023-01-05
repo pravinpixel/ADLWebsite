@@ -51,12 +51,9 @@ export default function PackageCardComponent(props) {
           : null
         } 
       </h5>
-      <h6>{Math.floor(Math.random() * 100) + 1} % off T&C*</h6>
       <div className="case" style={{ border:"none",padding:"0" }}>
         <p className="d-flex">
-          {props.packages !== undefined ? (
-            <CartBtn getData={props.packages} testData={props.data} />
-          ) : null}
+          <CartBtn testData={props.data} />
           <TestNavBtn data={props.data !== undefined ?  props.data : null }/>  
         </p>
       </div>
