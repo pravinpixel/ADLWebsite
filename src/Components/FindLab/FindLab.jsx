@@ -6,25 +6,32 @@ import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { ContentContainer } from "../../Helpers";
 
 export default function FindLab() {
   const location = useLocation();
-  const navigate = useNavigate();    
+  const navigate = useNavigate();
   const dispatch = useDispatch()
+  const [Lab, setLab] = useState([]);
+  const [LabLocation, setLabLocation] = useState([]);
 
-  
-  const [Lab, setLab] = useState([]); 
-
-  const getLocation = () => {  
+  const getLocation = () => {
     dispatch(setLoading(true))
-    axios.get(`${API_URL.GET_LAB_LOCATION}/${location.state.LocationId}`).then((response) => {
-      dispatch(setLoading(false))
-      setLab(response.data);
-    });
+    if (location.state.LocationId === null) {
+      axios.get(API_URL.GET_LAB_LOCATION).then((response) => {
+        dispatch(setLoading(false))
+        setLabLocation(response.data);
+      });
+    } else {
+      axios.get(`${API_URL.GET_LAB_LOCATION}/${location.state.LocationId}`).then((response) => {
+        dispatch(setLoading(false))
+        setLab(response.data);
+      });
+    }
   };
   useEffect(() => {
-    if(location.state === null) {
-      navigate('/') 
+    if (location.state === null) {
+      navigate('/')
     } else {
       getLocation();
     }
@@ -62,7 +69,6 @@ export default function FindLab() {
             <div className="col-lg-12">
               <div className="common-heading">
                 <h2>
-               
                   <span className="inlne">Our</span> {Lab.length !== 0 ? Object.entries(Lab)[0][0] : null} Locations
                 </h2>
               </div>
@@ -73,44 +79,64 @@ export default function FindLab() {
                 achieving a detailed and progressive inference. Here is a list
                 of our extensive range of services.
               </p>
-            </div>  
-            {Lab.length !== 0
-              ? Object.entries(Lab)[0][1].map((item, i) => {
-                  return (
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 mt-4" key={i}>
-                      <div className="locate-box border">
-                        <h3>
-                          {item.BranchName} <span> {item.BranchCity}, {item.State} - {item.Pincode} </span>
-                        </h3>
-                        <ul>
-                          <li>
-                            <i
-                              className="fa fa-map-marker"
-                              aria-hidden="true"
-                            ></i>
-                            {item.BranchAddress}
-                          </li>
-                          <li>
-                            <i className="fa fa-clock-o" aria-hidden="true"></i>
-                              {item.BranchTimings }
-                          </li>
-                          <li>
-                            <i className="fa fa-phone" aria-hidden="true"></i>
-                            {item.BrachContact}
-                          </li>
-                          <li>
-                            <i className="fa fa-envelope" aria-hidden="true"></i>
-                            {item.BranchEmail}
-                          </li>
-                        </ul>
+            </div>
+            <div>
+              {
+                LabLocation.length !== 0 ?
+                  Object.entries(LabLocation).map((branch,index) => (
+                    <div key={index}>
+                      <div className="row g-5 border-bottom border-top py-3">
+                        <h4 className="py-3 m-0 col-12">{branch[0]}</h4>
+                        {
+                          branch[1].map((item, i) => {
+                            return <LocationCard  key={i} item={item} />;
+                          })
+                        }
                       </div>
                     </div>
-                  );
-                })
-              :  <div style={{ minHeight: "100vh" }}>  </div>}
+                  ))
+                  : null
+              }
+            </div>
+            {Lab.length !== 0
+              ?
+                <div className="row g-5 border-bottom py-3">
+                  {
+                    Object.entries(Lab)[0][1].map((item, i) => {
+                      return <LocationCard  key={i} item={item} />;
+                    })
+                  }
+                </div>
+              : null}
           </div>
         </div>
       </section>
     </div>
   );
+}
+
+const LocationCard = (props) => {
+  return (
+    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 my-3">
+      <div className="locate-box border">
+        <h3>
+          {props.item.BranchName} <span> {props.item.BranchCity}, {props.item.State} - {props.item.Pincode} </span>
+        </h3>
+        <ul>
+          <ContentContainer data={props.item.BranchAddress}>
+            <li><i className="fa fa-map-marker" ></i>{props.item.BranchAddress}</li>
+          </ContentContainer> 
+          <ContentContainer data={props.item.BranchTimings}>
+            <li><i className="fa fa-clock-o"></i>{props.item.BranchTimings}</li>
+          </ContentContainer>
+          <ContentContainer data={props.item.BrachContact}>
+            <li><i className="fa fa-phone"></i>{props.item.BrachContact}</li>
+          </ContentContainer>
+          <ContentContainer data={props.item.BranchEmail}>
+            <li><i className="fa fa-envelope"></i>{props.item.BranchEmail}</li>
+          </ContentContainer>
+        </ul>
+      </div>
+    </div>
+  )
 }

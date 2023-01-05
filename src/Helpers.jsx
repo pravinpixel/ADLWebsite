@@ -87,3 +87,11 @@ export const  Validate = (data) => {
    } 
    return false
 } 
+
+export const ContentContainer = (props) => {
+   if(props.data !== '' && props.data !== undefined && props.data !== null) {
+      return props.children
+   } else {
+      return null
+   }
+}

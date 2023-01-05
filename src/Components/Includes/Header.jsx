@@ -8,7 +8,7 @@ import user from "./../../assets/images/user.png";
 import men4 from "./../../assets/images/men-4.png";
 import dwd from "./../../assets/images/dwd.png";
 import CartCount from "./CartCount";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form } from "react-component-form";
 import Modal from "react-bootstrap/Modal";
 import { useSelector ,useDispatch } from "react-redux";
@@ -18,7 +18,7 @@ import { toast } from "react-hot-toast";
 export default function Header() {
   const authUser = useSelector((state) => state.authUser); 
   const TestLocation = useSelector((state) => state.TestLocation); 
-
+  const navigate = useNavigate();    
   const navElement = useRef();
   const toggleIcon = useRef();
   const [show, setShow] = useState(false);
@@ -608,14 +608,9 @@ export default function Header() {
                           </span>
                           <ul className="dropdown-menu frresplyr-con">
                             <li>
-                              <Link
-                                onClick={handleLink}
-                                className="dropdown-item"
-                                to="/"
-                              >
-                                {" "}
-                                Reach our lab{" "}
-                              </Link>
+                              <button onClick={() => navigate('/find-lab',{ state: { LocationId: null } })} className="dropdown-item"> 
+                                Reach our lab 
+                              </button>
                             </li>
                             <li>
                               <Link
