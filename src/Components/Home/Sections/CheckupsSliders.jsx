@@ -66,7 +66,7 @@ export default function CheckupsSliders() {
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div className="common-heading">
-                            <h2><span>Choose Your </span> Health Checkups / Screenings For </h2>
+                            <h2><span>Choose Your </span> Health Package </h2>
                         </div>
                         <br />
                         <Sliders className="body-parts text-center"  {...settings}>

@@ -5452,6 +5452,31 @@ input[type="range"]::-moz-range-thumb {
     color: #fff;
 }
 
+.detilos-expl.indication-details.policeis-migrate{padding:0px 0px 10px !important;}
+
+.indication-details ul.no-cllas li::before{background: #686767;
+    height: 3px;
+    width: 15px;
+    top: 14px;
+    left: 5px;}
+.indication-details ul.no-cllas li{padding-left:30px;}
+.special-instruction.pol-icy h3{font-size: 17px;margin-bottom: 0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;

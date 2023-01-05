@@ -44,6 +44,9 @@ import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/He
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
+import CancellationPolicy from './Components/CancellationPolicy/CancellationPolicy'
+import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
+import TermsConditions from './Components/TermsConditions/TermsConditions'
 import { useDispatch , useSelector } from 'react-redux'
 import { setAuthUser, setTestLocation } from './Redux/Actions/TestAction'
 import "react-datepicker/dist/react-datepicker.css";
@@ -109,6 +112,9 @@ export default function App() {
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
         <Route path='/find-lab' exact element={<FindLab/>} /> 
+        <Route path='/cancellation-policy' exact element={<CancellationPolicy/>} />  
+        <Route path='/privacy-policy' exact element={<PrivacyPolicy/>} />  
+        <Route path='/terms-conditions' exact element={<TermsConditions/>} />  
         
         <Route path="/my-account" element={<MyProfile />} />
           {/* <Route path="information" index element={<AccountInformation/>} /> 

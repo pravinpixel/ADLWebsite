@@ -65,7 +65,7 @@ export default function ConditionsSliders() {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="common-heading white">
-              <h2><span>Pick Your </span> Tests by Condition </h2>
+              <h2><span>Select Your Test According </span> to Your Condition </h2>
             </div>
             <br />
             <Sliders {...settings} className="condition-lsts text-center">
