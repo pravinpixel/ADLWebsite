@@ -1,20 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {  useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
-import conditionIcon from '../../../assets/images/condition-icon-1.png'
+import { setTestFilters } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 
 export default function ConditionsSliders() {
-  var settings = {
+  const  Navigate = useNavigate()
+  const  dispatch = useDispatch()
+  const  filters = useSelector((state) => state.filters.filters)
+  const settings = {
     slidesToScroll: 1,
     infinite: true,
     slidesToShow: 6,
-    focusOnSelect: true,
     autoplay: true,
-    dots: false,
-    arrows: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1600,
     responsive: [
       {
         breakpoint: 1024,
@@ -45,10 +46,17 @@ export default function ConditionsSliders() {
       },
     ]
   };
-  useEffect(() => {
+  const FilterHandler = (value) => {
+    dispatch(setTestFilters({...filters,HealthCondition:value})) 
+    Navigate('for-patient')
+  }
+  const FetchConditions = () => {
     axios.get(API_URL.CONDITIONS_LIST).then((response) => {
       SetConditions(response.data)
     })
+  }
+  useEffect(() => {
+    FetchConditions()
   },[]);
   const [Conditions, SetConditions] = useState([]);
   return (
@@ -63,11 +71,11 @@ export default function ConditionsSliders() {
             <Sliders {...settings} className="condition-lsts text-center">
               {
                 Conditions !== 0 ?
-                  Conditions.map(item => (
-                    <div className="tes-cond">
+                  Conditions.map((item,i) => (
+                    <div key={i} className="tes-cond">
                       <img src={item.image} width="100px" className="img-fluid" />
                       <h4 className='pr-4'>{item.name}</h4>
-                      <button><i className="fa fa-plus"></i></button>
+                      <button onClick={() => FilterHandler(item.name)}><i className="fa fa-plus"></i></button>
                     </div> 
                   ))
                 : null

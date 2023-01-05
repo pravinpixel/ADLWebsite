@@ -1107,7 +1107,9 @@ span.strke {
 .helth-chkup {
     background-color: #f9f9f9;
 }
-
+.parts-seq {
+    cursor: pointer !important;
+}
 .parts-seq img {
     display: inline-block;
 }
@@ -2174,13 +2176,13 @@ section.media-structure {
 }
 
 .darkBdrBut {
-    cursor: pointer;
+    cursor: pointer !important;
     display: block;
-    padding: 5px 15px;
+    padding: 3px 15px;
     border: 2px solid #fff;
-    font-size: 16px;
+    font-size: 13px;
     color: #fff;
-    font-weight: 600;
+    font-weight: normal;
     border-radius: 21px;
 }
 

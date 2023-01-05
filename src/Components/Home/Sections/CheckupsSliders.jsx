@@ -1,18 +1,22 @@
 import axios from 'axios'
 import  { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 import Sliders from 'react-slick' 
+import { setTestFilters } from '../../../Redux/Actions/TestAction'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 
 export default function CheckupsSliders() {
-    var settings = {
+    const  Navigate = useNavigate()
+    const  dispatch = useDispatch()
+    const  filters = useSelector((state) => state.filters.filters)
+    const settings = {
         slidesToScroll: 1,
         infinite: true,
         slidesToShow: 7,
-        focusOnSelect: true,
         autoplay: true,
         dots: false,
-        arrows: false,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1600,
         responsive: [
             {
                 breakpoint: 1024,
@@ -43,10 +47,17 @@ export default function CheckupsSliders() {
             },
         ]
     };
-    useEffect(() => {
+    const FetchOrgans = () =>{
         axios.get(API_URL.ORGAN_LIST).then((response) => {
             SetOrgans(response.data)
         })
+    }
+    const FilterHandler = (value) => {
+        dispatch(setTestFilters({...filters,OrganName:value})) 
+        Navigate('for-patient')
+    }
+    useEffect(() => {
+        FetchOrgans()
     },[]);
     const [Organs, SetOrgans] = useState([]);
     return (
@@ -61,9 +72,9 @@ export default function CheckupsSliders() {
                         <Sliders className="body-parts text-center"  {...settings}>
                             {
                                 Organs !== 0 ?
-                                    Organs.map(item => (
-                                        <div className="parts-seq">
-                                            <img src={item.image} width="100px" className="img-fluid mb-2" />
+                                    Organs.map((item,i) => (
+                                        <div key={i} className="parts-seq" onClick={() => FilterHandler(item.name)}>
+                                            <img src={item.image} width="70px" className="img-fluid mb-2" />
                                             <span><b>{item.name}</b></span>
                                         </div>
                                     ))

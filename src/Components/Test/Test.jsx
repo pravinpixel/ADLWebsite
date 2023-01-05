@@ -9,9 +9,7 @@ export default function Test() {
   return (
     <div>
       <TestBanner /> 
-      <TestHealthPackages />
-      {/* <PopularTests />
-      <PopularPackages /> */}
+      <TestHealthPackages /> 
     </div>
   )
 }

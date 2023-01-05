@@ -10,7 +10,7 @@ export default function TestBanner(props) {
   const [OrganFilter, SetOrganFilter]           = useState(null);
   const [ConditionsFilter, SetConditionsFilter] = useState(null);
   const TestLocation                            = useSelector((state) => state.TestLocation);
-  const filters                                 = useSelector((state) => state.filters);
+  const filters                                 = useSelector((state) => state.filters.filters);
   const dispatch                                = useDispatch()
 
   const fetchOrgans = () => {
@@ -37,10 +37,12 @@ export default function TestBanner(props) {
   useEffect(() => {
     fetchOrgans()
     fetchConditions()
+    SetOrganFilter(filters.OrganName)
+    SetConditionsFilter(filters.HealthCondition)
   },[]);  
 
-  const filterHandler = (type, value) => { 
-    dispatch(setTestFilters({...filters.filters,[type]:value})) 
+  const filterHandler = (type, value) => {  
+    dispatch(setTestFilters({...filters,[type]:value})) 
   }
   return (
     <section className="search-container">
@@ -56,9 +58,8 @@ export default function TestBanner(props) {
               />
               {
                 Organs && <>
-                  <hr className='bg-light'/>
-                  <div className="testBySec d-flex justify-content-center align-items-center">
-                    <label className="testTxt">Filter By Organs :</label>
+                  <div className="testBySec">
+                    <label className="testTxt mb-4">Filter By Organs</label>
                     <div className="badgeSec">
                       <ul className="badgeList"> 
                         {
