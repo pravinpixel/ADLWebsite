@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
@@ -81,7 +81,7 @@ export default function TestDetails() {
               </div>
             </div>
           </section>
-          <section className="testing-details text-left">
+          <section className="testing-details text-left border-bottom">
             <div className="container">
               <div className="row">
                 <div className="col-lg-7">
@@ -144,8 +144,8 @@ export default function TestDetails() {
                         <h4>Available Sub Tests </h4>
                         <ul>
                           {
-                            testDetails.sub_test.map((subTest) => (
-                              <li>{subTest.SubTestName}</li>
+                            testDetails.sub_test.map((subTest,i) => (
+                              <li key={i}>{subTest.SubTestName}</li>
                             ))
                           }
                         </ul>
@@ -155,90 +155,99 @@ export default function TestDetails() {
 
                 </div>
               </div>
-              <div className="special-instruction">
-                <h3>Special Instructions</h3>
-                <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  {
-                    testDetails.test.SpecialInstructionsForPatient !== "" ?
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link active"
-                          id="home-tab"
-                          data-toggle="tab"
-                          href="#home"
-                          role="tab"
-                          aria-controls="home"
-                          aria-selected="true"
-                        >
-                          For Patient
-                        </a>
-                      </li>
-                      : ""
-                  }
-                  {
-                    testDetails.test.SpecialInstructionsForCorporates !== "" ?
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link"
-                          id="profile-tab"
-                          data-toggle="tab"
-                          href="#profile"
-                          role="tab"
-                          aria-controls="profile"
-                          aria-selected="false"
-                        >
-                          For Corporates
-                        </a>
-                      </li>
-                      : ""
-                  }
-                  {
-                    testDetails.test.SpecialInstructionsForDoctors !== "" ?
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link"
-                          id="contact-tab"
-                          data-toggle="tab"
-                          href="#contact"
-                          role="tab"
-                          aria-controls="contact"
-                          aria-selected="false"
-                        >
-                          For Doctors
-                        </a>
-                      </li>
-                      : ""
-                  }
-                </ul>
-                <div className="tab-content" id="myTabContent">
-                  <div
-                    className="tab-pane fade show active"
-                    id="home"
-                    role="tabpanel"
-                    aria-labelledby="home-tab"
-                  >
-                    <div className="detilos-expl">
-                      <p>{testDetails.test.SpecialInstructionsForPatient}</p>
+              {
+                testDetails.test.SpecialInstructionsForPatient !== "" || testDetails.test.SpecialInstructionsForCorporates !== "" || testDetails.test.SpecialInstructionsForDoctors !== "" ?
+                  <div className="special-instruction">
+                    
+                    <h3>Special Instructions</h3>
+                    <ul className="nav nav-tabs" id="myTab" role="tablist">
+                      {
+                        testDetails.test.SpecialInstructionsForPatient !== "" ?
+                          <li className="nav-item" role="presentation">
+                            <a
+                              className="nav-link active"
+                              id="home-tab"
+                              data-toggle="tab"
+                              href="#home"
+                              role="tab"
+                              aria-controls="home"
+                              aria-selected="true"
+                            >
+                              For Patient
+                            </a>
+                          </li>
+                          : ""
+                      }
+                      {
+                        testDetails.test.SpecialInstructionsForCorporates !== "" ?
+                          <li className="nav-item" role="presentation">
+                            <a
+                              className="nav-link"
+                              id="profile-tab"
+                              data-toggle="tab"
+                              href="#profile"
+                              role="tab"
+                              aria-controls="profile"
+                              aria-selected="false"
+                            >
+                              For Corporates
+                            </a>
+                          </li>
+                          : ""
+                      }
+                      {
+                        testDetails.test.SpecialInstructionsForDoctors !== "" ?
+                          <li className="nav-item" role="presentation">
+                            <a
+                              className="nav-link"
+                              id="contact-tab"
+                              data-toggle="tab"
+                              href="#contact"
+                              role="tab"
+                              aria-controls="contact"
+                              aria-selected="false"
+                            >
+                              For Doctors
+                            </a>
+                          </li>
+                          : ""
+                      }
+                    </ul>
+                    <div className="tab-content" id="myTabContent">
+                      <div
+                        className="tab-pane fade show active"
+                        id="home"
+                        role="tabpanel"
+                        aria-labelledby="home-tab"
+                      >
+                        <div className="detilos-expl">
+                          <p>{testDetails.test.SpecialInstructionsForPatient}</p>
+                        </div>
+                      </div>
+                      <div
+                        className="tab-pane fade"
+                        id="profile"
+                        role="tabpanel"
+                        aria-labelledby="profile-tab"
+                      >
+                        <div className="detilos-expl">
+                          <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
+                        </div>
+                      </div>
+                      <div
+                        className="tab-pane fade"
+                        id="contact"
+                        role="tabpanel"
+                        aria-labelledby="contact-tab"
+                      >
+                         <div className="detilos-expl">
+                          <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div
-                    className="tab-pane fade"
-                    id="profile"
-                    role="tabpanel"
-                    aria-labelledby="profile-tab"
-                  >
-                    <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
-                  </div>
-                  <div
-                    className="tab-pane fade"
-                    id="contact"
-                    role="tabpanel"
-                    aria-labelledby="contact-tab"
-                  >
-                    <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
-                  </div>
-                </div>
-              </div>
+                : null
+              }
             </div>
           </section>
           <BookedTestSliders title="Other related" subTitle="Tests" />

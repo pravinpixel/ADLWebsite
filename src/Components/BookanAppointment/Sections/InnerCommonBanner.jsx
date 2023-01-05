@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from "react-router-dom";
 import bannerimage from "../../../assets/images/inner-banner-2.jpg"
 

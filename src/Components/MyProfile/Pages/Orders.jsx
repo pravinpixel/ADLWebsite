@@ -66,18 +66,18 @@ export default function Orders() {
                 <div className="col-md-4 pl-0 pb-3">
                   <div className="card border">
                     <div className="card-header d-block">
-                      <h6 class="card-subtitle mb-2 text-muted">Order ID</h6>
+                      <h6 className="card-subtitle mb-2 text-muted">Order ID</h6>
                       <b className="card-title m-0 text-dark">
                         {order.order_id}
                       </b>
                       {order.order_status === null ||
                       order.order_status === "0" ? (
-                        <span class="badge text-white rounded-pill bg-success float-right">
+                        <span className="badge text-white rounded-pill bg-success float-right">
                           Order Placed
                         </span>
                       ) : null}
                       {order.order_status === "3" ? (
-                        <span class="badge text-dark rounded-pill bg-warning float-right">
+                        <span className="badge text-dark rounded-pill bg-warning float-right">
                           Cancel Requested
                         </span>
                       ) : null}
@@ -91,7 +91,7 @@ export default function Orders() {
                         <ol className="list-group list-group-numbered">
                           {order.tests.map((test, i) => {
                             return (
-                              <li class="list-group-item" key={i}>
+                              <li className="list-group-item" key={i}>
                                 <small>{test.TestName}</small>
                               </li>
                             );

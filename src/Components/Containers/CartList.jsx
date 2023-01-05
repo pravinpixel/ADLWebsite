@@ -139,7 +139,7 @@ export default function CartList() {
                         <tr key={index}>
                           <th scope="row">{item.TestName}</th>
                           <td className="text-right">
-                            {item.IsPackage === "Yes" ? <span class="px-2 py-1 badge badge-success"><i class="fa fa-flask" aria-hidden="true"></i> Package </span> : <span class="px-2 py-1 badge badge-primary"><i class="fa fa-flask" aria-hidden="true"></i> Test </span>}
+                            {item.IsPackage === "Yes" ? <span className="px-2 py-1 badge badge-success"><i className="fa fa-flask" aria-hidden="true"></i> Package </span> : <span className="px-2 py-1 badge badge-primary"><i className="fa fa-flask" aria-hidden="true"></i> Test </span>}
                           </td>
                           <td className="text-right">
                             &#8377;{item.TestPrice}

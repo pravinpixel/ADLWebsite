@@ -1,8 +1,7 @@
 import { API_URL } from "./Redux/Constant/ApiRoute";
-import React from "react";
 import logo from './assets/images/logo.png';
 import  toast  from "react-hot-toast";
-
+import { useSelector } from "react-redux";
 export function assets(params) {
   // params  =>  Image | File Url 
    if(params.includes("http")) {
@@ -22,7 +21,7 @@ export function Loading() {
 }
 
 export function CheckCartBucket(TestId) {
-   
+   const cartItems  = useSelector((state) => state.TestCartList.cartTest) 
    let currentCart = JSON.parse(localStorage.getItem('CartTestList'));
    if(currentCart !== null) {
       function isExists(CurrentTest) {

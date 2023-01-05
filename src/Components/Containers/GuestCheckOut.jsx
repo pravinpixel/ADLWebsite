@@ -45,8 +45,6 @@ export default function GuestCheckOut() {
 
   useEffect(() => {
     setBillingAddress(JSON.parse(localStorage.getItem("billing_data")));
-    console.log(BillingAddress)
-  
     setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     var AuthUserData = AuthUser();
     if (AuthUserData.first_name ?? false) {

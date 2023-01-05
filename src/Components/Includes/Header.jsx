@@ -48,7 +48,7 @@ export default function Header() {
       }
     });
     let plusItems = document.querySelectorAll(".fa-minus");
-    console.log(plusItems);
+    
     plusItems.forEach((plusItem) => {
       if (plusItem.classList.contains("fa-minus")) {
         plusItem.classList.remove("fa-minus");

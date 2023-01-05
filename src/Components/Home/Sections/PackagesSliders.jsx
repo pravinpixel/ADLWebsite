@@ -12,7 +12,6 @@ export default function PackagesSliders({title,subTitle}) {
     slidesToScroll: 1,
     infinite:true,
     slidesToShow: 4,
-    focusOnSelect: true, 
     autoplay: true,
     dots: false,
     arrows: true,

@@ -1,9 +1,5 @@
-import React from 'react'
 import { Toaster } from 'react-hot-toast';
- 
-
 export default function AlertBox() {
-   
   return (
     <Toaster 
         position="top-center"

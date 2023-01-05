@@ -102,7 +102,7 @@ export default function BookedTestSliders({title , subTitle}) {
                       </h5>
                     </div>
                     <p>
-                      <CartBtn getData={getBookedTestSliders} testData={test} />
+                      <CartBtn testData={test} />
                     </p>
                   </div>
                 ))}

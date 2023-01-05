@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { Form } from "react-component-form";
 import upload from "../../assets/images/upload.png";
 import InnerCommonBanner from "./Sections/InnerCommonBanner";
