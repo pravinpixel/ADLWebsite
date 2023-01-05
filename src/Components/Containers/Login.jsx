@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
@@ -95,11 +95,16 @@ export default function Login() {
                               <button type="button" className="btn-primary" onClick={LoginAccount}>LOGIN</button>  
                             </div>
                           </div>
+                          <div className="col-lg-12 text-center mb-3">
+                            <div className="user-regster">
+                              Forgot Your Password ? <Link to="/forgot-password"> click Here!</Link>
+                            </div>
+                          </div>
                           <div className="col-lg-12 text-center p-0">
                             <div className="mid-poart">
                               <h5>or</h5>
                             </div>
-                          </div>
+                          </div> 
                           {/* <div className="col-lg-12 text-center p-0 mb-3">
                             <div className="login-btn">
                               <Link to="" onClick={handleShow}>
