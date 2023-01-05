@@ -2164,6 +2164,13 @@ section.media-structure {
     white-space: nowrap;
     margin: 12px 0;
 }
+.status-badge {
+    padding-top: 6px !important;
+    border-radius:25px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    text-transform: uppercase;
+}
 
 .badgeList {
     width: 100%;
@@ -3723,11 +3730,7 @@ iframe.contact-map {
 
 .swal2-container.swal2-center>.swal2-popup {
     border-radius: 25px;
-}
-
-.swal2-styled.swal2-confirm {
-    background-color: #5d2c8f !important;
-}
+} 
 .swal2-styled {
     border-radius: 25px !important;
 }

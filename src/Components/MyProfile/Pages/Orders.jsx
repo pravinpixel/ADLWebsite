@@ -12,11 +12,11 @@ export default function Orders() {
       setOrders(response.data.data);
     });
   };
-  const cancelOrder = (order_id) => {
+  const cancelOrder = (id,order_id) => {
     Swal.fire({
       title: "Are you sure?",
       allowOutsideClick: false,
-      text: `want cancel the Order (${order_id}) ?`,
+      text: `want to cancel the Order (${order_id})`,
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
@@ -24,7 +24,7 @@ export default function Orders() {
       confirmButtonText: "Yes, proceed !",
     }).then((result) => {
       if (result.isConfirmed) {
-        CancelOrderReason(order_id);
+        CancelOrderReason(id);
       }
     });
   };
@@ -39,12 +39,14 @@ export default function Orders() {
       inputPlaceholder: "Type your reason here...",
       confirmButtonColor: "#f7931e",
       confirmButtonText: "Submit",
-      cancelButtonColor: "#5b2584",
+      // cancelButtonColor: "#5b2584",
       showCancelButton: true,
     });
 
     if (text) {
-      axios.post(API_URL.CANCEL_MY_ORDER + order_id).then((response) => {
+      axios.post(API_URL.CANCEL_MY_ORDER + order_id,{
+        cancel_order_reason : text
+      }).then((response) => {
         if(response.data.status) {
           toast.success(response.data.message)
           getMyOrders()
@@ -69,21 +71,13 @@ export default function Orders() {
                       <h6 className="card-subtitle mb-2 text-muted">Order ID</h6>
                       <b className="card-title m-0 text-dark">
                         {order.order_id}
-                      </b>
-                      {order.order_status === null ||
-                      order.order_status === "0" ? (
-                        <span className="badge text-white rounded-pill bg-success float-right">
-                          Order Placed
-                        </span>
-                      ) : null}
-                      {order.order_status === "3" ? (
-                        <span className="badge text-dark rounded-pill bg-warning float-right">
-                          Cancel Requested
-                        </span>
-                      ) : null}
+                      </b> 
                     </div>
                     <div className="card-body pt-2">
-                      <div className="mb-2">Test List</div>
+                      <div className="my-2 mb-3 d-flex justify-content-between align-items-center">
+                        Test Details
+                        <OrderStatus status={order.order_status}/> 
+                      </div>
                       <div
                         className="card-text"
                         style={{ height: "200px", overflow: "auto" }}
@@ -107,8 +101,8 @@ export default function Orders() {
                         <>
                           <hr />
                           <button
-                            onClick={() => cancelOrder(order.id)}
-                            className="btn-danger rounded"
+                            onClick={() => cancelOrder(order.id,order.order_id)}
+                            className="btn-outline-danger rounded"
                           >
                             <i className="fa fa-trash"></i> Cancel Order
                           </button>
@@ -123,4 +117,33 @@ export default function Orders() {
       </div>
     </>
   );
+}
+
+const OrderStatus = (props) => {
+  console.log(props.status)
+  if(props.status === null || props.status === "0") {
+    return (
+      <span className="badge text-white status-badge bg-success">
+        Booked
+      </span>
+    )
+  }
+  if(props.status === "3") {
+    return (
+      <span className="badge text-dark status-badge bg-warning">
+        Cancel Requested
+      </span>
+    )
+  }
+  if(props.status === "4") {
+    return (
+      <span className="badge text-white status-badge bg-danger"> Order Cancelled </span>
+    )
+  }
+  if(props.status === "5") {
+    return (
+      <span className="badge text-white status-badge bg-danger"> Request Denied</span>
+    )
+  }
+  return null
 }
