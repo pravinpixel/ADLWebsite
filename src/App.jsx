@@ -51,6 +51,7 @@ import { useDispatch , useSelector } from 'react-redux'
 import { setAuthUser, setTestLocation } from './Redux/Actions/TestAction'
 import "react-datepicker/dist/react-datepicker.css";
 import ForgotPassword from './Components/Containers/ForgotPassword'
+import ResetPassword from './Components/Containers/ResetPassword'
 
 
 export default function App() {
@@ -78,6 +79,7 @@ export default function App() {
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/login' exact element={<Login/>} /> 
         <Route path='/forgot-password' exact element={<ForgotPassword/>} />  
+        <Route path='/reset-password/:customer_id' element={<ResetPassword/>} />  
         <Route path='/register' exact element={<Register/>} />  
         <Route path='/checkout' exact element={<GuestCheckOut/>} />
         <Route path='/test/:TestId' exact element={<TestDetails/>} />

@@ -1,21 +1,29 @@
 import { useState } from "react";
 import { Form } from "react-component-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import {API_URL} from '../../Redux/Constant/ApiRoute'
-import { toast } from "react-hot-toast";
 import axios from "axios"; 
-function ForgotPassword() {
-    const [email, setEmail] = useState("")
+import { ContentContainer } from "../../Helpers";
+import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+function ResetPassword() {
+    const location = useParams() 
+    const [newPassowrd, setNewPassowrd]         = useState(null)
+    const [confirmPassowrd, setConfirmPassowrd] = useState(null)
     const SendRestLink = () => {
-        axios.post(API_URL.FORGOT_PASSWORD,{
-            email : email
-        }).then((response) => {
-            if(response.data.status) {
-                toast.success(response.data.message)
-            } else {
-                toast.error(response.data.message)
-            }
-        })    
+        if(newPassowrd === confirmPassowrd) {
+            axios.post(API_URL.RESET_PASSWORD + location.customer_id,{
+                new_password : newPassowrd
+            }).then((response) => {
+                if(response.data.status) {
+                    toast.success(response.data.message)
+                } else {
+                    toast.error(response.data.message)
+                }
+            })   
+        } else {
+            toast.error("Confirm Password is Not Matched!")
+        }
     }
     return (
         <div>
@@ -49,8 +57,18 @@ function ForgotPassword() {
                                                                 className="input100"
                                                                 type="text"
                                                                 name="email"
-                                                                placeholder="Email"
-                                                                onChange={(e) => setEmail(e.target.value)}
+                                                                placeholder="Enter the new password .."
+                                                                onChange={(e) => setNewPassowrd(e.target.value)}
+                                                                required
+                                                            />
+                                                        </div>  
+                                                        <div className="form-data col-lg-12">
+                                                            <input
+                                                                className="input100"
+                                                                type="text"
+                                                                name="email"
+                                                                placeholder="Re-enter the new password .."
+                                                                onChange={(e) => setConfirmPassowrd(e.target.value)}
                                                                 required
                                                             />
                                                         </div>  
@@ -77,4 +95,4 @@ function ForgotPassword() {
     )
 }
 
-export default ForgotPassword
+export default ResetPassword

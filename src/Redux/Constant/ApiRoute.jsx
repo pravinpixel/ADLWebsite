@@ -30,4 +30,6 @@ export const API_URL = {
     NEWS_LETTER                : `${process.env.REACT_APP_BASE_URL}/api/news-letter`,
     ORGAN_LIST                 : `${process.env.REACT_APP_BASE_URL}/api/get-organs`,
     CONDITIONS_LIST            : `${process.env.REACT_APP_BASE_URL}/api/get-conditions`,
+    FORGOT_PASSWORD            : `${process.env.REACT_APP_BASE_URL}/api/forgot-password`,
+    RESET_PASSWORD            : `${process.env.REACT_APP_BASE_URL}/api/reset-password/`,
 }
