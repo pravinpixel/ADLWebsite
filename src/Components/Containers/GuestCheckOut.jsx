@@ -58,6 +58,7 @@ export default function GuestCheckOut() {
     }
     if (Validate(BillingAddress)) { 
       setLoadingGif(true)
+      
       axios.post(API_URL.UPDATE_BILLING_DETAILS, {
           ...BillingAddress,
           amount: totalPrice,
@@ -66,7 +67,7 @@ export default function GuestCheckOut() {
         }).then((response) => {
           setLoadingGif(false)
           if (response.data.status) {
-            CheckOutPayment(response.data.data);
+            CheckOutPayment(response.data.data); 
             dispatch(setLoading(false))
             localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
           }
@@ -106,6 +107,16 @@ export default function GuestCheckOut() {
       order_id: data.order_id,
       handler: function (response) {
         saveTheOrder(response,"PAID"); 
+        if(DateTime == true) {
+          axios.post('https://reports.anandlab.com/v3/SMS.asmx/SendWebhookSMS',{
+            "mobile_no": BillingAddress.phone_number,
+            "name"     : " "+BillingAddress.first_name,
+            "refno"    : data.order_id,
+            "api_key"  : "FC033590-B038-4CCD-BC8F-13BE890BF9F0"
+          }).then((response) => {
+            console.log(response.data)
+          })
+        }
       },
       prefill: {
         name: data.name,
