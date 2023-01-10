@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link ,useNavigate} from "react-router-dom";
 import Sliders from "react-slick";
@@ -52,6 +52,7 @@ export default function BookedTestSliders({title , subTitle}) {
     ],
   };
   const dispatch = useDispatch();
+  const [currentTestPrice , setCurrentTestPrice] = useState(0)
   const navigate = useNavigate() 
   const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
   const TestLocation = useSelector((state) => state.TestLocation); 
@@ -60,6 +61,20 @@ export default function BookedTestSliders({title , subTitle}) {
       dispatch(setTopBookedTest(response.data.data));
     });
   };
+  
+  const CheckTestPrice = (props) => {
+    var price
+    props.test.test_price.map((item,i) => {
+      if(item.TestLocation ===  TestLocation.TestLocation) {
+        price = item.TestPrice
+      }
+    })
+    if(price !== undefined) {
+      return price
+    } else {
+      return props.test.TestPrice
+    }
+  }
 
   useEffect(() => {
     // return () => {
@@ -88,14 +103,8 @@ export default function BookedTestSliders({title , subTitle}) {
                       <h4 className="text-capitalize">
                         {`${test.BasicInstruction.substring(0, 38)}...`}
                       </h4>
-                      <h5>
-                        {
-                          test.test_price.length !== 0 ?
-                            test.test_price.map((item,i) => {
-                              return <span key={i}> ₹ { TestLocation !== null ? item.TestLocation ===  TestLocation.TestLocation ? item.TestPrice : null : null}</span>
-                            })
-                          : null
-                        }
+                      <h5> 
+                       <span> ₹ <CheckTestPrice test={test}/></span> 
                         <span className="strke">
                           <s>&#8377;{test.TestPrice + 250}</s>
                         </span>

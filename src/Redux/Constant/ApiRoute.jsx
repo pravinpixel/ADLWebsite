@@ -31,5 +31,6 @@ export const API_URL = {
     ORGAN_LIST                 : `${process.env.REACT_APP_BASE_URL}/api/get-organs`,
     CONDITIONS_LIST            : `${process.env.REACT_APP_BASE_URL}/api/get-conditions`,
     FORGOT_PASSWORD            : `${process.env.REACT_APP_BASE_URL}/api/forgot-password`,
-    RESET_PASSWORD            : `${process.env.REACT_APP_BASE_URL}/api/reset-password/`,
-}
+    RESET_PASSWORD             : `${process.env.REACT_APP_BASE_URL}/api/reset-password/`,
+    LOGIN_WITH_OTP             : `${process.env.REACT_APP_BASE_URL}/api/login-with-otp`,
+} 
