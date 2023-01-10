@@ -207,7 +207,7 @@ export default function Login() {
                               <div className="form-data col-lg-12">
                                 <input
                                   className="input100"
-                                  type="email"
+                                  type="number"
                                   name="name"
                                   placeholder="Enter your Phone Number"
                                   onChange={(e) => setMobileNumber(e.target.value)}
