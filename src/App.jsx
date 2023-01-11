@@ -40,7 +40,9 @@ import Contact from './Components/Contact/Contact'
 import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
-import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
+import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees' 
+import Careers from './Components/Careers/Careers' 
+import Career from './Components/Career/Career' 
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
@@ -111,7 +113,9 @@ export default function App() {
         <Route path='/electrotherapy' element={<Electrotherapy/>} />
         <Route path='/reach-us' exact element={<Contact/>} /> 
         <Route path='/head-office' exact element={<HeadOffice/>} /> 
-        <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} /> 
+        <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees/>} />
+        <Route path='/careers' exact element={<Careers/>} />
+        <Route path='/join-oppourtunities' exact element={<Career/>} />
         <Route path='/anandlab-franchise' exact element={<AnandLabFranchise/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 
         <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees/>} /> 

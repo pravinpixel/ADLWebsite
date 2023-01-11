@@ -5466,6 +5466,143 @@ input[type="range"]::-moz-range-thumb {
 .indication-details ul.no-cllas li{padding-left:30px;}
 .special-instruction.pol-icy h3{font-size: 17px;margin-bottom: 0px;}
 
+.carr-eer .common-heading h2{margin-bottom:15px !important;}
+
+.carere-options h4 {
+    position: relative;
+    font-size: 18px;
+    color:#5b2584; 
+    font-weight: 600;
+    padding-left: 35px;
+    margin-bottom: 20px;
+  }
+.carere-options h4 span{display: block;font-weight: 500;line-height: 14px;font-size: 18px;
+    color:#6e6e6e;}
+.carere-options h4 i {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-size: 23px;
+  }
+  .carere-options h4 i.fa-map-marker{left:7px;top:10px;}
+  .carere-options h4 i.fa-user{left:6px;top:10px;}
+  .carere-options ul{margin-bottom: 15px;} 
+  .carere-options ul li {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 8px;
+}
+
+.carere-options ul li:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 5px;
+    width: 20px;
+    height: 19px;
+    background: rgba(0, 0, 0, 0) url("../images/ball.png") no-repeat scroll 0 0;
+}
+
+.car-bxo {
+    padding: 25px 5px 25px 25px;
+    border: 2px solid #d4d4d4;
+    border-radius: 5px;
+    margin: 0px;
+  } 
+  .car-bxo h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #5c2d91;
+    margin-bottom: 15px;
+    letter-spacing: 0.8px; 
+  }
+  .car-bxo h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #404040;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px; 
+  }
+  .car-bxo h3 span{display: block;font-weight: 400;font-size: 15px;}
+
+  .car-bxo a {
+    color: #6e6e6e;
+    padding: 8px 22px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    border: 1px solid #6e6e6e;
+}
+
+.car-bxo a:hover {
+    color: #fff !important;
+}
+
+.car-bxo a:before {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -2;
+    background: #fff;
+}
+
+.car-bxo a:after {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 0px;
+    height: 100%;
+    content: "";
+    z-index: -1;
+    background: #5b2584;
+    transition: all 1s ease;
+}
+
+.car-bxo a:hover:after {
+    width: 100%;
+    right: inherit;
+    left: 0px;
+    transition: all 1s ease;
+}
+
+.car-bxo a:hover {
+    transition: all 1s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
