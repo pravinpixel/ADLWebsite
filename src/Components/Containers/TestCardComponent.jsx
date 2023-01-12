@@ -30,11 +30,11 @@ export default function TestCardComponent(props) {
             <span className="strke">
               <s>&#8377; { props.test !== undefined ? parseInt(props.test.TestPrice) + 1000 : 1500 }   </s>
             </span>
-            <span className="flag-option">
+            {/* <span className="flag-option">
               <p>
                 10 % off
               </p>
-            </span>
+            </span> */}
           </h5>
           <p className="d-flex">
             {

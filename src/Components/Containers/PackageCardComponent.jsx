@@ -1,6 +1,6 @@
 import React from "react";
 import popImg from "../../assets/images/popular-img-1.jpg";
-import { Link } from "react-router-dom";
+import CheckTestPrice from "../../Helpers/CheckTestPrice";
 import { useSelector } from "react-redux";
 import CartBtn from "../Containers/CartBtn";
 import TestNavBtn from "./TestNavBtn";
@@ -38,16 +38,7 @@ export default function PackageCardComponent(props) {
       <h5>
         {
           props.data !== undefined ?
-            <span >
-              ₹ 
-              {
-                props.data.packages_price.length !== 0 ?
-                  props.data.packages_price.map((item,i) => {
-                    return <span key={i}> { TestLocation !== null ? item.TestLocation ===  TestLocation.TestLocation ? item.TestPrice : null : null}</span>
-                  })
-                : null
-                }
-            </span>
+            <span >₹ <span><CheckTestPrice test={props.data}/></span></span>
           : null
         } 
       </h5>

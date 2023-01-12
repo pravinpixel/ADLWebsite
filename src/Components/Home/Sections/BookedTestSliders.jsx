@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link ,useNavigate} from "react-router-dom";
 import Sliders from "react-slick";
+import CheckTestPrice from "../../../Helpers/CheckTestPrice";
 // import { toast } from "react-toastify";
 import { setTopBookedTest } from "../../../Redux/Actions/TestAction";
 import { API_URL } from "../../../Redux/Constant/ApiRoute";
@@ -52,30 +53,13 @@ export default function BookedTestSliders({title , subTitle}) {
     ],
   };
   const dispatch = useDispatch();
-  const [currentTestPrice , setCurrentTestPrice] = useState(0)
   const navigate = useNavigate() 
   const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
-  const TestLocation = useSelector((state) => state.TestLocation); 
   const getBookedTestSliders = () => {
     axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
       dispatch(setTopBookedTest(response.data.data));
     });
-  };
-  
-  const CheckTestPrice = (props) => {
-    var price
-    props.test.test_price.map((item,i) => {
-      if(item.TestLocation ===  TestLocation.TestLocation) {
-        price = item.TestPrice
-      }
-    })
-    if(price !== undefined) {
-      return price
-    } else {
-      return props.test.TestPrice
-    }
-  }
-
+  }; 
   useEffect(() => {
     // return () => {
       getBookedTestSliders();
@@ -106,7 +90,7 @@ export default function BookedTestSliders({title , subTitle}) {
                       <h5> 
                        <span> ₹ <CheckTestPrice test={test}/></span> 
                         <span className="strke">
-                          <s>&#8377;{test.TestPrice + 250}</s>
+                          <s>&#8377;{parseInt(test.TestPrice) + 250}</s>
                         </span>
                       </h5>
                     </div>

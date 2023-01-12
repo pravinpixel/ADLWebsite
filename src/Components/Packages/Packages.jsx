@@ -10,6 +10,7 @@ import ConditionFilter from "./ConditionFilter";
 import OrganFilter from "./OrganFilter";
 import PriceFilters from "./PriceFilters";
 import { setPackageFilters } from "../../Redux/Actions/TestAction";
+import { Dna, MagnifyingGlass } from "react-loader-spinner";
 
 export default function Packages() {
   useEffect(() => {
@@ -19,13 +20,16 @@ export default function Packages() {
 
   const dispatch = useDispatch()
   const [Packages, setPackages] = useState([])
+  const [isLoading, setisLoading] = useState(false)
   const [EmptyData, setEmptyData] = useState(false)
   const packageFilters = useSelector((state) => state.packageFilters.filters)
 
   const fetchPackages = () => {
+    setisLoading(true)
     axios.post(API_URL.PACKAGES_LIST, packageFilters).then((response) => {
       setPackages(response.data.data)
-      if(response.data.count === 0) {
+      setisLoading(false)
+      if (response.data.count === 0) {
         setEmptyData(true)
       } else {
         setEmptyData(false)
@@ -35,9 +39,9 @@ export default function Packages() {
 
   const clearAllFilters = () => {
     var checkboxes = document.querySelectorAll('input:checked')
-    for(var i=0;i<checkboxes.length;i++) {
-      if(checkboxes[i].type=='checkbox') {
-        checkboxes[i].checked=false;
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].type == 'checkbox') {
+        checkboxes[i].checked = false;
       }
     }
     dispatch(setPackageFilters({
@@ -105,17 +109,31 @@ export default function Packages() {
                       <PriceFilters />
                     </div>
                   </div>
-                  <div className="col-9">
-                    {EmptyData === true ? 
+                  <div className="col-9" style={{ position:'relative' }}>
+                    {
+                      isLoading === true ?
+                        <div className="text-center" style={{ position:'absolute',top:0,left:0,zIndex:1,width:'100%',paddingTop:30,height:'100%',background:'#ffffff70' }}> 
+                          <Dna
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="dna-loading"
+                            wrapperStyle={{ marginTop: 20 }}
+                            wrapperClass="dna-wrapper"
+                          />
+                        </div>
+                        : null
+                    }
+                    {EmptyData === true ?
                       <h5 className="py-3">No Result Found !</h5>
-                    : null}
+                      : null}
                     <div className="Products-factory-functions">
                       <div className="row">
                         {
-                          Packages.length !== 0 
-                          ?
-                            Packages.map((item, index) => <div key={index} className="col-lg-4"><PackageCardComponent data={item} /></div> )
-                          : null
+                          Packages.length !== 0
+                            ?
+                            Packages.map((item, index) => <div key={index} className="col-lg-4"><PackageCardComponent data={item} /></div>)
+                            : null
                         }
                       </div>
                     </div>
