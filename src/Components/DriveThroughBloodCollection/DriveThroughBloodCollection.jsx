@@ -31,7 +31,7 @@ export default function DriveThroughBloodCollection() {
                     </div>
                     <div className="cmn-buton">
                     <p>
-                    <Link to=''>Book Now</Link>   
+                    <Link to='/patients-consumers'>Book Now</Link>   
                     </p>
                     </div>
                     </div>

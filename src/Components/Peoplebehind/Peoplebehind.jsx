@@ -31,7 +31,7 @@ export default function Peoplebhind() {
                       <li> / </li> 
                       <li><Link to='/about-us'> About Us </Link></li>
                       <li> / </li>
-                      <li> People Behind </li>
+                      <li className='act-aslink'> People Behind </li>
                     </ul>
                     <h1>
                     Delivering Reliable, Fast and Affordable<br></br> Diagnostic services since 1974

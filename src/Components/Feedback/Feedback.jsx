@@ -102,8 +102,8 @@ export default function Feedback() {
                 </p>
                 <div className="cmn-buton">
                   <p>
-                    <a href="">Call Back</a>
-                    <a className="bg-trsnper ylw">Enquire Now</a>
+                  <Link to='/reach-us'>Call Back</Link>
+                  <Link to='/reach-us' className="bg-trsnper ylw"> Enquire Now</Link>
                   </p>
                 </div>
               </div>
