@@ -4,8 +4,6 @@ import upload from "../../assets/images/upload.png";
 import InnerCommonBanner from "./Sections/InnerCommonBanner";
 import videoBg from "../../assets/images/appointment.jpg";
 import playButton from "../../assets/images/play-icon.png";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 import { FormResponse } from "../../Helpers/FormResponse";

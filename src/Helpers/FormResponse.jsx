@@ -9,7 +9,14 @@ const FormResponse = () => {
         allowOutsideClick:false
     });
 }
-
+const CareerResponse = () => {
+    return withReactContent(Swal).fire({
+        title: <h3>Thank you for Applying</h3>,
+        html : <p className="m-0">Our team will get back to you shortly.</p>,
+        confirmButtonText :"Okay",
+        allowOutsideClick:false
+    });
+}
 const NewsletterResponse = () => {
     return withReactContent(Swal).fire({
         title: <h3>Thanks for Registering with us.</h3>,
@@ -20,5 +27,6 @@ const NewsletterResponse = () => {
 }
 export {
     FormResponse,
-    NewsletterResponse
+    NewsletterResponse,
+    CareerResponse
 }
