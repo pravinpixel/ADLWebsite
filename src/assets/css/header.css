@@ -573,8 +573,7 @@ ul.top-links li {
 
 .icns-lst li:nth-child(1),
 .icns-lst li:nth-child(2),
-.icns-lst li:nth-child(3) {
-    opacity: 0.5;
+.icns-lst li:nth-child(3) { 
     transition: all .3s ease;
 }
 
