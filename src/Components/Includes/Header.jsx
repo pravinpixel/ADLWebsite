@@ -635,7 +635,7 @@ export default function Header() {
                               <Link
                                 onClick={handleLink}
                                 className="dropdown-item"
-                                to="/"
+                                to="/careers"
                               >
                                 {" "}
                                 Job oppourtunities{" "}

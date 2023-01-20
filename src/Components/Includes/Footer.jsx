@@ -205,7 +205,7 @@ export default function Footer() {
                     <Link to="/">Hospital & Lab Partnership</Link>
                   </li> */}
                   <li>
-                    <Link to="/">Job Oppourtunities</Link>
+                    <Link to="/careers">Job Oppourtunities</Link>
                   </li>
                   <li>
                     <a href="http://www.naalm.com/academics/" target="_blank">Upgrade your Skills</a>

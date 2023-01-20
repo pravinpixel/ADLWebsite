@@ -33,4 +33,5 @@ export const API_URL = {
     FORGOT_PASSWORD            : `${process.env.REACT_APP_BASE_URL}/api/forgot-password`,
     RESET_PASSWORD             : `${process.env.REACT_APP_BASE_URL}/api/reset-password/`,
     LOGIN_WITH_OTP             : `${process.env.REACT_APP_BASE_URL}/api/login-with-otp`,
+    JOB_APPLY                  : `${process.env.REACT_APP_BASE_URL}/api/job-apply`,
 } 

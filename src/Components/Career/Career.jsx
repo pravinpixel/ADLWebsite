@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
-import Sliders from "react-slick";
 import { Link } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-17.webp";
-import carere from "../../assets/images/carer.jpg"; 
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
-import { FormResponse } from "../../Helpers/FormResponse";
+import { CareerResponse } from "../../Helpers/FormResponse";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 
@@ -18,19 +15,18 @@ export default function Career() {
     handleSubmit,
     reset,
   } = useForm();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(setLoading(true))
-
+    console.log(data);
+    dispatch(setLoading(true));
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
-    formdata.append("company_name", data.company_name);
-    formdata.append("designation", data.designation);
-    formdata.append("address", data.address);
-    formdata.append("message", data.message);
+    formdata.append("file", data.chooseFile[0], data.chooseFile[0].name);
+    // formdata.append("message", data.message);
+    formdata.append("job_id", "1");
 
     var requestOptions = {
       method: "POST",
@@ -38,21 +34,19 @@ export default function Career() {
       redirect: "follow",
     };
 
-    fetch(API_URL.HEALTHCHECKUP_FOR_EMPLOYEES, requestOptions)
-      .then((response) => response.json())
+    fetch(API_URL.JOB_APPLY, requestOptions)
+      .then((response) => response.text())
       .then((result) => {
-        if (result.Errors === false) {
-          reset();
-          dispatch(setLoading(false))
-          FormResponse()
-        }
+        dispatch(setLoading(false));
+        reset();
+        CareerResponse();
       })
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
     document.title = "Senior Resident/Pathologist";
     window.scroll(0, 0);
-  }, []); 
+  }, []);
 
   return (
     <div>
@@ -72,15 +66,16 @@ export default function Career() {
                     <Link to="/reach-us"> Reach us </Link>
                   </li>
                   <li> / </li>
-                  <li> 
-                  {" "}
-                    <Link to="/careers"> Careers </Link>  
+                  <li>
+                    {" "}
+                    <Link to="/careers"> Careers </Link>
                   </li>
                   <li> / </li>
                   <li> Senior Resident/Pathologist </li>
                 </ul>
                 <h1>
-                Your passion, <br />our prospect! Join us!
+                  Your passion, <br />
+                  our prospect! Join us!
                 </h1>
               </div>
             </div>
@@ -94,33 +89,48 @@ export default function Career() {
             <div className="col-lg-7">
               <div className="common-heading">
                 <h2 className="mb-0">
-                Senior Resident/Pathologist{" "} <br />
-                <span className="inlne">HR/MH 21-08</span>
-                </h2>   
-              <div className="carere-options">
-                <h4><i className="fa fa-user" aria-hidden="true"></i> Job Title <span> Senior Resident/Pathologist </span></h4>
-                <h4><i className="fa fa-id-card-o" aria-hidden="true"></i> Job Code <span> HR/MH 21-08 </span></h4>
-                <h4><i className="fa fa-map-marker" aria-hidden="true"></i> Job Location <span> Bengaluru </span></h4> 
-                <h5>Responsibilities:</h5>
-                <ul>
-                <li>Manages overall go-to-market strategy for syringe pump & Infusion Pump product lines, including overall commercial planning, key marketing initiatives, and financial results for the product line.</li>
-                </ul>
-                <h5>Department:</h5>
-                <p>Cytogenetics</p>
-                <h5>Qualification:</h5>
-                <p>MBBS, MD Pathology/ MBBS, MD Anatomy</p>
-                <h5>Experience:</h5>
-                <p>Fresher or 2-3 years</p>
-                <h5>No Of Requirement:</h5>
-                <p>1</p>
+                  Senior Resident/Pathologist <br />
+                  <span className="inlne">HR/MH 21-08</span>
+                </h2>
+                <div className="carere-options">
+                  <h4>
+                    <i className="fa fa-user" aria-hidden="true"></i> Job Title{" "}
+                    <span> Senior Resident/Pathologist </span>
+                  </h4>
+                  <h4>
+                    <i className="fa fa-id-card-o" aria-hidden="true"></i> Job
+                    Code <span> HR/MH 21-08 </span>
+                  </h4>
+                  <h4>
+                    <i className="fa fa-map-marker" aria-hidden="true"></i> Job
+                    Location <span> Bengaluru </span>
+                  </h4>
+                  <h5>Responsibilities:</h5>
+                  <ul>
+                    <li>
+                      Manages overall go-to-market strategy for syringe pump &
+                      Infusion Pump product lines, including overall commercial
+                      planning, key marketing initiatives, and financial results
+                      for the product line.
+                    </li>
+                  </ul>
+                  <h5>Department:</h5>
+                  <p>Cytogenetics</p>
+                  <h5>Qualification:</h5>
+                  <p>MBBS, MD Pathology/ MBBS, MD Anatomy</p>
+                  <h5>Experience:</h5>
+                  <p>Fresher or 2-3 years</p>
+                  <h5>No Of Requirement:</h5>
+                  <p>1</p>
+                </div>
               </div>
-              </div>
-               
             </div>
 
             <div className="col-sm-12 col-md-5 col-lg-5">
               <div className="green-bg ps-rel franc-isemed animated fadeInRight">
-                <h4 className="mb-3 text-center text-white">Apply for this Position</h4> 
+                <h4 className="mb-3 text-center text-white">
+                  Apply for this Position
+                </h4>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="formdata">
                     <small className="text-light">Name</small>
@@ -199,16 +209,11 @@ export default function Career() {
                       className="form-control jsrequired"
                       type="file"
                       name="chooseFile"
-                      {...register("email", {
+                      {...register("chooseFile", {
                         required: "This is required.",
-                        pattern: {
-                          value:
-                            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                          message: "Invalid email address!",
-                        },
                       })}
                     />
-                  </div> 
+                  </div>
                   <div className="formdata">
                     <small className="text-light">Message</small>
                     <ErrorMessage
@@ -220,21 +225,16 @@ export default function Career() {
                     />
                     <textarea
                       className="form-control"
-                      name="msg"
+                      name="message"
                       id="msg"
                       {...register("message", {
                         required: "This is required.",
                       })}
                     ></textarea>
                   </div>
-                   
+
                   <div className="formdata">
-                    <input
-                      type="submit"
-                      name="submit"
-                      value="Apply Now"
-                      onClick="submit_contact();"
-                    />
+                    <input type="submit" name="submit" value="Apply Now" />
                   </div>
                 </form>
               </div>
