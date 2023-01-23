@@ -29,11 +29,7 @@ export default function Login() {
     }).then((response) => {
       dispatch(setLoading(false))
       if (response.data.status) {
-        PutUser({
-          email: response.data.data.email,
-          id: response.data.data.id,
-          name: response.data.data.name,
-        })
+        PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         toast.success('Loggin Success')
         navigate("/my-cart");

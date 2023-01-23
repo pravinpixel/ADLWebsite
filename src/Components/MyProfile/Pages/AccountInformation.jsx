@@ -5,18 +5,17 @@ import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 export default function AccountInformation() {
-  const customer = JSON.parse(localStorage.getItem('user'));
-  const customer_billing = JSON.parse(localStorage.getItem('billing_data'));
-  const [Name, setName] = useState(customer.name);
-  const [PrimaryEmail, setPrimaryEmail] = useState(customer.email);
-  const [FirstName, setFirstName] = useState(customer_billing && customer_billing.first_name);
-  const [LastName, setLastName] = useState(customer_billing && customer_billing.last_name);
-  const [Email, setEmail] = useState(customer_billing && customer_billing.email);
-  const [PhoneNumber, setPhoneNumber] = useState(customer_billing && customer_billing.phone_number);
-  const [Address, setAddress] = useState(customer_billing && customer_billing.address);
-  const [CityTown, setCityTown] = useState(customer_billing && customer_billing.city_town);
-  const [State, setState] = useState(customer_billing && customer_billing.state);
-  const [PinCode, setPinCode] = useState(customer_billing && customer_billing.pin_code);
+  const customer                        = JSON.parse(localStorage.getItem('user'));
+  const [Name, setName]                 = useState(customer?.name);
+  const [PrimaryEmail, setPrimaryEmail] = useState(customer?.email);
+  const [FirstName, setFirstName]       = useState(customer?.customer_details?.first_name);
+  const [LastName, setLastName]         = useState(customer?.customer_details?.last_name);
+  const [Email, setEmail]               = useState(customer?.customer_details?.email);
+  const [PhoneNumber, setPhoneNumber]   = useState(customer?.customer_details?.phone_number);
+  const [Address, setAddress]           = useState(customer?.customer_details?.address);
+  const [CityTown, setCityTown]         = useState(customer?.customer_details?.city_town);
+  const [State, setState]               = useState(customer?.customer_details?.state);
+  const [PinCode, setPinCode]           = useState(customer?.customer_details?.pin_code);
 
   const UpdateInfo = (BillingAddress) => {
     axios.post(API_URL.UPDATE_MY_PROFILE + customer.id ,BillingAddress).then((response) => {
@@ -24,7 +23,6 @@ export default function AccountInformation() {
         console.log(response.data)
         toast.success(response.data.message)
         localStorage.setItem('user',JSON.stringify(response.data.data))
-        localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
       }
     });
   } 
@@ -48,7 +46,7 @@ export default function AccountInformation() {
                 <b>Email</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="primary_email" value={PrimaryEmail} onChange={(e) => setPrimaryEmail(e.target.value)} />
+                <input type="text" className='form-control' value={PrimaryEmail} disabled/>
               </div>
             </div>
             <h6 className='p-3' style={{ color: "#5c2d91" }}><b>Billing Account Details</b></h6>
