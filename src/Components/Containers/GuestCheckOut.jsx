@@ -44,7 +44,7 @@ export default function GuestCheckOut() {
   };
 
   useEffect(() => {
-    setBillingAddress(JSON.parse(localStorage.getItem("billing_data")));
+    setBillingAddress(JSON.parse(localStorage.getItem("user")).customer_details);
     setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     var AuthUserData = AuthUser();
     if (AuthUserData.first_name ?? false) {
@@ -69,7 +69,6 @@ export default function GuestCheckOut() {
           if (response.data.status) {
             CheckOutPayment(response.data.data); 
             dispatch(setLoading(false))
-            localStorage.setItem('billing_data',JSON.stringify(BillingAddress))
           }
         });
     }
