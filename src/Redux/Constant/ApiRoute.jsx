@@ -34,4 +34,7 @@ export const API_URL = {
     RESET_PASSWORD             : `${process.env.REACT_APP_BASE_URL}/api/reset-password/`,
     LOGIN_WITH_OTP             : `${process.env.REACT_APP_BASE_URL}/api/login-with-otp`,
     JOB_APPLY                  : `${process.env.REACT_APP_BASE_URL}/api/job-apply`,
+    ADD_TO_CART                : `${process.env.REACT_APP_BASE_URL}/api/add-to-cart`,
+    REMOVE_TO_CART             : `${process.env.REACT_APP_BASE_URL}/api/remove-to-cart`,
+    CUSTOMER_CART_ITEMS        : `${process.env.REACT_APP_BASE_URL}/api/cart-items`,
 } 

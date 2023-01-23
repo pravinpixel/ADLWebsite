@@ -7,7 +7,7 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import AuthUser, { PutUser, RemoveUser } from "../../Helpers/AuthUser";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { setAuthUser } from "../../Redux/Actions/TestAction";
+import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function Login() {
@@ -29,6 +29,12 @@ export default function Login() {
     }).then((response) => {
       dispatch(setLoading(false))
       if (response.data.status) {
+        localStorage.setItem("CartTestList", JSON.stringify(response.data.cart_items));
+        dispatch(
+          setTestCartList(
+              JSON.parse(localStorage.getItem("CartTestList"))
+          )
+        );
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         toast.success('Loggin Success')

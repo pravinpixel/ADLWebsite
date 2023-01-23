@@ -5,6 +5,8 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from "../.././assets/images/cart_empty.png";
+import { API_URL } from "../../Redux/Constant/ApiRoute";
+import axios from "axios";
 
 export default function CartList() {
   let navigate = useNavigate();
@@ -53,11 +55,18 @@ export default function CartList() {
 
   const [CartTable, setCartTable] = useState([]);
   const [testTotal, setTestTotal] = useState(0);
-  const dispatch = useDispatch();
+  const dispatch                  = useDispatch();
 
+  const fetchCartList = () => {
+    axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
+      setCartTable(response.data);
+      dispatch( setTestCartList(response.data) );
+    })
+  }
+  
   useEffect(() => {
     window.scroll(0, 0);
-    setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
+    fetchCartList()
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
       const CalculateTotalTestPrice = testListFromCart.reduce(
@@ -72,7 +81,13 @@ export default function CartList() {
     }
   }, []);
 
-  const removeCartItem = (index) => {
+  const removeCartItem = (index,item) => {
+    axios.post(API_URL.REMOVE_TO_CART,{
+      user_id : JSON.parse(localStorage.getItem('user')).id,
+      test_id : item.id,
+      test_type : item.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
+    });
+
     CartTable.splice(index, 1);
     localStorage.setItem("CartTestList", JSON.stringify([...CartTable]));
     setCartTable([...CartTable]);
@@ -151,7 +166,7 @@ export default function CartList() {
                             <Link to="">
                               <RiDeleteBinLine
                                 className="text-danger"
-                                onClick={() => removeCartItem(index)}
+                                onClick={() => removeCartItem(index,item)}
                               />
                             </Link>
                           </td>
