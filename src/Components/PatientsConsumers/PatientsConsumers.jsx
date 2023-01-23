@@ -285,7 +285,7 @@ export default function Solutions() {
             <div className="col-lg-6">
               <div className="anddn-lab">
                 <div className="common-heading lite">
-                  <h2> Anand @ Home Home Sample Collection </h2>
+                  <h2> Anand @ Home Sample Collection </h2>
                 </div>
                 <p>
                   At ADL, we understand that many of our patrons may find it
@@ -603,7 +603,7 @@ export default function Solutions() {
                 </div>
                 <div className="cmn-buton">
                   <p>
-                    <Link to="">Book Now</Link>
+                    <Link to="/drive-through-blood-collection">Book Now</Link>
                   </p>
                 </div>
               </div>
@@ -664,7 +664,7 @@ export default function Solutions() {
               </p>
               <div className="cmn-buton">
                 <p>
-                  <Link to="">Login</Link>
+                  <Link to="/login">Login</Link>
                 </p>
               </div>
             </div>

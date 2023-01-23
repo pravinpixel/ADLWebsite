@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-2.webp"; 
+import ngblogo from "../../assets/images/logoberg.png"; 
+
 
 export default function History() {
     useEffect(() => {
@@ -125,8 +127,9 @@ export default function History() {
 						<ul className="list-style1">
 						    <li>Relocated to Bowring Tower, a 60,000 Sq. Ft. facility in Shivaji Nagar, Bangalore.</li>
 						</ul> <br></br>
-						<h6> 2017</h6>
+						<h6 className='mb-3'> 2017</h6>
 						<ul className="list-style1">
+						<img src={ngblogo} alt="call" className="img-fluid mb-2" />
 						    <li>Anand Diagnostic Laboratory joined hands with Neuberg diagnostics to become Neuberg Anand Reference Laboratory</li>
 						</ul> <br></br>
 						<h6> 2020</h6>

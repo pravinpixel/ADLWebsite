@@ -130,7 +130,7 @@ export default function Login() {
                               />
                             </div>
                             <div className="form-data sbm col-lg-12">
-                              <button type="button" className="btn-primary" onClick={LoginAccount}>LOGIN</button>
+                              <button type="button" className="btn-primary btn-flx-full" onClick={LoginAccount}>LOGIN</button>
                             </div>
                           </div>
                           <div className="col-lg-12 text-center mb-3">

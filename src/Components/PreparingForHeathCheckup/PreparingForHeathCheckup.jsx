@@ -64,7 +64,7 @@ export default function PreparingForHeathCheckup() {
 <img src={lab} alt="call" className="img-fluid" /><br></br><br></br>
 <div className='cmn-buton'>
 <p>
-<a href="">Reach Us</a> 
+<Link to="/reach-us">Reach Us</Link> 
 </p>
 </div>
 </div>
@@ -96,7 +96,7 @@ export default function PreparingForHeathCheckup() {
 <br/> <br/>
 <div className='cmn-buton'>
 <p>
-<a href="">Reach Us</a> 
+<Link to="/reach-us">Reach Us</Link> 
 </p>
 </div>
 </div>
@@ -117,7 +117,7 @@ export default function PreparingForHeathCheckup() {
 <img src={nurse} alt="call" className="img-fluid" /><br></br><br></br>
 <div className='cmn-buton'>
 <p>
-<a href="">Reach Us</a> 
+<Link to="/reach-us">Reach Us</Link>  
 </p>
 </div>
 </div>

@@ -2976,6 +2976,7 @@ span.flag-option p {
     box-shadow: none;
     border-radius: 5px;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -5448,7 +5449,12 @@ input[type="range"]::-moz-range-thumb {
     border: 0px;
     cursor: pointer;
     transition: all 0.3s ease;
+    background-color: #f5922f;
+    color:#fff;
+    z-index: 1;
 }
+
+.location-detailsx select.form-control{border-radius: 0px !important;margin-right: -2px;z-index: 0;}
 
 .location-detailsx button.btn-warning:hover {
     background-color: #5c2d91;
@@ -5627,7 +5633,7 @@ input[type="range"]::-moz-range-thumb {
     }
   }
 
-
+.btn-flx-full{width:100%;display: block;margin-top: 12px;}
 
 
 

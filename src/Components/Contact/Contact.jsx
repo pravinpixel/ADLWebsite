@@ -39,7 +39,7 @@ export default function Contact() {
                             <div className="row">
                                 <div className="col-sm-12 col-md-4 col-lg-4">
                                 <div className="contact-box animated fadeInUp">
-                                <p><i className="fa fa-map-marker" aria-hidden="true"></i><strong>No 54, Bowring Tower, Bowring hospital road, Shivaji Nagar, Bangalore – 560001</strong></p>
+                                <p><i className="fa fa-map-marker" aria-hidden="true"></i><strong>No 54, Anand Tower, Bowring hospital road, Shivaji Nagar, Bangalore – 560001</strong></p>
                             </div>
                                 </div>
                                 <div className="col-sm-12 col-md-4 col-lg-4">

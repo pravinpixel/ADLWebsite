@@ -55,7 +55,7 @@ function ForgotPassword() {
                                                             />
                                                         </div>  
                                                         <div className="form-data sbm col-lg-12">
-                                                            <button type="button" className="btn-primary" onClick={SendRestLink}>RESET</button>
+                                                            <button type="button" className="btn-primary btn-flx-full" onClick={SendRestLink}>RESET</button>
                                                         </div>
                                                     </div>
                                                     <div className="col-lg-12 text-center mb-3">
