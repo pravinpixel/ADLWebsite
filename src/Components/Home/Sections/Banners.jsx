@@ -17,8 +17,7 @@ const Banners = () => {
             dispatch(setBanners(response.data))
         });
     }
-    useMemo(() => getBanners(), []);
-
+    useMemo(() => getBanners(), []); 
     return ( 
         <div className="banner-conceptual">
             <div id="home-banner-carousel" className="carousel slide carousel-fade" data-ride="carousel">
@@ -42,16 +41,16 @@ const Banners = () => {
                         <>
                             {
                                 bannerList.banners.data.map(( banner, index ) =>  ( 
-                                    <div key={index} className={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(banner.DesktopImage)})` }}> 
-                                        {/* <div className="container">
+                                    <div key={index} className={index === 0 ? "carousel-item active" : "carousel-item"} style={{ "background": `url(${assets(window.innerWidth > 600 ? banner.DesktopImage : banner.MobileImage)})` }}> 
+                                        <div className="container">
                                             <div className="row">
                                                 <div className="col-sm-12 col-md-12 col-lg-12">				
                                                     <div className="carousel-caption">
-                                                        <h1>{banner.Title}</h1> 
+                                                        <h1>{banner?.Title ?? ""}</h1> 
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> */}
+                                        </div>
                                     </div>
                                 ))
                             }
