@@ -1398,6 +1398,7 @@ span.strke {
     padding: 15px 10px 10px 10px;
     position: relative;
     margin: 0px;
+    min-height: 180px;
 }
 
 .tes-cond button {
@@ -1433,7 +1434,8 @@ span.strke {
     text-align: left;
     font-weight: 500;
     color: #404040;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .works-cunt p {
@@ -2053,7 +2055,10 @@ h4.cont-frmhed {
     border-radius: 8px;
     width: 82%;
     height: auto;
+    cursor:pointer;
 }
+
+.carousel-indicators li{cursor: pointer;}
 
 .form-data input[type=submit]:hover {
     background: #f7931e;
@@ -5723,10 +5728,7 @@ input[type="range"]::-moz-range-thumb {
     }
 }
 
-@media (max-width:1720px) {
-    #home-banner-carousel .carousel-inner .carousel-item.active {
-        background-position: -180px bottom !important;
-    }
+@media (max-width:1720px) { 
     .banner-form {
         right: 10%;
     }
@@ -5738,13 +5740,7 @@ input[type="range"]::-moz-range-thumb {
     }
     .banner-form {
         right: 6%;
-    }
-    #home-banner-carousel .carousel-inner .carousel-item.active {
-        background-position: -280px bottom !important;
-    }
-    #home-banner-carousel .carousel-inner .carousel-item {
-        background-position: right 0px bottom;
-    }
+    } 
     #home-banner-carousel .carousel-control-next {
         right: 10px;
     }
@@ -5753,10 +5749,7 @@ input[type="range"]::-moz-range-thumb {
     }
 }
 
-@media (max-width:1400px) {
-    #home-banner-carousel .carousel-inner .carousel-item.active {
-        background-position: -440px bottom !important;
-    }
+@media (max-width:1400px) { 
     .testing-sector::before {
         left: -56.5%;
     }
@@ -5866,13 +5859,7 @@ input[type="range"]::-moz-range-thumb {
         font-size: 30px !important;
         line-height: 30px !important;
         letter-spacing: 0px;
-    }
-    #home-banner-carousel .carousel-inner .carousel-item.active {
-        background-position: 69% bottom !important;
-    }
-    #home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
-        top: -110%;
-    }
+    } 
     .mission-layer {
         background: #f9fcfc;
     }
@@ -6180,11 +6167,7 @@ input[type="range"]::-moz-range-thumb {
     }
     footer .footer-column ul {
         min-width: 250px !important;
-    }
-    #home-banner-carousel .carousel-inner .carousel-item.active {
-        background-position: -840px 66PX !important;
-        background-color: #553191 !important;
-    }
+    } 
     #home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
         top: -100px;
         left: 0;
