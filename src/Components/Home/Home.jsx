@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Banners from './Sections/Banners'
 import BookedTestSliders from './Sections/BookedTestSliders'
 import CheckupsSliders from './Sections/CheckupsSliders'

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setConditions, setPackageFilters } from "../../Redux/Actions/TestAction"
 import { API_URL } from "../../Redux/Constant/ApiRoute"
 
-function ConditionFilter() {
+function ConditionFilter({setBtnClear}) {
     const Conditions = useSelector((state) => state.conditions.data)
     const packageFilters = useSelector((state) => state.packageFilters.filters)
     const dispatch = useDispatch()
@@ -20,6 +20,7 @@ function ConditionFilter() {
             array.push(checkboxes[i].value)
         }
         dispatch(setPackageFilters({ ...packageFilters, OrganName: array }))
+        setBtnClear(checkboxes.length > 0 ? true : false)
     };
     useEffect(() => {
         FetchConditions()

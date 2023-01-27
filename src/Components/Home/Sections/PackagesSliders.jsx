@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import React from 'react'
+import { useMemo } from 'react';
 import { useEffect,useState } from 'react';
 import Sliders from 'react-slick'
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
@@ -54,9 +55,7 @@ export default function PackagesSliders({title,subTitle}) {
       SetPackages(response.data.data)
     });
   }; 
-  useEffect(() => {
-    getPackageSliders();
-  }, []);
+  useMemo(()=>getPackageSliders(),[])
   return (
     <section className="popular-packages">
       <div className="container">

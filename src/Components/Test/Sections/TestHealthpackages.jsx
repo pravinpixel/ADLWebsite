@@ -1,4 +1,3 @@
-import React, { useEffect, useState }  from "react";
 import { Link } from "react-router-dom";
 import TestCard from "../../Containers/TestCardComponent";
 import loaderGif from '../../../assets/images/loader-2.gif'
@@ -7,6 +6,7 @@ import { setAllTestDetails } from "../../../Redux/Actions/TestAction";
 import { setTestFilters } from '../../../Redux/Actions/TestAction';
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import {useMemo, useState } from "react";
 
 export default function   TestHealthPackages(props) {
   const testListing        = useSelector((state) => state.TestList.testList);
@@ -21,9 +21,7 @@ export default function   TestHealthPackages(props) {
       dispatch(setAllTestDetails(response.data.data));
     });
   }
-  useEffect(() => {
-    fetchLabTests()
-  },[filters]);
+  useMemo(() => fetchLabTests(),[filters])
   return (
     <section className="">
       <div className="container">

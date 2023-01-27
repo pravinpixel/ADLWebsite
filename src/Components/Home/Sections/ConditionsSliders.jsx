@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useMemo ,useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
@@ -55,9 +55,7 @@ export default function ConditionsSliders() {
       SetConditions(response.data)
     })
   }
-  useEffect(() => {
-    FetchConditions()
-  },[]);
+  useMemo(()=>FetchConditions(),[])
   const [Conditions, SetConditions] = useState([]);
   return (
     <section className="condition-packages">

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import  { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Sliders from 'react-slick' 
@@ -57,9 +57,7 @@ export default function CheckupsSliders() {
         dispatch(setTestFilters({...filters,OrganName:value})) 
         Navigate('for-patient')
     }
-    useEffect(() => {
-        FetchOrgans()
-    },[]); 
+    useMemo(()=>FetchOrgans(),[])
     return (
         <section className="helth-chkup">
             <div className="container">

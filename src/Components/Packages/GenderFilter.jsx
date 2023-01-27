@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setPackageFilters } from '../../Redux/Actions/TestAction';
 
-function GenderFilter() {
+function GenderFilter({setBtnClear}) {
     const genders = ["Male", "Female", "Both & Others"];
     const dispatch = useDispatch()
     const packageFilters = useSelector((state) => state.packageFilters.filters)
@@ -12,6 +12,7 @@ function GenderFilter() {
             array.push(checkboxes[i].value)
         } 
         dispatch(setPackageFilters({...packageFilters,ApplicableGender:array}))
+        setBtnClear(checkboxes.length > 0 ? true : false)
     };
     return (
         <ul>

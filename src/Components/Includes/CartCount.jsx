@@ -7,7 +7,7 @@ export default function CartCount() {
     const cartItemCount  = useSelector((state) => state.TestCartList.cartTest);
 
     return (
-        <Link to='my-cart' className='position-relative'>
+        <Link to='/my-cart' className='position-relative'>
             <img src={cart} alt="" className="img-fluid"/>
                 {
                     cartItemCount !== undefined 

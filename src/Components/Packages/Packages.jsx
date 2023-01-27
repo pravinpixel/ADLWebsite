@@ -11,6 +11,7 @@ import OrganFilter from "./OrganFilter";
 import PriceFilters from "./PriceFilters";
 import { setPackageFilters } from "../../Redux/Actions/TestAction";
 import { Dna, MagnifyingGlass } from "react-loader-spinner";
+import { useMemo } from "react";
 
 export default function Packages() {
   useEffect(() => {
@@ -18,11 +19,12 @@ export default function Packages() {
     window.scroll(0, 0);
   }, [])
 
-  const dispatch = useDispatch()
-  const [Packages, setPackages] = useState([])
+  const dispatch                  = useDispatch()
+  const [Packages, setPackages]   = useState([])
   const [isLoading, setisLoading] = useState(false)
   const [EmptyData, setEmptyData] = useState(false)
-  const packageFilters = useSelector((state) => state.packageFilters.filters)
+  const [btnClear, setBtnClear]   = useState(false)
+  const packageFilters            = useSelector((state) => state.packageFilters.filters)
 
   const fetchPackages = () => {
     setisLoading(true)
@@ -52,11 +54,10 @@ export default function Packages() {
       OrganName: null,
       Tack: 8,
     }))
+    setBtnClear(false)
   }
 
-  useEffect(() => {
-    fetchPackages();
-  }, [packageFilters]);
+  useMemo(() => fetchPackages(), [packageFilters])
 
   return (
     <div>
@@ -101,12 +102,16 @@ export default function Packages() {
                     <div className="filter-lists Products-factory-lsts">
                       <h3>
                         Filters
-                        <button onClick={clearAllFilters} className="btn-sm btn-danger float-right rounded"><i className="fa fa-times"></i> Clear</button>
+                        {
+                          btnClear ? 
+                            <button onClick={clearAllFilters} className="btn-sm btn-danger float-right rounded"><i className="fa fa-times"></i> Clear</button>
+                          : null
+                        }
                       </h3>
-                      <GenderFilter />
-                      <ConditionFilter />
-                      <OrganFilter />
-                      <PriceFilters />
+                      <GenderFilter setBtnClear={setBtnClear}/>
+                      <ConditionFilter setBtnClear={setBtnClear}/>
+                      <OrganFilter setBtnClear={setBtnClear}/>
+                      <PriceFilters/>
                     </div>
                   </div>
                   <div className="col-9" style={{ position:'relative' }}>

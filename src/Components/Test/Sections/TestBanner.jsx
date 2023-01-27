@@ -55,6 +55,7 @@ export default function TestBanner(props) {
                 type="text"
                 placeholder="Search for Health Packages / Tests / Labs"
                 onChange={(e) => filterHandler('TestName',e.target.value)}
+                autoFocus
               />
               {
                 Organs && <>

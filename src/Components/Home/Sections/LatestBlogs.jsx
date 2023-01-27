@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 import blogBg from '../../../assets/images/blog-bg.jpg'
 import Sliders from 'react-slick'
 import axios from 'axios'
@@ -11,9 +11,7 @@ export default function LatestBlogs() {
       setNews(response.data.data)
     })
   }
-  useEffect(() => {
-    getNewsAndEvents() 
-  }, [])
+  useMemo(()=>getNewsAndEvents(),[])
   
   var settings = {
     slidesToScroll: 1,

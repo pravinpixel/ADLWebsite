@@ -2,61 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from "../.././assets/images/cart_empty.png";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 
 export default function CartList() {
-  let navigate = useNavigate();
-  var settings = {
-    slidesToScroll: 1,
-    infinite: true,
-    slidesToShow: 4,
-    focusOnSelect: false,
-    autoplay: true,
-    dots: false,
-    arrows: true,
-    autoplaySpeed: 4000,
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 680,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
+  const navigate                  = useNavigate();
   const [CartTable, setCartTable] = useState([]);
   const [testTotal, setTestTotal] = useState(0);
   const dispatch                  = useDispatch();
-
+  const authUser                  = useSelector((state) => state.authUser);
   const fetchCartList = () => {
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
       setCartTable(response.data);
@@ -65,8 +22,9 @@ export default function CartList() {
   }
   
   useEffect(() => {
-    window.scroll(0, 0);
-    fetchCartList()
+    if(authUser.user.length > 0) {
+      fetchCartList()
+    }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
       const CalculateTotalTestPrice = testListFromCart.reduce(
@@ -76,8 +34,6 @@ export default function CartList() {
       );
       localStorage.setItem("cartItemTotal", CalculateTotalTestPrice);
       setTestTotal(CalculateTotalTestPrice);
-    } else {
-      navigate('/')
     }
   }, []);
 

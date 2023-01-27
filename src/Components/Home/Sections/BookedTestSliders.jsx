@@ -1,10 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link ,useNavigate} from "react-router-dom";
 import Sliders from "react-slick";
 import CheckTestPrice from "../../../Helpers/CheckTestPrice";
-// import { toast } from "react-toastify";
 import { setTopBookedTest } from "../../../Redux/Actions/TestAction";
 import { API_URL } from "../../../Redux/Constant/ApiRoute";
 import CartBtn from "../../Containers/CartBtn";
@@ -60,12 +59,7 @@ export default function BookedTestSliders({title , subTitle}) {
       dispatch(setTopBookedTest(response.data.data));
     });
   }; 
-  useEffect(() => {
-    // return () => {
-      getBookedTestSliders();
-    // };
-  }, []);
-
+  useMemo(()=>getBookedTestSliders(),[])
   return (
     <section className="diagnostics text-left">
       <div className="container">

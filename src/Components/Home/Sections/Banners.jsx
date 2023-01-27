@@ -1,11 +1,10 @@
 import axios from 'axios'
-import React, { useEffect }  from 'react'
+import { useMemo }  from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 import {assets} from '../../../../src/Helpers'
 import { setBanners } from '../../../Redux/Actions/BannerAction'
 import BannerForm from './BannerForm'
-import dummyBanner from '../../../assets/images/banner-image3.jpg'
 import { setLoading } from '../../../Redux/Actions/LoaderAction'
 
 const Banners = () => { 
@@ -18,9 +17,8 @@ const Banners = () => {
             dispatch(setBanners(response.data))
         });
     }
-    useEffect(() => {
-        getBanners()
-    }, []);
+    useMemo(() => getBanners(), []);
+
     return ( 
         <div className="banner-conceptual">
             <div id="home-banner-carousel" className="carousel slide carousel-fade" data-ride="carousel">

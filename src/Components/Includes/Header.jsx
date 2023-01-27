@@ -8,7 +8,7 @@ import user from "./../../assets/images/user.png";
 import men4 from "./../../assets/images/men-4.png";
 import dwd from "./../../assets/images/dwd.png";
 import CartCount from "./CartCount";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useNavigation } from "react-router-dom";
 import { Form } from "react-component-form";
 import Modal from "react-bootstrap/Modal";
 import { useSelector ,useDispatch } from "react-redux";
@@ -99,6 +99,8 @@ export default function Header() {
                           <input
                             type="text"
                             placeholder="Search for Health Packages / Tests / Labs"
+                            readOnly
+                            onClick={() => navigate('/for-patient')}
                           />
                         </li>
                       </ul>
@@ -713,7 +715,8 @@ export default function Header() {
                         <div className="mdl-cnt">
                           <input
                             type="text"
-                            placeholder="Search for Health Packages / Tests / Labs"
+                            placeholder="Search for Health Packages / Tests / Labs" 
+                            readOnly
                           />
                         </div>
                       </div>
