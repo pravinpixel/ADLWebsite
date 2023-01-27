@@ -456,7 +456,8 @@ a:hover {
     z-index: 999;
 }
 
-#home-banner-carousel.carousel .carousel-indicators li {
+#home-banner-carousel.carousel .carousel-indicators li,
+.carousel-indicators button {
     width: 10px;
     transition: 0.5s ease;
     height: 10px;
@@ -465,6 +466,7 @@ a:hover {
     border: none;
 }
 
+.carousel-indicators button.active ,
 #home-banner-carousel.carousel .carousel-indicators li.active {
     width: 40px;
     transition: 0.5s ease;
@@ -585,14 +587,17 @@ a:hover {
     color: #fff;
 }
 
-#home-banner-carousel .carousel-indicators li {
+#home-banner-carousel .carousel-indicators li ,
+.carousel-indicators button {
     background-color: transparent;
     border: 1px solid #fff;
     opacity: 1;
     margin: 0px 5px;
 }
 
-#home-banner-carousel .carousel-indicators li.active {
+#home-banner-carousel .carousel-indicators li.active ,
+.carousel-indicators button.active 
+{
     background-color: #fff;
     border: 1px solid #fff;
 }

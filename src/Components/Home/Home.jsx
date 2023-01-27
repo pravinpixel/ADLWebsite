@@ -13,9 +13,12 @@ import Accretions from './Sections/Accretions'
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Home Page";
     window.scroll(0,0)
+    document.title = "Home Page"; 
   }, []);
+  window.onscroll = function() {
+    console.log(window.pageYOffset)
+  }
   return (
     <>
       <Banners/>
