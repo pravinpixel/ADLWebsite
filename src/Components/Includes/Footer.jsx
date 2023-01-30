@@ -216,13 +216,13 @@ export default function Footer() {
                 <ul>
                 <h5>Terms and Policies</h5>
                   <li>
-                    <Link to="">Cancellation Policy</Link>
+                    <Link to="/cancellation-policy">Cancellation Policy</Link>
                   </li>
                   <li>
-                    <Link to="">Privacy Policy</Link>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link to="">Terms & Conditions</Link>
+                    <Link to="/terms-conditions">Terms & Conditions</Link>
                   </li>
                   <li>
                     <Link to="">Disclaimers</Link>
