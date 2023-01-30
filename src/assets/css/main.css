@@ -414,13 +414,8 @@ a:hover {
     height: 100% !important;
 }
 
-#home-banner-carousel .carousel-inner .carousel-item {
-    background-repeat: no-repeat !important;
-    background-position: right 0 bottom !important;
-    background-size: cover !important;
-    padding: 150px 0px 450px !important;
-    transition: all 1s ease !important;
-    margin-top: 85px;
+#home-banner-carousel .carousel-inner .carousel-item { 
+    margin-top: 105px;
 }
 
 #home-banner-carousel .carousel-inner .carousel-item.active {
@@ -948,7 +943,7 @@ a.link-white:hover:after {
 
 .slick-prev:before,
 .slick-next:before {
-    color: #6e6e6e;
+    color: #ffffff;
     opacity: 1;
     font-size: 30px;
     font-family: FontAwesome !important;
@@ -973,7 +968,7 @@ a.link-white:hover:after {
 .slick-next {
     width: 50px;
     height: 50px;
-    border: 1px solid #6e6e6e !important;
+    border: 1px solid #ffffff !important;
     border-radius: 50%;
     transition: all 0.3s ease;
     z-index: 999;
@@ -1842,11 +1837,11 @@ section.accrediation {
 }
 
 .call-us h4 {
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 25px;
-}
+  }
 
 .call-us h4 span {
     font-weight: 300;
@@ -5735,7 +5730,7 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width:1720px) { 
     .banner-form {
-        right: 10%;
+        right: 3%;
     }
 }
 
@@ -5762,8 +5757,13 @@ input[type="range"]::-moz-range-thumb {
         left: -190px;
     }
     .banner-form {
-        right: 3%;
-    }
+        right: 8px;
+        top: 24%;
+        padding: 20px 25px;
+      }
+    .banner-form .form-data input{height: 40px;}
+    .banner-form .form-data input[type="submit"]{padding: 5px 10px;}
+    .upload-btn-wrapper .btn{background: transparent;height: 40px;}
     .slick-prev,
     .slick-next {
         width: 30px;
@@ -5782,6 +5782,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1300px) {
+    .container {
+        max-width: 95%;
+      }
+    .banner-form {
+        right: 0;
+        top:0;
+        padding: 20px 25px;
+      }
     .inner-banner {
         margin-top: 0px;
     }
