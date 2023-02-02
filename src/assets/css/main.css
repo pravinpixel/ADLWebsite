@@ -3248,7 +3248,7 @@ span.flag-option p {
 }
 
 .blood-colleion {
-    padding: 50px 0px;
+    padding: 50px 0px 0px 0px;
 }
 
 .blood-colleion .row {
@@ -6075,6 +6075,7 @@ input[type="range"]::-moz-range-thumb {
     }
     .navbar-default .dropdown .dropdown-menu .dropdown-item {
         font-size: 15px;
+        padding: 7px 10px;
     }
     .dropdown .dropdown-menu li.thrd-clmn li:last-child a img {
         left: 18px !important;
@@ -6133,13 +6134,15 @@ input[type="range"]::-moz-range-thumb {
         top: 0;
         padding: 0px !important;
         left: inherit;
-        padding: 10px 0px !important;
+        padding: 10px 0px 30px 0px !important;
+        border: none;
+        border-radius: 0px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-abt {
         height: 170px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-pat {
-        height: 642px;
+        height: 440px;
     }
     .navbar-default .nav-item.dropdown.active .dropdown-menu.frresplyr-doc {
         height: 280px;
@@ -6170,7 +6173,7 @@ input[type="range"]::-moz-range-thumb {
         display: block !important;
     }
     #home-banner-carousel .carousel-inner .carousel-item {
-        padding: 150px 0px 350px !important;
+        padding: 0px !important;
     }
     #home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
         top: -100px;
@@ -6368,6 +6371,16 @@ input[type="range"]::-moz-range-thumb {
         width: auto;
         float: left;
     }
+
+    .filter-lists ul{
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .filter-lists.Products-factory-lsts ul li{
+        width: 100%;
+    }
     .blood-colleion .row {
         padding: 0px;
     }
@@ -6417,6 +6430,37 @@ input[type="range"]::-moz-range-thumb {
     .slick-next::before {
         font-size: 20px;
     }
+
+    .topbooked-cases{
+        padding-bottom: 50px;
+    }
+
+    .topbooked-cases .slick-prev{
+        left: calc(50% - 50px);
+    }
+
+    .topbooked-cases .slick-next{
+        right: calc(50% - 50px);
+    }
+
+    .topbooked-cases .slick-prev,
+    .topbooked-cases .slick-next {
+        top: auto;
+        bottom: -30px;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    section.condition-packages{
+        padding-bottom: 100px;
+    }
+
+    .condition-packages .slick-prev,
+    .condition-packages .slick-next {
+        top: auto;
+        bottom: -60px;
+    }
+
+    
     .slick-prev,
     .slick-next {
         top: auto;
@@ -6540,6 +6584,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:600px) {
+    .mdl-img img{
+        float: none;
+        margin: 0px 0px 20px 0px;
+    }
     .nav-tabs .nav-item {
         margin-right: 25px;
     }
@@ -6566,7 +6614,7 @@ input[type="range"]::-moz-range-thumb {
     }
     section.diagnostics,
     section.popular-packages {
-        padding: 50px 0px 110px;
+        padding: 50px 0px 50px;
     }
     header {
         padding: 12px 0px;
@@ -6576,7 +6624,7 @@ input[type="range"]::-moz-range-thumb {
     }
     #navbarDefault.collapse,
     #navbarDefault.collapsing {
-        top: 59px;
+        top: 61px;
     }
     .navbar-toggler {
         top: 0;
@@ -6716,7 +6764,10 @@ input[type="range"]::-moz-range-thumb {
         width: 42%;
     }
     .care-hlthcare li {
-        margin: 0px;
+        margin: 10px 0px;
+    }
+    .call-us h4{
+        font-size: 16px;
     }
 }
 

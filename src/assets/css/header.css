@@ -261,6 +261,10 @@ header .quote-btn:hover:after {
     position: relative;
 }
 
+.navbar-default.navbar-trans .nav-item{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
 .navbar-default .dropdown.sngle-frce .dropdown-menu {
     display: block !important;
     padding: 10px 52px 10px 15px !important;
