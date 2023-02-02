@@ -19,6 +19,12 @@ export default function Packages() {
     window.scroll(0, 0);
   }, [])
 
+  const [isActive, setActive] = useState(false);
+
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
+
   const dispatch                  = useDispatch()
   const [Packages, setPackages]   = useState([])
   const [isLoading, setisLoading] = useState(false)
@@ -66,6 +72,7 @@ export default function Packages() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -79,6 +86,7 @@ export default function Packages() {
                 <h1>
                   Health packages for<br></br> you and your family
                 </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -99,7 +107,9 @@ export default function Packages() {
               <div className="totl-pkglst">
                 <div className="row">
                   <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div className="filter-lists Products-factory-lsts">
+                    <div className="mobileFilter" onClick={toggleClass}>Filter <i className="fa fa-filter"></i></div>
+                    <div className={isActive ? 'filter-lists Products-factory-lsts active': 'filter-lists Products-factory-lsts'} id="packagesFilters">
+                    <div className="mobileFilterClose" onClick={toggleClass}>X</div>
                       <h3>
                         Filters
                         {

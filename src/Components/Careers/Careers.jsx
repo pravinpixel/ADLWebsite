@@ -14,6 +14,7 @@ export default function Careers() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -31,6 +32,7 @@ export default function Careers() {
                   Your passion, <br />
                   our prospect! Join us!
                 </h1>
+              </div>
               </div>
             </div>
           </div>
@@ -62,8 +64,8 @@ export default function Careers() {
               <br />
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <div className="car-bxo">
+            <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              <div className="car-bxo mb-4">
                 <h3>
                   Senior Resident/Pathologist<span>HR/MH 21-08</span>
                 </h3>
@@ -82,8 +84,8 @@ export default function Careers() {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <div className="car-bxo">
+            <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              <div className="car-bxo mb-4">
                 <h3>
                   Product Specialist<span>HR/PRO 21-08</span>
                 </h3>
@@ -102,8 +104,8 @@ export default function Careers() {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <div className="car-bxo">
+            <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              <div className="car-bxo mb-4">
                 <h3>
                   Phlebotomy<span> HR/PHB0 21-08 </span>
                 </h3>

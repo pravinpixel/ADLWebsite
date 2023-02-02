@@ -56,6 +56,7 @@ export default function Faq() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -69,6 +70,7 @@ export default function Faq() {
                 <h1>
                   Got questions? <br></br>We've got answers
                 </h1>
+              </div>
               </div>
             </div>
           </div>

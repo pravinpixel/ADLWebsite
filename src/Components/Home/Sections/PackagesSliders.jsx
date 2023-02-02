@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useMemo } from 'react';
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import Sliders from 'react-slick'
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import PackageCard from '../../Containers/PackageCardComponent';
@@ -64,7 +64,6 @@ export default function PackagesSliders({title,subTitle}) {
             <div className="common-heading">
               <h2><span>{title}</span>{subTitle}</h2>
             </div>
-            <br/>
             <Sliders {...settings} className="popular-lists">
               {
                 Packages != null ?

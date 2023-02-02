@@ -55,6 +55,7 @@ export default function Career() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -78,6 +79,7 @@ export default function Career() {
                   our prospect! Join us!
                 </h1>
               </div>
+            </div>
             </div>
           </div>
         </div>

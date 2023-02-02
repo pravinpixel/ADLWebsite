@@ -47,7 +47,7 @@ export default function Department() {
     <div className="container">
     <div className="row align-items-center">
 
-    <div className='col-lg-12 text-center mb-5 pb-5'>
+    <div className='col-lg-12 text-center pb-5'>
     <div className="vedou-heading"> 
     <span>Anand Lab’s Drive-through Blood Collection Service – The First in the World</span>
     <iframe width="100%" height="520" src="https://www.youtube.com/embed/shaQf7d_EZQ" title=" " frameborder="0" allow=" " allowFullScreen></iframe> 

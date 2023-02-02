@@ -76,6 +76,7 @@
     background-color: white;
 }
 
+
 .Toastify__toast-body {
     font-weight: 500 !important;
     color: gray !important;
@@ -950,6 +951,8 @@ a.link-white:hover:after {
     transition: all 0.3s ease;
 }
 
+
+
 .slick-prev:before {
     content: "\f104";
 }
@@ -985,6 +988,26 @@ a.link-white:hover:after {
 .slick-prev:hover,
 .slick-next:hover {
     background: #5c2d91;
+    transition: all 0.3s ease;
+}
+
+.body-parts .slick-next, .body-parts .slick-prev, .consumeing .slick-next, .consumeing .slick-prev{
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.body-parts .slick-next:hover, .body-parts .slick-prev:hover, .consumeing .slick-next:hover, .consumeing .slick-prev:hover{
+    background: #5c2d91;
+    transition: all 0.3s ease;
+}
+
+.body-parts .slick-next:before, .body-parts .slick-prev:before, .consumeing .slick-next:before, .consumeing .slick-prev:before{
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.body-parts .slick-next:hover:before, .body-parts .slick-prev:hover:before, .consumeing .slick-next:hover:before, .consumeing .slick-prev:hover:before{
+    color: #FFF;
     transition: all 0.3s ease;
 }
 
@@ -2630,6 +2653,10 @@ span.flag-option p {
     font-weight: 600;
 }
 
+.mobileFilter, .mobileFilterClose{
+    display: none;
+}
+
 .availab-lity ul {
     padding: 0px;
     margin: 0px;
@@ -2693,7 +2720,7 @@ span.flag-option p {
 .inner-banner {
     position: relative;
     padding: 0px;
-    margin-top: 85px;
+    margin-top: 110px;
 }
 
 .inner-caption {
@@ -5782,6 +5809,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1300px) {
+    .search-container{
+        margin-top: 0px;
+    }
+
     .container {
         max-width: 95%;
       }
@@ -6027,7 +6058,6 @@ input[type="range"]::-moz-range-thumb {
     }
     .inner-caption {
         top: calc(50% - 59px);
-        left: 15px;
     }
     .legacy-care p {
         width: 100%;
@@ -6239,7 +6269,7 @@ input[type="range"]::-moz-range-thumb {
         margin: 0 auto;
     }
     .container {
-        max-width: 90%;
+        max-width: 95%;
     }
     #home-banner-carousel .carousel-inner .carousel-item.active .carousel-caption {
         top: -100px;
@@ -6332,6 +6362,12 @@ input[type="range"]::-moz-range-thumb {
 @media (max-width:767px) {
     .dhoni-bgm {
         min-height: 425px;
+    }
+    .contnt-set{
+        width: 100%;
+    }
+    .rnge-prds.pl-3{
+        padding-left: 0px !important;
     }
     .cmnmenu-topmargin {
         margin-top: 0px;
@@ -6510,9 +6546,6 @@ input[type="range"]::-moz-range-thumb {
     body.home {
         padding-top: 82px;
     }
-    .container {
-        max-width: 100%;
-    }
     header .quote-btn {
         display: none;
     }
@@ -6587,6 +6620,62 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:600px) {
+    .mobileFilter{
+        margin: 20px 0px 0px 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #f5922f;
+        color: #FFF;
+        cursor: pointer;
+    }
+    #packagesFilters.filter-lists{
+        position: fixed;
+        left: -350px;
+        top: 0;
+        background: #FFF;
+        box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        width: 300px;
+        height: 100vh;
+        overflow: auto;
+        transition: all 0.3s ease;
+    }
+    #packagesFilters.filter-lists ul{
+        max-height: inherit !important;
+    }
+    #packagesFilters.filter-lists.active{
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    .mobileFilterClose{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #FFF;
+        background: #5d2483;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+    .consumeing{
+        margin-bottom: 70px;
+    }
+    .the-chamber{
+        padding: 0px;
+        text-align: center;
+    }
+    .the-chamber img{
+        position: relative;
+        display: inline-block;
+        left: inherit;
+        top: inherit;
+    }
     .mdl-img img{
         float: none;
         margin: 0px 0px 20px 0px;
@@ -6615,9 +6704,11 @@ input[type="range"]::-moz-range-thumb {
     .common-heading h2 br {
         display: none;
     }
-    section.diagnostics,
-    section.popular-packages {
+    section.diagnostics {
         padding: 50px 0px 50px;
+    }
+    section.popular-packages {
+        padding: 50px 0px 100px;
     }
     header {
         padding: 12px 0px;
@@ -6740,6 +6831,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:580px) {
+    .container{
+        max-width: 100%;
+    }
     .inner-banner img {
         object-fit: cover;
         height: 190px;

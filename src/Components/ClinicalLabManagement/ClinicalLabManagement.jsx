@@ -56,6 +56,7 @@ export default function ClinicalLabManagement() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -70,6 +71,7 @@ export default function ClinicalLabManagement() {
                   Intelligence in pattern recognition<br></br> for autoimmune
                   diagnosis.
                 </h1>
+              </div>
               </div>
             </div>
           </div>

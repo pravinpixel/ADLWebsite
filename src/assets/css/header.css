@@ -358,6 +358,7 @@ a.dropdown-item {
     line-height: 20px;
     font-size: 15px;
     display: block;
+    cursor: pointer;
     color: #6e6e6e;
     position: relative;
 }

@@ -56,6 +56,7 @@ export default function FranchisingOpportunities() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -69,6 +70,7 @@ export default function FranchisingOpportunities() {
                 <h1>
                   Become a Partner<br></br> with us
                 </h1>
+              </div>
               </div>
             </div>
           </div>

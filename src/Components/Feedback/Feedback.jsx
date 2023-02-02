@@ -58,6 +58,7 @@ export default function Feedback() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
+            <div className="col">
               <div className="caption-details bnr-txt">
                 <ul>
                   <li>
@@ -71,6 +72,7 @@ export default function Feedback() {
                 <h1>
                   Service with commitment<br></br> and competence!
                 </h1>
+              </div>
               </div>
             </div>
           </div>

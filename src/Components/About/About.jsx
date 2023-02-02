@@ -30,6 +30,7 @@ export default function About() {
         <div className="inner-caption">
         <div className="container">
             <div className="row">
+            <div className="col">
                 <div className="caption-details bnr-txt">
                     <ul>
                       <li><Link to='/'> Home </Link></li>
@@ -39,6 +40,7 @@ export default function About() {
                     <h1>
                     Delivering Reliable, Fast and Affordable <br></br>Diagnostic services since 1974   
                     </h1>
+                </div>
                 </div>
             </div>
         </div>

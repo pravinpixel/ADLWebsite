@@ -80,13 +80,13 @@ export default function FindLab() {
                 of our extensive range of services.
               </p>
             </div>
-            <div>
+            <div className="col-lg-12">
               {
                 LabLocation.length !== 0 ?
                   Object.entries(LabLocation).map((branch,index) => (
                     <div key={index}>
                       <div className="row g-5 border-bottom border-top py-3">
-                        <h4 className="py-3 m-0 col-12">{branch[0]}</h4>
+                        <div className="col-12"><h4 className="py-3 m-0">{branch[0]}</h4></div>
                         {
                           branch[1].map((item, i) => {
                             return <LocationCard  key={i} item={item} />;
@@ -117,7 +117,7 @@ export default function FindLab() {
 
 const LocationCard = (props) => {
   return (
-    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 my-3">
+    <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12 my-3">
       <div className="locate-box border">
         <h3>
           {props.item.BranchName} <span> {props.item.BranchCity}, {props.item.State} - {props.item.Pincode} </span>
