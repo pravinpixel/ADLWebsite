@@ -6581,6 +6581,9 @@ input[type="range"]::-moz-range-thumb {
     .home-testimonials {
         max-width: 70%;
     }
+    .bnr-txt li, .bnr-txt li a{
+        font-size: 11px !important;
+    }
 }
 
 @media (max-width:600px) {
