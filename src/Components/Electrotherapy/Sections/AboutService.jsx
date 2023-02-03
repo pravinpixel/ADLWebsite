@@ -3,7 +3,7 @@ import manualtheraphyicon1 from "../../../assets/images/manual-theraphy-icon-1.p
 import manualtheraphyicon2 from "../../../assets/images/manual-theraphy-icon-2.png"
 import manualtheraphyicon3 from "../../../assets/images/manual-theraphy-icon-3.png"
 import manualtheraphyicon4 from "../../../assets/images/manual-theraphy-icon-4.png"
-import manualtheraphy from "../../../assets/images/manual-theraphy.jpg"
+import manualtheraphy from "../../../assets/images/electro-therapy.jpg"
 import clkimg from "../../../assets/images/clock.png"
 import padimg from "../../../assets/images/pad.png"
 
