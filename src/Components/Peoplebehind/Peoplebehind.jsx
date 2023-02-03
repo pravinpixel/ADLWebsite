@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import bannerimage from "../../assets/images/inner-banner-1.webp"; 
 import people1 from "../../assets/images/people-1.jpg"; 
 import people2 from "../../assets/images/people-2.jpg"; 
-import people3 from "../../assets/images/people-3.jpg"; 
+import people3 from "../../assets/images/people-13.jpg"; 
 import people4 from "../../assets/images/people-4.jpg"; 
-import people5 from "../../assets/images/people-5.jpg"; 
-import people6 from "../../assets/images/people-6.jpg"; 
-import people7 from "../../assets/images/people-7.jpg"; 
-import people8 from "../../assets/images/people-8.jpg"; 
+import people11 from "../../assets/images/people-11.jpg"; 
+import people12 from "../../assets/images/people-12.jpg"; 
+import people0 from "../../assets/images/people-0.jpg"; 
+import people9 from "../../assets/images/people-9.jpg"; 
 
 
 export default function Peoplebhind() {
@@ -91,39 +91,6 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="" data-toggle="modal" data-target="#suj">
-<img src={people2} alt="call" className="img-fluid" />
-<h4>Dr. Sujay Prasad, <span> Technical Director</span></h4>
-</a> 
-</div>
-</div>
-
-<div className="modal fade cstm" id="suj" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div className="modal-dialog" role="document">
-<div className="modal-content">
-<div className="modal-header">
-<h5 className="modal-title cs-tm" id="exampleModalLabel">Dr. Sujay Prasad,
-<span>Technical Director</span></h5>
-<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div className="modal-body">
-<div className="mdl-img">
-<img src={people2} alt="call" className="img-fluid" />
-</div>
-<div className="mdl-cnt">
-<p>Dr.Sujay Prasad is the creative force behind new innovations, technology initiatives and business process improvements at Anand Diagnostic Laboratory. He has been instrumental in expanding the service capability of ADL from facility expansion to acquisition of state of the art equipment. With his zero tolerance attitude to errors, he has designed innovative methods with focus on minimizing errors across all operating processes. He oversees all IT initiatives and has implemented interesting IT enabled ideas such as automated report printing kiosks and online results reporting, much ahead of the industry adoption. He is also a certified lead assessor for NABL accreditation and has conducted technical assessments overseas.</p>
-
-<p>Dr.Sujay Prasad obtained his MD in Pathology from the Mumbai University and joined Anand Diagnostic Laboratory thereafter in 1995.</p>
-</div>
-</div> 
-</div>
-</div>
-</div> 
-
-<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-<div className="box-fixer nwe-fex">
 <a href="" data-toggle="modal" data-target="#jay">
 <img src={people3} alt="call" className="img-fluid" />
 <h4>Dr. N. Jayaram, <span> Managing Director </span></h4>
@@ -151,6 +118,39 @@ export default function Peoplebhind() {
 <p>Dr. Jayaram is a certified lead assessor for NABL accreditation, and has conducted assessments both in India and Overseas. He is also actively involved in training other laboratory personnel on accreditation and internal audit requirements. He is academically very active and participates regularly in national and international scientific meetings as faculty.</p>
 
 <p>Dr. Jayaram obtained his MD in Pathology from the Post Graduate Institute of Medical Education and research, Chandigarh. Subsequently he also acquired additional experience in Cytopathology and Immunopathology from the same Institution.</p>
+</div>
+</div> 
+</div>
+</div>
+</div> 
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="" data-toggle="modal" data-target="#suj">
+<img src={people2} alt="call" className="img-fluid" />
+<h4>Dr. Sujay Prasad, <span> Technical Director</span></h4>
+</a> 
+</div>
+</div>
+
+<div className="modal fade cstm" id="suj" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal-dialog" role="document">
+<div className="modal-content">
+<div className="modal-header">
+<h5 className="modal-title cs-tm" id="exampleModalLabel">Dr. Sujay Prasad,
+<span>Technical Director</span></h5>
+<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div className="modal-body">
+<div className="mdl-img">
+<img src={people2} alt="call" className="img-fluid" />
+</div>
+<div className="mdl-cnt">
+<p>Dr.Sujay Prasad is the creative force behind new innovations, technology initiatives and business process improvements at Anand Diagnostic Laboratory. He has been instrumental in expanding the service capability of ADL from facility expansion to acquisition of state of the art equipment. With his zero tolerance attitude to errors, he has designed innovative methods with focus on minimizing errors across all operating processes. He oversees all IT initiatives and has implemented interesting IT enabled ideas such as automated report printing kiosks and online results reporting, much ahead of the industry adoption. He is also a certified lead assessor for NABL accreditation and has conducted technical assessments overseas.</p>
+
+<p>Dr.Sujay Prasad obtained his MD in Pathology from the Mumbai University and joined Anand Diagnostic Laboratory thereafter in 1995.</p>
 </div>
 </div> 
 </div>
@@ -186,6 +186,51 @@ export default function Peoplebhind() {
 </div>
 </div>
 </div>  
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="javascript:void(0)">
+<img src={people11} alt="call" className="img-fluid" />
+<h4>Sheshadri Vasan <span>Senrior Vice President & Business Head</span></h4>
+</a> 
+</div>
+</div>
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="javascript:void(0)">
+<img src={people12} alt="call" className="img-fluid" />
+<h4>Elizabeth Thomas <span>Associate Vice President - Operations</span></h4>
+</a> 
+</div>
+</div>
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="javascript:void(0)">
+<img src={people0} alt="call" className="img-fluid" />
+<h4>Keerti Saha <span>GM - Human Resources</span></h4>
+</a> 
+</div>
+</div>
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="javascript:void(0)">
+<img src={people0} alt="call" className="img-fluid" />
+<h4>Govindaraj V <span>Associate General Manager - IT</span></h4>
+</a> 
+</div>
+</div>
+
+<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+<div className="box-fixer nwe-fex">
+<a href="javascript:void(0)">
+<img src={people9} alt="call" className="img-fluid" />
+<h4>Vaatsalya Vasanth <span>Deputy General Manager - IT</span></h4>
+</a> 
+</div>
+</div>
 
 
 </div>
