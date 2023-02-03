@@ -189,7 +189,7 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="javascript:void(0)">
+<a href="javascript:void(0)" className='no-hover'>
 <img src={people11} alt="call" className="img-fluid" />
 <h4>Sheshadri Vasan <span>Senrior Vice President & Business Head</span></h4>
 </a> 
@@ -198,7 +198,7 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="javascript:void(0)">
+<a href="javascript:void(0)" className='no-hover'>
 <img src={people12} alt="call" className="img-fluid" />
 <h4>Elizabeth Thomas <span>Associate Vice President - Operations</span></h4>
 </a> 
@@ -207,7 +207,7 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="javascript:void(0)">
+<a href="javascript:void(0)" className='no-hover'>
 <img src={people0} alt="call" className="img-fluid" />
 <h4>Keerti Saha <span>GM - Human Resources</span></h4>
 </a> 
@@ -216,7 +216,7 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="javascript:void(0)">
+<a href="javascript:void(0)" className='no-hover'>
 <img src={people0} alt="call" className="img-fluid" />
 <h4>Govindaraj V <span>Associate General Manager - IT</span></h4>
 </a> 
@@ -225,7 +225,7 @@ export default function Peoplebhind() {
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
-<a href="javascript:void(0)">
+<a href="javascript:void(0)" className='no-hover'>
 <img src={people9} alt="call" className="img-fluid" />
 <h4>Vaatsalya Vasanth <span>Deputy General Manager - IT</span></h4>
 </a> 

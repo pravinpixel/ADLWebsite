@@ -3865,6 +3865,13 @@ iframe.contact-map {
     display: block;
 }
 
+.box-fixer a.no-hover:hover{
+    cursor:text !important;
+}
+.box-fixer a.no-hover:before{
+    display: none;
+}
+
 .box-fixer a:before {
     background-color: #00000095;
     content: "+";
