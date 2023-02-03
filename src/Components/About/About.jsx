@@ -62,8 +62,12 @@ export default function About() {
               </div>
               <div className='cmn-buton'>
               <p>
-              <a>Our History</a>
-              <a className='bg-trsnper ylw'>Our Commitment</a>
+              <Link  to="/history">
+              Our History
+                </Link>
+                <Link className='bg-trsnper ylw' to="/commitment">
+                Our Commitment
+                </Link>
               </p>
               </div>
               </div>

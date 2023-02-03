@@ -681,15 +681,11 @@ export default function Header() {
                   <span></span>
                   <span></span>
                 </button>
-                <a
-                  href="#"
-                  className="srch-btn"
-                  data-toggle="modal"
-                  data-target="#srch"
-                  rel="noreferrer"
-                >
+                
+
+                <Link  onClick={handleLink}  className="srch-btn" to="/for-patient">
                   <i className="fa fa-search" aria-hidden="true"></i>
-                </a>
+                </Link>
 
                 <div
                   className="modal fade cstm tpm-set"

@@ -82,10 +82,11 @@ export default function BookedTestSliders({title , subTitle}) {
                         {`${test.BasicInstruction.substring(0, 38)}...`}
                       </h4>
                       <h5> 
-                       <span> ₹ <CheckTestPrice test={test}/></span> 
-                        <span className="strke">
+                      <span className="strke">
                           <s>&#8377;{parseInt(test.TestPrice) + 250}</s>
-                        </span>
+                        </span> &nbsp;
+                       <span> ₹ <CheckTestPrice test={test}/></span> 
+                        
                       </h5>
                     </div>
                     <p>

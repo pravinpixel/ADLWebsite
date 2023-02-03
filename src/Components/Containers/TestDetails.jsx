@@ -107,10 +107,11 @@ export default function TestDetails() {
                       <li className="colap-seing">
                         <img src={testIcon3} alt="call" className="img-fluid" />
                         <h5>
-                          &#8377;{testDetails.test.TestPrice}
-                          <span className="strke ml-2">
+                        <span className="strke ml-2">
                             <s>&#8377;{parseInt(testDetails.test.TestPrice) + 280}</s>
-                          </span>
+                          </span> &nbsp;
+                          &#8377;{testDetails.test.TestPrice}
+                          
                           <span className="flag-option">
                             <p>10 % off</p>
                           </span>

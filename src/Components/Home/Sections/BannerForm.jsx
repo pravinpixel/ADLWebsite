@@ -38,8 +38,7 @@ export default function BannerForm() {
                         <div className="form-data">
                             <input className="input100" type="text" name='location' placeholder="Select Your Location" required/> 
                         </div> 
-                        <div className="form-data upload-btn-wrapper">
-                            <button className="btn">Upload a file <img src={upload}/> </button>
+                        <div className="form-data pt-3">
                             <input type="file" name="reportFile"  required/>
                         </div>
                         <div className="form-data">

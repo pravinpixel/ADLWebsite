@@ -14,6 +14,10 @@ import { NewsletterResponse } from '../../Helpers/FormResponse'
 import { useDispatch } from 'react-redux'
 import { setLoading } from '../../Redux/Actions/LoaderAction'
 
+const getCurrentYear = () => {
+  return new Date().getFullYear();
+};
+
 export default function Footer() {
   const [Email, setEmail] = useState(null);
   const dispatch = useDispatch()
@@ -68,7 +72,7 @@ export default function Footer() {
                     <Link to="/commitment">Commitment</Link>
                   </li>
                   <li>
-                    <Link to="/">Accreditation</Link>
+                    <Link to="/accreditation">Accreditation</Link>
                   </li>
                   {/* <li>
                     <Link to="/">Book a Blood Test</Link>
@@ -77,13 +81,13 @@ export default function Footer() {
                     <a href="https://reports.anandlab.com/v3/index1.html" target="_blank">Download Reports</a>
                   </li>
                   <li>
-                    <Link to="">Health Packages</Link>
+                    <Link to="/packages">Health Packages</Link>
                   </li>
                   <li>
                   <a href="https://www.anandlab.com/blog/" target="_blank">Blog</a>
                   </li>
                   <li>
-                    <Link to="/">Careers</Link>
+                    <Link to="/careers">Careers</Link>
                   </li>
                 </ul>
                 </div>
@@ -94,7 +98,7 @@ export default function Footer() {
                     <Link to="/packages">Packages</Link>
                   </li>
                   <li>
-                    <Link to="">Explore all Tests</Link>
+                    <Link to="/for-patient">Explore all Tests</Link>
                   </li>
                   <li>
                     <Link to="/preparing-for-health-checkup">Preparing for Health Checkup</Link>
@@ -190,7 +194,7 @@ export default function Footer() {
                     <Link to="/reach-us">Contact Us</Link>
                   </li>
                   <li>
-                    <Link to="">Reach our Lab</Link>
+                    <Link to="/find-lab">Reach our Lab</Link>
                   </li>
                   {/* <li>
                     <Link to="/healthcheckup-for-employees">Health Checkup for Employees</Link>
@@ -253,7 +257,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-12">
               <div className="text-white footer-bottom-text text-center">
-                &copy;  2022 Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
+                &copy;  {getCurrentYear()} Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
               </div>
             </div>
           </div>
