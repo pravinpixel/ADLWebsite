@@ -5795,6 +5795,7 @@ input[type="range"]::-moz-range-thumb {
         padding: 20px 25px;
       }
     .banner-form .form-data input{height: 40px;}
+    .banner-form .form-data.file-upload input{line-height: 40px;}
     .banner-form .form-data input[type="submit"]{padding: 5px 10px;}
     .upload-btn-wrapper .btn{background: transparent;height: 40px;}
     .slick-prev,
@@ -6377,6 +6378,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:767px) {
+    .cir-frm{
+        padding: 20px;
+    }
     .availab-lity{
         margin-top: 40px;
     }

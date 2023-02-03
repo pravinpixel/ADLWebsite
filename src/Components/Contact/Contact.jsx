@@ -15,6 +15,7 @@ export default function Contact() {
         <div className="inner-caption">
         <div className="container">
             <div className="row">
+            <div className="col">
                 <div className="caption-details bnr-txt">
                     <ul>
                       <li><Link to='/'> Home </Link></li>
@@ -24,6 +25,7 @@ export default function Contact() {
                     <h1>
                     How Can we Help! You?
                     </h1>
+                </div>
                 </div>
             </div>
         </div>
