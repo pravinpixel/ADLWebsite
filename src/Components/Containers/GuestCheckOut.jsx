@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form } from "react-component-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import AuthProvider from "../../Helpers/AuthProvider";
 import useRazorpay from "react-razorpay";
 import AuthUser from "../../Helpers/AuthUser";
@@ -15,14 +15,14 @@ import { setLoading } from "../../Redux/Actions/LoaderAction";
 export default function GuestCheckOut() {
   const dispatch = useDispatch()
   const [cartTable, setCartTable] = useState([]);
-  const [DateTime,setDateTime] = useState(false);
-  const [Loading,setLoadingGif] = useState(false);
-  
-  const [datetimeData,setDatetimeData] = useState(null);
+  const [DateTime, setDateTime] = useState(false);
+  const [Loading, setLoadingGif] = useState(false);
+  const [datetimeData, setDatetimeData] = useState(null);
+
+
   useEffect(() => {
-    window.scroll(0,0) 
+    window.scroll(0, 0)
   }, [])
-  
   const Razorpay = useRazorpay();
   let navigate = useNavigate();
   const [BillingAddress, setBillingAddress] = useState({
@@ -34,7 +34,7 @@ export default function GuestCheckOut() {
     email: null,
     state: null,
     pin_code: null,
-    id: AuthUser().id, 
+    id: AuthUser().id,
   });
   var totalPrice = 0;
 
@@ -42,7 +42,6 @@ export default function GuestCheckOut() {
     setBillingAddress({ ...BillingAddress, [e.target.name]: e.target.value });
     // console.log(BillingAddress)
   };
-
   useEffect(() => {
     setBillingAddress(JSON.parse(localStorage.getItem("user")).customer_details);
     setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
@@ -53,40 +52,40 @@ export default function GuestCheckOut() {
   }, []);
 
   const handlePayment = async () => {
-    if(BillingAddress === null) {
+    if (BillingAddress === null) {
       toast.error('Please fill out the Billing Address !');
     }
-    if (Validate(BillingAddress)) { 
+    if (Validate(BillingAddress)) {
       setLoadingGif(true)
-      
+
       axios.post(API_URL.UPDATE_BILLING_DETAILS, {
-          ...BillingAddress,
-          amount: totalPrice,
-          datetime:datetimeData,
-          id: AuthUser().id,
-        }).then((response) => {
-          setLoadingGif(false)
-          if (response.data.status) {
-            CheckOutPayment(response.data.data); 
-            dispatch(setLoading(false))
-          }
-        });
+        ...BillingAddress,
+        amount: totalPrice,
+        datetime: datetimeData,
+        id: AuthUser().id,
+      }).then((response) => {
+        setLoadingGif(false)
+        if (response.data.status) {
+          CheckOutPayment(response.data.data);
+          dispatch(setLoading(false))
+        }
+      });
     }
   };
 
-  const saveTheOrder = (data,type) => {
-    axios.post(API_URL.SAVE_THE_ORDER,{ 
-      razorpay_response : {
-        status :type,
-        data : data
+  const saveTheOrder = (data, type) => {
+    axios.post(API_URL.SAVE_THE_ORDER, {
+      razorpay_response: {
+        status: type,
+        data: data
       },
-      user:AuthUser(),
-      products:cartTable,
-      appoinment:DateTime,
-      datetime:datetimeData,
-      total_price:totalPrice
-    }).then((response)=>{
-      if(response.data.status) { 
+      user: AuthUser(),
+      products: cartTable,
+      appoinment: DateTime,
+      datetime: datetimeData,
+      total_price: totalPrice
+    }).then((response) => {
+      if (response.data.status) {
         localStorage.removeItem("CartTestList");
         toast.success(response.data.message);
         dispatch(setTestCartList([]));
@@ -96,7 +95,6 @@ export default function GuestCheckOut() {
       }
     })
   };
-
   const CheckOutPayment = (data) => {
     dispatch(setLoading(true))
     const options = {
@@ -105,13 +103,13 @@ export default function GuestCheckOut() {
       image: data.image,
       order_id: data.order_id,
       handler: function (response) {
-        saveTheOrder(response,"PAID"); 
-        if(DateTime == true) {
-          axios.post('https://reports.anandlab.com/v3/SMS.asmx/SendWebhookSMS',{
+        saveTheOrder(response, "PAID");
+        if (DateTime == true) {
+          axios.post('https://reports.anandlab.com/v3/SMS.asmx/SendWebhookSMS', {
             "mobile_no": BillingAddress.phone_number,
-            "name"     : " "+BillingAddress.first_name,
-            "refno"    : data.order_id,
-            "api_key"  : "FC033590-B038-4CCD-BC8F-13BE890BF9F0"
+            "name": " " + BillingAddress.first_name,
+            "refno": data.order_id,
+            "api_key": "FC033590-B038-4CCD-BC8F-13BE890BF9F0"
           }).then((response) => {
             console.log(response.data)
           })
@@ -130,7 +128,7 @@ export default function GuestCheckOut() {
     const rzp1 = new Razorpay(options);
 
     rzp1.on("payment.failed", function (response) {
-      saveTheOrder(response,'FAILED'); 
+      saveTheOrder(response, 'FAILED');
     });
     rzp1.open();
   };
@@ -268,20 +266,20 @@ export default function GuestCheckOut() {
                             </div>
                             <div className="col-lg-6">
                               <label>Appoinment</label>
-                              <label htmlFor="book_a_appoinment" className="form-control pt-2" style={{ height:'45px' }}>
-                                <input type="checkbox" onChange={() => setDateTime(DateTime === true ? false : true )} id="book_a_appoinment" className="mr-2"/> 
+                              <label htmlFor="book_a_appoinment" className="form-control pt-2" style={{ height: '45px' }}>
+                                <input type="checkbox" onChange={() => setDateTime(DateTime === true ? false : true)} id="book_a_appoinment" className="mr-2" />
                                 <b>Book an Appoinment</b>
                               </label>
                             </div>
                             {
-                              DateTime === true ? 
+                              DateTime === true ?
                                 <div className="form-data col-lg-6">
                                   <label>Date & Time</label>
-                                  <input type="datetime-local" name="datetime" onChange={(e) => setDatetimeData(e.target.value)} className="form-control" /> 
-                                </div>  
-                              : null
+                                  <input type="datetime-local" name="datetime" onChange={(e) => setDatetimeData(e.target.value)} className="form-control" />
+                                </div>
+                                : null
                             }
-                          </div> 
+                          </div>
                         </div>
                       </div>
                     </Form>
@@ -321,18 +319,18 @@ export default function GuestCheckOut() {
                         <tbody>
                           {cartTable.length
                             ? cartTable.map((item, i) => (
-                                <tr
-                                  key={i}
-                                  amount={
-                                    (totalPrice += parseInt(item.TestPrice))
-                                  }
-                                >
-                                  <th className="text-left">{item.TestName}</th>
-                                  <th className="text-right">
-                                    &#8377;{item.TestPrice}{" "}
-                                  </th>
-                                </tr>
-                              ))
+                              <tr
+                                key={i}
+                                amount={
+                                  (totalPrice += parseInt(item.TestPrice))
+                                }
+                              >
+                                <th className="text-left">{item.TestName}</th>
+                                <th className="text-right">
+                                  &#8377;{item.TestPrice}{" "}
+                                </th>
+                              </tr>
+                            ))
                             : null}
                         </tbody>
                       </table>
@@ -348,7 +346,7 @@ export default function GuestCheckOut() {
                         <td className="text-left">Discount (-)</td>
                         <td className="text-right">- &#8377; 4655</td>
                       </tr> */}
-                        {/* <tr>
+                      {/* <tr>
                           <td className="text-left">Coupon Discount (-)</td>
                           <td className="text-right">- &#8377; 0</td>
                         </tr> */}
