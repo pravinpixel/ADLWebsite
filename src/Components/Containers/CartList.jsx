@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setTestCartList } from "../../Redux/Actions/TestAction";
 import emptyCart from "../.././assets/images/cart_empty.png";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 
 export default function CartList() {
-  const navigate                  = useNavigate();
   const [CartTable, setCartTable] = useState([]);
   const [testTotal, setTestTotal] = useState(0);
   const dispatch                  = useDispatch();
-  const authUser                  = useSelector((state) => state.authUser);
   const fetchCartList = () => {
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
       setCartTable(response.data);
@@ -21,9 +19,9 @@ export default function CartList() {
     })
   }
   
-  useEffect(() => {
-    if(authUser.user.length > 0) {
-      fetchCartList()
+  useEffect(() => { 
+    if(JSON.parse(localStorage.getItem('user')).id) {
+      fetchCartList() 
     }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {

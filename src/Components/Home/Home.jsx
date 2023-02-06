@@ -16,9 +16,6 @@ export default function Home() {
     window.scroll(0,0)
     document.title = "Home Page"; 
   }, []);
-  window.onscroll = function() {
-    console.log(window.pageYOffset)
-  }
   return (
     <>
       <Banners/>

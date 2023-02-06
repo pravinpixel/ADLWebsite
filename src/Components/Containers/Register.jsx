@@ -46,9 +46,8 @@ export default function Login() {
       } else {
         toast.error(response.data.message)
       }
-    }) 
-  } 
-
+    })
+  }
   return (
     <div>
       <section className="main-billfrm cmnmenu-topmargin">
