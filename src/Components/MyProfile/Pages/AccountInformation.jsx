@@ -8,6 +8,7 @@ export default function AccountInformation() {
   const customer                        = JSON.parse(localStorage.getItem('user'));
   const [Name, setName]                 = useState(customer?.name);
   const [PrimaryEmail, setPrimaryEmail] = useState(customer?.email);
+  const [Mobile, setMobile]             = useState(customer?.mobile);
   const [FirstName, setFirstName]       = useState(customer?.customer_details?.first_name);
   const [LastName, setLastName]         = useState(customer?.customer_details?.last_name);
   const [Email, setEmail]               = useState(customer?.customer_details?.email);
@@ -47,6 +48,14 @@ export default function AccountInformation() {
               </div>
               <div className="col p-0">
                 <input type="text" className='form-control' value={PrimaryEmail} disabled/>
+              </div>
+            </div>
+            <div className="row m-0 mb-2">
+              <div className="col-md-3">
+                <b>Mobile</b>
+              </div>
+              <div className="col p-0">
+                <input type="text" className='form-control' value={Mobile} disabled/>
               </div>
             </div>
             <h6 className='p-3' style={{ color: "#5c2d91" }}><b>Billing Account Details</b></h6>

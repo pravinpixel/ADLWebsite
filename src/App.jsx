@@ -8,6 +8,8 @@ import CartList from './Components/Containers/CartList'
 import AlertBox from './AlertBox' 
 import GuestCheckOut from './Components/Containers/GuestCheckOut'
 import Login from './Components/Containers/Login'
+import OtpLogin from './Components/Containers/OtpLogin'
+import VerifyLogin from './Components/Containers/VerifyLogin'
 import Register from './Components/Containers/Register'
 
 // -------------------------------------------------------//
@@ -80,6 +82,8 @@ export default function App() {
       <Routes>
         <Route path='/for-patient' element={<Test/>} />
         <Route path='/login' exact element={<Login/>} /> 
+        <Route path='/login-with-otp' exact element={<OtpLogin/>} /> 
+        <Route path='/verify-otp' exact element={<VerifyLogin/>} />  
         <Route path='/forgot-password' exact element={<ForgotPassword/>} />  
         <Route path='/reset-password/:customer_id' element={<ResetPassword/>} />  
         <Route path='/register' exact element={<Register/>} />  

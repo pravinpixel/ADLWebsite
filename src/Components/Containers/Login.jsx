@@ -9,44 +9,25 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { useForm } from "react-hook-form";  
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
 
 export default function Login() {
   const dispatch = useDispatch()
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(null);
   const [password, setPassword] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
+  const [mobileNumber, setMobileNumber] = useState(null);
   const [Otp, setOtp] = useState(null);
   const [serverOtp, setServerOtp] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const navigate = useNavigate();
-  const LoginAccount = () => {
-    dispatch(setLoading(true))
-    axios.post(API_URL.LOGIN, {
-      email: email,
-      password: password,
-    }).then((response) => {
-      dispatch(setLoading(false))
-      if (response.data.status) {
-        localStorage.setItem("CartTestList", JSON.stringify(response.data.cart_items));
-        dispatch(
-          setTestCartList(
-              JSON.parse(localStorage.getItem("CartTestList"))
-          )
-        );
-        PutUser(response.data.data)
-        dispatch(setAuthUser(response.data.data))
-        toast.success('Loggin Success')
-        navigate("/my-cart");
-      } else {
-        toast.error(response.data.message)
-      }
-    }).catch((errors) => {
-      console.log(errors.response)
-    });
-  }
+  const navigate = useNavigate(); 
   const LoginWithOtp = () => {
+    if(email === null || mobileNumber === null) {
+      return false
+    }
     dispatch(setLoading(true))
     axios.post(API_URL.LOGIN_WITH_OTP, {
       email: email,
@@ -55,11 +36,7 @@ export default function Login() {
       dispatch(setLoading(false))
       if (response.data.status) {
         setServerOtp(response.data.otp)
-        PutUser({
-          email: response.data.data.email,
-          id: response.data.data.id,
-          name: response.data.data.name,
-        })
+        PutUser(response.data.data)
         toast.success('Enter Your OTP !')
       } else {
         toast.error(response.data.message)
@@ -81,7 +58,40 @@ export default function Login() {
   useEffect(() => {
     window.scroll(0, 0)
   }, [])
+ 
+  const { register, handleSubmit, formState: { errors } } = useForm({ 
+    resolver: yupResolver(
+      Yup.object().shape({
+        email   : Yup.string().required(),
+        password: Yup.string().required(),
+      })
+    )
+  })
 
+  const LoginAccount = (data) => {
+    dispatch(setLoading(true))
+    axios.post(API_URL.LOGIN, data).then((response) => {
+      dispatch(setLoading(false))
+      if (response.data.status) {
+        localStorage.setItem("CartTestList", JSON.stringify(response.data.cart_items));
+        dispatch(
+          setTestCartList(
+              JSON.parse(localStorage.getItem("CartTestList"))
+          )
+        );
+        PutUser(response.data.data)
+        dispatch(setAuthUser(response.data.data))
+        toast.success('Loggin Success')
+        navigate("/my-cart");
+      } else {
+        toast.error(response.data.message)
+      }
+    }).catch((errors) => {
+      console.log(errors.response)
+      dispatch(setLoading(false))
+    });
+  }
+ 
   return (
     <div>
       <section className="main-billfrm cmnmenu-topmargin">
@@ -100,7 +110,7 @@ export default function Login() {
                 </div>
                 <div className="col-lg-6">
                   <div className="cir-frm">
-                    <Form>
+                    <form onSubmit={handleSubmit(LoginAccount)}>
                       <div className="frm-fields row clearfix">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                           <div className="common-heading">
@@ -110,27 +120,13 @@ export default function Login() {
                           </div>
                           <div className="row">
                             <div className="form-data col-lg-12">
-                              <input
-                                className="input100"
-                                type="text"
-                                name="email"
-                                placeholder="Email"
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                              />
+                              <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" laceholder="Email" {...register('email')} />
                             </div>
                             <div className="form-data col-lg-12">
-                              <input
-                                className="input100"
-                                type="password"
-                                name="name"
-                                placeholder="Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                              />
+                              <input className={`input1001 ${errors.password && 'border-danger'}`} type="password" placeholder="Password" {...register('password')}/>
                             </div>
                             <div className="form-data sbm col-lg-12">
-                              <button type="button" className="btn-primary btn-flx-full" onClick={LoginAccount}>LOGIN</button>
+                              <button type="submit" className="btn-primary btn-flx-full">LOGIN</button>
                             </div>
                           </div>
                           <div className="col-lg-12 text-center mb-3">
@@ -145,9 +141,7 @@ export default function Login() {
                           </div>
                           <div className="col-lg-12 text-center p-0 mb-3">
                             <div className="login-btn">
-                              <Link to="" onClick={handleShow}>
-                                Login with OTP{" "}
-                              </Link>
+                              <Link to="/login-with-otp">Login with OTP</Link>
                             </div>
                           </div>
                           <div className="col-lg-12 text-center">
@@ -158,7 +152,7 @@ export default function Login() {
                           </div>
                         </div>
                       </div>
-                    </Form>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -175,8 +169,8 @@ export default function Login() {
               <div className="dhoni-bgm">
                 <div className="common-heading">
                   <h2>
-                    {" "}
-                    Welcome <span> to Neuberg Anand </span>{" "}
+                    
+                    Welcome <span> to Neuberg Anand </span>
                   </h2>
                 </div>
               </div>
@@ -187,8 +181,7 @@ export default function Login() {
                   <div className="col-lg-12 col-md-12 col-sm-12">
                     <div className="common-heading">
                       <h2>
-                        {" "}
-                        Login <span> with OTP! </span>{" "}
+                        Login <span> with OTP! </span>
                       </h2>
                     </div>
                     <div className="row">
@@ -249,10 +242,7 @@ export default function Login() {
                               />
                             </div>
                           </>
-                      }
-
-
-
+                      } 
                     </div>
                     <div className="col-lg-12 text-center p-0">
                       <div className="mid-poart">
@@ -262,7 +252,7 @@ export default function Login() {
                     <div className="col-lg-12 text-center p-0">
                       <div className="login-btn">
                         <Link to="" onClick={handleClose}>
-                          Login with Username & Password{" "}
+                          Login with Username & Password
                         </Link>
                       </div>
                     </div>

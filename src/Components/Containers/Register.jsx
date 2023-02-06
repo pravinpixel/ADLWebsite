@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import AuthUser, { PutUser } from "../../Helpers/AuthUser";
@@ -19,7 +18,7 @@ export default function Login() {
   
   const formSchema = Yup.object().shape({
     name           : Yup.string().required(),
-    moblie         : Yup.string().required(),
+    mobile         : Yup.number().required(),
     email          : Yup.string().required(),
     password       : Yup.string().required().min(3),
     confirmPassword: Yup.string().required().oneOf([Yup.ref('password')], 'Passwords does not match'),
@@ -33,11 +32,7 @@ export default function Login() {
       dispatch(setLoading(false))
       if (response.data.status) {
         dispatch(setLoading(false))
-        PutUser({
-          email: response.data.data.email,
-          id: response.data.data.id,
-          name: response.data.data.name
-        })
+        PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         if (AuthUser()) {
           navigate("/my-account");
@@ -77,7 +72,7 @@ export default function Login() {
                               <input className={`input1001 ${errors.name && 'border-danger'}`} type="text" placeholder="Name *" {...register("name")} /> 
                             </div>
                             <div className="form-data col-lg-12">
-                              <input className={`input1001 ${errors.moblie && 'border-danger'}`} type="text" placeholder="Moblie *" {...register("moblie")} />
+                              <input className={`input1001 ${errors.mobile && 'border-danger'}`} type="text" placeholder="mobile *" {...register("mobile")} />
                             </div>
                             <div className="form-data col-lg-12">
                               <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" placeholder="E-mail *" {...register("email")} />
