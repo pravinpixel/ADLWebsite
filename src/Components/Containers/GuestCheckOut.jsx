@@ -24,23 +24,24 @@ export default function GuestCheckOut() {
     window.scroll(0, 0)
   }, [])
   const Razorpay = useRazorpay();
-  let navigate = useNavigate();
+  let   navigate = useNavigate();
+
   const [BillingAddress, setBillingAddress] = useState({
-    first_name: null,
-    last_name: null,
-    phone_number: null,
-    address: null,
-    city_town: null,
-    email: null,
-    state: null,
-    pin_code: null,
-    id: AuthUser().id,
+    first_name  : AuthUser()?.customer_details?.first_name,
+    last_name   : AuthUser()?.customer_details?.last_name,
+    phone_number: AuthUser()?.customer_details?.email,
+    address     : AuthUser()?.customer_details?.phone_number,
+    city_town   : AuthUser()?.customer_details?.address,
+    email       : AuthUser()?.customer_details?.city_town,
+    state       : AuthUser()?.customer_details?.state,
+    pin_code    : AuthUser()?.customer_details?.pin_code,
+    id          : AuthUser()?.id,
   });
+
   var totalPrice = 0;
 
   const FormHandler = (e) => {
     setBillingAddress({ ...BillingAddress, [e.target.name]: e.target.value });
-    // console.log(BillingAddress)
   };
   useEffect(() => {
     setBillingAddress(JSON.parse(localStorage.getItem("user")).customer_details);

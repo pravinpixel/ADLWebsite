@@ -21,8 +21,7 @@ export default function AccountInformation() {
 
   const UpdateInfo = (BillingAddress) => {
     axios.post(API_URL.UPDATE_MY_PROFILE + customer.id ,BillingAddress).then((response) => {
-      if (response.data.status) {
-        console.log(response.data)
+      if (response.data.status) { 
         toast.success(response.data.message)
         localStorage.setItem('user',JSON.stringify(response.data.data))
       }

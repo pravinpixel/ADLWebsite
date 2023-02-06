@@ -16,7 +16,6 @@ import * as Yup from 'yup'
 export default function Login() {
   const dispatch = useDispatch()
   const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState("");
   const [mobileNumber, setMobileNumber] = useState(null);
   const [Otp, setOtp] = useState(null);
   const [serverOtp, setServerOtp] = useState(null);
@@ -120,7 +119,7 @@ export default function Login() {
                           </div>
                           <div className="row">
                             <div className="form-data col-lg-12">
-                              <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" laceholder="Email" {...register('email')} />
+                              <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" placeholder="Email" {...register('email')} />
                             </div>
                             <div className="form-data col-lg-12">
                               <input className={`input1001 ${errors.password && 'border-danger'}`} type="password" placeholder="Password" {...register('password')}/>
