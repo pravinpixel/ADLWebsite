@@ -49,7 +49,7 @@ export default function Login() {
     if(Otp == serverOtp) {
       dispatch(setAuthUser(AuthUser()))
       toast.success('Loggin Success')
-      navigate("/my-cart");
+      navigate("/my-account");
     } else {
       toast.error('Ivalid OTP! Try again!')
       RemoveUser()

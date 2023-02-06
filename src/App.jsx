@@ -57,7 +57,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import ForgotPassword from './Components/Containers/ForgotPassword'
 import ResetPassword from './Components/Containers/ResetPassword'
 
-
 export default function App() {
   const dispatch = useDispatch();  
   const loader = useSelector((state) => state.Loader);

@@ -3,9 +3,10 @@ import {API_URL} from '../../../Redux/Constant/ApiRoute'
 import { Form } from 'react-component-form'
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import AuthUser from "../../../Helpers/AuthUser";
 
 export default function AccountInformation() {
-  const customer                        = JSON.parse(localStorage.getItem('user'));
+  const customer                        = AuthUser(); 
   const [Name, setName]                 = useState(customer?.name);
   const [PrimaryEmail, setPrimaryEmail] = useState(customer?.email);
   const [Mobile, setMobile]             = useState(customer?.mobile);

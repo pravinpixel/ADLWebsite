@@ -34,6 +34,7 @@ export default function MyProfile() {
       }
     });
   }
+  console.log(AuthUser())
   return (
     <>
       <section className="inner-banner with-liners">
