@@ -10,7 +10,7 @@ import Orders from "./Pages/Orders";
 import AuthUser from "../../Helpers/AuthUser";
 import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
-import { setAuthUser } from "../../Redux/Actions/TestAction";
+import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { useDispatch } from "react-redux";
 export default function MyProfile() { 
   const navigate = useNavigate();
@@ -27,6 +27,7 @@ export default function MyProfile() {
       if (result.isConfirmed) { 
         localStorage.clear();
         dispatch(setAuthUser([]))
+        dispatch(setTestCartList([]))
         toast.success('Logout Success !')
         // window.location.replace('/')
         navigate('/')

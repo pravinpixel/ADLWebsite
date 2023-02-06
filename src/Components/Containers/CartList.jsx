@@ -16,12 +16,16 @@ export default function CartList() {
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
       setCartTable(response.data);
       dispatch( setTestCartList(response.data) );
-    })
+    })  
   }
   
   useEffect(() => { 
-    if(JSON.parse(localStorage.getItem('user')).id) {
-      fetchCartList() 
+    try {
+      if(JSON.parse(localStorage.getItem('user')).id) {
+        fetchCartList() 
+      }
+    } catch (error) {
+      
     }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
