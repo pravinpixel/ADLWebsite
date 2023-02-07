@@ -64,7 +64,7 @@ export default function CartList() {
 
   return (
     <>
-      <section className="comon-testdetail-banner">
+      <section className="comon-testdetail-banner resp-rem-mrgn">
         <div className="container">
           <div className="row">
             <div className="col">
@@ -143,6 +143,36 @@ export default function CartList() {
                       </tr>
                     </tbody>
                   </table>
+                </div>
+                <div className="only-mobileresponsive">
+                <div className="box-fisherr">
+                <div className="col-lg-12 p-0">
+                <div className="pack-name">
+                <h3>Package/Test</h3>
+                <p>11 DEOXY CORTISOL (LC-MS/MS)</p>
+                <span class="px-2 py-1 badge badge-primary"><i class="fa fa-flask" aria-hidden="true"></i> Test </span>
+                <div className="text-center">
+                <div className="prce-net">
+                <h4>Unit Price(₹)</h4>
+                <p>₹1190</p>
+                </div>
+                <div className="prce-fnl">
+                <h4>Net Price</h4>
+                <p>₹ 1190</p>
+                </div>
+                </div>
+                </div>          
+                </div>
+                </div>
+                <div className="box-fisherr">
+                <div className="col-lg-12 p-0">
+                <div className="pack-name">
+                <h3>Total</h3>
+                <p>₹ 14280</p>
+                <div class="case m-0 text-center"><p><a href="/checkout">Checkout</a></p></div>  
+                </div>          
+                </div>
+                </div>
                 </div>
                 <div className="case">
                   <p>

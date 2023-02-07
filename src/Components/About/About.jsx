@@ -38,7 +38,7 @@ export default function About() {
                       <li> About Us </li>
                     </ul>
                     <h1>
-                    Delivering Reliable, Fast and Affordable <br></br>Diagnostic services since 1974   
+                    Haematology services extending<br></br> beyond the blood smear   
                     </h1>
                 </div>
                 </div>

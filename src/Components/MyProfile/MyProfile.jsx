@@ -37,7 +37,7 @@ export default function MyProfile() {
   if(AuthUser()) {
     return (
       <>
-        <section className="inner-banner with-liners">
+        <section className="inner-banner with-liners resp-rem-mrgn">
           <div className="inner-caption">
             <div className="container">
               <div className="row">
@@ -97,7 +97,7 @@ export default function MyProfile() {
                 </Nav>
                 <div className="text-center pb-3">
                   <hr />
-                  <button onClick={LogoutAccount} className="btn-danger d-block rounded px-4 mx-auto"><i className="fa fa-power-off"></i> Logout</button>
+                  <button onClick={LogoutAccount} className="lgot-btn btn-danger d-block rounded px-4 mx-auto"><i className="fa fa-power-off"></i> Logout</button>
                 </div>
               </Col>
               <Col sm={9}>

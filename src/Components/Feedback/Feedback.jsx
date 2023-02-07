@@ -104,7 +104,7 @@ export default function Feedback() {
                 </p>
                 <div className="cmn-buton">
                   <p>
-                  <Link to='/reach-us'>Call Back</Link>
+                  <Link to='tel:18004251974'>Call Back</Link>
                   <Link to='/reach-us' className="bg-trsnper ylw"> Enquire Now</Link>
                   </p>
                 </div>

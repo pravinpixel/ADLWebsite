@@ -9,6 +9,7 @@ import people11 from "../../assets/images/people-11.jpg";
 import people12 from "../../assets/images/people-12.jpg"; 
 import people0 from "../../assets/images/people-0.jpg"; 
 import people9 from "../../assets/images/people-9.jpg"; 
+import people10 from "../../assets/images/people-14.jpg"; 
 
 
 export default function Peoplebhind() {
@@ -196,7 +197,7 @@ He oversees all IT initiatives and has implemented interesting IT enabled ideas 
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
 <img src={people11} alt="call" className="img-fluid" />
-<h4>Sheshadri Vasan <span>Senrior Vice President & Business Head</span></h4>
+<h4>Sheshadri Vasan <span>Senior Vice President & Business Unit Head</span></h4>
 </a> 
 </div>
 </div>
@@ -222,7 +223,7 @@ He oversees all IT initiatives and has implemented interesting IT enabled ideas 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
-<img src={people0} alt="call" className="img-fluid" />
+<img src={people10} alt="call" className="img-fluid" />
 <h4>Govindaraj V <span>Associate General Manager - IT</span></h4>
 </a> 
 </div>
@@ -232,7 +233,7 @@ He oversees all IT initiatives and has implemented interesting IT enabled ideas 
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
 <img src={people9} alt="call" className="img-fluid" />
-<h4>Vaatsalya Vasanth <span>Deputy General Manager - IT</span></h4>
+<h4>Vaatsalya Vasanth <span>Deputy General Manager - Marketing</span></h4>
 </a> 
 </div>
 </div>

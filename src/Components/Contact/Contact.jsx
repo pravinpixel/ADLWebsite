@@ -23,7 +23,7 @@ export default function Contact() {
                       <li><Link to='/'></Link> Contact Us </li>
                     </ul>
                     <h1>
-                    How Can we Help! You?
+                    How Can we help You?
                     </h1>
                 </div>
                 </div>

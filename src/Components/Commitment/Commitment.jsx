@@ -31,7 +31,7 @@ export default function Commitment() {
                       <li> Commitment </li>
                     </ul>
                     <h1>
-                    Haematology services extending<br></br> beyond the blood smear
+                    Delivering Reliable, Fast and Affordable <br></br>Diagnostic services since 1974
                     </h1>
                 </div>
                 </div>

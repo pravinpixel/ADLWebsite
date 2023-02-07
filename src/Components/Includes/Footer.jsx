@@ -231,26 +231,23 @@ export default function Footer() {
                   </ul>
                 </div>
                 <div className="col-lg-2">
-                  <ul>
-                    <h5>Terms and Policies</h5>
-                    <li>
-                      <Link to="/cancellation-policy">Cancellation Policy</Link>
-                    </li>
-                    <li>
-                      <Link to="/privacy-policy">Privacy Policy</Link>
-                    </li>
-                    <li>
-                      <Link to="/terms-conditions">Terms & Conditions</Link>
-                    </li>
-                    <li>
-                      <Link to="">Disclaimers</Link>
-                    </li>
-                    <li>
-                      <Link to="">Feedback</Link>
-                    </li>
-                  </ul>
-                  <h5 className="cips">Download App</h5>
-                  <a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src={playstore} alt="" className="img-fluid" /></a>
+                <ul>
+                <h5>Terms and Policies</h5>
+                  <li>
+                    <Link to="/cancellation-policy">Cancellation Policy</Link>
+                  </li>
+                  <li>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                  </li>
+                  <li>
+                    <Link to="/terms-conditions">Terms & Conditions</Link>
+                  </li> 
+                  <li>
+                    <Link to="/feedback">Feedback</Link>
+                  </li>
+                </ul>
+                <h5 className="cips">Download App</h5>
+              <a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src={playstore} alt="" className="img-fluid"/></a>
                 </div>
               </div>
             </div>
@@ -299,7 +296,7 @@ export default function Footer() {
         <Link to="/my-cart" data-toggle="tooltip" title="Cart Details">
           <img src={cart} alt="" className="img-fluid" />
           Cart
-          {/* <CartCount /> */}
+          <span className='numb-circle'>10</span>
         </Link>
 
         <a href="https://reports.anandlab.com/v3/index1.html" target="_blank" data-toggle="tooltip" title="Download Your Reports">
