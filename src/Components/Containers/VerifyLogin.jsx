@@ -22,7 +22,7 @@ export default function Login() {
   const OtpVerfiycation = (data) => {
     if (data.otp == localStorage.getItem('otp')) {
       dispatch(setAuthUser(AuthUser()))
-      toast.success('Loggin Success')
+      toast.success('Login Success')
       navigate("/my-cart");
     } else {
       toast.error('Ivalid OTP! Try again!')

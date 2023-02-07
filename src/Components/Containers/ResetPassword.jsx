@@ -1,29 +1,36 @@
 import { useState } from "react";
-import { Form } from "react-component-form";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {API_URL} from '../../Redux/Constant/ApiRoute'
 import axios from "axios"; 
-import { ContentContainer } from "../../Helpers";
 import { toast } from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import { CgSpinner } from "react-icons/cg";
+
 function ResetPassword() {
-    const location = useParams() 
-    const [newPassowrd, setNewPassowrd]         = useState(null)
-    const [confirmPassowrd, setConfirmPassowrd] = useState(null)
-    const SendRestLink = () => {
-        if(newPassowrd === confirmPassowrd) {
-            axios.post(API_URL.RESET_PASSWORD + location.customer_id,{
-                new_password : newPassowrd
-            }).then((response) => {
-                if(response.data.status) {
-                    toast.success(response.data.message)
-                } else {
-                    toast.error(response.data.message)
-                }
-            })   
-        } else {
-            toast.error("Confirm Password is Not Matched!")
-        }
+    const location              = useParams()
+    const navigate              = useNavigate()
+    const [Loading, setLoading] = useState(false)
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(
+            Yup.object().shape({
+                new_password    : Yup.string().required().min(3),
+                confirmPassword: Yup.string().required().oneOf([Yup.ref('new_password')], 'Passwords does not match'),
+            })
+        )
+    })
+    const RestAccountPassword = (data) => {
+        setLoading(true)
+        axios.post(API_URL.RESET_PASSWORD + location.customer_id,data).then((response) => {
+            if(response.data.status) {
+                navigate('/login')
+                toast.success(response.data.message)
+            } else {
+                toast.error(response.data.message)
+            }
+            setLoading(false)
+        })   
     }
     return (
         <div>
@@ -43,7 +50,7 @@ function ResetPassword() {
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="cir-frm">
-                                        <Form>
+                                        <form onSubmit={handleSubmit(RestAccountPassword)}>
                                             <div className="frm-fields row clearfix">
                                                 <div className="col-lg-12 col-md-12 col-sm-12">
                                                     <div className="common-heading">
@@ -53,29 +60,24 @@ function ResetPassword() {
                                                     </div>
                                                     <div className="row">
                                                         <div className="form-data col-lg-12">
-                                                            <input
-                                                                className="input100"
-                                                                type="text"
-                                                                name="email"
-                                                                placeholder="Enter the new password .."
-                                                                onChange={(e) => setNewPassowrd(e.target.value)}
-                                                                required
-                                                            />
+                                                            <input className={`input1001 ${errors.new_password && 'border-danger'}`}  type="password" placeholder="Enter the new password .." {...register('new_password')} />
                                                         </div>  
                                                         <div className="form-data col-lg-12">
-                                                            <input
-                                                                className="input100"
-                                                                type="text"
-                                                                name="email"
-                                                                placeholder="Re-enter the new password .."
-                                                                onChange={(e) => setConfirmPassowrd(e.target.value)}
-                                                                required
-                                                            />
+                                                            <input className={`input1001 ${errors.confirmPassword && 'border-danger'}`}  type="text" placeholder="Re-enter the new password .." {...register('confirmPassword')} />
                                                         </div>  
                                                         <div className="form-data sbm col-lg-12">
-                                                            <button type="button" className="btn-primary" onClick={SendRestLink}> 
-                                                                RESET
-                                                            </button>
+                                                        {
+                                                                Loading === true
+                                                                    ?
+                                                                    <button type="submit" disabled className="btn-primary btn-flx-full">
+                                                                        <CgSpinner className="fa-spin mr-2" />
+                                                                        Loading ...
+                                                                    </button>
+                                                                    :
+                                                                    <button type="submit" className="btn-primary btn-flx-full">
+                                                                        RESET
+                                                                    </button>
+                                                            }
                                                         </div>
                                                     </div>
                                                     <div className="col-lg-12 text-center mb-3">
@@ -85,7 +87,7 @@ function ResetPassword() {
                                                     </div> 
                                                 </div>
                                             </div>
-                                        </Form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

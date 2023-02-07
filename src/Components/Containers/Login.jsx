@@ -47,7 +47,7 @@ export default function Login() {
   const VerifyOtp = () => {
     if(Otp == serverOtp) {
       dispatch(setAuthUser(AuthUser()))
-      toast.success('Loggin Success')
+      toast.success('Login Success')
       navigate("/my-account");
     } else {
       toast.error('Ivalid OTP! Try again!')
@@ -80,8 +80,8 @@ export default function Login() {
         );
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
-        toast.success('Loggin Success')
-        navigate("/my-cart");
+        toast.success('Login Success')
+        navigate("/my-account");
       } else {
         toast.error(response.data.message)
       }

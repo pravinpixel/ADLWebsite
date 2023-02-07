@@ -16,7 +16,7 @@ export default function Login() {
   // const LoginWithOtp = () => {
   //   if(Otp == serverOtp) {
   //     dispatch(setAuthUser(AuthUser()))
-  //     toast.success('Loggin Success')
+  //     toast.success('Login Success')
   //     navigate("/my-cart");
   //   } else {
   //     toast.error('Ivalid OTP! Try again!')
