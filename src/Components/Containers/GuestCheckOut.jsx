@@ -363,7 +363,7 @@ export default function GuestCheckOut() {
                   </table>
                   <div className="case text-right">
                     <p>
-                      <LoadingBtn loading={Loading} onClick={handlePayment} />
+                      <LoadingBtn loading={Loading} onClick={handlePayment} title="Make a Payment"/>
                       {/* <a onClick={handlePayment} style={{ color:'white' }}>Make Payment</a> */}
                     </p>
                   </div>
