@@ -12,7 +12,7 @@ import { FormResponse } from '../../Helpers/FormResponse';
 
 export default function Contact() {
     const [Loading, setLoading] = useState(false)
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } ,reset  } = useForm({
         resolver: yupResolver(
             Yup.object().shape({
                 name: Yup.string().required(),
@@ -28,6 +28,7 @@ export default function Contact() {
         axios.post(API_URL.REACH_US,data).then((res) => {
             FormResponse()
             setLoading(false)
+            reset()
         })
     }
 
