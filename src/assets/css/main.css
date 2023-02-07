@@ -5720,10 +5720,31 @@ input[type="range"]::-moz-range-thumb {
 .prce-net{width:49%;float: left;}
 .prce-fnl{width:49%;float: left;}
 
-.box-fisherr{border: 2px solid #dfdfdf;padding: 20px;display: block;width:100%;float: left;margin-bottom: 20px;border-radius: 10px;position: relative;}
+.box-fisherr{border: 2px solid #dfdfdf;padding:15px;display: block;width:100%;float: left;margin-bottom: 20px;border-radius: 10px;position: relative;}
 
-.pack-name span{position: absolute;right:-10px;top:-8px;}
+.pack-name span {
+    position: absolute;
+    right: -8px;
+    top: -3px;
+  }
 
+.pack-name h3{font-size: 16px;line-height: 26px;}
+.pack-name p{font-size: 14px;font-weight: 600;}
+
+.prce-net h4, .prce-fnl h4{font-size: 16px;line-height: 26px;}
+.prce-net p, .prce-fnl p{margin-bottom: 0px;}
+
+.pack-name a{position: absolute;}
+.pack-name {
+    position: relative;
+    width: 100%;
+    float: left;
+  }
+  .pack-name a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 
 
 

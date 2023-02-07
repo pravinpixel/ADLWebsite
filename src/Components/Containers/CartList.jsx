@@ -161,6 +161,12 @@ export default function CartList() {
                 <p>₹ 1190</p>
                 </div>
                 </div>
+                <Link to="">
+                <RiDeleteBinLine
+                className="text-danger"
+                // onClick={() => removeCartItem(index,item)}
+                />
+                </Link>
                 </div>          
                 </div>
                 </div>

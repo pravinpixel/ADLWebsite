@@ -290,7 +290,7 @@ export default function Footer() {
             :
             <Link to="/my-account" data-toggle="tooltip" title="view your Profile">
               <img src={user} alt="" className="img-fluid" />
-              <span>My Account</span>
+              <span>Account</span>
             </Link>
         }
         <Link to="/my-cart" data-toggle="tooltip" title="Cart Details">
