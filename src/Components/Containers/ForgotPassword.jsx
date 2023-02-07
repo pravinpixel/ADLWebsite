@@ -5,10 +5,11 @@ import {API_URL} from '../../Redux/Constant/ApiRoute'
 import { toast } from "react-hot-toast";
 import axios from "axios"; 
 function ForgotPassword() {
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("") 
     const SendRestLink = () => {
         axios.post(API_URL.FORGOT_PASSWORD,{
-            email : email
+            email: email,
+            origin : window.location.origin
         }).then((response) => {
             if(response.data.status) {
                 toast.success(response.data.message)
