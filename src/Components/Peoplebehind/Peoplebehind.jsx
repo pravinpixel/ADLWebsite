@@ -81,8 +81,8 @@ export default function Peoplebhind() {
 </div>
 <div className="mdl-cnt">
 <p>Dr.Ramaprasad is the founder Director of Anand Diagnostic Laboratory. From its humble beginnings in 1974, ADL has grown leaps and bounds over the years under his vision and leadership. Dr. Ramaprasad started ADL at a time when laboratory medicine was just emerging as a new specialty. He saw the future of lab medicine and dedicated his life to building an institution on the foundation of good ethics and values to build a brand that will epitomize good laboratory medicine. To this day, Anand Diagnostic Laboratory sustains these values in all its interactions within the organization and beyond.</p>
-        
-<p>Prior to this venture, Dr. Ramaprasad was a well-respected teacher in the academic field. He taught Biochemistry, Pathology and Microbiology at prestigious institutions like Bangalore Medical College, KMC Hubli and JNMC, Belgaum – to graduate and post graduate students, many of whom are currently either teaching or practicing laboratory medicine.<br></br>Dr. Ramaprasad obtained his MD in Pathology and Bacteriology from Kasturba Medical College (KMC), Mangalore in 1966. </p>
+
+<p> Prior to this venture, Dr. Ramaprasad was a well-respected teacher in the academic field. He taught Biochemistry, Pathology and Microbiology at prestigious institutions like Bangalore Medical College, KMC Hubli and JNMC, Belgaum – to graduate and post graduate students, many of whom are currently either teaching or practicing laboratory medicine. Dr. Ramaprasad obtained his MD in Pathology and Bacteriology from Kasturba Medical College (KMC), Mangalore in 1966. </p>
 </div>
 </div> 
 </div>
@@ -113,9 +113,10 @@ export default function Peoplebhind() {
 <img src={people3} alt="call" className="img-fluid" />
 </div>
 <div className="mdl-cnt">
-<p>Dr. Jayaram is the silent force behind the operational excellence of the lab. He joined Anand Diagnostic Laboratory in 1988 and has ever since followed the footsteps of his mentor Dr. Ramaprasad. Together they were instrumental in bringing operational excellence in the laboratory and expanding into specialized tests ranging from renal transplantation, cytopathology and histopathology to many other areas.</p>
-
-<p>Dr. Jayaram is a certified lead assessor for NABL accreditation, and has conducted assessments both in India and Overseas. He is also actively involved in training other laboratory personnel on accreditation and internal audit requirements. He is academically very active and participates regularly in national and international scientific meetings as faculty.</p>
+<p>Dr. Jayaram is the silent force behind the operational excellence of the lab. 
+He joined Anand Diagnostic Laboratory in 1988 and has ever since followed the footsteps of his mentor Dr. Ramaprasad. <br />
+Together they were instrumental in bringing operational excellence in the laboratory and expanding into specialized tests ranging from renal transplantation, cytopathology and histopathology to many other areas.<br />
+Dr. Jayaram is a certified lead assessor for NABL accreditation, and has conducted assessments both in India and Overseas. He is also actively involved in training other laboratory personnel on accreditation and internal audit requirements. He is academically very active and participates regularly in national and international scientific meetings as faculty.</p>
 
 <p>Dr. Jayaram obtained his MD in Pathology from the Post Graduate Institute of Medical Education and research, Chandigarh. Subsequently he also acquired additional experience in Cytopathology and Immunopathology from the same Institution.</p>
 </div>
@@ -148,16 +149,20 @@ export default function Peoplebhind() {
 <img src={people2} alt="call" className="img-fluid" />
 </div>
 <div className="mdl-cnt">
-<p>Dr.Sujay Prasad is the creative force behind new innovations, technology initiatives and business process improvements at Anand Diagnostic Laboratory. He has been instrumental in expanding the service capability of ADL from facility expansion to acquisition of state of the art equipment. With his zero tolerance attitude to errors, he has designed innovative methods with focus on minimizing errors across all operating processes. He oversees all IT initiatives and has implemented interesting IT enabled ideas such as automated report printing kiosks and online results reporting, much ahead of the industry adoption. He is also a certified lead assessor for NABL accreditation and has conducted technical assessments overseas.</p>
+<p>Dr.Sujay Prasad is the creative force behind new innovations, technology initiatives and business process improvements at Anand Diagnostic Laboratory.<br /> 
+He has been instrumental in expanding the service capability of ADL from facility expansion to acquisition of state of the art equipment.<br /> 
+With his zero tolerance attitude to errors, he has designed innovative methods with focus on minimizing errors across all operating processes. <br />
+He oversees all IT initiatives and has implemented interesting IT enabled ideas such as automated report printing kiosks and online results reporting, much ahead of the industry adoption. He is also a certified lead assessor for NABL accreditation and has conducted technical assessments overseas.</p>
 
-<p>Dr.Sujay Prasad obtained his MD in Pathology from the Mumbai University and joined Anand Diagnostic Laboratory thereafter in 1995.</p>
+<p>Dr.Sujay Prasad obtained his MD in Pathology from the Mumbai University and joined Anand Diagnostic Laboratory thereafter in 1995.
+</p>
 </div>
 </div> 
 </div>
 </div>
 </div>   
 
-<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+{/* <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="" data-toggle="modal" data-target="#she">
 <img src={people4} alt="call" className="img-fluid" />
@@ -185,7 +190,7 @@ export default function Peoplebhind() {
 </div> 
 </div>
 </div>
-</div>  
+</div>   */}
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
