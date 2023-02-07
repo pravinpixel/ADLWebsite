@@ -1,22 +1,37 @@
-import { useState } from "react";
-import { Form } from "react-component-form";
-import { Link } from "react-router-dom";
-import {API_URL} from '../../Redux/Constant/ApiRoute'
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from '../../Redux/Constant/ApiRoute'
 import { toast } from "react-hot-toast";
-import axios from "axios"; 
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import { useState } from "react";
+import { CgSpinner } from "react-icons/cg";
 function ForgotPassword() {
-    const [email, setEmail] = useState("") 
-    const SendRestLink = () => {
-        axios.post(API_URL.FORGOT_PASSWORD,{
-            email: email,
-            origin : window.location.origin
+    const navigate = useNavigate()
+    const [Loading, setLoading] = useState(false)
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(
+            Yup.object().shape({
+                email: Yup.string().required(),
+            })
+        )
+    })
+    const SendRestLink = (data) => {
+        setLoading(true)
+        axios.post(API_URL.FORGOT_PASSWORD, {
+            ...data,
+            origin: window.location.origin
         }).then((response) => {
-            if(response.data.status) {
-                toast.success(response.data.message)
+            if (response.data.status) {
+                navigate('/')
+                toast.success('Reset Mail was sent, Check Your Inbox !')
             } else {
                 toast.error(response.data.message)
             }
-        })    
+            setLoading(false)
+        })
     }
     return (
         <div>
@@ -36,44 +51,48 @@ function ForgotPassword() {
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="cir-frm">
-                                        <Form>
+                                        <form onSubmit={handleSubmit(SendRestLink)}>
                                             <div className="frm-fields row clearfix">
                                                 <div className="col-lg-12 col-md-12 col-sm-12">
                                                     <div className="common-heading">
                                                         <h2>
-                                                            Reset Password <span> Here! </span>
+                                                            Reset Your Account <span> Here! </span>
                                                         </h2>
                                                     </div>
                                                     <div className="row">
                                                         <div className="form-data col-lg-12">
-                                                            <input
-                                                                className="input100"
-                                                                type="text"
-                                                                name="email"
-                                                                placeholder="Email"
-                                                                onChange={(e) => setEmail(e.target.value)}
-                                                                required
-                                                            />
-                                                        </div>  
+                                                            <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" placeholder="Email" {...register('email')} />
+                                                        </div>
                                                         <div className="form-data sbm col-lg-12">
-                                                            <button type="button" className="btn-primary btn-flx-full" onClick={SendRestLink}>RESET</button>
+                                                            {
+                                                                Loading === true
+                                                                    ?
+                                                                    <button type="submit" disabled className="btn-primary btn-flx-full">
+                                                                        <CgSpinner className="fa-spin mr-2" />
+                                                                        Sending ...
+                                                                    </button>
+                                                                    :
+                                                                    <button type="submit" className="btn-primary btn-flx-full">
+                                                                        RESET
+                                                                    </button>
+                                                            }
                                                         </div>
                                                     </div>
                                                     <div className="col-lg-12 text-center mb-3">
                                                         <div className="user-regster">
                                                             Back to Login ? <Link to="/login"> click Here!</Link>
                                                         </div>
-                                                    </div> 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </Form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
         </div>
     )
 }
