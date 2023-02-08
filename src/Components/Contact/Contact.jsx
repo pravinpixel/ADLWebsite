@@ -17,7 +17,7 @@ export default function Contact() {
             Yup.object().shape({
                 name: Yup.string().required(),
                 email: Yup.string().required(),
-                mobile: Yup.number().required(),
+                mobile    : Yup.string().required().min(10).max(10),
                 location: Yup.string(),
                 message: Yup.string()
             })
