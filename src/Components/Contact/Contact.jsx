@@ -92,7 +92,7 @@ export default function Contact() {
                                     <div className="row justify-content-center">
                                         <div className="col-sm-12 col-md-12 col-lg-6">
                                             <div className="contact-box animated fadeInUp">
-                                                <p><i className="fa fa-envelope" aria-hidden="true"></i><a href="mailto:digitalleads@neubergdiagnostics.com" target="_blank">digitalleads@neubergdiagnostics.com</a></p>
+                                                <p><i className="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@anandlab.com" target="_blank">info@anandlab.com</a></p>
                                             </div>
                                         </div>
                                     </div>
