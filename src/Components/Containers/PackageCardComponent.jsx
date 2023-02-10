@@ -1,51 +1,37 @@
 import React from "react";
 import popImg from "../../assets/images/popular-img-1.jpg";
-import CheckTestPrice from "../../Helpers/CheckTestPrice";
 import { useSelector } from "react-redux";
 import CartBtn from "../Containers/CartBtn";
 import TestNavBtn from "./TestNavBtn";
+import { Link } from "react-router-dom";
 
 export default function PackageCardComponent(props) {
   const TestLocation = useSelector((state) => state.TestLocation);
   return (
     <div className="pack-deils">
       <div className="pck-img">
-        <img
-          src={popImg}
-          // src={
-          //   props.data !== undefined
-          //     ? props.data.TestImages !== null
-          //       ? props.data.TestImages
-          //       : popImg
-          //     : popImg
-          // }
-          alt="img"
-          className="img-fluid"
-        />
-        {props.data !== undefined ? (
-          props.data.sub_test_list.length !== 0 ? (
+        {
+          props.data?.TestImage ?
+            <img src={props.data.image} alt="img" className="img-fluid"/> 
+        : 
+          <img src={popImg} alt="img" className="img-fluid"/> 
+        }
+        { props.data !== undefined ? (
+          props.data?.sub_tests?.length !== 0 ? (
             <div className="ble-fnt"> 
-              {props.data.sub_test_list.length} <span>Tests</span>
+              {props.data?.sub_tests?.length} <span>Tests</span>
             </div>
           ) : null
-        ) : null}
+        ) : null }
       </div>
-      <h3>
-        {props.data !== undefined
-          ? props.data.TestName.substring(0, 26) + "..."
-          : ""}
-      </h3>
-      <h5>
-        {
-          props.data !== undefined ?
-            <span >₹ <span><CheckTestPrice test={props.data}/></span></span>
-          : null
-        } 
-      </h5>
+      <h3>{props?.data?.TestName?.substring(0, 26) + "..."}</h3>
+      <h5><span >₹ <span>{props?.data?.TestPrice}</span></span></h5>
       <div className="case" style={{ border:"none",padding:"0" }}>
         <p className="d-flex">
-          <CartBtn testData={props.data} />
-          <TestNavBtn data={props.data !== undefined ?  props.data : null }/>  
+          <CartBtn testData={props?.data} />
+          <Link className="bg-trsnper ml-2" to={`/test/${props.data.TestSlug}`}>
+            <small>Know More</small>
+          </Link>
         </p>
       </div>
     </div>

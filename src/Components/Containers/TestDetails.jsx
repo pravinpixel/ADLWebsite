@@ -21,15 +21,16 @@ import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import { setLoading } from '../../Redux/Actions/LoaderAction'
 
 export default function TestDetails() {
-  const location    = useLocation();
   const navigate    = useNavigate()
   const { TestId }  = useParams();
   const dispatch    = useDispatch();
   const testDetails = useSelector((state) => state.TestDetails.TestDetails);
+  const TestLocation = useSelector((state) => state.TestLocation);
   const getTestDetails = async () => {
     dispatch(setLoading(true))
-    const response = await axios.get(`${API_URL.TEST_DETAILS}/${TestId}/${location.state.test_type}`)
-      .catch((err) => console.log(err));
+    const response = await axios.post(`${API_URL.TEST_DETAILS}/${TestId}`,{
+      TestLocation : TestLocation?.TestLocation
+    }).catch((err) => console.log(err));
     if (response.data.status) {
       dispatch(setLoading(false))
       dispatch(setTestDetails(response.data.data));
@@ -108,13 +109,10 @@ export default function TestDetails() {
                         <img src={testIcon3} alt="call" className="img-fluid" />
                         <h5>
                         <span className="strke ml-2">
-                            <s>&#8377;{parseInt(testDetails.test.TestPrice) + 280}</s>
-                          </span> &nbsp;
-                          &#8377;{testDetails.test.TestPrice}
-                          
-                          <span className="flag-option">
+                          </span>&#8377; {testDetails.test.TestPrice}
+                          {/* <span className="flag-option">
                             <p>10 % off</p>
-                          </span>
+                          </span> */}
                         </h5>
                       </li>
                       <li>

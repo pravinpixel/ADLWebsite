@@ -3,12 +3,15 @@ import axios from 'axios';
 import React from 'react'
 import { useMemo } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Sliders from 'react-slick'
 import { API_URL } from '../../../Redux/Constant/ApiRoute';
 import PackageCard from '../../Containers/PackageCardComponent';
 
 export default function PackagesSliders({title,subTitle}) {
   const [Packages , SetPackages] = useState(null);
+  const TestLocation = useSelector((state) => state.TestLocation );
+
   var settings = {
     slidesToScroll: 1,
     infinite:true,
@@ -50,7 +53,8 @@ export default function PackagesSliders({title,subTitle}) {
   const getPackageSliders = () => {
     axios.post(API_URL.PACKAGES_LIST,{ 
       Tack  : 10,
-      TestPrice  : 'low'
+      TestLocation : TestLocation == null ? 'bangalore' : TestLocation.TestLocation,
+      orderBy  : 'ASC'
     }).then((response) => {
       SetPackages(response.data.data)
     });

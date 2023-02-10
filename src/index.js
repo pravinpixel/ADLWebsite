@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App'; 
- 
-
 import './assets/css/fancybox.min.css'
 import './assets/css/slick.css'
 import './assets/css/slick-theme.css'
