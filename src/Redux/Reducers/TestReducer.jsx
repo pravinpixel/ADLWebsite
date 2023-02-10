@@ -82,10 +82,11 @@ const filtersState = {
     filters : {
         ApplicableGender: null,
         TestName        : null,
-        TestPrice       : 'high',
+        orderBy         : 'ASC',
         HealthCondition : null,
         OrganName       : null,
         Tack            : 8,
+        TestLocation    : 'bangalore'
     }
 }
 export const setTestFilters = (state = filtersState, {type, payload}) => { 

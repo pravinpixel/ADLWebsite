@@ -10,7 +10,7 @@ import ConditionFilter from "./ConditionFilter";
 import OrganFilter from "./OrganFilter";
 import PriceFilters from "./PriceFilters";
 import { setPackageFilters } from "../../Redux/Actions/TestAction";
-import { Dna, MagnifyingGlass } from "react-loader-spinner";
+import { Dna } from "react-loader-spinner";
 import { useMemo } from "react";
 
 export default function Packages() {
@@ -55,7 +55,7 @@ export default function Packages() {
     dispatch(setPackageFilters({
       ApplicableGender: null,
       TestName: null,
-      TestPrice: 'high',
+      orderBy: 'ASC',
       HealthCondition: null,
       OrganName: null,
       Tack: 8,

@@ -14,14 +14,14 @@ function PriceFilters({setBtnClear}) {
             <li>
                 <label className="cstm-chkbx">
                     Low to High
-                    <input type="radio" name="price_range" onChange={() => handleChecked('low')}/>
+                    <input type="radio" name="price_range" onChange={() => handleChecked('ASC')}/>
                     <span className="checkmark"></span>
                 </label>
             </li>
             <li>
                 <label className="cstm-chkbx">
                     High to low
-                    <input type="radio" name="price_range" onChange={() => handleChecked('hight')} />
+                    <input type="radio" name="price_range" onChange={() => handleChecked('DESC')} />
                     <span className="checkmark"></span>
                 </label>
             </li>
