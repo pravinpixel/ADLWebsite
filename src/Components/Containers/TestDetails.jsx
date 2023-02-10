@@ -10,7 +10,7 @@ import {
 } from "../../Redux/Actions/TestAction";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { AddToCartList } from "../../Helpers";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import testIcon1 from "../../assets/images/testing-icon-1.png";
 import testIcon2 from "../../assets/images/testing-icon-2.png";
 import testIcon3 from "../../assets/images/testing-icon-3.png";
@@ -29,7 +29,7 @@ export default function TestDetails() {
   const getTestDetails = async () => {
     dispatch(setLoading(true))
     const response = await axios.post(`${API_URL.TEST_DETAILS}/${TestId}`,{
-      TestLocation : TestLocation?.TestLocation
+      TestLocation : TestLocation != undefined ?  TestLocation?.TestLocation : 'bangalore'
     }).catch((err) => console.log(err));
     if (response.data.status) {
       dispatch(setLoading(false))

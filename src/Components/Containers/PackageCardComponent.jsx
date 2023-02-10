@@ -29,7 +29,7 @@ export default function PackageCardComponent(props) {
       <div className="case" style={{ border:"none",padding:"0" }}>
         <p className="d-flex">
           <CartBtn testData={props?.data} />
-          <Link className="bg-trsnper ml-2" to={`/test/${props.data.TestSlug}`}>
+          <Link className="bg-trsnper ml-2" to={`/package/${props.data.TestSlug}`}>
             <small>Know More</small>
           </Link>
         </p>
