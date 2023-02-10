@@ -32,7 +32,7 @@ function OrganFilter({setBtnClear}) {
             {
                 Organs !== undefined ?
                     Organs.map((item,id) => (
-                        <li>
+                        <li key={id}>
                             <label className="cstm-chkbx">
                                 {item.name}
                                 <input type="checkbox" className='organs_input' value={item.name} data-id={id} onChange={handleChecked} />

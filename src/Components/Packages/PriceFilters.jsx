@@ -6,7 +6,7 @@ function PriceFilters({setBtnClear}) {
     const packageFilters = useSelector((state) => state.packageFilters.filters)
     const dispatch = useDispatch()
     const handleChecked = (data) => {  
-        dispatch(setPackageFilters({...packageFilters,TestPrice:data}))
+        dispatch(setPackageFilters({...packageFilters,orderBy:data}))
     };
     return (
         <ul>

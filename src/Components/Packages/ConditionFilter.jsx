@@ -32,7 +32,7 @@ function ConditionFilter({setBtnClear}) {
                 {
                     Conditions !== undefined ?
                         Conditions.map((item, id) => (
-                            <li>
+                            <li key={id}>
                                 <label className="cstm-chkbx">
                                     {item.name}
                                     <input type="checkbox" className='Conditions_input' value={item.name} data-id={id} onChange={handleChecked} />

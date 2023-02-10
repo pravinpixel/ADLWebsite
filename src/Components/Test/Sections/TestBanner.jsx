@@ -25,11 +25,13 @@ export default function TestBanner(props) {
   }
   const ClearAllFilters = () => {
     dispatch(setTestFilters({
-      TestName       : null,
-      TestPrice      : 'high',
-      HealthCondition: null,
-      OrganName      : null,
-      Tack           : 8,
+      ApplicableGender: null,
+      TestName        : null,
+      orderBy         : 'ASC',
+      HealthCondition : null,
+      OrganName       : null,
+      Tack            : 8,
+      TestLocation    : 'bangalore'
     }));
     SetOrganFilter(null)
     SetConditionsFilter(null)
