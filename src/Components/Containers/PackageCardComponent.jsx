@@ -6,7 +6,7 @@ import CartBtn from "../Containers/CartBtn";
 import TestNavBtn from "./TestNavBtn";
 
 export default function PackageCardComponent(props) {
-  const TestLocation = useSelector((state) => state.TestLocation); 
+  const TestLocation = useSelector((state) => state.TestLocation);
   return (
     <div className="pack-deils">
       <div className="pck-img">

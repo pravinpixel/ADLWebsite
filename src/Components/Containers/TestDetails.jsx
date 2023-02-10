@@ -68,7 +68,7 @@ export default function TestDetails() {
                       </li>
                       <li> / </li>
                       <li>
-                        <Link to="">Angiotensin Converting Enzyme</Link>
+                        <Link to="/">{testDetails?.test?.TestName}</Link>
                       </li>
                     </ul>
                     <h1>

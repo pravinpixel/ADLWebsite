@@ -83,7 +83,7 @@ export default function BookedTestSliders({title , subTitle}) {
                       </h4>
                       <h5> 
                       <span className="strke">
-                          <s>&#8377;{parseInt(test.TestPrice) + 250}</s>
+                          {/* <s>&#8377;{parseInt(test.TestPrice) + 250}</s> */}
                         </span> &nbsp;
                        <span> ₹ <CheckTestPrice test={test}/></span> 
                         
