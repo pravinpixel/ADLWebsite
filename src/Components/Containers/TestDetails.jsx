@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router";
+import { useParams,useLocation } from "react-router";
 import {
   removeTestDetails,
   setTestCartList,
@@ -19,13 +19,16 @@ import testIcon5 from "../../assets/images/testing-icon-5.png";
 import CartBtn from "./CartBtn";
 import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import { setLoading } from '../../Redux/Actions/LoaderAction'
+import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function TestDetails() {
-  const navigate    = useNavigate()
-  const { TestId }  = useParams();
-  const dispatch    = useDispatch();
-  const testDetails = useSelector((state) => state.TestDetails.TestDetails);
+  const navigate     = useNavigate()
+  const { TestId }   = useParams();
+  const location     = useLocation()
+  const dispatch     = useDispatch();
+  const testDetails  = useSelector((state) => state.TestDetails.TestDetails);
   const TestLocation = useSelector((state) => state.TestLocation);
+
   const getTestDetails = async () => {
     dispatch(setLoading(true))
     const response = await axios.post(`${API_URL.TEST_DETAILS}/${TestId}`,{
@@ -37,14 +40,14 @@ export default function TestDetails() {
     } else {
       navigate('/')
     }
-  };
-
+  }; 
   useEffect(() => {
     if (TestId && TestId !== "") getTestDetails();
     dispatch(removeTestDetails());
     window.scroll(0, 0) 
   }, [TestId]);
 
+  useEffect(() => window.scroll(0, 0) ,[]);
   const addTestToCart = (testDetails) => {
     AddToCartList(testDetails)
     dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
@@ -247,7 +250,12 @@ export default function TestDetails() {
               }
             </div>
           </section>
-          <BookedTestSliders title="Other related" subTitle="Tests" />
+          {
+            location.pathname.split('/')[1] === 'package' ?
+              <PackagesSliders  title="Other related" subTitle="HEALTH Package"/>
+            :
+              <BookedTestSliders title="Other related" subTitle="Tests" />
+          }
         </>
       ) : (
         <div style={{ minHeight: "100vh" }}>  </div>
