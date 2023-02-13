@@ -1,39 +1,47 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-17.webp";
 import { ErrorMessage } from "@hookform/error-message";
-import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { CareerResponse } from "../../Helpers/FormResponse";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
+import { useJobDetails } from "../../Hooks";
+import { useForm } from "react-hook-form";  
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
 
-export default function Career() {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm();
+export default function Career(route) {
+  const { id } = useParams();
+  const { data : job, isLoading } = useJobDetails(id)
+  const { register, handleSubmit, formState: { errors },reset } = useForm({ 
+    resolver: yupResolver(
+      Yup.object().shape({
+        name      : Yup.string().required(),
+        email     : Yup.string().required(),
+        mobile    : Yup.string().required().min(10).max(10),
+        chooseFile: Yup.mixed().required()
+                .test("type","PDF Only",(val) =>  val && val[0].type === 'application/pdf' )
+                .test("fileSize","Very Big File",(val) =>  val && val[0].size < 200000),
+        message: Yup.string().required(),
+      })
+    )
+  })
   const dispatch = useDispatch();
-
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (data) => { 
     dispatch(setLoading(true));
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
     formdata.append("file", data.chooseFile[0], data.chooseFile[0].name);
-    // formdata.append("message", data.message);
-    formdata.append("job_id", "1");
-
+    formdata.append("message", data.message);
+    formdata.append("job_id", job.department_id); 
     var requestOptions = {
       method: "POST",
       body: formdata,
       redirect: "follow",
     };
-
     fetch(API_URL.JOB_APPLY, requestOptions)
       .then((response) => response.text())
       .then((result) => {
@@ -44,11 +52,10 @@ export default function Career() {
       .catch((error) => console.log("error", error));
   };
   useEffect(() => {
-    document.title = "Senior Resident/Pathologist";
+    document.title = "Careers";
     window.scroll(0, 0);
   }, []);
-
-  return (
+ if(!isLoading && job !== undefined) return (
     <div>
       <section className="inner-banner">
         <img src={bannerimage} alt="call" className="img-fluid" />
@@ -72,7 +79,7 @@ export default function Career() {
                     <Link to="/careers"> Careers </Link>
                   </li>
                   <li> / </li>
-                  <li> Senior Resident/Pathologist </li>
+                  <li> {job.department_name} </li>
                 </ul>
                 <h1>
                   Your passion, <br />
@@ -91,39 +98,34 @@ export default function Career() {
             <div className="col-lg-7">
               <div className="common-heading">
                 <h2 className="mb-0">
-                  Senior Resident/Pathologist <br />
-                  <span className="inlne">HR/MH 21-08</span>
+                  {job.title} <br />
+                  <span className="inlne">{job.code}</span>
                 </h2>
                 <div className="carere-options">
                   <h4>
-                    <i className="fa fa-user" aria-hidden="true"></i> Job Title{" "}
-                    <span> Senior Resident/Pathologist </span>
+                    <i className="fa fa-user" aria-hidden="true"></i> Job Title
+                    <span> {job.title} </span>
                   </h4>
                   <h4>
                     <i className="fa fa-id-card-o" aria-hidden="true"></i> Job
-                    Code <span> HR/MH 21-08 </span>
+                    Code <span> {job.code} </span>
                   </h4>
                   <h4>
                     <i className="fa fa-map-marker" aria-hidden="true"></i> Job
-                    Location <span> Bengaluru </span>
+                    Location <span> {job.location} </span>
                   </h4>
                   <h5>Responsibilities:</h5>
                   <ul>
-                    <li>
-                      Manages overall go-to-market strategy for syringe pump &
-                      Infusion Pump product lines, including overall commercial
-                      planning, key marketing initiatives, and financial results
-                      for the product line.
-                    </li>
+                    <li>{job.responsibilities}</li>
                   </ul>
                   <h5>Department:</h5>
-                  <p>Cytogenetics</p>
+                  <p>{job.department_name}</p>
                   <h5>Qualification:</h5>
-                  <p>MBBS, MD Pathology/ MBBS, MD Anatomy</p>
+                  <p>{job.qualification}</p>
                   <h5>Experience:</h5>
-                  <p>Fresher or 2-3 years</p>
+                  <p>{job.experience}</p>
                   <h5>No Of Requirement:</h5>
-                  <p>1</p>
+                  <p>{job.no_of_requirement}</p>
                 </div>
               </div>
             </div>
@@ -136,102 +138,48 @@ export default function Career() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="formdata">
                     <small className="text-light">Name</small>
-                    <ErrorMessage
-                      errors={errors}
-                      name="name"
-                      render={({ message }) => (
-                        <small className="text-danger ml-2">* {message}</small>
-                      )}
-                    />
+               
                     <input
-                      className="form-control jsrequired"
+                      className={`form-control jsrequired input1001 ${errors.name && 'border-danger border'}`}
                       type="text"
                       name="name"
-                      {...register("name", {
-                        required: "This is required.",
-                      })}
+                      {...register("name")}
                     />
                   </div>
                   <div className="formdata">
-                    <small className="text-light">Email</small>
-                    <ErrorMessage
-                      errors={errors}
-                      name="email"
-                      render={({ message }) => (
-                        <small className="text-danger ml-2">* {message}</small>
-                      )}
-                    />
+                    <small className="text-light">Email</small> 
                     <input
-                      className="form-control jsrequired"
+                      className={`form-control jsrequired input1001 ${errors.email && 'border-danger border'}`}
                       type="email"
                       name="email"
-                      {...register("email", {
-                        required: "This is required.",
-                        pattern: {
-                          value:
-                            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                          message: "Invalid email address!",
-                        },
-                      })}
+                      {...register("email")}
                     />
                   </div>
                   <div className="formdata">
-                    <small className="text-light">Mobile</small>
-                    <ErrorMessage
-                      errors={errors}
-                      name="mobile"
-                      render={({ message }) => (
-                        <small className="text-danger ml-2">* {message}</small>
-                      )}
-                    />
+                    <small className="text-light">Mobile</small> 
                     <input
-                      className="form-control jsrequired"
+                      className={`form-control jsrequired input1001 ${errors.mobile && 'border-danger border'}`}
                       type="number"
                       name="mobile"
-                      {...register("mobile", {
-                        required: "This is required.",
-                        pattern: {
-                          value:
-                            /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                          message: "Not a valid Phone Number",
-                        },
-                      })}
+                      {...register("mobile")}
                     />
                   </div>
                   <div className="formdata">
-                    <small className="text-light">Upload Resume</small>
-                    <ErrorMessage
-                      errors={errors}
-                      name="chooseFile"
-                      render={({ message }) => (
-                        <small className="text-danger ml-2">* {message}</small>
-                      )}
-                    />
+                    <small className="text-light">Upload Resume</small> 
                     <input
-                      className="form-control jsrequired"
+                      className={`form-control jsrequired input1001 ${errors.chooseFile && 'border-danger border'}`}
                       type="file"
                       name="chooseFile"
-                      {...register("chooseFile", {
-                        required: "This is required.",
-                      })}
+                      {...register("chooseFile")}
                     />
                   </div>
                   <div className="formdata">
-                    <small className="text-light">Message</small>
-                    <ErrorMessage
-                      errors={errors}
-                      name="message"
-                      render={({ message }) => (
-                        <small className="text-danger ml-2">* {message}</small>
-                      )}
-                    />
+                    <small className="text-light">Message</small> 
                     <textarea
-                      className="form-control"
+                      className={`form-control jsrequired input1001 ${errors.message && 'border-danger border'}`}
                       name="message"
                       id="msg"
-                      {...register("message", {
-                        required: "This is required.",
-                      })}
+                      {...register("message")}
                     ></textarea>
                   </div>
 
