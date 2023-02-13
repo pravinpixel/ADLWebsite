@@ -10,12 +10,7 @@ export default function PackageCardComponent(props) {
   return (
     <div className="pack-deils">
       <div className="pck-img">
-        {
-          props.data?.TestImage ?
-            <img src={props.data.image} alt="img" className="img-fluid"/> 
-        : 
-          <img src={popImg} alt="img" className="img-fluid"/> 
-        }
+        <img src={props.data.image} alt="img" className="img-fluid"/> 
         { props.data !== undefined ? (
           props.data?.sub_tests?.length !== 0 ? (
             <div className="ble-fnt"> 
