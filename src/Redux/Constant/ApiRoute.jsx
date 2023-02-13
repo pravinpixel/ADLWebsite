@@ -38,4 +38,6 @@ export const API_URL = {
     REMOVE_TO_CART             : `${process.env.REACT_APP_BASE_URL}/api/remove-to-cart`,
     CUSTOMER_CART_ITEMS        : `${process.env.REACT_APP_BASE_URL}/api/cart-items`,
     REACH_US                   : `${process.env.REACT_APP_BASE_URL}/api/contact-us`,
+    CAREERS                    : `${process.env.REACT_APP_BASE_URL}/api/current-opening`,
+    CAREERS_DEATILS            : `${process.env.REACT_APP_BASE_URL}/api/job-details/`,
 } 

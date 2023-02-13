@@ -56,6 +56,7 @@ import { setAuthUser, setTestLocation } from './Redux/Actions/TestAction'
 import "react-datepicker/dist/react-datepicker.css";
 import ForgotPassword from './Components/Containers/ForgotPassword'
 import ResetPassword from './Components/Containers/ResetPassword'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 export default function App() {
   const dispatch     = useDispatch();
@@ -77,70 +78,73 @@ export default function App() {
       dispatch(setTestLocation(TestLocation));
     }
   }, [])
+  const queryClient = new QueryClient()
   return (
-    <Fragment>
-      {loader.status === true ? <Loader /> : null}
-      <Header />
-      <Routes>
-        {
-          AuthUser !== null
-            ?
-              <>
-                <Route path='/checkout' exact element={<GuestCheckOut />} />
-                <Route path="/my-account" element={<MyProfile />} />
-                <Route path='/my-cart' element={<CartList />} />
-                <Route path='/thank-you' element={<ThankYou />} />
-              </>
-            :
-            <Route path='*' element={<Login />} />
-        }
-        <Route path='/reset-password/:customer_id' element={<ResetPassword />} />
-        <Route path='/for-patient' element={<Test />} />
-        <Route path='/login' exact element={<Login />} />
-        <Route path='/login-with-otp' exact element={<OtpLogin />} />
-        <Route path='/verify-otp' exact element={<VerifyLogin />} />
-        <Route path='/forgot-password' exact element={<ForgotPassword />} />
-        <Route path='/register' exact element={<Register />} />
-        <Route path='/test/:TestId' exact element={<TestDetails />} />
-        <Route path='/package/:TestId' exact element={<TestDetails />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/about-us' element={<About />} />
-        <Route path='/people-behind' element={<Peoplebhind />} />
-        <Route path='/history' element={<History />} />
-        <Route path='/commitment' element={<Commitment />} />
-        <Route path='/accreditation' element={<Accreditation />} />
-        <Route path='/patients-consumers' element={<PatientsConsumers />} />
-        <Route path='/packages' element={<Packages />} />
-        <Route path='/health-packages' element={<HealthPackages />} />
-        <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
-        <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
-        <Route path='/feedback' element={<Feedback />} />
-        <Route path='/faq' element={<Faq />} />
-        <Route path='/book-an-appointment' element={<BookanAppointment />} />
-        <Route path='/department' element={<Department />} />
-        <Route path='/hospital-or-lab-management' element={<HospitalLabManagement />} />
-        <Route path='/clinical-lab-management' element={<ClinicalLabManagement />} />
-        <Route path='/franchising-opportunities' element={<FranchisingOpportunities />} />
-        <Route path='/research' element={<Research />} />
-        <Route path='/physiotherapy' element={<Physiotherapy />} />
-        <Route path='/manual-therapy' element={<ManualTherapy />} />
-        <Route path='/exercise-therapy' element={<ExerciseTherapy />} />
-        <Route path='/electrotherapy' element={<Electrotherapy />} />
-        <Route path='/reach-us' exact element={<Contact />} />
-        <Route path='/head-office' exact element={<HeadOffice />} />
-        <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees />} />
-        <Route path='/careers' exact element={<Careers />} />
-        <Route path='/join-oppourtunities' exact element={<Career />} />
-        <Route path='/anandlab-franchise' exact element={<AnandLabFranchise />} />
-        <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees />} />
-        <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees />} />
-        <Route path='/find-lab' exact element={<FindLab />} />
-        <Route path='/cancellation-policy' exact element={<CancellationPolicy />} />
-        <Route path='/privacy-policy' exact element={<PrivacyPolicy />} />
-        <Route path='/terms-conditions' exact element={<TermsConditions />} />
-      </Routes>
-      <Footer />
-      <AlertBox />
-    </Fragment>
+    <QueryClientProvider client={queryClient}>
+      <Fragment>
+        {loader.status === true ? <Loader /> : null}
+        <Header />
+        <Routes>
+          {
+            AuthUser !== null
+              ?
+                <>
+                  <Route path='/checkout' exact element={<GuestCheckOut />} />
+                  <Route path="/my-account" element={<MyProfile />} />
+                  <Route path='/my-cart' element={<CartList />} />
+                  <Route path='/thank-you' element={<ThankYou />} />
+                </>
+              :
+              <Route path='*' element={<Login />} />
+          }
+          <Route path='/reset-password/:customer_id' element={<ResetPassword />} />
+          <Route path='/for-patient' element={<Test />} />
+          <Route path='/login' exact element={<Login />} />
+          <Route path='/login-with-otp' exact element={<OtpLogin />} />
+          <Route path='/verify-otp' exact element={<VerifyLogin />} />
+          <Route path='/forgot-password' exact element={<ForgotPassword />} />
+          <Route path='/register' exact element={<Register />} />
+          <Route path='/test/:TestId' exact element={<TestDetails />} />
+          <Route path='/package/:TestId' exact element={<TestDetails />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/about-us' element={<About />} />
+          <Route path='/people-behind' element={<Peoplebhind />} />
+          <Route path='/history' element={<History />} />
+          <Route path='/commitment' element={<Commitment />} />
+          <Route path='/accreditation' element={<Accreditation />} />
+          <Route path='/patients-consumers' element={<PatientsConsumers />} />
+          <Route path='/packages' element={<Packages />} />
+          <Route path='/health-packages' element={<HealthPackages />} />
+          <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
+          <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
+          <Route path='/feedback' element={<Feedback />} />
+          <Route path='/faq' element={<Faq />} />
+          <Route path='/book-an-appointment' element={<BookanAppointment />} />
+          <Route path='/department' element={<Department />} />
+          <Route path='/hospital-or-lab-management' element={<HospitalLabManagement />} />
+          <Route path='/clinical-lab-management' element={<ClinicalLabManagement />} />
+          <Route path='/franchising-opportunities' element={<FranchisingOpportunities />} />
+          <Route path='/research' element={<Research />} />
+          <Route path='/physiotherapy' element={<Physiotherapy />} />
+          <Route path='/manual-therapy' element={<ManualTherapy />} />
+          <Route path='/exercise-therapy' element={<ExerciseTherapy />} />
+          <Route path='/electrotherapy' element={<Electrotherapy />} />
+          <Route path='/reach-us' exact element={<Contact />} />
+          <Route path='/head-office' exact element={<HeadOffice />} />
+          <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees />} />
+          <Route path='/careers' exact element={<Careers />} />
+          <Route path='/join-oppourtunities/:id' exact element={<Career />} />
+          <Route path='/anandlab-franchise' exact element={<AnandLabFranchise />} />
+          <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees />} />
+          <Route path='/covidtesting-employees' exact element={<CovidtestingforEmployees />} />
+          <Route path='/find-lab' exact element={<FindLab />} />
+          <Route path='/cancellation-policy' exact element={<CancellationPolicy />} />
+          <Route path='/privacy-policy' exact element={<PrivacyPolicy />} />
+          <Route path='/terms-conditions' exact element={<TermsConditions />} />
+        </Routes>
+        <Footer />
+        <AlertBox />
+      </Fragment>
+    </QueryClientProvider>
   )
 }

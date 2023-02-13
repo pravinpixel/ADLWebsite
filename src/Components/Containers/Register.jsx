@@ -18,7 +18,7 @@ export default function Login() {
   
   const formSchema = Yup.object().shape({
     name           : Yup.string().required(),
-    mobile    : Yup.string().required().min(10).max(10),
+    mobile         : Yup.string().required().min(10).max(10),
     email          : Yup.string().required(),
     password       : Yup.string().required().min(3),
     confirmPassword: Yup.string().required().oneOf([Yup.ref('password')], 'Passwords does not match'),
