@@ -21,8 +21,12 @@ export default function Career(route) {
         email     : Yup.string().required(),
         mobile    : Yup.string().required().min(10).max(10),
         chooseFile: Yup.mixed().required()
-                .test("type","PDF Only",(val) =>  val && val[0].type === 'application/pdf' )
-                .test("fileSize","Very Big File",(val) =>  val && val[0].size < 200000),
+                .test("type","PDF Only",(val) =>  {
+                  return val && val.length > 0 && val[0].type === 'application/pdf'
+                } )
+                .test("fileSize","Very Big File",(val) =>  {
+                  return val && val.length > 0 && val[0].size < 200000
+                }),
         message: Yup.string().required(),
       })
     )
