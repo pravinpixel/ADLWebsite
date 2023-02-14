@@ -16,11 +16,11 @@ function LoadingBtn(props) {
 
   return (
     props.loading === true ?
-      <button type="submit" className={props?.className}  style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}>
+      <button type="submit" onClick={props.onClick} className={props?.className}  style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}>
         <Loader /> Processing ...
       </button>
       :
-      <button type="submit" className={props?.className}  style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}> 
+      <button type="submit" onClick={props.onClick} className={props?.className}  style={{ display: 'inline-flex', alignItems: 'center' }} disabled={props.loading === true}> 
         {props?.title}
       </button>
   )
