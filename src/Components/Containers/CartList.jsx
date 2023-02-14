@@ -11,39 +11,40 @@ import axios from "axios";
 export default function CartList() {
   const [CartTable, setCartTable] = useState([]);
   const [testTotal, setTestTotal] = useState(0);
-  const dispatch                  = useDispatch();
+  const dispatch = useDispatch();
   const fetchCartList = () => {
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
       setCartTable(response.data);
-      dispatch( setTestCartList(response.data) );
-    })  
+      dispatch(setTestCartList(response.data));
+    })
   }
-  
-  useEffect(() => { 
+
+  useEffect(() => {
     try {
-      if(JSON.parse(localStorage.getItem('user')).id) {
-        fetchCartList() 
+      if (JSON.parse(localStorage.getItem('user')).id) {
+        fetchCartList()
       }
     } catch (error) {
-      
+
     }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
-      const CalculateTotalTestPrice = testListFromCart.reduce(
-        (previousValue, currentValue) =>
-          parseInt(previousValue) + parseInt(currentValue.TestPrice),
-        0
-      );
+      var CalculateTotalTestPrice = 0;
+      testListFromCart.map((item) => {
+        if (item.TestPrice !== undefined) {
+          CalculateTotalTestPrice += item.TestPrice
+        }
+      })
       localStorage.setItem("cartItemTotal", CalculateTotalTestPrice);
       setTestTotal(CalculateTotalTestPrice);
     }
   }, []);
 
-  const removeCartItem = (index,item) => {
-    axios.post(API_URL.REMOVE_TO_CART,{
-      user_id : JSON.parse(localStorage.getItem('user')).id,
-      test_id : item.id,
-      test_type : item.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
+  const removeCartItem = (index, item) => {
+    axios.post(API_URL.REMOVE_TO_CART, {
+      user_id: JSON.parse(localStorage.getItem('user')).id,
+      test_id: item.id,
+      test_type: item.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
     });
 
     CartTable.splice(index, 1);
@@ -51,11 +52,12 @@ export default function CartList() {
     setCartTable([...CartTable]);
     dispatch(setTestCartList(JSON.parse(localStorage.getItem("CartTestList"))));
 
-    const CalculateTotalTestPrice = CartTable.reduce(
-      (previousValue, currentValue) =>
-        parseInt(previousValue) + parseInt(currentValue.TestPrice),
-      0
-    );
+    var CalculateTotalTestPrice = 0;
+    CartTable.map((item) => {
+      if (item.TestPrice !== undefined) {
+        CalculateTotalTestPrice += item.TestPrice
+      }
+    })
     localStorage.setItem("cartItemTotal", CalculateTotalTestPrice);
     setTestTotal(CalculateTotalTestPrice);
 
@@ -124,15 +126,15 @@ export default function CartList() {
                             <Link to="">
                               <RiDeleteBinLine
                                 className="text-danger"
-                                onClick={() => removeCartItem(index,item)}
+                                onClick={() => removeCartItem(index, item)}
                               />
                             </Link>
                           </td>
                         </tr>
                       ))}
                       <tr>
-                        <td className="text-right" colSpan={3}><b style={{ fontSize:'16px' }}>Total</b></td>
-                        <td className="text-right"><b style={{ fontSize:'16px' }}>₹ {testTotal}</b></td>
+                        <td className="text-right" colSpan={3}><b style={{ fontSize: '16px' }}>Total</b></td>
+                        <td className="text-right"><b style={{ fontSize: '16px' }}>₹ {testTotal}</b></td>
                         <td>
                           <div className="case m-0 text-center">
                             <p>
@@ -144,41 +146,41 @@ export default function CartList() {
                     </tbody>
                   </table>
                 </div>
-                <div className="only-mobileresponsive">
-                <div className="box-fisherr">
-                <div className="col-lg-12 p-0">
-                <div className="pack-name">
-                <h3>Package/Test</h3>
-                <p>11 DEOXY CORTISOL (LC-MS/MS)</p>
-                <span class="px-2 py-1 badge badge-primary"><i class="fa fa-flask" aria-hidden="true"></i> Test </span>
-                <div className="text-center">
-                <div className="prce-net">
-                <h4>Unit Price(₹)</h4>
-                <p>₹1190</p>
-                </div>
-                <div className="prce-fnl">
-                <h4>Net Price</h4>
-                <p>₹ 1190</p>
-                </div>
-                </div>
-                <Link to="">
-                <RiDeleteBinLine
-                className="text-danger"
-                // onClick={() => removeCartItem(index,item)}
-                />
-                </Link>
-                </div>          
-                </div>
-                </div>
-                <div className="box-fisherr">
-                <div className="col-lg-12 p-0">
-                <div className="pack-name">
-                <h3>Total</h3>
-                <p>₹ 14280</p>
-                <div class="case m-0 text-center"><p><a href="/checkout">Checkout</a></p></div>  
-                </div>          
-                </div>
-                </div>
+                {/* <div className="only-mobileresponsive">
+                  <div className="box-fisherr">
+                    <div className="col-lg-12 p-0">
+                      <div className="pack-name">
+                        <h3>Package/Test</h3>
+                        <p>11 DEOXY CORTISOL (LC-MS/MS)</p>
+                        <span class="px-2 py-1 badge badge-primary"><i class="fa fa-flask" aria-hidden="true"></i> Test </span>
+                        <div className="text-center">
+                          <div className="prce-net">
+                            <h4>Unit Price(₹)</h4>
+                            <p>₹1190</p>
+                          </div>
+                          <div className="prce-fnl">
+                            <h4>Net Price</h4>
+                            <p>₹ 1190</p>
+                          </div>
+                        </div>
+                        <Link to="">
+                          <RiDeleteBinLine
+                            className="text-danger"
+                          // onClick={() => removeCartItem(index,item)}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="box-fisherr">
+                    <div className="col-lg-12 p-0">
+                      <div className="pack-name">
+                        <h3>Total</h3>
+                        <p>₹ 14280</p>
+                        <div class="case m-0 text-center"><p><a href="/checkout">Checkout</a></p></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="case">
                   <p>
@@ -187,7 +189,7 @@ export default function CartList() {
                       Add More Package
                     </Link>
                   </p>
-                </div>
+                </div> */}
               </div>
               {/* <div className="col-lg-4">
                 <div className="availab-lity ca-rtloc">

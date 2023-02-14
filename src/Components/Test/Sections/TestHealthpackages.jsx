@@ -39,10 +39,10 @@ export default function   TestHealthPackages(props) {
             <div className="col">
               <div className="serch-filter text-right">
                 Sort By
-                <select value={props.sortBy} className="form-control" onChange={(e) => dispatch(setTestFilters({...filters,TestPrice:e.target.value})) } >
+                <select value={props.sortBy} className="form-control" onChange={(e) => dispatch(setTestFilters({...filters,orderBy:e.target.value})) } >
                   <option value=""> -- Choose --</option>
-                  <option value="high"> Price : High-Low</option>
-                  <option value="low">  Price : Low-High</option>
+                  <option value="DESC"> Price : High-Low</option>
+                  <option value="ASC" selected>  Price : Low-High</option>
                 </select>
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function   TestHealthPackages(props) {
               ))
             : null
           }
-        </div>
+        </div> 
         <div className="load-mrebtn text-center">  
           {
             Loader === true ?  

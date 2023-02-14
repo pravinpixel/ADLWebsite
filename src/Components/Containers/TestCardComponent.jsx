@@ -1,12 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import clock from "./../../assets/images/clk.png";
 import calnder from "./../../assets/images/cal.png"; 
 import CartBtn from '../Containers/CartBtn' 
 import TestNavBtn from "./TestNavBtn";
-
 export default function TestCardComponent(props) {
-
   return (
     <div className="">
       <div className="cmn-box-str">
@@ -39,8 +35,8 @@ export default function TestCardComponent(props) {
           </h5>
           <p className="d-flex">
             {
-              props.getAllTestData !== undefined ?
-                <CartBtn getData={props.getAllTestData} testData={props.test}/>
+              props.test !== undefined ?
+                <CartBtn getData={props.test} testData={props.test}/>
               :
               null
             } 
