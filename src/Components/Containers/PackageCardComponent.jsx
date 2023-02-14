@@ -19,7 +19,7 @@ export default function PackageCardComponent(props) {
           ) : null
         ) : null }
       </div>
-      <h3>{props?.data?.TestName?.substring(0, 26) + "..."}</h3>
+      <h3>{props?.data?.TestName}</h3>
       <h5><span >₹ <span>{props?.data?.TestPrice}</span></span></h5>
       <div className="case" style={{ border:"none",padding:"0" }}>
         <p className="d-flex">
