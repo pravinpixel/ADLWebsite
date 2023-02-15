@@ -1241,8 +1241,8 @@ button.lgot-btn:before {
     color: #6e6e6e;
     margin-bottom: 10px;
     margin-top: 10px;
-    width: 79%;
-    min-height: 40px;
+    width: 78%;
+    min-height: 46px;
   }
 
 .pack-deils h4 {
@@ -5790,6 +5790,8 @@ input[type="range"]::-moz-range-thumb {
     }
 }
 
+
+
 @media(min-width:768px) {
     .nav-tabs {
         display: flex;
@@ -5891,6 +5893,11 @@ input[type="range"]::-moz-range-thumb {
     }
 }
 
+@media (max-width: 1360px) {
+    .case p a, .case p button, .pack-deils p a{padding: 6px 10px;}
+    
+    }
+
 @media (max-width:1300px) {
     .search-container{
         margin-top: 0px;
@@ -5971,6 +5978,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1100px) {
+
+
     .our-presence .col-lg-8 {
         flex: 0 0 100%;
         max-width: 100%;
@@ -6084,7 +6093,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1000px) {
-    
+    .case p a, .case p button, .pack-deils p a{padding: 6px 20px;}
     .resp-rem-mrgn{margin-top: 0px;}
     .serchnig input{
         width: 100%;
