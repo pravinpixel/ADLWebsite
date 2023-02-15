@@ -288,7 +288,7 @@ export default function HealthCheckupforEmployees() {
                     />
                     <input
                       className="form-control jsrequired"
-                      type="number"
+                      type="tel"
                       name="mobile"
                       {...register("mobile", {
                         required: "This is required.",

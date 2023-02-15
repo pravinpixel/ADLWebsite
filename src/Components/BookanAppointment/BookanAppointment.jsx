@@ -94,7 +94,7 @@ export default function BookanAppointment() {
                         <div className="form-data">
                           <input
                             className="input100"
-                            type="number"
+                            type="tel"
                             pattern="/^\d{10}$/"
                             name="mobile"
                             placeholder="Mobile"

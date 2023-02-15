@@ -59,7 +59,7 @@ export default function BannerForm() {
                             <input className={`input100 ${errors?.name && 'border-bottom border-danger'}`} placeholder="Name" {...register('name')} />
                         </div>
                         <div className="form-data">
-                            <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="number"  placeholder="Mobile" {...register('mobile')} />
+                            <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="tel"  placeholder="Mobile" {...register('mobile')} />
                         </div>
                         <div className="form-data">
                             <input className={`input100 ${errors?.location && 'border-bottom border-danger'}`} placeholder="Select Your Location" {...register('location')} />

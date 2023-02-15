@@ -2083,8 +2083,11 @@ h4.cont-frmhed {
     padding: 0 5px
 }
 .banner-form .form-data.file-upload input{
-    line-height: 50px;
+    padding-top: 15px;cursor:pointer;
 }
+
+.form-data.file-upload{cursor:pointer;}
+
 .form-data input {
     border: none;
     border-radius: 0;
@@ -5373,8 +5376,8 @@ a.srch-btn i {
     appearance: textfield;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 

@@ -163,7 +163,7 @@ export default function Career(route) {
                     <small className="text-light">Mobile</small> 
                     <input
                       className={`form-control jsrequired input1001 ${errors.mobile && 'border-danger border'}`}
-                      type="number"
+                      type="tel"
                       name="mobile"
                       {...register("mobile")}
                     />

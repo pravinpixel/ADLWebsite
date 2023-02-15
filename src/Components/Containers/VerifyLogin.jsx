@@ -58,7 +58,7 @@ export default function Login() {
                           <div className="row">
                             <>
                               <div className="form-data col-lg-12">
-                                <input className={`input1001 ${errors.otp && 'border-danger'}`} type="number" placeholder="Received OTP" {...register('otp')} />
+                                <input className={`input1001 ${errors.otp && 'border-danger'}`} type="tel" placeholder="Received OTP" {...register('otp')} />
                               </div>
                               <div className="form-data sbm col-lg-12">
                                 <input type="submit" value="Verfiy OTP"/>

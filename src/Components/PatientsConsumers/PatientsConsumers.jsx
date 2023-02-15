@@ -365,7 +365,7 @@ export default function Solutions() {
                       />
                       <input
                         className="input100"
-                        type="number"
+                        type="tel"
                         name="mobile"
                         {...register("mobile", {
                           required: "This is required.",

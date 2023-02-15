@@ -120,7 +120,7 @@ export default function AccountInformation() {
                 <b>Pincode</b>
               </div>
               <div className="col p-0">
-                <input type="number" className='form-control' name="pin_code" value={PinCode} onChange={(e) => setPinCode(e.target.value)} />
+                <input type="tel" className='form-control' name="pin_code" value={PinCode} onChange={(e) => setPinCode(e.target.value)} />
               </div>
             </div> 
             <button type="submit" className='btn-primary rounded px-3 py-2 float-right'>Update</button>

@@ -485,7 +485,7 @@ export default function HealthPackages() {
                             <input className="input100" type="text" name='name' placeholder="Name" required/> 
                         </div>
                         <div className="form-data">
-                            <input className="input100" type="number" pattern="/^\d{10}$/" name='mobile' placeholder="Mobile" required/> 
+                            <input className="input100" type="tel" pattern="/^\d{10}$/" name='mobile' placeholder="Mobile" required/> 
                         </div>
                         <div className="form-data">
                             <input className="input100" type="text" name='location' placeholder="Select Your Location" required/> 

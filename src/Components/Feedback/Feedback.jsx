@@ -174,7 +174,7 @@ export default function Feedback() {
                       />
                       <input
                         className="form-control jsrequired"
-                        type="number"
+                        type="tel"
                         name="mobile"
                         {...register("mobile", {
                           required: "This is required.",

@@ -208,7 +208,7 @@ export default function GuestCheckOut() {
                               <label>Phone Number</label>
                               <input
                                 className="input100"
-                                type="number"
+                                type="tel"
                                 pattern="/^\d{10}$/"
                                 name="phone_number"
                                 value={BillingAddress && BillingAddress.phone_number}
