@@ -7,7 +7,6 @@ import * as Yup from 'yup'
 import { CgSpinner } from 'react-icons/cg';
 import axios from 'axios';
 import { API_URL } from '../../Redux/Constant/ApiRoute';
-import { toast } from 'react-hot-toast';
 import { FormResponse } from '../../Helpers/FormResponse';
 
 export default function Contact() {
@@ -17,7 +16,7 @@ export default function Contact() {
             Yup.object().shape({
                 name: Yup.string().required(),
                 email: Yup.string().required(),
-                mobile    : Yup.string().required().min(10).max(10),
+                mobile    : Yup.string().required(),
                 location: Yup.string(),
                 message: Yup.string()
             })

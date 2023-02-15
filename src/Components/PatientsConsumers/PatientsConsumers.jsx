@@ -34,13 +34,12 @@ export default function Solutions() {
   const dispatch = useDispatch()
 
   const onSubmit = (data) => {
-    dispatch(setLoading(true))
-
+    dispatch(setLoading(true)) 
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
-    formdata.append("date", Moment(data.date).format("DD-MM-YYYY"));
+    formdata.append("dob", Moment(data.date).format("DD-MM-YYYY"));
     formdata.append("gender", data.gender);
     formdata.append("test_for_home_collection", data.test_for_home_collection);
     formdata.append(
@@ -73,6 +72,8 @@ export default function Solutions() {
           dispatch(setLoading(false))
           FormResponse()
           reset();
+        } else {
+          dispatch(setLoading(true))
         }
       })
       .catch((error) => console.log("error", error));

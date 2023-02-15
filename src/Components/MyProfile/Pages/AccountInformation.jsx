@@ -3,27 +3,48 @@ import {API_URL} from '../../../Redux/Constant/ApiRoute'
 import { Form } from 'react-component-form'
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import AuthUser from "../../../Helpers/AuthUser";
+import AuthUser, { PutUser } from "../../../Helpers/AuthUser";
+import { useForm } from "react-hook-form";  
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
 
 export default function AccountInformation() {
-  const customer                        = AuthUser(); 
-  const [Name, setName]                 = useState(customer?.name);
-  const [PrimaryEmail, setPrimaryEmail] = useState(customer?.email);
-  const [Mobile, setMobile]             = useState(customer?.mobile);
-  const [FirstName, setFirstName]       = useState(customer?.customer_details?.first_name);
-  const [LastName, setLastName]         = useState(customer?.customer_details?.last_name);
-  const [Email, setEmail]               = useState(customer?.customer_details?.email);
-  const [PhoneNumber, setPhoneNumber]   = useState(customer?.customer_details?.phone_number);
-  const [Address, setAddress]           = useState(customer?.customer_details?.address);
-  const [CityTown, setCityTown]         = useState(customer?.customer_details?.city_town);
-  const [State, setState]               = useState(customer?.customer_details?.state);
-  const [PinCode, setPinCode]           = useState(customer?.customer_details?.pin_code);
-
-  const UpdateInfo = (BillingAddress) => {
-    axios.post(API_URL.UPDATE_MY_PROFILE + customer.id ,BillingAddress).then((response) => {
+  const customer  = AuthUser(); 
+  const { register, handleSubmit, formState: { errors } } = useForm({ 
+    resolver: yupResolver(
+      Yup.object().shape({
+        name         : Yup.string().required(),
+        primary_email: Yup.string().required(),
+        mobile       : Yup.number().required(),
+        email        : Yup.string().required(),
+        first_name   : Yup.string().required(),
+        last_name    : Yup.string().required(),
+        phone_number : Yup.number().required(), 
+        address      : Yup.string().required(),
+        city_town    : Yup.string().required(),
+        state        : Yup.string().required(),
+        pin_code     : Yup.number().required()
+      })
+    ),
+    defaultValues: {
+      name         : customer.name,
+      primary_email: customer?.email,
+      mobile       : customer?.mobile,
+      email        : customer?.customer_details?.email,
+      first_name   : customer?.customer_details?.first_name,
+      last_name    : customer?.customer_details?.last_name,
+      phone_number : customer?.customer_details?.phone_number,
+      address      : customer?.customer_details?.address,
+      city_town    : customer?.customer_details?.city_town,
+      state        : customer?.customer_details?.state,
+      pin_code     : customer?.customer_details?.pin_code
+    }
+  }) 
+  const UpdateInfo = (data) => {
+    axios.post(API_URL.UPDATE_MY_PROFILE + customer.id ,data).then((response) => {
       if (response.data.status) { 
         toast.success(response.data.message)
-        localStorage.setItem('user',JSON.stringify(response.data.data))
+        PutUser(response.data.data) 
       }
     });
   } 
@@ -32,14 +53,14 @@ export default function AccountInformation() {
     <div>
       <div className="card shadow border">
         <div className="card-body">
-          <Form onSubmit={UpdateInfo}>
+          <form onSubmit={handleSubmit(UpdateInfo)}>
             <h6 className='p-3' style={{ color: "#5c2d91" }}><b>Account Details</b></h6>
             <div className="row m-0 mb-2">
               <div className="col-md-3">
                 <b>Name</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="name" value={Name} onChange={(e) => setName(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.name && 'border-danger'}`} {...register('name')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -47,7 +68,7 @@ export default function AccountInformation() {
                 <b>Email</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' value={PrimaryEmail} disabled/>
+                <input type="text" className="form-control" value={customer?.email} disabled/>
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -55,7 +76,7 @@ export default function AccountInformation() {
                 <b>Mobile</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' value={Mobile} disabled/>
+                <input type="number" className={`form-control  ${errors.mobile && 'border-danger'}`} {...register('mobile')}/>
               </div>
             </div>
             <h6 className='p-3' style={{ color: "#5c2d91" }}><b>Billing Account Details</b></h6>
@@ -64,7 +85,7 @@ export default function AccountInformation() {
                 <b>First Name</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="first_name" value={FirstName} onChange={(e) => setFirstName(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.first_name && 'border-danger'}`}  {...register('first_name')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -72,7 +93,7 @@ export default function AccountInformation() {
                 <b>Last Name</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="last_name" value={LastName} onChange={(e) => setLastName(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.last_name && 'border-danger'}`} {...register('last_name')}/>
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -80,7 +101,7 @@ export default function AccountInformation() {
                 <b>Email</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="email" value={Email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.email && 'border-danger'}`}  {...register('email')}/>
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -88,7 +109,7 @@ export default function AccountInformation() {
                 <b>Phone Number</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' minLength={10} maxLength={12} name="phone_number" value={PhoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}  />
+                <input type="number" className={`form-control  ${errors.phone_number && 'border-danger'}`}  {...register('phone_number')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -96,7 +117,7 @@ export default function AccountInformation() {
                 <b>Address</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="address" value={Address} onChange={(e) => setAddress(e.target.value)}  />
+                <input type="text" className={`form-control  ${errors.address && 'border-danger'}`}  {...register('address')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -104,7 +125,7 @@ export default function AccountInformation() {
                 <b>City / Town</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="city_town" value={CityTown} onChange={(e) => setCityTown(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.city_town && 'border-danger'}`}  {...register('city_town')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -112,7 +133,7 @@ export default function AccountInformation() {
                 <b>State</b>
               </div>
               <div className="col p-0">
-                <input type="text" className='form-control' name="state" value={State} onChange={(e) => setState(e.target.value)} />
+                <input type="text" className={`form-control  ${errors.state && 'border-danger'}`} {...register('state')}/>
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -120,11 +141,11 @@ export default function AccountInformation() {
                 <b>Pincode</b>
               </div>
               <div className="col p-0">
-                <input type="tel" className='form-control' name="pin_code" value={PinCode} onChange={(e) => setPinCode(e.target.value)} />
+                <input type="number" className={`form-control  ${errors.pin_code && 'border-danger'}`}  {...register('pin_code')} />
               </div>
             </div> 
             <button type="submit" className='btn-primary rounded px-3 py-2 float-right'>Update</button>
-          </Form>
+          </form>
         </div>
       </div>
     </div>
