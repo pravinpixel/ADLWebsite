@@ -1237,11 +1237,13 @@ button.lgot-btn:before {
 .pack-deils h3 {
     font-size: 16px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 23px;
     color: #6e6e6e;
     margin-bottom: 10px;
-    margin-top: 18px;
-}
+    margin-top: 10px;
+    width: 79%;
+    min-height: 40px;
+  }
 
 .pack-deils h4 {
     font-size: 14px;

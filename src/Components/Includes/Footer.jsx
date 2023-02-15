@@ -303,7 +303,7 @@ export default function Footer() {
           <img src={sky} alt="" className="img-fluid" />
           Reports
         </a>
-        <a href="" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
+        <a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
           Toll-Free
         </a>
       </div>

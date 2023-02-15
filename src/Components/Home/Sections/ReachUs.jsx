@@ -30,19 +30,19 @@ export default function ReachUs() {
                     <div className="share-us">
                         <ul className="footer-socials">
                             <li>
-                                <Link to="/" target="_blank"> <i className="fa fa-facebook" aria-hidden="true"></i> </Link>
+                                <Link to="https://www.facebook.com/anandlab" target="_blank"> <i className="fa fa-facebook" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <Link to="/" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i> </Link>
+                                <Link to="https://twitter.com/anandlab" target="_blank"> <i className="fa fa-twitter" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <Link to="/" target="_blank"> <i className="fa fa-instagram" aria-hidden="true"></i> </Link>
+                                <Link to="https://www.instagram.com/anandlab/" target="_blank"> <i className="fa fa-instagram" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <Link to="/" target="_blank"> <i className="fa fa-linkedin" aria-hidden="true"></i> </Link>
+                                <Link to="https://www.linkedin.com/company/anand-diagnostic-laboratory---india" target="_blank"> <i className="fa fa-linkedin" aria-hidden="true"></i> </Link>
                             </li>
                             <li>
-                                <Link to="/" target="_blank"> <i className="fa fa-youtube-play" aria-hidden="true"></i> </Link>
+                                <Link to="https://www.youtube.com/channel/UCtLXi-RRdZAoR9989vVHYKg" target="_blank"> <i className="fa fa-youtube-play" aria-hidden="true"></i> </Link>
                             </li>
                         </ul>
                     </div>
