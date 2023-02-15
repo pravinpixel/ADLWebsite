@@ -14,8 +14,11 @@ export default function CartList() {
   const dispatch = useDispatch();
   const fetchCartList = () => {
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
+      if(localStorage.getItem("CartTestList") == undefined || localStorage.getItem("CartTestList") == null) {
+        localStorage.setItem("CartTestList",JSON.stringify(response.data))
+        dispatch(setTestCartList(response.data));
+      }
       setCartTable(response.data);
-      dispatch(setTestCartList(response.data));
     })
   }
 
@@ -40,12 +43,8 @@ export default function CartList() {
     }
   }, []);
 
-  const removeCartItem = (index, item) => {
-    axios.post(API_URL.REMOVE_TO_CART, {
-      user_id: JSON.parse(localStorage.getItem('user')).id,
-      test_id: item.id,
-      test_type: item.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
-    });
+  const removeCartItem = (index, cart_id) => {
+    axios.post(API_URL.REMOVE_TO_CART + cart_id);
 
     CartTable.splice(index, 1);
     localStorage.setItem("CartTestList", JSON.stringify([...CartTable]));
@@ -126,7 +125,7 @@ export default function CartList() {
                             <Link to="">
                               <RiDeleteBinLine
                                 className="text-danger"
-                                onClick={() => removeCartItem(index, item)}
+                                onClick={() => removeCartItem(index, item.cart_id)}
                               />
                             </Link>
                           </td>

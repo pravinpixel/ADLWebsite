@@ -20,19 +20,7 @@ export default function TestCardComponent(props) {
               { props.test !== undefined ? props.test.TestSchedule.replaceAll(',',', ') : 'Daily' }.
             </li>
           </ul>
-          <h5>
-          <span className="strke">
-              <s>&#8377; { props.test !== undefined ? parseInt(props.test.TestPrice) + 1000 : 1500 }   </s>
-            </span> &nbsp;
-            &#8377; 
-            { props.test !== undefined ? props.test.TestPrice : 1400 }   
-            
-            {/* <span className="flag-option">
-              <p>
-                10 % off
-              </p>
-            </span> */}
-          </h5>
+          <h5> &#8377; { props.test !== undefined ? props.test.TestPrice : 1400 }</h5>
           <p className="d-flex">
             {
               props.test !== undefined ?
