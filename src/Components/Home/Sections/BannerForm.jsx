@@ -61,8 +61,13 @@ export default function BannerForm() {
                         <div className="form-data">
                             <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="tel"  placeholder="Mobile" {...register('mobile')} />
                         </div>
-                        <div className="form-data">
-                            <input className={`input100 ${errors?.location && 'border-bottom border-danger'}`} placeholder="Select Your Location" {...register('location')} />
+                        <div className="form-data"> 
+                            <select class="form-control " id="location" name="location">
+	                        <option value="">Select Your Location</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Mangalore">Mangalore</option> 
+                            <option value="Rest of Bangalore">Rest of Bangalore</option> 
+	                        </select>
                         </div>
                         <div className={`form-data file-upload ${errors?.reportFile && 'border-bottom border-danger'}`}>
                             <input type="file" name="reportFile"  {...register('reportFile')} />

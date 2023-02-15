@@ -102,13 +102,12 @@ export default function BookanAppointment() {
                           />
                         </div>
                         <div className="form-data">
-                          <input
-                            className="input100"
-                            type="text"
-                            name="location_id"
-                            placeholder="Select Your Location"
-                            required
-                          />
+                        <select class="form-control " id="location" name="location">
+	                        <option value="">Select Your Location</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Mangalore">Mangalore</option> 
+                            <option value="Rest of Bangalore">Rest of Bangalore</option> 
+	                        </select>
                         </div>
                         <div className="form-data">
                           <input
