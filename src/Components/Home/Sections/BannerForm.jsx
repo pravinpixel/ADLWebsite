@@ -10,7 +10,7 @@ import { setLoading } from "../../../Redux/Actions/LoaderAction";
 
 export default function BannerForm() {
     const dispatch = useDispatch();
-    const validFileExtensions = { image: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'webp','.pdf','xls'] };
+    const validFileExtensions = { image: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'webp','pdf','xls'] };
     function isValidFileType(fileName, fileType) {
         return fileName && validFileExtensions[fileType].indexOf(fileName.split('.').pop()) > -1;
     }
@@ -63,11 +63,11 @@ export default function BannerForm() {
                             <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="tel"  placeholder="Mobile" {...register('mobile')} />
                         </div>
                         <div className="form-data"> 
-                            <select class="form-control " id="location" name="location">
-	                        <option value="">Select Your Location</option>
-                            <option value="Bangalore">Bangalore</option>
-                            <option value="Mangalore">Mangalore</option> 
-                            <option value="Rest of Bangalore">Rest of Bangalore</option> 
+                            <select class={`input100 ${errors?.location && 'border-bottom border-danger'}`} id="location" name="location"  {...register('location')}>
+                                <option value="">Select Your Location</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Mangalore">Mangalore</option> 
+                                <option value="Rest of Bangalore">Rest of Bangalore</option> 
 	                        </select>
                         </div>
                         <div className={`form-data file-upload ${errors?.reportFile && 'border-bottom border-danger'}`}>

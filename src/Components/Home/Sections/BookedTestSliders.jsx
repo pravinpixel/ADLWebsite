@@ -12,7 +12,7 @@ export default function BookedTestSliders({title , subTitle}) {
   var settings = {
     slidesToScroll: 1,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     focusOnSelect: false,
     autoplay: true,
     dots: false,
@@ -87,8 +87,11 @@ export default function BookedTestSliders({title , subTitle}) {
                        <span> ₹ <CheckTestPrice test={test}/></span> 
                       </h5>
                     </div>
-                    <p>
+                    <p className="d-flex">
                       <CartBtn testData={test} />
+                      <Link to={`/test/${test.TestSlug}`} className="bg-trsnper ml-2">
+                        <small>Know More</small>
+                      </Link>
                     </p>
                   </div>
                 ))}
