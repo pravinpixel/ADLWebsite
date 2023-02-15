@@ -38,6 +38,7 @@ export default function Research() {
       .then(result => {
         if(result.Errors === false) {
             dispatch(setLoading(false))
+            reset()
             FormResponse()
         }
       })

@@ -43,7 +43,8 @@ export default function HospitalLabManagement() {
       .then(result => {
         if(result.Errors === false) {
           dispatch(setLoading(false))
-          FormResponse()
+          FormResponse();
+          reset()
         }
       })
       .catch(error => console.log('error', error));
