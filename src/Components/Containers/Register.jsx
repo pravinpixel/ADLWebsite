@@ -10,9 +10,10 @@ import { setAuthUser } from "../../Redux/Actions/TestAction";
 import { useForm } from "react-hook-form";  
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import { useEffect } from "react";
 
 export default function Login() {
-  
+  useEffect(() => window.scroll(0, 0) , [])
   let navigate = useNavigate();
   const dispatch = useDispatch()
   

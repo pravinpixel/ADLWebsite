@@ -53,8 +53,6 @@ const Banners = () => {
                             </>
                     }
                 </div>
-
-
             </div>
 
             {/* ========= Banner Form ========= */}

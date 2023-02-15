@@ -22,6 +22,7 @@ import { setLoading } from '../../Redux/Actions/LoaderAction'
 import PackagesSliders from "../Home/Sections/PackagesSliders";
 
 export default function TestDetails() {
+  useEffect(() => window.scroll(0, 0) , [])
   const navigate     = useNavigate()
   const { TestId }   = useParams();
   const location     = useLocation()
@@ -43,11 +44,9 @@ export default function TestDetails() {
   }; 
   useEffect(() => {
     if (TestId && TestId !== "") getTestDetails();
-    dispatch(removeTestDetails());
-    window.scroll(0, 0) 
+    dispatch(removeTestDetails()); 
   }, [TestId]);
 
-  useEffect(() => window.scroll(0, 0) ,[]);
   const addTestToCart = (testDetails) => {
     AddToCartList(testDetails)
     dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));

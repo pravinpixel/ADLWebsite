@@ -7,7 +7,7 @@ import { API_URL } from '../../Redux/Constant/ApiRoute';
 
 export default function CartBtn(props) {
     const dispatch  = useDispatch();
-    const user = localStorage.getItem('user')
+    const user      = localStorage.getItem('user')
 
     const addToCartItem = () => {
         if(user !== null ) {
@@ -25,7 +25,11 @@ export default function CartBtn(props) {
                 )
             );
         } else {
-            toast.error('You need to login first!');
+            dispatch(
+                setTestCartList(
+                    JSON.parse(localStorage.getItem("CartTestList"))
+                )
+            );
         }
     }
 

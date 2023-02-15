@@ -13,8 +13,8 @@ import Accretions from './Sections/Accretions'
 
 export default function Home() {
   useEffect(() => {
-    window.scroll(0,0)
-    document.title = "Home Page"; 
+    window.scroll(0,0);
+    document.title = "Home Page";
   }, []);
   return (
     <>

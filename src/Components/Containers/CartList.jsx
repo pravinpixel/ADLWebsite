@@ -9,6 +9,9 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import axios from "axios";
 
 export default function CartList() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
   const [CartTable, setCartTable] = useState([]);
   const [testTotal, setTestTotal] = useState(0);
   const dispatch = useDispatch();

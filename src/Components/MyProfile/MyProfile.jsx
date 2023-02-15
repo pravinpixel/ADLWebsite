@@ -12,7 +12,11 @@ import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
 import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { useDispatch } from "react-redux";
-export default function MyProfile() { 
+import { useEffect } from "react";
+export default function MyProfile() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, []) 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const LogoutAccount = () => {

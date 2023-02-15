@@ -7,7 +7,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { useState } from "react";
 import { CgSpinner } from "react-icons/cg";
+import { useEffect } from "react";
 function ForgotPassword() {
+    useEffect(() => window.scroll(0, 0) , [])
     const navigate = useNavigate()
     const [Loading, setLoading] = useState(false)
 

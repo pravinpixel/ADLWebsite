@@ -20,6 +20,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 
 export default function Solutions() {
+  useEffect(() => window.scroll(0, 0) , [])
   const {
     register,
     formState: { errors },
