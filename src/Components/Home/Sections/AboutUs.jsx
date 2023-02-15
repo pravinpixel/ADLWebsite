@@ -70,7 +70,7 @@ export default function AboutUs() {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 h-100">
             <div className="testivideo-section h-100">
-              <img src={videoBg} className="h-100 w-100" /> 
+              <img src={videoBg} className="h-100 w-100" />
               <div className="plying-btn text-center">
                 <img src={playButton} onClick={() => setShow(true)} className="img-fluid" style={{ cursor: 'pointer' }} />
               </div>
@@ -84,9 +84,21 @@ export default function AboutUs() {
         dialogClassName="modal-lg"
         aria-labelledby="example-custom-modal-styling-title"
         centered
-      > 
-        <Modal.Body className='p-1 d-flex align-items-center justify-content-center'>
-          <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/KYQhDbyUSkI" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      >
+        <Modal.Body className='pt-3'>
+          <div className="w-100 h-100">
+            <Sliders {...{
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              dots: false,
+              arrows: true,
+            }}  >
+              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/KYQhDbyUSkI" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/shaQf7d_EZQ" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/FEJFwLp2xfY" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/tseCsNdlNnY" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </Sliders>
+          </div>
         </Modal.Body>
       </Modal>
     </section>
