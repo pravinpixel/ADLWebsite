@@ -5,12 +5,11 @@ import { useDispatch } from 'react-redux'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { CgSpinner } from "react-icons/cg";
-import { useState } from 'react'
+import { setLoading } from "../../../Redux/Actions/LoaderAction";
+
 
 export default function BannerForm() {
-    const [Loading, setLoading] = useState(false)
-    const MAX_FILE_SIZE = 102400; //100KB
+    const dispatch = useDispatch();
     const validFileExtensions = { image: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'webp'] };
     function isValidFileType(fileName, fileType) {
         return fileName && validFileExtensions[fileType].indexOf(fileName.split('.').pop()) > -1;
@@ -19,17 +18,18 @@ export default function BannerForm() {
         resolver: yupResolver(
             Yup.object().shape({
                 name      : Yup.string().required(),
-                mobile    : Yup.string().required().min(10).max(10),
+                mobile    : Yup.string().required(),
                 location  : Yup.string().required(),
-                test_name : Yup.string().required(),
-                comments  : Yup.string().required(),
+                test_name : Yup.string(),
+                comments  : Yup.string(),
                 reportFile: Yup.mixed().required()
                             .test("is-valid-type", "Not a valid image type", value => isValidFileType(value && value[0]?.name.toLowerCase(), "image"))
-                            .test("is-valid-size", "Max allowed size is 100KB", value => value && value[0]?.size <= MAX_FILE_SIZE)
+                            // .test("is-valid-size", "Max allowed size is 100KB", value => value && value[0]?.size <= MAX_FILE_SIZE)
             })
         )
     })
     const submitBanner = (formData) => { 
+        dispatch(setLoading(true)) 
         const data = {
             name      : formData.name,
             mobile    : formData.mobile,
@@ -43,6 +43,7 @@ export default function BannerForm() {
               "Content-Type": "multipart/form-data",
             },
         }).then((response) => {
+            dispatch(setLoading(false)) 
             FormResponse() 
             reset()
         }).catch((error) => {
