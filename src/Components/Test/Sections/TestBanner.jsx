@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setTestFilters } from '../../../Redux/Actions/TestAction';
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
-import Button from 'react-bootstrap/Button';
-import Fade from 'react-bootstrap/Fade';
 import { Collapse } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router';
 
 export default function TestBanner(props) {
   const [Organs, SetOrgans]                     = useState([]);
@@ -15,7 +14,11 @@ export default function TestBanner(props) {
   const TestLocation                            = useSelector((state) => state.TestLocation);
   const filters                                 = useSelector((state) => state.filters.filters);
   const dispatch                                = useDispatch()
+  const location                                = useLocation();
+  const navigate                                = useNavigate();
   const [open, setOpen]                         = useState(false);
+
+  const searchParams                            = new URLSearchParams(location.search);
   const fetchOrgans = () => {
     axios.get(API_URL.ORGAN_LIST).then((response) => {
       SetOrgans(response.data)
@@ -27,28 +30,35 @@ export default function TestBanner(props) {
     })
   }
   const ClearAllFilters = () => {
-    dispatch(setTestFilters({
-      ApplicableGender: null,
-      TestName: null,
-      orderBy: 'ASC',
-      HealthCondition: null,
-      OrganName: null,
-      Tack: 8,
-      TestLocation: 'bangalore'
-    }));
+    searchParams.delete('OrganName');
+    searchParams.delete('HealthCondition');
+    searchParams.delete('page');
+    searchParams.delete('orderBy');
+    navigate('/for-patient');
+    dispatch(setTestFilters(''));
     SetOrganFilter(null)
     SetConditionsFilter(null)
   }
   useEffect(() => {
     fetchOrgans()
     fetchConditions()
-    SetOrganFilter(filters.OrganName)
-    SetConditionsFilter(filters.HealthCondition)
+    SetOrganFilter(searchParams.get('OrganName'))
+    SetConditionsFilter(searchParams.get('HealthCondition'))
   }, []);
 
   const filterHandler = (type, value) => {
-    dispatch(setTestFilters({ ...filters, [type]: value }))
+    if( type == 'OrganName' ) {
+      searchParams.delete('HealthCondition');
+      searchParams.delete('page');
+      searchParams.delete('orderBy');
+    }
+    searchParams.set(type, value.replace(' ', '-'));
+    var redirectUrl = '/for-patient?'+ searchParams.toString();
+    navigate(redirectUrl);
+    SetConditionsFilter(searchParams.get('HealthCondition'))
+    dispatch(setTestFilters({ redirectUrl, [type]: value }))
   }
+  console.log(searchParams.get('OrganName'))
   return (
     <section className="search-container">
       <div className="container">
@@ -78,7 +88,7 @@ export default function TestBanner(props) {
                             <ul className="badgeList">
                               {
                                 Organs && Organs.map((item, i) => (
-                                  <li key={i} className={OrganFilter == item.name ? 'active' : ''}>
+                                  <li key={i} className={(OrganFilter == item.name ) ? 'active' : ''}>
                                     <a className="darkBdrBut text-white" onClick={() => {
                                       filterHandler("OrganName", item.name)
                                       SetOrganFilter(item.name)

@@ -90,6 +90,7 @@ const filtersState = {
     }
 }
 export const setTestFilters = (state = filtersState, {type, payload}) => { 
+    
     switch (type) {
         case ActionTypes.TEST_FILTERS : return {...state, filters : payload};
         default : return state;
