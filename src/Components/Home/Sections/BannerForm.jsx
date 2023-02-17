@@ -63,7 +63,7 @@ export default function BannerForm() {
                             <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="tel"  placeholder="Mobile" {...register('mobile')} />
                         </div>
                         <div className="form-data"> 
-                            <select class={`input100 ${errors?.location && 'border-bottom border-danger'}`} id="location" name="location"  {...register('location')}>
+                            <select className={`input100 ${errors?.location && 'border-bottom border-danger'}`} id="location" name="location"  {...register('location')}>
                                 <option value="">Select Your Location</option>
                                 <option value="Bangalore">Bangalore</option>
                                 <option value="Mangalore">Mangalore</option> 

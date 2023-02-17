@@ -32,17 +32,17 @@ export default function Packages() {
   const [isActive, setActive] = useState(false);
   const packageFilters = useSelector((state) => state.packageFilters.filters)
   const [Loader, setLoader] = useState(false)
+  const [loadMore, setLoadMore] = useState(true)
   const [limit, setLimit] = useState(10)
   const navigate = useNavigate();
   const location = useLocation();
+  
   const [currentLocation, setCurrentLocation] = useState(location.search)
 
   const setFilter = (type, value) => {
-    setisLoading(true)
     const searchParams = new URLSearchParams(location.search);
     searchParams.set(type, typeof (value) === 'object' ? value.join("_") : value);
     setCurrentLocation(searchParams.toString())
-    console.log(`/packages?${searchParams.toString()}`)
     navigate(`/packages?${searchParams.toString()}`); 
   }
 
@@ -52,10 +52,10 @@ export default function Packages() {
       setPackages(response.data.data)
       setisLoading(false)
       setLimit(response.data.count)
+      setLoadMore(response.data.next_data)
       setEmptyData(response.data.count === 0 ? true : false)
     });
   };
-
   const clearAllFilters = () => {
     var checkboxes = document.querySelectorAll('input:checked')
     for (var i = 0; i < checkboxes.length; i++) {
@@ -63,9 +63,10 @@ export default function Packages() {
         checkboxes[i].checked = false;
       }
     }
-    fetchPackages()
-    navigate('/packages'); 
+    setCurrentLocation('/packages');
     setBtnClear(false)
+    setLoadMore(false)
+    navigate('/packages')
   }
 
   useMemo(() => fetchPackages(), [packageFilters,currentLocation])
@@ -139,7 +140,7 @@ export default function Packages() {
                             width="80"
                             ariaLabel="dna-loading"
                             wrapperStyle={{ marginTop: 20 }}
-                            wrapperClass="dna-wrapper"
+                            wrapperclassName="dna-wrapper"
                           />
                         </div>
                         : null
@@ -158,11 +159,11 @@ export default function Packages() {
                       </div>
                       <div className="load-mrebtn text-center">
                         {
-                          Loader === true ?
+                          Loader === true  ?
                             <a> <img src={loaderGif} width="28px" alt="loader" /> Loading ....</a>
-                            : <a onClick={() => {
+                            : loadMore ? <a onClick={() => {
                               setFilter('limit', limit + 10)
-                            }}> Load More</a>
+                            }}> Load More</a> : ""
                         }
                       </div>
                     </div>

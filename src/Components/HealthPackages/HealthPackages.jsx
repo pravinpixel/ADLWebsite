@@ -488,7 +488,7 @@ export default function HealthPackages() {
                             <input className="input100" type="tel" pattern="/^\d{10}$/" name='mobile' placeholder="Mobile" required/> 
                         </div>
                         <div className="form-data">
-                        <select class="form-control " id="location" name="location">
+                        <select className="form-control " id="location" name="location">
 	                        <option value="">Select Your Location</option>
                             <option value="Bangalore">Bangalore</option>
                             <option value="Mangalore">Mangalore</option> 
