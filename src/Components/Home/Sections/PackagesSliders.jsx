@@ -51,11 +51,7 @@ export default function PackagesSliders({title,subTitle}) {
     ]
   };
   const getPackageSliders = () => {
-    axios.post(API_URL.PACKAGES_LIST,{ 
-      Tack  : 10,
-      TestLocation : TestLocation == null ? 'bangalore' : TestLocation.TestLocation,
-      orderBy  : 'ASC'
-    }).then((response) => {
+    axios.get(`${API_URL.PACKAGES_LIST}?limit=10&location=${TestLocation == null ? 'bangalore' : TestLocation.TestLocation}&price=ASC`).then((response) => {
       SetPackages(response.data.data)
     });
   }; 

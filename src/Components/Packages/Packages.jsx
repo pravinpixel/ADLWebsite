@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import loaderGif from '../../assets/images/loader-2.gif'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-10.webp";
 import axios from "axios";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
@@ -20,7 +20,6 @@ export default function Packages() {
     window.scroll(0, 0);
   }, [])
 
-
   const toggleClass = () => {
     setActive(!isActive);
   };
@@ -30,21 +29,30 @@ export default function Packages() {
   const [isLoading, setisLoading] = useState(false)
   const [EmptyData, setEmptyData] = useState(false)
   const [btnClear, setBtnClear] = useState(false)
-  const [isActive, setActive] = useState(false); 
-  const packageFilters = useSelector((state) => state.packageFilters.filters) 
-  const [Loader,setLoader] = useState(false)
+  const [isActive, setActive] = useState(false);
+  const packageFilters = useSelector((state) => state.packageFilters.filters)
+  const [Loader, setLoader] = useState(false)
+  const [limit, setLimit] = useState(10)
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [currentLocation, setCurrentLocation] = useState(location.search)
 
-  const fetchPackages = () => {
+  const setFilter = (type, value) => {
     setisLoading(true)
-    axios.post(API_URL.PACKAGES_LIST, packageFilters).then((response) => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set(type, typeof (value) === 'object' ? value.join("_") : value);
+    setCurrentLocation(searchParams.toString())
+    console.log(`/packages?${searchParams.toString()}`)
+    navigate(`/packages?${searchParams.toString()}`); 
+  }
+
+  const fetchPackages = () => { 
+    setisLoading(true)
+    axios.get(API_URL.PACKAGES_LIST + currentLocation ?? "").then((response) => {
       setPackages(response.data.data)
       setisLoading(false)
-      setLoader(false)
-      if (response.data.count === 0) {
-        setEmptyData(true)
-      } else {
-        setEmptyData(false)
-      }
+      setLimit(response.data.count)
+      setEmptyData(response.data.count === 0 ? true : false)
     });
   };
 
@@ -55,19 +63,12 @@ export default function Packages() {
         checkboxes[i].checked = false;
       }
     }
-    dispatch(setPackageFilters({
-      ApplicableGender: null,
-      TestName        : null,
-      orderBy         : 'ASC',
-      HealthCondition : null,
-      OrganName       : null,
-      Tack            : 8,
-      TestLocation    : 'bangalore'
-    }))
+    fetchPackages()
+    navigate('/packages'); 
     setBtnClear(false)
   }
 
-  useMemo(() => fetchPackages(), [packageFilters])
+  useMemo(() => fetchPackages(), [packageFilters,currentLocation])
 
   return (
     <div>
@@ -122,10 +123,10 @@ export default function Packages() {
                             : null
                         }
                       </h3>
-                      <GenderFilter setBtnClear={setBtnClear} />
-                      <ConditionFilter setBtnClear={setBtnClear} />
-                      <OrganFilter setBtnClear={setBtnClear} />
-                      <PriceFilters />
+                      <GenderFilter setBtnClear={setBtnClear} setFilter={setFilter} />
+                      <ConditionFilter setBtnClear={setBtnClear} setFilter={setFilter} />
+                      <OrganFilter setBtnClear={setBtnClear} setFilter={setFilter} />
+                      <PriceFilters setFilter={setFilter} />
                     </div>
                   </div>
                   <div className="col-9" style={{ position: 'relative' }}>
@@ -159,9 +160,8 @@ export default function Packages() {
                         {
                           Loader === true ?
                             <a> <img src={loaderGif} width="28px" alt="loader" /> Loading ....</a>
-                            : <a onClick={() => { 
-                              setLoader(true) 
-                              dispatch(setPackageFilters({ ...packageFilters, Tack: packageFilters.Tack + 4 })) 
+                            : <a onClick={() => {
+                              setFilter('limit', limit + 10)
                             }}> Load More</a>
                         }
                       </div>

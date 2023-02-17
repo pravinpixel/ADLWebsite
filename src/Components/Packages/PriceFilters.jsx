@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setPackageFilters } from '../../Redux/Actions/TestAction'
 
-function PriceFilters({setBtnClear}) {
+function PriceFilters({setFilter,setBtnClear}) {
     const packageFilters = useSelector((state) => state.packageFilters.filters)
     const dispatch = useDispatch()
     const handleChecked = (data) => {  
+        setFilter('price',data)
         dispatch(setPackageFilters({...packageFilters,orderBy:data}))
     };
     return (

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setOrgans, setPackageFilters } from '../../Redux/Actions/TestAction'
 import { API_URL } from '../../Redux/Constant/ApiRoute'
 
-function OrganFilter({setBtnClear}) {
+function OrganFilter({setFilter,setBtnClear}) {
     const Organs = useSelector((state) => state.organs.data)
     const packageFilters = useSelector((state) => state.packageFilters.filters)
     const dispatch = useDispatch()
@@ -19,6 +19,7 @@ function OrganFilter({setBtnClear}) {
         for (var i = 0; i < checkboxes.length; i++) {
             array.push(checkboxes[i].value)
         } 
+        setFilter('organs',array)
         dispatch(setPackageFilters({...packageFilters,OrganName:array}))
         setBtnClear(checkboxes.length > 0 ? true : false)
     };
