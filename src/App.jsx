@@ -91,12 +91,12 @@ export default function App() {
                 <>
                   <Route path='/checkout' exact element={<GuestCheckOut />} />
                   <Route path="/my-account" element={<MyProfile />} />
-                  <Route path='/my-cart' element={<CartList />} />
                   <Route path='/thank-you' element={<ThankYou />} />
                 </>
               :
               <Route path='*' element={<Login />} />
           }
+          <Route path='/my-cart' element={<CartList />} />
           <Route path='/reset-password/:customer_id' element={<ResetPassword />} />
           <Route path='/for-patient' element={<Test />} />
           <Route path='/login' exact element={<Login />} />

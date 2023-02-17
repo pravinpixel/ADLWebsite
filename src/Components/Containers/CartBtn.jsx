@@ -17,20 +17,14 @@ export default function CartBtn(props) {
                 test_type : props.testData.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
             }).then((response) => {
                 console.log(response.data)
-            })
-            dispatch(addToCart(props.testData));
-            dispatch(
-                setTestCartList(
-                    JSON.parse(localStorage.getItem("CartTestList"))
-                )
-            );
-        } else {
-            dispatch(
-                setTestCartList(
-                    JSON.parse(localStorage.getItem("CartTestList"))
-                )
-            );
-        }
+            }) 
+        }  
+        dispatch(addToCart(props.testData));
+        dispatch(
+            setTestCartList(
+                JSON.parse(localStorage.getItem("CartTestList"))
+            )
+        );
     }
 
     const removeToCart = () => {

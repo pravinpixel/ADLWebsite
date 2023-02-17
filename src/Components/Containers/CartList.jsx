@@ -16,7 +16,8 @@ export default function CartList() {
   const [testTotal, setTestTotal] = useState(0);
   const dispatch = useDispatch();
   const fetchCartList = () => {
-    axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${JSON.parse(localStorage.getItem('user')).id}`).then((response) => {
+    var AuthID = JSON.parse(localStorage.getItem('user')).id;
+    axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${AuthID}`).then((response) => {
       if(localStorage.getItem("CartTestList") == undefined || localStorage.getItem("CartTestList") == null) {
         localStorage.setItem("CartTestList",JSON.stringify(response.data))
         dispatch(setTestCartList(response.data));
@@ -31,7 +32,7 @@ export default function CartList() {
         fetchCartList()
       }
     } catch (error) {
-
+      setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
     }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
@@ -47,13 +48,17 @@ export default function CartList() {
   }, []);
 
   const removeCartItem = (index, cart_id) => {
-    axios.post(API_URL.REMOVE_TO_CART + cart_id);
-
+    try {
+      if (JSON.parse(localStorage.getItem('user')).id) {
+        axios.post(API_URL.REMOVE_TO_CART + cart_id);
+      }
+    } catch (error) {
+      setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
+    }
     CartTable.splice(index, 1);
     localStorage.setItem("CartTestList", JSON.stringify([...CartTable]));
     setCartTable([...CartTable]);
     dispatch(setTestCartList(JSON.parse(localStorage.getItem("CartTestList"))));
-
     var CalculateTotalTestPrice = 0;
     CartTable.map((item) => {
       if (item.TestPrice !== undefined) {

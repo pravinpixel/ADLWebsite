@@ -21,8 +21,7 @@ import BookedTestSliders from "../Home/Sections/BookedTestSliders";
 import { setLoading } from '../../Redux/Actions/LoaderAction'
 import PackagesSliders from "../Home/Sections/PackagesSliders";
 
-export default function TestDetails() {
-  useEffect(() => window.scroll(0, 0) , [])
+export default function TestDetails() { 
   const navigate     = useNavigate()
   const { TestId }   = useParams();
   const location     = useLocation()
@@ -45,6 +44,7 @@ export default function TestDetails() {
   useEffect(() => {
     if (TestId && TestId !== "") getTestDetails();
     dispatch(removeTestDetails()); 
+    window.scroll(0, 0)
   }, [TestId]);
 
   const addTestToCart = (testDetails) => {
