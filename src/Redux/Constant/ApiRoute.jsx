@@ -11,7 +11,7 @@ export const API_URL = {
     UPDATE_BILLING_DETAILS     : `${process.env.REACT_APP_BASE_URL}/api/update-billing-details`,
     SAVE_THE_ORDER             : `${process.env.REACT_APP_BASE_URL}/api/save-payment-order`,
     GET_CUSTOMER_INFO          : `${process.env.REACT_APP_BASE_URL}/api/customer/`,
-    PACKAGES_LIST              : `${process.env.REACT_APP_BASE_URL}/api/packages?`,
+    PACKAGES_LIST              : `${process.env.REACT_APP_BASE_URL}/api/packages`,
     PATIENTS_CONSUMERS         : `${process.env.REACT_APP_BASE_URL}/api/patients-consumers`,
     FEEDBACKS                  : `${process.env.REACT_APP_BASE_URL}/api/feedback`,
     FAQ                        : `${process.env.REACT_APP_BASE_URL}/api/faq`,

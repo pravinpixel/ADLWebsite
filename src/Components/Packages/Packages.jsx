@@ -10,7 +10,6 @@ import GenderFilter from "./GenderFilter";
 import ConditionFilter from "./ConditionFilter";
 import OrganFilter from "./OrganFilter";
 import PriceFilters from "./PriceFilters";
-import { setPackageFilters } from "../../Redux/Actions/TestAction";
 import { Dna } from "react-loader-spinner";
 import { useMemo } from "react";
 
@@ -19,10 +18,6 @@ export default function Packages() {
     document.title = "Our Packages";
     window.scroll(0, 0);
   }, [])
-
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
 
   const dispatch = useDispatch()
   const [Packages, setPackages] = useState([])
@@ -36,17 +31,17 @@ export default function Packages() {
   const [limit, setLimit] = useState(10)
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [currentLocation, setCurrentLocation] = useState(location.search)
 
   const setFilter = (type, value) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set(type, typeof (value) === 'object' ? value.join("_") : value);
-    setCurrentLocation(searchParams.toString())
-    navigate(`/packages?${searchParams.toString()}`); 
+    setCurrentLocation(`?${searchParams.toString()}`)
+    navigate(`/packages?${searchParams.toString()}`);
   }
 
-  const fetchPackages = () => { 
+  const fetchPackages = () => {
     setisLoading(true)
     axios.get(API_URL.PACKAGES_LIST + currentLocation ?? "").then((response) => {
       setPackages(response.data.data)
@@ -63,13 +58,14 @@ export default function Packages() {
         checkboxes[i].checked = false;
       }
     }
-    setCurrentLocation('/packages');
+    setCurrentLocation('');
     setBtnClear(false)
     setLoadMore(false)
     navigate('/packages')
-  }
-
-  useMemo(() => fetchPackages(), [packageFilters,currentLocation])
+  } 
+  useMemo(() => {
+    fetchPackages()
+  }, [packageFilters, currentLocation])
 
   return (
     <div>
@@ -113,9 +109,9 @@ export default function Packages() {
               <div className="totl-pkglst">
                 <div className="row">
                   <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div className="mobileFilter" onClick={toggleClass}>Filter <i className="fa fa-filter"></i></div>
+                    <div className="mobileFilter" onClick={() => setActive(!isActive)}>Filter <i className="fa fa-filter"></i></div>
                     <div className={isActive ? 'filter-lists Products-factory-lsts active' : 'filter-lists Products-factory-lsts'} id="packagesFilters">
-                      <div className="mobileFilterClose" onClick={toggleClass}>X</div>
+                      <div className="mobileFilterClose" onClick={() => setActive(!isActive)}>X</div>
                       <h3>
                         Filters
                         {
@@ -159,7 +155,7 @@ export default function Packages() {
                       </div>
                       <div className="load-mrebtn text-center">
                         {
-                          Loader === true  ?
+                          Loader === true ?
                             <a> <img src={loaderGif} width="28px" alt="loader" /> Loading ....</a>
                             : loadMore ? <a onClick={() => {
                               setFilter('limit', limit + 10)
