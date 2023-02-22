@@ -19,7 +19,7 @@ export default function Career(route) {
       Yup.object().shape({
         name      : Yup.string().required(),
         email     : Yup.string().required(),
-        mobile    : Yup.string().required().min(10).max(10),
+        mobile    : Yup.string().matches(/^[6-9]\d{9}$/).required(),
         chooseFile: Yup.mixed().required()
                 .test("type","PDF Only",(val) =>  {
                   return val && val.length > 0 && val[0].type === 'application/pdf'
