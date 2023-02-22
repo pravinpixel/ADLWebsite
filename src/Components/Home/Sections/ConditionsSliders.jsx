@@ -45,11 +45,7 @@ export default function ConditionsSliders() {
         }
       },
     ]
-  };
-  const FilterHandler = (value) => {
-    dispatch(setTestFilters({...filters,HealthCondition:value})) 
-    Navigate('for-patient')
-  }
+  }; 
   const FetchConditions = () => {
     axios.get(API_URL.CONDITIONS_LIST).then((response) => {
       SetConditions(response.data)
@@ -73,7 +69,7 @@ export default function ConditionsSliders() {
                     <div key={i} className="tes-cond">
                       <img src={item.image} width="100px" className="img-fluid" />
                       <h4 className='pr-4'>{item.name}</h4>
-                      <button onClick={() => FilterHandler(item.name)}><i className="fa fa-plus"></i></button>
+                      <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
                     </div> 
                   ))
                 : null

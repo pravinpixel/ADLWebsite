@@ -52,11 +52,7 @@ export default function CheckupsSliders() {
         axios.get(API_URL.ORGAN_LIST).then((response) => { 
             dispatch(setOrgans(response.data))
         })
-    }
-    const FilterHandler = (value) => {
-        dispatch(setTestFilters({...filters,OrganName:value})) 
-        Navigate('for-patient')
-    }
+    } 
     useMemo(()=>FetchOrgans(),[])
     return (
         <section className="helth-chkup">
@@ -71,7 +67,7 @@ export default function CheckupsSliders() {
                             {
                                 Organs !== undefined ?
                                     Organs.map((item,i) => (
-                                        <div key={i} className="parts-seq" onClick={() => FilterHandler(item.name)}>
+                                        <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
                                             <img src={item.image} width="70px" className="img-fluid mb-2" />
                                             <span><b>{item.name}</b></span>
                                         </div>
