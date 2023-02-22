@@ -19,9 +19,9 @@ export default function Login() {
   
   const formSchema = Yup.object().shape({
     name           : Yup.string().required(),
-    mobile         : Yup.string().required().min(10).max(10),
+    mobile         : Yup.string().matches(/^[6-9]\d{9}$/).required(),
     email          : Yup.string().required(),
-    password       : Yup.string().required().min(3),
+    password       : Yup.string().required().matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/),
     confirmPassword: Yup.string().required().oneOf([Yup.ref('password')], 'Passwords does not match'),
   })
   const formOptions = { resolver: yupResolver(formSchema) }
@@ -80,6 +80,9 @@ export default function Login() {
                             </div>
                             <div className="form-data col-lg-12">
                               <input className={`input1001 ${errors.password && 'border-danger'}`} type="password" placeholder="Password *" {...register("password")} />
+                              {
+                                errors.password && <small className="text-danger">Password must have [6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter]</small>
+                              }
                             </div>
                             <div className="form-data col-lg-12">
                               <input className={`input1001 ${errors.confirmPassword && 'border-danger'}`} type="password"  {...register("confirmPassword")} placeholder="Re-Enter your Password *" />
