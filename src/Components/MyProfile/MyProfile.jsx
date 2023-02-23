@@ -95,7 +95,7 @@ export default function MyProfile() {
                   <Nav.Item>
                     <Nav.Link eventKey="ChangeMyPassword" className="rounded-0">
                       <i className="fa fa-key mr-2"></i> 
-                      Change my Password
+                      Change Password
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>

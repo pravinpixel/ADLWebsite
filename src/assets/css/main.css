@@ -5802,6 +5802,35 @@ input[type="range"]::-moz-range-thumb {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
@@ -5912,11 +5941,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 1360px) {
+
     .case p a, .case p button, .pack-deils p a{padding: 6px 10px;}
     
     }
 
-@media (max-width:1300px) {
+@media (max-width:1350px) {
+    .inner-banner.with-liners {
+        margin-top: 15px !important;}
     .search-container{
         margin-top: 0px;
     }

@@ -76,7 +76,7 @@ export default function AccountInformation() {
                 <b>Mobile</b>
               </div>
               <div className="col p-0">
-                <input type="number" className={`form-control  ${errors.mobile && 'border-danger'}`} {...register('mobile')}/>
+                <input type="text" className={`form-control  ${errors.mobile && 'border-danger'}`} {...register('mobile')}/>
               </div>
             </div>
             <h6 className='p-3' style={{ color: "#5c2d91" }}><b>Billing Account Details</b></h6>
@@ -109,7 +109,7 @@ export default function AccountInformation() {
                 <b>Phone Number</b>
               </div>
               <div className="col p-0">
-                <input type="number" className={`form-control  ${errors.phone_number && 'border-danger'}`}  {...register('phone_number')} />
+                <input type="text" className={`form-control  ${errors.phone_number && 'border-danger'}`}   {...register('phone_number')} />
               </div>
             </div>
             <div className="row m-0 mb-2">
@@ -141,7 +141,7 @@ export default function AccountInformation() {
                 <b>Pincode</b>
               </div>
               <div className="col p-0">
-                <input type="number" className={`form-control  ${errors.pin_code && 'border-danger'}`}  {...register('pin_code')} />
+                <input type="text" className={`form-control  ${errors.pin_code && 'border-danger'}`}  {...register('pin_code')} />
               </div>
             </div> 
             <button type="submit" className='btn-primary rounded px-3 py-2 float-right'>Update</button>
