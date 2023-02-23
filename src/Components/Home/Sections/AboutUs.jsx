@@ -60,11 +60,7 @@ export default function AboutUs() {
                 <div className="testims">
                   I am for the First Time using Home service from Neuberg Lab. The Service rendered by the technician was very nice. He was very courteous and punctual
                   <span>Mr. Ramakrishnan Sridher</span>
-                </div>
-                <div className="testims">
-                  I am for the First Time using Home service from Neuberg Lab. The Service rendered by the technician was very nice. He was very courteous and punctual
-                  <span>Mr. Ramakrishnan Sridher</span>
-                </div>
+                </div> 
               </Sliders>
             </div>
           </div>

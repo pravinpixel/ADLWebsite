@@ -146,13 +146,7 @@ export default function HealthCheckupforEmployees() {
                 <br />
                 <br />
                 <p>
-                  We are looking for Partners who can grow with us and help us
-                  expand our reach to offer state of the art diagnostic services
-                  available across the country. Today Anand Diagnostic
-                  Laboratory is a leading diagnostic player with over 100+
-                  clinical laboratories and 1500+ collection centers across
-                  India. We invite you to be a franchisee and be part of this
-                  growth story.
+                We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
                 </p>
                 <p>
                   An association with us offers an ideal environment and
@@ -168,49 +162,13 @@ export default function HealthCheckupforEmployees() {
                 <h2 className="mb-0">Packages we offer</h2>
                 <Sliders {...consumeing} className="consumeing">
                   <div className="box-cos">
-                    <img src={preicn1} alt="" className="img-fluid" />
-                    <h4>
-                      Basic Health <br></br> Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn2} alt="" className="img-fluid" />
-                    <h4>
-                      Executive/master<br></br> Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
                     <img src={preicn3} alt="" className="img-fluid" />
                     <h4>
-                      Check-up <span>(Below 12 years of age)</span>
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn4} alt="" className="img-fluid" />
-                    <h4>
-                      Pre-manal <br></br>Health Ceckup
+                      Basic Health <br></br> Check-up
                     </h4>
                   </div>
                   <div className="box-cos">
                     <img src={preicn5} alt="" className="img-fluid" />
-                    <h4>
-                      Bone <br></br>Health Package
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn6} alt="" className="img-fluid" />
-                    <h4>
-                      Senior citizen <br></br> Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn7} alt="" className="img-fluid" />
-                    <h4>
-                      Basic Health <br></br> Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn8} alt="" className="img-fluid" />
                     <h4>
                       Executive/master<br></br> Health Check-up
                     </h4>
@@ -218,20 +176,56 @@ export default function HealthCheckupforEmployees() {
                   <div className="box-cos">
                     <img src={preicn9} alt="" className="img-fluid" />
                     <h4>
-                      Check-up <span>(Below 12 years of age)</span>
+                    Paediatric Health<br /> Check-up <span>(Below 12 years of age)</span>
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn2} alt="" className="img-fluid" />
+                    <h4>
+                      Pre-Marital <br></br>Health Check-up
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn1} alt="" className="img-fluid" />
+                    <h4>
+                      Bone <br></br>Health Package
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn4} alt="" className="img-fluid" />
+                    <h4>
+                    General Health<br /> Check-up 
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn8} alt="" className="img-fluid" />
+                    <h4>
+                      Well Woman  <br></br> Health Check-up
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn7} alt="" className="img-fluid" />
+                    <h4>
+                    Senior citizen <br></br>Health Check-up
                     </h4>
                   </div>
                   <div className="box-cos">
                     <img src={preicn10} alt="" className="img-fluid" />
                     <h4>
-                      Pre-manal <br></br>Health Ceckup
+                    Diabetic <br></br> Health Check-up
+                    </h4>
+                  </div>
+                  <div className="box-cos">
+                    <img src={preicn6} alt="" className="img-fluid" />
+                    <h4>
+                    Comprehensive <br></br> Cardiac Profile
                     </h4>
                   </div>
                 </Sliders>
               </div>
             </div>
 
-            <div className="col-sm-12 col-md-5 col-lg-5">
+            <div className="col-sm-12 col-md-12 col-lg-5">
               <div className="green-bg ps-rel franc-isemed animated fadeInRight">
                 <h4 className="mb-3 text-center text-white">Reach Us</h4>
                 <h5 className="mb-3 text-left text-yellow">Personal Details</h5>

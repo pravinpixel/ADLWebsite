@@ -54,7 +54,7 @@ export default function PreparingForHeathCheckup() {
 <ul>
 <li>What test is being performed?</li>
 <li>Why does the test need to be done?</li>
-<li>What type of specimen is needed for testing (blood, saliva, urine, semen, stool, hair)? When can I expect to hear about my test results?</li>
+<li>What type of specimen is needed for testing (blood, saliva, urine, semen, stool, hair) When can I expect my test results?</li>
 <li>How will the test results affect the course of my care?</li>
 </ul>
 </div>
@@ -132,9 +132,9 @@ export default function PreparingForHeathCheckup() {
 </div>
 <div className="common-para1 drk detilos-expl indication-details p-0"> 
 <ul>
-<li>	24 hours prior no physical exercise</li>
-<li>	12 hours prior NO Food or Alcohol consumption</li>
-<li>	1 hour prior no smoking</li>
+<li>	No physical exercise 24 hours prior the test </li>
+<li>	No alcohol consumption 24 hours prior the test </li>
+<li>	No smoking for an hour prior the test </li>
 <li>	10-15 minutes prior lab test, you should be seated and relaxed</li>
 <li>	Inform about Insulin syringes drug / medication and nutritional supplements</li>
 <li>	Medications
@@ -145,14 +145,14 @@ export default function PreparingForHeathCheckup() {
 </li>
 <li>Instructions for women
 <ul className="corilcle">
-<li>Please inform the customer care executive if you are pregnant or if you think you might be pregnant, as exposure to radiation (Xray, mammogram, DXA) is not advisable during pregnancy.</li>
+<li>Inform the customer care executive if you are pregnant or if you think you might be pregnant, as exposure to radiation (X-ray, mammogram, DXA) is not advisable during pregnancy.</li>
 <li>Kindly do not undergo health checks during the monthly menstrual period. It is advised to have your wellness check about one week after the last day of menstruation.</li>
 </ul>
 </li>
 <li>Dress code
 <ul className="corilcle">
-<li>Kindly wear comfortable casual clothes (preferably half seeve attire for men and women) and easily removable and comfortable footwear as you will have to change clothes frequently while undergoing various tests.</li>
-<li>Kindly avoid wearing jewelry and metallic ornaments.</li>
+<li>Wear comfortable and casual clothes (preferably, half sleeve attire for men and women) that can be easily removable. Wear comfortable footwear as you will have to change them frequently while undergoing various tests.</li>
+<li>Avoid wearing jewellery and metallic ornaments.</li>
 </ul>
 </li>
 <li>Previous medical records
@@ -178,9 +178,9 @@ export default function PreparingForHeathCheckup() {
 </ul>
 </li> 
 <li>Dental: Please rinse your mouth with water prior to the examination</li>
-<li>Dexa Scan
+<li>DXA Scan
 <ul className="corilcle">
-<li>AVOID calcium supplements &  Vitamin D - for 24hrs before the test</li>
+<li>Avoid calcium supplements & Vitamin D 24hrs before the test.</li>
 <li>In case a patient has undergone Oral, Rectal / IV contrast scans - then DXA ( BMD test) can only be performed after one week (7days) after any one of these studies. </li>
 <li>Tests WILL NOT be done on pregnant women.</li>
 <li>Normal diet on the day of the test</li>
@@ -189,10 +189,10 @@ export default function PreparingForHeathCheckup() {
 <li>It is advisable to consult a doctor before undergoing the scan. </li>
 <li>A valid prescription / Filled TRF from the referral doctor is a prerequisite for the study.</li>
 <li>We currently don't have the facility for pediatric & whole body DXA studies. </li>
-<li>Please note that DXA scan generally  is indicated / done in ( PFA the ISCD official positions/ guidelines on DXA scans )
+<li>Please note that DXA scan generally is indicated/ done in ( PFA the ISCD official positions/ guidelines on DXA scans )
 <ul className="linecode">
-<li>Women more than 65yrs of age, Men > 70yrs old.</li>
-<li>Perimenopausal women ( > 50yrs) with high risk factors : Low body wt, Prior fractures, disease condition associated with bone loss ( Eg: Cancers, Arthritis)</li>
+<li>Women more than 65 years of age and men more than 70 years.</li>
+<li>Perimenopausal women ( > 50yrs) with high risk factors like low body weight, prior fractures, condition associated with bone loss ( Eg: Cancers, Arthritis)</li>
 <li>The Dexa Scan test is NOT indicated in young healthy adults</li>
 </ul>
 </li> 

@@ -89,7 +89,7 @@ export default function HospitalLabManagement() {
               <div className="common-heading">
                 <h2>
                   
-                  <span className="inlne">Hospitals &amp;</span> Referring
+                  <span className="inlne">Hospitals &amp;</span> Reference 
                   Laboratories
                 </h2>
                 <p>

@@ -100,7 +100,7 @@ export default function Contact() {
                                 <div className="col-sm-12 col-md-6 col-lg-8">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.398949025306!2d77.606148!3d12.981461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33ceeda312ca9a2c!2sAnand%20Diagnostic%20Laboratory%20(A%20Neuberg%20Associate)!5e0!3m2!1sen!2sin!4v1656335670159!5m2!1sen!2sin" className="contact-map" allowFullScreen="" loading="lazy"></iframe>
                                 </div>
-                                <div className="col-sm-12 col-md-6 col-lg-4">
+                                <div className="col-sm-12 col-md-12 col-lg-4">
                                     <div className="green-bg animated fadeInRight">
                                         <h4 className="mb-3 text-white">Get in Touch</h4>
                                         <form onSubmit={handleSubmit(contactUsFrom)}>

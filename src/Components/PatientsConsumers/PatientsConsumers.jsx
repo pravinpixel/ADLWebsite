@@ -164,11 +164,11 @@ export default function Solutions() {
                 <div className="box-cos">
                   <img src={paticon4} alt="" className="img-fluid" />
                   <h4>
-                    Pre-manal <br></br>Health Ceckup
+                    Pre-Marital <br></br>Health Check-up
                   </h4>
                 </div>
                 <div className="box-cos">
-                  <img src={paticon5} alt="" className="img-fluid" />
+                  <img src={paticon1} alt="" className="img-fluid" />
                   <h4>
                     Bone <br></br>Health Package
                   </h4>
@@ -200,11 +200,11 @@ export default function Solutions() {
                 <div className="box-cos">
                   <img src={paticon4} alt="" className="img-fluid" />
                   <h4>
-                    Pre-manal <br></br>Health Ceckup
+                    Pre-Marital <br></br>Health Check-up
                   </h4>
                 </div>
                 <div className="box-cos">
-                  <img src={paticon5} alt="" className="img-fluid" />
+                  <img src={paticon1} alt="" className="img-fluid" />
                   <h4>
                     Bone <br></br>Health Package
                   </h4>
@@ -654,15 +654,7 @@ export default function Solutions() {
                 <h2> Getting your Report </h2>
               </div>
               <p>
-                Collecting of test reports has never been easier. Once ready,
-                all reports are stored in PDF form on our servers. Patrons can
-                log in to our website and download the reports right on to their
-                computers or mobile devices immediately after our doctors
-                release a report. Certain types of reports like histopathology
-                and radiology reports are accompanied by physical material like
-                slides, paraffin blocks, X-Ray films and so on. These items may
-                be collected from the nearest collection centre upon prior
-                intimation.
+              Collecting test reports has never been easier. Once ready, all reports are stored in PDF format on our servers. Patrons can log in to our website and download the reports right onto their computers or mobile devices immediately after our doctors release a report. Certain types of reports like Histopathology or Radiology are accompanied by physical material like slides, paraffin blocks, X-Ray films, and so on. These items may be collected from the nearest collection centre upon prior intimation.
               </p>
               <div className="cmn-buton">
                 <p>

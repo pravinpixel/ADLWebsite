@@ -87,13 +87,7 @@ export default function FranchisingOpportunities() {
                   <span className="inlne">Franchising </span> Opportunities
                 </h2>
                 <p>
-                  We are looking for Partners who can grow with us and help us
-                  expand our reach to offer state of the art diagnostic services
-                  available across the country. Today Anand Diagnostic
-                  Laboratory is a leading diagnostic player with over 100+
-                  clinical laboratories and 1500+ collection centers across
-                  India. We invite you to be a franchisee and be part of this
-                  growth story.
+                We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
                 </p>
                 <p>
                   An association with us offers an ideal environment and

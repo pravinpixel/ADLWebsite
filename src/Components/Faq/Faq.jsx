@@ -123,16 +123,10 @@ export default function Faq() {
 
                   <Accordion.Item eventKey="3">
                     <Accordion.Header>
-                      4. Can I still come to the lab to collect the report?
+                      4. Can I still come to the lab to collect the report? 
                     </Accordion.Header>
                     <Accordion.Body>
-                      Yes, you can always come to the lab to collect the hard
-                      copy of the report, but that will be really unnecessary if
-                      you have a printer at home and can print the report from
-                      here. The report you print here and the report you collect
-                      from the lab, are exactly the same. Your doctor will
-                      accept the report you print at home as much as he/she will
-                      accept the report you collect at the lab.
+                    Yes, you can always come to the lab to collect the hard copy of the report, but that will be really unnecessary if you have a printer at home and can print the report from there. The report you print at home and the report you collect from the lab, are exactly the same. Your doctor will accept the report you print at home as much as he/she will accept the report you collect at the lab.
                     </Accordion.Body>
                   </Accordion.Item>
 

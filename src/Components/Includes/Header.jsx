@@ -322,7 +322,7 @@ export default function Header() {
                                       to="/faq"
                                       className="dropdown-item"
                                     >
-                                      Frequently asked questions
+                                      Frequently Asked Questions
                                     </Link>
                                   </li>
                                 </ul>

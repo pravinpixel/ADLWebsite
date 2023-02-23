@@ -134,7 +134,7 @@ export default function Career(route) {
               </div>
             </div>
 
-            <div className="col-sm-12 col-md-5 col-lg-5">
+            <div className="col-sm-12 col-md-12 col-lg-5">
               <div className="green-bg ps-rel franc-isemed animated fadeInRight">
                 <h4 className="mb-3 text-center text-white">
                   Apply for this Position

@@ -54,8 +54,8 @@ export default function FindLab() {
                   <li> Find our Lab </li>
                 </ul>
                 <h1>
-                  Can be started over night, But It<br></br> takes years to
-                  build an Institution.
+                  Can be started overnight, but it<br></br> 
+                  takes years to build an institution. 
                 </h1>
               </div>
             </div>

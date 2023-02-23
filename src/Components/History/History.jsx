@@ -52,7 +52,7 @@ export default function History() {
 						<h6> 1974</h6>
 						<ul className="list-style1">
 						    <li>Established Anand Diagnostic Laboratory</li>
-						    <li>One of the first few stand-alone laboratories in Karnataka to be set up by a pathologist</li>
+						    <li>One of the first few stand-alone laboratories in Karnataka set up by a pathologist</li>
 						</ul> <br></br>
 						<h6> 1980</h6>
 						<ul className="list-style1">
@@ -121,7 +121,7 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 2006</h6>
 						<ul className="list-style1">
-						    <li>Integrated system for chemistry and Immunoassay, Pneumatic.</li>
+						    <li>Integrated system for Chemistry and Immunoassay</li>
 						</ul> <br></br>
 						<h6> 2015</h6>
 						<ul className="list-style1">
@@ -130,7 +130,7 @@ export default function History() {
 						<h6 className='mb-3'> 2017</h6>
 						<ul className="list-style1">
 						<img src={ngblogo} alt="call" className="img-fluid mb-2" />
-						    <li>Anand Diagnostic Laboratory joined hands with Neuberg diagnostics to become Neuberg Anand Reference Laboratory</li>
+						    <li>Anand Diagnostic Laboratory joined hands with Neuberg Diagnostics and became Neuberg Anand Reference Laboratory.</li>
 						</ul> <br></br>
 						<h6> 2020</h6>
 						<ul className="list-style1">
@@ -138,7 +138,7 @@ export default function History() {
 						</ul> <br></br>
 						<h6> 2022</h6>
 						<ul className="list-style1">
-						    <li>Started Franchise centres across karnataka</li>
+						    <li>Started franchise centres across Karnataka</li>
 						</ul>
 					</li>
  
