@@ -36,7 +36,11 @@ export default function Login() {
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         if (AuthUser()) {
-          navigate("/my-account");
+          if(localStorage.getItem('CartTestList')) {
+            navigate("/my-cart");
+          } else {
+            navigate("/my-account");
+          }
         }
         toast.success('Registration Success!')
       } else {

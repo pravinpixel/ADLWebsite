@@ -48,7 +48,11 @@ export default function Login() {
     if(Otp == serverOtp) {
       dispatch(setAuthUser(AuthUser()))
       toast.success('Login Success')
-      navigate("/my-account");
+        if(localStorage.getItem('CartTestList')) {
+        navigate("/my-cart");
+      } else {
+        navigate("/my-account");
+      }
     } else {
       toast.error('Ivalid OTP! Try again!')
       RemoveUser()
@@ -81,7 +85,11 @@ export default function Login() {
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         toast.success('Login Success')
+          if(localStorage.getItem('CartTestList')) {
+        navigate("/my-cart");
+      } else {
         navigate("/my-account");
+      }
       } else {
         toast.error(response.data.message)
       }

@@ -40,4 +40,5 @@ export const API_URL = {
     REACH_US                   : `${process.env.REACT_APP_BASE_URL}/api/contact-us`,
     CAREERS                    : `${process.env.REACT_APP_BASE_URL}/api/current-opening`,
     CAREERS_DEATILS            : `${process.env.REACT_APP_BASE_URL}/api/job-details/`,
+    LOCATIONS                  : `${process.env.REACT_APP_BASE_URL}/api/locations`,
 } 

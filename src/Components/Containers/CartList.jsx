@@ -18,11 +18,17 @@ export default function CartList() {
   const fetchCartList = () => {
     var AuthID = JSON.parse(localStorage.getItem('user')).id;
     axios.post(`${API_URL.CUSTOMER_CART_ITEMS}/${AuthID}`).then((response) => {
-      if (localStorage.getItem("CartTestList") == undefined || localStorage.getItem("CartTestList") == null) {
-        localStorage.setItem("CartTestList", JSON.stringify(response.data))
-        dispatch(setTestCartList(response.data));
+      if (response.data.length) {
+        if (localStorage.getItem("CartTestList") == undefined || localStorage.getItem("CartTestList") == null) {
+          localStorage.setItem("CartTestList", JSON.stringify(response.data))
+          dispatch(setTestCartList(response.data));
+        }
+        setCartTable(response.data);
+      } else {
+        if (localStorage.getItem("CartTestList") != undefined && localStorage.getItem("CartTestList") != null) {
+          setCartTable(JSON.parse(localStorage.getItem("CartTestList")))
+        }
       }
-      setCartTable(response.data);
     })
   }
 

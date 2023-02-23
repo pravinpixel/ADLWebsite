@@ -1,24 +1,26 @@
-import { useRef, useState , useEffect } from "react";
+import { useRef, useState, useMemo } from "react";
 import logo from "./../../assets/images/logo.png";
 import logoberg from "./../../assets/images/logoberg.png";
 import location from "./../../assets/images/location.png";
 import sky from "./../../assets/images/sky.png";
 import toll from "./../../assets/images/toll.png";
-import user from "./../../assets/images/user.png"; 
+import user from "./../../assets/images/user.png";
 import men4 from "./../../assets/images/men-4.png";
 import dwd from "./../../assets/images/dwd.png";
 import CartCount from "./CartCount";
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form } from "react-component-form";
 import Modal from "react-bootstrap/Modal";
-import { useSelector ,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setTestLocation } from "../../Redux/Actions/TestAction";
 import { toast } from "react-hot-toast";
+import { API_URL } from "../../Redux/Constant/ApiRoute";
+import axios from 'axios'
 
 export default function Header() {
-  const authUser = useSelector((state) => state.authUser); 
-  const TestLocation = useSelector((state) => state.TestLocation); 
-  const navigate = useNavigate();    
+  const authUser = useSelector((state) => state.authUser);
+  const TestLocation = useSelector((state) => state.TestLocation);
+  const navigate = useNavigate();
   const navElement = useRef();
   const toggleIcon = useRef();
   const [show, setShow] = useState(false);
@@ -26,18 +28,26 @@ export default function Header() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const dispatch = useDispatch()
-  const changeLocation = (data) => {  
-    dispatch(setTestLocation(data.location))
-    localStorage.setItem('TestLocation',data.location)
-    handleClose();
-    toast.success('Location to be Changed')
+  const changeLocation = () => {
+    if(LabLocation) {
+      dispatch(setTestLocation(LabLocation))
+      localStorage.setItem('TestLocation', LabLocation)
+      handleClose();
+      toast.success('Location to be Changed')
+    }
   }
-  useEffect(() => {
-    if(TestLocation !== null) {
-      setLabLocation(TestLocation.TestLocation) 
+  useMemo(() => {
+    if (TestLocation !== null) {
+      setLabLocation(TestLocation.TestLocation)
     }
   }, [])
-  
+
+  useMemo(() => {
+    axios.get(API_URL.LOCATIONS).then((response) => {
+      localStorage.setItem('locations',JSON.stringify(response.data.data))
+    })
+  }, []);
+
   function handleLink(e) {
     navElement.current.classList.remove("show");
     toggleIcon.current.classList.add("collapsed");
@@ -48,7 +58,7 @@ export default function Header() {
       }
     });
     let plusItems = document.querySelectorAll(".fa-minus");
-    
+
     plusItems.forEach((plusItem) => {
       if (plusItem.classList.contains("fa-minus")) {
         plusItem.classList.remove("fa-minus");
@@ -110,17 +120,17 @@ export default function Header() {
                         <li>
                           <a onClick={handleShow}>
                             <img src={location} alt="" className="img-fluid" />
-                            <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-',' ') : null}</span>
+                            <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
                           </a>
                         </li>
-                        <li> 
+                        <li>
                           {
-                            authUser.user.length === 0 && authUser.user !== null ? 
+                            authUser.user.length === 0 && authUser.user !== null ?
                               <Link to="/login">
                                 <img src={user} alt="" className="img-fluid" />
                                 <span>Login</span>
                               </Link>
-                            :
+                              :
                               <Link to="/my-account">
                                 <img src={user} alt="" className="img-fluid" />
                                 <span>My Account</span>
@@ -408,16 +418,16 @@ export default function Header() {
                                 Department{" "}
                               </Link>
                             </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/physiotherapy"
-                                      className="dropdown-item"
-                                    >
-                                      {" "}
-                                      Physiotherapy{" "}
-                                    </Link>
-                                  </li>
+                            <li>
+                              <Link
+                                onClick={handleLink}
+                                to="/physiotherapy"
+                                className="dropdown-item"
+                              >
+                                {" "}
+                                Physiotherapy{" "}
+                              </Link>
+                            </li>
                             <li>
                               <Link
                                 onClick={handleLink}
@@ -466,7 +476,7 @@ export default function Header() {
                             className="nav-link"
                             to="/packages"
                           >Health Checkup
-                          </Link> 
+                          </Link>
                         </li>
                         {/* <li className="nav-item dropdown">
                           <Link
@@ -610,8 +620,8 @@ export default function Header() {
                           </span>
                           <ul className="dropdown-menu frresplyr-con">
                             <li>
-                              <button onClick={() => navigate('/find-lab',{ state: { LocationId: null } })} className="dropdown-item"> 
-                                Reach our lab 
+                              <button onClick={() => navigate('/find-lab', { state: { LocationId: null } })} className="dropdown-item">
+                                Reach our lab
                               </button>
                             </li>
                             <li>
@@ -681,9 +691,9 @@ export default function Header() {
                   <span></span>
                   <span></span>
                 </button>
-                
 
-                <Link  onClick={handleLink}  className="srch-btn" to="/for-patient">
+
+                <Link onClick={handleLink} className="srch-btn" to="/for-patient">
                   <i className="fa fa-search" aria-hidden="true"></i>
                 </Link>
 
@@ -711,7 +721,7 @@ export default function Header() {
                         <div className="mdl-cnt">
                           <input
                             type="text"
-                            placeholder="Search for Health Packages / Tests / Labs" 
+                            placeholder="Search for Health Packages / Tests / Labs"
                             readOnly
                           />
                         </div>
@@ -735,27 +745,21 @@ export default function Header() {
         <Modal.Body>
           <div className="row fully-bxn no-gutters">
             <div className="col-lg-12 seceter-frm text-center">
-              <h4>Please Select your Location</h4>
-              <Form onSubmit={changeLocation}> 
-                <div className="addres-que customRadio ">
-                  <input type="radio" name="location" id="addrs1" value="bangalore" checked={LabLocation === "bangalore"} onChange={(e) => setLabLocation(e.target.value)} />
-                  <label for="addrs1">
-                    <span>Bangalore</span>
-                  </label>
-                  <input type="radio" name="location" id="addrs2" value="mangalore" checked={LabLocation === "mangalore"} onChange={(e) => setLabLocation(e.target.value)}/>
-                  <label for="addrs2">
-                    <span>Mangalore</span>
-                  </label>
-                  <input type="radio" name="location" id="addrs3" value="rest-of-bangalore" checked={LabLocation === "rest-of-bangalore"} onChange={(e) => setLabLocation(e.target.value)}/>
-                  <label for="addrs3">
-                    <span>Rest of Bangalore</span>
-                  </label>
-                </div>
-                <div className="col-lg-12 text-center p-0">
-                  <div className="login-btn">
-                    <button className="btn-primary"> Locate </button>
-                  </div>
-                </div>
+              <h4 className="mb-3">Please Select your Location</h4>
+              <Form onSubmit={changeLocation} className='input-group'>
+                {
+                  localStorage.getItem('locations') ?
+                    <select name="location" onChange={(e) => setLabLocation(e.target.value)} className='form-control form-control-lg'>
+                      <option value=""> -- select -- </option>
+                      {
+                        JSON.parse(localStorage.getItem('locations')).map((location) => (
+                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location}</option>
+                        ))
+                      }
+                    </select>
+                  : null
+                } 
+                  <button className="btn-sm btn-primary"> Locate </button>
               </Form>
             </div>
           </div>
