@@ -79,7 +79,7 @@ export default function Accreditation() {
                     <h4> ADL NABL <span>Certificate</span></h4>
                     <div className="cmn-buton">
                       <p>
-                        <a href="http://localhost:3000/static/media/cer-1.7ea3a29e4e6ffd91392c.jpg"
+                        <a href={certimg1}
                           data-pswp-width="1875"
                           data-pswp-height="2500"
                           target="_blank"

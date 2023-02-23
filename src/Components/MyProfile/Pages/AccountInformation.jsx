@@ -1,7 +1,5 @@
 import axios from 'axios';
 import {API_URL} from '../../../Redux/Constant/ApiRoute'
-import { Form } from 'react-component-form'
-import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import AuthUser, { PutUser } from "../../../Helpers/AuthUser";
 import { useForm } from "react-hook-form";  
