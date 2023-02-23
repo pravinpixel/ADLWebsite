@@ -51,10 +51,10 @@ export default function BookedTestSliders({title , subTitle}) {
     ],
   };
   const dispatch = useDispatch();
-  const navigate = useNavigate() 
+  const navigate = useNavigate()  
   const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
   const getBookedTestSliders = () => {
-    axios.get(API_URL.TOP_BOOKED_TEST).then((response) => {
+    axios.post(API_URL.TOP_BOOKED_TEST).then((response) => {
       dispatch(setTopBookedTest(response.data.data));
     });
   }; 
