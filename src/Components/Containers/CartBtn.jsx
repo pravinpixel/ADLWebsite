@@ -28,19 +28,17 @@ export default function CartBtn(props) {
     }
 
     const removeToCart = () => {
-        axios.post(API_URL.REMOVE_TO_CART,{
-            user_id : JSON.parse(user).id,
-            test_id : props.testData.id,
-            test_type : props.testData.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
-        }).then((response) => {
-            console.log(response.data)
-        })
+        if(user !== null ) {
+            axios.post(API_URL.REMOVE_TO_CART,{
+                user_id : JSON.parse(user).id,
+                test_id : props.testData.id,
+                test_type : props.testData.IsPackage == 'No' ? 'TEST' : 'PACKAGE',
+            }).then((response) => {
+                console.log(response.data)
+            })
+        }
         dispatch(removeFromCart(props.testData));
-        dispatch(
-            setTestCartList(
-                JSON.parse(localStorage.getItem("CartTestList"))
-            )
-        );
+        dispatch(setTestCartList(JSON.parse(localStorage.getItem("CartTestList"))));
     }
     if(CheckCartBucket(props.testData.TestId))  {
         return (
