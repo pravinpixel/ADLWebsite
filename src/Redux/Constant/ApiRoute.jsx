@@ -21,7 +21,7 @@ export const API_URL = {
     RESEARCH                   : `${process.env.REACT_APP_BASE_URL}/api/research`,
     HEALTHCHECKUP_FOR_EMPLOYEES: `${process.env.REACT_APP_BASE_URL}/api/healthcheckup-for-employees`,
     BOOK_AN_APPOINTMENT        : `${process.env.REACT_APP_BASE_URL}/api/book-an-appointment`,
-    UPDATE_MY_PROFILE          : `${process.env.REACT_APP_BASE_URL}/api/update-customer/`,
+    UPDATE_MY_PROFILE          : `${process.env.REACT_APP_BASE_URL}/api/update-customer`,
     GET_MY_ORDERS              : `${process.env.REACT_APP_BASE_URL}/api/get-orders/`,
     CHANGE_MY_PASSWORD         : `${process.env.REACT_APP_BASE_URL}/api/change-my-password/`,
     CANCEL_MY_ORDER            : `${process.env.REACT_APP_BASE_URL}/api/cancel-my-order/`,
