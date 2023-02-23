@@ -5875,6 +5875,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media(min-width:1200px) {
+
     #infrastructure.nav-tabs.fixed {
         width: 370px;
     }
@@ -5919,8 +5920,11 @@ input[type="range"]::-moz-range-thumb {
         top: 24%;
         padding: 20px 25px;
       }
-    .banner-form .form-data input{height: 40px;}
-    .banner-form .form-data.file-upload input{line-height: 40px;}
+    .banner-form .form-data input{height: 40px;} 
+    .banner-form .form-data select{height: 40px !important;} 
+    .banner-form .form-data.file-upload input {
+        padding-top: 8px; 
+      }
     .banner-form .form-data input[type="submit"]{padding: 5px 10px;}
     .upload-btn-wrapper .btn{background: transparent;height: 40px;}
     .slick-prev,
@@ -6028,7 +6032,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1100px) {
-
+    .container {
+        max-width:95%;
+      }
 
     .our-presence .col-lg-8 {
         flex: 0 0 100%;
@@ -6907,7 +6913,7 @@ input[type="range"]::-moz-range-thumb {
         padding: 50px 0px 100px;
     }
     header {
-        padding: 12px 0px;
+        padding: 8px 0px 7px;
     }
     #home-banner-carousel .carousel-indicators {
         bottom: 19px;
@@ -6917,16 +6923,16 @@ input[type="range"]::-moz-range-thumb {
         top: 61px;
     }
     .navbar-toggler {
-        top: 0;
+        top: 10px;
     }
     a.srch-btn {
-        top: 10px;
+        top: 20px;
     }
     .navbar-default .navbar-brand img {
         min-width: 130px;
     }
     .navbar-brand.text-brand.rit-sde {
-        top: 5px;
+        top: 15px;
         left: 125px;
     }
     .acrdes-solution p img {
@@ -7066,17 +7072,17 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width:400px) {    
     .navbar-default .navbar-brand img {
-        min-width: 113px;
+        min-width: 125px;
     }
     .navbar-brand.text-brand.rit-sde {
-        top: 5px;
+        top: 15px;
         left: 110px;
     }
     body {
         padding-top: 60px;
     }
     .navbar .navbar-toggler {
-        top: 0;
+        top: 10px;
     }
     a.srch-btn {
         right: 45px;
