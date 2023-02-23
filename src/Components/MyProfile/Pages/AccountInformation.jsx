@@ -37,11 +37,12 @@ export default function AccountInformation() {
       address      : customer?.customer_details?.address,
       city_town    : customer?.customer_details?.city_town,
       state        : customer?.customer_details?.state,
-      pin_code     : customer?.customer_details?.pin_code
+      pin_code     : customer?.customer_details?.pin_code,
+      id:customer.id
     }
   }) 
   const UpdateInfo = (data) => {
-    axios.post(API_URL.UPDATE_MY_PROFILE + customer.id ,data).then((response) => {
+    axios.post(API_URL.UPDATE_MY_PROFILE,data).then((response) => {
       if (response.data.status) { 
         toast.success(response.data.message)
         PutUser(response.data.data) 
