@@ -42,7 +42,7 @@ import Contact from './Components/Contact/Contact'
 import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
-import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
+import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees' 
 import Careers from './Components/Careers/Careers'
 import Career from './Components/Career/Career'
 import MyProfile from './Components/MyProfile/MyProfile'
@@ -51,6 +51,7 @@ import ThankYou from './Components/ThankYou/ThankYou'
 import CancellationPolicy from './Components/CancellationPolicy/CancellationPolicy'
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
 import TermsConditions from './Components/TermsConditions/TermsConditions'
+import AnandatHome from './Components/AnandatHome/AnandatHome'
 import { useDispatch, useSelector } from 'react-redux'
 import { setAuthUser, setTestLocation } from './Redux/Actions/TestAction'
 import "react-datepicker/dist/react-datepicker.css";
@@ -133,6 +134,7 @@ export default function App() {
           <Route path='/reach-us' exact element={<Contact />} />
           <Route path='/head-office' exact element={<HeadOffice />} />
           <Route path='/healthcheckup-for-employees' exact element={<HealthCheckupforEmployees />} />
+          <Route path='/anand-at-home' exact element={<AnandatHome />} />
           <Route path='/careers' exact element={<Careers />} />
           <Route path='/join-oppourtunities/:id' exact element={<Career />} />
           <Route path='/anandlab-franchise' exact element={<AnandLabFranchise />} />

@@ -2042,13 +2042,14 @@ h4.cont-frmhed {
 .banner-form {
     position: absolute;
     width: 340px;
-    background-color: rgba(255, 2255, 255, 0.9);
+    background-color: rgba(255, 2255, 255, 1);
     top: 20%;
     right: 17%;
     content: "";
     z-index: 1;
     padding: 40px 25px;
     border-radius: 5px;
+    box-shadow: 0px 0px 45px hsla(0, 0%, 0%, 0.2);
 }
 
 .req-form {
@@ -5770,9 +5771,9 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .womensdayawrapsec span{display:inline-block;vertical-align:middle;}
-  .womensdayawrapsec span h2{margin-top:0;margin-bottom:0px;font-size:20px;line-height:normal;color:#fff;}
+  .womensdayawrapsec span h2{margin-top:0;margin-bottom:0px;font-size:20px;line-height:normal;color:#000;}
   .womensdayawrapsec h4 {
-    color: #6e6e6e;
+    color: #000;
     font-size: 19px;
     font-weight: 600;
     letter-spacing: -0.28px;
@@ -5781,13 +5782,13 @@ input[type="range"]::-moz-range-thumb {
   }
   .womensdayawrapsec span:first-child{width:120px;margin-right:10px;position:absolute;bottom:0;left:-59px;}
   .womensdayawrapsec span:nth-child(2){width:70%;margin-left:75px;}
-  .womensdayawrapsec span p{margin-bottom:0;color:#fff;}
+  .womensdayawrapsec span p{margin-bottom:0;color:#000;}
   .womensdayawrapsec img{display: block;max-width: 100%;height: auto;}
-  .womensdayawrapsec{position:relative;background:#5c2e8f;padding:10px;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);cursor:pointer;color:#fff;}
+  .womensdayawrapsec{position:relative;background:#ff9a1f;padding:10px;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);cursor:pointer;color:#000;}
   .plusicon{position:absolute;right:20px;top:37%;width:26px;height:26px;background-repeat:no-repeat;cursor:pointer;transition:all 0.5s ease-in-out;}
   .womensdayawrap{position:fixed;right:0;bottom:0;z-index:99999;width:380px;}
-  .womendaycontent{background:#fff;height:0;transition:all 0.5s ease-in-out;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);padding:0px 20px;}
-  .womendaycontent.conthgt{height:375px;transition:all 0.5s ease-in-out;overflow:auto;padding:10px 20px;}
+  .womendaycontent{background:#fff;height:0;transition:all 0.5s ease-in-out;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);padding:0px;}
+  .womendaycontent.conthgt{height:360px;transition:all 0.5s ease-in-out;overflow:auto;padding:0px;}
   .womendaycontent p{margin-bottom:0;padding:20px;font-size:15px;line-height:23px;padding-left:40px;} 
   .womendaycontent input{
     border: none;
