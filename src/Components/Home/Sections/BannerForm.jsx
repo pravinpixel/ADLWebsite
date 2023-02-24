@@ -1,16 +1,17 @@
 import axios from 'axios'
 import { API_URL } from '../../../Redux/Constant/ApiRoute'
 import { FormResponse } from '../../../Helpers/FormResponse'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { setLoading } from "../../../Redux/Actions/LoaderAction"; 
+import { setLoading } from "../../../Redux/Actions/LoaderAction";
 import { useState } from 'react';
 
 export default function BannerForm() {
     const dispatch = useDispatch();
-    const [testOption,setTestOption] = useState([])
+    const [testOption, setTestOption] = useState([])
+    const TestLocation = useSelector((state) => state.TestLocation);
     const validFileExtensions = { image: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'webp', 'pdf', 'xls'] };
     function isValidFileType(fileName, fileType) {
         return fileName && validFileExtensions[fileType].indexOf(fileName.split('.').pop()) > -1;
@@ -29,7 +30,7 @@ export default function BannerForm() {
             })
         )
     })
-    const submitBanner = (formData) => { 
+    const submitBanner = (formData) => {
         dispatch(setLoading(true))
         const data = {
             name: formData.name,
@@ -69,28 +70,34 @@ export default function BannerForm() {
                             <input className={`input100 ${errors?.mobile && 'border-bottom border-danger'}`} type="tel" placeholder="Mobile" {...register('mobile')} />
                         </div>
                         <div className="form-data">
-                            <select className={`input100 ${errors?.location && 'border-bottom border-danger'}`} id="location" name="location"  {...register('location')}>
-                                <option value="">Select Your Location</option>
-                                <option value="Bangalore">Bangalore</option>
-                                <option value="Mangalore">Mangalore</option>
-                                <option value="Rest of Bangalore">Rest of Bangalore</option>
-                            </select>
+                            {
+                                localStorage.getItem('locations') ?
+                                    <select className={`input100 ${errors?.location && 'border-bottom border-danger'}`} id="location" name="location"  {...register('location')}>
+                                        <option value=""> -- select -- </option>
+                                        {
+                                            JSON.parse(localStorage.getItem('locations')).map((location) => (
+                                                <option key={location.id} value={location.location_slug} >{location.location}</option>
+                                            ))
+                                        }
+                                    </select>
+                                    : null
+                            } 
                         </div>
                         <div className={`form-data file-upload ${errors?.reportFile && 'border-bottom border-danger'}`}>
                             <input type="file" name="reportFile"  {...register('reportFile')} />
                         </div>
                         <div className="form-data">
-                            <input list='testlist' onKeyUp={(e)=> findTest(e.target.value)} className={`input100 ${errors?.test_name && 'border-bottom border-danger'}`} placeholder="Select Test Name" {...register('test_name')} />
+                            <input list='testlist' onKeyUp={(e) => findTest(e.target.value)} className={`input100 ${errors?.test_name && 'border-bottom border-danger'}`} placeholder="Select Test Name" {...register('test_name')} />
                             <datalist id="testlist">
                                 {
                                     testOption.length > 0 ?
-                                        testOption.map(item => <option value={item.TestName}></option> )
-                                    : null
-                                } 
+                                        testOption.map(item => <option value={item.TestName}></option>)
+                                        : null
+                                }
                             </datalist>
                         </div>
                         <div className="form-data">
-                            <input className={`input100 ${errors?.comments && 'border-bottom border-danger'}`} placeholder="Comments" {...register('comments')} /> 
+                            <input className={`input100 ${errors?.comments && 'border-bottom border-danger'}`} placeholder="Comments" {...register('comments')} />
                         </div>
                         <div className="form-data sbm">
                             <input type="submit" name="submit" value="SUBMIT" />
