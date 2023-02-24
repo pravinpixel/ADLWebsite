@@ -1,15 +1,9 @@
-import axios from 'axios';
-import { useMemo ,useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
-import { setTestFilters } from '../../../Redux/Actions/TestAction';
-import { API_URL } from '../../../Redux/Constant/ApiRoute';
+import { useConditions } from '../../../Hooks';
 
 export default function ConditionsSliders() {
-  const  Navigate = useNavigate()
-  const  dispatch = useDispatch()
-  const  filters = useSelector((state) => state.filters.filters)
+  const Navigate = useNavigate()
   const settings = {
     slidesToScroll: 1,
     infinite: true,
@@ -45,15 +39,9 @@ export default function ConditionsSliders() {
         }
       },
     ]
-  }; 
-  const FetchConditions = () => {
-    axios.get(API_URL.CONDITIONS_LIST).then((response) => {
-      SetConditions(response.data)
-    })
-  }
-  useMemo(()=>FetchConditions(),[])
-  const [Conditions, SetConditions] = useState([]);
-  return (
+  };
+  const conditions = useConditions()
+  if (!conditions.isLoading) return (
     <section className="condition-packages">
       <div className="container">
         <div className="row">
@@ -64,16 +52,14 @@ export default function ConditionsSliders() {
             <br />
             <Sliders {...settings} className="condition-lsts text-center">
               {
-                Conditions !== 0 ?
-                  Conditions.map((item,i) => (
-                    <div key={i} className="tes-cond">
-                      <img src={item.image} width="100px" className="img-fluid" />
-                      <h4 className='pr-4'>{item.name}</h4>
-                      <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
-                    </div> 
-                  ))
-                : null
-              } 
+                conditions.data.map((item, i) => (
+                  <div key={i} className="tes-cond">
+                    <img src={item.image} width="100px" className="img-fluid" />
+                    <h4 className='pr-4'>{item.name}</h4>
+                    <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
+                  </div>
+                ))
+              }
             </Sliders>
           </div>
         </div>
