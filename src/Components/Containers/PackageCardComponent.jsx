@@ -1,12 +1,7 @@
-import React from "react";
-import popImg from "../../assets/images/popular-img-1.jpg";
-import { useSelector } from "react-redux";
 import CartBtn from "../Containers/CartBtn";
-import TestNavBtn from "./TestNavBtn";
 import { Link } from "react-router-dom";
 
 export default function PackageCardComponent(props) {
-  const TestLocation = useSelector((state) => state.TestLocation);
   return (
     <div className="pack-deils">
       <div className="pck-img">
