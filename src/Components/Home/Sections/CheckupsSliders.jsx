@@ -2,15 +2,12 @@ import axios from 'axios'
 import { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import Sliders from 'react-slick' 
-import { setOrgans, setTestFilters } from '../../../Redux/Actions/TestAction'
-import { API_URL } from '../../../Redux/Constant/ApiRoute'
+import Sliders from 'react-slick'
+import {useOrgans} from '../../../Hooks'
 
 export default function CheckupsSliders() {
-    const  Navigate = useNavigate()
-    const  dispatch = useDispatch()
-    const  filters = useSelector((state) => state.filters.filters)
-    const  Organs = useSelector((state) => state.organs.data) 
+    const Navigate = useNavigate()
+    const Organs = useOrgans()
     const settings = {
         slidesToScroll: 1,
         infinite: true,
@@ -48,13 +45,7 @@ export default function CheckupsSliders() {
             },
         ]
     };
-    const FetchOrgans = () =>{
-        axios.get(API_URL.ORGAN_LIST).then((response) => { 
-            dispatch(setOrgans(response.data))
-        })
-    } 
-    useMemo(()=>FetchOrgans(),[])
-    return (
+    if (!Organs.isLoading) return (
         <section className="helth-chkup">
             <div className="container">
                 <div className="row">
@@ -65,14 +56,12 @@ export default function CheckupsSliders() {
                         <br />
                         <Sliders className="body-parts text-center"  {...settings}>
                             {
-                                Organs !== undefined ?
-                                    Organs.map((item,i) => (
-                                        <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
-                                            <img src={item.image} width="70px" className="img-fluid mb-2" />
-                                            <span><b>{item.name}</b></span>
-                                        </div>
-                                    ))
-                                : null
+                                Organs.data.map((item, i) => (
+                                    <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
+                                        <img src={item.image} width="70px" className="img-fluid mb-2" />
+                                        <span><b>{item.name}</b></span>
+                                    </div>
+                                ))
                             }
                         </Sliders>
                     </div>
