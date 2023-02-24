@@ -1,13 +1,8 @@
-import axios from "axios";
-import { useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sliders from "react-slick";
-import { setTopBookedTest } from "../../../Redux/Actions/TestAction";
-import { API_URL } from "../../../Redux/Constant/ApiRoute";
 import CartBtn from "../../Containers/CartBtn";
-
-export default function BookedTestSliders({title , subTitle}) {
+import { useTopTests } from '../../../Hooks'
+export default function BookedTestSliders({ title, subTitle }) {
   var settings = {
     slidesToScroll: 1,
     infinite: true,
@@ -33,33 +28,26 @@ export default function BookedTestSliders({title , subTitle}) {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 3, 
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 680,
         settings: {
-          slidesToShow: 2, 
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1, 
+          slidesToShow: 1,
         },
       },
     ],
   };
-  const dispatch = useDispatch();
-  const navigate = useNavigate()  
-  const topBookedTestList = useSelector((state) => state.TopBookedTests.tests);
-  const getBookedTestSliders = () => {
-    axios.post(API_URL.TOP_BOOKED_TEST).then((response) => {
-      dispatch(setTopBookedTest(response.data.data));
-    });
-  }; 
-  useMemo(()=>getBookedTestSliders(),[])
-  return (
+  const navigate = useNavigate()
+  const topTests = useTopTests()
+  if (!topTests.isLoading) return (
     <section className="diagnostics text-left">
       <div className="container">
         <div className="row">
@@ -69,9 +57,9 @@ export default function BookedTestSliders({title , subTitle}) {
                 <span>{title} </span> {subTitle}
               </h2>
             </div>
-            {topBookedTestList !== undefined ? (
+            {topTests.data.data !== null ? (
               <Sliders {...settings} className="topbooked-cases">
-                {topBookedTestList.map((test, index) => (
+                {topTests.data.data.map((test, index) => (
                   <div className="case p-3" key={index}>
                     <div className="link" onClick={() => navigate(`/test/${test.TestSlug}`)}>
                       <h3 className="text-capitalize">
@@ -80,10 +68,10 @@ export default function BookedTestSliders({title , subTitle}) {
                       <h4 className="text-capitalize">
                         {`${test.BasicInstruction.substring(0, 38)}...`}
                       </h4>
-                      <h5> 
-                      <span className="strke">
+                      <h5>
+                        <span className="strke">
                         </span> &nbsp;
-                       <span> ₹ {test.TestPrice}</span> 
+                        <span> ₹ {test.TestPrice}</span>
                       </h5>
                     </div>
                     <p className="d-flex">
@@ -94,15 +82,15 @@ export default function BookedTestSliders({title , subTitle}) {
                     </p>
                   </div>
                 ))}
-                
-              
+
+
               </Sliders>
             ) : null}
           </div>
-          <div className="col-lg-12"> 
-          <div className="vew-aal mt-5 text-center"> 
-          <Link to="/for-patient"> View All</Link> 
-          </div>
+          <div className="col-lg-12">
+            <div className="vew-aal mt-5 text-center">
+              <Link to="/for-patient"> View All</Link>
+            </div>
           </div>
         </div>
       </div>

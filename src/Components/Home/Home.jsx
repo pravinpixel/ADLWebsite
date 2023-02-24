@@ -10,7 +10,6 @@ import FindLocation from './Sections/FindLocation'
 import LegacyNutshell from './Sections/LegacyNutshell'
 import LatestBlogs from './Sections/LatestBlogs'
 import Accretions from './Sections/Accretions' 
-
 export default function Home() {
   useEffect(() => {
     window.scroll(0,0);
