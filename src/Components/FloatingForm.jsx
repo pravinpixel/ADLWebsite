@@ -13,6 +13,7 @@ function FloatingForm() {
             <div class="womensdayawrapsec"  onClick={() => setOpen(!open)} >
                 <span>
                     <img src={require('../../src/assets/images/call-girl.png')} class="img-responsive" alt="Call" />
+                    <div className="mob-rlce">Reach Us</div>
                 </span>
                 <span>
                     <h2>Contact Us</h2>

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Sliders from "react-slick";
 import { Link } from "react-router-dom";
-import bannerimage from "../../assets/images/inner-banner-17.webp";
-import helthchkp from "../../assets/images/helthchkp.jpg";
+import bannerimage from "../../assets/images/inner-banner-9.webp";
+import anandhome from "../../assets/images/anandathome.jpg";
 import preicn1 from "../../assets/images/pre-1.png";
 import preicn2 from "../../assets/images/pre-2.png";
 import preicn3 from "../../assets/images/pre-3.png";
@@ -139,90 +139,26 @@ export default function AnandatHome() {
             <div className="col-lg-7">
               <div className="common-heading">
                 <h2>
-                  Pre-Employment and Annual{" "}
-                  <span className="inlne">Health Check-Ups </span>
+                <span className="inlne">Why choose </span>
+                Anand@home? 
                 </h2>
-                <img src={helthchkp} alt="call" className="img-fluid" />
+                <img src={anandhome} alt="call" className="img-fluid" />
                 <br />
                 <br />
-                <p>
-                We are looking for partners who can grow with us and help us expand our reach to offer state-of-the-art diagnostic services across the country. Today Anand Diagnostic Laboratory is a leading diagnostic player with over 100+ clinical laboratories and 1500+ collection centres across India. We invite you to be a franchisee and be part of this growth story.
-                </p>
-                <p>
-                  An association with us offers an ideal environment and
-                  platform for a partner to be part of the growing Indian
-                  healthcare industry. We offer exciting opportunities to
-                  enthusiastic individuals with a strong business acumen and
-                  interest in replicating the Anand Diagnostic Laboratory
-                  business model successfully in their locality.
-                </p>
+                <div className="common-para1 drk detilos-expl indication-details p-0">
+                <ul>
+                <li>Sample collection done right at your doorstep</li>  
+                <li>Easy/multiple booking channels- Telephone, Whatsapp, Email, Live Chat, Online Appointment Form</li>  
+                <li>Home Care Kit: A complete sample collection kit, sealed for one time use only</li>  
+                <li>Since 1974, Ensuring Care in Healthcare, putting customer convenience first</li>  
+                </ul> 
                 <br />
+                <b>With Anand@home and the Home Care Kit, we’re bringing the finest healthcare experience right to your doorstep.</b>
+                </div>
+ 
+              
               </div>
-              <div className="common-heading">
-                <h2 className="mb-0">Packages we offer</h2>
-                <Sliders {...consumeing} className="consumeing">
-                  <div className="box-cos">
-                    <img src={preicn3} alt="" className="img-fluid" />
-                    <h4>
-                      Basic Health <br></br> Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn5} alt="" className="img-fluid" />
-                    <h4>
-                      Executive/master<br></br> Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn9} alt="" className="img-fluid" />
-                    <h4>
-                    Paediatric Health<br /> Check-up <span>(Below 12 years of age)</span>
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn2} alt="" className="img-fluid" />
-                    <h4>
-                      Pre-Marital <br></br>Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn1} alt="" className="img-fluid" />
-                    <h4>
-                      Bone <br></br>Health Package
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn4} alt="" className="img-fluid" />
-                    <h4>
-                    General Health<br /> Check-up 
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn8} alt="" className="img-fluid" />
-                    <h4>
-                      Well Woman  <br></br> Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn7} alt="" className="img-fluid" />
-                    <h4>
-                    Senior citizen <br></br>Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn10} alt="" className="img-fluid" />
-                    <h4>
-                    Diabetic <br></br> Health Check-up
-                    </h4>
-                  </div>
-                  <div className="box-cos">
-                    <img src={preicn6} alt="" className="img-fluid" />
-                    <h4>
-                    Comprehensive <br></br> Cardiac Profile
-                    </h4>
-                  </div>
-                </Sliders>
-              </div>
+               
             </div>
 
             <div className="col-sm-12 col-md-12 col-lg-5">
@@ -293,6 +229,22 @@ export default function AnandatHome() {
                       })}
                     />
                   </div> 
+                  
+                  <h6 className="text-light">How would you like us to connect with you?</h6>
+                  <div className="d-flex input-box">
+                  <p>
+                  <input type="radio" id="test1" name="radio-group" />
+                  <label for="test1">Call</label>
+                  </p>
+                  <p>
+                  <input type="radio" id="test2" name="radio-group" />
+                  <label for="test2">Whatsapp</label>
+                  </p>
+                  <p>
+                  <input type="radio" id="test3" name="radio-group" />
+                  <label for="test3">Email</label>
+                  </p>   
+                  </div>
                   <div className="formdata">
                     <input
                       type="submit"
