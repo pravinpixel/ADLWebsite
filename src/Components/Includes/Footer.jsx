@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import send from './../../assets/images/send.png'
 import playstore from './../../assets/images/playstore.png'
 import ReachUs from '../Home/Sections/ReachUs'
@@ -16,7 +16,6 @@ import { setLoading } from '../../Redux/Actions/LoaderAction'
 import { Modal } from 'react-bootstrap'
 import { Form } from 'react-component-form'
 import { setTestLocation } from '../../Redux/Actions/TestAction'
-
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
@@ -30,9 +29,9 @@ export default function Footer() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const changeLocation = (data) => {  
+  const changeLocation = (data) => {
     dispatch(setTestLocation(data.location))
-    localStorage.setItem('TestLocation',data.location)
+    localStorage.setItem('TestLocation', data.location)
     handleClose();
     toast.success('Location to be Changed')
   }
@@ -166,41 +165,6 @@ export default function Footer() {
                     </li>
                   </ul>
                 </div>
-                {/* <div className="col-lg-2">
-                <ul>
-                <h5>Health Checkup</h5>
-                  {/* <li>
-                    <Link to="/">Reach Our Lab</Link>
-                  </li> 
-                  <li>
-                    <Link to="/book-an-appointment">Book Home Collection</Link>
-                  </li>
-                  <li>
-                    <Link to="">Full Body Health Packages</Link>
-                  </li>
-                  <li>
-                    <Link to="">Clinical & Imaging Services</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Drive through Blood Collection</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Book COVID Test</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Diabetes DOST</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Thyroid DOST</Link>
-                  </li>
-                  <li>
-                    <Link to="/">V-Card, A Patient Beneficial Program</Link>
-                  </li>  
-                  <li>
-                    <Link to="/physiotherapy">Physiotherapy</Link>
-                  </li>
-                </ul>
-                </div> */}
                 <div className="col-lg-2">
                   <ul>
                     <h5>Reach Us</h5>
@@ -210,18 +174,7 @@ export default function Footer() {
                     <li>
                       <Link to="/find-lab">Reach our Lab</Link>
                     </li>
-                    {/* <li>
-                    <Link to="/healthcheckup-for-employees">Health Checkup for Employees</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Neuberg Anand Franchise</Link>
-                  </li>
-                  <li>
-                    <Link to="/">COVID Testing for Employees</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Hospital & Lab Partnership</Link>
-                  </li> */}
+
                     <li>
                       <Link to="/careers">Job Oppourtunities</Link>
                     </li>
@@ -231,23 +184,23 @@ export default function Footer() {
                   </ul>
                 </div>
                 <div className="col-lg-2">
-                <ul>
-                <h5>Terms and Policies</h5>
-                  <li>
-                    <Link to="/cancellation-policy">Cancellation Policy</Link>
-                  </li>
-                  <li>
-                    <Link to="/privacy-policy">Privacy Policy</Link>
-                  </li>
-                  <li>
-                    <Link to="/terms-conditions">Terms & Conditions</Link>
-                  </li> 
-                  <li>
-                    <Link to="/feedback">Feedback</Link>
-                  </li>
-                </ul>
-                <h5 className="cips">Download App</h5>
-              <a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src={playstore} alt="" className="img-fluid"/></a>
+                  <ul>
+                    <h5>Terms and Policies</h5>
+                    <li>
+                      <Link to="/cancellation-policy">Cancellation Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy-policy">Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="/terms-conditions">Terms & Conditions</Link>
+                    </li>
+                    <li>
+                      <Link to="/feedback">Feedback</Link>
+                    </li>
+                  </ul>
+                  <h5 className="cips">Download App</h5>
+                  <a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src={playstore} alt="" className="img-fluid" /></a>
                 </div>
               </div>
             </div>
@@ -277,9 +230,9 @@ export default function Footer() {
 
 
       <div className="mobile-footer">
-        <a onClick={handleShow} style={{ color:'black',textTransform:'capitalize' }}>
+        <a onClick={handleShow} style={{ color: 'black', textTransform: 'capitalize' }}>
           <img src={location} alt="" className="img-fluid" />
-           {TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null} 
+          {TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}
         </a>
         {
           authUser.user.length === 0 && authUser.user !== null ?
@@ -317,27 +270,21 @@ export default function Footer() {
         <Modal.Body>
           <div className="row fully-bxn no-gutters">
             <div className="col-lg-12 seceter-frm text-center">
-              <h4>Please Select your Location</h4>
-              <Form onSubmit={changeLocation}>
-                <div className="addres-que customRadio ">
-                  <input type="radio" name="location" id="addrs1" value="bangalore" checked={LabLocation === "bangalore"} onChange={(e) => setLabLocation(e.target.value)} />
-                  <label for="addrs1">
-                    <span>Bangalore</span>
-                  </label>
-                  <input type="radio" name="location" id="addrs2" value="mangalore" checked={LabLocation === "mangalore"} onChange={(e) => setLabLocation(e.target.value)} />
-                  <label for="addrs2">
-                    <span>Mangalore</span>
-                  </label>
-                  <input type="radio" name="location" id="addrs3" value="rest-of-bangalore" checked={LabLocation === "rest-of-bangalore"} onChange={(e) => setLabLocation(e.target.value)} />
-                  <label for="addrs3">
-                    <span>Rest of Bangalore</span>
-                  </label>
-                </div>
-                <div className="col-lg-12 text-center p-0">
-                  <div className="login-btn">
-                    <button className="btn-primary"> Locate </button>
-                  </div>
-                </div>
+              <h4 className="mb-3">Please Select your Location</h4>
+              <Form onSubmit={changeLocation} className='input-group'>
+                {
+                  localStorage.getItem('locations') ?
+                    <select name="location" onChange={(e) => setLabLocation(e.target.value)} className='form-control form-control-lg'>
+                      <option value=""> -- select -- </option>
+                      {
+                        JSON.parse(localStorage.getItem('locations')).map((location) => (
+                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location}</option>
+                        ))
+                      }
+                    </select>
+                    : null
+                }
+                <button className="btn-sm btn-primary"> Locate </button>
               </Form>
             </div>
           </div>

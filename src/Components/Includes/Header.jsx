@@ -29,7 +29,7 @@ export default function Header() {
   const handleShow = () => setShow(true);
   const dispatch = useDispatch()
   const changeLocation = () => {
-    if(LabLocation) {
+    if (LabLocation) {
       dispatch(setTestLocation(LabLocation))
       localStorage.setItem('TestLocation', LabLocation)
       handleClose();
@@ -44,7 +44,7 @@ export default function Header() {
 
   useMemo(() => {
     axios.get(API_URL.LOCATIONS).then((response) => {
-      localStorage.setItem('locations',JSON.stringify(response.data.data))
+      localStorage.setItem('locations', JSON.stringify(response.data.data))
     })
   }, []);
 
@@ -183,8 +183,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/people-behind"
                               >
-                                {" "}
-                                People behind{" "}
+
+                                People behind
                               </Link>
                             </li>
                             <li>
@@ -243,11 +243,6 @@ export default function Header() {
                                       Packages
                                     </Link>
                                   </li>
-
-                                  {/* <li>
-                            <Link  onClick={handleLink}  to="/health-packages" className="dropdown-item">Health Packages</Link>
-                          </li> */}
-
                                   <li>
                                     <Link
                                       onClick={handleLink}
@@ -276,10 +271,6 @@ export default function Header() {
                                       Drive through Blood Collection
                                     </Link>
                                   </li>
-
-                                  {/* <li>
-                          <Link  onClick={handleLink}  to="/" className="dropdown-item">Loyalty Program</Link>
-                          </li> */}
                                 </ul>
                               </li>
 
@@ -303,9 +294,6 @@ export default function Header() {
                                       Feedback
                                     </Link>
                                   </li>
-                                  {/* <li>
-                            <Link  onClick={handleLink}  to="/" className="dropdown-item">Special offers</Link>
-                          </li> */}
                                   <li>
                                     <a
                                       href="https://www.anandlab.com/blog/"
@@ -330,24 +318,7 @@ export default function Header() {
 
                               <li className="col thrd-clmn">
                                 <ul>
-                                  {/* <li>
-                            <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
-                              <img src={men1} alt="" className="img-fluid"/> 
-                              Download Reports
-                            </a>
-                          </li> */}
-                                  {/* <li>
-                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item">
-                            <img src={men2} alt="" className="img-fluid"/>
-                            Book an Appointment
-                            </Link>
-                          </li> */}
-                                  {/* <li>
-                            <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
-                            <img src={men3} alt="" className="img-fluid"/>
-                            Diabetes Assesment Tool
-                            </a>
-                          </li> */}
+
                                   <li className="dwd">
                                     <a
                                       href="https://reports.anandlab.com/v3/index1.html"
@@ -404,8 +375,8 @@ export default function Header() {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                {" "}
-                                Directory of service (DOS){" "}
+
+                                Directory of service (DOS)
                               </a>
                             </li>
                             <li>
@@ -414,8 +385,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/department"
                               >
-                                {" "}
-                                Department{" "}
+
+                                Department
                               </Link>
                             </li>
                             <li>
@@ -424,8 +395,8 @@ export default function Header() {
                                 to="/physiotherapy"
                                 className="dropdown-item"
                               >
-                                {" "}
-                                Physiotherapy{" "}
+
+                                Physiotherapy
                               </Link>
                             </li>
                             <li>
@@ -434,8 +405,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/hospital-or-lab-management"
                               >
-                                {" "}
-                                Hospital or Lab Management{" "}
+
+                                Hospital or Lab Management
                               </Link>
                             </li>
                             <li>
@@ -444,8 +415,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/clinical-lab-management"
                               >
-                                {" "}
-                                Clinician Lab Management{" "}
+
+                                Clinician Lab Management
                               </Link>
                             </li>
                             <li>
@@ -454,8 +425,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/franchising-opportunities"
                               >
-                                {" "}
-                                Franchise Opportunities{" "}
+
+                                Franchise Opportunities
                               </Link>
                             </li>
                             <li>
@@ -464,8 +435,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/research"
                               >
-                                {" "}
-                                Research{" "}
+
+                                Research
                               </Link>
                             </li>
                           </ul>
@@ -478,132 +449,6 @@ export default function Header() {
                           >Health Checkup
                           </Link>
                         </li>
-                        {/* <li className="nav-item dropdown">
-                          <Link
-                            onClick={handleLink}
-                            className="nav-link dropdown-toggle"
-                            to="#"
-                          >
-                            Health Checkup
-                          </Link>
-                          <span
-                            className="mobile-toggle"
-                            onClick={mobileToggle}
-                          >
-                            <i className="fa fa-plus"></i>
-                          </span>
-                          <div className="dropdown-bg">
-                            <ul className="dropdown-menu frresplyr-hea topr-clmn row">
-                              <li className="col frst-clmn">
-                                <ul>
-                                  {/* <li>
-                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item"> Reach our lab </Link> 
-                          </li>  
-
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/book-an-appointment"
-                                      className="dropdown-item"
-                                    >
-                                      {" "}
-                                      Book home collection{" "}
-                                    </Link>
-                                  </li>
-
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/"
-                                      className="dropdown-item"
-                                    >
-                                      {" "}
-                                      Full body health packages{" "}
-                                    </Link>
-                                  </li>
-                                  {/* <li>
-                          <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> Drive through blood collection </Link>
-                          </li>   
-                                </ul>
-                              </li>
-
-                              <li className="col secnd-clmn">
-                                <ul>
-                                  {/* <li>
-                            <a href="http://reports.anandlab.com/feverclinicapp/initfeverclinic.aspx" target="_blank" className="dropdown-item"> Book COVID test </a>
-                          </li>
-                          <li>
-                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Diabetes DOST </Link>
-                          </li>
-                          <li>
-                            <Link  onClick={handleLink}  to="/" className="dropdown-item"> Thyroid DOST </Link>
-                          </li>
-                          <li>
-                            <Link  onClick={handleLink}  to="/patients-consumers" className="dropdown-item"> V-Card, A patient beneficial program </Link>
-                          </li>  
-
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/"
-                                      className="dropdown-item"
-                                    >
-                                      {" "}
-                                      Clinical & Imaging services{" "}
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      onClick={handleLink}
-                                      to="/physiotherapy"
-                                      className="dropdown-item"
-                                    >
-                                      {" "}
-                                      Physiotherapy{" "}
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li className="col thrd-clmn">
-                                <ul>
-                                  <li>
-                          <a href="https://reports.anandlab.com/v3/index1.html" target="_blank"className="dropdown-item">
-                              <img src={men1} alt="" className="img-fluid"/> 
-                              Download Reports
-                            </a>
-                          </li>
-                          <li>
-                            <Link  onClick={handleLink}  to="/book-an-appointment" className="dropdown-item">
-                            <img src={men2} alt="" className="img-fluid"/>
-                            Book an Appointment
-                            </Link>
-                          </li>
-                          <li>
-                          <a href="https://forms.zohopublic.com/neubergdiagnostics/form/NeubergDiabetesAssessment/formperma/gOG36LHmwXiCENsjMNLd9CZV-Z5yXgfhgyZx0Tz2RyE" target="_blank" className="dropdown-item">
-                            <img src={men3} alt="" className="img-fluid"/>
-                            Diabetes Assesment Tool
-                          </a>
-                          </li> 
-                                  <li>
-                                    <a
-                                      onClick={handleLink}
-                                      href="tel:18004251974"
-                                      className="dropdown-item"
-                                    >
-                                      <img
-                                        src={men4}
-                                        alt=""
-                                        className="img-fluid"
-                                      />
-                                      18004251974 (TOLL-FREE)
-                                    </a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </li> */}
                         <li className="nav-item dropdown sngle-frce">
                           <Link
                             onClick={handleLink}
@@ -630,27 +475,18 @@ export default function Header() {
                                 className="dropdown-item"
                                 to="/healthcheckup-for-employees"
                               >
-                                {" "}
-                                Health Checkup for employees{" "}
+
+                                Health Checkup for employees
                               </Link>
                             </li>
-                            {/* <li>
-                              <Link  onClick={handleLink}  className="dropdown-item" to="/anandlab-franchise"> Neuberg Anand Franchise </Link>
-                           </li>
-                           <li>
-                              <Link  onClick={handleLink}  className="dropdown-item" to="/covidtesting-employees"> COVID testing for employees </Link>
-                           </li>
-                           <li>
-                              <Link   onClick={handleLink}  className="dropdown-item" to="/hospital-or-lab-management"> Hospital & Lab Partnership </Link>
-                           </li> */}
                             <li>
                               <Link
                                 onClick={handleLink}
                                 className="dropdown-item"
                                 to="/careers"
                               >
-                                {" "}
-                                Job oppourtunities{" "}
+
+                                Job oppourtunities
                               </Link>
                             </li>
                             <li>
@@ -660,8 +496,8 @@ export default function Header() {
                                 className="dropdown-item"
                                 rel="noreferrer"
                               >
-                                {" "}
-                                Upgrade your skills{" "}
+
+                                Upgrade your skills
                               </a>
                             </li>
                           </ul>
@@ -757,9 +593,9 @@ export default function Header() {
                         ))
                       }
                     </select>
-                  : null
-                } 
-                  <button className="btn-sm btn-primary"> Locate </button>
+                    : null
+                }
+                <button className="btn-sm btn-primary"> Locate </button>
               </Form>
             </div>
           </div>
