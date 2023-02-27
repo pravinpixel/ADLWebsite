@@ -6,6 +6,7 @@
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^2.9.10",
+    "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -40,6 +41,8 @@
     "react-tsparticles": "^2.0.6",
     "react-videojs-fancybox": "^0.0.7",
     "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
     "sweetalert2": "^11.4.17",
     "sweetalert2-react-content": "^5.0.0",
     "web-vitals": "^2.1.4",

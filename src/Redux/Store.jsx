@@ -1,9 +1,21 @@
-import { createStore } from "redux";
+import { configureStore } from '@reduxjs/toolkit';
 import reducers from "./Reducers/index";
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { persistReducer } from 'redux-persist'
+import thunk from 'redux-thunk';
 
-const Store = createStore(
-    reducers, 
-    {},
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const persistedReducer = persistReducer({
+    key: 'root',
+    storage,
+    whitelist: ['navigation']
+}, reducers)
+
+export const Store = configureStore({
+    reducer: persistedReducer,
+    devTools: process.env.NODE_ENV !== 'production',
+    middleware: [thunk],
+});
+
 export default Store;
+
+

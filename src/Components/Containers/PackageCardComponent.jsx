@@ -6,7 +6,7 @@ export default function PackageCardComponent(props) {
   return (
     <div className="pack-deils">
       <div className="pck-img">
-        <LazyLoadImage src={props.data.image} className="img-fluid"/>
+        <LazyLoadImage src={props.data.image} effect="blur" className="img-fluid"/>
         { props.data !== undefined ? (
           props.data?.sub_tests?.length !== 0 ? (
             <div className="ble-fnt"> 

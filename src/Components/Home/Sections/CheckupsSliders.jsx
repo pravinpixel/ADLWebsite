@@ -59,7 +59,7 @@ export default function CheckupsSliders() {
                             {
                                 Organs.data.map((item, i) => (
                                     <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
-                                        <LazyLoadImage src={item.image} width="70px" className="img-fluid mb-2"/>
+                                        <LazyLoadImage src={item.image} width="70px"  effect="blur" className="img-fluid mb-2"/>
                                         <span><b>{item.name}</b></span>
                                     </div>
                                 ))

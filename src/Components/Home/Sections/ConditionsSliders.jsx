@@ -55,7 +55,7 @@ export default function ConditionsSliders() {
               {
                 conditions.data.map((item, i) => (
                   <div key={i} className="tes-cond">
-                    <LazyLoadImage src={item.image} width="100px" className="img-fluid"/>
+                    <LazyLoadImage src={item.image} width="100px"  effect="blur" className="img-fluid"/>
                     <h4 className='pr-4'>{item.name}</h4>
                     <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
                   </div>

@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import { BannerSlideReducer } from "./BannerReducer";
+import BannerReducer from "./BannerReducer";
 import { TestBookedReducer, addToCardReducer, TestCartReducer, TestDetailReducer, TestListReducer, removeFromCardReducer,setTestLocation, setTestFilters, setPackageFilters, setOrgans, setConditions } from './TestReducer'
 import { AuthReducer } from "./AuthReducer";
 import { LoaderReducer } from "./LoaderReducer";
 
 
 const reducers = combineReducers({
-    HomePageBanners   : BannerSlideReducer,
+    Banners   : BannerReducer,
     TopBookedTests    : TestBookedReducer,
     TestCartList      : TestCartReducer,
     TestDetails       : TestDetailReducer,
