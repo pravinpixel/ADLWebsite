@@ -44,7 +44,7 @@ function FloatingForm() {
                             <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
                         </div>
                         <div className="formdata">
-                            {errors?.mobile ? <small className='text-danger'>{'email is a required field'}</small> : ''}
+                            {errors?.mobile ? <small className='text-danger'>{'mobile is a required field'}</small> : ''}
                             <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
                         </div>
                         <div className="formdata">
