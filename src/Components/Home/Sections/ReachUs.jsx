@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import call from '../../../assets/images/call.png'
 import mail from '../../../assets/images/mail.png'
