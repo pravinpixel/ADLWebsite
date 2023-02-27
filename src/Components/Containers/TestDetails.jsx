@@ -56,7 +56,7 @@ export default function TestDetails() {
     <>
       {testDetails !== undefined ? (
         <>
-          <section className="comon-testdetail-banner">
+          <section className="comon-testdetail-banner resp-rem-mrgn">
             <div className="container">
               <div className="row">
                 <div className="col">

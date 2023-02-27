@@ -62,7 +62,7 @@ export default function MyProfile() {
         <Container className="py-5">
           <Tab.Container id="myProfileTabs" defaultActiveKey="first">
             <Row>
-              <Col sm={3} className="card border p-0 shadow">
+              <Col sm={12} lg={3} className="card border p-0 shadow">
                 <div className="card-header d-block">
                   <div className="common-heading cmg-img">
                     <span
@@ -104,7 +104,7 @@ export default function MyProfile() {
                   <button onClick={LogoutAccount} className="lgot-btn btn-danger d-block rounded px-4 mx-auto"><i className="fa fa-power-off"></i> Logout</button>
                 </div>
               </Col>
-              <Col sm={9}>
+              <Col  sm={12} lg={9}>
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <AccountInformation />

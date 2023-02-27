@@ -6653,6 +6653,61 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:767px) {
+    .mobileFilter{
+        margin: 20px 0px 0px 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #f5922f;
+        color: #FFF;
+        cursor: pointer;
+    }
+    #packagesFilters.filter-lists{
+        position: fixed;
+        left: -350px;
+        top: 0;
+        background: #FFF;
+        box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        width: 300px;
+        height: 100vh;
+        overflow: auto;
+        transition: all 0.3s ease;
+    }
+    #packagesFilters.filter-lists ul{
+        max-height: inherit !important;
+    }
+    #packagesFilters.filter-lists.active{
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+    .mobileFilterClose{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #FFF;
+        background: #5d2483;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .filter-lists h3 button.btn-sm.btn-danger{
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        font-size: 11px;
+        padding: 3px 7px;
+        margin-top: 5px;
+        margin-right: 50px;
+        color: #666;
+        cursor: pointer;
+        font-weight: 600;
+        background: transparent !important;
+    }
     .cir-frm{
         padding: 20px;
     }
@@ -6921,61 +6976,7 @@ input[type="range"]::-moz-range-thumb {
 @media (max-width:600px) {
     .scroll .womensdayawrap {
         bottom: 76px;}
-    .mobileFilter{
-        margin: 20px 0px 0px 20px;
-        display: inline-block;
-        padding: 10px 20px;
-        background: #f5922f;
-        color: #FFF;
-        cursor: pointer;
-    }
-    #packagesFilters.filter-lists{
-        position: fixed;
-        left: -350px;
-        top: 0;
-        background: #FFF;
-        box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
-        z-index: 9999;
-        width: 300px;
-        height: 100vh;
-        overflow: auto;
-        transition: all 0.3s ease;
-    }
-    #packagesFilters.filter-lists ul{
-        max-height: inherit !important;
-    }
-    #packagesFilters.filter-lists.active{
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-    .mobileFilterClose{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        color: #FFF;
-        background: #5d2483;
-        cursor: pointer;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 600;
-    }
 
-    .filter-lists h3 button.btn-sm.btn-danger{
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        font-size: 11px;
-        padding: 3px 7px;
-        margin-top: 5px;
-        margin-right: 50px;
-        color: #666;
-        cursor: pointer;
-        font-weight: 600;
-        background: transparent !important;
-    }
     .consumeing{
         margin-bottom: 70px;
     }

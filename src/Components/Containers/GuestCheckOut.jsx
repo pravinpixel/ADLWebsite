@@ -136,7 +136,7 @@ export default function GuestCheckOut() {
   return (
     <AuthProvider path="/checkout">
       <div>
-        <section className="comon-testdetail-banner">
+        <section className="comon-testdetail-banner resp-rem-mrgn">
           <div className="container">
             <div className="row">
               <div className="col">
