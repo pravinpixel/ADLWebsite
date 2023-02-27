@@ -16,7 +16,7 @@ function FloatingForm() {
             Yup.object().shape({
                 name: Yup.string().required(),
                 email: Yup.string().required(),
-                mobile: Yup.string().required(),
+                mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
             })
         )
     })
