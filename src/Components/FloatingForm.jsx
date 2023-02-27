@@ -15,7 +15,7 @@ function FloatingForm() {
         resolver: yupResolver(
             Yup.object().shape({
                 name: Yup.string().required(),
-                email: Yup.string().required(),
+                email: Yup.string(),
                 mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
             })
         )
@@ -29,6 +29,7 @@ function FloatingForm() {
             setOpen(!open)
         })
     }
+
     return (
         <div className="womensdayawrap">
             <div className={open == true ? 'womendaycontent ' : 'womendaycontent conthgt'}>
@@ -38,14 +39,13 @@ function FloatingForm() {
                         <div className="formdata">
                             {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
                             <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
-                        </div>
-                        <div className="formdata">
-                            {errors?.email ? <small className='text-danger'>{errors?.email?.message}</small> : ''}
-                            <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
-                        </div>
+                        </div> 
                         <div className="formdata">
                             {errors?.mobile ? <small className='text-danger'>{'mobile is a required field'}</small> : ''}
                             <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
+                        </div>
+                        <div className="formdata">
+                            <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
                         </div>
                         <div className="formdata">
                             {
@@ -70,7 +70,7 @@ function FloatingForm() {
                     <div className="mob-rlce">Reach Us</div>
                 </span>
                 <span>
-                    <h2>Contact Us</h2>
+                    <h2>Callback</h2>
                     <p>Click here to reach us</p>
                 </span>
                 {open ? <FaPlus /> : <FaMinus />}
