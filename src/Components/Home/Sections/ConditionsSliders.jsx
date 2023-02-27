@@ -1,3 +1,4 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
 import { useConditions } from '../../../Hooks';
@@ -54,7 +55,7 @@ export default function ConditionsSliders() {
               {
                 conditions.data.map((item, i) => (
                   <div key={i} className="tes-cond">
-                    <img src={item.image} width="100px" className="img-fluid" />
+                    <LazyLoadImage src={item.image} width="100px" className="img-fluid"/>
                     <h4 className='pr-4'>{item.name}</h4>
                     <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
                   </div>

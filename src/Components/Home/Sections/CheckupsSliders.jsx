@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useMemo } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Sliders from 'react-slick'
@@ -58,7 +59,7 @@ export default function CheckupsSliders() {
                             {
                                 Organs.data.map((item, i) => (
                                     <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
-                                        <img src={item.image} width="70px" className="img-fluid mb-2" />
+                                        <LazyLoadImage src={item.image} width="70px" className="img-fluid mb-2"/>
                                         <span><b>{item.name}</b></span>
                                     </div>
                                 ))

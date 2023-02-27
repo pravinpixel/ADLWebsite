@@ -1,11 +1,12 @@
 import CartBtn from "../Containers/CartBtn";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function PackageCardComponent(props) {
   return (
     <div className="pack-deils">
       <div className="pck-img">
-        <img src={props.data.image} alt="img" className="img-fluid"/> 
+        <LazyLoadImage src={props.data.image} className="img-fluid"/>
         { props.data !== undefined ? (
           props.data?.sub_tests?.length !== 0 ? (
             <div className="ble-fnt"> 
