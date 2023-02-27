@@ -12,16 +12,15 @@ import { API_URL } from '../../Redux/Constant/ApiRoute'
 import { toast } from 'react-hot-toast'
 import { NewsletterResponse } from '../../Helpers/FormResponse'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoading } from '../../Redux/Actions/LoaderAction'
 import { Modal } from 'react-bootstrap'
 import { Form } from 'react-component-form'
-import { setTestLocation } from '../../Redux/Actions/TestAction'
-const getCurrentYear = () => {
-  return new Date().getFullYear();
-};
-
+import { setTestLocation } from '../../Redux/Actions/TestAction' 
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import { CgSpinner } from 'react-icons/cg';
+import axios from 'axios';
 export default function Footer() {
-  const [Email, setEmail] = useState("");
   const dispatch = useDispatch()
   const [LabLocation, setLabLocation] = useState(null);
   const TestLocation = useSelector((state) => state.TestLocation);
@@ -35,30 +34,22 @@ export default function Footer() {
     handleClose();
     toast.success('Location to be Changed')
   }
-  const SubscribeNewsLetter = () => {
-    dispatch(setLoading(true))
-    var formdata = new FormData();
-    formdata.append("email", Email);
-    var requestOptions = {
-      method: 'POST',
-      body: formdata,
-      redirect: 'follow'
-    };
-    fetch(API_URL.NEWS_LETTER, requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        if (result.Errors === false) {
-          NewsletterResponse()
-        } else {
-          try {
-            toast.error(result.Message.email[0])
-          } catch (error) {
-            toast.error(result.Message)
-          }
-        }
-        setEmail('')
-        dispatch(setLoading(false))
-      }).catch(error => console.log('error', error));
+  const [Loading, setLoading] = useState(false)
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    resolver: yupResolver(Yup.object().shape({ email: Yup.string().required() }))
+  })
+  const SubscribeNewsLetter = (data) => {
+    setLoading(true)
+    axios.post(API_URL.NEWS_LETTER, data).then((response) => {
+      if (response.data.Errors === false) {
+        NewsletterResponse()
+        NewsletterResponse() 
+      } else {
+        toast.success(response.data.Message)
+      }
+      reset()
+      setLoading(false)
+    })
   }
   return (
     <>
@@ -67,7 +58,6 @@ export default function Footer() {
         <div className="container">
           <div className="row no-gutters">
             <div className="col-sm-12 col-md-12 col-lg-12 p-0">
-
               <div className="footer-column row">
                 <div className="col-lg-2">
                   <ul>
@@ -208,8 +198,20 @@ export default function Footer() {
               <div className="footer-column subs-cribe">
                 <h5>Subscribe to our newsletter</h5>
                 <p>Sign Up for our newsletter to get the latest news and updates in your inbox.</p>
-                <input type="email" value={Email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Your E-mail Id" name="search" />
-                <button type="submit" onClick={SubscribeNewsLetter}><img src={send} alt="" className="img-fluid" /></button>
+                <form onSubmit={handleSubmit(SubscribeNewsLetter)} className='position-relative'>
+                  <input {...register('email')} type="email" placeholder="Enter Your E-mail Id" className={`form-control ${errors?.email && 'border border-danger'}`} />
+                  {
+                    Loading
+                      ?
+                      <button type="submit" disabled >
+                        <CgSpinner className="fa-spin" size={25} color="#501e83" style={{ position: 'absolute', right: 0, top: -20 }} />
+                      </button>
+                      :
+                      <button type="submit" >
+                        <img src={send} className="img-fluid" />
+                      </button>
+                  }
+                </form>
               </div>
             </div>
           </div>
@@ -221,7 +223,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-12">
               <div className="text-white footer-bottom-text text-center">
-                &copy;  {getCurrentYear()} Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
+                &copy;  {new Date().getFullYear()} Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
               </div>
             </div>
           </div>
