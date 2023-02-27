@@ -294,6 +294,9 @@ a.whatsappp{
 	background: #602f98;
 	color:#fff;
 }
+.mobile-footer a:hover span{ 
+	color:#fff;
+}
 
 .tooltip-inner {
     color: #fff;

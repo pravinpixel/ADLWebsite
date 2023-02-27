@@ -230,9 +230,9 @@ export default function Footer() {
 
 
       <div className="mobile-footer">
-        <a onClick={handleShow} style={{ color: 'black', textTransform: 'capitalize' }}>
+        <a onClick={handleShow} style={{ color: '#000', textTransform: 'capitalize' }}>
           <img src={location} alt="" className="img-fluid" />
-          {TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}
+          <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
         </a>
         {
           authUser.user.length === 0 && authUser.user !== null ?
