@@ -4,7 +4,7 @@ import { useBanner } from '../../../Hooks'
 
 const Banners = () => {
     const banners = useBanner()
-    if (!banners.isLoading) return (
+    if (banners.isSuccess) return (
         <div className="banner-conceptual">
             <div id="home-banner-carousel" className="carousel slide carousel-fade" data-ride="carousel">
                 <ul className="carousel-indicators">

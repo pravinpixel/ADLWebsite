@@ -1,264 +1,231 @@
-import axios from "axios";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useParams,useLocation } from "react-router";
-import {
-  removeTestDetails,
-  setTestCartList,
-  setTestDetails,
-} from "../../Redux/Actions/TestAction";
-import { API_URL } from "../../Redux/Constant/ApiRoute";
-import { AddToCartList } from "../../Helpers";
+import { Dna } from "react-loader-spinner";
+import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import testIcon1 from "../../assets/images/testing-icon-1.png";
-import testIcon2 from "../../assets/images/testing-icon-2.png";
-import testIcon3 from "../../assets/images/testing-icon-3.png";
-import testIcon4 from "../../assets/images/testing-icon-4.png";
-import testIcon5 from "../../assets/images/testing-icon-5.png";
-import CartBtn from "./CartBtn";
+import useTestView from "../../Hooks/useTestView";
 import BookedTestSliders from "../Home/Sections/BookedTestSliders";
-import { setLoading } from '../../Redux/Actions/LoaderAction'
 import PackagesSliders from "../Home/Sections/PackagesSliders";
+import CartBtn from "./CartBtn";
 
-export default function TestDetails() { 
-  const navigate     = useNavigate()
-  const { TestId }   = useParams();
-  const location     = useLocation()
-  const dispatch     = useDispatch();
-  const testDetails  = useSelector((state) => state.TestDetails.TestDetails);
-  const TestLocation = useSelector((state) => state.TestLocation);
-
-  const getTestDetails = async () => {
-    dispatch(setLoading(true))
-    const response = await axios.post(`${API_URL.TEST_DETAILS}/${TestId}`,{
-      TestLocation : TestLocation != undefined ?  TestLocation?.TestLocation : 'bangalore'
-    }).catch((err) => console.log(err));
-    if (response.data.status) {
-      dispatch(setLoading(false))
-      dispatch(setTestDetails(response.data.data));
-    } else {
-      navigate('/')
-    }
-  }; 
+export default function TestDetails() {
+  const { TestId } = useParams();
+  const location   = useLocation();
+  const { mutate, isLoading, data, isSuccess } = useTestView()
   useEffect(() => {
-    if (TestId && TestId !== "") getTestDetails();
-    dispatch(removeTestDetails()); 
     window.scroll(0, 0)
+    mutate(TestId)
   }, [TestId]);
 
-  const addTestToCart = (testDetails) => {
-    AddToCartList(testDetails)
-    dispatch(setTestCartList(JSON.parse(localStorage.getItem('CartTestList'))));
-  };
-
-  return (
-    <>
-      {testDetails !== undefined ? (
-        <>
-          <section className="comon-testdetail-banner resp-rem-mrgn">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="bnr-txt text-left">
-                    <ul>
-                      <li>
-                        <Link to="/">Home</Link>
-                      </li>
-                      <li> / </li>
-                      <li>
-                        <Link to="/for-patient">Book a Test</Link>
-                      </li>
-                      <li> / </li>
-                      <li>
-                        <Link to="/">{testDetails?.test?.TestName}</Link>
-                      </li>
-                    </ul>
-                    <h1>
-                      Book Lab Tests <span>Anywhere - Anytime</span>
-                    </h1>
-                  </div>
-                </div>
+  if (isLoading)  return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight:'100vh' }}>
+      <Dna
+        visible={true}
+        height="120"
+        width="120"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
+    </div>
+  )
+  if (isSuccess) return (
+    <div>
+      <section className="comon-testdetail-banner">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="bnr-txt text-left">
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li> / </li>
+                  <li>
+                    <Link to="/for-patient">Book a Test</Link>
+                  </li>
+                  <li> / </li>
+                  <li>
+                    <Link to="/">{data.data?.test?.TestName}</Link>
+                  </li>
+                </ul>
+                <h1>
+                  Book Lab Tests <span>Anywhere - Anytime</span>
+                </h1>
               </div>
             </div>
-          </section>
-          <section className="testing-details text-left border-bottom">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-7">
-                  <div className="commentestng-heads">
-                    <h2>
-                      <span>Test ID - {testDetails.test.TestId}</span>
-                      {testDetails.test.TestName}
-                    </h2>
-                  </div>
-                  <div className="testng-details">
+          </div>
+        </div>
+      </section>
+      <section className="testing-details text-left border-bottom">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7">
+              <div className="commentestng-heads">
+                <h2>
+                  <span>Test ID - {data.data.test.TestId}</span>
+                  {data.data.test.TestName}
+                </h2>
+              </div>
+              <div className="testng-details">
+                <ul>
+                  {
+                    data.data.test.BasicInstruction !== ' ' ?
+                      <li>
+                        <img src={require('../../assets/images/testing-icon-1.png')} alt="call" className="img-fluid" />
+                        <span>Basic Instruction </span>
+                        {data.data.test.BasicInstruction}
+                      </li> : ""
+                  }
+                  <li>
+                    <img src={require('../../assets/images/testing-icon-2.png')} alt="call" className="img-fluid" />
+                    <span>Test Shedule</span>
+                    {data.data.test.TestSchedule}
+                  </li>
+                  <li className="colap-seing">
+                    <img src={require('../../assets/images/testing-icon-3.png')} alt="call" className="img-fluid" />
+                    <h5>
+                      <span className="strke ml-2">
+                      </span>&#8377; {data.data.test.TestPrice}
+                    </h5>
+                  </li>
+                  <li>
+                    <img src={require('../../assets/images/testing-icon-4.png')} alt="call" className="img-fluid" />
+                    This test is
+                    {data.data.test.HomeCollection === "N" ? "Not" : null}
+                    eligible for Home Collection.
+                  </li>
+                  <li>
+                    <img src={require('../../assets/images/testing-icon-5.png')} alt="call" className="img-fluid" />
+                    <span>Home Collection</span>
+                    {data.data.test.HomeCollection === "Y" ? "Included" : "Not Included"}
+                  </li>
+                </ul>
+              </div>
+              <div className="case">
+                <p className="d-flex">
+                  <CartBtn testData={data.data.test} />
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              {
+                data.data.sub_test.length !== 0 ?
+                  <div className="availab-lity">
+                    <h4>Available Sub Tests </h4>
                     <ul>
                       {
-                        testDetails.test.BasicInstruction !== ' ' ?
-                          <li>
-                            <img src={testIcon1} alt="call" className="img-fluid" />
-                            <span>Basic Instruction </span>
-                            {testDetails.test.BasicInstruction}
-                          </li> : ""
+                        data.data.sub_test.map((subTest, i) => (
+                          <li key={i}>{subTest.SubTestName}</li>
+                        ))
                       }
-                      <li>
-                        <img src={testIcon2} alt="call" className="img-fluid" />
-                        <span>Test Shedule</span>
-                        {testDetails.test.TestSchedule}
-                      </li>
-                      <li className="colap-seing">
-                        <img src={testIcon3} alt="call" className="img-fluid" />
-                        <h5>
-                        <span className="strke ml-2">
-                          </span>&#8377; {testDetails.test.TestPrice}
-                          {/* <span className="flag-option">
-                            <p>10 % off</p>
-                          </span> */}
-                        </h5>
-                      </li>
-                      <li>
-                        <img src={testIcon4} alt="call" className="img-fluid" />
-                        This test is
-                        {testDetails.test.HomeCollection === "N" ? "Not" : null}
-                        eligible for Home Collection.
-                      </li>
-                      <li>
-                        <img src={testIcon5} alt="call" className="img-fluid" />
-                        <span>Home Collection</span>
-                        { testDetails.test.HomeCollection === "Y" ? "Included" : "Not Included" }
-                      </li>
                     </ul>
                   </div>
-                  <div className="case">
-                    <p className="d-flex">
-                      <CartBtn getData={getTestDetails} testData={testDetails.test} />
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-5">
-                  {
-                    testDetails.sub_test.length !== 0 ?
-                      <div className="availab-lity">
-                        <h4>Available Sub Tests </h4>
-                        <ul>
-                          {
-                            testDetails.sub_test.map((subTest,i) => (
-                              <li key={i}>{subTest.SubTestName}</li>
-                            ))
-                          }
-                        </ul>
-                      </div>
-                      : null
-                  }
+                  : null
+              }
 
-                </div>
-              </div>
-              {
-                testDetails.test.SpecialInstructionsForPatient !== "" || testDetails.test.SpecialInstructionsForCorporates !== "" || testDetails.test.SpecialInstructionsForDoctors !== "" ?
-                  <div className="special-instruction">
-                    
-                    <h3>Special Instructions</h3>
-                    <ul className="nav nav-tabs" id="myTab" role="tablist">
-                      {
-                        testDetails.test.SpecialInstructionsForPatient !== "" ?
-                          <li className="nav-item" role="presentation">
-                            <a
-                              className="nav-link active"
-                              id="home-tab"
-                              data-toggle="tab"
-                              href="#home"
-                              role="tab"
-                              aria-controls="home"
-                              aria-selected="true"
-                            >
-                              For Patient
-                            </a>
-                          </li>
-                          : ""
-                      }
-                      {
-                        testDetails.test.SpecialInstructionsForCorporates !== "" ?
-                          <li className="nav-item" role="presentation">
-                            <a
-                              className="nav-link"
-                              id="profile-tab"
-                              data-toggle="tab"
-                              href="#profile"
-                              role="tab"
-                              aria-controls="profile"
-                              aria-selected="false"
-                            >
-                              For Corporates
-                            </a>
-                          </li>
-                          : ""
-                      }
-                      {
-                        testDetails.test.SpecialInstructionsForDoctors !== "" ?
-                          <li className="nav-item" role="presentation">
-                            <a
-                              className="nav-link"
-                              id="contact-tab"
-                              data-toggle="tab"
-                              href="#contact"
-                              role="tab"
-                              aria-controls="contact"
-                              aria-selected="false"
-                            >
-                              For Doctors
-                            </a>
-                          </li>
-                          : ""
-                      }
-                    </ul>
-                    <div className="tab-content" id="myTabContent">
-                      <div
-                        className="tab-pane fade show active"
-                        id="home"
-                        role="tabpanel"
-                        aria-labelledby="home-tab"
-                      >
-                        <div className="detilos-expl">
-                          <p>{testDetails.test.SpecialInstructionsForPatient}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="tab-pane fade"
-                        id="profile"
-                        role="tabpanel"
-                        aria-labelledby="profile-tab"
-                      >
-                        <div className="detilos-expl">
-                          <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="tab-pane fade"
-                        id="contact"
-                        role="tabpanel"
-                        aria-labelledby="contact-tab"
-                      >
-                         <div className="detilos-expl">
-                          <p>{testDetails.test.SpecialInstructionsForCorporates}</p>
-                        </div>
-                      </div>
+            </div>
+          </div>
+          {
+            data.data.test.SpecialInstructionsForPatient !== "" || data.data.test.SpecialInstructionsForCorporates !== "" || data.data.test.SpecialInstructionsForDoctors !== "" ?
+              <div className="special-instruction">
+
+                <h3>Special Instructions</h3>
+                <ul className="nav nav-tabs" id="myTab" role="tablist">
+                  {
+                    data.data.test.SpecialInstructionsForPatient !== "" ?
+                      <li className="nav-item" role="presentation">
+                        <a
+                          className="nav-link active"
+                          id="home-tab"
+                          data-toggle="tab"
+                          href="#home"
+                          role="tab"
+                          aria-controls="home"
+                          aria-selected="true"
+                        >
+                          For Patient
+                        </a>
+                      </li>
+                      : ""
+                  }
+                  {
+                    data.data.test.SpecialInstructionsForCorporates !== "" ?
+                      <li className="nav-item" role="presentation">
+                        <a
+                          className="nav-link"
+                          id="profile-tab"
+                          data-toggle="tab"
+                          href="#profile"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                        >
+                          For Corporates
+                        </a>
+                      </li>
+                      : ""
+                  }
+                  {
+                    data.data.test.SpecialInstructionsForDoctors !== "" ?
+                      <li className="nav-item" role="presentation">
+                        <a
+                          className="nav-link"
+                          id="contact-tab"
+                          data-toggle="tab"
+                          href="#contact"
+                          role="tab"
+                          aria-controls="contact"
+                          aria-selected="false"
+                        >
+                          For Doctors
+                        </a>
+                      </li>
+                      : ""
+                  }
+                </ul>
+                <div className="tab-content" id="myTabContent">
+                  <div
+                    className="tab-pane fade show active"
+                    id="home"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                  >
+                    <div className="detilos-expl">
+                      <p>{data.data.test.SpecialInstructionsForPatient}</p>
                     </div>
                   </div>
-                : null
-              }
-            </div>
-          </section>
-          {
-            location.pathname.split('/')[1] === 'package' ?
-              <PackagesSliders  title="Other related" subTitle="HEALTH Package"/>
-            :
-              <BookedTestSliders title="Other related" subTitle="Tests" />
+                  <div
+                    className="tab-pane fade"
+                    id="profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                  >
+                    <div className="detilos-expl">
+                      <p>{data.data.test.SpecialInstructionsForCorporates}</p>
+                    </div>
+                  </div>
+                  <div
+                    className="tab-pane fade"
+                    id="contact"
+                    role="tabpanel"
+                    aria-labelledby="contact-tab"
+                  >
+                    <div className="detilos-expl">
+                      <p>{data.data.test.SpecialInstructionsForCorporates}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              : null
           }
-        </>
-      ) : (
-        <div style={{ minHeight: "100vh" }}>  </div>
-      )}
-    </>
-  );
+        </div>
+      </section>
+      {
+        location.pathname.split('/')[1] === 'package' ?
+          <PackagesSliders title="Other related" subTitle="HEALTH Package" />
+          :
+          <BookedTestSliders title="Other related" subTitle="Tests" />
+      }
+    </div>
+  )
 }

@@ -21,7 +21,7 @@ const getCurrentYear = () => {
 };
 
 export default function Footer() {
-  const [Email, setEmail] = useState(null);
+  const [Email, setEmail] = useState("");
   const dispatch = useDispatch()
   const [LabLocation, setLabLocation] = useState(null);
   const TestLocation = useSelector((state) => state.TestLocation);
