@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import bannerimage from "../../assets/images/inner-banner-9.webp";
+import bannerimage from "../../assets/images/inner-banner-4.webp";
 import anandhome from "../../assets/images/anandathome.jpg"; 
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../Redux/Constant/ApiRoute";

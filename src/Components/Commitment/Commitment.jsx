@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import bannerimage from "../../assets/images/inner-banner-4.webp"; 
+import bannerimage from "../../assets/images/inner-banner-18.webp"; 
 import commi1 from "../../assets/images/comite-1.jpg"; 
 import commi2 from "../../assets/images/comite-2.jpg"; 
 import commi3 from "../../assets/images/comite-3.jpg"; 
