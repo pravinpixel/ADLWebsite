@@ -8,7 +8,7 @@ import { apiMaster } from '../services/apiMaster';
 const persistedReducer = persistReducer({
     key: 'root',
     storage,
-    whitelist: ['navigation']
+    blacklist: ['navigation']
 }, reducers)
 
 export const Store = configureStore({

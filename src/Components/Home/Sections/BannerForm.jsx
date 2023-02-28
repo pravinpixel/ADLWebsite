@@ -11,7 +11,6 @@ import { useState } from 'react';
 export default function BannerForm() {
     const dispatch = useDispatch();
     const [testOption, setTestOption] = useState([])
-    const TestLocation = useSelector((state) => state.TestLocation);
     const validFileExtensions = { image: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'webp', 'pdf', 'xls'] };
     function isValidFileType(fileName, fileType) {
         return fileName && validFileExtensions[fileType].indexOf(fileName.split('.').pop()) > -1;
@@ -26,7 +25,6 @@ export default function BannerForm() {
                 comments: Yup.string(),
                 reportFile: Yup.mixed().required()
                     .test("is-valid-type", "Not a valid image type", value => isValidFileType(value && value[0]?.name.toLowerCase(), "image"))
-                // .test("is-valid-size", "Max allowed size is 100KB", value => value && value[0]?.size <= MAX_FILE_SIZE)
             })
         )
     })

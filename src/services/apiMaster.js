@@ -32,6 +32,11 @@ export const apiMaster = createApi({
         cities: builder.query  ({
             query: () => `/api/get-city-master`,
         }),
+        news: builder.query  ({
+            query() {
+                return { url:`/api/newsAndEvents`, method: 'POST', }
+            },
+        }),
     })
 })
 
@@ -41,5 +46,6 @@ export const {
     useConditionsQuery,
     useTestPackageSliderQuery,
     useSetTestPackageSliderMutation,
-    useCitiesQuery
+    useCitiesQuery,
+    useNewsQuery
 } = apiMaster
