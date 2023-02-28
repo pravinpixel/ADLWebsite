@@ -29,6 +29,9 @@ export const apiMaster = createApi({
                 }
             }
         }),
+        cities: builder.query  ({
+            query: () => `/api/get-city-master`,
+        }),
     })
 })
 
@@ -37,5 +40,6 @@ export const {
     useBannersQuery,
     useConditionsQuery,
     useTestPackageSliderQuery,
-    useSetTestPackageSliderMutation
+    useSetTestPackageSliderMutation,
+    useCitiesQuery
 } = apiMaster

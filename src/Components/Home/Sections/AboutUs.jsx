@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Sliders from 'react-slick'
 import videoBg from '../../../assets/images/video-bg.jpg'
 import playButton from '../../../assets/images/play-icon.png'
@@ -6,7 +6,6 @@ import { Modal } from 'react-bootstrap';
 
 export default function AboutUs() {
   const [show, setShow] = useState(false);
-
   var settings = {
     slidesToScroll: 1,
     infinite: true,
