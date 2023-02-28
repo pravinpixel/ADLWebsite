@@ -1,7 +1,8 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
-import { useConditionsApiQuery } from '../../../services/conditionsApi';
+import { useConditionsQuery } from '../../../services/apiMaster';
 
 export default function ConditionsSliders() {
   const Navigate = useNavigate()
@@ -41,7 +42,19 @@ export default function ConditionsSliders() {
       },
     ]
   };
-  const { data, isLoading, isSuccess } = useConditionsApiQuery()
+  const { data, isLoading, isSuccess } = useConditionsQuery()
+  if (isLoading) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
+      <Dna
+        visible={true}
+        height="120"
+        width="120"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
+    </div>
+  )
   if (isSuccess) return (
     <section className="condition-packages">
       <div className="container">

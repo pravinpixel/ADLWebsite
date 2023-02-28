@@ -1,14 +1,12 @@
-import axios from 'axios'
-import { useMemo } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { useDispatch, useSelector } from 'react-redux'
+import { Dna } from 'react-loader-spinner'
 import { useNavigate } from 'react-router'
 import Sliders from 'react-slick'
-import {useOrgans} from '../../../Hooks'
+import { useOrgansQuery } from '../../../services/apiMaster'
 
 export default function CheckupsSliders() {
     const Navigate = useNavigate()
-    const Organs = useOrgans()
+    const { data, isLoading, isSuccess } = useOrgansQuery()
     const settings = {
         slidesToScroll: 1,
         infinite: true,
@@ -46,7 +44,18 @@ export default function CheckupsSliders() {
             },
         ]
     };
-    if (!Organs.isLoading) return (
+    if (isLoading) return (
+        <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
+            <Dna
+                visible={true}
+                height="120"
+                width="120"
+                ariaLabel="dna-loading"
+                wrapperClass="dna-wrapper"
+            />
+        </div>
+    )
+    if (isSuccess) return (
         <section className="helth-chkup">
             <div className="container">
                 <div className="row">
@@ -57,9 +66,9 @@ export default function CheckupsSliders() {
                         <br />
                         <Sliders className="body-parts text-center"  {...settings}>
                             {
-                                Organs.data.map((item, i) => (
+                                data.map((item, i) => (
                                     <div key={i} className="parts-seq" onClick={() => Navigate(`/for-patient?OrganName=${item.name}`)}>
-                                        <LazyLoadImage src={item.image} width="70px"  effect="blur" className="img-fluid mb-2"/>
+                                        <LazyLoadImage src={item.image} width="70px"  height="70px" effect="blur" className="img-fluid mb-2" />
                                         <span><b>{item.name}</b></span>
                                     </div>
                                 ))

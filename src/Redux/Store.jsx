@@ -3,9 +3,7 @@ import reducers from "./Reducers/index";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
-import { bannerApi } from '../services/bannerApi';
-import { conditionsApi } from '../services/conditionsApi';
-import { topBookedApi } from '../services/topBookedApi';
+import { apiMaster } from '../services/apiMaster';
 
 const persistedReducer = persistReducer({
     key: 'root',
@@ -19,9 +17,7 @@ export const Store = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false
     })
-    .concat(bannerApi.middleware)
-    .concat(conditionsApi.middleware)
-    .concat(topBookedApi.middleware)
+    .concat(apiMaster.middleware)
     .concat(thunk)
 });
 

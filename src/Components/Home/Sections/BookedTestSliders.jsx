@@ -1,10 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import Sliders from "react-slick";
 import CartBtn from "../../Containers/CartBtn";
-import { useGetTopBookedApiQuery, useUpdateTopBookedApiMutation } from "../../../services/topBookedApi";
-import { useMemo } from "react";
 import { Dna } from "react-loader-spinner";
-import { useSelector } from "react-redux";
+import { useTestPackageSliderQuery } from "../../../services/apiMaster";
 export default function BookedTestSliders({ title, subTitle }) {
   var settings = {
     slidesToScroll: 1,
@@ -48,13 +46,8 @@ export default function BookedTestSliders({ title, subTitle }) {
       },
     ],
   };
-  const navigate = useNavigate()
-  const location = useSelector((state) => state.TestLocation.TestLocation)
-  const [topBookedApi] = useUpdateTopBookedApiMutation()
-  const { data, isLoading, isSuccess } = useGetTopBookedApiQuery()
-  useMemo(() => {
-    topBookedApi({ IsPackage: "No", TestLocation: "bangalore" })
-  }, [])
+  const navigate                       = useNavigate()
+  const { data, isLoading, isSuccess } = useTestPackageSliderQuery()
   if (isLoading) return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
       <Dna
