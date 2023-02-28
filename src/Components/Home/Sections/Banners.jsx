@@ -1,11 +1,10 @@
 import { assets } from '../../../../src/Helpers'
 import BannerForm from './BannerForm'
-import { useBanner } from '../../../Hooks'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Dna } from 'react-loader-spinner'
-
+import { useBannerApiQuery } from '../../../services/bannerApi'
 const Banners = () => {
-    const { data, isLoading, isSuccess } = useBanner()
+    const { data, isLoading, isSuccess } = useBannerApiQuery()
     if (isLoading) return (
         <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
             <Dna
@@ -48,7 +47,7 @@ const Banners = () => {
             </div>
 
             {/* ========= Banner Form ========= */}
-            <BannerForm />
+            <BannerForm /> 
             {/* ========= End : Banner Form ========= */}
         </div>
     )
