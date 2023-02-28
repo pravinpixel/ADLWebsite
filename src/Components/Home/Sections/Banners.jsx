@@ -33,10 +33,10 @@ const Banners = () => {
                             <div key={index} className={index === 0 ? "carousel-item active" : "carousel-item"}>
                                 <div className="row">
                                     <a className="col-sm-12 col-md-12 col-lg-12 p-0" href={banner.Url} target="_blank">
-                                        {/* <img className="w-100" src={`${assets(window.innerWidth > 980 ? banner.DesktopImage : banner.MobileImage)}`} /> */}
                                         <LazyLoadImage
                                             src={`${assets(window.innerWidth > 980 ? banner.DesktopImage : banner.MobileImage)}`}
                                             width={'100%'}
+                                            height={418}
                                         />
                                     </a>
                                 </div>

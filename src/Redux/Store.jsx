@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
 import { bannerApi } from '../services/bannerApi';
+import { conditionsApi } from '../services/conditionsApi';
 
 const persistedReducer = persistReducer({
     key: 'root',
@@ -16,7 +17,10 @@ export const Store = configureStore({
     devTools: process.env.NODE_ENV !== 'production',
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false
-    }).concat(bannerApi.middleware).concat(thunk),
+    })
+    .concat(bannerApi.middleware)
+    .concat(conditionsApi.middleware)
+    .concat(thunk),
 });
 
 export default Store;

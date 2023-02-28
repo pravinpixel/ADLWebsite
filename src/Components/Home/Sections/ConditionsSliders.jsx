@@ -1,7 +1,7 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate } from 'react-router-dom';
 import Sliders from 'react-slick'
-import { useConditions } from '../../../Hooks';
+import { useConditionsApiQuery } from '../../../services/conditionsApi';
 
 export default function ConditionsSliders() {
   const Navigate = useNavigate()
@@ -41,8 +41,8 @@ export default function ConditionsSliders() {
       },
     ]
   };
-  const conditions = useConditions()
-  if (!conditions.isLoading) return (
+  const { data, isLoading, isSuccess } = useConditionsApiQuery()
+  if (isSuccess) return (
     <section className="condition-packages">
       <div className="container">
         <div className="row">
@@ -53,9 +53,9 @@ export default function ConditionsSliders() {
             <br />
             <Sliders {...settings} className="condition-lsts text-center">
               {
-                conditions.data.map((item, i) => (
+                data.map((item, i) => (
                   <div key={i} className="tes-cond">
-                    <LazyLoadImage src={item.image} width="100px"  effect="blur" className="img-fluid"/>
+                    <LazyLoadImage src={item.image} width="100px" effect="blur" className="img-fluid" />
                     <h4 className='pr-4'>{item.name}</h4>
                     <button onClick={() => Navigate(`/for-patient?HealthCondition=${item.name}`)}><i className="fa fa-plus"></i></button>
                   </div>

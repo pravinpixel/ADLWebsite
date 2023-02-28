@@ -4,24 +4,25 @@ import { TestBookedReducer, addToCardReducer, TestCartReducer, TestDetailReducer
 import { AuthReducer } from "./AuthReducer";
 import { LoaderReducer } from "./LoaderReducer";
 import { bannerApi } from "../../services/bannerApi";
-
+import { conditionsApi } from "../../services/conditionsApi";
 
 const reducers = combineReducers({
-    [bannerApi.reducerPath]: bannerApi.reducer,
-    Banners                : BannerReducer,
-    TopBookedTests         : TestBookedReducer,
-    TestCartList           : TestCartReducer,
-    TestDetails            : TestDetailReducer,
-    TestLocation           : setTestLocation,
-    TestList               : TestListReducer,
-    filters                : setTestFilters,
-    packageFilters         : setPackageFilters,
-    addToCardList          : addToCardReducer,
-    removeFromCardList     : removeFromCardReducer,
-    authUser               : AuthReducer,
-    Loader                 : LoaderReducer,
-    organs                 : setOrgans,
-    conditions             : setConditions,
+    [bannerApi.reducerPath]    : bannerApi.reducer,
+    [conditionsApi.reducerPath]: conditionsApi.reducer,
+    Banners                    : BannerReducer,
+    TopBookedTests             : TestBookedReducer,
+    TestCartList               : TestCartReducer,
+    TestDetails                : TestDetailReducer,
+    TestLocation               : setTestLocation,
+    TestList                   : TestListReducer,
+    filters                    : setTestFilters,
+    packageFilters             : setPackageFilters,
+    addToCardList              : addToCardReducer,
+    removeFromCardList         : removeFromCardReducer,
+    authUser                   : AuthReducer,
+    Loader                     : LoaderReducer,
+    organs                     : setOrgans,
+    conditions                 : setConditions,
 })
 
 export default reducers
