@@ -128,7 +128,6 @@ export default function TestDetails() {
           {
             data.data.test.SpecialInstructionsForPatient !== "" || data.data.test.SpecialInstructionsForCorporates !== "" || data.data.test.SpecialInstructionsForDoctors !== "" ?
               <div className="special-instruction">
-
                 <h3>Special Instructions</h3>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   {
