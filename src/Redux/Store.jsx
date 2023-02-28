@@ -5,6 +5,7 @@ import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
 import { bannerApi } from '../services/bannerApi';
 import { conditionsApi } from '../services/conditionsApi';
+import { topBookedApi } from '../services/topBookedApi';
 
 const persistedReducer = persistReducer({
     key: 'root',
@@ -20,7 +21,8 @@ export const Store = configureStore({
     })
     .concat(bannerApi.middleware)
     .concat(conditionsApi.middleware)
-    .concat(thunk),
+    .concat(topBookedApi.middleware)
+    .concat(thunk)
 });
 
 export default Store;

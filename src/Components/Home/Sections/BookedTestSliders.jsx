@@ -1,7 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import Sliders from "react-slick";
 import CartBtn from "../../Containers/CartBtn";
-import { useTopTests } from '../../../Hooks'
+import { useGetTopBookedApiQuery, useUpdateTopBookedApiMutation } from "../../../services/topBookedApi";
+import { useMemo } from "react";
+import { Dna } from "react-loader-spinner";
+import { useSelector } from "react-redux";
 export default function BookedTestSliders({ title, subTitle }) {
   var settings = {
     slidesToScroll: 1,
@@ -46,8 +49,25 @@ export default function BookedTestSliders({ title, subTitle }) {
     ],
   };
   const navigate = useNavigate()
-  const topTests = useTopTests()
-  if (!topTests.isLoading) return (
+  const location = useSelector((state) => state.TestLocation.TestLocation)
+  const [topBookedApi] = useUpdateTopBookedApiMutation()
+  const { data, isLoading, isSuccess } = useGetTopBookedApiQuery()
+  useMemo(() => {
+    topBookedApi({ IsPackage: "No", TestLocation: "bangalore" })
+  }, [])
+  if (isLoading) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
+      <Dna
+        visible={true}
+        height="120"
+        width="120"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
+    </div>
+  )
+  if (isSuccess) return (
     <section className="diagnostics text-left">
       <div className="container">
         <div className="row">
@@ -57,9 +77,9 @@ export default function BookedTestSliders({ title, subTitle }) {
                 <span>{title} </span> {subTitle}
               </h2>
             </div>
-            {topTests.data.data !== null ? (
+            {data.data !== null ? (
               <Sliders {...settings} className="topbooked-cases">
-                {topTests.data.data.map((test, index) => (
+                {data.data.map((test, index) => (
                   <div className="case p-3" key={index}>
                     <div className="link" onClick={() => navigate(`/test/${test.TestSlug}`)}>
                       <h3 className="text-capitalize">
@@ -82,8 +102,6 @@ export default function BookedTestSliders({ title, subTitle }) {
                     </p>
                   </div>
                 ))}
-
-
               </Sliders>
             ) : null}
           </div>

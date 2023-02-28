@@ -5,10 +5,12 @@ import { AuthReducer } from "./AuthReducer";
 import { LoaderReducer } from "./LoaderReducer";
 import { bannerApi } from "../../services/bannerApi";
 import { conditionsApi } from "../../services/conditionsApi";
+import { topBookedApi } from "../../services/topBookedApi";
 
 const reducers = combineReducers({
     [bannerApi.reducerPath]    : bannerApi.reducer,
     [conditionsApi.reducerPath]: conditionsApi.reducer,
+    [topBookedApi.reducerPath]: topBookedApi.reducer,
     Banners                    : BannerReducer,
     TopBookedTests             : TestBookedReducer,
     TestCartList               : TestCartReducer,

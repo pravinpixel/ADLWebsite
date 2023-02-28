@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
+import { Dna } from 'react-loader-spinner';
+import { useSelector } from 'react-redux';
 import Sliders from 'react-slick'
-import { useTopPackages } from '../../../Hooks';
+import { useGetTopBookedApiQuery, useUpdateTopBookedApiMutation } from '../../../services/topBookedApi';
 import PackageCard from '../../Containers/PackageCardComponent';
 export default function PackagesSliders({ title, subTitle }) {
   var settings = {
@@ -40,8 +43,25 @@ export default function PackagesSliders({ title, subTitle }) {
       },
     ]
   };
-  const Packages = useTopPackages();
-  if (!Packages.isLoading) return (
+  const location = useSelector((state) => state.TestLocation.TestLocation)
+  const [topBookedApi] = useUpdateTopBookedApiMutation()
+  const { data, isLoading, isSuccess } = useGetTopBookedApiQuery()
+  useMemo(() => {
+    topBookedApi({ IsPackage: "Yes", TestLocation: location })
+  }, [])
+  if (isLoading) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
+      <Dna
+        visible={true}
+        height="120"
+        width="120"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
+    </div>
+  )
+  if (isSuccess) return (
     <section className="popular-packages">
       <div className="container">
         <div className="row">
@@ -50,7 +70,7 @@ export default function PackagesSliders({ title, subTitle }) {
               <h2><span>{title}</span>{subTitle}</h2>
             </div>
             <Sliders {...settings} className="popular-lists">
-              {Packages.data.data.map((item, index) => <PackageCard key={index} data={item} />)}
+              {data.data.map((item, index) => <PackageCard key={index} data={item} />)}
             </Sliders>
           </div>
         </div>
