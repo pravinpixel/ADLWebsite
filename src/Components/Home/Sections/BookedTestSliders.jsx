@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Sliders from "react-slick";
 import CartBtn from "../../Containers/CartBtn";
 import { Dna } from "react-loader-spinner";
-import { useTestPackageSliderQuery } from "../../../services/apiMaster";
+import { useTestSliderQuery } from "../../../services/apiMaster";
+import { useSelector } from "react-redux";
 export default function BookedTestSliders({ title, subTitle }) {
   var settings = {
     slidesToScroll: 1,
@@ -46,8 +47,12 @@ export default function BookedTestSliders({ title, subTitle }) {
       },
     ],
   };
-  const navigate                       = useNavigate()
-  const { data, isLoading, isSuccess } = useTestPackageSliderQuery()
+  const navigate  = useNavigate()
+  const location = useSelector((state) => state.TestLocation.TestLocation)
+  const { data, isLoading, isSuccess } = useTestSliderQuery({
+    location : location,
+    isPackage: 'No'
+  })
   if (isLoading) return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
       <Dna

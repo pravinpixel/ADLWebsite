@@ -3,36 +3,25 @@ export const apiMaster = createApi({
     reducerPath: 'apiMaster',
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     endpoints: (builder) => ({
-        organs: builder.query  ({
+        organs: builder.query({
             query: () => '/api/get-organs'
         }),
-        banners: builder.query  ({
+        banners: builder.query({
             query: () => `/public/api/banners`,
         }),
-        conditions: builder.query  ({
+        conditions: builder.query({
             query: () => `/api/get-conditions`,
         }),
-        testPackageSlider: builder.query({
-            query() {
-                return {
-                    url: '/public/api/topBookedTest',
-                    method: 'POST',
-                }
-            }
+        testSlider: builder.query({
+            query: ({ location, isPackage }) => `/public/api/topBookedTest/${location}/${isPackage}`,
         }),
-        setTestPackageSlider: builder.mutation({
-            query(payload) {
-                return {
-                    url: '/public/api/topBookedTest',
-                    method: 'POST',
-                    body: payload,
-                }
-            }
+        packageSlider: builder.query({
+            query: ({ location, isPackage }) => `/public/api/topBookedTest/${location}/${isPackage}`,
         }),
-        cities: builder.query  ({
+        cities: builder.query({
             query: () => `/api/get-city-master`,
         }),
-        news: builder.query  ({
+        news: builder.query({
             query() {
                 return { url:`/api/newsAndEvents`, method: 'POST', }
             },
@@ -44,8 +33,8 @@ export const {
     useOrgansQuery,
     useBannersQuery,
     useConditionsQuery,
-    useTestPackageSliderQuery,
-    useSetTestPackageSliderMutation,
+    useTestSliderQuery,
+    usePackageSliderQuery,
     useCitiesQuery,
     useNewsQuery
 } = apiMaster

@@ -1,8 +1,7 @@
-import { useMemo } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { useSelector } from 'react-redux';
 import Sliders from 'react-slick'
-import { useSetTestPackageSliderMutation, useTestPackageSliderQuery } from '../../../services/apiMaster';
+import {  usePackageSliderQuery } from '../../../services/apiMaster';
 import PackageCard from '../../Containers/PackageCardComponent';
 export default function PackagesSliders({ title, subTitle }) {
   var settings = {
@@ -44,11 +43,10 @@ export default function PackagesSliders({ title, subTitle }) {
     ]
   };
   const location = useSelector((state) => state.TestLocation.TestLocation)
-  const [topBookedApi]                 = useSetTestPackageSliderMutation()
-  const { data, isLoading, isSuccess } = useTestPackageSliderQuery()
-  useMemo(() => {
-    topBookedApi({ IsPackage: "Yes", TestLocation: location })
-  }, [])
+  const { data, isLoading, isSuccess } = usePackageSliderQuery({
+    location : location,
+    isPackage: 'Yes'
+  }) 
   if (isLoading) return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '40vh' }}>
       <Dna
