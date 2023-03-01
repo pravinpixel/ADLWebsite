@@ -1,4 +1,4 @@
-import { Fragment, useEffect,useRef } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from './Components/Includes/Header'
 import Footer from './Components/Includes/Footer'
@@ -42,7 +42,7 @@ import Contact from './Components/Contact/Contact'
 import HeadOffice from './Components/HeadOffice/HeadOffice'
 import AnandLabFranchise from './Components/AnandLabFranchise/AnandLabFranchise'
 import CovidtestingforEmployees from './Components/CovidtestingforEmployees/CovidtestingforEmployees'
-import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees' 
+import HealthCheckupforEmployees from './Components/HealthCheckupforEmployees/HealthCheckupforEmployees'
 import Careers from './Components/Careers/Careers'
 import Career from './Components/Career/Career'
 import MyProfile from './Components/MyProfile/MyProfile'
@@ -59,20 +59,17 @@ import ForgotPassword from './Components/Containers/ForgotPassword'
 import ResetPassword from './Components/Containers/ResetPassword'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import FloatingForm from './Components/FloatingForm'
+import AuthRoutes from './Components/AuthRoutes'
 
 export default function App() {
   const dispatch     = useDispatch();
   const ref          = useRef();
   const loader       = useSelector((state) => state.Loader);
   var   TestLocation = localStorage.getItem('TestLocation')
-  var   AuthUser     = localStorage.getItem('user')
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" })
-  },[])
-  useEffect(() => {
-    if (AuthUser !== null) {
-      dispatch(setAuthUser(JSON.parse(localStorage.getItem('user'))));
-    }
+  }, [])
+  useEffect(() => { 
     if (TestLocation === null) {
       localStorage.setItem('TestLocation', 'bangalore')
       dispatch(setTestLocation('bangalore'));
@@ -87,17 +84,11 @@ export default function App() {
         {loader.status === true ? <Loader /> : null}
         <Header />
         <Routes>
-          {
-            AuthUser !== null
-              ?
-                <>
-                  <Route path='/checkout' exact element={<GuestCheckOut />} />
-                  <Route path="/my-account" element={<MyProfile />} />
-                  <Route path='/thank-you' element={<ThankYou />} />
-                </>
-              :
-              <Route path='*' element={<Login />} />
-          }
+          <Route element={<AuthRoutes/>}>
+            <Route path='/checkout' exact element={<GuestCheckOut />} />
+            <Route path="/my-account" element={<MyProfile />} />
+            <Route path='/thank-you' element={<ThankYou />} />
+          </Route>
           <Route path='/my-cart' element={<CartList />} />
           <Route path='/reset-password/:customer_id' element={<ResetPassword />} />
           <Route path='/for-patient' element={<Test />} />
@@ -147,7 +138,7 @@ export default function App() {
         </Routes>
         <Footer />
         <AlertBox />
-        <FloatingForm/>
+        <FloatingForm />
       </Fragment>
     </QueryClientProvider>
   )
