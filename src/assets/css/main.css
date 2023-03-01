@@ -5783,15 +5783,27 @@ input[type="range"]::-moz-range-thumb {
     margin-bottom: 0px;
     line-height: 38px;
   }
-  .womensdayawrapsec span:first-child{width:120px;margin-right:10px;position:absolute;bottom:0;left:-40px;}
-  .womensdayawrapsec span:nth-child(2){width:70%;margin-left:75px;}
+  .womensdayawrapsec span:first-child {
+    width: 100px;
+    margin-right: 10px;
+    position: absolute;
+    bottom: 0;
+    left: -60px;
+  }
+  .womensdayawrapsec span:nth-child(2) {
+    width: 85%;
+    margin-left:30px;
+  }
+  .womensdayawrapsec span p{font-size: 14px;line-height: 18px;}
+  .womendaycontent .green-bg{border-radius: 0px;}
+  .womendaycontent .green-bg h4{font-size: 22px;text-align: center;}
   .womensdayawrapsec span p{margin-bottom:0;color:#000;}
   .womensdayawrapsec img{display: block;max-width: 100%;height: auto;}
   .womensdayawrapsec{position:relative;background:#ff9a1f;padding:10px;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);cursor:pointer;color:#000;}
   .plusicon{position:absolute;right:20px;top:37%;width:26px;height:26px;background-repeat:no-repeat;cursor:pointer;transition:all 0.5s ease-in-out;}
   .womensdayawrap{position:fixed;right:0;bottom:0;z-index:99999;width:380px;}
   .womendaycontent{background:#fff;height:0;transition:all 0.5s ease-in-out;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);padding:0px;}
-  .womendaycontent.conthgt{height:360px;transition:all 0.5s ease-in-out;overflow:auto;padding:0px;}
+  .womendaycontent.conthgt{height:360px;transition:all 0.5s ease-in-out;overflow:inherit;padding:0px;}
   .womendaycontent p{margin-bottom:0;padding:20px;font-size:15px;line-height:23px;padding-left:40px;} 
   .womendaycontent input{
     border: none;

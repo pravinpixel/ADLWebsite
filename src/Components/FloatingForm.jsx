@@ -36,7 +36,7 @@ function FloatingForm() {
         <div className="womensdayawrap">
             <div className={open == true ? 'womendaycontent ' : 'womendaycontent conthgt'}>
                 <div className="green-bg animated fadeInRight">
-                    <h4 className="mb-3 text-white">Get in Touch</h4>
+                    <h4 className="mb-3 text-white">Book Home Collection</h4>
                     <form onSubmit={handleSubmit(contactUsFrom)}>
                         <div className="formdata">
                             {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
