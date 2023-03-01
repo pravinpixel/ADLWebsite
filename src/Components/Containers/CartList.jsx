@@ -38,7 +38,9 @@ export default function CartList() {
         fetchCartList()
       }
     } catch (error) {
-      setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
+      if(localStorage.getItem("CartTestList")) {
+        setCartTable(JSON.parse(localStorage.getItem("CartTestList")));
+      }
     }
     var testListFromCart = JSON.parse(localStorage.getItem("CartTestList"));
     if (testListFromCart != null) {
@@ -76,7 +78,6 @@ export default function CartList() {
 
     toast.error("Item has been Removed!");
   };
-
   return (
     <>
       <section className="comon-testdetail-banner resp-rem-mrgn">
