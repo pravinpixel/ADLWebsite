@@ -24,21 +24,11 @@ function ReportForm() {
             if (result.Status === 'OK') {
                 localStorage.setItem('report_session_id', result.SessionID)
                 toast.success(result.Msg)
-                getReports(result.SessionID)
-                getUserData(result.SessionID)
-                navigate('/reports/account')
+                getReports(result.SessionID) 
             } else {
                 toast.error(result.Msg)
             }
             reset()
-        })
-    }
-    const getUserData = (id) => {
-        axios.post('https://reports.anandlab.com/v3/wsLogin.asmx/GetUserDetails', {
-            psessionid: id
-        }).then((response) => {
-            const result = JSON.parse(response.data.d)
-            localStorage.setItem('report_user', JSON.stringify(result))
         })
     }
     const getReports = (id) => {
@@ -47,8 +37,19 @@ function ReportForm() {
         }).then((response) => {
             const result = JSON.parse(response.data.d)
             localStorage.setItem('reports', JSON.stringify(result))
+            getUserData(id)
         })
     }
+    const getUserData = (id) => {
+        axios.post('https://reports.anandlab.com/v3/wsLogin.asmx/GetUserDetails', {
+            psessionid: id
+        }).then((response) => {
+            const result = JSON.parse(response.data.d)
+            localStorage.setItem('report_user', JSON.stringify(result))
+            navigate('/reports/account')
+        })
+    }
+   
     useEffect(() => {
         const sesstionId = localStorage.getItem('report_session_id')
         if (sesstionId !== null) {

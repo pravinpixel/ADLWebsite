@@ -5,17 +5,13 @@ import * as Yup from 'yup'
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function ReportAccount() {
-    const [report, setReport]         = useState("")
-    const [reportUser, setReportUser] = useState("") 
-
-    useEffect(() => {
-        setReport(JSON.parse(localStorage.getItem('reports')))
-        setReportUser(JSON.parse(localStorage.getItem('report_user')))
-    }, [])
+    const navigate   = useNavigate()
+    const report     = JSON.parse(localStorage.getItem('reports'))
+    const reportUser = JSON.parse(localStorage.getItem('report_user'))
 
     const { register: changeRegister, handleSubmit: changeHandleSubmit, formState: { errors: changeError }, reset: changeReset } = useForm({
         resolver: yupResolver(
@@ -57,15 +53,18 @@ function ReportAccount() {
             confirmButtonText: "Yes, Logout!",
         }).then((result) => {
             if (result.isConfirmed) {
-                setReport(null)
                 localStorage.removeItem("report_user");
                 localStorage.removeItem("reports");
                 localStorage.removeItem("report_session_id");
                 toast.success('Logout Success !')
+                navigate('/reports')
             }
         });
     }
-    if (reportUser) return (
+    console.log(reportUser,'reportUser')
+    console.log(report,'report')
+    if (reportUser === null && report === null) return <Navigate to="/reports" replace={true} />
+    if (reportUser !== null && report !== null) return (
         <div>
             <section className="main-billfrm cmnmenu-topmargin">
                 <div className="container">
@@ -155,7 +154,6 @@ function ReportAccount() {
             </Modal>
         </div>
     ) 
-    if (reportUser === null) return <Navigate to="/reports" replace={true} />
 }
 
 export default ReportAccount
