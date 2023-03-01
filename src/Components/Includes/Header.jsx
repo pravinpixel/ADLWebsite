@@ -141,14 +141,10 @@ export default function Header() {
                           <CartCount />
                         </li>
                         <li>
-                          <a
-                            href="https://reports.anandlab.com/v3/index1.html"
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                          <Link to='/reports'>
                             <img src={sky} alt="" className="img-fluid" />
                             <span>Report</span>
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <a href="tel:18004251974">
@@ -320,11 +316,8 @@ export default function Header() {
                                 <ul>
 
                                   <li className="dwd">
-                                    <a
-                                      href="https://reports.anandlab.com/v3/index1.html"
-                                      target="_blank"
+                                    <Link
                                       className="dropdown-item"
-                                      rel="noreferrer"
                                     >
                                       <img
                                         src={dwd}
@@ -332,7 +325,7 @@ export default function Header() {
                                         className="img-fluid"
                                       />
                                       Download Reports
-                                    </a>
+                                    </Link>
                                   </li>
                                   <li>
                                     <a
