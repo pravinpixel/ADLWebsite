@@ -49,7 +49,9 @@ const Banners = () => {
 
             {/* ========= Banner Form ========= */}
             {/* <BannerForm />  */}
-           <ReportForm />
+           <div className='banner-form reports-addon'>
+               <ReportForm />
+           </div>
             {/* ========= End : Banner Form ========= */}
         </div>
     )
