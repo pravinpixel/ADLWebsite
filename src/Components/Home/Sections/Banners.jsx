@@ -37,7 +37,6 @@ const Banners = () => {
                                         <LazyLoadImage
                                             src={`${assets(window.innerWidth > 980 ? banner.DesktopImage : banner.MobileImage)}`}
                                             width={'100%'}
-                                            height={418}
                                         />
                                     </a>
                                 </div>
