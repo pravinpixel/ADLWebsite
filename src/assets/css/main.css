@@ -7785,3 +7785,7 @@ ul.action-felds li i.fa.fa-minus-square {
 .addres-que label span {
     margin: 0px 15px;
 }
+.modal-90w {
+    width: 90%;
+    max-width: none!important;
+}
