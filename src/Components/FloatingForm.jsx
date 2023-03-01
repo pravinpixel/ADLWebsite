@@ -72,8 +72,8 @@ function FloatingForm() {
                     <div className="mob-rlce">Reach Us</div>
                 </span>
                 <span>
-                    <h2>Callback</h2>
-                    <p>Click here to reach us</p>
+                    <h2>Call Back</h2>
+                    <p>Click here to Book Home Collection</p>
                 </span>
                 {open ? <FaPlus /> : <FaMinus />}
             </div>

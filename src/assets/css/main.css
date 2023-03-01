@@ -2043,14 +2043,18 @@ h4.cont-frmhed {
     position: absolute;
     width: 340px;
     background-color: rgba(255, 2255, 255, 1);
-    top: 20%;
+    top: 32%;
     right: 17%;
     content: "";
     z-index: 1;
-    padding: 40px 25px;
+    padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 45px hsla(0, 0%, 0%, 0.2);
 }
+
+.banner-form .btn-primary {margin-top: 10px;}
+.banner-form label{font-size: 14px;font-weight: 500;}
+.banner-form .form-control{font-size: 14px;height: 40px;}
 
 .req-form {
     margin-top: 30px;
@@ -5859,6 +5863,8 @@ input[type="range"]::-moz-range-thumb {
   }
 .mob-rlce{display:none;}
 
+.reports-addon h4{font-weight: 600;font-size: 22px;letter-spacing: 0px;margin-bottom: 10px;}
+
 
 
 
@@ -6696,6 +6702,8 @@ input[type="range"]::-moz-range-thumb {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
     }
+.mx-auto {margin: auto;} 
+
 
     .filter-lists h3 button.btn-sm.btn-danger{
         border: 1px solid rgba(0, 0, 0, 0.5);
@@ -7077,7 +7085,7 @@ input[type="range"]::-moz-range-thumb {
         width: 45%;
     }
     .mobile-footer a {
-        font-size: 12px;
+        font-size: 11px;
     }
     #home-banner-carousel .carousel-inner .carousel-item .carousel-caption h1 {
         font-size: 27px;

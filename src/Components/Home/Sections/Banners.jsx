@@ -3,6 +3,7 @@ import BannerForm from './BannerForm'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Dna } from 'react-loader-spinner' 
 import { useBannersQuery } from '../../../services/apiMaster'
+import ReportForm from './ReportForm'
 
 const Banners = () => {
     const { data, isLoading, isSuccess } = useBannersQuery()
@@ -47,7 +48,8 @@ const Banners = () => {
             </div>
 
             {/* ========= Banner Form ========= */}
-            <BannerForm /> 
+            {/* <BannerForm />  */}
+           <ReportForm />
             {/* ========= End : Banner Form ========= */}
         </div>
     )
