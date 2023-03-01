@@ -6137,7 +6137,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:1100px) {
-    
+    .womensdayawrapsec span p{font-size:0px;} 
+    .womensdayawrapsec span h2{font-size:0px;} 
     .banner-form {
         position: relative;
         top: 0;
@@ -6159,7 +6160,7 @@ input[type="range"]::-moz-range-thumb {
       }
       h4.cont-frmhed{font-size: 22px;}
     .mob-rlce{display:block;background-color:#d42328;color:#fff;text-align: center;border-radius:5px;}
-    .womensdayawrap{width:0;right:72px;}
+    .womensdayawrap{width:0;right:34px;}
     .womensdayawrapsec{padding: 0px;}
     .womendaycontent.conthgt {
         position: fixed;
@@ -6173,7 +6174,7 @@ input[type="range"]::-moz-range-thumb {
         top: 15%;
       }
     .scroll .womensdayawrap { 
-        bottom: 82px;
+        bottom: 66px;
         z-index: 9999; 
         transition: all 0.5s ease;
       }
