@@ -10,6 +10,7 @@ import people12 from "../../assets/images/people-12.jpg";
 import people0 from "../../assets/images/people-0.jpg"; 
 import people9 from "../../assets/images/people-9.jpg"; 
 import people10 from "../../assets/images/people-14.jpg"; 
+import people15 from "../../assets/images/people-15.jpg"; 
 
 
 export default function Peoplebhind() {
@@ -211,7 +212,7 @@ He oversees all IT initiatives and has implemented interesting IT-enabled ideas,
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
-<img src={people0} alt="call" className="img-fluid" />
+<img src={people15} alt="call" className="img-fluid" />
 <h4>Keerti Saha <span>GM - Human Resources</span></h4>
 </a> 
 </div>

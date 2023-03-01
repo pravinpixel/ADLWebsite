@@ -6156,7 +6156,7 @@ input[type="range"]::-moz-range-thumb {
         height: 50px;
       }
       .banner-form { 
-        padding: 60px 25px 20px;
+        padding:20px 25px 20px;
       }
       h4.cont-frmhed{font-size: 22px;}
     .mob-rlce{display:block;background-color:#d42328;color:#fff;text-align: center;border-radius:5px;}
@@ -6996,7 +6996,8 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width:600px) {
     .scroll .womensdayawrap {
-        bottom: 76px;}
+        bottom: 59px;
+      }
 
     .consumeing{
         margin-bottom: 70px;
@@ -7185,6 +7186,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width:580px) {
+    .womensdayawrapsec img { 
+        max-width: 80%; 
+        position: relative;
+        right: -11px;
+      }
+      .mob-rlce{font-size: 14px;}
     .container{
         max-width: 100%;
     }
