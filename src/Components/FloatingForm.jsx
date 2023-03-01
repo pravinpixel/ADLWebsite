@@ -23,6 +23,7 @@ function FloatingForm() {
     const contactUsFrom = (data) => {
         setLoading(true)
         data.email = 'anandlab@gmail.com'
+        data.page = 'CALL BACK FORM - FOOTER'
         axios.post(API_URL.REACH_US, data).then((res) => {
             FormResponse()
             setLoading(false)
