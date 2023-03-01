@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setAuthUser, setTestCartList } from "../../Redux/Actions/TestAction";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
-import { useForm } from "react-hook-form";  
+import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
@@ -22,9 +22,9 @@ export default function Login() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const LoginWithOtp = () => {
-    if(email === null || mobileNumber === null) {
+    if (email === null || mobileNumber === null) {
       return false
     }
     dispatch(setLoading(true))
@@ -45,10 +45,10 @@ export default function Login() {
     });
   }
   const VerifyOtp = () => {
-    if(Otp == serverOtp) {
+    if (Otp == serverOtp) {
       dispatch(setAuthUser(AuthUser()))
       toast.success('Login Success')
-        if(localStorage.getItem('CartTestList')) {
+      if (localStorage.getItem('CartTestList')) {
         navigate("/my-cart");
       } else {
         navigate("/my-account");
@@ -61,11 +61,11 @@ export default function Login() {
   useEffect(() => {
     window.scroll(0, 0)
   }, [])
- 
-  const { register, handleSubmit, formState: { errors } } = useForm({ 
+
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(
       Yup.object().shape({
-        email   : Yup.string().required(),
+        email: Yup.string().required(),
         password: Yup.string().required(),
       })
     )
@@ -79,17 +79,17 @@ export default function Login() {
         localStorage.setItem("CartTestList", JSON.stringify(response.data.cart_items));
         dispatch(
           setTestCartList(
-              JSON.parse(localStorage.getItem("CartTestList"))
+            JSON.parse(localStorage.getItem("CartTestList"))
           )
         );
         PutUser(response.data.data)
         dispatch(setAuthUser(response.data.data))
         toast.success('Login Success')
-          if(localStorage.getItem('CartTestList')) {
-        navigate("/my-cart");
-      } else {
-        navigate("/my-account");
-      }
+        if (localStorage.getItem('CartTestList')) {
+          navigate("/my-cart");
+        } else {
+          navigate("/my-account");
+        }
       } else {
         toast.error(response.data.message)
       }
@@ -98,7 +98,7 @@ export default function Login() {
       dispatch(setLoading(false))
     });
   }
- 
+
   return (
     <div>
       <section className="main-billfrm cmnmenu-topmargin">
@@ -130,7 +130,7 @@ export default function Login() {
                               <input className={`input1001 ${errors.email && 'border-danger'}`} type="email" placeholder="Email" {...register('email')} />
                             </div>
                             <div className="form-data col-lg-12">
-                              <input className={`input1001 ${errors.password && 'border-danger'}`} type="password" placeholder="Password" {...register('password')}/>
+                              <input className={`input1001 ${errors.password && 'border-danger'}`} type="password" placeholder="Password" {...register('password')} />
                             </div>
                             <div className="form-data sbm col-lg-12">
                               <button type="submit" className="btn-primary btn-flx-full">LOGIN</button>
@@ -176,7 +176,7 @@ export default function Login() {
               <div className="dhoni-bgm">
                 <div className="common-heading">
                   <h2>
-                    
+
                     Welcome <span> to Neuberg Anand </span>
                   </h2>
                 </div>
@@ -249,7 +249,7 @@ export default function Login() {
                               />
                             </div>
                           </>
-                      } 
+                      }
                     </div>
                     <div className="col-lg-12 text-center p-0">
                       <div className="mid-poart">

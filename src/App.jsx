@@ -60,6 +60,7 @@ import ResetPassword from './Components/Containers/ResetPassword'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import FloatingForm from './Components/FloatingForm'
 import AuthRoutes from './Components/AuthRoutes'
+import Reports from './Components/Reports'
 
 export default function App() {
   const dispatch     = useDispatch();
@@ -89,6 +90,7 @@ export default function App() {
             <Route path="/my-account" element={<MyProfile />} />
             <Route path='/thank-you' element={<ThankYou />} />
           </Route>
+          <Route path='/reports' element={<Reports />} />
           <Route path='/my-cart' element={<CartList />} />
           <Route path='/reset-password/:customer_id' element={<ResetPassword />} />
           <Route path='/for-patient' element={<Test />} />
