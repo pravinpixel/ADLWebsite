@@ -5870,14 +5870,13 @@ input[type="range"]::-moz-range-thumb {
   }
   .input-box [type="radio"]:checked + label:after {
       opacity: 1;
-      -webkit-transform: scale(1);
-      transform: scale(1);
+      -webkit-transform: scale(1);transform: scale(1);
   }
 .mob-rlce{display:none;}
 
 .reports-addon h4{font-weight: 600;font-size: 22px;letter-spacing: 0px;margin-bottom: 10px;}
 
-
+div.zopim{left:110px !important;}
 
 
 
