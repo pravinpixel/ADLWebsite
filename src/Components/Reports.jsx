@@ -1,10 +1,7 @@
-import { Navigate } from "react-router";
 import ReportForm from "./Home/Sections/ReportForm";
 
 function Reports() {
-    const sessionId = localStorage.getItem('report_session_id')
-   if(sessionId !== null) return <Navigate to="/reports/account" replace={true} />
-   return (
+    return (
         <div>
             <section className="main-billfrm cmnmenu-topmargin">
                 <div className="container">

@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 function ReportForm() {
     const navigate = useNavigate()
-    const [disable, setDisable] = useState(false)
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(
             Yup.object().shape({
@@ -24,7 +23,8 @@ function ReportForm() {
             if (result.Status === 'OK') {
                 localStorage.setItem('report_session_id', result.SessionID)
                 toast.success(result.Msg)
-                getReports(result.SessionID) 
+                // getReports(result.SessionID) 
+                window.open(`https://reports.anandlab.com/v3/patient.html?sessionid=${result.SessionID}`, '_blank')
             } else {
                 toast.error(result.Msg)
             }
@@ -48,32 +48,20 @@ function ReportForm() {
             localStorage.setItem('report_user', JSON.stringify(result))
             navigate('/reports/account')
         })
-    }
-   
-    useEffect(() => {
-        const sesstionId = localStorage.getItem('report_session_id')
-        if (sesstionId !== null) {
-            setDisable(true)
-        }
-    }, [])
+    } 
     return (
         <form onSubmit={handleSubmit(submit)}>
             <h4> Get your Reports  </h4>
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">User ID</label>
-                <input type="text" disabled={disable} className={`form-control form-control ${errors.loginid && 'border-danger'}`} placeholder="Enter Your ID"   {...register('loginid')} />
+                <input type="text" className={`form-control form-control ${errors.loginid && 'border-danger'}`} placeholder="Enter Your ID"   {...register('loginid')} />
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputPassword1">Access Code</label>
-                <input type="password" disabled={disable} className={`form-control form-control ${errors.pwd && 'border-danger'}`} placeholder="Enter Your Code" {...register('pwd')} />
+                <input type="password" className={`form-control form-control ${errors.pwd && 'border-danger'}`} placeholder="Enter Your Code" {...register('pwd')} />
             </div>
             <div className="text-center">
-                {
-                    disable ?
-                        <Link to={'reports/account'} className="btn-primary w-100">View Reports</Link>
-                        :
-                        <button type="submit" className="btn-primary w-100">Submit</button>
-                }
+                <button type="submit" className="btn-primary w-100">Submit</button>
             </div>
         </form>
     )
