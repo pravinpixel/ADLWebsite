@@ -6136,6 +6136,8 @@ div.zopim{left:110px !important;}
 }
 
 @media (max-width:1100px) {
+    .scroll div.zopim{bottom: 66px !important;}
+    .scroll div#engt-launcher{bottom: 67px !important;}
     .womensdayawrapsec span p{font-size:0px;} 
     .womensdayawrapsec span h2{font-size:0px;} 
     .banner-form {
@@ -6649,11 +6651,7 @@ div.zopim{left:110px !important;}
     }
 }
 
-@media (max-width:850px) {
-    .zopim{
-        bottom:75px !important;
-        right: 0px  !important;
-    }
+@media (max-width:850px) { 
     section.range-of-products {
         padding: 30px 0px 30px;
     }
@@ -6994,6 +6992,12 @@ div.zopim{left:110px !important;}
 }
 
 @media (max-width:600px) {
+    .scroll div.zopim {
+        bottom: 59px !important;
+      }
+      .scroll div#engt-launcher {
+        left:30px !important;
+      }
     .scroll .womensdayawrap {
         bottom: 59px;
       }
