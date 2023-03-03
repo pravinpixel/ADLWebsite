@@ -11,13 +11,13 @@ export default function ReachUs() {
                     <div className="call-us">
                         <ul>
                             <li>
-                                <Link to="/">
+                                <Link to="tel:18004251974">
                                     <img src={call} alt="call" className="img-fluid"/>
                                     <h4>1800 425 1974 <span>Sample Collections</span></h4>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/">
+                                <Link to="mailto:info@anandlab.com">
                                     <img src={mail} alt="mail" className="img-fluid"/>
                                     <h4>info@anandlab.com<span>Need support? Drop us an email</span></h4>
                                 </Link>

@@ -32,7 +32,7 @@ export default function Contact() {
     }
 
     useEffect(() => {
-        document.title = "Reach Us";
+        document.title = "Reach Us - Blood Tests At Home | Anand Diagnostic Laboratory";
         window.scroll(0, 0)
     }, []);
     return (

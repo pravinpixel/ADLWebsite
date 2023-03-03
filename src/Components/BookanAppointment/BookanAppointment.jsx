@@ -1,4 +1,5 @@
 import  { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Form } from "react-component-form";
 import upload from "../../assets/images/upload.png";
 import InnerCommonBanner from "./Sections/InnerCommonBanner";
@@ -168,13 +169,9 @@ export default function BookanAppointment() {
               <div className="col-lg-3 text-right">
                 <div className="cmn-buton">
                   <p>
-                    <a
-                      href="https://reports.anandlab.com/v3/index1.html"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <Link to="/reports">
                       Download Report
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>

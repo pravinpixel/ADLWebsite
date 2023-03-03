@@ -5803,7 +5803,7 @@ input[type="range"]::-moz-range-thumb {
   .plusicon{position:absolute;right:20px;top:37%;width:26px;height:26px;background-repeat:no-repeat;cursor:pointer;transition:all 0.5s ease-in-out;}
   .womensdayawrap{position:fixed;right:0;bottom:0;z-index:99999;width:380px;}
   .womendaycontent{background:#fff;height:0;transition:all 0.5s ease-in-out;box-shadow:0px 0px 35px hsla(0, 0%, 0%, 0.1);padding:0px;}
-  .womendaycontent.conthgt{height:360px;transition:all 0.5s ease-in-out;overflow:inherit;padding:0px;}
+  .womendaycontent.conthgt{height:290px;transition:all 0.5s ease-in-out;overflow:inherit;padding:0px;}
   .womendaycontent p{margin-bottom:0;padding:20px;font-size:15px;line-height:23px;padding-left:40px;} 
   .womendaycontent input{
     border: none;
@@ -5883,9 +5883,20 @@ button:hover{transition: all 0.5s ease;}
 
 .reports-frm label{color:#5c2d91;font-size: 15px;margin-bottom:5px;}
 
-.reports-frm .btn-primary{margin-top: 10px;}
+.reports-frm .btn-primary{margin-top: 10px;} 
+.womensdayawrap .formdata {
+position: relative;
+}
+    .womensdayawrap .text-danger {
+    color: #fff !important;
+    position: absolute;
+    top: -18px;
+    content: "";
+    left: 0;
+    font-size: 12px;
+  }
 
-
+  .abt-secton.forumn-frm.mt-8{margin-top: 90px;}
 
 
 
@@ -6058,6 +6069,8 @@ button:hover{transition: all 0.5s ease;}
     }
 
 @media (max-width:1350px) {
+    
+    .abt-secton.forumn-frm.mt-8 {margin-top: 0px;}
     .inner-banner.with-liners {
         margin-top: 15px !important;}
     .search-container{
@@ -6139,6 +6152,13 @@ button:hover{transition: all 0.5s ease;}
 }
 
 @media (max-width:1100px) {
+    .cmnmenu-topmargin {
+        margin-top: 0;
+      }
+
+      .cmnmenu-topmargin .col-lg-9{  flex: 0 0 100%;
+        max-width: 100%;
+      }
     .scroll div.zopim{bottom: 66px !important;}
     .scroll div#engt-launcher{bottom: 67px !important;}
     .womensdayawrapsec span p{font-size:0px;} 

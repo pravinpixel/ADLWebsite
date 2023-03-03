@@ -38,39 +38,11 @@ export default function AnandatHome() {
     window.scroll(0, 0);
   }, []);
   return (
-    <div>
-      <section className="inner-banner">
-        <img src={bannerimage} alt="call" className="img-fluid" />
-        <div className="inner-caption">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="caption-details bnr-txt">
-                  <ul>
-                    <li>
-                      <Link to="/"> Home </Link>
-                    </li>
-                    <li> / </li>
-                    <li>
-                      <Link to="/reach-us"> Reach us </Link>
-                    </li>
-                    <li> / </li>
-                    <li> Anand @ Home </li>
-                  </ul>
-                  <h1>
-                    Care Made Convenient
-                    <br /> Sample Collection at your Doorstep
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div> 
 
-      <section className="abt-secton forumn-frm">
+      <section className="abt-secton forumn-frm mt-8">
         <div className="container">
-          <div className="row">
+          <div className="row flex-column-reverse flex-lg-row">
             <div className="col-lg-7">
               <div className="common-heading">
                 <h2>
@@ -92,7 +64,7 @@ export default function AnandatHome() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-12 col-lg-5">
+            <div className="col-sm-12 col-md-12 col-lg-5 mb-5">
               <div className="green-bg ps-rel franc-isemed animated fadeInRight">
                 <h4 className="mb-3 text-center text-white">Enquire Now</h4>
                 <form onSubmit={handleSubmit(contactUsFrom)}>

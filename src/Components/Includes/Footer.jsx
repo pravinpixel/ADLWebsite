@@ -81,7 +81,9 @@ export default function Footer() {
                     <Link to="/">Book a Blood Test</Link>
                   </li> */}
                     <li>
-                      <a href="https://reports.anandlab.com/v3/index1.html" target="_blank">Download Reports</a>
+                    <Link to="/reports">
+                      Download Reports
+                    </Link>
                     </li>
                     <li>
                       <Link to="/packages">Health Packages</Link>
@@ -107,7 +109,9 @@ export default function Footer() {
                       <Link to="/preparing-for-health-checkup">Preparing for Health Checkup</Link>
                     </li>
                     <li>
-                      <a href="https://reports.anandlab.com/v3/index1.html" target="_blank">Report Download</a>
+                    <Link to="/reports">
+                      Download Reports
+                    </Link>
                     </li>
                     {/* <li>
                     <Link to="/">Book an Appointment </Link>
@@ -223,7 +227,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-12">
               <div className="text-white footer-bottom-text text-center">
-                &copy;  {new Date().getFullYear()} Anandlab. All Rights Reserved. With <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
+                &copy;  {new Date().getFullYear()} Anandlab. All Rights Reserved. Made with Passion by <Link to="https://www.pixel-studios.com/" target="_blank"><strong>Pixel Studios</strong></Link>
               </div>
             </div>
           </div>
@@ -254,10 +258,10 @@ export default function Footer() {
           <span className='numb-circle'>10</span>
         </Link>
 
-        <a href="https://reports.anandlab.com/v3/index1.html" target="_blank" data-toggle="tooltip" title="Download Your Reports">
+        <Link to="/reports" data-toggle="tooltip" title="Download Your Reports">
           <img src={sky} alt="" className="img-fluid" />
-          Reports
-        </a>
+         Reports
+        </Link> 
         <a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
           Toll-Free
         </a>

@@ -59,10 +59,10 @@ function ReportForm() {
     return (
         <form onSubmit={handleSubmit(submit)} className="reports-frm">
             <div className="common-heading">
-                            <h2>
-                            <span> Get Your </span> Reports
-                            </h2>
-                          </div>
+            <h2>
+            <span> Get Your </span> Reports
+            </h2>
+            </div>
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">User ID</label>
                 <input type="text" className={`form-control form-control ${errors.loginid && 'border-danger'}`} placeholder="Enter Your ID"   {...register('loginid')} />

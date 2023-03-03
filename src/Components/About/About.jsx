@@ -20,7 +20,7 @@ import knwmre from "../../assets/images/know-more.png";
 
 export default function About() {
   useEffect(() => {
-    document.title = "About Us";
+    document.title = "About Anand Diagnostic Laboratory - Your Trusted Diagnostic Partner";
     window.scroll(0,0)
   }, []);
   return (

@@ -15,7 +15,7 @@ import { useMemo } from "react";
 
 export default function Packages() {
   useEffect(() => {
-    document.title = "Our Packages";
+    document.title = "Book Health Checkup Packages - Anand Diagnostic Laboratory";
     window.scroll(0, 0);
   }, [])
 

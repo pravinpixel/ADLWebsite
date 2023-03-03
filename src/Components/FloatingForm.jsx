@@ -43,12 +43,9 @@ function FloatingForm() {
                             <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
                         </div> 
                         <div className="formdata">
-                            {errors?.mobile ? <small className='text-danger'>{'mobile is a required field'}</small> : ''}
+                            {errors?.mobile ? <small className='text-danger'>{'mobile is required'}</small> : ''}
                             <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
-                        </div>
-                        <div className="formdata">
-                            <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
-                        </div>
+                        </div> 
                         <div className="formdata">
                             {
                                 Loading === true
@@ -72,8 +69,8 @@ function FloatingForm() {
                     <div className="mob-rlce">Reach Us</div>
                 </span>
                 <span>
-                    <h2>Call Back</h2>
-                    <p>Click here to Book Home Collection</p>
+                    <h2>Request a Call Back</h2>
+                    <p>For Home Collection</p>
                 </span>
                 {open ? <FaPlus /> : <FaMinus />}
             </div>
