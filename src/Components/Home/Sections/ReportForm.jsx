@@ -19,14 +19,21 @@ function ReportForm() {
     })
     const submit = (data) => {
         axios.post('https://reports.anandlab.com/v3/wsLogin.asmx/ValidateLogin', data).then((response) => {
-            const result = JSON.parse(response.data.d)
-            if (result.Status === 'OK') {
-                localStorage.setItem('report_session_id', result.SessionID)
-                toast.success(result.Msg)
-                // getReports(result.SessionID) 
-                window.open(`https://reports.anandlab.com/v3/patient.html?sessionid=${result.SessionID}`, '_blank')
+            const Result = JSON.parse(response.data.d)
+            if (Result.Status == 'OK') {
+                localStorage.setItem('report_session_id', Result.SessionID)
+                toast.success(Result.Msg) 
+                if (Result.UserType == 'pat') {
+                    window.open(`https://reports.anandlab.com/v3/patient.html?sessionid=${Result.SessionID}`,'_blank');
+                } else {
+                    if (Result.payment_pending == 'Y') {
+                        window.open(`https://reports.anandlab.com/v3/corporate_pending_bills.html?sessionid=${Result.SessionID}`,'_blank')
+                    } else {
+                        window.open(`https://reports.anandlab.com/v3/corporate_info.html?sessionid=${Result.SessionID}`,'_blank')
+                    }
+                }
             } else {
-                toast.error(result.Msg)
+                toast.error(Result.Msg)
             }
             reset()
         })
@@ -48,7 +55,7 @@ function ReportForm() {
             localStorage.setItem('report_user', JSON.stringify(result))
             navigate('/reports/account')
         })
-    } 
+    }
     return (
         <form onSubmit={handleSubmit(submit)}>
             <h4> Get your Reports  </h4>
