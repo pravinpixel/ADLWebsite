@@ -57,8 +57,12 @@ function ReportForm() {
         })
     }
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            <h4> Get your Reports  </h4>
+        <form onSubmit={handleSubmit(submit)} className="reports-frm">
+            <div className="common-heading">
+                            <h2>
+                            <span> Get Your </span> Reports
+                            </h2>
+                          </div>
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">User ID</label>
                 <input type="text" className={`form-control form-control ${errors.loginid && 'border-danger'}`} placeholder="Enter Your ID"   {...register('loginid')} />
@@ -68,7 +72,7 @@ function ReportForm() {
                 <input type="password" className={`form-control form-control ${errors.pwd && 'border-danger'}`} placeholder="Enter Your Code" {...register('pwd')} />
             </div>
             <div className="text-center">
-                <button type="submit" className="btn-primary w-100">Submit</button>
+                <button type="submit" className="btn-primary w-100">SUBMIT</button>
             </div>
         </form>
     )

@@ -3,7 +3,7 @@ import ReportForm from "./Home/Sections/ReportForm";
 function Reports() {
     return (
         <div>
-            <section className="main-billfrm cmnmenu-topmargin">
+            <section className="main-billfrm cmnmenu-topmargin reports-form">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-9">
@@ -13,7 +13,7 @@ function Reports() {
                                         <div className="common-heading">
                                             <h2>
                                                 Access your test
-                                                <span> reports online ANY TIME, ANY WHERE FROM ANY DEVICE</span>
+                                                <span> reports online any time, any ANY TIME, ANY WHERE FROM ANY DEVICE</span>
                                             </h2>
                                         </div>
                                     </div>
