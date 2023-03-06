@@ -124,6 +124,18 @@ export default function Header() {
                           </a>
                         </li>
                         <li>
+                          <Link to='/reports'>
+                            <img src={sky} alt="" className="img-fluid" />
+                            <span>Report</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <a href="tel:18004251974">
+                            <img src={toll} alt="" className="img-fluid" />
+                            <span>Toll-free</span>
+                          </a>
+                        </li>
+                        <li>
                           {
                             authUser.user.length === 0 && authUser.user !== null ?
                               <Link to="/login">
@@ -139,18 +151,6 @@ export default function Header() {
                         </li>
                         <li>
                           <CartCount />
-                        </li>
-                        <li>
-                          <Link to='/reports'>
-                            <img src={sky} alt="" className="img-fluid" />
-                            <span>Report</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <a href="tel:18004251974">
-                            <img src={toll} alt="" className="img-fluid" />
-                            <span>Toll-free</span>
-                          </a>
                         </li>
                       </ul>
                     </div>
@@ -316,7 +316,7 @@ export default function Header() {
                                 <ul>
 
                                   <li className="dwd">
-                                    <Link
+                                    <Link to="/reports"
                                       className="dropdown-item"
                                     >
                                       <img
@@ -582,7 +582,7 @@ export default function Header() {
                       <option value=""> -- select -- </option>
                       {
                         JSON.parse(localStorage.getItem('locations')).map((location) => (
-                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location}</option>
+                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location.toUpperCase()}</option>
                         ))
                       }
                     </select>

@@ -30,7 +30,7 @@ export default function TestDetails() {
   )
   if (isSuccess) return (
     <div>
-      <section className="comon-testdetail-banner">
+      <section className="comon-testdetail-banner ned-hght">
         <div className="container">
           <div className="row">
             <div className="col">

@@ -88,10 +88,14 @@ export default function AboutUs() {
               dots: false,
               arrows: true,
             }}  >
-              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/KYQhDbyUSkI" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/shaQf7d_EZQ" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/FEJFwLp2xfY" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/tseCsNdlNnY" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+<iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/lsopBNmF__A" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/8zghk5E9YtE" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="100%" height="450px" autoplay src="https://www.youtube.com/embed/7-svwO0D5Nk" title="Anand Lab Corporate Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
             </Sliders>
           </div>
         </Modal.Body>

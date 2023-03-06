@@ -73,7 +73,7 @@ export default function BannerForm() {
                                 {
                                     localStorage.getItem('locations') ?
                                         JSON.parse(localStorage.getItem('locations')).map((location) => (
-                                            <option key={location.id} value={location.location_slug} >{location.location}</option>
+                                            <option key={location.id} value={location.location_slug} >{location.location.toUpperCase()}</option>
                                         ))
                                         : null
                                 }

@@ -240,6 +240,14 @@ export default function Footer() {
           <img src={location} alt="" className="img-fluid" />
           <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
         </a>
+
+<Link to="/reports" data-toggle="tooltip" title="Download Your Reports">
+  <img src={sky} alt="" className="img-fluid" />
+ Reports
+</Link> 
+<a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
+  Toll-Free
+</a>
         {
           authUser.user.length === 0 && authUser.user !== null ?
             <Link to="/login" data-toggle="tooltip" title="Login to view your Profile">
@@ -257,14 +265,6 @@ export default function Footer() {
           Cart
           <span className='numb-circle'>10</span>
         </Link>
-
-        <Link to="/reports" data-toggle="tooltip" title="Download Your Reports">
-          <img src={sky} alt="" className="img-fluid" />
-         Reports
-        </Link> 
-        <a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
-          Toll-Free
-        </a>
       </div>
       <Modal
         show={show}
@@ -284,7 +284,7 @@ export default function Footer() {
                       <option value=""> -- select -- </option>
                       {
                         JSON.parse(localStorage.getItem('locations')).map((location) => (
-                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location}</option>
+                          <option key={location.id} selected={LabLocation === location.location_slug} value={location.location_slug} >{location.location.toUpperCase()}</option>
                         ))
                       }
                     </select>
