@@ -4545,17 +4545,7 @@ h1.text-red {
 .testing-sector {
     background-color: #602f98;
     position: relative;
-}
-
-.testing-sector:before {
-    position: absolute;
-    content: "";
-    left: -26.5%;
-    top: 0;
-    background: rgba(0, 0, 0, 0) url("../images/lab-test.jpg") no-repeat scroll 0 0;
-    width: 100%;
-    height: 100%;
-}
+} 
 
 .testing-sector .common-heading h2,
 .testing-sector h4,
@@ -4909,17 +4899,19 @@ a.srch-btn i {
 
 .navbar-default.navbar-trans .nav-item span.mobile-toggle {
     display: none;
-}
+} 
 
-.testing-sector:before {
+.testing-sector::before {
     position: absolute;
     content: "";
-    left: -26.5%;
+    right: 58%;
     top: 0;
-    background: rgba(0, 0, 0, 0) url("../images/lab-test.jpg") no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url(http://localhost:3000/static/media/lab-test.ad8ccfe1e5247cf4830f.jpg) no-repeat center right;
+      background-size: auto;
     width: 100%;
     height: 100%;
-}
+    background-size: cover;
+  }
 
 .testing-sector .common-heading h2,
 .testing-sector h4,
@@ -6013,10 +6005,10 @@ select.form-control.form-control-lg option{text-transform: capitalize;}
 @media (max-width:1720px) { 
     .banner-form {
         right: 3%;
-    }
+    } 
 }
 
-@media (max-width:1575px) {
+@media (max-width:1575px) { 
     .testi-section {
         padding: 85px 15px 85px 11%;
     }
@@ -6031,10 +6023,7 @@ select.form-control.form-control-lg option{text-transform: capitalize;}
     }
 }
 
-@media (max-width:1400px) { 
-    .testing-sector::before {
-        left: -56.5%;
-    }
+@media (max-width:1400px) {  
     .loyality-program::before {
         left: -190px;
     }
