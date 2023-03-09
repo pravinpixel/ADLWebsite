@@ -145,7 +145,7 @@ export default function Header() {
                               :
                               <Link to="/my-account">
                                 <img src={user} alt="" className="img-fluid" />
-                                <span>My Account</span>
+                                <span>Account</span>
                               </Link>
                           }
                         </li>
