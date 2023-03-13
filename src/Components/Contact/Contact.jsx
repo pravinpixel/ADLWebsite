@@ -8,6 +8,7 @@ import { CgSpinner } from 'react-icons/cg';
 import axios from 'axios';
 import { API_URL } from '../../Redux/Constant/ApiRoute';
 import { FormResponse } from '../../Helpers/FormResponse';
+import Helmet from "react-helmet";
 
 export default function Contact() {
     const [Loading, setLoading] = useState(false)
@@ -37,6 +38,10 @@ export default function Contact() {
     }, []);
     return (
         <div>
+           <Helmet> 
+      <title>Reach Us - Anand Diagnostic Laboratory Services</title> 
+      <meta name="description" content="To get in touch with us, please submit the form below or send us an email or talk to us on the phone. We take all customer communications seriously."></meta>
+    </Helmet>           
             <section className='inner-banner'>
                 <img src={bannerimage} alt="call" className="img-fluid" />
                 <div className="inner-caption">

@@ -12,6 +12,7 @@ import OrganFilter from "./OrganFilter";
 import PriceFilters from "./PriceFilters";
 import { Dna } from "react-loader-spinner";
 import { useMemo } from "react";
+import Helmet from "react-helmet";
 
 export default function Packages() {
   useEffect(() => {
@@ -69,6 +70,10 @@ export default function Packages() {
 
   return (
     <div>
+          <Helmet> 
+      <title>Book Health Checkup Packages - Anand Diagnostic Laboratory</title> 
+      <meta name="description" content="Anand Diagnostic Laboratory offers full body checkup online. Our experts provide diagnosis and consultations, and you can book health check packages at your preferred date and time."></meta>
+    </Helmet>
       <section className="inner-banner">
         <img src={bannerimage} alt="call" className="img-fluid" />
         <div className="inner-caption">

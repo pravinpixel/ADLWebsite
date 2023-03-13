@@ -17,6 +17,7 @@ import careng3 from "../../assets/images/care-3.jpg";
 import careng4 from "../../assets/images/care-4.jpg";
 import careng5 from "../../assets/images/care-5.jpg";
 import knwmre from "../../assets/images/know-more.png";
+import Helmet from "react-helmet";
 
 export default function About() {
   useEffect(() => {
@@ -25,6 +26,10 @@ export default function About() {
   }, []);
   return (
     <div>
+    <Helmet> 
+      <title>About Anand Diagnostic Laboratory - Your Trusted Diagnostic Partnere</title> 
+      <meta name="description" content="Learn about Anand Diagnostic Lab Reports and our commitment to providing accurate and reliable diagnostic services for patients and healthcare providers."></meta>
+    </Helmet>
             <section className='inner-banner'>
         <img src={bannerimage} alt="call" className="img-fluid" />
         <div className="inner-caption">

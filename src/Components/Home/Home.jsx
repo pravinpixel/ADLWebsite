@@ -10,6 +10,7 @@ import FindLocation from './Sections/FindLocation'
 import LegacyNutshell from './Sections/LegacyNutshell'
 import LatestBlogs from './Sections/LatestBlogs'
 import Accretions from './Sections/Accretions' 
+import Helmet from "react-helmet";
 export default function Home() {
   useEffect(() => {
     window.scroll(0,0);
@@ -17,6 +18,10 @@ export default function Home() {
   }, []);
   return (
     <>
+    <Helmet> 
+      <title>Anand Diagnostic Laboratory - Your Trusted Diagnostic Centre</title> 
+      <meta name="description" content="Get fast and affordable diagnostic services at Anand Lab. Our state-of-the-art facilities and experienced staff provide reliable results for patient care."></meta>
+    </Helmet>
       <Banners/>
       <BookedTestSliders title="TOP BOOKED" subTitle="DIAGNOSTIC TESTS"/>
       <CheckupsSliders />
