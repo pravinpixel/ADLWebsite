@@ -48,7 +48,7 @@ export default function CartBtn(props) {
         )
     } else  {
         return (
-            <button className="text-white" onClick={() => addToCartItem()} >
+            <button className="text-white choose-your-package" onClick={() => addToCartItem()} >
                 <i className="fa fa-cart-plus mr-1"></i>ADD
             </button>
         )
