@@ -9,15 +9,15 @@ import CartBtn from "./CartBtn";
 
 export default function TestDetails() {
   const { TestId } = useParams();
-  const location   = useLocation();
+  const location = useLocation();
   const { mutate, isLoading, data, isSuccess } = useTestView()
   useEffect(() => {
     window.scroll(0, 0)
     mutate(TestId)
   }, [TestId]);
 
-  if (isLoading)  return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight:'100vh' }}>
+  if (isLoading) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
       <Dna
         visible={true}
         height="120"
@@ -98,10 +98,14 @@ export default function TestDetails() {
                     <img src={require('../../assets/images/testing-icon-5.png')} alt="call" className="img-fluid" />
                     <span>Home Collection</span>
                     {data.data.test.HomeCollection === "Y" ? "Included" : "Not Included"}
+
                   </li>
                 </ul>
               </div>
               <div className="case">
+                {data.data.test.HomeCollection === "Y" ?
+                  <b className="text-orange d-flex mb-3"><i className="fa fa-info-circle pr-2"></i><small>Additional charges for home collection is applicable</small></b>
+                  : ""}
                 <p className="d-flex">
                   <CartBtn testData={data.data.test} />
                 </p>
