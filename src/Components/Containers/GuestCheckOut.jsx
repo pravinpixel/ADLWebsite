@@ -358,6 +358,11 @@ export default function GuestCheckOut() {
                     </tr>
                   </tbody>
                 </table>
+                {
+                  DateTime === true ?
+                    <b className="text-orange shadow-sm d-flex bg-lsight border p-3 rounded"><i className="fa fa-info-circle pr-2"></i><small>Additional charges for home collection is applicable</small></b>
+                    : null
+                }
                 <div className="case text-right">
                   <p>
                     {/* <LoadingBtn loading={Loading} onClick={handlePayment} title="Make a Payment"/> */}
