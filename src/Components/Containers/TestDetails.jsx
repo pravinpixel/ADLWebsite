@@ -97,8 +97,7 @@ export default function TestDetails() {
                   <li>
                     <img src={require('../../assets/images/testing-icon-5.png')} alt="call" className="img-fluid" />
                     <span>Home Collection</span>
-                    {data.data.test.HomeCollection === "Y" ? "Included" : "Not Included"}
-
+                    {data.data.test.HomeCollection === "Y" ? "Available" : "Not available"}
                   </li>
                 </ul>
               </div>
