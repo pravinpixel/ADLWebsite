@@ -62,8 +62,8 @@ export default function TestDetails() {
             <div className="col-lg-7">
               <div className="commentestng-heads">
                 <h2>
-                  <span>Test ID - {data.data.test.TestId}</span>
-                  {data.data.test.TestName}
+                  <span>Test ID - {data.data.test.TestId}  | Dos Code - {data.data.test.DosCode}</span>
+                 {data.data.test.TestName}
                 </h2>
               </div>
               <div className="testng-details">
