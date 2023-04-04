@@ -91,8 +91,9 @@ export default function App() {
           <Route element={<AuthRoutes/>}>
             <Route path='/checkout' exact element={<GuestCheckOut />} />
             <Route path="/my-account" element={<MyProfile />} />
-            <Route path='/thank-you' element={<ThankYou />} />
+            <Route path='/payment-sucess' element={<ThankYou />} />
             <Route path='/anand-at-home-thank-you' element={<AnandThankYou/>} />
+            <Route path='/thank-you' element={<AnandThankYou/>} />
           </Route>
           <Route path='/reports' element={<Reports />} />
           <Route path='/reports/account' element={<ReportAccount />} />
