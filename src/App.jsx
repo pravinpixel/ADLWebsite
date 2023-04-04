@@ -92,9 +92,9 @@ export default function App() {
             <Route path='/checkout' exact element={<GuestCheckOut />} />
             <Route path="/my-account" element={<MyProfile />} />
             <Route path='/payment-sucess' element={<ThankYou />} />
-            <Route path='/anand-at-home-thank-you' element={<AnandThankYou/>} />
-            <Route path='/thank-you' element={<AnandThankYou/>} />
           </Route>
+          <Route path='/anand-at-home-thank-you' element={<AnandThankYou/>} />
+          <Route path='/thank-you' element={<AnandThankYou/>} />
           <Route path='/reports' element={<Reports />} />
           <Route path='/reports/account' element={<ReportAccount />} />
           <Route path='/my-cart' element={<CartList />} />
