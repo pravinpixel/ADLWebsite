@@ -48,6 +48,8 @@ import Career from './Components/Career/Career'
 import MyProfile from './Components/MyProfile/MyProfile'
 import FindLab from './Components/FindLab/FindLab'
 import ThankYou from './Components/ThankYou/ThankYou'
+import AnandThankYou from './Components/ThankYou/AnandThankYou'
+
 import CancellationPolicy from './Components/CancellationPolicy/CancellationPolicy'
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
 import TermsConditions from './Components/TermsConditions/TermsConditions'
@@ -61,7 +63,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import FloatingForm from './Components/FloatingForm'
 import AuthRoutes from './Components/AuthRoutes'
 import Reports from './Components/Reports'
-import ReportAccount from './Components/ReportAccount'
+import ReportAccount from './Components/ReportAccount' 
 
 export default function App() {
   const dispatch     = useDispatch();
@@ -90,6 +92,7 @@ export default function App() {
             <Route path='/checkout' exact element={<GuestCheckOut />} />
             <Route path="/my-account" element={<MyProfile />} />
             <Route path='/thank-you' element={<ThankYou />} />
+            <Route path='/anand-at-home-thank-you' element={<AnandThankYou/>} />
           </Route>
           <Route path='/reports' element={<Reports />} />
           <Route path='/reports/account' element={<ReportAccount />} />
@@ -138,7 +141,7 @@ export default function App() {
           <Route path='/find-lab' exact element={<FindLab />} />
           <Route path='/cancellation-policy' exact element={<CancellationPolicy />} />
           <Route path='/privacy-policy' exact element={<PrivacyPolicy />} />
-          <Route path='/terms-conditions' exact element={<TermsConditions />} />
+          <Route path='/terms-conditions' exact element={<TermsConditions />} /> 
         </Routes>
         <Footer />
         <AlertBox />

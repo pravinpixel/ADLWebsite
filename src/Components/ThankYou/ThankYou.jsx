@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function ThankYou() {
-  const Navigate = useNavigate()
   useEffect(() => {
     window.scroll(0,0) 
   }, [])
