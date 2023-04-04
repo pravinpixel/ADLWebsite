@@ -88,7 +88,8 @@ export default function GuestCheckOut() {
         localStorage.removeItem("CartTestList");
         toast.success(response.data.message);
         dispatch(setTestCartList([]));
-        navigate('/thank-you')
+        // navigate('/thank-you')
+        navigate('/payment-sucess')
       } else {
         toast.error(response.data.message);
       }

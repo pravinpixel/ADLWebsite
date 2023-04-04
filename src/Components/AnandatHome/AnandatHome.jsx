@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-4.webp";
 import anandhome from "../../assets/images/anandathome.jpg"; 
 import { useForm } from "react-hook-form";
@@ -13,6 +13,7 @@ import axios from "axios";
 export default function AnandatHome() {
   const [open, setOpen] = useState(true)
   const [Loading, setLoading] = useState(false)
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(
       Yup.object().shape({
@@ -27,7 +28,8 @@ export default function AnandatHome() {
     setLoading(true)
     data.page = 'ANAND AT HOME'
     axios.post(API_URL.REACH_US, data).then((res) => {
-      FormResponse()
+      // FormResponse()
+      navigate("/anand-at-home-thank-you");
       setLoading(false)
       reset()
       setOpen(!open)
