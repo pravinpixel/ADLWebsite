@@ -7848,3 +7848,26 @@ ul.action-felds li i.fa.fa-minus-square {
 .border.text-orange {
     border-color: #f28928 !important;
 }
+.action-button {
+    background-color: green;
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    position: fixed;
+    right: 0;
+    top: 50%;
+    padding: 20px 5px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 99999 !important;
+}
+.action-button:hover {
+    opacity: .8;
+    color: white !important;
+}
+.action-button i {
+    transform: rotate(130deg);
+}

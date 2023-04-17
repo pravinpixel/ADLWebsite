@@ -64,6 +64,7 @@ import FloatingForm from './Components/FloatingForm'
 import AuthRoutes from './Components/AuthRoutes'
 import Reports from './Components/Reports'
 import ReportAccount from './Components/ReportAccount' 
+import CallToAction from './Components/CallToAction'
 
 export default function App() {
   const dispatch     = useDispatch();
@@ -147,6 +148,7 @@ export default function App() {
         <Footer />
         <AlertBox />
         <FloatingForm />
+        <CallToAction/>
       </Fragment>
     </QueryClientProvider>
   )
