@@ -69,8 +69,8 @@ export default function LatestBlogs() {
             <div className="knoledge-hub">
               <img src={blogBg} alt="" className="img-fluid" />
               <div className="know-hub">
-                <h4>What is Antibody Testing?</h4>
-                <p>The antibody or serology test is done to ascertain a previous viral infection and the body’s immune response towards it.</p>
+                <h4>10 Tips for Maintaining a Healthy Liver</h4>
+                <p>The liver is one of the largest organs in the body and performs several vital functions. It helps break down and remove toxins from the body, produces bile to aid in digestion, and stores vitamins and minerals.</p>
                 <p><a href="https://www.anandlab.com/blog/10-tips-for-maintaining-a-healthy-liver/" target="_blank">Read More</a></p>
               </div>
             </div>
