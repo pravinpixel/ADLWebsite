@@ -4,7 +4,7 @@ import bannerimage from "../../assets/images/inner-banner-1.webp";
 import people1 from "../../assets/images/people-1.jpg"; 
 import people2 from "../../assets/images/people-2.jpg"; 
 import people3 from "../../assets/images/people-13.jpg"; 
-import people4 from "../../assets/images/people-4.jpg"; 
+import people4 from "../../assets/images/aishu.jpg"; 
 import people11 from "../../assets/images/people-11.jpg"; 
 import people12 from "../../assets/images/people-12.jpg"; 
 import people0 from "../../assets/images/people-0.jpg"; 
@@ -161,11 +161,11 @@ He oversees all IT initiatives and has implemented interesting IT-enabled ideas,
 </div>
 </div>   
 
-{/* <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+ <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="" data-toggle="modal" data-target="#she">
 <img src={people4} alt="call" className="img-fluid" />
-<h4>Ms. Sheela Ashok, <span> Director & Quality </span></h4>
+<h4>Aishwarya Vasudevan, <span> Group COO </span></h4>
 </a> 
 </div>
 </div>
@@ -174,7 +174,7 @@ He oversees all IT initiatives and has implemented interesting IT-enabled ideas,
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">
-<h5 className="modal-title cs-tm" id="exampleModalLabel">Ms. Sheela Ashok, <span> Director & Quality </span></h5>
+<h5 className="modal-title cs-tm" id="exampleModalLabel">Aishwarya Vasudevan, <span> Group COO </span></h5>
 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
@@ -184,21 +184,24 @@ He oversees all IT initiatives and has implemented interesting IT-enabled ideas,
 <img src={people4} alt="call" className="img-fluid" />
 </div>
 <div className="mdl-cnt">
-<p>Ms. Sheela Ashok joined Anand Diagnostic Laboratory in 2003 as a Joint Quality Manager. Under the mentorship of Dr Jayaram she gradually took over the responsibility of overseeing the Quality requirements of ADL and replaced him as Quality Manager in 2012. During her tenure in ADL, Ms. Sheela Ashok has been a driving force in introducing and implementing key Quality Monitoring activities like competency assessment of technical staff, monitoring of Sigma in various processes, and risk management. Being an extremely meticulous and analytical person, Ms. Sheela Ashok has acquired a strong foundation in QC analytics and has provided training regarding the same to doctors and technicians both within and beyond the organisation.</p>
+<p>With over 16 years of experience, Aishwarya Vasudevan - Group COO, comes with a rich background in P&L, Sales, Marketing, Operations, Training, Customer Engagement and Quality.<br/><br/>
+She has strong credentials in consumer healthcare and has successfully developed and launched sales strategies, innovative marketing & branding solutions, and is very passionate about ensuring flawless adherence to quality and protocols.<br/><br/>
+She is also an accomplished Trainer, and has conducted corporate workshops and trained employees of many corporates, including Dell, Accenture, Infosys and Mahindra. She also comes with sound knowledge of running a customer-centric call centre. She has successfully managed an aggressive expansion of centres within record turn-around time. BTL Marketing is another area of expertise that she brings to the table, along with extensive knowledge in Market research , Target group marketing , Product launches and driving Brand perception management. <br/><br/>
+Aishwarya believes that the key to every successful business is unwavering passion for customer excellence, and her corporate journey has allowed her to set up many systems to study, measure and improve customer delight. Her previous organisations include GE, Marico, Dr. Batra’s Positive Health Clinics etc . Her tenacity, innovative thinking and team management skills are what makes her unique and very valuable to our team.</p>
 </div>
 </div> 
 </div>
 </div>
-</div>   */}
+</div> 
 
-<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+{/* <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
 <img src={people11} alt="call" className="img-fluid" />
 <h4>Sheshadri Vasan <span>Senior Vice President & Business Unit Head</span></h4>
 </a> 
 </div>
-</div>
+</div> */}
 
 <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
@@ -227,14 +230,14 @@ He oversees all IT initiatives and has implemented interesting IT-enabled ideas,
 </div>
 </div>
 
-<div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+{/* <div className="col-sm-12 col-md-6 col-lg-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
 <div className="box-fixer nwe-fex">
 <a href="javascript:void(0)" className='no-hover'>
 <img src={people9} alt="call" className="img-fluid" />
 <h4>Vaatsalya Vasanth <span>Deputy General Manager - Marketing</span></h4>
 </a> 
 </div>
-</div>
+</div> */}
 
 
 </div>
