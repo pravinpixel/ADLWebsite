@@ -74,10 +74,10 @@ export default function AnandatHome() {
                     {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
                     <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
                   </div>
-                  <div className="formdata">
+                  {/* <div className="formdata">
                     {errors?.email ? <small className='text-danger'>{errors?.email?.message}</small> : ''}
                     <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
-                  </div>
+                  </div> */}
                   <div className="formdata">
                     {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                     <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
