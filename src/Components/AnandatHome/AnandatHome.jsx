@@ -37,8 +37,25 @@ export default function AnandatHome() {
   useEffect(() => {
     document.title = "COVID testing for employees";
     window.scroll(0, 0);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    // gtag("config", "AW-10841898141");
+    gtag('config', 'G-8VQRMYBYFG');
   }, []);
   return (
+    <>
+
+<Helmet>
+        {/* <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10841898141"
+        ></script> */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG">
+      </Helmet>
+
     <div> 
       <section className="abt-secton forumn-frm mt-8">
         <div className="container">
@@ -113,5 +130,7 @@ export default function AnandatHome() {
         </div>
       </section>
     </div>
+    
+    </>
   );
 }
