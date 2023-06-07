@@ -53,7 +53,7 @@ export default function AnandatHome() {
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-10841898141"
         ></script> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VQRMYBYFG"></script> 
       </Helmet>
 
     <div> 
