@@ -18,7 +18,6 @@ export default function AnandatHome() {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required(),
-        email: Yup.string().required(),
         mobile: Yup.string().matches(/^[6-9]\d{9}$/).required(),
         message: Yup.string().required()
       })
@@ -41,7 +40,6 @@ export default function AnandatHome() {
   }, []);
   return (
     <div> 
-
       <section className="abt-secton forumn-frm mt-8">
         <div className="container">
           <div className="row flex-column-reverse flex-lg-row">
@@ -73,11 +71,7 @@ export default function AnandatHome() {
                   <div className="formdata">
                     {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
                     <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
-                  </div>
-                  {/* <div className="formdata">
-                    {errors?.email ? <small className='text-danger'>{errors?.email?.message}</small> : ''}
-                    <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
-                  </div> */}
+                  </div> 
                   <div className="formdata">
                     {errors?.mobile ? <small className='text-danger'>{'Mobile is a invalid field'}</small> : ''}
                     <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
