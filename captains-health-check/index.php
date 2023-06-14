@@ -7,12 +7,12 @@
       <link rel="canonical" href="https://neubergdiagnostics.com/captains-health-check" />
       <meta name="description" content="Our Partners in Health will help you understand the Personalised Health Check Package. ">
       <meta name="keywords" content=" ">
-      <title>Captains Health Check| Neuberg Diagnostics</title>
+      <title>Captains Health Check| Anandlab</title>
       <meta property="og:description" content="" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Neuberg Diagnostics">
-      <link rel="shortcut icon" type="image/png" href="https://neubergdiagnostics.com/static/assets/images/favicon.png"/>
+      <link rel="shortcut icon" type="image/png" href="favicon.png"/>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +26,14 @@
       <link href="css/style.css" rel="stylesheet">
 
 
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YPG4W4CLZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YPG4W4CLZ5');
+</script>
 
 
         
@@ -61,7 +68,7 @@
                   </a>
                </div>
                <div class="col-7">
-                  <p class="text-right mb-0">Call now to book<a href="tel:+919700369700"><img src="images/phone-icon.png" alt=""/> +91 9700 36 9700</a></p>
+                  <p class="text-right mb-0">Call now to book<a href="tel:+08069451112"><img src="images/phone-icon.png" alt=""/> +080 6945 1112</a></p>
                </div>  
             </div>
          </header>
@@ -92,13 +99,10 @@
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Mobile No. <span>|</span> +91</span>
+                        <span class="input-group-text">Mobile No. <span>|</span> +91 </span>
                     </div>
                     <input type="tel" required name="phone" id="phone" class="form-control" maxlength="10" minlength="10" placeholder="" onkeypress="return /\d/.test(String.fromCharCode(event.keyCode || event.which))" />
-                </div>
-                <div class="form-group">
-                    <input placeholder="Location"  class="form-control" required name="location" id="location" type="text" />
-                </div>
+                </div> 
                <button name="" id="submit2" type="button" onClick="enquirysubmit()">Request A Call</button>                  
             </form>
          </div>
@@ -108,18 +112,113 @@
                <h2>Health Check-Ups<br> <span class="text-purple">ANYTIME. ANYWHERE.</span></h2>
                <p class="text-style1 text-center">Book a health check package and receive your online smart report.</p>
 
-               <p class="callus"><a href="tel:+919700369700">+91 9700 36 9700</a> </p> </div>
+               <p class="callus"><a href="tel:+08069451112">+080 6945 1112</a> </p> </div>
          </div>
          </div>
          </section>
  
-		
+ 		 <section class="gray-bg">
+			 <div class="row">
+				<div class="col">
+					<h2>Full body health check <br/>packages starting at <span>Rs.999</span></h2>
+											
+						<div class="slide-item p-lr-10">
+							<div class="slide-content">
+								<h4>Captains  <br><span>Health Check</span></h4>
+								<small>MS Dhoni shares his health secret!  Try MS Dhoni's personal health screening plan.</small>
+								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>1599</strong></p>
+								<ul>
+									<li>CBC</li>
+									<li>FBS</li>
+									<li>HbA1c</li>
+									<li>Lipid Profile Test</li>
+									<li>Thyroid Profile Test</li>
+									<li>Kidney Function Test</li>
+									<li>Liver Function Test</li>
+									<li>Total Calcium</li>
+									<li>Vitamin D</li> 
+								</ul> 
+								<a href="#" class="booknow">Book Now</a>
+							</div>
+						</div>
+					<div id="slick3">
+						<div class="slide-item">
+							<div class="slide-content">
+								<h4>Neu <span> Lite </span></h4>
+								<small>Glycated Hemoglobin Test, HbA1c is an average blood glucose level over the past 2 to 3 months</small>
+								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>699</strong></p>
+								<ul> 
+									<li>FBS</li>
+									<li>HbA1c</li>
+									<li>Lipid Profile Test</li>  
+								</ul> 
+								<a href="#" class="booknow">Book Now</a>
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-content">
+								<h4>Neu <span> Basic</span></h4>
+								<small>Choose the smartest NeuBasic package, that covers tests on major organs of your body, so that you are prepared for prevention of future diseases way before time.</small>
+								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>999</strong></p>
+								<ul>
+									<li>CBC</li>
+									<li>FBS</li> 
+									<li>Lipid Profile Test</li>
+									<li>Thyroid Profile Test</li>
+									<li>Kidney Function Test</li> 
+								</ul> 
+								<a href="#" class="booknow">Book Now</a>
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-content" >
+								<h4>Neu <span> Express</span></h4>
+								<small>Blood Tests for Optimal Wellness: Assessing Thyroid, Kidney, and Liver Function for a Healthy Life</small>
+								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>1350</strong></p>
+								<ul>
+									<li>CBC</li>
+									<li>FBS</li>
+									<li>HbA1c</li>
+									<li>Lipid Profile Test</li>
+									<li>Thyroid Profile Test</li>
+									<li>Kidney Function Test</li>
+									<li>Liver Function Test</li> 
+								</ul> 
+								<a href="#" class="booknow">Book Now</a>
+							</div>
+						</div>						
+						<div class="slide-item">
+							<div class="slide-content" >
+								<h4>Neu <span> Vita+</span></h4>
+								<small>We’ve designed the NeuDiabetes package to help you keep track of timely interventions, tests & treatments.</small>
+								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>2500</strong></p>
+								<ul>
+									<li>CBC</li>
+									<li>FBS</li>
+									<li>HbA1c</li>
+									<li>Lipid Profile Test</li>
+									<li>Thyroid Profile Test</li>
+									<li>Kidney Function Test</li>
+									<li>Liver Function Test</li>
+									<li>Total Calcium</li>
+									<li>Vitamin D</li>
+									<li>Electrolyte</li>
+									<li>Vitamin B12</li>
+									<li>Iron</li>
+								</ul> 
+								<a href="#" class="booknow">Book Now</a>
+							</div>
+						</div>						
+					</div>
+				</div>
+			 </div>
+		 </section>	
 
 <section class="factsblcok">
 <div class="container">
 <div class="row">
 <div class="col-12 mb-3">
-<h2 class="text-center">Why Neuberg?</h2>
+<h2 class="text-center">Why Neuberg Anand?</h2>
 </div>
 
 <div class="col-4">
@@ -204,7 +303,9 @@
 
 <h3 class="text-center">Health ko asani se na lo.   Test ko aasani se karo.</h3>
 
-      <iframe width="100%"  src="https://www.youtube.com/embed/3Vy1WNAwExY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="100%"  src="https://www.youtube.com/embed/lsopBNmF__A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  
+	   
 
          
   </div>
@@ -263,10 +364,10 @@
 		<footer>
 			<div class="row">
 				<div class="col-12 col-sm-12">
-					<div class="ftrlogo"><img src="images/footer-logo.png" alt="" /></div>
-					<p>Neuberg Diagnostics, headquartered in Chennai, is one of India's leading diagnostic service providers, with its presence in India, UAE, South Africa and USA. The laboratories are accredited by CAP* & NABL*. The group has created accessibility to state-of-the art diagnostic technologies and has some of the finest Clinical Pathologists. Biochemists, Geneticists and several other certified clinical lab professionals, with the capability to perform over 6000 varieties of pathological investigations. 
-<br><br>
-The group focuses on prevention, wellness programs and Structured Processing Disease Management programs for rare diseases using the most advanced technologies assisted by Data science and Al tools. Currently. we are processing over 30 million tests every year, generating quality and accurate reports with 150+ labs, 10,000+ touch points in India & other regions.</p>
+					<div class="ftrlogo mb-2"><img src="images/footer-logo.png" alt="" />
+					<img class="pull-right" src="images/footer-logo-1.png" alt="" />
+					</div>
+					<p>The day Anand Diagnostic Laboratory made a humble beginning on Infantry Road, Shivajinagar Bangalore. This was the day Dr A V Ramaprasad moved from the role of teacher to lead what has grown into a pioneer in technology driven diagnostics in the region. Core principles of honesty and integrity through transparency that were ingrained and percolated down the ladder of the organisation from the time of its inception found roots and are visible 47 years hence. The visionary in Dr Ramaprasad drove him relentlessly to advocate few basic rules for all to follow a) “The patient comes first. </p>
 				</div>
 
 
@@ -284,13 +385,13 @@ SOUTH AFRICA | UAE | USA </span>
 
 
 				<div class="col-12 col-sm-6 ftr-call">
-					<p>Contact Us<a href="tel:+919700369700"><img src="images/footer-phone-icon.png" alt=""/> +91 9700 36 9700</a></p>
+					<p>Contact Us<a href="tel:+08069451112"><img src="images/footer-phone-icon.png" alt=""/> +080 6945 1112</a></p>
 				</div>
 
              
 
 				<div class="col-12 col-sm-6 copy">
-					<p>&copy; <script>var CurrentYear = new Date().getFullYear()document.write(CurrentYear); </script> Neuberg Diagnostics Pvt. Ltd. <br/>All rights reserved.</p>
+					<p>&copy; <script>var CurrentYear = new Date().getFullYear()document.write(CurrentYear); </script> Anandlab. <br/>All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
@@ -500,6 +601,26 @@ SOUTH AFRICA | UAE | USA </span>
 				return $RetVal;
 			}
 		/* form validation end */
+				 $('#slick3').slick({
+				rows: 2,
+				dots: false,
+				arrows: false,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 2,
+				slidesToScroll: 1,
+				 responsive: [
+				{
+				  breakpoint: 640,
+				  settings: {
+					rows: 5,
+					slidesPerRow: 1,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				  },
+				},
+			  ],
+		});
 		</script>
 		
 		
