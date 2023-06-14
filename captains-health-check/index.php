@@ -73,7 +73,7 @@
 					</a>
 				</div>
 				<div class="col-7">
-					<p class="text-right mb-0">Call now to book<a href="tel:+08069451112"><img src="images/phone-icon.png" alt="" /> +080 6945 1112</a></p>
+					<p class="text-right mb-0">Call now to book<a href="tel:08069451112"><img src="images/phone-icon.png" alt="" /> 080 6945 1112</a></p>
 				</div>
 			</div>
 		</header>
@@ -118,7 +118,7 @@
 						<h2>Health Check-Ups<br> <span class="text-purple">ANYTIME. ANYWHERE.</span></h2>
 						<p class="text-style1 text-center">Book a health check package and receive your online smart report.</p>
 
-						<p class="callus"><a href="tel:+08069451112">+080 6945 1112</a> </p>
+						<p class="callus"><a href="tel:08069451112">080 6945 1112</a> </p>
 					</div>
 				</div>
 			</div>
@@ -394,7 +394,7 @@
 
 
 				<div class="col-12 col-sm-6 ftr-call">
-					<p>Contact Us<a href="tel:+08069451112"><img src="images/footer-phone-icon.png" alt="" /> +080 6945 1112</a></p>
+					<p>Contact Us<a href="tel:08069451112"><img src="images/footer-phone-icon.png" alt="" /> 080 6945 1112</a></p>
 				</div>
 
 
