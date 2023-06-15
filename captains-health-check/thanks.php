@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta http-equiv="refresh" content="5; URL=https://anandlab.com/captains-health-check/" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="canonical" href="https://neubergdiagnostics.com/fullbodycheckup" />
       <meta name="description" content="Book your Full Body Checkup package with Neuberg Diagnostics">
@@ -12,7 +13,7 @@
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Neuberg Diagnostics">
-      <link rel="shortcut icon" type="image/png" href="https://neubergdiagnostics.com/static/assets/images/favicon.png"/>
+      <link rel="shortcut icon" type="image/png" href="favicon.png" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +31,12 @@
          <header class="text-white">
             <div class="row align-items-center">
                <div class="col-5">
-                  <a href="https://neubergdiagnostics.com/" target="_blank">
+                  <a href="https://anandlab.com/" target="_blank">
 					<img src="images/logo.png" alt="Logo" class="img-fluid" />
                   </a>
                </div>
                <div class="col-7">
-                  <p class="text-right mb-0">Call now to book<a href="tel:+919700369700"><img src="images/phone-icon.png" alt=""/> +91 9700 36 9700</a></p>
+                  <p class="text-right mb-0">Call now to book<a href="tel:08069451112"><img src="images/phone-icon.png" alt=""/> 080 6945 1112</a></p>
                </div>
             </div>
          </header>
@@ -47,10 +48,9 @@
          <footer>
 			<div class="row">
 				<div class="col-12 col-sm-12">
-					<div class="ftrlogo"><img src="images/footer-logo.png" alt="" /></div>
-					<p>Neuberg Diagnostics, headquartered in Chennai, is one of India's leading diagnostic service providers, with its presence in India, UAE, South Africa and USA. The laboratories are accredited by CAP* & NABL*. The group has created accessibility to state-of-the art diagnostic technologies and has some of the finest Clinical Pathologists. Biochemists, Geneticists and several other certified clinical lab professionals, with the capability to perform over 6000 varieties of pathological investigations. 
-<br><br>
-The group focuses on prevention, wellness programs and Structured Processing Disease Management programs for rare diseases using the most advanced technologies assisted by Data science and Al tools. Currently. we are processing over 30 million tests every year, generating quality and accurate reports with 150+ labs, 10,000+ touch points in India & other regions.</p>
+					<div class="ftrlogo mb-2"><img src="images/footer-logo.png" alt="" />
+						<img class="pull-right" src="images/footer-logo-1.png" alt="" />
+					</div> 
 				</div>
 
 
@@ -68,7 +68,7 @@ SOUTH AFRICA | UAE | USA </span>
 
 
 				<div class="col-12 col-sm-6 ftr-call">
-					<p>Contact Us<a href="tel:+919700369700"><img src="images/footer-phone-icon.png" alt=""/> +91 9700 36 9700</a></p>
+					<p>Contact Us<a href="tel:08069451112"><img src="images/footer-phone-icon.png" alt=""/> 080 6945 1112</a></p>
 				</div>
 
              

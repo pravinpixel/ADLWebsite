@@ -68,7 +68,7 @@
 		<header class="text-white">
 			<div class="row align-items-center">
 				<div class="col-5">
-					<a href="https://neubergdiagnostics.com/" target="_blank">
+					<a href="https://anandlab.com/" target="_blank">
 						<img src="images/logo.png" alt="Logo" class="img-fluid" />
 					</a>
 				</div>
@@ -108,7 +108,7 @@
 					</div>
 					<input type="tel" required name="phone" id="phone" class="form-control" maxlength="10" minlength="10" placeholder="" onkeypress="return /\d/.test(String.fromCharCode(event.keyCode || event.which))" />
 				</div>
-				<button name="" id="submit2" type="button" onClick="enquirysubmit()">Request A Call</button>
+				<button name="" id="submit2" type="button" onclick="enquirysubmit()">Request A Call</button>
 			</form>
 		</div>
 		<section class="anywere">
@@ -161,39 +161,7 @@
 								</ul>
 								<a href="#" class="booknow">Book Now</a>
 							</div>
-						</div>
-						<div class="slide-item">
-							<div class="slide-content">
-								<h4>Neu <span> Basic</span></h4>
-								<small>Choose the smartest NeuBasic package, that covers tests on major organs of your body, so that you are prepared for prevention of future diseases way before time.</small>
-								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>999</strong></p>
-								<ul>
-									<li>CBC</li>
-									<li>FBS</li>
-									<li>Lipid Profile Test</li>
-									<li>Thyroid Profile Test</li>
-									<li>Kidney Function Test</li>
-								</ul>
-								<a href="#" class="booknow">Book Now</a>
-							</div>
-						</div>
-						<div class="slide-item">
-							<div class="slide-content">
-								<h4>Neu <span> Express</span></h4>
-								<small>Blood Tests for Optimal Wellness: Assessing Thyroid, Kidney, and Liver Function for a Healthy Life</small>
-								<p class="price">Offer Price <strong><i class="fa fa-inr" aria-hidden="true"></i>1350</strong></p>
-								<ul>
-									<li>CBC</li>
-									<li>FBS</li>
-									<li>HbA1c</li>
-									<li>Lipid Profile Test</li>
-									<li>Thyroid Profile Test</li>
-									<li>Kidney Function Test</li>
-									<li>Liver Function Test</li>
-								</ul>
-								<a href="#" class="booknow">Book Now</a>
-							</div>
-						</div>
+						</div> 
 						<div class="slide-item">
 							<div class="slide-content">
 								<h4>Neu <span> Vita+</span></h4>
@@ -306,67 +274,7 @@
 
 
 
-		<div class="videoblock">
-
-			<h3 class="text-center">Health ko asani se na lo. Test ko aasani se karo.</h3>
-
-			<iframe width="100%" src="https://www.youtube.com/embed/lsopBNmF__A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-
-		</div>
-
-		<div class="downloadapp text-center">
-			<p>Download the Neuberg Diagbostics App to get access to <br>world-class diagnostic services.
-			<p>
-				<a href="https://play.google.com/store/apps/details?id=com.neubergdiagnostics" target="_blank"><img src="images/playstore.jpg"></a>
-				<a href="https://apps.apple.com/in/app/neuberg-diagnostics-india/id1585628037" target="_blank"><img src="images/appstore.jpg"></a>
-		</div>
-
-
-
-
-
-		<section>
-			<div class="testmonials-block">
-
-				<h2 class="text-center">Customer Trust-i-monials</h2>
-
-				<div id="slick1">
-					<div class="slide-item">
-						<div class="slide-con">
-							<p class=" "> "Our heartfelt appreciation to the house visit lab technician for his heartfelt service. He has visited twice to collect the blood sample for my dad to check his Sugar, Cholesterol &amp; Thyroid level. He is very polite, soft spoken &amp; makes the person very comfortable. He is always on time prior to the appointment. He follows proper dress code as prescribed for a lab technician. He wears gloves during the process. Overall his service is outstanding. We really appreciate his true service.Hope Neuberg Ehrlich continues it's excellent service in the coming future."</p>
-							<span> Mrs. Rajeswari Ranganathan </span>
-							</p>
-						</div>
-					</div>
-					<div class="slide-item">
-						<div class="slide-con">
-							<p class=" ">
-								"I am for the First Time using Home service from your Lab.The Service rendered by the technician was very nice.He was very courteous and punctual"</p>
-							<span> Mr. Ramakrishnan Sridher </span>
-						</div>
-					</div>
-					<div class="slide-item">
-						<div class="slide-con">
-							<p class=" ">
-								"Today I had a pleasant experience of availing home visit service from your lab.Blood test was done for my 74 year old mother. The technician who visited to take the sample was cordial with my mother, test was done with minimal pain as I was updated about the person visiting at appropriate time. Overall it was a great experience from a reputed lab, thanking you"</p>
-							<span> Dr. SGD. Gangadaran, (M.D., D.M) </span>
-						</div>
-					</div>
-					<div class="slide-item">
-						<div class="slide-con">
-							<p class=" ">
-								"Very warm experience. Proactive staff. Very good experience"</p>
-							<span> Mr. Tridib Swain </span>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
+ 
 
 
 
@@ -375,8 +283,7 @@
 				<div class="col-12 col-sm-12">
 					<div class="ftrlogo mb-2"><img src="images/footer-logo.png" alt="" />
 						<img class="pull-right" src="images/footer-logo-1.png" alt="" />
-					</div>
-					<p>The day Anand Diagnostic Laboratory made a humble beginning on Infantry Road, Shivajinagar Bangalore. This was the day Dr A V Ramaprasad moved from the role of teacher to lead what has grown into a pioneer in technology driven diagnostics in the region. Core principles of honesty and integrity through transparency that were ingrained and percolated down the ladder of the organisation from the time of its inception found roots and are visible 47 years hence. The visionary in Dr Ramaprasad drove him relentlessly to advocate few basic rules for all to follow a) “The patient comes first. </p>
+					</div> 
 				</div>
 
 
@@ -400,9 +307,7 @@
 
 
 				<div class="col-12 col-sm-6 copy">
-					<p>&copy; <script>
-							var CurrentYear = new Date().getFullYear() document.write(CurrentYear);
-						</script> Anandlab. <br />All rights reserved.</p>
+					<p>&copy;  2023 Anandlab. <br />All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
@@ -503,23 +408,29 @@
 		function enquirysubmit() {
 
 			if ($('#neu_five_form').valid()) {
+				
+				loading()
 				var name = $('#name').val();
 				var phone = $('#phone').val();
-				$.ajax({
-					method: 'POST',
-					dataType: 'json',
-					url: "https://www.anandlab.com/api/contact-us",
-					data: {
-						page: "captains health check",
-						name: name,
-						phone: phone,
-					},
-					beforesend: loading(),
-					cache: false,
-					success: function(response) {
-						window.location.href = "https://www.anandlab.com/thank-you";
-					}
-				});
+				
+				
+				var  data = {
+					page: "captains health check",
+					name: name,
+					mobile: phone,
+					email:"anandlab@gmail.com"
+				}
+				
+			    fetch("https://admin.anandlab.com/api/contact-us", {
+                  method: "POST",  
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(data),
+                })
+                .then((response) => response.json())
+                .then(res => window.location.href = "https://anandlab.com/captains-health-check/thanks.php")
+			 
 			}
 			return false;
 		}
@@ -594,7 +505,7 @@
 		}
 		/* form validation end */
 		$('#slick3').slick({
-			rows: 2,
+			rows: 1,
 			dots: false,
 			arrows: false,
 			infinite: true,
@@ -604,7 +515,7 @@
 			responsive: [{
 				breakpoint: 640,
 				settings: {
-					rows: 5,
+					rows: 2,
 					slidesPerRow: 1,
 					slidesToShow: 1,
 					slidesToScroll: 1,
