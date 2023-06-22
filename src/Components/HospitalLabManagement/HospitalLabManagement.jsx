@@ -26,7 +26,8 @@ export default function HospitalLabManagement() {
     var formdata = new FormData();
     formdata.append("hospital_name", data.hospital_name); 
     formdata.append("hospital_address", data.hospital_address); 
-    formdata.append("name", data.name); 
+    formdata.append("name", data.name);
+    formdata.append("page_url",window.location.href); 
     formdata.append("email", data.email); 
     formdata.append("mobile", data.mobile); 
     formdata.append("designation", data.designation); 

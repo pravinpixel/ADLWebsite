@@ -35,6 +35,7 @@ export default function HealthCheckupforEmployees() {
 
     var formdata = new FormData();
     formdata.append("name", data.name);
+    formdata.append("page_url",window.location.href);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
     formdata.append("company_name", data.company_name);

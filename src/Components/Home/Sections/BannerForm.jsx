@@ -31,11 +31,12 @@ export default function BannerForm() {
     const submitBanner = (formData) => {
         dispatch(setLoading(true))
         const data = {
-            name: formData.name,
-            mobile: formData.mobile,
-            location: formData.location,
-            test_name: formData.test_name,
-            comments: formData.comments,
+            name      : formData.name,
+            mobile    : formData.mobile,
+            location  : formData.location,
+            test_name : formData.test_name,
+            comments  : formData.comments,
+            page_url  : window.location.href,
             reportFile: formData.reportFile[0]
         }
         axios.post(API_URL.BANNER_FROM, data, {

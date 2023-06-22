@@ -23,6 +23,7 @@ export default function FranchisingOpportunities() {
 
     var formdata = new FormData();
     formdata.append("name", data.name);
+    formdata.append("page_url",window.location.href);
     formdata.append("city", data.city);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);

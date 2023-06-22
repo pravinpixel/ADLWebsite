@@ -38,7 +38,8 @@ export default function Solutions() {
     dispatch(setLoading(true)) 
     var formdata = new FormData();
     formdata.append("name", data.name);
-    formdata.append("email", data.email);
+    formdata.append("page_url",window.location.href);
+    formdata.append("email", data.email); 
     formdata.append("mobile", data.mobile);
     formdata.append("dob", Moment(data.date).format("DD-MM-YYYY"));
     formdata.append("gender", data.gender);

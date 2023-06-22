@@ -27,6 +27,7 @@ export default function AnandatHome() {
   const contactUsFrom = (data) => {
     setLoading(true)
     data.page = 'ANAND AT HOME'
+    data.page_url = window.location.href
     axios.post(API_URL.REACH_US, data).then((res) => {
       // FormResponse()
       navigate("/anand-at-home-thank-you");
