@@ -103,30 +103,30 @@ export default function Contact() {
                                     <div className="mb-5 animated fadeInUp"><hr /></div>
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-8">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.398949025306!2d77.606148!3d12.981461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33ceeda312ca9a2c!2sAnand%20Diagnostic%20Laboratory%20(A%20Neuberg%20Associate)!5e0!3m2!1sen!2sin!4v1656335670159!5m2!1sen!2sin" className="contact-map" allowFullScreen="" loading="lazy"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.398949025306!2d77.606148!3d12.981461!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x33ceeda312ca9a2c!2sAnand%20Diagnostic%20Laboratory%20(A%20Neuberg%20Associate)!5e0!3m2!1sen!2sin!4v1656335670159!5m2!1sen!2sin" className="contact-map" allowFullScreen loading="lazy"></iframe>
                                 </div>
                                 <div className="col-sm-12 col-md-12 col-lg-4">
                                     <div className="green-bg animated fadeInRight">
                                         <h4 className="mb-3 text-white">Get in Touch</h4>
                                         <form onSubmit={handleSubmit(contactUsFrom)}>
                                             <div className="formdata">
-                                                {errors?.name ? <small className='text-danger'>{errors?.name?.message}</small> : ''}
+                                                {errors?.name ? <i className='text-warning danger text-capitalize small'>*{errors?.name?.message}</i> : ''}
                                                 <input {...register('name')} type="text" placeholder="Enter Your Name" className='form-control' />
                                             </div>
                                             <div className="formdata">
-                                                {errors?.email ? <small className='text-danger'>{errors?.email?.message}</small> : ''}
+                                                {errors?.email ? <i className='text-warning danger text-capitalize small '>*{errors?.email?.message}</i> : ''}
                                                 <input {...register('email')} type="email" placeholder="Enter Your Email ID" className='form-control' />
                                             </div>
                                             <div className="formdata">
-                                                {errors?.mobile ? <small className='text-danger'>{'email is a required field'}</small> : ''}
+                                                {errors?.mobile ? <i className='text-warning danger text-capitalize small '>*{errors?.mobile?.message}</i> : ''}
                                                 <input {...register('mobile')} type="tel" placeholder="Enter Your Mobile Number" className='form-control' />
                                             </div>
                                             <div className="formdata">
-                                                {errors?.location ? <small className='text-danger'>{errors?.location?.message}</small> : ''}
+                                                {errors?.location ? <i className='text-warning danger text-capitalize small '>{errors?.location?.message}</i> : ''}
                                                 <input {...register('location')} type="text" placeholder="Enter Your Location" className='form-control' />
                                             </div>
                                             <div className="formdata">
-                                                {errors?.message ? <small className='text-danger'>{errors?.message?.message}</small> : ''}
+                                                {errors?.message ? <i className='text-warning danger text-capitalize small '>{errors?.message?.message}</i> : ''}
                                                 <textarea {...register('message')} className='form-control' placeholder="Message"></textarea>
                                             </div>
                                             <div className="formdata">
