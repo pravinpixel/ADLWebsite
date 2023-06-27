@@ -415,10 +415,9 @@
 				
 				
 				var  data = {
-					page: "captains health check",
+					page: "CAPTAINS HEALTH CHECK",
 					name: name,
 					mobile: phone,
-					email:"anandlab@gmail.com"
 				}
 				
 			    fetch("https://admin.anandlab.com/api/contact-us", {

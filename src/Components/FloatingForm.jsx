@@ -21,8 +21,7 @@ function FloatingForm() {
         )
     })
     const contactUsFrom = (data) => {
-        setLoading(true)
-        data.email = 'anandlab@gmail.com'
+        setLoading(true) 
         data.page = 'CALL BACK FORM - FOOTER'
         data.page_url = window.location.href
         axios.post(API_URL.REACH_US, data).then((res) => {
