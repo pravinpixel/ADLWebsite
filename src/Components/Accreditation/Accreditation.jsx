@@ -103,14 +103,14 @@ export default function Accreditation() {
                   <li>
                     <img src={certimg3} alt="call" className="img-fluid" />
                     <h4> NARL <span>Certificate</span></h4>
-                    <div className="cmn-buton"><p><a href="https://www.anandlab.com/static/pdf/narl.pdf"
+                    <div className="cmn-buton"><p><a href="https://www.anandlab.com/pdf/narl.pdf"
                           target="_blank"
                           rel="noreferrer">View Certificate</a></p></div>
                   </li>
                   <li>
                     <img src={certimg4} alt="call" className="img-fluid" />
                     <h4> Scope <span> NARL </span></h4>
-                    <div className="cmn-buton"><p><a href="https://www.anandlab.com/static/pdf/scope.pdf" 
+                    <div className="cmn-buton"><p><a href="https://www.anandlab.com/pdf/scope.pdf" 
                           target="_blank"
                           rel="noreferrer">View Certificate</a></p></div>
                   </li>
