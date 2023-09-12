@@ -49,7 +49,11 @@
         crossorigin="anonymous"></script>
     <script>
         window.addEventListener("load", (event) => {
-         $zoho.salesiq.chatwindow.visible("hide", 50000); 
+            try {
+                $zoho.salesiq.chatwindow.visible("hide", 50000);
+            } catch (error) {
+
+            }
             // !function (e, t, a) { var c = e.head || e.getElementsByTagName("head")[0], n = e.createElement("script"); n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n) }(document, "https://xbotic.cbots.live", { bot_key: "a89fca91cc0e486d", welcome_msg: true, branding_key: "xbotic", server: "https://xbotic.cbots.live", e: "p" });
             // (function (w, d, s, l, i) {
             //     w[l] = w[l] || []; w[l].push({

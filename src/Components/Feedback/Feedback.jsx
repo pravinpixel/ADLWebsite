@@ -8,6 +8,7 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 import { useDispatch } from "react-redux";
+import { questions } from "../../utils";
 
 export default function Feedback() {
   const {
@@ -24,7 +25,7 @@ export default function Feedback() {
 
     var formdata = new FormData();
     formdata.append("name", data.name);
-    formdata.append("page_url",window.location.href);
+    formdata.append("page_url", window.location.href);
     formdata.append("email", data.email);
     formdata.append("mobile", data.mobile);
     formdata.append("location", data.location);
@@ -39,7 +40,7 @@ export default function Feedback() {
     fetch(API_URL.FEEDBACKS, requestOptions)
       .then(response => response.json())
       .then(result => {
-        if(result.Errors === false) {
+        if (result.Errors === false) {
           dispatch(setLoading(false))
           reset()
           FormResponse()
@@ -47,7 +48,7 @@ export default function Feedback() {
       })
       .catch(error => console.log('error', error));
   }
-  
+
   useEffect(() => {
     document.title = "Feedback";
     window.scroll(0, 0);
@@ -59,21 +60,21 @@ export default function Feedback() {
         <div className="inner-caption">
           <div className="container">
             <div className="row">
-            <div className="col">
-              <div className="caption-details bnr-txt">
-                <ul>
-                  <li>
-                    <Link to="/"> Home </Link>
-                  </li>
-                  <li> / </li>
-                  <li> Patients </li>
-                  <li> / </li>
-                  <li> Feedback </li>
-                </ul>
-                <h1>
-                  Service with commitment<br></br> and competence!
-                </h1>
-              </div>
+              <div className="col">
+                <div className="caption-details bnr-txt">
+                  <ul>
+                    <li>
+                      <Link to="/"> Home </Link>
+                    </li>
+                    <li> / </li>
+                    <li> Patients </li>
+                    <li> / </li>
+                    <li> Feedback </li>
+                  </ul>
+                  <h1>
+                    Service with commitment<br></br> and competence!
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -83,7 +84,7 @@ export default function Feedback() {
       <section className="abt-secton forumn-frm">
         <div className="container">
           <div className="row">
-            <div className="col-lg-7">
+            <center className="mb-4">
               <div className="legacy-care">
                 <div className="common-heading">
                   <h2>
@@ -105,133 +106,185 @@ export default function Feedback() {
                 </p>
                 <div className="cmn-buton">
                   <p>
-                  <Link to='tel:18004251974'>Call Back</Link>
-                  <Link to='/reach-us' className="bg-trsnper ylw"> Enquire Now</Link>
+                    <Link to='tel:18004251974'>Call Back</Link>
+                    <Link to='/reach-us' className="bg-trsnper ylw"> Enquire Now</Link>
                   </p>
                 </div>
               </div>
-            </div>
+            </center>
 
-            <div className="col-sm-12 col-md-6 col-lg-5">
+            <div className="col-12">
               <div className="green-bg animated fadeInRight">
-                <h4 className="mb-3 text-white">
-                  For Questions, ideas & Feedback
-                </h4>
-                <form onSubmit={handleSubmit(onSubmit)} >
-                  <div className="formdata">
-                      <small className="text-light">Name</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="name"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
+                <form onSubmit={handleSubmit(onSubmit)} className="row">
+                  <div className="col-12">
+                    <h4 className="mb-3 text-center text-white">
+                      For Questions, ideas & Feedback
+                    </h4>
+                  </div>
+                  <div className="col-lg-4">
+                    <div>
+                      <div className="formdata">
+                        <small className="text-light">Name</small>
+                        <ErrorMessage
+                          errors={errors}
+                          name="name"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <input
+                          className="form-control jsrequired"
+                          type="text"
+                          name="name"
+                          {...register("name", {
+                            required: "This is required.",
+                          })}
+                        />
+                      </div>
+                      <div className="formdata">
+                        <small className="text-light">Email</small>
+                        <ErrorMessage
+                          errors={errors}
+                          name="email"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <input
+                          className="form-control jsrequired"
+                          type="email"
+                          name="email"
+                          {...register("email", {
+                            required: "This is required.",
+                            pattern: {
+                              value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                              message: 'Invalid email address!'
+                            }
+                          })}
+                        />
+                      </div>
+                      <div className="formdata">
+                        <small className="text-light">Mobile</small>
+                        <ErrorMessage
+                          errors={errors}
+                          name="mobile"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <input
+                          className="form-control jsrequired"
+                          type="tel"
+                          name="mobile"
+                          {...register("mobile", {
+                            required: "This is required.",
+                            pattern: {
+                              value: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                              message: 'Not a valid Phone Number'
+                            }
+                          })}
+                        />
+                      </div>
+                      <div className="formdata">
+                        <small className="text-light">Location</small>
+                        <ErrorMessage
+                          errors={errors}
+                          name="location"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <input
+                          className="form-control jsrequired"
+                          type="text"
+                          name="location"
+                          {...register("location", {
+                            required: "This is required.",
+                          })}
+                        />
+                      </div>
+
+                      <div className="formdata">
+                        <div className="mb-2">
+                          <small className="text-light">Rate overall experience</small>
+                        </div>
+                        <ErrorMessage
+                          errors={errors}
+                          name="rating"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <div>
+                          <label htmlFor="001" className="form-control mb-3">
+                            <input id="001" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <span className="ml-2">BELOW EXPECTATION</span>
+                          </label>
+                          <label htmlFor="002" className="form-control mb-3">
+                            <input id="002" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <span className="ml-2">MET EXPECTATION</span>
+                          </label>
+                          <label htmlFor="003" className="form-control mb-3">
+                            <input id="003" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <span className="ml-2">EXCEEDED EXPECTATION</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="formdata">
+                        <small className="text-light">Remarks</small>
+                        <ErrorMessage
+                          errors={errors}
+                          name="message"
+                          render={({ message }) => (
+                            <small className="text-danger ml-2">
+                              * {message}
+                            </small>
+                          )}
+                        />
+                        <textarea
+                          className="form-control"
+                          name="msg"
+                          id="msg"
+                          {...register("message", {
+                            required: "This is required.",
+                          })}
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-8">
+                    <div className="bg-white rounded">
+                      {questions.map((item, i) => (
+                        <div className="row border-bottom rounded qa-row align-items-center  m-0 small" key={Math.random()}>
+                          <div className="col-6 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
+                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" name={i + "QA"} id={i + "QA"} className="mr-2" required />Yes</label>
+                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" name={i + "QA"} id={i + "QA"} className="mr-2" required />No</label>
+                          <div className="col-4 p-0">
+                            <textarea className="border w-100" placeholder="Comments ..." rows={1.5}></textarea>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="text-center">
                       <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="name"
-                        {...register("name", {
-                          required: "This is required.",
-                        })}
-                      /> 
-                  </div>
-                  <div className="formdata">
-                      <small className="text-light">Email</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="email"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
+                        type="submit"
+                        name="submit"
+                        value="Submit"
+                        className="px-5 btn-primary border border-light mt-3"
                       />
-                      <input
-                        className="form-control jsrequired"
-                        type="email"
-                        name="email"
-                        {...register("email", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                            message:'Invalid email address!'
-                          }
-                        })}
-                      /> 
-                  </div>
-                  <div className="formdata">
-                      <small className="text-light">Mobile</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="mobile"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="tel"
-                        name="mobile"
-                        {...register("mobile", {
-                          required: "This is required.",
-                          pattern:{
-                            value:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                            message:'Not a valid Phone Number'
-                          } 
-                        })}
-                      /> 
-                  </div>
-                  <div className="formdata">
-                      <small className="text-light">Location</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="location"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <input
-                        className="form-control jsrequired"
-                        type="text"
-                        name="location"
-                        {...register("location", {
-                          required: "This is required.",
-                        })}
-                      /> 
-                  </div>
-                  <div className="formdata">
-                      <small className="text-light">Message</small>
-                      <ErrorMessage
-                        errors={errors}
-                        name="message"
-                        render={({ message }) => (
-                          <small className="text-danger ml-2">
-                            * {message}
-                          </small>
-                        )}
-                      />
-                      <textarea
-                        className="form-control"
-                        name="msg"
-                        id="msg"
-                        {...register("message", {
-                          required: "This is required.",
-                        })}
-                      ></textarea> 
-                  </div>
-                  <div className="formdata"> 
-                    <input
-                      type="submit"
-                      name="submit"
-                      value="Submit"
-                    />
+                    </div>
                   </div>
                 </form>
               </div>

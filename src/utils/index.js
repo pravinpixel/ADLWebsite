@@ -1,1 +1,16 @@
 export { default as CheckBox } from './CheckBox'
+export const questions = [
+    "Are there any delays in reports?",
+    "Are there any complaints for inventory?",
+    "Are there any delays in registration?",
+    "Do you require changes in Pick time?",
+    "Are there any delays in response from help desk?",
+    "Are there any registration errors?",
+    "Are there any repeat sample count?",
+    "Is the client delaying the sample?",
+    "Was the Client's code blocked in this week?",
+    "Is the Client full sample load coming to us?",
+    "Are there any new opportunities?",
+    "Is there any drop in the sample load?",
+    "Any other request from client?"
+];
