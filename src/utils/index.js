@@ -1,4 +1,12 @@
 export { default as CheckBox } from './CheckBox'
+export const slugify = (prefix, str) => {
+    return prefix + str
+      .toLowerCase() // Convert the string to lowercase
+      .replace(/[^\w\s-]/g, '') // Remove non-word characters
+      .trim() // Trim leading/trailing spaces
+      .replace(/[\s_-]+/g, '-') // Replace spaces, underscores, and hyphens with a single hyphen
+      .substring(0, 100); // Limit the slug length (adjust as needed)
+  }
 export const questions = [
     "Are there any delays in reports?",
     "Are there any complaints for inventory?",

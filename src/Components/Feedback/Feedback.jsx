@@ -8,7 +8,8 @@ import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 import { useDispatch } from "react-redux";
-import { questions } from "../../utils";
+import { questions, slugify } from "../../utils";
+import axios from "axios";
 
 export default function Feedback() {
   const {
@@ -22,31 +23,14 @@ export default function Feedback() {
 
   const onSubmit = (data) => {
     dispatch(setLoading(true))
-
-    var formdata = new FormData();
-    formdata.append("name", data.name);
-    formdata.append("page_url", window.location.href);
-    formdata.append("email", data.email);
-    formdata.append("mobile", data.mobile);
-    formdata.append("location", data.location);
-    formdata.append("message", data.message);
-
-    var requestOptions = {
-      method: 'POST',
-      body: formdata,
-      redirect: 'follow'
-    };
-
-    fetch(API_URL.FEEDBACKS, requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        if (result.Errors === false) {
-          dispatch(setLoading(false))
-          reset()
-          FormResponse()
-        }
-      })
-      .catch(error => console.log('error', error));
+    data['page_url'] = window.location.href
+    axios.post(API_URL.FEEDBACKS, data).then(res => {
+      if (res.data.Errors === false) {
+        dispatch(setLoading(false))
+        reset()
+        FormResponse()
+      }
+    }).catch(error => console.log('error', error));
   }
 
   useEffect(() => {
@@ -88,7 +72,7 @@ export default function Feedback() {
               <div className="legacy-care">
                 <div className="common-heading">
                   <h2>
-                    ADL <span className="yelow">Forum</span>{" "}
+                    ADL <span className="yelow">Forum</span>
                   </h2>
                 </div>
                 <p>
@@ -96,7 +80,7 @@ export default function Feedback() {
                   prescribed? Curious about what transpires in the time between
                   when your sample was collected and report was issued? Do you
                   have something to share about your experience with us but do
-                  not know whom to approach? ‘Ask ADL’ is a highly recommended
+                  not know whom to approach? 'Ask ADL' is a highly recommended
                   portal where you can feel free to ask any question that has
                   been on top of your mind and you will be receiving a reply
                   from our experts on the same. Further, this is a platform for
@@ -227,15 +211,15 @@ export default function Feedback() {
                         />
                         <div>
                           <label htmlFor="001" className="form-control mb-3">
-                            <input id="001" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <input id="001" type="radio" value={slugify('', 'BELOW EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
                             <span className="ml-2">BELOW EXPECTATION</span>
                           </label>
                           <label htmlFor="002" className="form-control mb-3">
-                            <input id="002" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <input id="002" type="radio" value={slugify('', 'MET EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
                             <span className="ml-2">MET EXPECTATION</span>
                           </label>
                           <label htmlFor="003" className="form-control mb-3">
-                            <input id="003" type="radio" name="rating" {...register("rating", { required: "This is required." })} />
+                            <input id="003" type="radio" value={slugify('', 'EXCEEDED EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
                             <span className="ml-2">EXCEEDED EXPECTATION</span>
                           </label>
                         </div>
@@ -267,10 +251,10 @@ export default function Feedback() {
                       {questions.map((item, i) => (
                         <div className="row border-bottom rounded qa-row align-items-center  m-0 small" key={Math.random()}>
                           <div className="col-6 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
-                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" name={i + "QA"} id={i + "QA"} className="mr-2" required />Yes</label>
-                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" name={i + "QA"} id={i + "QA"} className="mr-2" required />No</label>
+                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={1} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />Yes</label>
+                          <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={0} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />No</label>
                           <div className="col-4 p-0">
-                            <textarea className="border w-100" placeholder="Comments ..." rows={1.5}></textarea>
+                            <textarea className="border w-100" maxLength="255"  {...register(slugify('QAC_', item))} placeholder="Comments ..." rows={1.5}></textarea>
                           </div>
                         </div>
                       ))}
