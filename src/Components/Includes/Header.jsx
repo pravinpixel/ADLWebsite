@@ -438,7 +438,7 @@ export default function Header() {
                                       to="/feedback-b2b"
                                       className="dropdown-item"
                                     >
-                                      Feedback
+                                      Feedback B2B
                                     </Link>
                                   </li>
                           </ul>
