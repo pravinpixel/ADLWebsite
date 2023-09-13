@@ -432,6 +432,15 @@ export default function Header() {
                                 Research
                               </Link>
                             </li>
+                            <li>
+                                    <Link
+                                      onClick={handleLink}
+                                      to="/feedback-b2b"
+                                      className="dropdown-item"
+                                    >
+                                      Feedback
+                                    </Link>
+                                  </li>
                           </ul>
                         </li>
                         <li className="nav-item sngle-frce about-inn">
