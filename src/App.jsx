@@ -65,6 +65,7 @@ import AuthRoutes from './Components/AuthRoutes'
 import Reports from './Components/Reports'
 import ReportAccount from './Components/ReportAccount' 
 import CallToAction from './Components/CallToAction'
+import FeedbackB2B from './Components/Feedback/FeedbackB2B'
 
 export default function App() {
   const dispatch     = useDispatch();
@@ -120,6 +121,7 @@ export default function App() {
           <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
           <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
           <Route path='/feedback' element={<Feedback />} />
+          <Route path='/feedback-b2b' element={<FeedbackB2B />} />
           <Route path='/faq' element={<Faq />} />
           <Route path='/book-an-appointment' element={<BookanAppointment />} />
           <Route path='/department' element={<Department />} />

@@ -76,18 +76,11 @@ export default function Feedback() {
                   </h2>
                 </div>
                 <p>
-                  Do you have a question regarding a test your doctor
-                  prescribed? Curious about what transpires in the time between
-                  when your sample was collected and report was issued? Do you
-                  have something to share about your experience with us but do
-                  not know whom to approach? 'Ask ADL' is a highly recommended
-                  portal where you can feel free to ask any question that has
-                  been on top of your mind and you will be receiving a reply
-                  from our experts on the same. Further, this is a platform for
-                  us to hear from our valuable customers. Please feel free to
-                  share your ideas and feedback.<br></br>
-                  <b>We are listening!</b>
+                  We strive to provide you with the best service possible, and your feedback is crucial for us to serve
+                  you better. We kindly invite you to take a few minutes to fill out our feedback form. Your insights
+                  will help us improve and ensure that we meet your expectations.
                 </p>
+                <p>Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your thoughts!</p>
                 <div className="cmn-buton">
                   <p>
                     <Link to='tel:18004251974'>Call Back</Link>
@@ -102,7 +95,7 @@ export default function Feedback() {
                 <form onSubmit={handleSubmit(onSubmit)} className="row">
                   <div className="col-12">
                     <h4 className="mb-3 text-center text-white">
-                      For Questions, ideas & Feedback
+                      We value your feedback.
                     </h4>
                   </div>
                   <div className="col-lg-4">
@@ -250,10 +243,10 @@ export default function Feedback() {
                     <div className="bg-white rounded">
                       {questions.map((item, i) => (
                         <div className="row border-bottom rounded qa-row align-items-center  m-0 small" key={Math.random()}>
-                          <div className="col-6 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
+                          <div className="col-sm-6 p-0 my-2 my-sm-0 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
                           <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={1} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />Yes</label>
                           <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={0} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />No</label>
-                          <div className="col-4 p-0">
+                          <div className="col-sm-4 p-0 mt-2 mt-sm-0">
                             <textarea className="border w-100" maxLength="255"  {...register(slugify('QAC_', item))} placeholder="Comments ..." rows={1.5}></textarea>
                           </div>
                         </div>

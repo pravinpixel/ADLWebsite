@@ -13,7 +13,7 @@ export const API_URL = {
     GET_CUSTOMER_INFO          : `${process.env.REACT_APP_BASE_URL}/api/customer/`,
     PACKAGES_LIST              : `${process.env.REACT_APP_BASE_URL}/api/packages`,
     PATIENTS_CONSUMERS         : `${process.env.REACT_APP_BASE_URL}/api/patients-consumers`,
-    FEEDBACKS                  : `${process.env.REACT_APP_BASE_URL}/api/feedback`,
+    FEEDBACKS                  : `${process.env.REACT_APP_BASE_URL}/api/feedback`, 
     FAQ                        : `${process.env.REACT_APP_BASE_URL}/api/faq`,
     HOSPITAL_LAB_MANAGEMENT    : `${process.env.REACT_APP_BASE_URL}/api/hospital-lab-management`,
     CLINICAL_LAB_MANAGEMENT    : `${process.env.REACT_APP_BASE_URL}/api/clinical-lab-management`,
