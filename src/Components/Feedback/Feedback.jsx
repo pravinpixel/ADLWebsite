@@ -53,7 +53,7 @@ export default function Feedback() {
                     <li> / </li>
                     <li> Patients </li>
                     <li> / </li>
-                    <li> Feedback </li>
+                    <li> Feedback B2B</li>
                   </ul>
                   <h1>
                     Service with commitment<br></br> and competence!
@@ -72,7 +72,7 @@ export default function Feedback() {
               <div className="legacy-care">
                 <div className="common-heading">
                   <h2>
-                    ADL <span className="yelow">Forum</span>
+                    We value <span className="yelow">your feedback</span>
                   </h2>
                 </div>
                 <p>
@@ -92,12 +92,7 @@ export default function Feedback() {
 
             <div className="col-12">
               <div className="green-bg animated fadeInRight">
-                <form onSubmit={handleSubmit(onSubmit)} className="row">
-                  <div className="col-12">
-                    <h4 className="mb-3 text-center text-white">
-                      We value your feedback.
-                    </h4>
-                  </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="row"> 
                   <div className="col-lg-4">
                     <div>
                       <div className="formdata">

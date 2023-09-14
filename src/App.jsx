@@ -120,8 +120,8 @@ export default function App() {
           <Route path='/health-packages' element={<HealthPackages />} />
           <Route path='/preparing-for-health-checkup' element={<PreparingForHeathCheckup />} />
           <Route path='/drive-through-blood-collection' element={<DriveThroughBloodCollection />} />
-          <Route path='/feedback' element={<Feedback />} />
-          <Route path='/feedback-b2b' element={<FeedbackB2B />} />
+          <Route path='/feedback' element={<FeedbackB2B />} />
+          <Route path='/feedback-b2b' element={<Feedback />} />
           <Route path='/faq' element={<Faq />} />
           <Route path='/book-an-appointment' element={<BookanAppointment />} />
           <Route path='/department' element={<Department />} />

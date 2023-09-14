@@ -53,7 +53,7 @@ export default function FeedbackB2B() {
                                         <li> / </li>
                                         <li> Patients </li>
                                         <li> / </li>
-                                        <li> Feedback B2B </li>
+                                        <li> Feedback  </li>
                                     </ul>
                                     <h1>
                                         Service with commitment<br></br> and competence!
@@ -70,7 +70,7 @@ export default function FeedbackB2B() {
                     <center className="legacy-care mb-4">
                         <div className="common-heading">
                             <h2>
-                                ADL <span className="yelow">Forum</span>
+                                We value <span className="yelow">your feedback</span>
                             </h2>
                         </div>
                         <p>
@@ -89,11 +89,6 @@ export default function FeedbackB2B() {
                     <hr />
                     <div>
                         <form onSubmit={handleSubmit(onSubmit)} className="row align-items-center">
-                            <div className="col-12">
-                                <h4 className="mb-3 text-center">
-                                    We value your feedback.
-                                </h4>
-                            </div>
                             <div className="col-lg-4 h-100">
                                 <div className="green-bg animated fadeInRight h-100">
                                     <div className="formdata">
@@ -212,9 +207,9 @@ export default function FeedbackB2B() {
                                         <div className="pb-4" key={Math.random()}>
                                             <div className="row border bg-white rounded align-items-center m-0" >
                                                 <div className="col-sm-12 text-dark p-2 fw-bold d-flex border-bottom"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
-                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required  value="Exceeding Expectations" />Exceeding Expectations</label>
-                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required  value="Meet Expectations" />Meet Expectations</label>
-                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required  value="Below Expectations" />Below Expectations</label>
+                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Exceeding Expectations" />Exceeding Expectations</label>
+                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Meet Expectations" />Meet Expectations</label>
+                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Below Expectations" />Below Expectations</label>
                                             </div>
                                         </div>
                                     ))}
