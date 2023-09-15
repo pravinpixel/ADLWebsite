@@ -3991,10 +3991,10 @@ iframe.contact-map {
 .box-fixer {
     padding: 20px;
     position: relative;
-    margin: 50px 0px;
     border: 2px solid #f2f2f2;
     transition: all 0.3s ease;
     border-radius: 5px;
+    min-height: 100%;
 }
 
 .box-fixer a {
@@ -4009,7 +4009,12 @@ iframe.contact-map {
 .box-fixer a.no-hover:before {
     display: none;
 }
-
+.small::after,
+.small::before {
+    content:none !important;
+    display: none !important;
+    position:unset !important
+}
 .box-fixer a:before {
     background-color: #00000095;
     content: "+";
