@@ -82,7 +82,6 @@ export default function FeedbackB2B() {
                         <div className="cmn-buton">
                             <p>
                                 <Link to='tel:18004251974'>Call Back</Link>
-                                <Link to='/reach-us' className="bg-trsnper ylw"> Enquire Now</Link>
                             </p>
                         </div>
                     </center>
