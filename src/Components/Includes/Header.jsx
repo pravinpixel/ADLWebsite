@@ -95,7 +95,7 @@ export default function Header() {
             <div className="col">
               <nav className="navbar navbar-default navbar-trans navbar-expand-lg">
                 <Link to="/" className="navbar-brand text-brand">
-                  <img src={logo} alt="" className="img-fluid" />
+                  <img src={logoberg} alt="" className="img-fluid" />
                 </Link>
                 <div
                   className="navbar-collapse collapse justify-content-center"
@@ -508,13 +508,13 @@ export default function Header() {
                     </div>
                   </div>
                 </div>
-                <Link
+                {/* <Link
                   onClick={handleLink}
                   to="/"
                   className="navbar-brand text-brand rit-sde"
                 >
                   <img src={logoberg} alt="" className="img-fluid" />
-                </Link>
+                </Link> */}
                 <button
                   ref={toggleIcon}
                   className="navbar-toggler collapsed"

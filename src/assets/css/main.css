@@ -7721,7 +7721,7 @@ select.form-control.form-control-lg option {
     }
 
     .navbar-default .navbar-brand img {
-        min-width: 130px;
+      width:120px;
     }
 
     .navbar-brand.text-brand.rit-sde {
@@ -7900,7 +7900,7 @@ select.form-control.form-control-lg option {
 
 @media (max-width:400px) {
     .navbar-default .navbar-brand img {
-        min-width: 125px;
+        width:110px;
     }
 
     .navbar-brand.text-brand.rit-sde {
