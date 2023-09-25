@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-14.webp";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
@@ -12,16 +11,30 @@ import { questions, slugify } from "../../utils";
 import axios from "axios";
 
 export default function Feedback() {
+  const path = useLocation();
+  const queryParams = new URLSearchParams(path.search)
+  const patientname = queryParams.get("patientname")
+  const labid = queryParams.get("labid")
+  const defaultValue  ={
+    name:patientname,
+    corporate_id:labid
+  }
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm();
+  } = useForm({
+    defaultValues:defaultValue
+  });
 
   const dispatch = useDispatch()
 
-  const onSubmit = (data) => {
+  const onSubmit = (formData) => {
+    const data = {
+      ...formData,
+      type:'feedback-b2b'
+  }
     dispatch(setLoading(true))
     data['page_url'] = window.location.href
     axios.post(API_URL.FEEDBACKS, data).then(res => {
@@ -76,11 +89,13 @@ export default function Feedback() {
                   </h2>
                 </div>
                 <p>
-                  We strive to provide you with the best service possible, and your feedback is crucial for us to serve
-                  you better. We kindly invite you to take a few minutes to fill out our feedback form. Your insights
-                  will help us improve and ensure that we meet your expectations.
+                We strive to provide you with the best service possible, and your feedback is crucial for us to serve 
+                you better.  Your insights will help us improve and ensure that we exceed your expectations.
                 </p>
-                <p>Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your thoughts!</p>
+                <p>
+                Remove Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your 
+                thoughts!
+                </p>
                 <div className="cmn-buton">
                   <p>
                     <Link to='tel:18004251974'>Call Back</Link>
@@ -95,7 +110,7 @@ export default function Feedback() {
                   <div className="col-lg-4">
                     <div>
                       <div className="formdata">
-                        <small className="text-light">Name</small>
+                        <small className="text-light">Name of the organization</small>
                         <ErrorMessage
                           errors={errors}
                           name="name"
@@ -114,59 +129,12 @@ export default function Feedback() {
                           })}
                         />
                       </div>
+
                       <div className="formdata">
-                        <small className="text-light">Email</small>
+                        <small className="text-light">B2B Corporate ID</small>
                         <ErrorMessage
                           errors={errors}
-                          name="email"
-                          render={({ message }) => (
-                            <small className="text-danger ml-2">
-                              * {message}
-                            </small>
-                          )}
-                        />
-                        <input
-                          className="form-control jsrequired"
-                          type="email"
-                          name="email"
-                          {...register("email", {
-                            required: "This is required.",
-                            pattern: {
-                              value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                              message: 'Invalid email address!'
-                            }
-                          })}
-                        />
-                      </div>
-                      <div className="formdata">
-                        <small className="text-light">Mobile</small>
-                        <ErrorMessage
-                          errors={errors}
-                          name="mobile"
-                          render={({ message }) => (
-                            <small className="text-danger ml-2">
-                              * {message}
-                            </small>
-                          )}
-                        />
-                        <input
-                          className="form-control jsrequired"
-                          type="tel"
-                          name="mobile"
-                          {...register("mobile", {
-                            required: "This is required.",
-                            pattern: {
-                              value: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                              message: 'Not a valid Phone Number'
-                            }
-                          })}
-                        />
-                      </div>
-                      <div className="formdata">
-                        <small className="text-light">Location</small>
-                        <ErrorMessage
-                          errors={errors}
-                          name="location"
+                          name="corporate_id"
                           render={({ message }) => (
                             <small className="text-danger ml-2">
                               * {message}
@@ -176,46 +144,17 @@ export default function Feedback() {
                         <input
                           className="form-control jsrequired"
                           type="text"
-                          name="location"
-                          {...register("location", {
+                          name="corporate_id"
+                          {...register("corporate_id", {
                             required: "This is required.",
                           })}
                         />
-                      </div>
-
-                      <div className="formdata">
-                        <div className="mb-2">
-                          <small className="text-light">Rate overall experience</small>
-                        </div>
-                        <ErrorMessage
-                          errors={errors}
-                          name="rating"
-                          render={({ message }) => (
-                            <small className="text-danger ml-2">
-                              * {message}
-                            </small>
-                          )}
-                        />
-                        <div>
-                          <label htmlFor="001" className="form-control mb-3">
-                            <input id="001" type="radio" value={slugify('', 'BELOW EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
-                            <span className="ml-2">BELOW EXPECTATION</span>
-                          </label>
-                          <label htmlFor="002" className="form-control mb-3">
-                            <input id="002" type="radio" value={slugify('', 'MET EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
-                            <span className="ml-2">MET EXPECTATION</span>
-                          </label>
-                          <label htmlFor="003" className="form-control mb-3">
-                            <input id="003" type="radio" value={slugify('', 'EXCEEDED EXPECTATION')} name="rating" {...register("rating", { required: "This is required." })} />
-                            <span className="ml-2">EXCEEDED EXPECTATION</span>
-                          </label>
-                        </div>
                       </div>
                       <div className="formdata">
                         <small className="text-light">Remarks</small>
                         <ErrorMessage
                           errors={errors}
-                          name="message"
+                          name="remark"
                           render={({ message }) => (
                             <small className="text-danger ml-2">
                               * {message}
@@ -226,7 +165,7 @@ export default function Feedback() {
                           className="form-control"
                           name="msg"
                           id="msg"
-                          {...register("message", {
+                          {...register("remark", {
                             required: "This is required.",
                           })}
                         ></textarea>
@@ -237,12 +176,9 @@ export default function Feedback() {
                     <div className="bg-white rounded">
                       {questions.map((item, i) => (
                         <div className="row border-bottom rounded qa-row align-items-center  m-0 small" key={Math.random()}>
-                          <div className="col-sm-6 p-0 my-2 my-sm-0 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
+                          <div className="col-sm-9 p-0 my-2 my-sm-0 text-dark p-0"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
                           <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={1} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />Yes</label>
                           <label forHtml={i + "QA"} className="col p-0 m-0"><input type="radio" value={0} {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required />No</label>
-                          <div className="col-sm-4 p-0 mt-2 mt-sm-0">
-                            <textarea className="border w-100" maxLength="255"  {...register(slugify('QAC_', item))} placeholder="Comments ..." rows={1.5}></textarea>
-                          </div>
                         </div>
                       ))}
                     </div>

@@ -1,27 +1,44 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import bannerimage from "../../assets/images/inner-banner-14.webp";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { API_URL } from "../../Redux/Constant/ApiRoute";
 import { FormResponse } from "../../Helpers/FormResponse";
 import { setLoading } from "../../Redux/Actions/LoaderAction";
 import { useDispatch } from "react-redux";
-import { feedbacks, questions, slugify } from "../../utils";
+import { feedbackQuestionAnswers, slugify } from "../../utils";
 import axios from "axios";
 
 export default function FeedbackB2B() {
+    const path = useLocation();
+    const queryParams = new URLSearchParams(path.search)
+    const patientname = queryParams.get("patientname")
+    const labid = queryParams.get("labid")
+    const mobile= queryParams.get("mobile")
+    const branch= queryParams.get("branch")
+    const defaultValue  ={
+      name:patientname,
+      reg_no:labid,
+      mobile:mobile,
+      branch:branch
+    }
     const {
         register,
         formState: { errors },
         handleSubmit,
         reset,
-    } = useForm();
+    } = useForm({
+        defaultValues:defaultValue
+    });
 
     const dispatch = useDispatch()
 
-    const onSubmit = (data) => {
+    const onSubmit = (formData) => {
+        const data = {
+            ...formData,
+            type:'feedBack'
+        }
         dispatch(setLoading(true))
         data['page_url'] = window.location.href
         axios.post(API_URL.FEEDBACKS, data).then(res => {
@@ -74,11 +91,13 @@ export default function FeedbackB2B() {
                             </h2>
                         </div>
                         <p>
-                            We strive to provide you with the best service possible, and your feedback is crucial for us to serve you better.
-                            We kindly invite you to take a few minutes to fill out our feedback form.
-                            Your insights will help us improve and ensure that we meet your expectations.
+                            We strive to provide you with the best service possible, and your feedback is crucial for us to serve 
+                            you better.  Your insights will help us improve and ensure that we exceed your expectations.
                         </p>
-                        <p>Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your thoughts!</p>
+                        <p>
+                            Remove Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your 
+                            thoughts!
+                        </p>
                         <div className="cmn-buton">
                             <p>
                                 <Link to='tel:18004251974'>Call Back</Link>
@@ -111,10 +130,10 @@ export default function FeedbackB2B() {
                                         />
                                     </div>
                                     <div className="formdata">
-                                        <small className="text-light">Email</small>
+                                        <small className="text-light">Registration Number</small>
                                         <ErrorMessage
                                             errors={errors}
-                                            name="email"
+                                            name="reg_no"
                                             render={({ message }) => (
                                                 <small className="text-danger ml-2">
                                                     * {message}
@@ -123,14 +142,10 @@ export default function FeedbackB2B() {
                                         />
                                         <input
                                             className="form-control jsrequired"
-                                            type="email"
-                                            name="email"
-                                            {...register("email", {
+                                            type="text"
+                                            name="reg_no"
+                                            {...register("reg_no", {
                                                 required: "This is required.",
-                                                pattern: {
-                                                    value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                                                    message: 'Invalid email address!'
-                                                }
                                             })}
                                         />
                                     </div>
@@ -157,12 +172,12 @@ export default function FeedbackB2B() {
                                                 }
                                             })}
                                         />
-                                    </div>
+                                    </div>    
                                     <div className="formdata">
-                                        <small className="text-light">Location</small>
+                                        <small className="text-light">Branch</small>
                                         <ErrorMessage
                                             errors={errors}
-                                            name="location"
+                                            name="branch"
                                             render={({ message }) => (
                                                 <small className="text-danger ml-2">
                                                     * {message}
@@ -172,17 +187,17 @@ export default function FeedbackB2B() {
                                         <input
                                             className="form-control jsrequired"
                                             type="text"
-                                            name="location"
-                                            {...register("location", {
+                                            name="branch"
+                                            {...register("branch", {
                                                 required: "This is required.",
                                             })}
                                         />
-                                    </div>
+                                    </div>                               
                                     <div className="formdata m-0">
                                         <small className="text-light">Remarks</small>
                                         <ErrorMessage
                                             errors={errors}
-                                            name="message"
+                                            name="remark"
                                             render={({ message }) => (
                                                 <small className="text-danger ml-2">
                                                     * {message}
@@ -193,7 +208,7 @@ export default function FeedbackB2B() {
                                             className="form-control m-0"
                                             name="msg"
                                             id="msg"
-                                            {...register("message", {
+                                            {...register("remark", {
                                                 required: "This is required.",
                                             })}
                                         ></textarea>
@@ -202,13 +217,17 @@ export default function FeedbackB2B() {
                             </div>
                             <div className="col-lg-8 h-100">
                                 <div className="green-bg pb-0 px-4 pt-4 h-100">
-                                    {feedbacks.map((item, i) => (
+                                    {feedbackQuestionAnswers.map((item, i) => (
                                         <div className="pb-4" key={Math.random()}>
                                             <div className="row border bg-white rounded align-items-center m-0" >
-                                                <div className="col-sm-12 text-dark p-2 fw-bold d-flex border-bottom"><b className="mr-1">{i + 1}.</b> <span>{item}</span></div>
-                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Exceeding Expectations" />Exceeding Expectations</label>
+                                               <div className="col-sm-12 text-dark p-2 fw-bold d-flex border-bottom"><b className="mr-1">{i + 1}.</b> <span>{item?.question}</span></div>
+                                               {item?.answers?.map((answers, i) => (
+                                                    <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0">
+                                                        <input type="radio" {...register(slugify('QA_', item?.question), { required: "This is required." })} name={slugify(`QA_`, item?.question)} id={i + "QA"} className="mr-2" required value={answers} />{answers}</label>
+                                               ))}
+                                               {/*   <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Exceeding Expectations" />Exceeding Expectations</label>
                                                 <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Meet Expectations" />Meet Expectations</label>
-                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Below Expectations" />Below Expectations</label>
+                                                <label forHtml={i + "QA"} className="small rounded text-secondary qa-row col-sm-4 d-flex m-0"><input type="radio" {...register(slugify('QA_', item), { required: "This is required." })} name={slugify('QA_', item)} id={i + "QA"} className="mr-2" required value="Below Expectations" />Below Expectations</label> */}
                                             </div>
                                         </div>
                                     ))}
