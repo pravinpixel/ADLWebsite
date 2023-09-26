@@ -8535,3 +8535,8 @@ ul.action-felds li i.fa.fa-minus-square {
 .action-button i {
     transform: rotate(130deg);
 }
+
+.homeModal{
+    background: #501e83;
+    color: #fff;
+}
