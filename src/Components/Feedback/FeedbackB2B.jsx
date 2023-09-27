@@ -94,10 +94,10 @@ export default function FeedbackB2B() {
                             We strive to provide you with the best service possible, and your feedback is crucial for us to serve 
                             you better.  Your insights will help us improve and ensure that we exceed your expectations.
                         </p>
-                        <p>
+                        {/* <p>
                             Remove Thank you for your time and for choosing Neuberg Anand. We look forward to hearing your 
                             thoughts!
-                        </p>
+                        </p> */}
                         <div className="cmn-buton">
                             <p>
                                 <Link to='tel:18004251974'>Call Back</Link>

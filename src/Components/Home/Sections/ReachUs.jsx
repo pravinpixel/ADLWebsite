@@ -17,13 +17,13 @@ export default function ReachUs() {
                                         <h4>1800 425 1974 <span>Sample Collections</span></h4>
                                     </Link>
                                 </div>
-                                <div className="col-md-4">
+                                {/* <div className="col-md-4">
                                     <Link to="tel:+918069451112">
                                         <img src={callUs} width={60} alt="call" className="img-fluid mb-3" />
                                         <h4>+91 80694 51112 <span>Call us</span></h4>
                                     </Link>
-                                </div>
-                                <div className="col-md-4">
+                                </div> */}
+                                <div className="col-md-8">
                                     <a href="mailto:info@anandlab.com">
                                         <img src={mail} alt="mail" className="img-fluid mb-3" />
                                         <h4>info@anandlab.com<span>Need support? Drop us an email</span></h4>
