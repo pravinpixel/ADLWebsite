@@ -264,10 +264,10 @@ export default function GuestCheckOut() {
                             />
                           </div>
                           <div className="col-lg-6">
-                            <label>Appoinment</label>
+                            <label>Appointment</label>
                             <label htmlFor="book_a_appoinment" className="form-control pt-2" style={{ height: '45px' }}>
                               <input type="checkbox" onChange={() => setDateTime(DateTime === true ? false : true)} id="book_a_appoinment" className="mr-2" />
-                              <b>Book an Appoinment</b>
+                              <b>Book an Appointment</b>
                             </label>
                           </div>
                           {
@@ -365,8 +365,8 @@ export default function GuestCheckOut() {
                     : null
                 }
                 <div className="case text-left">
-                  <p>
-                    Currently unavailable for online booking Thank you for your cooperation.
+                  <p className="unavailableText">
+                    Currently unavailable for online booking, Thank you for your cooperation.
                     {/* <LoadingBtn loading={Loading} onClick={handlePayment} title="Make a Payment"/> */}
                     {/* <a onClick={handlePayment} style={{ color: 'white' }}>Make Payment</a> */}
                   </p>

@@ -8540,3 +8540,10 @@ ul.action-felds li i.fa.fa-minus-square {
     background: #501e83;
     color: #fff;
 }
+
+.unavailableText{
+    background: #501e83;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
