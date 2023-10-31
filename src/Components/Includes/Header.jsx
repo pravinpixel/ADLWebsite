@@ -124,7 +124,8 @@ export default function Header() {
                           </a>
                         </li>
                         <li>
-                          <Link to='/reports'>
+                          {/* <Link to='/reports'> */}
+                          <Link to="https://reports.anandlab.com/V3/" target="_blank">
                             <img src={sky} alt="" className="img-fluid" />
                             <span>Report</span>
                           </Link>
@@ -314,9 +315,11 @@ export default function Header() {
 
                               <li className="col thrd-clmn">
                                 <ul>
-
                                   <li className="dwd">
-                                    <Link to="/reports"
+                                    {/* <Link to="/reports"
+                                      className="dropdown-item"
+                                    > */}
+                                     <Link to="https://reports.anandlab.com/V3/" target="_blank"
                                       className="dropdown-item"
                                     >
                                       <img

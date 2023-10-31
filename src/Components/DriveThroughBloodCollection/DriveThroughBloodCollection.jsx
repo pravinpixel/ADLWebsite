@@ -54,9 +54,12 @@ export default function DriveThroughBloodCollection() {
               <p>Collecting of test reports has never been easier. - Once ready, Users can log in to our website and download the reports right on to their computers or mobile devices immediately after our doctors release a report.</p>
             </div>
             <div className='col-lg-3 text-right'>
-            <div className="cmn-buton"><p><Link to="/reports">
+            <div className="cmn-buton"><p>
+              {/* <Link to="/reports"> */}
+              <Link to="https://reports.anandlab.com/V3/" target="_blank">
                       Download Report
-                    </Link></p></div>
+              </Link>
+                    </p></div>
             </div> 
       </div>
       </div>

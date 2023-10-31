@@ -8547,3 +8547,12 @@ ul.action-felds li i.fa.fa-minus-square {
     padding: 10px;
     border-radius: 5px;
 }
+
+.popupClose{
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.text-decoration-underline{
+    text-decoration: underline;
+}

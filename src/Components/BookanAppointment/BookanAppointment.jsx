@@ -169,7 +169,8 @@ export default function BookanAppointment() {
               <div className="col-lg-3 text-right">
                 <div className="cmn-buton">
                   <p>
-                    <Link to="/reports">
+                    {/* <Link to="/reports"> */}
+                    <Link to="https://reports.anandlab.com/V3/" target="_blank">
                       Download Report
                     </Link>
                   </p>

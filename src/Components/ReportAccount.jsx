@@ -63,7 +63,8 @@ function ReportAccount() {
     }
     console.log(reportUser,'reportUser')
     console.log(report,'report')
-    if (reportUser === null && report === null) return <Navigate to="/reports" replace={true} />
+    if (reportUser === null && report === null) return <Navigate to="https://reports.anandlab.com/V3/" replace={true} />
+    // if (reportUser === null && report === null) return <Navigate to="/reports" replace={true} />
     if (reportUser !== null && report !== null) return (
         <div>
             <section className="main-billfrm cmnmenu-topmargin">

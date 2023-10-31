@@ -29,9 +29,9 @@ export const feedbackQuestionAnswers = [
 ];
 
 export const questions = [
-  "Are you happy with the Turn Around Time?",
+  "Are you happy with the Report Turn Around Time?",
   "Do you need additional Support for inventory / consumables?",
-  "Do you need any additional support for logistic pick of samples?",
-  "Are there any delays in response from Help desk?",
-  "Do you need any additional support from the technical/Medical experts of the lab?",
+  "Do you require further assistance for the logistics of sample pickups?",
+  "Are there any delays in response from the Help desk?",
+  "Do you need any additional support from our lab technical/Medical experts?",
 ];

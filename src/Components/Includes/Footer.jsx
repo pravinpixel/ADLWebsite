@@ -81,7 +81,8 @@ export default function Footer() {
                     <Link to="/">Book a Blood Test</Link>
                   </li> */}
                     <li>
-                    <Link to="/reports">
+                    {/* <Link to="/reports"> */}
+                    <Link to="https://reports.anandlab.com/V3/" target="_blank">
                       Download Reports
                     </Link>
                     </li>
@@ -108,8 +109,9 @@ export default function Footer() {
                     <li>
                       <Link to="/preparing-for-health-checkup">Preparing for Health Checkup</Link>
                     </li>
-                    <li>
-                    <Link to="/reports">
+                    <li>                                     
+                    {/* <Link to="/reports"> */}
+                    <Link to="https://reports.anandlab.com/V3/" target="_blank">
                       Download Reports
                     </Link>
                     </li>
@@ -240,14 +242,15 @@ export default function Footer() {
           <img src={location} alt="" className="img-fluid" />
           <span>{TestLocation !== null ? TestLocation.TestLocation.replaceAll('-', ' ') : null}</span>
         </a>
-
-<Link to="/reports" data-toggle="tooltip" title="Download Your Reports">
-  <img src={sky} alt="" className="img-fluid" />
- Reports
-</Link> 
-<a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
-  Toll-Free
-</a>
+        {/* <Link to="/reports" data-toggle="tooltip" title="Download Your Reports"> */}
+        <Link to="https://reports.anandlab.com/V3/" 
+                target="_blank" data-toggle="tooltip" title="Download Your Reports">
+          <img src={sky} alt="" className="img-fluid" />
+        Reports
+        </Link> 
+        <a href="tel:18004251974" target="_blank" data-toggle="tooltip" title="Call Us"><img src={toll} alt="" className="img-fluid" />
+          Toll-Free
+        </a>
         {
           authUser.user.length === 0 && authUser.user !== null ?
             <Link to="/login" data-toggle="tooltip" title="Login to view your Profile">
